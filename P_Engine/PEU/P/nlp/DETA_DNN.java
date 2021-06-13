@@ -1,7 +1,7 @@
 //package PEU.P.nlp;
 //import java.io.IOException;
 //public class DETA_DNN {
-//	public String[][] summingProcessor(String[][] ann, String[][] rnn) throws IOException
+//	public String[][] summing_P(String[][] ann, String[][] rnn) throws IOException
 //	, InstantiationException, IllegalAccessException {
 //		//SUM OF LWA DNN 
 //		//1 DNN AOP OF DNN
@@ -49,7 +49,7 @@ import java.io.IOException;
 import MSV.OSQ.sets.DetaDouble;
 //×÷Õß ÂÞÑþ¹â
 public class DETA_DNN {
-	public String[][] summingProcessor(String[][] ann, String[][] rnn) throws IOException
+	public String[][] summing_P(String[][] ann, String[][] rnn) throws IOException
 	, InstantiationException, IllegalAccessException {
 		//SUM OF LWA DNN 
 		//1 DNN AOP OF DNN

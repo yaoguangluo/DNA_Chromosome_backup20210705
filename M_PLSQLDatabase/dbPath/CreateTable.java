@@ -11,7 +11,7 @@ public class CreateTable{
 		System.out.println("----德塔VPCS数据库服务器DMA确认:成功！");
 		RequestFilter_C.initBlockList();
 		System.out.println("----德塔VPCS数据库服务器IP过滤服务启动:成功！");
-		MS.OP.SM.AOP.MEC.SIQ.cache.DetaDBBufferCacheManager.reflection();
+		MS.OP.SM.AOP.MEC.SIQ.cache.DetaDBBufferCache_M.reflection();
 		System.out.println("----德塔VPCS数据库服务器启动整库过程映射服务:成功！");
 		DatabaseLogHall.createBinLogHall();
 		System.out.println("----德塔VPCS数据库服务器启动整库过程映射服务:成功！");

@@ -15,6 +15,6 @@ public class GuassianFilterRun extends OSU_AVQ_ASQ_OPE_OPC_ECI{
 	public void run(final GuassianFilterView SQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ) throws IOException{
 		System.out.println("runed"+value); 
 		SQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.lygout=new LYGFileIO();
-	    SQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.lygout.image=new Guassian().Processor(toplygin.image,3,3,1.6);
+	    SQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.lygout.image=new Guassian().P(toplygin.image,3,3,1.6);
 	}
 }

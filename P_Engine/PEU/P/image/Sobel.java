@@ -1,7 +1,7 @@
 package PEU.P.image;
 import java.io.IOException;
 public class Sobel {
-	public int[][] Processor( int[][] g,int choice) throws IOException {		 
+	public int[][] P( int[][] g,int choice) throws IOException {		 
 		int[][] refG =  new Reflection().PadImage(g, 3, 3);  
 		int[]size = {g.length,g[0].length};
 		double[][] Gx = new double [size[0]][size[1]];
@@ -31,7 +31,7 @@ public class Sobel {
 				outmag[i][j] = (int)(mag[i][j]/(1020*Math.sqrt(2))*255);
 			}
 		}
-		return  new CheckRange().Processor(outmag); 
+		return  new CheckRange().P(outmag); 
 	}
 	
 	private int[][] dir(double[][] gx,double[][] gy,int[]size) throws IOException{	
@@ -46,10 +46,10 @@ public class Sobel {
 				}
 			}
 		}
-		return  new CheckRange().Processor(outdir); 
+		return  new CheckRange().P(outdir); 
 	}
 
-	public int[][] ProcessorWithMask(int[][]  g, int choice, int mask) throws IOException {
+	public int[][] P_WithMask(int[][]  g, int choice, int mask) throws IOException {
 		int[][] refG =  new Reflection().PadImage(g, 3, 3);  
 		int[]size = {g.length,g[0].length};
 		double[][] Gx = new double [size[0]][size[1]];
@@ -84,6 +84,6 @@ public class Sobel {
 				}
 			}
 		}
-		return  new CheckRange().Processor(outmag); 
+		return  new CheckRange().P(outmag); 
 	}
 }

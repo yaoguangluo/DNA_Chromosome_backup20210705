@@ -5,7 +5,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.PP.WorkProcessIssues;
 import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.analysis.WorkAnalysisIssues;
 import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.management.WorkManagementIssues;
-import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.operation.WorkOperationIssues;
+import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.operation.Work_O_Issues;
 
 public class WorkIssues{
 	public void workDefinition() {
@@ -27,7 +27,7 @@ public class WorkIssues{
 		//a
 		new WorkAnalysisIssues().vpcsInitons();
 		//o
-		new WorkOperationIssues().vpcsInitons();
+		new Work_O_Issues().vpcsInitons();
 		//p
 		new WorkProcessIssues().vpcsInitons();
 		//m

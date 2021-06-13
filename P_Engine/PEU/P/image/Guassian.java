@@ -2,7 +2,7 @@ package PEU.P.image;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 public class Guassian {
-	public int[][] Processor2D(int[][] g,int d,int e,double sig) throws IOException {
+	public int[][] P_2D(int[][] g,int d,int e,double sig) throws IOException {
 		int [][]flac_grn=new Reflection().PadImage(g, d, e); 
 		double kenel[][] = new double[d][e];
 		double sumhere = 0;
@@ -34,9 +34,9 @@ public class Guassian {
 				g[i-(int)(d>>1)][j-(int)(e>>1)]=(int)(sum);	
 			}
 		}
-		return  new CheckRange().Processor(g); 		  
+		return  new CheckRange().P(g); 		  
 	}
-	public int[][] Processor1D(int[][] g,int frection,int kernel,double sig) throws IOException {
+	public int[][] P_1D(int[][] g,int frection,int kernel,double sig) throws IOException {
 		int d= frection;
 		int e= kernel;
 		int [][]flac_grn=new Reflection().PadImage(g, d, e); 
@@ -119,10 +119,10 @@ public class Guassian {
 				g[i-d/2][j-e/2]=(int)(sum);	
 			}
 		}  		
-		return  new CheckRange().Processor(g);	  
+		return  new CheckRange().P(g);	  
 	}
 
-	public BufferedImage Processor(BufferedImage lygimage, double d, double e,double k) throws IOException 
+	public BufferedImage P(BufferedImage lygimage, double d, double e,double k) throws IOException 
 	{
 		//image to r[][] g[][] b[][]
 		//r[][]
@@ -134,11 +134,11 @@ public class Guassian {
 		int g[][]=new ReadWritePng().GRNpngRead(lygimage);
 		int b[][]=new ReadWritePng().BLUpngRead(lygimage);
 		//r[][]
-		r=Processor2D(r,(int)d,(int)e,k);   
+		r= P_2D(r,(int)d,(int)e,k);   
 		//g[][]
-		g=Processor2D(g,(int)d,(int)e,k);   
+		g= P_2D(g,(int)d,(int)e,k);   
 		//b[][]
-		b=Processor2D(b,(int)d,(int)e,k);  
+		b= P_2D(b,(int)d,(int)e,k);  
 		//r[][]g[][]b[][] to image
 		lygimage=new ReadWritePng().createBufferImage(r,g,b);
 		return lygimage;

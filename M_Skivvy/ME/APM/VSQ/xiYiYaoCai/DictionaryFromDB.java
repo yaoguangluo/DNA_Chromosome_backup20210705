@@ -12,8 +12,8 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import OSI.AOP.MEC.SIQ.plorm.PLORMImpl;
-import OSI.AOP.MEC.SIQ.plorm.PLORMInterf;
+import OSI.AOP.MEC.SIQ.plorm.PLORM_E;
+import OSI.AOP.MEC.SIQ.plorm.PLORM_C;
 @SuppressWarnings("unused")
 public class DictionaryFromDB{	
 //	public List<String> dic_list;
@@ -70,7 +70,7 @@ Map<String, Object> dic_qi_ta, Map<String, Object> dic_yong_liang, Map<String, O
 				"condition:or:ID|<=|3000;";
 				//"condition:or:ID|==|2;";
 		try {
-			PLORMInterf orm= new PLORMImpl();
+			PLORM_C orm= new PLORM_E();
 			map= orm.startAtRootDir("C:/DetaDB").withBaseName("ZYY")
 					.withTableSelect("xybg").withCondition("or")
 					.let("ID").lessThanAndEqualTo("3000")

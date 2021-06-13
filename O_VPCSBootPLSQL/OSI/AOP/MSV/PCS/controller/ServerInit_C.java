@@ -5,7 +5,7 @@ import java.net.ServerSocket;
 import javax.swing.JTextPane;
 
 import ME.APM.VSQ.App;
-import MS.OP.SM.AOP.MEC.SIQ.cache.DetaDBBufferCacheManager;
+import MS.OP.SM.AOP.MEC.SIQ.cache.DetaDBBufferCache_M;
 import MS.VPC.PP.Time_P;
 import MS.VPC.SH.Sleeper;
 import MS.VPC.SH.SleeperHall;
@@ -65,7 +65,7 @@ public class ServerInit_C {
 				text="\r\n"+ "...";
 				jTextPane.setText(text);
 			}
-			DetaDBBufferCacheManager.reflection();
+			DetaDBBufferCache_M.reflection();
 			System.out.println("----德塔VPCS数据库服务器启动整库过程映射服务:成功！");
 			if(jTextPane!= null) {
 				String text= jTextPane.getText();
@@ -81,7 +81,7 @@ public class ServerInit_C {
 				text="\r\n"+ "...";
 				jTextPane.setText(text);
 			}
-			//			BootBackup.bootBackupByUsingGzip(CacheManager
+			//			BootBackup.bootBackupByUsingGzip(Cache_M
 			//.getCacheInfo("LogPath").getValue().toString()+"/zipCover");
 			//			UnZip.unZipWithPath("C:/DetaLog/zipCover/zip_1549583065203.zip"
 			//, "C:/DetaLog/zipCover/cover");

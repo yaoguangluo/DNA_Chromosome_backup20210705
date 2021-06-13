@@ -4,7 +4,7 @@ import java.util.Map;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
-import IMO.EVU.biProcessor.CoDNAAuthorForWord;
+import IMO.EVU.bi_P.CoDNAAuthorForWord;
 import OCI.ME.analysis.C.A;
 import OSI.OPE.OEQ.MCQ.OVU.PQE.osgi.OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ;
 import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.life.Application;

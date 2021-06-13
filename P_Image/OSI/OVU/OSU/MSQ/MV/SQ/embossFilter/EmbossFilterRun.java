@@ -20,8 +20,8 @@ public class EmbossFilterRun extends OSU_AVQ_ASQ_OPE_OPC_ECI{
 				out[i][j]=topgin[i][j];
 			}
 		}		    	
-		out= new Emboss().Processor(out);
-		//gin = new Strech().Processor(out,0.1,0.9); 
+		out= new Emboss().P(out);
+		//gin = new Strech().P(out,0.1,0.9); 
 		SQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.gout=out;	
 	}
 }

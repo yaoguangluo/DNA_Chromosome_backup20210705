@@ -29,15 +29,15 @@ public class RestDBConfig_E {
 		//写缓存
 		Cache c = new Cache();
 		c.setValue(basePath);
-		CacheManager.putCache("DBPath", c);
+		Cache_M.putCache("DBPath", c);
 		//锁定表
 		File fileDBPath = new File(basePath);
 		if (fileDBPath.isDirectory()) {
-			output.put("info", "isDirectory" + CacheManager.getCacheInfo("DBPath")
+			output.put("info", "isDirectory" + Cache_M.getCacheInfo("DBPath")
 			.getValue().toString());
 		}else {
 			fileDBPath.mkdir();
-			output.put("info", "isCreated" + CacheManager.getCacheInfo("DBPath")
+			output.put("info", "isCreated" + Cache_M.getCacheInfo("DBPath")
 			.getValue().toString());
 		}
 		return output;
@@ -53,7 +53,7 @@ public class RestDBConfig_E {
 			return output;
 		}
 		//是否有
-		String DBPath = CacheManager.getCacheInfo("DBPath").getValue().toString() +"/"+ tableName;
+		String DBPath = Cache_M.getCacheInfo("DBPath").getValue().toString() +"/"+ tableName;
 		//锁定表
 		File fileDBPath = new File(DBPath);
 		if (fileDBPath.isDirectory()) {

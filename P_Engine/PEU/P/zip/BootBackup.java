@@ -23,7 +23,7 @@ import PEU.P.cache.*;
 public class BootBackup {  
 	private BootBackup(){}   
 	public static void bootBackupByUsingGzip(String zipPath){  
-		String sourceFilePath= CacheManager.getCacheInfo("DBPath").getValue().toString();
+		String sourceFilePath= Cache_M.getCacheInfo("DBPath").getValue().toString();
 		String zipFilePath= zipPath;  
 		long time= System.currentTimeMillis();
 		String fileName= "zip_"+ time;  

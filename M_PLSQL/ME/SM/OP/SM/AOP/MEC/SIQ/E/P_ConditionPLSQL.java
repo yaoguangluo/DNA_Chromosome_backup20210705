@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import MS.OP.SM.AOP.MEC.SIQ.cache.DetaDBBufferCacheManager;
+import MS.OP.SM.AOP.MEC.SIQ.cache.DetaDBBufferCache_M;
 import OP.SM.AOP.MEC.SIQ.SM.reflection.Cell;
 import OP.SM.AOP.MEC.SIQ.SM.reflection.Row;
 import OP.SM.AOP.MEC.SIQ.SM.reflection.Table;
@@ -19,7 +19,7 @@ import OP.SM.AOP.MEC.SIQ.SM.reflection.Table;
 public class P_ConditionPLSQL {
 	public static void P_Cache(String[] sets, List<Map<String, Object>> output
 			, String tableName, String baseName, Map<String, Object> object) {
-		Table table = DetaDBBufferCacheManager.db.getBase(baseName).getTable(tableName);
+		Table table = DetaDBBufferCache_M.db.getBase(baseName).getTable(tableName);
 		Iterator<String> iterator = table.getRows().keySet().iterator(); 
 		int rowindex=0;
 		while(iterator.hasNext()) {

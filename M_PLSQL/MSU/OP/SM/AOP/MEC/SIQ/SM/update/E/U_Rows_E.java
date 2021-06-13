@@ -18,7 +18,7 @@ import org.json.JSONObject;
 import ME.SM.OP.SM.AOP.MEC.SIQ.E.P_AggregationPLSQL;
 import ME.SM.OP.SM.AOP.MEC.SIQ.E.P_ConditionPLSQL;
 import ME.SM.OP.SM.AOP.MEC.SIQ.E.P_GetCulumnsPLSQL;
-import MS.OP.SM.AOP.MEC.SIQ.cache.DetaDBBufferCacheManager;
+import MS.OP.SM.AOP.MEC.SIQ.cache.DetaDBBufferCache_M;
 import OP.SM.AOP.MEC.SIQ.SM.reflection.Cell;
 import OP.SM.AOP.MEC.SIQ.SM.reflection.Row;
 import OP.SM.AOP.MEC.SIQ.SM.reflection.Spec;
@@ -56,7 +56,7 @@ public class U_Rows_E {
 							//fix buffer refresh
 							Cell cell = new Cell();
 							cell.setCellValue(null == culumnValue ? "" : culumnValue);
-							DetaDBBufferCacheManager.db.getBase(sets[sets.length - 2])
+							DetaDBBufferCache_M.db.getBase(sets[sets.length - 2])
 							.getTable(sets[sets.length - 1]).getRow("row" + pageIndex).putCell(culumnName, cell);	
 						} catch (IOException e) {
 							e.printStackTrace();
@@ -117,7 +117,7 @@ public class U_Rows_E {
 									//fix buffer refresh
 									Cell cell = new Cell();
 									cell.setCellValue(null == culumnValueOfjs ? "" : culumnValueOfjs);
-									DetaDBBufferCacheManager.db.getBase(sets[sets.length - 2])
+									DetaDBBufferCache_M.db.getBase(sets[sets.length - 2])
 									.getTable(sets[sets.length - 1]).getRow("row" + i).putCell(culumnNameOfjs, cell);
 								} catch (IOException e) {
 									e.printStackTrace();
@@ -132,7 +132,7 @@ public class U_Rows_E {
 	}
 
 	public static Object updateRowsByRecordConditions(Map<String, Object> object, boolean mod) throws IOException {
-		String DBPath = CacheManager.getCacheInfo("DBPath").getValue().toString() + "/" 
+		String DBPath = Cache_M.getCacheInfo("DBPath").getValue().toString() + "/" 
 	+ object.get("baseName").toString();
 		String DBtablePath = DBPath + "/" + object.get("tableName").toString();
 		String DBTableRowsPath = DBtablePath + "/rows";		
@@ -165,7 +165,7 @@ public class U_Rows_E {
 					}
 					Cell cell = new Cell();
 					cell.setCellValue(culumns[2]);
-					Row row = DetaDBBufferCacheManager.db.getBase(object.get("baseName").toString())
+					Row row = DetaDBBufferCache_M.db.getBase(object.get("baseName").toString())
 							.getTable(object.get("tableName").toString()).getRow(rowIndex);
 					if(mod) {
 						row.putCell(culumns[1], cell);
@@ -187,7 +187,7 @@ public class U_Rows_E {
 		String objectType = "";
 		List<Map<String, Object>> output = new ArrayList<>();
 		//锁定数据库
-		String DBPath = CacheManager.getCacheInfo("DBPath").getValue().toString() + "/" 
+		String DBPath = Cache_M.getCacheInfo("DBPath").getValue().toString() + "/" 
 		+ object.get("baseName").toString();
 		//锁定表
 		File fileDBPath = new File(DBPath);
@@ -222,7 +222,7 @@ public class U_Rows_E {
 							String[] sets = conditionValueArray[i].split("\\|");
 							if(overMap && andMap) {
 								P_ConditionPLSQL.P_Map(sets, output, DBTablePath);
-							}else if(DetaDBBufferCacheManager.dbCache){
+							}else if(DetaDBBufferCache_M.dbCache){
 								P_ConditionPLSQL.P_Cache(sets, output
 										, object.get("tableName").toString()
 										, object.get("baseName").toString(), object);
@@ -251,7 +251,7 @@ public class U_Rows_E {
 			boolean limitMap = type.equalsIgnoreCase("limit")?true:false;
 			for(int i = 2; i < aggregationValueArray.length; i++) {
 				String[] sets = aggregationValueArray[i].split("\\|");
-				//String DBPath = CacheManager.getCacheInfo("DBPath").getValue().toString() + "/" + object.get("baseName").toString();
+				//String DBPath = Cache_M.getCacheInfo("DBPath").getValue().toString() + "/" + object.get("baseName").toString();
 				//String dBTablePath = DBPath + "/" + object.get("tableName").toString();
 				if(limitMap) {
 					P_AggregationPLSQL.P_AggregationLimitMap(sets, obj);

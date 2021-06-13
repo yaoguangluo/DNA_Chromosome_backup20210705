@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import OSI.AOP.MEC.SIQ.plorm.PLORMImpl;
-import OSI.AOP.MEC.SIQ.plorm.PLORMInterf;
+import OSI.AOP.MEC.SIQ.plorm.PLORM_E;
+import OSI.AOP.MEC.SIQ.plorm.PLORM_C;
 //OSV PLSQL 研发, 思想, 设计: 罗瑶光 20210506
 public class DictionaryPLSQLStandardDB{	
 	public List<String> txtToList() throws IOException{
@@ -17,7 +17,7 @@ public class DictionaryPLSQLStandardDB{
 	public static Map<String, Object> bootORMReadDBInCommonWay(String tabKey) throws IOException{
 		Map<String, Object> map= null;
 		try {
-			PLORMInterf orm= new PLORMImpl();
+			PLORM_C orm= new PLORM_E();
 			map= orm.startAtRootDir("C:/DetaDB1").withBaseName("ZYY")
 					.withTableSelect(tabKey).withCondition("or")
 					.let("ID").lessThanAndEqualTo("3000")
@@ -36,7 +36,7 @@ public class DictionaryPLSQLStandardDB{
 			, boolean unTest, String tabKey, String RangeRowIDCount) throws IOException{
 		Map<String, Object> map= null;
 		try {
-			PLORMInterf orm= new PLORMImpl();
+			PLORM_C orm= new PLORM_E();
 			map= orm.startAtRootDir(rootPath).withBaseName(baseName)
 					.withTableSelect(tabKey).withCondition("or")
 					.let("ID").lessThanAndEqualTo(RangeRowIDCount)
@@ -55,7 +55,7 @@ public class DictionaryPLSQLStandardDB{
 			, String conditionSubject, String conditionObject, boolean unTest, String tabKey) throws IOException{
 		Map<String, Object> map= null;
 		try {
-			PLORMInterf orm= new PLORMImpl();
+			PLORM_C orm= new PLORM_E();
 			map= orm.startAtRootDir(rootPath).withBaseName(baseName)
 					.withTableSelect(tabKey).withCondition("or")
 					.let(conditionSubject).lessThanAndEqualTo(conditionObject)

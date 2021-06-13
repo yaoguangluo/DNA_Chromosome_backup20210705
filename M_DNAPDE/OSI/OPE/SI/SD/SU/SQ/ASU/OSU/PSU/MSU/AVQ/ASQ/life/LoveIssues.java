@@ -5,7 +5,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.PP.LoveProcessIssues;
 import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.analysis.LoveAnalysisIssues;
 import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.management.LoveManagementIssues;
-import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.operation.LoveOperationIssues;
+import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.operation.Love_O_Issues;
 
 public class LoveIssues{
 	public void loveDefinition() {
@@ -27,7 +27,7 @@ public class LoveIssues{
 		//a
 		new LoveAnalysisIssues().vpcsInitons();
 		//o
-		new LoveOperationIssues().vpcsInitons();
+		new Love_O_Issues().vpcsInitons();
 		//p
 		new LoveProcessIssues().vpcsInitons();
 		//m

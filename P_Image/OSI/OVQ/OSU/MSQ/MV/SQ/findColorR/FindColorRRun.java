@@ -17,10 +17,10 @@ public class FindColorRRun extends OSU_AVQ_ASQ_OPE_OPC_ECI{
 		System.out.println("runed"+value); 
 		SQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.path=new String(filepath); 
 		BufferedImage image = ImageIO.read(new File(filepath));
-		//image = new Strech().Processor(image,0.1,0.9); 
-		//image = new Median().Processor(image,0.1,0.9); 
+		//image = new Strech().P(image,0.1,0.9); 
+		//image = new Median().P(image,0.1,0.9); 
 		//guassian filter
-		//image = new Guassian().Processor(image,3,3,1.6);
+		//image = new Guassian().P(image,3,3,1.6);
 		//lygimage to jpeg
 		//String pathBin = filepath;//output path
 		//File outputBin = new File(pathBin);

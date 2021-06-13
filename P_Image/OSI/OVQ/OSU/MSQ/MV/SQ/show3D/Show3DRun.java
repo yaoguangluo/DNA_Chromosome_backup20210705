@@ -19,7 +19,7 @@ public class Show3DRun extends OSU_AVQ_ASQ_OPE_OPC_ECI{
 	            out[i][j]=topgin[i][j];
 	           }
 	       }		    	
-		//gin = new Strech().Processor(out,0.1,0.9); 
+		//gin = new Strech().P(out,0.1,0.9); 
 		SQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.gout=out;
 	  //SQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.out=new JTable(content,spec); 	
 		  //SQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.out=new JTable(content,spec); 	

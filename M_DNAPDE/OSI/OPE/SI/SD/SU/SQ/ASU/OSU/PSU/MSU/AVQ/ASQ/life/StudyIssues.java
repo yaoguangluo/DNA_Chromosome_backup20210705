@@ -5,7 +5,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.PP.StudyProcessIssues;
 import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.analysis.StudyAnalysisIssues;
 import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.management.StudyManagementIssues;
-import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.operation.StudyOperationIssues;
+import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.operation.Study_O_Issues;
 
 public class StudyIssues{
 	public void studyDefinition() {
@@ -27,7 +27,7 @@ public class StudyIssues{
 		//a
 		new StudyAnalysisIssues().vpcsInitons();
 		//o
-		new StudyOperationIssues().vpcsInitons();
+		new Study_O_Issues().vpcsInitons();
 		//p
 		new StudyProcessIssues().vpcsInitons();
 		//m

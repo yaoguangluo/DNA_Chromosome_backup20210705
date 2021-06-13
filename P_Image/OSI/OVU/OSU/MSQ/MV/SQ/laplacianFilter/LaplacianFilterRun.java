@@ -19,7 +19,7 @@ public class LaplacianFilterRun extends OSU_AVQ_ASQ_OPE_OPC_ECI{
 				out[i][j]=topgin[i][j];
 			}
 		}		    	
-		out= new Laplacian().Processor(out); 
+		out= new Laplacian().P(out); 
 		SQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.gout=out;
 	}
 }

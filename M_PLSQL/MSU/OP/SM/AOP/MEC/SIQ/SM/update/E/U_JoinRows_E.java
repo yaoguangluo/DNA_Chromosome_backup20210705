@@ -15,7 +15,7 @@ import ME.SM.OP.SM.AOP.MEC.SIQ.E.P_AggregationPLSQL;
 import ME.SM.OP.SM.AOP.MEC.SIQ.E.P_ConditionPLSQL;
 import ME.SM.OP.SM.AOP.MEC.SIQ.E.P_GetCulumnsPLSQL;
 import ME.SM.OP.SM.AOP.MEC.SIQ.E.P_RelationPLSQL;
-import MS.OP.SM.AOP.MEC.SIQ.cache.DetaDBBufferCacheManager;
+import MS.OP.SM.AOP.MEC.SIQ.cache.DetaDBBufferCache_M;
 import OP.SM.AOP.MEC.SIQ.SM.reflection.Spec;
 import PEU.P.cache.*;
 @SuppressWarnings({"unused", "unchecked"})
@@ -31,7 +31,7 @@ public class U_JoinRows_E {
 		String objectType = "";
 		List<Map<String, Object>> output = new ArrayList<>();
 		//锁定数据库
-		String DBPath = CacheManager.getCacheInfo("DBPath").getValue().toString() + "/" 
+		String DBPath = Cache_M.getCacheInfo("DBPath").getValue().toString() + "/" 
 		+ object.get("joinBaseName").toString();
 		//锁定表
 		File fileDBPath = new File(DBPath);
@@ -66,7 +66,7 @@ public class U_JoinRows_E {
 							String[] sets = conditionValueArray[i].split("\\|");
 							if(overMap && andMap) {
 								P_ConditionPLSQL.P_Map(sets, output, DBTablePath);
-							}else if(DetaDBBufferCacheManager.dbCache){
+							}else if(DetaDBBufferCache_M.dbCache){
 								P_ConditionPLSQL.P_Cache(sets, output, object.get("joinTableName").toString()
 										, object.get("joinBaseName").toString(), object);
 							}else {

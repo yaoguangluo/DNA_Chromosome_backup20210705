@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import OSI.AOP.MEC.SIQ.plorm.PLORMImpl;
-import OSI.AOP.MEC.SIQ.plorm.PLORMInterf;
+import OSI.AOP.MEC.SIQ.plorm.PLORM_E;
+import OSI.AOP.MEC.SIQ.plorm.PLORM_C;
 //import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.ASU.MPE.procedure.pde.FullDNATokenPDI;
 //OSV PLSQL 研发, 思想, 设计: 罗瑶光 20210511
 //表剔除操作的例子.
@@ -21,7 +21,7 @@ public class D_Standard{
 
 	public static Map<String, Object> DropCellORM(String rootPath, String baseName
 			, String tabKey) throws Exception{
-		PLORMInterf orm= new PLORMImpl();
+		PLORM_C orm= new PLORM_E();
 		orm= orm.startAtRootDir(rootPath)
 				.withBaseName(baseName)
 				.withTableDrop(tabKey)

@@ -7,8 +7,8 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.List;
 import java.util.Map;
 
-import OSI.AOP.MEC.SIQ.plorm.PLORMImpl;
-import OSI.AOP.MEC.SIQ.plorm.PLORMInterf;
+import OSI.AOP.MEC.SIQ.plorm.PLORM_E;
+import OSI.AOP.MEC.SIQ.plorm.PLORM_C;
 import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.ASU.MPE.procedure.pde.FullDNATokenPDI;
 
 public class DictionaryDB{	
@@ -28,7 +28,7 @@ public class DictionaryDB{
 		//				"condition:or:ID|<=|3000;";
 		//"condition:or:ID|==|2;";
 		try {
-			PLORMInterf orm= new PLORMImpl();
+			PLORM_C orm= new PLORM_E();
 			map= orm.startAtRootDir("C:/DetaDB1").withBaseName("ZYY")
 					.withTableSelect("gjjd").withCondition("or")
 					.let("ID").lessThanAndEqualTo("3000")

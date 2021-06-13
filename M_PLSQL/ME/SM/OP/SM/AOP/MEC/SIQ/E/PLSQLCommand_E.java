@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-import MS.OP.SM.AOP.MEC.SIQ.cache.DetaDBBufferCacheManager;
+import MS.OP.SM.AOP.MEC.SIQ.cache.DetaDBBufferCache_M;
 import MSD.OP.SM.AOP.MEC.SIQ.SM.OSD.E.D_Rows_E;
 import MSI.OP.SM.AOP.MEC.SIQ.SM.OSI.E.I_Tables_E;
 import MSI.OP.SM.AOP.MEC.SIQ.SM.OSU.E.IU_Rows_E;
@@ -25,19 +25,19 @@ public class PLSQLCommand_E {
 		for(int i=2; i<acknowledge.length; i++) {
 			dbPath += ":" + acknowledge[i];
 		}
-		if(null != CacheManager.getCacheInfo("DBPath")) {
+		if(null != Cache_M.getCacheInfo("DBPath")) {
 			File file = new File(dbPath);
 			if(!file.exists()) {
 				file.mkdirs();
 				Cache c = new Cache();
 				c.setValue(dbPath);
-				CacheManager.putCache("DBPath", c);
+				Cache_M.putCache("DBPath", c);
 			}else if(file.isFile()) {
 				throw new Exception();
 			}else if(file.isDirectory()) {
 				Cache c = new Cache();
 				c.setValue(dbPath);
-				CacheManager.putCache("DBPath", c);
+				Cache_M.putCache("DBPath", c);
 			}
 		}
 	}
@@ -196,7 +196,7 @@ public class PLSQLCommand_E {
 		object.put("pageBegin", rowBeginIndex);
 		object.put("pageEnd", rowEndIndex);
 
-		String DBPath= CacheManager.getCacheInfo("DBPath").getValue().toString() + "/" + object.get("baseName").toString();
+		String DBPath= Cache_M.getCacheInfo("DBPath").getValue().toString() + "/" + object.get("baseName").toString();
 		String DBTablePath = DBPath + "/" + object.get("tableName").toString();
 		object.put("tablePath", DBTablePath);
 		object.put("returnResult", "success");
@@ -205,7 +205,7 @@ public class PLSQLCommand_E {
 		List<Object> spec = new ArrayList<>();
 		Iterator<String> iterator = new ArrayList<String>().iterator();
 		if(obj== null || obj.size()< 1) {
-			Base base= DetaDBBufferCacheManager.db.getBase(object.get("baseName").toString());
+			Base base= DetaDBBufferCache_M.db.getBase(object.get("baseName").toString());
 			Table table= base.getTable(object.get("tableName").toString());
 			if(null!= table) {
 				iterator= table.getSpec().getCulumnTypes().keySet().iterator();

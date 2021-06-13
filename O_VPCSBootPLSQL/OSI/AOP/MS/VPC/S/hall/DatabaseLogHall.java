@@ -31,8 +31,8 @@ public class DatabaseLogHall {
 	}
 
 	private static void initLogCategoryPath() throws Exception {
-		if(null != CacheManager.getCacheInfo("DBPath")) {
-			logCategoryPath = CacheManager.getCacheInfo("DBPath").getValue().toString();	
+		if(null != Cache_M.getCacheInfo("DBPath")) {
+			logCategoryPath = Cache_M.getCacheInfo("DBPath").getValue().toString();	
 		}else {
 			throw new Exception();
 		}

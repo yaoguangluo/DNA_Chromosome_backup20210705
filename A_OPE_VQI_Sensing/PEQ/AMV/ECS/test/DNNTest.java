@@ -35,13 +35,13 @@ public class DNNTest{
 	public String[][] getDNNMatrix() throws IOException, InstantiationException, IllegalAccessException{
 		ANNTest aNNTest = new ANNTest();
 		RNN_IDETest rNN_IDETest = new RNN_IDETest();
-		String[][] dNNMatrix = new DETA_DNN().summingProcessor(aNNTest.getANNMatrix(), rNN_IDETest.getIDEMatrix());	
+		String[][] dNNMatrix = new DETA_DNN().summing_P(aNNTest.getANNMatrix(), rNN_IDETest.getIDEMatrix());	
 		return dNNMatrix;
 	}
 	
 	public String[][] getDNNMatrix(String[][] ann) throws IOException, InstantiationException, IllegalAccessException{
 		RNN_IDETest rNN_IDETest = new RNN_IDETest();
-		String[][] dNNMatrix = new DETA_DNN().summingProcessor(ann, rNN_IDETest.getIDEMatrix());	
+		String[][] dNNMatrix = new DETA_DNN().summing_P(ann, rNN_IDETest.getIDEMatrix());	
 		return dNNMatrix;
 	}
 	
@@ -55,7 +55,7 @@ public class DNNTest{
 		if(ann.length> rnn.length) {
 			ann= getAnnWithMaskRnn(ann, rnn);	
 		}
-		String[][] dNNMatrix = new DETA_DNN().summingProcessor(ann, rnn);	
+		String[][] dNNMatrix = new DETA_DNN().summing_P(ann, rnn);	
 		return dNNMatrix;
 	}
 

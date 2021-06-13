@@ -106,11 +106,11 @@ public class Pm extends JPanel implements Runnable{
 
 						}
 					}
-					//bi = new Strech().Processor(bi,0.1,0.9); 
+					//bi = new Strech().P(bi,0.1,0.9); 
 					//media filter
-					//bi = new Median().Processor(bi,0.1,0.9); 
+					//bi = new Median().P(bi,0.1,0.9); 
 					//guassian filter
-					//bi = new Guassian().Processor(bi,5,5,1.6);
+					//bi = new Guassian().P(bi,5,5,1.6);
 					Thread.sleep(30);
 					//	this.paint((Image)bi);
 				}else{

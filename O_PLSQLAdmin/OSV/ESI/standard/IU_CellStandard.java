@@ -6,8 +6,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import OSI.AOP.MEC.SIQ.plorm.PLORMImpl;
-import OSI.AOP.MEC.SIQ.plorm.PLORMInterf;
+import OSI.AOP.MEC.SIQ.plorm.PLORM_E;
+import OSI.AOP.MEC.SIQ.plorm.PLORM_C;
 import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.ASU.MPE.procedure.pde.FullDNATokenPDI;
 //OSV PLSQL 研发, 思想, 设计: 罗瑶光 20210510
 //插入一行完整的数据.
@@ -24,7 +24,7 @@ public class IU_CellStandard{
 		Iterator<String> iterators= rowCells.keySet().iterator();
 		Map<String, Object> map= null;
 		try {
-			PLORMInterf orm= new PLORMImpl();
+			PLORM_C orm= new PLORM_E();
 			orm= orm.startAtRootDir(rootPath)
 					.withBaseName(baseName)
 					.withTableInsert(tabKey);

@@ -5,7 +5,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.PP.CreativeProcessIssues;
 import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.analysis.CreativeAnalysisIssues;
 import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.management.CreativeManagementIssues;
-import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.operation.CreativeOperationIssues;
+import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.operation.Creative_O_Issues;
 
 public class CreativeIssues{
 	public void creativeDefinition() {
@@ -27,7 +27,7 @@ public class CreativeIssues{
     	//a
 		new CreativeAnalysisIssues().vpcsInitons();
 		//o
-		new CreativeOperationIssues().vpcsInitons();
+		new Creative_O_Issues().vpcsInitons();
 		//p
 		new CreativeProcessIssues().vpcsInitons();
 		//m

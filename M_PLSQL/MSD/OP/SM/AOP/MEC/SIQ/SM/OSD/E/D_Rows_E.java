@@ -8,7 +8,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import MS.OP.SM.AOP.MEC.SIQ.cache.DetaDBBufferCacheManager;
+import MS.OP.SM.AOP.MEC.SIQ.cache.DetaDBBufferCache_M;
 import MSQ.OP.SM.AOP.MEC.SIQ.SM.OSQ.E.Q_Rows_E;
 import OP.SM.AOP.MEC.SIQ.SM.reflection.Table;
 import PEU.P.cache.*;
@@ -45,7 +45,7 @@ public class D_Rows_E {
 		String baseName = sets[sets.length-2];
 		String tableName =  sets[sets.length-1];
 		String indexName = "row"+pageIndex;
-		Table table = DetaDBBufferCacheManager.db.getBase(baseName).getTable(tableName);
+		Table table = DetaDBBufferCache_M.db.getBase(baseName).getTable(tableName);
 		if(mod) {
 			table.removeRow(indexName);
 		}
@@ -58,7 +58,7 @@ public class D_Rows_E {
 			return;
 		}
 		//get base
-		String DBPath = CacheManager.getCacheInfo("DBPath").getValue().toString() + "/" + object.get("baseName").toString();
+		String DBPath = Cache_M.getCacheInfo("DBPath").getValue().toString() + "/" + object.get("baseName").toString();
 		File DBPathFile = new File(DBPath);
 		if(!DBPathFile.isDirectory()) {
 			return;
@@ -74,7 +74,7 @@ public class D_Rows_E {
 			String indexValue = indexCell.get("culumnValue").toString();
 			deleteRowByTablePathAndIndex(tablePath, indexValue, mod);
 			//delete buffer also
-			//			DetaDBBufferCacheManager.db.getBase(object.get("baseName").toString()).getTable(object.get("tableName")
+			//			DetaDBBufferCache_M.db.getBase(object.get("baseName").toString()).getTable(object.get("tableName")
 			//					.toString()).removeRow(indexValue);
 		}
 	}

@@ -14,7 +14,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import org.json.JSONObject;
 
-import MS.OP.SM.AOP.MEC.SIQ.cache.DetaDBBufferCacheManager;
+import MS.OP.SM.AOP.MEC.SIQ.cache.DetaDBBufferCache_M;
 import OP.SM.AOP.MEC.SIQ.SM.reflection.Cell;
 import OP.SM.AOP.MEC.SIQ.SM.reflection.Row;
 import OP.SM.AOP.MEC.SIQ.SM.reflection.Table;
@@ -61,7 +61,7 @@ public class IU_Rows_E {
 					File needCreatCulumn = new File(needCreatCulumnPath);
 					needCreatCulumn.mkdir();
 				}
-				DetaDBBufferCacheManager.db.getBase(sets[sets.length-2]).getTable(sets[sets.length-1]).putRow("row" + rowInsertIndex, row);
+				DetaDBBufferCache_M.db.getBase(sets[sets.length-2]).getTable(sets[sets.length-1]).putRow("row" + rowInsertIndex, row);
 			}
 		}
 		Map<String, Object> output = new HashMap<>();
@@ -71,7 +71,7 @@ public class IU_Rows_E {
 
 	public static Map<String, Object> insertRowByBaseName(String baseName, String tableName, JSONObject jsobj, boolean mod) throws Exception {
 		Map<String, Object> output = new HashMap<>();
-		String tablePath = CacheManager.getCacheInfo("DBPath").getValue().toString();
+		String tablePath = Cache_M.getCacheInfo("DBPath").getValue().toString();
 		tablePath += "/" + baseName + "/" + tableName;
 		File fileDBTable = new File(tablePath);
 		if (fileDBTable.isDirectory()) {
@@ -130,7 +130,7 @@ public class IU_Rows_E {
 						}
 					}
 				}
-				Table table = DetaDBBufferCacheManager.db.getBase(baseName).getTable(tableName);
+				Table table = DetaDBBufferCache_M.db.getBase(baseName).getTable(tableName);
 				if(mod) {
 					table.putRow("row" + rowInsertIndex, row);
 				}

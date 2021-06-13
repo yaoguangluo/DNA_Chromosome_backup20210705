@@ -2,7 +2,7 @@ package PEU.P.image;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 public class Strech {
-	public int[][] Processor(int[][] g,double d,double e) throws IOException {
+	public int[][] P(int[][] g,double d,double e) throws IOException {
 		int histgram[] = new int[256];
 		for (int i = 0; i < g.length; i++) {
 			for (int j = 0; j < g[0].length; j++) {
@@ -36,10 +36,10 @@ public class Strech {
 				} 
 			}
 		}
-		return  new CheckRange().Processor(out);   
+		return  new CheckRange().P(out);   
 	}
 
-	public BufferedImage Processor(BufferedImage lygimage, double d, double e) throws IOException {
+	public BufferedImage P(BufferedImage lygimage, double d, double e) throws IOException {
 		//image to r[][] g[][] b[][]
 		//r[][]
 		//g[][]
@@ -50,11 +50,11 @@ public class Strech {
 		int g[][]=new ReadWritePng().GRNpngRead(lygimage);
 		int b[][]=new ReadWritePng().BLUpngRead(lygimage);
 		//r[][]
-		r=Processor(r,d,e); 
+		r=P(r,d,e); 
 		//g[][]
-		g=Processor(g,d,e); 
+		g=P(g,d,e); 
 		//b[][]
-		b=Processor(b,d,e); 
+		b=P(b,d,e); 
 		//r[][]g[][]b[][] to image
 		lygimage=new ReadWritePng().createBufferImage(r,g,b);
 		return lygimage;

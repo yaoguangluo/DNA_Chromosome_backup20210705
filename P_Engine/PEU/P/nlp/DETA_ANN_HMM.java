@@ -2,7 +2,7 @@ package PEU.P.nlp;
 import java.io.IOException;
 //×÷Õß ÂÞÑþ¹â
 public class DETA_ANN_HMM {
-	public String[][] summingProcessor(String[][] inputNLP) throws IOException
+	public String[][] summing_P(String[][] inputNLP) throws IOException
 	, InstantiationException, IllegalAccessException {
 		String[][] outNLP = inputNLP.clone(); 
 		for(int i = 7; i < inputNLP[0].length; i++) {

@@ -1,7 +1,7 @@
 package PEU.P.image;
 import java.io.IOException;
 public class Emboss {
-	public int[][] Processor( int[][] g) throws IOException {		 
+	public int[][] P( int[][] g) throws IOException {		 
 		int[][] refG =  new Reflection().PadImage(g, 3, 3);  
 		int[]size = {g.length,g[0].length};
 		double[][] Gx = new double [size[0]][size[1]];
@@ -24,6 +24,6 @@ public class Emboss {
 					out[i][j]=g[i][j];
 				}
 			}		
-			return  new CheckRange().Processor(out); 
+			return  new CheckRange().P(out); 
 	}	      
 }	

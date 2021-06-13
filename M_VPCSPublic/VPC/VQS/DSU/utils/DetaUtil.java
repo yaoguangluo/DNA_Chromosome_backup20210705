@@ -10,7 +10,7 @@ import java.io.IOException;
 import PEU.P.cache.*;
 
 //import cacheProcessor.Cache;
-//import cacheProcessor.CacheManager;
+//import cacheProcessor.Cache_M;
 
 public class DetaUtil {
 	public static void initDB(String dbConfigPath){
@@ -22,7 +22,7 @@ public class DetaUtil {
 				while ((tempString = reader.readLine()) != null) {
 					Cache c = new Cache();
 					c.setValue(tempString.split("->")[1]);
-					CacheManager.putCache("DBPath", c);
+					Cache_M.putCache("DBPath", c);
 					File fileDBPath = new File(tempString.split("->")[1]);
 					if (fileDBPath.isDirectory()) {
 					}else {
@@ -48,7 +48,7 @@ public class DetaUtil {
 				}
 				Cache c = new Cache();
 				c.setValue("C:/DetaDB");
-				CacheManager.putCache("DBPath", c);
+				Cache_M.putCache("DBPath", c);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

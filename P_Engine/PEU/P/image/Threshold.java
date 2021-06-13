@@ -1,6 +1,6 @@
 package PEU.P.image;
 public class Threshold {
-	public int[][]  Processor (int[][] g, int Td){
+	public int[][]  P (int[][] g, int Td){
 		int[][] out= new int[g.length][g[0].length];
 		for (int i = 0; i < g[0].length; ++i) {
 			for (int j = 0; j < g.length; ++j) {
@@ -12,7 +12,7 @@ public class Threshold {
 		return out;
 	}
 
-	public int[][] ProcessorSection(int[][] g, int Ts, int Td) {
+	public int[][] P_Section(int[][] g, int Ts, int Td) {
 		int[][] out= new int[g.length][g[0].length];
 		for (int i= 0; i< g[0].length; ++i) {
 			for (int j= 0; j< g.length; ++j) {

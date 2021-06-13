@@ -2,7 +2,7 @@ package PEU.P.image;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 public class Median {
-	public int[][] Processor(int[][] g,int d,int e) throws IOException {
+	public int[][] P(int[][] g,int d,int e) throws IOException {
 		int[][] refG =  new Reflection().PadImage(g, d, e);  
 		int[] neib=new int[d*e];//for sort
 		for(int i=d/2;i<g.length+d/2;i++){
@@ -27,10 +27,10 @@ public class Median {
 				g[i-d/2][j-e/2]=neib[(d*e)/2];// 4 is middle valueof sort 9  
 			}
 		}
-		return  new CheckRange().Processor(g); 	  
+		return  new CheckRange().P(g); 	  
 	}
 
-	public BufferedImage Processor(BufferedImage lygimage, int d, int e) throws IOException {
+	public BufferedImage P(BufferedImage lygimage, int d, int e) throws IOException {
 		//image to r[][] g[][] b[][]
 		//r[][]
 		//g[][]
@@ -41,11 +41,11 @@ public class Median {
 		int g[][]=new ReadWritePng().GRNpngRead(lygimage);
 		int b[][]=new ReadWritePng().BLUpngRead(lygimage);
 		//r[][]
-		r=Processor(r,d,e);   
+		r=P(r,d,e);   
 		//g[][]
-		g=Processor(g,d,e);   
+		g=P(g,d,e);   
 		//b[][]
-		b=Processor(b,d,e);   
+		b=P(b,d,e);   
 		//r[][]g[][]b[][] to image
 		lygimage=new ReadWritePng().createBufferImage(r,g,b);	
 		return lygimage;

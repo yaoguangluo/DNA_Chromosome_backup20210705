@@ -83,7 +83,7 @@ public class GUISample extends JApplet implements MouseMotionListener
 	public int choose= 0;
 	public int oldx, oldy;
 	public int newx, newy;
-	public int isOperation= 0;
+	public int is_O= 0;
 	public String treeNodeName;
 	public NodeShow nodeView;
 	public NodeProject nodeProject;

@@ -12,7 +12,7 @@ public class HitAndMiss{
 			}
 		}		
 	}
-	public int[][] Processor(int[][] g, int pix, int[][] kenel) throws IOException{
+	public int[][] P(int[][] g, int pix, int[][] kenel) throws IOException{
 		int [][]g1=new int[g.length][g[0].length];
 		for(int i=0;i<g.length;i++){
 			for(int j=0;j<g[0].length;j++){

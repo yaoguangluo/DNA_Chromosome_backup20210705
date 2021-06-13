@@ -105,7 +105,7 @@ public class LoginDAO_E {
 		jobj.put("u_class", uClass);
 		jobj.put("u_email", uEmail);
 		jobj.put("u_qq", uQq);
-		U_Rows_E.updateRowByTablePathAndAttribute(CacheManager.getCacheInfo("DBPath")
+		U_Rows_E.updateRowByTablePathAndAttribute(Cache_M.getCacheInfo("DBPath")
 				.getValue()+"/backend/usr"
 				, "u_id", "" + uId, jobj);
 		// TODO Auto-generated method stub
@@ -118,7 +118,7 @@ public class LoginDAO_E {
 		jobj.put("u_key", uKey);
 		jobj.put("u_password", uPassword);
 		jobj.put("u_time", uTime);
-		U_Rows_E.updateRowByTablePathAndAttribute(CacheManager.getCacheInfo("DBPath")
+		U_Rows_E.updateRowByTablePathAndAttribute(Cache_M.getCacheInfo("DBPath")
 				.getValue()+"/backend/usrToken"
 				, "u_id", "" + uId, jobj);
 		// TODO Auto-generated method stub	

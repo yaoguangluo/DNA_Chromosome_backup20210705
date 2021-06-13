@@ -1,7 +1,7 @@
 package PEU.P.image;
 import java.io.IOException;
 public class Laplacian {
-	public int[][] Processor( int[][] g) throws IOException {		 
+	public int[][] P( int[][] g) throws IOException {		 
 		int[][] refG =  new Reflection().PadImage(g, 3, 3);  
 		int[]size = {g.length,g[0].length};
 		double[][] Gx = new double [size[0]][size[1]];
@@ -17,6 +17,6 @@ public class Laplacian {
 				}
 
 			}    
-			return  new CheckRange().Processor(g); 
+			return  new CheckRange().P(g); 
 	}	      
 }	

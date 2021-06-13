@@ -47,7 +47,7 @@ public class ThisCanvasBackUp extends JPanel implements MouseMotionListener
 	public int choose= 0;
 	public int oldX, oldY;
 	public int newx, newy;
-	public int isOperation= 0;
+	public int is_O= 0;
 	public String treeNodeName;
 	public NodeShow nodeView;
 	public NodeProject nodeProject;
@@ -123,7 +123,7 @@ public class ThisCanvasBackUp extends JPanel implements MouseMotionListener
 	public void mouseExited(MouseEvent arg0) {}
 
 	public void mousePressed(MouseEvent arg0) {
-		isOperation= 1;
+		is_O= 1;
 		oldX= arg0.getX();
 		oldY= arg0.getY();
 		currentX= arg0.getX();
@@ -137,7 +137,7 @@ public class ThisCanvasBackUp extends JPanel implements MouseMotionListener
 	}
 
 	public void mouseReleased(MouseEvent arg0){
-		isOperation= 0;
+		is_O= 0;
 		currentX= arg0.getX();
 		currentY= arg0.getY();
 		LinkNode node= first.first;
@@ -159,7 +159,7 @@ public class ThisCanvasBackUp extends JPanel implements MouseMotionListener
 	}
 
 	public void mouseDragged(MouseEvent e) {
-		isOperation= 1;
+		is_O= 1;
 		try {
 			Thread.sleep(32);//1000/25=40
 		} catch (InterruptedException e1) {
@@ -231,7 +231,7 @@ public class ThisCanvasBackUp extends JPanel implements MouseMotionListener
 				if(node.actionNodeLeft) {
 					DrawFlashSide.deleteFlashSide(graphics2D, node.oldx, node.oldy);
 				}
-				if(0== isOperation) {
+				if(0== is_O) {
 					DrawFlashSide.drawFlashSide(graphics2D, node.x, node.y, node.flash++ % 3);
 				}else {
 					DrawFlashSide.drawFlashSide(graphics2D, node.x, node.y, node.flash);

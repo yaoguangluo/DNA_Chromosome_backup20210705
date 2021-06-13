@@ -14,7 +14,7 @@ public class I_Tables_E {
 			return;
 		}
 		//get base
-		String DBPath = CacheManager.getCacheInfo("DBPath").getValue().toString() + "/" + object.get("baseName").toString();	
+		String DBPath = Cache_M.getCacheInfo("DBPath").getValue().toString() + "/" + object.get("baseName").toString();	
 		File DBPathFile = new File(DBPath);
 		if(!DBPathFile.isDirectory()) {
 			return;

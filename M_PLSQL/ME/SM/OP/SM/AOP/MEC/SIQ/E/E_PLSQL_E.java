@@ -3,7 +3,7 @@ import java.util.Map;
 
 import java.util.concurrent.ConcurrentHashMap;
 
-import OSI.AOP.MEC.SIQ.plorm.PLORMInterf;
+import OSI.AOP.MEC.SIQ.plorm.PLORM_C;
 public class E_PLSQL_E {
 	public static Map<String, Object> E_PLSQL(String plsql, boolean mod) throws Exception{
 		//working for here
@@ -63,7 +63,7 @@ public class E_PLSQL_E {
 		return output;
 	}
 
-	public static Map<String, Object> E_PLORM(PLORMInterf orm, boolean b) throws Exception {
+	public static Map<String, Object> E_PLORM(PLORM_C orm, boolean b) throws Exception {
 		return E_PLSQL(orm.getPLSQL(), true);
 	}
 }

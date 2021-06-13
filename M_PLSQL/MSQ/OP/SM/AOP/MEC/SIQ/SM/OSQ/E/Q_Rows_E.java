@@ -18,7 +18,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import ME.SM.OP.SM.AOP.MEC.SIQ.E.P_AggregationPLSQL;
 import ME.SM.OP.SM.AOP.MEC.SIQ.E.P_ConditionPLSQL;
 import ME.SM.OP.SM.AOP.MEC.SIQ.E.P_GetCulumnsPLSQL;
-import MS.OP.SM.AOP.MEC.SIQ.cache.DetaDBBufferCacheManager;
+import MS.OP.SM.AOP.MEC.SIQ.cache.DetaDBBufferCache_M;
 import OP.SM.AOP.MEC.SIQ.SM.reflection.Spec;
 import PEU.P.cache.*;
 @SuppressWarnings({ "unused", "unchecked" })
@@ -31,7 +31,7 @@ public class Q_Rows_E {
 		String objectType = "";
 		List<Map<String, Object>> output = new ArrayList<>();
 		//锁定数据库
-		String DBPath = CacheManager.getCacheInfo("DBPath").getValue().toString() + "/" + currentDB;
+		String DBPath = Cache_M.getCacheInfo("DBPath").getValue().toString() + "/" + currentDB;
 		//锁定表
 		File fileDBPath = new File(DBPath);
 		if (fileDBPath.isDirectory()) {
@@ -223,7 +223,7 @@ public class Q_Rows_E {
 		String objectType = "";
 		List<Map<String, Object>> output = new ArrayList<>();
 		//锁定数据库
-		String DBPath = CacheManager.getCacheInfo("DBPath").getValue().toString() + "/" 
+		String DBPath = Cache_M.getCacheInfo("DBPath").getValue().toString() + "/" 
 		+ object.get("baseName").toString();
 		//锁定表
 		File fileDBPath = new File(DBPath);
@@ -258,7 +258,7 @@ public class Q_Rows_E {
 							String[] sets = conditionValueArray[i].split("\\|");
 							if(overMap&& andMap) {
 								P_ConditionPLSQL.P_Map(sets, output, DBTablePath);//1
-							}else if(DetaDBBufferCacheManager.dbCache){
+							}else if(DetaDBBufferCache_M.dbCache){
 								P_ConditionPLSQL.P_Cache(sets, output, object.get("tableName").toString()
 										, object.get("baseName").toString(), object);//1
 							}else {
@@ -287,7 +287,7 @@ public class Q_Rows_E {
 			boolean limitMap = type.equalsIgnoreCase("limit")?true:false;
 			for(int i = 2; i < aggregationValueArray.length; i++) {
 				String[] sets = aggregationValueArray[i].split("\\|");
-				String DBPath = CacheManager.getCacheInfo("DBPath").getValue().toString() 
+				String DBPath = Cache_M.getCacheInfo("DBPath").getValue().toString() 
 						+ "/" + object.get("baseName").toString();
 				String dBTablePath = DBPath + "/" + object.get("tableName").toString();
 				if(limitMap) {

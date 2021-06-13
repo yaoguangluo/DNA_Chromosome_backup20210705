@@ -57,9 +57,9 @@ public class RestDB_QE {
 			return output;
 		}	
 
-		//		if(CacheManager.getCacheInfo(tablePath + ":" + pageBegin + ":" + pageEnd 
+		//		if(Cache_M.getCacheInfo(tablePath + ":" + pageBegin + ":" + pageEnd 
 		//+ ":" + direction) != null) {
-		//			output = (Map<String, Object>)(CacheManager.getCacheInfo(tablePath 
+		//			output = (Map<String, Object>)(Cache_M.getCacheInfo(tablePath 
 		//+ ":" + pageBegin + ":" + pageEnd + ":" + direction).getValue());
 		//			return output;
 		//		} 
@@ -67,7 +67,7 @@ public class RestDB_QE {
 		//		if(tablePath.equalsIgnoreCase("c:/DetaDB/frontend/login")) {
 		//			Cache c = new Cache();
 		//			c.setValue(output);
-		//			CacheManager.putCache(tablePath + ":" + pageBegin + ":" + pageEnd + ":" + direction, c);
+		//			Cache_M.putCache(tablePath + ":" + pageBegin + ":" + pageEnd + ":" + direction, c);
 		//		}
 		return output;
 	}

@@ -82,11 +82,11 @@ public class test1 extends JPanel
 			//JPEGImageDecoder jid=JPEGCodec.createJPEGDecoder(is);
 			//BufferedImage bi=jid.decodeAsBufferedImage();
 			
-			//bi = new Strech().Processor(bi,0.1,0.9); 
+			//bi = new Strech().P(bi,0.1,0.9); 
 				//media filter
-			//bi = new Median().Processor(bi,0.1,0.9); 
+			//bi = new Median().P(bi,0.1,0.9); 
 	   	      	//guassian filter
-			//bi = new Guassian().Processor(bi,5,5,1.6); //(lygimage,0.1,0.9)
+			//bi = new Guassian().P(bi,5,5,1.6); //(lygimage,0.1,0.9)
 			
 			//this.paint((Image)bi);
 			//mpeg to lyg
@@ -112,13 +112,13 @@ public class test1 extends JPanel
    	    		}
    	      }
    	      	//streach filter
-   	         lygimage = new Strech().Processor(lygimage,0.1,0.9); 
+   	         lygimage = new Strech().P(lygimage,0.1,0.9); 
    		
 			//media filter
-   	         //lygimage = new Median().Processor(lygimage,0.1,0.9); 
+   	         //lygimage = new Median().P(lygimage,0.1,0.9); 
   	
    	      	//guassian filter
-   	         lygimage = new Guassian().Processor(lygimage,5,5,1.6); //(lygimage,0.1,0.9); 
+   	         lygimage = new Guassian().P(lygimage,5,5,1.6); //(lygimage,0.1,0.9); 
 			//
 			this.paint((Image)lygimage);
 			/**/

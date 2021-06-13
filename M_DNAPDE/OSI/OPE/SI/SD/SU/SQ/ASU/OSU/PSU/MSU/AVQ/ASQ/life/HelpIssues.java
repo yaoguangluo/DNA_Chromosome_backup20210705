@@ -5,7 +5,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.PP.HelpProcessIssues;
 import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.analysis.HelpAnalysisIssues;
 import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.management.HelpManagementIssues;
-import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.operation.HelpOperationIssues;
+import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.operation.Help_O_Issues;
 
 public class HelpIssues{
 	public void helpDefinition() {
@@ -27,7 +27,7 @@ public class HelpIssues{
 		//a
 		new HelpAnalysisIssues().vpcsInitons();
 		//o
-		new HelpOperationIssues().vpcsInitons();
+		new Help_O_Issues().vpcsInitons();
 		//p
 		new HelpProcessIssues().vpcsInitons();
 		//m

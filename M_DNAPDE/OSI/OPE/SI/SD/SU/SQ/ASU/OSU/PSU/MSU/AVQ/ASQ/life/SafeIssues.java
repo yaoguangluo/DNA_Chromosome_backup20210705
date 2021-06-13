@@ -5,7 +5,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.PP.SafeProcessIssues;
 import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.analysis.SafeAnalysisIssues;
 import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.management.SafeManagementIssues;
-import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.operation.SafeOperationIssues;
+import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.operation.Safe_O_Issues;
 
 public class SafeIssues{
 	public void safeDefinition() {
@@ -27,7 +27,7 @@ public class SafeIssues{
 		//a
 		new SafeAnalysisIssues().vpcsInitons();
 		//o
-		new SafeOperationIssues().vpcsInitons();
+		new Safe_O_Issues().vpcsInitons();
 		//p
 		new SafeProcessIssues().vpcsInitons();
 		//m

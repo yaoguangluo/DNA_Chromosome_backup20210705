@@ -124,7 +124,7 @@ public class Rest_C_Port_E {
 			output.put("returnResult", "invalid request");
 			return output;
 		}	
-		String DBPath = CacheManager.getCacheInfo("DBPath").getValue().toString() + "/" + baseName;
+		String DBPath = Cache_M.getCacheInfo("DBPath").getValue().toString() + "/" + baseName;
 		//Ëø¶¨±í
 		Map<String, Object> table = new HashMap<>();
 		File fileDBPath = new File(DBPath);
@@ -154,7 +154,7 @@ public class Rest_C_Port_E {
 			output.put("returnResult", "invalid request");
 			return output;
 		}	
-		String DBPath = CacheManager.getCacheInfo("DBPath").getValue().toString();
+		String DBPath = Cache_M.getCacheInfo("DBPath").getValue().toString();
 		Map<String, Object> db = new HashMap<>();
 		List<Object> baseList = new ArrayList<>();
 		File fileDBPath = new File(DBPath);

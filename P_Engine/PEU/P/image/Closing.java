@@ -1,8 +1,8 @@
 package PEU.P.image;
 public class Closing {
-	public int[][] Processor(int[][]g,int[][]kenel){
-		int[][] closing=new Dilation().Processor(g, kenel);
-		closing= new Erosion().Processor(closing,kenel);
+	public int[][] P(int[][]g,int[][]kenel){
+		int[][] closing=new Dilation().P(g, kenel);
+		closing= new Erosion().P(closing,kenel);
 		return closing;
 	}
 }

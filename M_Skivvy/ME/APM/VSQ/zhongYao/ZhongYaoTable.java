@@ -172,18 +172,18 @@ public class ZhongYaoTable implements MouseListener {
 							continue Here;
 						}
 						if(app.pos.get(setOfi).contains("名")) {
-							page+="<span style=\"background:"+new PEU.P.image.ColorProcessor()
-									.Processor(255, 245, 255)+"\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>";
+							page+="<span style=\"background:"+new PEU.P.image.Color_P()
+									.P(255, 245, 255)+"\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>";
 							continue Here;
 						}
 						if(app.pos.get(setOfi).contains("动")) {
-							page+="<span style=\"background:"+new PEU.P.image.ColorProcessor()
-									.Processor(245, 255, 245)+"\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>";
+							page+="<span style=\"background:"+new PEU.P.image.Color_P()
+									.P(245, 255, 245)+"\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>";
 							continue Here;
 						}
 						if(app.pos.get(setOfi).contains("形")) {
-							page+="<span style=\"background:"+new PEU.P.image.ColorProcessor()
-									.Processor(255, 255, 245)+"\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>";
+							page+="<span style=\"background:"+new PEU.P.image.Color_P()
+									.P(255, 255, 245)+"\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>";
 							continue Here;
 						}
 						if(app.pos.get(setOfi).contains("副")) {

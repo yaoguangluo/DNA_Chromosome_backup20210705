@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import OSI.AOP.MEC.SIQ.plorm.PLORMImpl;
-import OSI.AOP.MEC.SIQ.plorm.PLORMInterf;
+import OSI.AOP.MEC.SIQ.plorm.PLORM_E;
+import OSI.AOP.MEC.SIQ.plorm.PLORM_C;
 //OSV PLSQL 研发, 思想, 设计: 罗瑶光 20210507
 //选中一个cell 进行改变
 public class U_CellStandard{	
@@ -38,7 +38,7 @@ public class U_CellStandard{
 			, String cellValue) throws IOException{
 		Map<String, Object> map= null;
 		try {
-			PLORMInterf orm= new PLORMImpl();
+			PLORM_C orm= new PLORM_E();
 			orm.startAtRootDir("C:/DetaDB1").withBaseName("ZYY")
 			.withTableUpdate(tabKey).withCondition("or")
 			.let("ID").equalTo(rowId)
@@ -58,7 +58,7 @@ public class U_CellStandard{
 			, String tabKey, String rowId, String cellName, String cellValue) throws IOException{
 		Map<String, Object> map= null;
 		try {
-			PLORMInterf orm= new PLORMImpl();
+			PLORM_C orm= new PLORM_E();
 			orm.startAtRootDir(rootPath).withBaseName(baseName)
 			.withTableUpdate(tabKey).withCondition("or")
 			.let("ID").equalTo(rowId)
@@ -79,7 +79,7 @@ public class U_CellStandard{
 			, String cellName, String cellValue) throws IOException{
 		Map<String, Object> map= null;
 		try {
-			PLORMInterf orm= new PLORMImpl();
+			PLORM_C orm= new PLORM_E();
 			orm.startAtRootDir(rootPath).withBaseName(baseName)
 			.withTableUpdate(tabKey).withCondition("or")
 			.let(conditionSubject).equalTo(conditionObject)

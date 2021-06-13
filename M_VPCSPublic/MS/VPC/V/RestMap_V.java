@@ -17,7 +17,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import ME.APM.VSQ.App;
-import MS.OP.SM.AOP.MEC.SIQ.cache.DetaCacheManager;
+import MS.OP.SM.AOP.MEC.SIQ.cache.DetaCache_M;
 import OP.SM.AOP.MEC.SIQ.stable.StableData;
 import OSI.AOP.VPC.rest.VPC;
 import PEU.P.zip.*;
@@ -87,8 +87,8 @@ public class RestMap_V {
 			, VPCSResponse vPCSResponse) throws IOException {
 		List<byte[]> list;
 		DataOutputStream dataOutputStream = new DataOutputStream(vPCSResponse.getSocket().getOutputStream());
-		if(null != DetaCacheManager.getCacheOfBytesList(vPCSRequest.getRequestFilePath())){
-			list = DetaCacheManager.getCacheOfBytesList(vPCSRequest.getRequestFilePath());
+		if(null != DetaCache_M.getCacheOfBytesList(vPCSRequest.getRequestFilePath())){
+			list = DetaCache_M.getCacheOfBytesList(vPCSRequest.getRequestFilePath());
 		}else{
 			FileInputStream fileInputStream = new FileInputStream(new File(vPCSRequest.getRequestFilePath()));
 			ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
@@ -114,7 +114,7 @@ public class RestMap_V {
 			if(null != sniper && sniper.length>StableData.INT_ZERO) {
 				list.add(sniper);
 			}
-			DetaCacheManager.putCacheOfBytesList(vPCSRequest.getRequestFilePath(), list);
+			DetaCache_M.putCacheOfBytesList(vPCSRequest.getRequestFilePath(), list);
 		}	
 		Iterator<byte[]> iterator = list.iterator();
 		while(iterator.hasNext()){
@@ -126,8 +126,8 @@ public class RestMap_V {
 
 	public static void P_Buffer(VPCSRequest vPCSRequest, VPCSResponse vPCSResponse) throws IOException {
 		String builderToString;
-		if(null != DetaCacheManager.getCacheOfString(vPCSRequest.getRequestFilePath())){
-			builderToString = DetaCacheManager.getCacheOfString(vPCSRequest.getRequestFilePath());
+		if(null != DetaCache_M.getCacheOfString(vPCSRequest.getRequestFilePath())){
+			builderToString = DetaCache_M.getCacheOfString(vPCSRequest.getRequestFilePath());
 		}else{
 			StringBuilder stringBuilder = new StringBuilder();
 			stringBuilder.append(StableData.HEADER_HTTP_200_OK);
@@ -144,7 +144,7 @@ public class RestMap_V {
 			}
 			bufferedReader.close();
 			builderToString = stringBuilder.toString();
-			DetaCacheManager.putCacheOfString(vPCSRequest.getRequestFilePath(), builderToString);
+			DetaCache_M.putCacheOfString(vPCSRequest.getRequestFilePath(), builderToString);
 		}
 		BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(vPCSResponse.getSocket()
 				.getOutputStream(), vPCSRequest.getRequestFileCode()));
@@ -163,8 +163,8 @@ public class RestMap_V {
 		stringBuilder.append(vPCSResponse.getResponseContentType());
 		String builderToString= stringBuilder.toString();
 		String contentBuilderToString;
-		if(null != DetaCacheManager.getCacheOfString(vPCSRequest.getRequestFilePath())){
-			contentBuilderToString = DetaCacheManager
+		if(null != DetaCache_M.getCacheOfString(vPCSRequest.getRequestFilePath())){
+			contentBuilderToString = DetaCache_M
 					.getCacheOfString(vPCSRequest.getRequestFilePath());
 		}else{
 			StringBuilder contentBuilder = new StringBuilder();
@@ -178,7 +178,7 @@ public class RestMap_V {
 			}
 			fileInputStream.close();
 			contentBuilderToString = contentBuilder.toString();
-			DetaCacheManager.putCacheOfString(vPCSRequest.getRequestFilePath(), contentBuilderToString);
+			DetaCache_M.putCacheOfString(vPCSRequest.getRequestFilePath(), contentBuilderToString);
 		}	
 		DataOutputStream dataOutputStream = new DataOutputStream(vPCSResponse.getSocket().getOutputStream());
 		dataOutputStream.write(builderToString.getBytes(StableData.CHARSET_UTF8));
@@ -190,8 +190,8 @@ public class RestMap_V {
 	public static void P_BytesWithoutZip(VPCSRequest vPCSRequest, VPCSResponse vPCSResponse) throws IOException {
 		List<byte[]> list;
 		DataOutputStream dataOutputStream = new DataOutputStream(vPCSResponse.getSocket().getOutputStream());
-		if(DetaCacheManager.getCacheOfBytesList(vPCSRequest.getRequestFilePath()) != null){
-			list = DetaCacheManager.getCacheOfBytesList(vPCSRequest.getRequestFilePath());
+		if(DetaCache_M.getCacheOfBytesList(vPCSRequest.getRequestFilePath()) != null){
+			list = DetaCache_M.getCacheOfBytesList(vPCSRequest.getRequestFilePath());
 		}else{
 			FileInputStream fileInputStream = new FileInputStream(new File(vPCSRequest.getRequestFilePath()));
 			ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
@@ -212,7 +212,7 @@ public class RestMap_V {
 			list.add(0, "Host:deta software  \n".getBytes("UTF8"));
 			list.add(0, "HTTP/1.1 200 OK \n".getBytes("UTF8"));
 			list.add(sniper);
-			DetaCacheManager.putCacheOfBytesList(vPCSRequest.getRequestFilePath(), list);
+			DetaCache_M.putCacheOfBytesList(vPCSRequest.getRequestFilePath(), list);
 		}	
 		Iterator<byte[]> iterator = list.iterator();
 		while(iterator.hasNext()){

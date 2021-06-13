@@ -1,6 +1,6 @@
 package PVU.P.image;
 public class Filter{
-	public int[][] ProcessorHeart(int[][] rp1, int distance, int scale) {
+	public int[][] P_Heart(int[][] rp1, int distance, int scale) {
 		int mask[][]= new int[rp1.length][rp1[0].length];	
 		for(int i= distance/2; i< rp1.length-distance/2; i++) {
 			for(int j= distance/2; j< rp1[0].length-distance/2; j++) {	
@@ -14,7 +14,7 @@ public class Filter{
 		return mask;
 	}
 
-	public int[][] ProcessorModel(int[][] rp1, int[][] yanjing) {
+	public int[][] P_Model(int[][] rp1, int[][] yanjing) {
 		yanjing= new int[][] {
 			 {4,4,4,4,4,5,5,5,5,5,5,5,5,5,4,4,4,4},
 			 {4,4,4,5,5,5,5,5,5,5,5,5,5,5,5,4,4,4},
@@ -153,7 +153,7 @@ public class Filter{
 		return output;
 	}
 	
-//	public Map<Double, ArrayList<Position2D>> Processor(int[][] rp1, int distance) {
+//	public Map<Double, ArrayList<Position2D>> P(int[][] rp1, int distance) {
 //		Map<Double, ArrayList<Position2D>> map= new HashMap<>();
 //		int mask[][]= new int[rp1.length][rp1[0].length];	
 //		for(int i= 1; i< rp1.length-1; i++) {

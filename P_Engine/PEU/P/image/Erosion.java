@@ -11,7 +11,7 @@ public class Erosion{
 			}
 		}	
 	}
-	public int[][] Processor(int[][] g, int[][] kenel) {		
+	public int[][] P(int[][] g, int[][] kenel) {		
 		int thisw=g.length;
 		int thish=g[0].length;
 		int [][]thisG = null;
