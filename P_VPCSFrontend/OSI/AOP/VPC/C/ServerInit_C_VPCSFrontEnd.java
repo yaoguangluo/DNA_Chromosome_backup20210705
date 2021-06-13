@@ -7,7 +7,7 @@ import java.util.Properties;
 import ME.APM.VSQ.App;
 import MS.VPC.PP.Time_P;
 import MS.VPC.SH.Sleeper;
-import MS.VPC.SH.SleeperHall;
+import MS.VPC.SH.Sleeper_H;
 import OM.config.Config;
 import VPC.VQS.DSU.utils.DetaUtil;
 public class ServerInit_C_VPCSFrontEnd {
@@ -36,8 +36,8 @@ public class ServerInit_C_VPCSFrontEnd {
 		}
 	}
 	
-	private void haoHiYooFaker(SleeperHall sleeperHall) {
-		sleeperHall.callSkivvy(); 
+	private void haoHiYooFaker(Sleeper_H sleeper_H) {
+		sleeper_H.callSkivvy(); 
 	}
 
 	public void initServer(App app) throws IOException {
@@ -48,17 +48,17 @@ public class ServerInit_C_VPCSFrontEnd {
 		System.out.println("----浏阳德塔软件开发有限公司开源项目");
 		Time_P timeProcess= new Time_P();
 		timeProcess.begin();
-		SleeperHall sleeperHall= new SleeperHall();
+		Sleeper_H sleeper_H= new Sleeper_H();
 		init();
 		timeProcess.end();
 		System.out.println("----德塔VPCS前端服务器启动一切正常-总耗时:"+ timeProcess.duration()+ "毫秒");
 		while(true){	
-			if(sleeperHall.getThreadsCount()< 500){
+			if(sleeper_H.getThreadsCount()< 500){
 				Sleeper sleeper= new Sleeper(this.app);
-				sleeper.hugPillow(sleeperHall, server.accept(), sleeper.hashCode());
+				sleeper.hugPillow(sleeper_H, server.accept(), sleeper.hashCode());
 				sleeper.start();
 			}else {
-				haoHiYooFaker(sleeperHall);
+				haoHiYooFaker(sleeper_H);
 			}
 		}
 	}

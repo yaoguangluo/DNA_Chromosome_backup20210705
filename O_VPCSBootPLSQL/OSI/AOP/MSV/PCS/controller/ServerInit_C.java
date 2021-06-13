@@ -8,11 +8,11 @@ import ME.APM.VSQ.App;
 import MS.OP.SM.AOP.MEC.SIQ.cache.DetaDBBufferCache_M;
 import MS.VPC.PP.Time_P;
 import MS.VPC.SH.Sleeper;
-import MS.VPC.SH.SleeperHall;
+import MS.VPC.SH.Sleeper_H;
 import MSV.PCS.C.RequestFilter_C;
 import OM.config.Config;
 import OP.SM.AOP.MEC.SIQ.stable.StableData;
-import OSI.AOP.MS.VPC.S.hall.DatabaseLogHall;
+import OSI.AOP.MS.VPC.S.hall.DatabaseLog_H;
 import VPC.VQS.DSU.utils.DetaUtil;
 public class ServerInit_C {
 	private static ServerSocket server;
@@ -73,7 +73,7 @@ public class ServerInit_C {
 				text="\r\n"+ "...";
 				jTextPane.setText(text);
 			}
-			DatabaseLogHall.createBinLogHall();
+			DatabaseLog_H.createBinLog_H();
 			System.out.println("----德塔VPCS数据库服务器启动整库过程映射服务:成功！");
 			if(jTextPane!= null) {
 				String text= jTextPane.getText();
@@ -90,8 +90,8 @@ public class ServerInit_C {
 		}
 	}
 
-	private static void haoHiYooFaker(SleeperHall sleeperHall) {
-		sleeperHall.callSkivvy(); 
+	private static void haoHiYooFaker(Sleeper_H sleeper_H) {
+		sleeper_H.callSkivvy(); 
 	}
 
 	public static void initServer(App app) throws IOException {
@@ -109,7 +109,7 @@ public class ServerInit_C {
 		}
 		Time_P timeProcess= new Time_P();
 		timeProcess.begin();
-		SleeperHall sleeperHall = new SleeperHall();
+		Sleeper_H sleeper_H = new Sleeper_H();
 		initService(app.appConfig.SectionJPanel.jTextPane);
 		timeProcess.end();
 		if(app.appConfig.SectionJPanel.jTextPane!= null) {
@@ -123,17 +123,17 @@ public class ServerInit_C {
 		+ timeProcess.duration()+ "毫秒");
 		app.ready= true;
 		while(true){
-			if(sleeperHall.getThreadsCount()< StableData.SLEEPERS_RANGE){
+			if(sleeper_H.getThreadsCount()< StableData.SLEEPERS_RANGE){
 				Sleeper sleeper= new Sleeper(app);
 				try {
-					sleeper.hugPillow(sleeperHall, server.accept()
+					sleeper.hugPillow(sleeper_H, server.accept()
 							, sleeper.hashCode());
 					sleeper.start();
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
 			}else {
-				haoHiYooFaker(sleeperHall);
+				haoHiYooFaker(sleeper_H);
 			}
 		}
 	}

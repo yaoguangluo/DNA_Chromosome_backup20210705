@@ -103,8 +103,10 @@ public class YLJFrame{
 					NE = null;
 					e.printStackTrace();
 				}
-				frame.removeAll();
-				frame.disable();
+				if(null!= frame) {
+					frame.removeAll();
+					frame.disable();					
+				}
 				System.gc();
 				System.exit(0);
 			}

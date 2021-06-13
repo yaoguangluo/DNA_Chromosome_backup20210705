@@ -81,9 +81,9 @@ public class Sleeper extends Thread implements Runnable{
 		}
 	}
 
-	public void hugPillow(SleeperHall sleeperHall, Socket accept, int hashCode) {
-		sleeperHall.addE_Sleeper(hashCode, this);
+	public void hugPillow(Sleeper_H sleeper_H, Socket accept, int hashCode) {
+		sleeper_H.addE_Sleeper(hashCode, this);
 		vPCSResponse.setSocket(accept);
-		vPCSResponse.setSleeperHall(sleeperHall);
+		vPCSResponse.setSleeper_H(sleeper_H);
 	}
 }

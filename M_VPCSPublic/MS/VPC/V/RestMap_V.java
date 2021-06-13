@@ -41,7 +41,7 @@ public class RestMap_V {
 	}
 
 	public static void returnResponse(VPCSRequest vPCSRequest, VPCSResponse vPCSResponse) {
-		vPCSResponse.getSleeperHall().removeThreadById(vPCSResponse.getHashCode());
+		vPCSResponse.getSleeper_H().removeThreadById(vPCSResponse.getHashCode());
 	}
 
 	public static void P_Rest(VPCSRequest vPCSRequest, VPCSResponse vPCSResponse) throws Exception {
@@ -56,7 +56,7 @@ public class RestMap_V {
 		printWriter.println(output);
 		printWriter.flush();
 		printWriter.close();	
-		vPCSResponse.getSleeperHall().removeThreadById(vPCSResponse.getSocket().hashCode());
+		vPCSResponse.getSleeper_H().removeThreadById(vPCSResponse.getSocket().hashCode());
 	}
 	
 	public static void P_Rest(App app, VPCSRequest vPCSRequest, VPCSResponse vPCSResponse) throws Exception {
@@ -76,7 +76,7 @@ public class RestMap_V {
 		System.out.println("db:"+4);
 		printWriter.flush();
 		printWriter.close();	
-		vPCSResponse.getSleeperHall().removeThreadById(vPCSResponse.getSocket().hashCode());	
+		vPCSResponse.getSleeper_H().removeThreadById(vPCSResponse.getSocket().hashCode());	
 	}
 
 	public static void P_View(VPCSRequest vPCSRequest, VPCSResponse vPCSResponse) {

@@ -5,7 +5,7 @@ import java.util.Map;
 import OSI.OPE.PSQ.OEU.SOI.SMQ.neroCell.BootNeroDoc;
 
 public class Skivvy{
-	public static void working(Map<Long, BootNeroDoc> hallKeeper, Exception e) {
+	public static void working(Map<Long, BootNeroDoc> _H_Keeper, Exception e) {
 
 	}
 	//大家可自由将loadE进行继承封装 满足各类应用需要。

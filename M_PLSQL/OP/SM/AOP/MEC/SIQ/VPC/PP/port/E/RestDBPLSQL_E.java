@@ -7,7 +7,7 @@ import org.json.JSONObject;
 
 import ME.SM.OP.SM.AOP.MEC.SIQ.E.E_PLSQL_E;
 import OP.SM.AOP.MEC.SIQ.VPC.PP.company.E.LoginService_E;
-import OSI.AOP.MS.VPC.S.hall.DatabaseLogHall;
+import OSI.AOP.MS.VPC.S.hall.DatabaseLog_H;
 import PEU.P.md5.*;
 //
 //baseName:backend;
@@ -47,7 +47,7 @@ public class RestDBPLSQL_E {
 		//write monior
 		if(plsql.contains("update")||plsql.contains("insert")||plsql.contains("delete")
 				||plsql.contains("drop")||plsql.contains("change")||plsql.contains("create")) {
-			DatabaseLogHall.writeLogFile(System.currentTimeMillis(), who, plsql);
+			DatabaseLog_H.writeLogFile(System.currentTimeMillis(), who, plsql);
 			try {
 				E_PLSQL_E.E_PLSQL(plsql, false);
 			}catch(Exception e) {

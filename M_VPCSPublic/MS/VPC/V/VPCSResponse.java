@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
 
-import MS.VPC.SH.SleeperHall;
+import MS.VPC.SH.Sleeper_H;
 public class VPCSResponse{
 	public Socket getSocket() {
 		return socket;
@@ -13,12 +13,12 @@ public class VPCSResponse{
 		this.socket = socket;
 	}
 
-	public SleeperHall getSleeperHall() {
-		return sleeperHall;
+	public Sleeper_H getSleeper_H() {
+		return sleeper_H;
 	}
 
-	public void setSleeperHall(SleeperHall sleeperHall) {
-		this.sleeperHall = sleeperHall;
+	public void setSleeper_H(Sleeper_H sleeper_H) {
+		this.sleeper_H = sleeper_H;
 	}
 
 	public Integer getHashCode() {
@@ -46,13 +46,13 @@ public class VPCSResponse{
 	}
 
 	private Socket socket;
-	private SleeperHall sleeperHall;
+	private Sleeper_H sleeper_H;
 	private Integer hashCode;
 	private int errorCode;
 	private String ResponseContentType;
 	public void return404() throws IOException {
 		if(socket.isClosed()) {
-			this.sleeperHall.removeThreadById(this.hashCode);
+			this.sleeper_H.removeThreadById(this.hashCode);
 			return;
 		}
 		PrintWriter pw = new PrintWriter(this.socket.getOutputStream(), true);
@@ -60,12 +60,12 @@ public class VPCSResponse{
 		pw.flush();
 		pw.close();
 		socket.close();
-		this.sleeperHall.removeThreadById(this.hashCode);
+		this.sleeper_H.removeThreadById(this.hashCode);
 	}
 
 	public void returnErrorCode(Integer errorCode) throws IOException {
 		if(socket.isClosed()) {
-			this.sleeperHall.removeThreadById(this.hashCode);
+			this.sleeper_H.removeThreadById(this.hashCode);
 			return;
 		}
 		PrintWriter pw = new PrintWriter(this.socket.getOutputStream(), true);
@@ -73,6 +73,6 @@ public class VPCSResponse{
 		pw.flush();
 		pw.close();
 		socket.close();
-		this.sleeperHall.removeThreadById(this.hashCode);
+		this.sleeper_H.removeThreadById(this.hashCode);
 	}
 }
