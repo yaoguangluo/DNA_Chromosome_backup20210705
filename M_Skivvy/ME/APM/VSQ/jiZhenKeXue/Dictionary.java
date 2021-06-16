@@ -12,7 +12,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import ME.S.stables.PathLinkFile;
+import SVQ.stable.StableFile;
 
 public class Dictionary{	
 	public List<String> dic_list;
@@ -34,7 +34,7 @@ public class Dictionary{
 	public Map<String,Object> dic_yx;
 	public List<String> txtToList() throws IOException{
 		List<String> TEMP_list = new ArrayList<>();
-		InputStream in = this.getClass().getResourceAsStream(PathLinkFile.jzkxPage_txt);
+		InputStream in = this.getClass().getResourceAsStream(StableFile.jzkxPage_txt);
 		BufferedReader cReader = new BufferedReader(new InputStreamReader(in, "UTF8"));  
 		String ctempString = null; 
 		while ((ctempString = cReader.readLine()) != null) {  

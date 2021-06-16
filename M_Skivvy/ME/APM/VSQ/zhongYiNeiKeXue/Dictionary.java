@@ -10,7 +10,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import ME.S.stables.PathLinkFile;
+import SVQ.stable.StableFile;
 
 import java.util.List;
 import java.util.Map;
@@ -20,7 +20,7 @@ public class Dictionary{
 	public Map<String,Object> dic_chu_fang;
 	public List<String> txtToList() throws IOException{
 		List<String> TEMP_list = new ArrayList<>();
-		InputStream in = this.getClass().getResourceAsStream(PathLinkFile.n_txt);
+		InputStream in = this.getClass().getResourceAsStream(StableFile.n_txt);
 		BufferedReader cReader = new BufferedReader(new InputStreamReader(in));  
 		String ctempString = null; 
 		while ((ctempString = cReader.readLine()) != null) {  
@@ -29,7 +29,7 @@ public class Dictionary{
 		}
 		cReader.close();
 		
-		in = this.getClass().getResourceAsStream(PathLinkFile.wbx142f_txt);
+		in = this.getClass().getResourceAsStream(StableFile.wbx142f_txt);
 		cReader = new BufferedReader(new InputStreamReader(in, "GBK"));  
 		ctempString = null; 
 		while ((ctempString = cReader.readLine()) != null) {  
@@ -38,7 +38,7 @@ public class Dictionary{
 		}
 		cReader.close();
 		
-		in = this.getClass().getResourceAsStream(PathLinkFile.中医方剂学_txt);
+		in = this.getClass().getResourceAsStream(StableFile.中医方剂学_txt);
 		cReader = new BufferedReader(new InputStreamReader(in, "GBK"));  
 		ctempString = null; 
 		while ((ctempString = cReader.readLine()) != null) {  
@@ -47,7 +47,7 @@ public class Dictionary{
 		}
 		cReader.close();
 		
-		in = this.getClass().getResourceAsStream(PathLinkFile.zydcd_txt);
+		in = this.getClass().getResourceAsStream(StableFile.zydcd_txt);
 		cReader = new BufferedReader(new InputStreamReader(in, "GBK"));  
 		ctempString = null; 
 		while ((ctempString = cReader.readLine()) != null) {  

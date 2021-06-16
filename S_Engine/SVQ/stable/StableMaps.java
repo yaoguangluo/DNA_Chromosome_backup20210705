@@ -1,4 +1,4 @@
-package AVQ.ASQ.OVQ.OSQ.VSQ.stable;
+package SVQ.stable;
 import java.util.HashMap;
 import java.util.Map;
 public interface StableMaps{

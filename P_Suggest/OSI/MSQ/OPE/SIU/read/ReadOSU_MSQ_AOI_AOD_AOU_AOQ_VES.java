@@ -10,7 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 import OSI.OPE.AOPM.VECS.IDUQ.OVU.PQE.flash.ThisCanvas;
-import OSI.OPE.MSQ.SS.stable.StableData;
+import SVQ.stable.StableAnnotation;
 import OSI.OPE.OEQ.MCQ.OVU.PQE.osgi.*;
 
 import java.awt.Panel;
@@ -67,7 +67,7 @@ public class ReadOSU_MSQ_AOI_AOD_AOU_AOQ_VES extends OSU_AVQ_ASQ_AOI_AOD_AOU_AOQ
 				JFileChooser jFileChooser= new JFileChooser();
 				jFileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 				jFileChooser.setFileHidingEnabled(false);
-				jFileChooser.showDialog(new Frame(), StableData.ATTENSION_SELECT_ENSURE);
+				jFileChooser.showDialog(new Frame(), StableAnnotation.ATTENSION_SELECT_ENSURE);
 				File file= jFileChooser.getSelectedFile();
 				fileCurrentpath= file.getAbsolutePath();
 				

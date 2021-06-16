@@ -2,16 +2,16 @@ package PEQ.OPM.VEC.test;
 import java.io.IOException;
 
 import AEU.OPM.VEC.ica.InitBehaviorICAKernel;
-import AVQ.ASQ.OVQ.OSQ.VSQ.stable.StableData;
+import SVQ.stable.StablePOS;
 
 public class LiterarinessLevelTest{
 	double[] literarinessLevel;
 	double literarinessDuration;
 	public void getEducationLevel(double[][] measurement) {
 		literarinessLevel= new double[measurement.length];
-		for(int i= StableData.INT_ZERO; i< measurement.length; i++) {
-			literarinessLevel[i]=(measurement[i][StableData.INT_ZERO]*measurement[i][StableData.INT_THREE])
-					/measurement[i][StableData.INT_ONE];
+		for(int i= StablePOS.INT_ZERO; i< measurement.length; i++) {
+			literarinessLevel[i]=(measurement[i][StablePOS.INT_ZERO]*measurement[i][StablePOS.INT_THREE])
+					/measurement[i][StablePOS.INT_ONE];
 			literarinessDuration+=literarinessLevel[i];
 			System.out.println("literarinessLevel:" +literarinessLevel[i]);
 		}

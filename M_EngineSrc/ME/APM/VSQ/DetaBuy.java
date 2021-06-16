@@ -14,7 +14,7 @@ import java.io.IOException;
 
 import javax.swing.ImageIcon;
 import javax.swing.JTabbedPane;
-import ME.S.stables.PathLinkFile;
+import SVQ.stable.StableFile;
 import ME.APM.VSQ.OPE.config.DetaJPanel;
 
 
@@ -23,7 +23,7 @@ public class DetaBuy extends ScrollPane implements MouseListener, KeyListener, A
 	public boolean isConfig= true;
 	public DetaJPanel SectionJPanel;
 	public void init(App app) throws IOException{
-		PathLinkFile.DNA_PDN.put(this.getClass().getCanonicalName(), true);
+		StableFile.DNA_PDN.put(this.getClass().getCanonicalName(), true);
 		JTabbedPane jTabbedpane= new JTabbedPane();
 		Container SectionJPanelContainer= new Container();
 		SectionJPanel= new DetaJPanel(app);

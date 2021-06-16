@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import AVQ.ASQ.OVQ.OSQ.VSQ.obj.WordFrequency;
-import AVQ.ASQ.OVQ.OSQ.VSQ.stable.StableData;
+import SVQ.stable.StablePOS;
 import OCI.ME.liner.C.Quick6DLuoYaoguangSort;
 /*
 ** 快排6小高峰修正算法 作者 罗瑶光
@@ -13,23 +13,23 @@ import OCI.ME.liner.C.Quick6DLuoYaoguangSort;
 */
 public class Quick6DLuoYaoguangSort_E implements Quick6DLuoYaoguangSort {
 	public void quick6DLuoYaoGuangSortWordFrequency(List<WordFrequency> list, int leftPosition, int rightPosition) {		
-		int c= rightPosition- leftPosition+ StableData.INT_ONE;
-		if(c>  StableData.INT_FOUR) {
+		int c= rightPosition- leftPosition+ StablePOS.INT_ONE;
+		if(c>  StablePOS.INT_FOUR) {
 			int pos = partition(list, leftPosition, rightPosition);
-			if(leftPosition< pos- StableData.INT_ONE) {
-				quick6DLuoYaoGuangSortWordFrequency(list, leftPosition, pos - StableData.INT_ONE);
+			if(leftPosition< pos- StablePOS.INT_ONE) {
+				quick6DLuoYaoGuangSortWordFrequency(list, leftPosition, pos - StablePOS.INT_ONE);
 			}
-			if(pos+ StableData.INT_ONE< leftPosition) {
+			if(pos+ StablePOS.INT_ONE< leftPosition) {
 				quick6DLuoYaoGuangSortWordFrequency(list, ++ pos, rightPosition);
 			}
 			return;
 		}
 		int i= leftPosition;
-		for(int j= i+ StableData.INT_ONE; j< leftPosition+ c; j= i++){
+		for(int j= i+ StablePOS.INT_ONE; j< leftPosition+ c; j= i++){
 			while(j> leftPosition){
 				if (list.get(j).getFrequency()< list.get(--j).getFrequency()) {
-					WordFrequency wordFrequency = list.get(j+ StableData.INT_ONE);
-					list.set(j+ StableData.INT_ONE, list.get(j));
+					WordFrequency wordFrequency = list.get(j+ StablePOS.INT_ONE);
+					list.set(j+ StablePOS.INT_ONE, list.get(j));
 					list.set(j, wordFrequency);
 				}
 			}
@@ -62,7 +62,7 @@ public class Quick6DLuoYaoguangSort_E implements Quick6DLuoYaoguangSort {
 		return rightPosition;
 	}
 
-	@SuppressWarnings(StableData.RAW_TYPES)
+	@SuppressWarnings(StablePOS.RAW_TYPES)
 	public List<WordFrequency> frequencyWordMapToList(Map<String, WordFrequency> map) {
 		List<WordFrequency> list= new ArrayList<>();
 		Iterator iterator= map.keySet().iterator();
@@ -79,7 +79,7 @@ public class Quick6DLuoYaoguangSort_E implements Quick6DLuoYaoguangSort {
 
 	@Override
 	public int partition(Map<Integer, WordFrequency> map, int leftPosition, int rightPosition) {
-		return StableData.INT_ZERO;
+		return StablePOS.INT_ZERO;
 	}
 
 	@Override

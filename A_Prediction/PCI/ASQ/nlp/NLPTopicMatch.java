@@ -8,11 +8,11 @@ import java.util.List;
 import java.util.Map;
 
 import AVQ.ASQ.OVQ.OSQ.VSQ.obj.WordFrequency;
-import AVQ.ASQ.OVQ.OSQ.VSQ.stable.StableData;
 import ESU.list.List_ESU;
 import OCI.ME.analysis.C.A;
 import OEI.ME.analysis.E.CogsBinaryForest_AE;
 import OEU.LYG4DQS4D.LYG9DWithDoubleQuickSort4D;
+import SVQ.stable.StablePOS;
 //import OSI.PCI.ASQ.statistic.LYG4DWithDoubleQuickSort4D;
 public class NLPTopicMatch{
 	//<<NLP Algorithm of Matching The POS Scored Sentence>>.
@@ -145,11 +145,11 @@ public class NLPTopicMatch{
 			if(nlp.containsKey(key)) {
 				String pos= nlp.get(key);
 				//init rights of POS {30,20,10,3,1}
-				if(pos.contains(StableData.NLP_CI_MING)) {// n.
+				if(pos.contains(StablePOS.NLP_CI_MING)) {// n.
 					scoreRights[scoreRightsPoint]= 30* keyMap.get(key).getFrequency();
-				}else if(pos.contains(StableData.NLP_CI_DONG)) {//v
+				}else if(pos.contains(StablePOS.NLP_CI_DONG)) {//v
 					scoreRights[scoreRightsPoint]= 20* keyMap.get(key).getFrequency();
-				}else if(pos.contains(StableData.NLP_CI_XING_RONG)) {//adj
+				}else if(pos.contains(StablePOS.NLP_CI_XING_RONG)) {//adj
 					scoreRights[scoreRightsPoint]= 10* keyMap.get(key).getFrequency();
 				}else {
 					scoreRights[scoreRightsPoint]= 3* keyMap.get(key).getFrequency();

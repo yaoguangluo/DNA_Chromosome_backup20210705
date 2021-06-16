@@ -1,9 +1,9 @@
-package ME.S.stables;
+package SVQ.stable;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class PathLinkFile{
+public class StableFile{
 	public static Map<String, Object> DNA_PDN= new LinkedHashMap<>();
 //	//test
 	public static final String logo_png= "logo.png";

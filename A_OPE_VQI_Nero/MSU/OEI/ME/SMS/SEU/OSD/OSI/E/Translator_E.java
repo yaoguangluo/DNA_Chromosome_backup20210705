@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import AVQ.ASQ.OVQ.OSQ.VSQ.obj.Verbal;
-import AVQ.ASQ.OVQ.OSQ.VSQ.stable.StableData;
+import SVQ.stable.StablePOS;
 import MSU.OCI.ME.SMS.translator.C.Translator;
 import OCI.ME.analysis.C.A;
 public class Translator_E implements Translator{
@@ -32,16 +32,16 @@ public class Translator_E implements Translator{
 		StringBuilder sb = new StringBuilder();
 		for(String temp:nodes) {
 			char[] caseTemp = temp.toCharArray();
-			caseTemp[StableData.INT_ONE] = String.valueOf(caseTemp[StableData.INT_ONE])
-					.toUpperCase().charAt(StableData.INT_ONE);
+			caseTemp[StablePOS.INT_ONE] = String.valueOf(caseTemp[StablePOS.INT_ONE])
+					.toUpperCase().charAt(StablePOS.INT_ONE);
 			if(etc.containsKey(temp)) {
-				sb.append(etc.get(temp).split(StableData.NLP_DOT)[StableData.INT_ONE]);
+				sb.append(etc.get(temp).split(StablePOS.NLP_DOT)[StablePOS.INT_ONE]);
 			}else if(fulletc.containsKey(String.valueOf(caseTemp))){
 				sb.append(fulletc.get(String.valueOf(caseTemp)));
 			}else {
 				sb.append(temp);
 			}
-			sb.append(StableData.SPACE_STRING);
+			sb.append(StablePOS.SPACE_STRING);
 		}
 		return sb.toString();
 	}
@@ -59,7 +59,7 @@ public class Translator_E implements Translator{
 			}else {
 				sb.append(temp);
 			}
-			sb.append(StableData.SPACE_STRING);
+			sb.append(StablePOS.SPACE_STRING);
 		}
 		return sb.toString();
 	}
@@ -75,11 +75,11 @@ public class Translator_E implements Translator{
 			}else {
 				String[] strings = _A.parserEnglishString(temp);
 				for(String string:strings) {
-					if(string == null || string.length() < StableData.INT_ONE) {
-						string = StableData.EMPTY_STRING;
+					if(string == null || string.length() < StablePOS.INT_ONE) {
+						string = StablePOS.EMPTY_STRING;
 					}
 					if(etc.containsKey(string)) {
-						sb.append(etc.get(string).split(StableData.NLP_DOT)[StableData.INT_ZERO]);
+						sb.append(etc.get(string).split(StablePOS.NLP_DOT)[StablePOS.INT_ZERO]);
 					}else if(fulletc.containsKey(string)){
 						sb.append(fulletc.get(string));
 					}else {
@@ -105,10 +105,10 @@ public class Translator_E implements Translator{
 				sb.append(temp);
 			}
 			if(poscc.containsKey(temp)) {
-				sb.append(StableData.NLP_SYMBO_SLASH);
+				sb.append(StablePOS.NLP_SYMBO_SLASH);
 				sb.append(poscc.get(temp));
 			}
-			sb.append(StableData.SPACE_STRING);
+			sb.append(StablePOS.SPACE_STRING);
 		}
 		return sb.toString();
 	}
@@ -146,8 +146,8 @@ public class Translator_E implements Translator{
 			}else {
 				verbal.setEnglish(word);
 				verbal.setChinese(fulletc.get(word));
-				verbal.setPartOfSpeech(StableData.NLP_NULL);
-				verbal.setExplain(StableData.NLP_NULL);
+				verbal.setPartOfSpeech(StablePOS.NLP_NULL);
+				verbal.setExplain(StablePOS.NLP_NULL);
 			}	
 			verbals.add(verbal);
 		}
@@ -157,140 +157,140 @@ public class Translator_E implements Translator{
 	public List<Verbal> fixPos(List<Verbal> verbals) {
 		for(int i = 0; i < verbals.size(); i++) {
 			if(verbals.get(i).getPartOfSpeech() != null) {
-				if(verbals.get(i).getPartOfSpeech().contains(StableData.NLP_ZI_DONG)){
-					if(!verbals.get(i).getPartOfSpeech().contains(StableData.NLP_ZI_MING)){
-						if(i - StableData.INT_ONE > StableData.INT_ZERO && verbals.get(i - StableData.INT_ONE)
-								.getEnglish().contains(StableData.NLP_ENGLISH_OF)) {
+				if(verbals.get(i).getPartOfSpeech().contains(StablePOS.NLP_ZI_DONG)){
+					if(!verbals.get(i).getPartOfSpeech().contains(StablePOS.NLP_ZI_MING)){
+						if(i - StablePOS.INT_ONE > StablePOS.INT_ZERO && verbals.get(i - StablePOS.INT_ONE)
+								.getEnglish().contains(StablePOS.NLP_ENGLISH_OF)) {
 							Verbal temp = verbals.get(i);
-							temp.setPartOfSpeech(StableData.NLP_CI_DONG_MING);
-							String english = temp.getEnglish().replace(StableData.SPACE_STRING, StableData.EMPTY_STRING);
-							if(english.charAt(english.length() - StableData.INT_ONE) == StableData.NLP_CHAR_E) {
-								english = StableData.NLP_ENGLISH_THE + StableData.SPACE_STRING 
-										+ english.substring(StableData.INT_ZERO, english.length() - StableData.INT_ONE) 
-										+ StableData.NLP_ENGLISH_ING;
+							temp.setPartOfSpeech(StablePOS.NLP_CI_DONG_MING);
+							String english = temp.getEnglish().replace(StablePOS.SPACE_STRING, StablePOS.EMPTY_STRING);
+							if(english.charAt(english.length() - StablePOS.INT_ONE) == StablePOS.NLP_CHAR_E) {
+								english = StablePOS.NLP_ENGLISH_THE + StablePOS.SPACE_STRING 
+										+ english.substring(StablePOS.INT_ZERO, english.length() - StablePOS.INT_ONE) 
+										+ StablePOS.NLP_ENGLISH_ING;
 							}else {
-								english = StableData.NLP_ENGLISH_THE + StableData.SPACE_STRING + english + StableData.NLP_ENGLISH_ING;
+								english = StablePOS.NLP_ENGLISH_THE + StablePOS.SPACE_STRING + english + StablePOS.NLP_ENGLISH_ING;
 							}
 							temp.setEnglish(english);
-						}else if(verbals.get(i + StableData.INT_ONE).getPartOfSpeech().contains(StableData.NLP_ZI_MING)){
-							if(i - StableData.INT_ONE >= StableData.INT_ZERO && !verbals.get(i - StableData.INT_ONE).getPartOfSpeech()
-									.contains(StableData.NLP_ZI_MING)){
-								if(!verbals.get(i - StableData.INT_ONE).getPartOfSpeech().contains(StableData.NLP_ZI_DAI)){
-									if(verbals.get(i - StableData.INT_ONE).getPartOfSpeech().contains(StableData.NLP_ZI_JIE)){
-										if(verbals.get(i - StableData.INT_ONE).getChinese().contains(StableData.NLP_ZI_ZAI)){
-											if(verbals.get(i + StableData.INT_ONE).getChinese().contains(StableData.NLP_ZI_ZHONG)){
-												Verbal temp = verbals.get(i + StableData.INT_ONE);
-												temp.setEnglish(StableData.NLP_ENGLISH_STATUS);
+						}else if(verbals.get(i + StablePOS.INT_ONE).getPartOfSpeech().contains(StablePOS.NLP_ZI_MING)){
+							if(i - StablePOS.INT_ONE >= StablePOS.INT_ZERO && !verbals.get(i - StablePOS.INT_ONE).getPartOfSpeech()
+									.contains(StablePOS.NLP_ZI_MING)){
+								if(!verbals.get(i - StablePOS.INT_ONE).getPartOfSpeech().contains(StablePOS.NLP_ZI_DAI)){
+									if(verbals.get(i - StablePOS.INT_ONE).getPartOfSpeech().contains(StablePOS.NLP_ZI_JIE)){
+										if(verbals.get(i - StablePOS.INT_ONE).getChinese().contains(StablePOS.NLP_ZI_ZAI)){
+											if(verbals.get(i + StablePOS.INT_ONE).getChinese().contains(StablePOS.NLP_ZI_ZHONG)){
+												Verbal temp = verbals.get(i + StablePOS.INT_ONE);
+												temp.setEnglish(StablePOS.NLP_ENGLISH_STATUS);
 											}
 										}
 									}
 									Verbal temp = verbals.get(i);
-									temp.setPartOfSpeech(StableData.NLP_CI_DONG_MING);
-									String english = temp.getEnglish().replace(StableData.SPACE_STRING, StableData.EMPTY_STRING);
-									if(english.charAt(english.length()-StableData.INT_ONE) == StableData.NLP_CHAR_E) {
-										english = StableData.NLP_ENGLISH_THE + StableData.SPACE_STRING 
-												+ english.substring(StableData.INT_ZERO, english.length() - StableData.INT_ONE) 
-												+ StableData.NLP_ENGLISH_ING;
+									temp.setPartOfSpeech(StablePOS.NLP_CI_DONG_MING);
+									String english = temp.getEnglish().replace(StablePOS.SPACE_STRING, StablePOS.EMPTY_STRING);
+									if(english.charAt(english.length()-StablePOS.INT_ONE) == StablePOS.NLP_CHAR_E) {
+										english = StablePOS.NLP_ENGLISH_THE + StablePOS.SPACE_STRING 
+												+ english.substring(StablePOS.INT_ZERO, english.length() - StablePOS.INT_ONE) 
+												+ StablePOS.NLP_ENGLISH_ING;
 									}else {
-										english = StableData.NLP_ENGLISH_THE + StableData.SPACE_STRING + english + StableData.NLP_ENGLISH_ING;
+										english = StablePOS.NLP_ENGLISH_THE + StablePOS.SPACE_STRING + english + StablePOS.NLP_ENGLISH_ING;
 									}
 									temp.setEnglish(english);
 								}
 							}
-							if(verbals.get(i + StableData.INT_TWO).getPartOfSpeech().contains(StableData.NLP_ZI_DONG)){
-								if(!verbals.get(i + StableData.INT_TWO).getPartOfSpeech().contains(StableData.NLP_ZI_MING)){
-									if(verbals.get(i + StableData.INT_THREE).getPartOfSpeech().contains(StableData.NLP_ZI_MING)){
-										Verbal temp = verbals.get(i + StableData.INT_TWO);
-										temp.setPartOfSpeech(StableData.NLP_CI_DONG_MING);
-										String english = temp.getEnglish().replace(StableData.SPACE_STRING, StableData.EMPTY_STRING);
-										if(english.charAt(english.length() - StableData.INT_ONE) == StableData.NLP_CHAR_E) {
-											english = StableData.NLP_ENGLISH_OF + StableData.SPACE_STRING +
-													StableData.NLP_ENGLISH_THE + StableData.SPACE_STRING 
-													+ english.substring(StableData.INT_ZERO, english.length()-StableData.INT_ONE) 
-													+ StableData.NLP_ENGLISH_ING;
+							if(verbals.get(i + StablePOS.INT_TWO).getPartOfSpeech().contains(StablePOS.NLP_ZI_DONG)){
+								if(!verbals.get(i + StablePOS.INT_TWO).getPartOfSpeech().contains(StablePOS.NLP_ZI_MING)){
+									if(verbals.get(i + StablePOS.INT_THREE).getPartOfSpeech().contains(StablePOS.NLP_ZI_MING)){
+										Verbal temp = verbals.get(i + StablePOS.INT_TWO);
+										temp.setPartOfSpeech(StablePOS.NLP_CI_DONG_MING);
+										String english = temp.getEnglish().replace(StablePOS.SPACE_STRING, StablePOS.EMPTY_STRING);
+										if(english.charAt(english.length() - StablePOS.INT_ONE) == StablePOS.NLP_CHAR_E) {
+											english = StablePOS.NLP_ENGLISH_OF + StablePOS.SPACE_STRING +
+													StablePOS.NLP_ENGLISH_THE + StablePOS.SPACE_STRING 
+													+ english.substring(StablePOS.INT_ZERO, english.length()-StablePOS.INT_ONE) 
+													+ StablePOS.NLP_ENGLISH_ING;
 										}else {
-											english = StableData.NLP_ENGLISH_OF + StableData.SPACE_STRING +
-													StableData.NLP_ENGLISH_THE + StableData.SPACE_STRING + english + StableData.NLP_ENGLISH_ING;
+											english = StablePOS.NLP_ENGLISH_OF + StablePOS.SPACE_STRING +
+													StablePOS.NLP_ENGLISH_THE + StablePOS.SPACE_STRING + english + StablePOS.NLP_ENGLISH_ING;
 										}
 										temp.setEnglish(english);
 									}
 								}
 							}
-						}else if(i - StableData.INT_ONE >= StableData.INT_ZERO && verbals.get(i - StableData.INT_ONE)
-								.getPartOfSpeech().contains(StableData.NLP_ZI_JIE)){
+						}else if(i - StablePOS.INT_ONE >= StablePOS.INT_ZERO && verbals.get(i - StablePOS.INT_ONE)
+								.getPartOfSpeech().contains(StablePOS.NLP_ZI_JIE)){
 							Verbal temp = verbals.get(i);
-							temp.setPartOfSpeech(StableData.NLP_CI_DONG_MING);
-							String english = temp.getEnglish().replace(StableData.SPACE_STRING, StableData.EMPTY_STRING);
-							if(english.charAt(english.length() - StableData.INT_ONE) == StableData.NLP_CHAR_E) {
-								english = StableData.NLP_ENGLISH_THE + StableData.SPACE_STRING + english.substring(StableData.INT_ZERO
-										, english.length() - StableData.INT_ONE) + StableData.NLP_ENGLISH_ING;
+							temp.setPartOfSpeech(StablePOS.NLP_CI_DONG_MING);
+							String english = temp.getEnglish().replace(StablePOS.SPACE_STRING, StablePOS.EMPTY_STRING);
+							if(english.charAt(english.length() - StablePOS.INT_ONE) == StablePOS.NLP_CHAR_E) {
+								english = StablePOS.NLP_ENGLISH_THE + StablePOS.SPACE_STRING + english.substring(StablePOS.INT_ZERO
+										, english.length() - StablePOS.INT_ONE) + StablePOS.NLP_ENGLISH_ING;
 							}else {
-								english = StableData.NLP_ENGLISH_THE + StableData.SPACE_STRING  + english + StableData.NLP_ENGLISH_ING;
+								english = StablePOS.NLP_ENGLISH_THE + StablePOS.SPACE_STRING  + english + StablePOS.NLP_ENGLISH_ING;
 							}
 							temp.setEnglish(english);
-						}else if(i - StableData.INT_ONE >= StableData.INT_ZERO && verbals.get(i - StableData.INT_ONE).getPartOfSpeech()
-								.contains(StableData.NLP_ZI_FU)){
+						}else if(i - StablePOS.INT_ONE >= StablePOS.INT_ZERO && verbals.get(i - StablePOS.INT_ONE).getPartOfSpeech()
+								.contains(StablePOS.NLP_ZI_FU)){
 							Verbal temp = verbals.get(i);
-							temp.setPartOfSpeech(StableData.NLP_CI_DONG_MING);
-							String english = temp.getEnglish().replace(StableData.SPACE_STRING, StableData.EMPTY_STRING);
-							if(english.charAt(english.length() - StableData.INT_ONE) == StableData.NLP_CHAR_E) {
-								english = english.substring(StableData.INT_ZERO, english.length() - StableData.INT_ONE) 
-										+ StableData.NLP_ENGLISH_ING;
+							temp.setPartOfSpeech(StablePOS.NLP_CI_DONG_MING);
+							String english = temp.getEnglish().replace(StablePOS.SPACE_STRING, StablePOS.EMPTY_STRING);
+							if(english.charAt(english.length() - StablePOS.INT_ONE) == StablePOS.NLP_CHAR_E) {
+								english = english.substring(StablePOS.INT_ZERO, english.length() - StablePOS.INT_ONE) 
+										+ StablePOS.NLP_ENGLISH_ING;
 							}else {
-								english += StableData.NLP_ENGLISH_ING;
+								english += StablePOS.NLP_ENGLISH_ING;
 							}
 							temp.setEnglish(english);
 						}
 					}
-				}else if(verbals.get(i).getPartOfSpeech().contains(StableData.NLP_ZI_MING)){
-					if(i - StableData.INT_ONE >= StableData.INT_ZERO && verbals.get(i - StableData.INT_ONE)
-							.getPartOfSpeech().contains(StableData.NLP_FU_SHU)){
+				}else if(verbals.get(i).getPartOfSpeech().contains(StablePOS.NLP_ZI_MING)){
+					if(i - StablePOS.INT_ONE >= StablePOS.INT_ZERO && verbals.get(i - StablePOS.INT_ONE)
+							.getPartOfSpeech().contains(StablePOS.NLP_FU_SHU)){
 						Verbal temp = verbals.get(i);
-						String english = temp.getEnglish().replace(StableData.SPACE_STRING, StableData.EMPTY_STRING);
-						if(english.charAt(english.length()-1) == StableData.NLP_CHAR_H || english.charAt(english.length()-1) 
-								== StableData.NLP_CHAR_S) {
-							english += StableData.NLP_ENGLISH_ES;
+						String english = temp.getEnglish().replace(StablePOS.SPACE_STRING, StablePOS.EMPTY_STRING);
+						if(english.charAt(english.length()-1) == StablePOS.NLP_CHAR_H || english.charAt(english.length()-1) 
+								== StablePOS.NLP_CHAR_S) {
+							english += StablePOS.NLP_ENGLISH_ES;
 						}else {
-							english += StableData.NLP_ENGLISH_S;
+							english += StablePOS.NLP_ENGLISH_S;
 						}
 						temp.setEnglish(english);
 					}
-				}else if(verbals.get(i).getPartOfSpeech().contains(StableData.NLP_CI_FU)){
-					if(i - StableData.INT_ONE >= StableData.INT_ZERO && (verbals.get(i-StableData.INT_ONE)
-							.getPartOfSpeech().contains(StableData.NLP_ZI_DAI)
-							||verbals.get(i - StableData.INT_ONE).getPartOfSpeech().contains(StableData.NLP_ZI_MING))){
-						if(i-StableData.INT_ONE >= StableData.INT_ZERO&&verbals.get(i - StableData.INT_ONE).getPartOfSpeech()
-								.contains(StableData.NLP_ZI_复)
-								||(verbals.get(i-StableData.INT_ONE).getPartOfSpeech().contains(StableData.NLP_ZI_单)
-										&& verbals.get(i-StableData.INT_ONE).getPartOfSpeech().contains(StableData.NLP_ZI_一))){
-							if(verbals.get(i).getEnglish().contains(StableData.NLP_HAVE_HAS)) {
+				}else if(verbals.get(i).getPartOfSpeech().contains(StablePOS.NLP_CI_FU)){
+					if(i - StablePOS.INT_ONE >= StablePOS.INT_ZERO && (verbals.get(i-StablePOS.INT_ONE)
+							.getPartOfSpeech().contains(StablePOS.NLP_ZI_DAI)
+							||verbals.get(i - StablePOS.INT_ONE).getPartOfSpeech().contains(StablePOS.NLP_ZI_MING))){
+						if(i-StablePOS.INT_ONE >= StablePOS.INT_ZERO&&verbals.get(i - StablePOS.INT_ONE).getPartOfSpeech()
+								.contains(StablePOS.NLP_ZI_复)
+								||(verbals.get(i-StablePOS.INT_ONE).getPartOfSpeech().contains(StablePOS.NLP_ZI_单)
+										&& verbals.get(i-StablePOS.INT_ONE).getPartOfSpeech().contains(StablePOS.NLP_ZI_一))){
+							if(verbals.get(i).getEnglish().contains(StablePOS.NLP_HAVE_HAS)) {
 								Verbal temp = verbals.get(i);
-								String english = temp.getEnglish().replace(StableData.NLP_HAVE_HAS, StableData.NLP_HAVE);
+								String english = temp.getEnglish().replace(StablePOS.NLP_HAVE_HAS, StablePOS.NLP_HAVE);
 								temp.setEnglish(english);
 							}
 						}else {
-							if(verbals.get(i).getEnglish().contains(StableData.NLP_HAVE_HAS)) {
+							if(verbals.get(i).getEnglish().contains(StablePOS.NLP_HAVE_HAS)) {
 								Verbal temp = verbals.get(i);
-								String english = temp.getEnglish().replace(StableData.NLP_HAVE_HAS, StableData.NLP_HAS);
+								String english = temp.getEnglish().replace(StablePOS.NLP_HAVE_HAS, StablePOS.NLP_HAS);
 								temp.setEnglish(english);
 							}
 						}
 					}	
-					if(i-StableData.INT_TWO>= StableData.INT_ZERO && (verbals.get(i-StableData.INT_TWO).getPartOfSpeech()
-							.contains(StableData.NLP_ZI_DAI) || verbals.get(i-StableData.INT_TWO).getPartOfSpeech()
-							.contains(StableData.NLP_ZI_MING))){
-						if(verbals.get(i-StableData.INT_TWO).getPartOfSpeech().contains(StableData.NLP_ZI_复)
-							||(verbals.get(i-StableData.INT_TWO).getPartOfSpeech().contains(StableData.NLP_ZI_单)
-									&&verbals.get(i-StableData.INT_TWO).getPartOfSpeech().contains(StableData.NLP_ZI_一))){
-							if(verbals.get(i).getEnglish().contains(StableData.NLP_HAVE_HAS)) {
+					if(i-StablePOS.INT_TWO>= StablePOS.INT_ZERO && (verbals.get(i-StablePOS.INT_TWO).getPartOfSpeech()
+							.contains(StablePOS.NLP_ZI_DAI) || verbals.get(i-StablePOS.INT_TWO).getPartOfSpeech()
+							.contains(StablePOS.NLP_ZI_MING))){
+						if(verbals.get(i-StablePOS.INT_TWO).getPartOfSpeech().contains(StablePOS.NLP_ZI_复)
+							||(verbals.get(i-StablePOS.INT_TWO).getPartOfSpeech().contains(StablePOS.NLP_ZI_单)
+									&&verbals.get(i-StablePOS.INT_TWO).getPartOfSpeech().contains(StablePOS.NLP_ZI_一))){
+							if(verbals.get(i).getEnglish().contains(StablePOS.NLP_HAVE_HAS)) {
 								Verbal temp = verbals.get(i);
-								String english = temp.getEnglish().replace(StableData.NLP_HAVE_HAS, StableData.NLP_HAVE);
+								String english = temp.getEnglish().replace(StablePOS.NLP_HAVE_HAS, StablePOS.NLP_HAVE);
 								temp.setEnglish(english);
 							}
 						}else {
-							if(verbals.get(i).getEnglish().contains(StableData.NLP_HAVE_HAS)) {
+							if(verbals.get(i).getEnglish().contains(StablePOS.NLP_HAVE_HAS)) {
 								Verbal temp = verbals.get(i);
-								String english = temp.getEnglish().replace(StableData.NLP_HAVE_HAS, StableData.NLP_HAS);
+								String english = temp.getEnglish().replace(StablePOS.NLP_HAVE_HAS, StablePOS.NLP_HAS);
 								temp.setEnglish(english);
 							}
 						}
@@ -304,17 +304,17 @@ public class Translator_E implements Translator{
 	public String getChineseSentenseFromVerbalList(List<Verbal> verbals) {
 		StringBuilder sb = new StringBuilder();
 		for(int i = 0; i < verbals.size(); i++) {
-			sb.append(verbals.get(i).getChinese() == null ? StableData.EMPTY_STRING : verbals.get(i).getChinese());
+			sb.append(verbals.get(i).getChinese() == null ? StablePOS.EMPTY_STRING : verbals.get(i).getChinese());
 		}
-		return sb.toString().replaceAll(StableData.NLP_SPASE_REP, StableData.SPACE_STRING);
+		return sb.toString().replaceAll(StablePOS.NLP_SPASE_REP, StablePOS.SPACE_STRING);
 	}
 
 	public String getEnglishSentenseFromVerbalFixList(List<Verbal> verbalsFix) {
 		StringBuilder sb = new StringBuilder();
 		for(int i = 0; i<verbalsFix.size(); i++) {
-			sb.append(verbalsFix.get(i).getEnglish()==null ? StableData.EMPTY_STRING : verbalsFix.get(i).getEnglish().toLowerCase());
-			sb.append(StableData.SPACE_STRING);
+			sb.append(verbalsFix.get(i).getEnglish()==null ? StablePOS.EMPTY_STRING : verbalsFix.get(i).getEnglish().toLowerCase());
+			sb.append(StablePOS.SPACE_STRING);
 		}
-		return sb.toString().replaceAll(StableData.NLP_SPASE_REP, StableData.SPACE_STRING);
+		return sb.toString().replaceAll(StablePOS.NLP_SPASE_REP, StablePOS.SPACE_STRING);
 	}
 }

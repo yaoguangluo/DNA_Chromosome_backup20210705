@@ -3,7 +3,7 @@ import java.io.File;
 import java.util.HashMap;
 import javax.swing.JTextPane;
 
-import OSI.OPE.MSQ.SS.stable.StableData;
+import SVQ.stable.StableAnnotation;
 import OSI.OPE.OEI.PVI.SOI.SMQ.load.LoadFile;
 import OSI.OPE.OVU.MVQ.OVU.PQE.nodeView.NodeShow;
 import OSI.OPE.OVU.MVU.OVU.PQE.nodeEdit.LinkList;
@@ -19,7 +19,7 @@ public class PLETL_E implements PLETL_C{
 			String fileCurrentpath= documentFlowAddress;
 			File file= new File(fileCurrentpath);
 			if(!file.isFile()) {
-				System.out.println(StableData.ATTENSION_RECHOICE);
+				System.out.println(StableAnnotation.ATTENSION_RECHOICE);
 				return false;
 			}
 			LinkNode needDeleteNode= first.first;

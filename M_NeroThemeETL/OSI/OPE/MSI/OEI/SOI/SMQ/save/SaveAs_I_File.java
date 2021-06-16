@@ -5,21 +5,21 @@ import java.io.File;
 import java.io.FileWriter;
 
 import MVQ.filenameFilter.TXTFilter;
-import OSI.OPE.MSQ.SS.stable.StableData;
+import SVQ.stable.StableAnnotation;
 import OSI.OPE.OVU.MVU.OVU.PQE.nodeEdit.LinkNode;
 //准备把响应事件移植到这里。
 public class SaveAs_I_File{
 	public static void Save(LinkNode first) {
-		FileDialog filedialog= new FileDialog(new Frame(), StableData.DOC_CREATE, FileDialog.LOAD);
-		filedialog.setFilenameFilter(new TXTFilter(StableData.FILE_FORMAT_ETL));
+		FileDialog filedialog= new FileDialog(new Frame(), StableAnnotation.DOC_CREATE, FileDialog.LOAD);
+		filedialog.setFilenameFilter(new TXTFilter(StableAnnotation.FILE_FORMAT_ETL));
 		filedialog.setVisible(true);
 		String fileSavepath= filedialog.getDirectory()+ filedialog.getFile();
 		System.out.println(fileSavepath);
-		if(new File(fileSavepath).isFile()&& fileSavepath.contains(StableData.FILE_FORMAT_ETL)) {
-			System.out.println(StableData.DOC_EXIST);
+		if(new File(fileSavepath).isFile()&& fileSavepath.contains(StableAnnotation.FILE_FORMAT_ETL)) {
+			System.out.println(StableAnnotation.DOC_EXIST);
 			return;
 		}
-		fileSavepath= fileSavepath+ StableData.FILE_FORMAT_ETL;
+		fileSavepath= fileSavepath+ StableAnnotation.FILE_FORMAT_ETL;
 		System.out.println(fileSavepath);
 		//create file and save
 		try {

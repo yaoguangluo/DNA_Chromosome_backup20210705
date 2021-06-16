@@ -8,7 +8,7 @@ import java.util.HashMap;
 //ยÞัþนโ
 import java.util.Map;
 
-import ME.S.stables.PathLinkFile;
+import SVQ.stable.StableFile;
 import PEU.S.verbal.VerbalSource;
 public class LYG10DWithChineseMixStringSort12D{
 	Map<String, Boolean> find= new HashMap<>();
@@ -432,7 +432,7 @@ public class LYG10DWithChineseMixStringSort12D{
 	
 	public void test() {
 		try {
-			InputStream inputStreamp= new VerbalSource().getClass().getResourceAsStream(PathLinkFile.PinYinCN_lyg);
+			InputStream inputStreamp= new VerbalSource().getClass().getResourceAsStream(StableFile.PinYinCN_lyg);
     		BufferedReader cReaderp= new BufferedReader(new InputStreamReader(inputStreamp, "GBK"));
     		//index
     		String cInputStringp;
@@ -444,7 +444,7 @@ public class LYG10DWithChineseMixStringSort12D{
     				map.put(words[0], words[1]);
     			}
     		}
-    		InputStream inputStreamb= new VerbalSource().getClass().getResourceAsStream(PathLinkFile.BiHuaCN_lyg);
+    		InputStream inputStreamb= new VerbalSource().getClass().getResourceAsStream(StableFile.BiHuaCN_lyg);
     		BufferedReader cReaderb= new BufferedReader(new InputStreamReader(inputStreamb, "GBK"));
     		//index
     		String cInputStringb;

@@ -13,7 +13,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import ME.S.stables.PathLinkFile;
+import SVQ.stable.StableFile;
 import PEU.S.verbal.VerbalSource;
 
 public class dictionary{	
@@ -70,7 +70,7 @@ public class dictionary{
 	public Map<String, Object> mapToIndex(Map<String, Object> dic_map) {
 		Map<String,String> pinyin= new HashMap<>();
 		try {
-			InputStream inputStreamp= new VerbalSource().getClass().getResourceAsStream(PathLinkFile.PinYinCN_lyg);
+			InputStream inputStreamp= new VerbalSource().getClass().getResourceAsStream(StableFile.PinYinCN_lyg);
     		BufferedReader cReaderp= new BufferedReader(new InputStreamReader(inputStreamp, "GBK"));
     		//index
     		String cInputStringp;

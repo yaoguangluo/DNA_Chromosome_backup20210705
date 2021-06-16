@@ -9,15 +9,15 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import AVQ.ASQ.OVQ.OSQ.VSQ.obj.FMHMMNode;
-import AVQ.ASQ.OVQ.OSQ.VSQ.stable.StableData;
+import SVQ.stable.StablePOS;
 import OCI.SVQ.MPC.fhmm.C.FMHMMList;
 import OEI.ME.euclid.E.Euclid_CE;
 public class FMHMMList_E implements FMHMMList {
 	private Map<String, String> words;
 	private Map<Long, FMHMMNode> linkedHashMap;
-	@SuppressWarnings(StableData.RAW_TYPES)
+	@SuppressWarnings(StablePOS.RAW_TYPES)
 	private Map<Integer, Map> linkedHashMapRoot;
-	@SuppressWarnings(StableData.RAW_TYPES)
+	@SuppressWarnings(StablePOS.RAW_TYPES)
 	public Map<Integer, Map> getRoot() {
 		return this.linkedHashMapRoot;
 	}
@@ -26,17 +26,17 @@ public class FMHMMList_E implements FMHMMList {
 		words= new ConcurrentHashMap<>();
 		linkedHashMap= new ConcurrentHashMap<>();
 		linkedHashMapRoot= new ConcurrentHashMap<>();
-		InputStream inputStream= getClass().getResourceAsStream(StableData.WORDS_SOURSE_LINK_POS_CN_TO_CN);
-		BufferedReader cReader= new BufferedReader(new InputStreamReader(inputStream, StableData.UTF8_STRING));
+		InputStream inputStream= getClass().getResourceAsStream(StablePOS.WORDS_SOURSE_LINK_POS_CN_TO_CN);
+		BufferedReader cReader= new BufferedReader(new InputStreamReader(inputStream, StablePOS.UTF8_STRING));
 		String cInputString;
 		Here:
 			while ((cInputString = cReader.readLine()) != null) {
-				if(!(!cInputString.replace(StableData.SPACE_STRING, StableData.EMPTY_STRING).equals(StableData.EMPTY_STRING)
-						&& cInputString.split(StableData.NLP_SYMBO_SLASH).length > StableData.INT_ONE )) {
+				if(!(!cInputString.replace(StablePOS.SPACE_STRING, StablePOS.EMPTY_STRING).equals(StablePOS.EMPTY_STRING)
+						&& cInputString.split(StablePOS.NLP_SYMBO_SLASH).length > StablePOS.INT_ONE )) {
 					continue Here;
 				}
-				words.put(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO], cInputString
-						.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+				words.put(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO], cInputString
+						.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 				linkedHashMap = loopLoadForest(cInputString);
 			}
 		cReader.close();
@@ -45,17 +45,17 @@ public class FMHMMList_E implements FMHMMList {
 
 	public Map<Long, FMHMMNode> loopLoadForest(String cInputString) {
 		Here:
-			for (int i = StableData.INT_ZERO; i < cInputString.length(); i++) {
+			for (int i = StablePOS.INT_ZERO; i < cInputString.length(); i++) {
 				if (linkedHashMap.containsKey(Long.valueOf(cInputString.charAt(i)))) {
 					FMHMMNode fHHMMNode = linkedHashMap.get(Long.valueOf(cInputString.charAt(i)));
 					linkedHashMap = doNeroPostCognitive(fHHMMNode, cInputString, i);
 					continue Here;
 				} else {
 					FMHMMNode fHHMMNode = new FMHMMNode();
-					fHHMMNode.setVb(StableData.EMPTY_STRING + cInputString.charAt(i));
-					if (i + StableData.INT_ONE < cInputString.length()) {
+					fHHMMNode.setVb(StablePOS.EMPTY_STRING + cInputString.charAt(i));
+					if (i + StablePOS.INT_ONE < cInputString.length()) {
 						Map<String, Integer> next = new ConcurrentHashMap<>();
-						next.put(StableData.EMPTY_STRING + cInputString.charAt(i + StableData.INT_ONE), StableData.INT_ONE);
+						next.put(StablePOS.EMPTY_STRING + cInputString.charAt(i + StablePOS.INT_ONE), StablePOS.INT_ONE);
 						fHHMMNode.setNext(next);
 					}
 					linkedHashMap.put(Long.valueOf(cInputString.charAt(i)), fHHMMNode);
@@ -66,14 +66,14 @@ public class FMHMMList_E implements FMHMMList {
 
 	public Map<Long, FMHMMNode> doNeroPostCognitive(FMHMMNode fFHMMNode, String cInputString, int i) {
 		if (fFHMMNode.getNext() != null) {
-			if (i + StableData.INT_ONE < cInputString.length()) {
+			if (i + StablePOS.INT_ONE < cInputString.length()) {
 				linkedHashMap = doCheckAndRunNeroPostFix(fFHMMNode, cInputString, i);
 			}
 		} else {
 			ConcurrentHashMap<String, Integer> concurrentHashMap = new ConcurrentHashMap<>();
-			if (i + StableData.INT_ONE < cInputString.length()) {
-				concurrentHashMap.put(StableData.EMPTY_STRING + cInputString.charAt(i + StableData.INT_ONE),
-						StableData.INT_ONE);
+			if (i + StablePOS.INT_ONE < cInputString.length()) {
+				concurrentHashMap.put(StablePOS.EMPTY_STRING + cInputString.charAt(i + StablePOS.INT_ONE),
+						StablePOS.INT_ONE);
 			}
 			fFHMMNode.setNext(concurrentHashMap);
 			linkedHashMap.put(Long.valueOf(cInputString.charAt(i)), fFHMMNode);
@@ -82,9 +82,9 @@ public class FMHMMList_E implements FMHMMList {
 	}
 
 	public Map<Long, FMHMMNode> doCheckAndRunNeroPostFix(FMHMMNode fFHMMNode, String cInputString, int i) {
-		if (!fFHMMNode.getNext().containsKey(StableData.EMPTY_STRING + cInputString.charAt(i + StableData.INT_ONE))) {
+		if (!fFHMMNode.getNext().containsKey(StablePOS.EMPTY_STRING + cInputString.charAt(i + StablePOS.INT_ONE))) {
 			Map<String, Integer> map = fFHMMNode.getNext();
-			map.put(StableData.EMPTY_STRING + cInputString.charAt(i + StableData.INT_ONE), StableData.INT_ONE);
+			map.put(StablePOS.EMPTY_STRING + cInputString.charAt(i + StablePOS.INT_ONE), StablePOS.INT_ONE);
 			fFHMMNode.setNext(map);
 			linkedHashMap.put(Long.valueOf(cInputString.charAt(i)), fFHMMNode);
 		}

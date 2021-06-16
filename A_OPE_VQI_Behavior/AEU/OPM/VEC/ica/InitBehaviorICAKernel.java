@@ -9,7 +9,7 @@ import java.util.Map;
 import AEU.AVC.SUQ.engine.EmotionInit;
 import AEU.AVC.SUQ.engine.EnvironmentInit;
 import AEU.OCI.AVC.SUQ.estimation.C.EmotionSample;
-import AVQ.ASQ.OVQ.OSQ.VSQ.stable.StableData;
+import SVQ.stable.StablePOS;
 import OCI.AVC.SUQ.SVQ.MPC.fhmm.C.EmotionMap;
 import OCI.ME.analysis.C.A;
 
@@ -37,7 +37,7 @@ public class InitBehaviorICAKernel{
 		emotionInitEnvironment.init(text);
 		double positiveCountEnvironment = emotionInitEnvironment.getPositiveCount();
 		double totalCountEnvironment = emotionInitEnvironment.getTotalCount();
-		positiveCountEnvironment += StableData.INT_ONE;
+		positiveCountEnvironment += StablePOS.INT_ONE;
 		return positiveCountEnvironment/totalCountEnvironment;
 	}
 
@@ -47,13 +47,13 @@ public class InitBehaviorICAKernel{
 		//reduce
 		double positiveCountEnvironment = emotionInitEnvironment.getPositiveCount();
 		double totalCountEnvironment = emotionInitEnvironment.getTotalCount();
-		positiveCountEnvironment += StableData.INT_ONE;
+		positiveCountEnvironment += StablePOS.INT_ONE;
 		return positiveCountEnvironment/totalCountEnvironment;
 	}
 	
 	public double[] getBehaviorICAKernel(String text) throws IOException {
 		forRestReturn = new LinkedList<>();
-		kernel = new double[StableData.INT_SEVEN];	
+		kernel = new double[StablePOS.INT_SEVEN];	
 		EmotionInit emotionInit = new EmotionInit();
 		emotionInit.init(text);
 		double positiveCount = emotionInit.getPositiveCount();
@@ -61,11 +61,11 @@ public class InitBehaviorICAKernel{
 		double totalCount = emotionInit.getTotalCount();
 		forRestReturn.add("正面情感：" + positiveCount);
 		forRestReturn.add("负面情感：" + negativeCount);
-		if(positiveCount == StableData.INT_ZERO) {
-			positiveCount = StableData.INT_ONE;
+		if(positiveCount == StablePOS.INT_ZERO) {
+			positiveCount = StablePOS.INT_ONE;
 		}
-		if(negativeCount == StableData.INT_ZERO) {
-			negativeCount = StableData.INT_ONE;
+		if(negativeCount == StablePOS.INT_ZERO) {
+			negativeCount = StablePOS.INT_ONE;
 		}
 		double adjRatio = Math.abs(positiveCount/negativeCount-negativeCount/positiveCount);
 		forRestReturn.add("渲染比率：" + adjRatio);
@@ -73,9 +73,9 @@ public class InitBehaviorICAKernel{
 		forRestReturn.add("情绪比率：" + phychologicRatio);
 		double infectionRatio = adjRatio*phychologicRatio;
 		forRestReturn.add("感染比率：" + infectionRatio);
-		kernel[StableData.INT_ZERO] = adjRatio;
-		kernel[StableData.INT_ONE] = phychologicRatio;
-		kernel[StableData.INT_TWO] = infectionRatio;
+		kernel[StablePOS.INT_ZERO] = adjRatio;
+		kernel[StablePOS.INT_ONE] = phychologicRatio;
+		kernel[StablePOS.INT_TWO] = infectionRatio;
 		EnvironmentInit environmentInit = new EnvironmentInit();
 		environmentInit.initFromEmotion(emotionInit.getWordFrequencyMap());
 		Map<String, EmotionSample> environmentSampleMap = environmentInit.getEmotionSampleMap();
@@ -86,57 +86,57 @@ public class InitBehaviorICAKernel{
 			String word = Iterator.next();
 			EmotionSample emotionSample = environmentSampleMap.get(word);
 			if(null != emotionSample.getDistinction()) {
-				environmentText += emotionSample.getDistinction() + StableData.SPACE_STRING;
+				environmentText += emotionSample.getDistinction() + StablePOS.SPACE_STRING;
 			}
 		}
 		forRestReturn.add(environmentText);
-		kernel[StableData.INT_THREE] = getTrustRate(environmentText);
-		forRestReturn.add(StableData.EMPTY_STRING + kernel[StableData.INT_THREE]);
+		kernel[StablePOS.INT_THREE] = getTrustRate(environmentText);
+		forRestReturn.add(StablePOS.EMPTY_STRING + kernel[StablePOS.INT_THREE]);
 		forRestReturn.add("信任比率：");
-		String motivationText = StableData.EMPTY_STRING;
+		String motivationText = StablePOS.EMPTY_STRING;
 		Iterator = environmentSampleMap.keySet().iterator();
 		while(Iterator.hasNext()) {
 			String word = Iterator.next();
 			EmotionSample emotionSample = environmentSampleMap.get(word);
 			if(null != emotionSample.getMotivation()) {
-				motivationText += emotionSample.getMotivation() + StableData.SPACE_STRING;
+				motivationText += emotionSample.getMotivation() + StablePOS.SPACE_STRING;
 			}
 		}
 		forRestReturn.add(motivationText);
-		kernel[StableData.INT_FOUR] = getTrustRate(motivationText);
-		forRestReturn.add(StableData.EMPTY_STRING+kernel[StableData.INT_FOUR]);
+		kernel[StablePOS.INT_FOUR] = getTrustRate(motivationText);
+		forRestReturn.add(StablePOS.EMPTY_STRING+kernel[StablePOS.INT_FOUR]);
 		forRestReturn.add("执行比率：");
-		String trendingText = StableData.EMPTY_STRING;
+		String trendingText = StablePOS.EMPTY_STRING;
 		Iterator = environmentSampleMap.keySet().iterator();
 		while(Iterator.hasNext()) {
 			String word = Iterator.next();
 			EmotionSample emotionSample = environmentSampleMap.get(word);
 			if(null != emotionSample.getTrending()) {
-				trendingText += emotionSample.getTrending() + StableData.SPACE_STRING;
+				trendingText += emotionSample.getTrending() + StablePOS.SPACE_STRING;
 			}
 		}
 		forRestReturn.add(trendingText);
-		kernel[StableData.INT_FIVE] = getTrustRate(trendingText);
-		forRestReturn.add(StableData.EMPTY_STRING + kernel[StableData.INT_FIVE]);
+		kernel[StablePOS.INT_FIVE] = getTrustRate(trendingText);
+		forRestReturn.add(StablePOS.EMPTY_STRING + kernel[StablePOS.INT_FIVE]);
 		forRestReturn.add("成功比率：");
-		String predictionText = StableData.EMPTY_STRING;
+		String predictionText = StablePOS.EMPTY_STRING;
 		Iterator = environmentSampleMap.keySet().iterator();
 		while(Iterator.hasNext()) {
 			String word = Iterator.next();
 			EmotionSample emotionSample = environmentSampleMap.get(word);
 			if(null != emotionSample.getPrediction()) {
-				predictionText += emotionSample.getPrediction() + StableData.SPACE_STRING;
+				predictionText += emotionSample.getPrediction() + StablePOS.SPACE_STRING;
 			}
 		}
 		forRestReturn.add(predictionText);
-		kernel[StableData.INT_SIX] = getTrustRate(predictionText);
-		forRestReturn.add(StableData.EMPTY_STRING + kernel[StableData.INT_SIX]);
+		kernel[StablePOS.INT_SIX] = getTrustRate(predictionText);
+		forRestReturn.add(StablePOS.EMPTY_STRING + kernel[StablePOS.INT_SIX]);
 		return kernel;
 	}
 
 	public double[] getBehaviorICAKernel(String text, A _A, EmotionMap emotionMap) throws IOException {
 		forRestReturn = new LinkedList<>();
-		kernel = new double[StableData.INT_SEVEN];	
+		kernel = new double[StablePOS.INT_SEVEN];	
 		EmotionInit emotionInit = new EmotionInit();
 		emotionInit.initExcludeAnalyzer(text, _A, emotionMap);
 		double positiveCount = emotionInit.getPositiveCount();
@@ -144,11 +144,11 @@ public class InitBehaviorICAKernel{
 		double totalCount = emotionInit.getTotalCount();
 		forRestReturn.add("正面情感：" + positiveCount);
 		forRestReturn.add("负面情感：" + negativeCount);
-		if(positiveCount == StableData.INT_ZERO) {
-			positiveCount = StableData.INT_ONE;
+		if(positiveCount == StablePOS.INT_ZERO) {
+			positiveCount = StablePOS.INT_ONE;
 		}
-		if(negativeCount == StableData.INT_ZERO) {
-			negativeCount = StableData.INT_ONE;
+		if(negativeCount == StablePOS.INT_ZERO) {
+			negativeCount = StablePOS.INT_ONE;
 		}
 		double adjRatio = Math.abs(positiveCount/negativeCount-negativeCount/positiveCount);
 		forRestReturn.add("渲染比率：" + adjRatio);
@@ -156,64 +156,64 @@ public class InitBehaviorICAKernel{
 		forRestReturn.add("情绪比率：" + phychologicRatio);
 		double infectionRatio = adjRatio*phychologicRatio;
 		forRestReturn.add("感染比率：" + infectionRatio);
-		kernel[StableData.INT_ZERO] = adjRatio;
-		kernel[StableData.INT_ONE] = phychologicRatio;
-		kernel[StableData.INT_TWO] = infectionRatio;
+		kernel[StablePOS.INT_ZERO] = adjRatio;
+		kernel[StablePOS.INT_ONE] = phychologicRatio;
+		kernel[StablePOS.INT_TWO] = infectionRatio;
 		EnvironmentInit environmentInit = new EnvironmentInit();
 		environmentInit.initFromEmotionExcludeEmotion(emotionInit.getWordFrequencyMap(), emotionMap);
 		Map<String, EmotionSample> environmentSampleMap = environmentInit.getEmotionSampleMap();
 		forRestReturn.add("观测角度：");
-		String environmentText = StableData.EMPTY_STRING;
+		String environmentText = StablePOS.EMPTY_STRING;
 		Iterator<String> Iterator = environmentSampleMap.keySet().iterator();
 		while(Iterator.hasNext()) {
 			String word = Iterator.next();
 			EmotionSample emotionSample = environmentSampleMap.get(word);
 			if(null != emotionSample.getDistinction()) {
-				environmentText += emotionSample.getDistinction() + StableData.SPACE_STRING;
+				environmentText += emotionSample.getDistinction() + StablePOS.SPACE_STRING;
 			}
 		}
 		forRestReturn.add(environmentText);
-		kernel[StableData.INT_THREE] = getTrustRate(environmentText, _A, emotionMap);
-		forRestReturn.add(StableData.EMPTY_STRING+kernel[StableData.INT_THREE]);
+		kernel[StablePOS.INT_THREE] = getTrustRate(environmentText, _A, emotionMap);
+		forRestReturn.add(StablePOS.EMPTY_STRING+kernel[StablePOS.INT_THREE]);
 		forRestReturn.add("信任比率：");
-		String motivationText = StableData.EMPTY_STRING;
+		String motivationText = StablePOS.EMPTY_STRING;
 		Iterator = environmentSampleMap.keySet().iterator();
 		while(Iterator.hasNext()) {
 			String word = Iterator.next();
 			EmotionSample emotionSample = environmentSampleMap.get(word);
 			if(null != emotionSample.getMotivation()) {
-				motivationText += emotionSample.getMotivation() + StableData.SPACE_STRING;
+				motivationText += emotionSample.getMotivation() + StablePOS.SPACE_STRING;
 			}
 		}
 		forRestReturn.add(motivationText);
-		kernel[StableData.INT_FOUR] = getTrustRate(motivationText, _A, emotionMap);
-		forRestReturn.add(StableData.EMPTY_STRING+kernel[StableData.INT_FOUR]);
+		kernel[StablePOS.INT_FOUR] = getTrustRate(motivationText, _A, emotionMap);
+		forRestReturn.add(StablePOS.EMPTY_STRING+kernel[StablePOS.INT_FOUR]);
 		forRestReturn.add("执行比率：");
-		String trendingText = StableData.EMPTY_STRING;
+		String trendingText = StablePOS.EMPTY_STRING;
 		Iterator = environmentSampleMap.keySet().iterator();
 		while(Iterator.hasNext()) {
 			String word = Iterator.next();
 			EmotionSample emotionSample = environmentSampleMap.get(word);
 			if(null != emotionSample.getTrending()) {
-				trendingText += emotionSample.getTrending() + StableData.SPACE_STRING;
+				trendingText += emotionSample.getTrending() + StablePOS.SPACE_STRING;
 			}
 		}
 		forRestReturn.add(trendingText);
-		kernel[StableData.INT_FIVE] = getTrustRate(trendingText, _A, emotionMap);
-		forRestReturn.add(StableData.EMPTY_STRING+kernel[StableData.INT_FIVE]);
+		kernel[StablePOS.INT_FIVE] = getTrustRate(trendingText, _A, emotionMap);
+		forRestReturn.add(StablePOS.EMPTY_STRING+kernel[StablePOS.INT_FIVE]);
 		forRestReturn.add("成功比率：");
-		String predictionText = StableData.EMPTY_STRING;
+		String predictionText = StablePOS.EMPTY_STRING;
 		Iterator = environmentSampleMap.keySet().iterator();
 		while(Iterator.hasNext()) {
 			String word = Iterator.next();
 			EmotionSample emotionSample = environmentSampleMap.get(word);
 			if(null != emotionSample.getPrediction()) {
-				predictionText += emotionSample.getPrediction() + StableData.SPACE_STRING;
+				predictionText += emotionSample.getPrediction() + StablePOS.SPACE_STRING;
 			}
 		}
 		forRestReturn.add(predictionText);
-		kernel[StableData.INT_SIX] = getTrustRate(predictionText, _A, emotionMap);
-		forRestReturn.add(StableData.EMPTY_STRING+kernel[StableData.INT_SIX]);
+		kernel[StablePOS.INT_SIX] = getTrustRate(predictionText, _A, emotionMap);
+		forRestReturn.add(StablePOS.EMPTY_STRING+kernel[StablePOS.INT_SIX]);
 		return kernel;
 	}
 }

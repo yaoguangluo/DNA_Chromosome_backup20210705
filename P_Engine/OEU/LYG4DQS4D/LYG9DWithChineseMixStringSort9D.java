@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import ME.APM.VSQ.App;
-import ME.S.stables.PathLinkFile;
+import SVQ.stable.StableFile;
 public class LYG9DWithChineseMixStringSort9D{
 	Map<String, Boolean> find= new HashMap<>();
 	Map<String, String> pinyin;
@@ -353,9 +353,9 @@ public class LYG9DWithChineseMixStringSort9D{
 	
 	public static void main(String []v) {
 		try {
-    	  	InputStream inputStreamc= new App().getClass().getResourceAsStream(PathLinkFile.poscc_lyg);
+    	  	InputStream inputStreamc= new App().getClass().getResourceAsStream(StableFile.poscc_lyg);
     		BufferedReader cReaderc= new BufferedReader(new InputStreamReader(inputStreamc, "UTF8"));	
-    		InputStream inputStreamp= new App().getClass().getResourceAsStream(PathLinkFile.poscp_lyg);
+    		InputStream inputStreamp= new App().getClass().getResourceAsStream(StableFile.poscp_lyg);
     		BufferedReader cReaderp= new BufferedReader(new InputStreamReader(inputStreamp, "UTF8"));
     		//index
     		String cInputStringc;

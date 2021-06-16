@@ -54,7 +54,7 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 import org.tinos.listen.ReadToWav;
-import ME.S.stables.PathLinkFile;
+import SVQ.stable.StableFile;
 import MSU.OEI.ME.SMS.SEU.OSD.OSI.E.Translator_E;
 import ME.APM.VSQ.OPE.hospital.DetaLabelStables;
 public class AppInit {	
@@ -68,7 +68,7 @@ public class AppInit {
 		DetaLabelStables.stableImages.setStableImages();
 		DetaLabelStables.stableImages.setTarget(false);
 		//Register DNA
-		PathLinkFile.DNA_PDN.put(this.getClass().getCanonicalName(), true);
+		StableFile.DNA_PDN.put(this.getClass().getCanonicalName(), true);
 		if(!new GetDisk().getKey().replaceAll(" ", "").contains("BFBFF000806E9-79530339318")) {
 			//System.out.println(new GetDisk().getKey());
 			//return;

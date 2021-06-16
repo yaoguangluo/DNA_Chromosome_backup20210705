@@ -10,18 +10,18 @@ import java.util.Scanner;
 
 import javax.swing.JFrame;
 
-import ME.S.stables.PathLinkFile;
-import ME.S.stables.StableDataSrc;
+import SVQ.stable.StableFile;
+import SVQ.stable.StableTag;
 import OSQ.disk.GetDisk;
 public class YLJFrame{
 	public String getKey() throws IOException {
-		InputStream in= getClass().getResourceAsStream(PathLinkFile.key_txt);
+		InputStream in= getClass().getResourceAsStream(StableFile.key_txt);
 		BufferedReader cReader= new BufferedReader(new InputStreamReader(in));  
 		String outPut= null;
 		String ctempString= null; 
 		int i= 0;
 		while ((ctempString= cReader.readLine())!= null) {  
-			if(!ctempString.replace(StableDataSrc.STRING_SPACE, StableDataSrc.STRING_EMPTY).equals(StableDataSrc.STRING_EMPTY)) {
+			if(!ctempString.replace(StableTag.STRING_SPACE, StableTag.STRING_EMPTY).equals(StableTag.STRING_EMPTY)) {
 				outPut+= ctempString;
 				i++;
 				if(i>5) {
@@ -36,8 +36,8 @@ public class YLJFrame{
 	public static App NE;
 	@SuppressWarnings({"deprecation"})
 	public static void main(String args[]) throws Exception{
-		System.setProperty("java.library.path", new File(StableDataSrc.STRING_EMPTY).getCanonicalPath() + "\\node");
-		System.out.println(new File(StableDataSrc.STRING_EMPTY).getCanonicalPath()+ "\\node");
+		System.setProperty("java.library.path", new File(StableTag.STRING_EMPTY).getCanonicalPath() + "\\node");
+		System.out.println(new File(StableTag.STRING_EMPTY).getCanonicalPath()+ "\\node");
 		System.out.println(new GetDisk().getKey());	
 		//if(!new GetDisk().getKey().replaceAll(StableDataSrc.STRING_SPACE, StableDataSrc.STRING_EMPTY).contains("580307240")) {
 		try {
@@ -45,7 +45,7 @@ public class YLJFrame{
 			process= Runtime.getRuntime().exec(  
 					new String[] {"wmic", "cpu", "get", "ProcessorId"});
 			process.getOutputStream().close();
-			String value= StableDataSrc.STRING_EMPTY;
+			String value= StableTag.STRING_EMPTY;
 			@SuppressWarnings("resource")
 			Scanner sc= new Scanner(process.getInputStream()); 
 			while(sc.hasNext()) {

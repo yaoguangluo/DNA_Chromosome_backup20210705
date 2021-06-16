@@ -33,7 +33,7 @@ import MVQ.button.DetaButton;
 import MVQ.button.YLJShowButton;
 import MVQ.filenameFilter.TXTFilter;
 import OCI.ME.analysis.C.A;
-import OSI.OPE.MSQ.SS.stable.StableData;
+import SVQ.stable.StableAnnotation;
 
 public class MakeContainerYXTP extends Thread implements Runnable{
 	public Container jpanelFourth;
@@ -99,7 +99,7 @@ public class MakeContainerYXTP extends Thread implements Runnable{
 			String pgCategoryLink= "";	
 			FileDialog filedialog= new FileDialog(new Frame(), "«Î—°÷–nullÕº∆¨"
 					, FileDialog.LOAD);
-			filedialog.setFilenameFilter(new TXTFilter(StableData.FILE_FORMAT_ETL));
+			filedialog.setFilenameFilter(new TXTFilter(StableAnnotation.FILE_FORMAT_ETL));
 			filedialog.setVisible(true);
 			pgCategoryLink= filedialog.getDirectory();
 			String root= pgCategoryLink.split("pgSearch")[0]+ "pgSearch\\";

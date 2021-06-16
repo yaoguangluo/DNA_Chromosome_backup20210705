@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.concurrent.ConcurrentHashMap;
 
-import ME.S.stables.PathLinkFile;
+import SVQ.stable.StableFile;
 
 import java.util.List;
 import java.util.Map;
@@ -16,13 +16,13 @@ public class Dictionary{
 	public Map<String, String> dic_map;
 	public List<String> txtToListName() throws IOException{
 		List<String> TEMP_list = new ArrayList<>();
-		TEMP_list.add(PathLinkFile.黄帝内经_txt);
-		TEMP_list.add(PathLinkFile.景岳全书_txt);
-		TEMP_list.add(PathLinkFile.房中补益_唐_孙思邈_txt);
-		TEMP_list.add(PathLinkFile.脉经_txt);
-		TEMP_list.add(PathLinkFile.八十一难经_汉_扁鹊_txt);
-		TEMP_list.add(PathLinkFile.中藏经_txt);
-		TEMP_list.add(PathLinkFile.金匮要略_txt);
+		TEMP_list.add(StableFile.黄帝内经_txt);
+		TEMP_list.add(StableFile.景岳全书_txt);
+		TEMP_list.add(StableFile.房中补益_唐_孙思邈_txt);
+		TEMP_list.add(StableFile.脉经_txt);
+		TEMP_list.add(StableFile.八十一难经_汉_扁鹊_txt);
+		TEMP_list.add(StableFile.中藏经_txt);
+		TEMP_list.add(StableFile.金匮要略_txt);
 		return TEMP_list;
 	}
 	
@@ -33,8 +33,8 @@ public class Dictionary{
 			String name = dic_list.get(i).toString();
 			InputStream in = this.getClass().getResourceAsStream(name);
 			BufferedReader cReader;
-//			if(name.equalsIgnoreCase(PathLinkFile.保婴撮要_明_薛铠_txt) 
-//					|| name.equalsIgnoreCase(PathLinkFile.慈幼便览_清_佚名_txt)) {
+//			if(name.equalsIgnoreCase(StableFile.保婴撮要_明_薛铠_txt) 
+//					|| name.equalsIgnoreCase(StableFile.慈幼便览_清_佚名_txt)) {
 //				 cReader = new BufferedReader(new InputStreamReader(in, "UTF-16"));  
 //			}else {
 				 cReader = new BufferedReader(new InputStreamReader(in, "GBK"));  

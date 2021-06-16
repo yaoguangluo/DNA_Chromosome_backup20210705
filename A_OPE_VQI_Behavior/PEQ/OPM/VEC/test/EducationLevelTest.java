@@ -2,17 +2,17 @@ package PEQ.OPM.VEC.test;
 import java.io.IOException;
 
 import AEU.OPM.VEC.ica.EducationRatio;
-import AVQ.ASQ.OVQ.OSQ.VSQ.stable.StableData;
+import SVQ.stable.StablePOS;
 public class EducationLevelTest{
 	double[] EducationLevel;
 	double EducationDuration;
 	public void getEducationLevel(double[][] measurement) {
 		EducationLevel = new double[measurement.length];
-		for(int i = StableData.INT_ZERO; i < measurement.length; i++) {
-			EducationLevel[i] = (measurement[i][StableData.INT_THREE] + measurement[i][StableData.INT_FOUR])
-					/(measurement[i][StableData.INT_ONE] + measurement[i][StableData.INT_TWO] 
-					+ measurement[i][StableData.INT_THREE] + measurement[i][StableData.INT_FOUR]
-							+ measurement[i][StableData.INT_FIVE]);
+		for(int i = StablePOS.INT_ZERO; i < measurement.length; i++) {
+			EducationLevel[i] = (measurement[i][StablePOS.INT_THREE] + measurement[i][StablePOS.INT_FOUR])
+					/(measurement[i][StablePOS.INT_ONE] + measurement[i][StablePOS.INT_TWO] 
+					+ measurement[i][StablePOS.INT_THREE] + measurement[i][StablePOS.INT_FOUR]
+							+ measurement[i][StablePOS.INT_FIVE]);
 			EducationDuration += EducationLevel[i];
 			System.out.println("EducationLevel:" +EducationLevel[i]);
 		}

@@ -14,8 +14,8 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 import AVQ.ASQ.OVQ.OSQ.VSQ.obj.FMHMMNode;
 import AVQ.ASQ.OVQ.OSQ.VSQ.obj.FMHMMPOS;
-import AVQ.ASQ.OVQ.OSQ.VSQ.stable.StableData;
-import AVQ.ASQ.OVQ.OSQ.VSQ.stable.StableMaps;
+import SVQ.stable.StablePOS;
+import SVQ.stable.StableMaps;
 import OCI.SVQ.MPC.fhmm.C.FHMMList;
 import PEU.P.nlp.*;
 //I will build a collection class for managing this maps. at the next version.
@@ -59,15 +59,15 @@ public class FMHMMListOneTime_E implements FHMMList {
 
 	public Map<Long, FMHMMNode>[] getMaps() {
 		int segment= this.linkedHashMap.size();
-		int perRatio= segment/ StableData.INT_SIX;
-		Map<Long, FMHMMNode>[] maps= new HashMap[StableData.INT_SIX];
+		int perRatio= segment/ StablePOS.INT_SIX;
+		Map<Long, FMHMMNode>[] maps= new HashMap[StablePOS.INT_SIX];
 		Iterator<Long> iterator= this.linkedHashMap.keySet().iterator();
-		maps[StableData.INT_ZERO]= new HashMap<>();
-		int index= StableData.INT_ZERO;
-		int count= StableData.INT_ONE;
+		maps[StablePOS.INT_ZERO]= new HashMap<>();
+		int index= StablePOS.INT_ZERO;
+		int count= StablePOS.INT_ONE;
 		while(iterator.hasNext()) {
-			if(StableData.INT_ZERO== count++ % perRatio) {
-				if(index< StableData.INT_FIVE) {
+			if(StablePOS.INT_ZERO== count++ % perRatio) {
+				if(index< StablePOS.INT_FIVE) {
 					index++;
 					maps[index]= new HashMap<>();
 				}
@@ -90,22 +90,22 @@ public class FMHMMListOneTime_E implements FHMMList {
 		listTt= new CopyOnWriteArrayList<>();
 		listEn= new CopyOnWriteArrayList<>();
 		listPy= new CopyOnWriteArrayList<>();
-		InputStream inputStream= getClass().getResourceAsStream(StableData.WORDS_SOURSE_LINK_POS_CN_TO_CN);
-		BufferedReader cReader= new BufferedReader(new InputStreamReader(inputStream, StableData.UTF8_STRING));
-		InputStream inputStreamKorea= getClass().getResourceAsStream(StableData.WORDS_SOURSE_LINK_POS_CN_TO_KO);
-		BufferedReader cReaderKorea= new BufferedReader(new InputStreamReader(inputStreamKorea, StableData.UTF8_STRING));
-		InputStream inputStreamJapan= getClass().getResourceAsStream(StableData.WORDS_SOURSE_LINK_POS_CN_TO_JP);
-		BufferedReader cReaderJapan= new BufferedReader(new InputStreamReader(inputStreamJapan, StableData.UTF8_STRING));
-		InputStream inputStreamTrandition= getClass().getResourceAsStream(StableData.WORDS_SOURSE_LINK_POS_CN_TO_TT);
-		BufferedReader cReaderTrandition= new BufferedReader(new InputStreamReader(inputStreamTrandition, StableData.UTF8_STRING));
-		InputStream inputStreamEnglish= getClass().getResourceAsStream(StableData.WORDS_SOURSE_LINK_POS_EN_TO_EN);
-		BufferedReader cReaderEnglish= new BufferedReader(new InputStreamReader(inputStreamEnglish, StableData.UTF8_STRING));
-		InputStream inputStreamPinYin= getClass().getResourceAsStream(StableData.WORDS_SOURSE_LINK_POS_CN_TO_PY);
-		BufferedReader cReaderPinYin= new BufferedReader(new InputStreamReader(inputStreamPinYin, StableData.UTF8_STRING));
-		InputStream inputStreamRs= getClass().getResourceAsStream(StableData.WORDS_SOURSE_LINK_POS_CN_TO_RS);
-		BufferedReader cReaderRs= new BufferedReader(new InputStreamReader(inputStreamRs, StableData.UTF8_STRING));
-		InputStream inputStreamAb= getClass().getResourceAsStream(StableData.WORDS_SOURSE_LINK_POS_CN_TO_AB);
-		BufferedReader cReaderAb= new BufferedReader(new InputStreamReader(inputStreamAb, StableData.UTF8_STRING));
+		InputStream inputStream= getClass().getResourceAsStream(StablePOS.WORDS_SOURSE_LINK_POS_CN_TO_CN);
+		BufferedReader cReader= new BufferedReader(new InputStreamReader(inputStream, StablePOS.UTF8_STRING));
+		InputStream inputStreamKorea= getClass().getResourceAsStream(StablePOS.WORDS_SOURSE_LINK_POS_CN_TO_KO);
+		BufferedReader cReaderKorea= new BufferedReader(new InputStreamReader(inputStreamKorea, StablePOS.UTF8_STRING));
+		InputStream inputStreamJapan= getClass().getResourceAsStream(StablePOS.WORDS_SOURSE_LINK_POS_CN_TO_JP);
+		BufferedReader cReaderJapan= new BufferedReader(new InputStreamReader(inputStreamJapan, StablePOS.UTF8_STRING));
+		InputStream inputStreamTrandition= getClass().getResourceAsStream(StablePOS.WORDS_SOURSE_LINK_POS_CN_TO_TT);
+		BufferedReader cReaderTrandition= new BufferedReader(new InputStreamReader(inputStreamTrandition, StablePOS.UTF8_STRING));
+		InputStream inputStreamEnglish= getClass().getResourceAsStream(StablePOS.WORDS_SOURSE_LINK_POS_EN_TO_EN);
+		BufferedReader cReaderEnglish= new BufferedReader(new InputStreamReader(inputStreamEnglish, StablePOS.UTF8_STRING));
+		InputStream inputStreamPinYin= getClass().getResourceAsStream(StablePOS.WORDS_SOURSE_LINK_POS_CN_TO_PY);
+		BufferedReader cReaderPinYin= new BufferedReader(new InputStreamReader(inputStreamPinYin, StablePOS.UTF8_STRING));
+		InputStream inputStreamRs= getClass().getResourceAsStream(StablePOS.WORDS_SOURSE_LINK_POS_CN_TO_RS);
+		BufferedReader cReaderRs= new BufferedReader(new InputStreamReader(inputStreamRs, StablePOS.UTF8_STRING));
+		InputStream inputStreamAb= getClass().getResourceAsStream(StablePOS.WORDS_SOURSE_LINK_POS_CN_TO_AB);
+		BufferedReader cReaderAb= new BufferedReader(new InputStreamReader(inputStreamAb, StablePOS.UTF8_STRING));
 		
 		String cInputString;
 		String cInputStringKorea;
@@ -146,419 +146,419 @@ public class FMHMMListOneTime_E implements FHMMList {
 				if(null!= cInputStringAb) {
 					listAb.add(cInputStringAb);
 				}
-				if(!(!cInputString.replace(StableData.SPACE_STRING, StableData.EMPTY_STRING).equals(StableData.EMPTY_STRING)
-						&& cInputString.split(StableData.NLP_SYMBO_SLASH).length > StableData.INT_ONE )) {
+				if(!(!cInputString.replace(StablePOS.SPACE_STRING, StablePOS.EMPTY_STRING).equals(StablePOS.EMPTY_STRING)
+						&& cInputString.split(StablePOS.NLP_SYMBO_SLASH).length > StablePOS.INT_ONE )) {
 					continue Here;
 				}
-				if(StableData.INT_ONE== cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO].length()) {
-					StableMaps.CiOne.put(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-							.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+				if(StablePOS.INT_ONE== cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO].length()) {
+					StableMaps.CiOne.put(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+							.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 				}
-				if(StableData.INT_TWO== cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO].length()) {
-					StableMaps.CiTwo.put(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-							.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+				if(StablePOS.INT_TWO== cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO].length()) {
+					StableMaps.CiTwo.put(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+							.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 				}
-				if(StableData.INT_THREE== cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO].length()) {
-					StableMaps.CiThree.put(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-							.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+				if(StablePOS.INT_THREE== cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO].length()) {
+					StableMaps.CiThree.put(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+							.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 				}
-				if(StableData.INT_FOUR== cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO].length()) {
-					StableMaps.CiFour.put(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-							.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+				if(StablePOS.INT_FOUR== cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO].length()) {
+					StableMaps.CiFour.put(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+							.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 				}
-				if(!StableMaps.fuCi.containsKey(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO])
-						&& cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE].contains(StableData.NLP_CI_FU)) {
-					StableMaps.fuCi.put(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO], cInputString
-							.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+				if(!StableMaps.fuCi.containsKey(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO])
+						&& cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE].contains(StablePOS.NLP_CI_FU)) {
+					StableMaps.fuCi.put(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO], cInputString
+							.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					if(null!= cInputStringKorea) {
-						StableMaps.fuCi.put(cInputStringKorea.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.fuCi.put(cInputStringKorea.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringJapan) {
-						StableMaps.fuCi.put(cInputStringJapan.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.fuCi.put(cInputStringJapan.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringTrandition) {
-						StableMaps.fuCi.put(cInputStringTrandition.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.fuCi.put(cInputStringTrandition.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringEnglish) {
-						StableMaps.fuCi.put(cInputStringEnglish.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.fuCi.put(cInputStringEnglish.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 				}
-				if(!StableMaps.dongCi.containsKey(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO])
-						&& cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE].contains(StableData.NLP_CI_DONG)) {
-					StableMaps.dongCi.put(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO], cInputString
-							.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+				if(!StableMaps.dongCi.containsKey(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO])
+						&& cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE].contains(StablePOS.NLP_CI_DONG)) {
+					StableMaps.dongCi.put(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO], cInputString
+							.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					if(null!= cInputStringKorea) {
-						StableMaps.dongCi.put(cInputStringKorea.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.dongCi.put(cInputStringKorea.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringJapan) {
-						StableMaps.dongCi.put(cInputStringJapan.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.dongCi.put(cInputStringJapan.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringTrandition) {
-						StableMaps.dongCi.put(cInputStringTrandition.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.dongCi.put(cInputStringTrandition.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringEnglish) {
-						StableMaps.dongCi.put(cInputStringEnglish.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.dongCi.put(cInputStringEnglish.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 				}
-				if(!StableMaps.liangCi.containsKey(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO])
-						&& cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE].contains(StableData.NLP_CI_LIANG)) {
-					StableMaps.liangCi.put(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO], cInputString
-							.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+				if(!StableMaps.liangCi.containsKey(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO])
+						&& cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE].contains(StablePOS.NLP_CI_LIANG)) {
+					StableMaps.liangCi.put(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO], cInputString
+							.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					if(null!= cInputStringKorea) {
-						StableMaps.liangCi.put(cInputStringKorea.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.liangCi.put(cInputStringKorea.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringJapan) {
-						StableMaps.liangCi.put(cInputStringJapan.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.liangCi.put(cInputStringJapan.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringTrandition) {
-						StableMaps.liangCi.put(cInputStringTrandition.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.liangCi.put(cInputStringTrandition.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringEnglish) {
-						StableMaps.liangCi.put(cInputStringEnglish.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.liangCi.put(cInputStringEnglish.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 				}
-				if(!StableMaps.lianCi.containsKey(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO])
-						&& cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE].contains(StableData.NLP_CI_LIAN)) {
-					StableMaps.lianCi.put(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO], cInputString
-							.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+				if(!StableMaps.lianCi.containsKey(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO])
+						&& cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE].contains(StablePOS.NLP_CI_LIAN)) {
+					StableMaps.lianCi.put(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO], cInputString
+							.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					if(null!= cInputStringKorea) {
-						StableMaps.lianCi.put(cInputStringKorea.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.lianCi.put(cInputStringKorea.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringJapan) {
-						StableMaps.lianCi.put(cInputStringJapan.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.lianCi.put(cInputStringJapan.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringTrandition) {
-						StableMaps.lianCi.put(cInputStringTrandition.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.lianCi.put(cInputStringTrandition.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringEnglish) {
-						StableMaps.lianCi.put(cInputStringEnglish.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.lianCi.put(cInputStringEnglish.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 				}
-				if(!StableMaps.baDongCi.containsKey(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO])
-						&& cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE].contains(StableData.NLP_CI_BA_DONG)) {
-					StableMaps.baDongCi.put(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO], cInputString
-							.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+				if(!StableMaps.baDongCi.containsKey(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO])
+						&& cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE].contains(StablePOS.NLP_CI_BA_DONG)) {
+					StableMaps.baDongCi.put(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO], cInputString
+							.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					if(null!= cInputStringKorea) {
-						StableMaps.baDongCi.put(cInputStringKorea.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.baDongCi.put(cInputStringKorea.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringJapan) {
-						StableMaps.baDongCi.put(cInputStringJapan.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.baDongCi.put(cInputStringJapan.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringTrandition) {
-						StableMaps.baDongCi.put(cInputStringTrandition.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.baDongCi.put(cInputStringTrandition.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringEnglish) {
-						StableMaps.baDongCi.put(cInputStringEnglish.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.baDongCi.put(cInputStringEnglish.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 				}
-				if(!StableMaps.xianDingCi.containsKey(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO])
-						&& cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE].contains(StableData.NLP_CI_XIAN_DING)) {
-					StableMaps.xianDingCi.put(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO], cInputString
-							.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+				if(!StableMaps.xianDingCi.containsKey(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO])
+						&& cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE].contains(StablePOS.NLP_CI_XIAN_DING)) {
+					StableMaps.xianDingCi.put(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO], cInputString
+							.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					if(null!= cInputStringKorea) {
-						StableMaps.xianDingCi.put(cInputStringKorea.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.xianDingCi.put(cInputStringKorea.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringJapan) {
-						StableMaps.xianDingCi.put(cInputStringJapan.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.xianDingCi.put(cInputStringJapan.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringTrandition) {
-						StableMaps.xianDingCi.put(cInputStringTrandition.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.xianDingCi.put(cInputStringTrandition.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringEnglish) {
-						StableMaps.xianDingCi.put(cInputStringEnglish.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.xianDingCi.put(cInputStringEnglish.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 				}
-				if(!StableMaps.mingCi.containsKey(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO])
-						&& cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE].contains(StableData.NLP_CI_MING)) {
-					StableMaps.mingCi.put(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO], cInputString
-							.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+				if(!StableMaps.mingCi.containsKey(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO])
+						&& cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE].contains(StablePOS.NLP_CI_MING)) {
+					StableMaps.mingCi.put(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO], cInputString
+							.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					if(null!= cInputStringKorea) {
-						StableMaps.mingCi.put(cInputStringKorea.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.mingCi.put(cInputStringKorea.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringJapan) {
-						StableMaps.mingCi.put(cInputStringJapan.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.mingCi.put(cInputStringJapan.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringTrandition) {
-						StableMaps.mingCi.put(cInputStringTrandition.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.mingCi.put(cInputStringTrandition.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringEnglish) {
-						StableMaps.mingCi.put(cInputStringEnglish.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.mingCi.put(cInputStringEnglish.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 				}
-				if(!StableMaps.daiCi.containsKey(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO])
-						&& cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE].contains(StableData.NLP_CI_DAI)) {
-					StableMaps.daiCi.put(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO], cInputString
-							.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+				if(!StableMaps.daiCi.containsKey(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO])
+						&& cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE].contains(StablePOS.NLP_CI_DAI)) {
+					StableMaps.daiCi.put(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO], cInputString
+							.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					if(null!= cInputStringKorea) {
-						StableMaps.daiCi.put(cInputStringKorea.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.daiCi.put(cInputStringKorea.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringJapan) {
-						StableMaps.daiCi.put(cInputStringJapan.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.daiCi.put(cInputStringJapan.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringTrandition) {
-						StableMaps.daiCi.put(cInputStringTrandition.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.daiCi.put(cInputStringTrandition.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringEnglish) {
-						StableMaps.daiCi.put(cInputStringEnglish.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.daiCi.put(cInputStringEnglish.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 				}
-				if(!StableMaps.jieCi.containsKey(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO])
-						&& cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE].contains(StableData.NLP_CI_JIE)) {
-					StableMaps.jieCi.put(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO], cInputString
-							.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+				if(!StableMaps.jieCi.containsKey(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO])
+						&& cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE].contains(StablePOS.NLP_CI_JIE)) {
+					StableMaps.jieCi.put(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO], cInputString
+							.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					if(null!= cInputStringKorea) {
-						StableMaps.jieCi.put(cInputStringKorea.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.jieCi.put(cInputStringKorea.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringJapan) {
-						StableMaps.jieCi.put(cInputStringJapan.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.jieCi.put(cInputStringJapan.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringTrandition) {
-						StableMaps.jieCi.put(cInputStringTrandition.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.jieCi.put(cInputStringTrandition.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringEnglish) {
-						StableMaps.jieCi.put(cInputStringEnglish.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.jieCi.put(cInputStringEnglish.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 				}
-				if(!StableMaps.xingRongCi.containsKey(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO])
-						&& cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE].contains(StableData.NLP_CI_XING_RONG)) {
-					StableMaps.xingRongCi.put(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO], cInputString
-							.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+				if(!StableMaps.xingRongCi.containsKey(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO])
+						&& cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE].contains(StablePOS.NLP_CI_XING_RONG)) {
+					StableMaps.xingRongCi.put(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO], cInputString
+							.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					if(null!= cInputStringKorea) {
-						StableMaps.xingRongCi.put(cInputStringKorea.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.xingRongCi.put(cInputStringKorea.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringJapan) {
-						StableMaps.xingRongCi.put(cInputStringJapan.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.xingRongCi.put(cInputStringJapan.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringTrandition) {
-						StableMaps.xingRongCi.put(cInputStringTrandition.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.xingRongCi.put(cInputStringTrandition.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringEnglish) {
-						StableMaps.xingRongCi.put(cInputStringEnglish.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.xingRongCi.put(cInputStringEnglish.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 				}
-				if(!StableMaps.zhuCi.containsKey(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO])
-						&& cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE].contains(StableData.NLP_CI_ZHU)) {
-					StableMaps.zhuCi.put(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO], cInputString
-							.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+				if(!StableMaps.zhuCi.containsKey(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO])
+						&& cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE].contains(StablePOS.NLP_CI_ZHU)) {
+					StableMaps.zhuCi.put(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO], cInputString
+							.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					if(null!= cInputStringKorea) {
-						StableMaps.zhuCi.put(cInputStringKorea.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.zhuCi.put(cInputStringKorea.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringJapan) {
-						StableMaps.zhuCi.put(cInputStringJapan.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.zhuCi.put(cInputStringJapan.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringTrandition) {
-						StableMaps.zhuCi.put(cInputStringTrandition.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.zhuCi.put(cInputStringTrandition.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringEnglish) {
-						StableMaps.zhuCi.put(cInputStringEnglish.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.zhuCi.put(cInputStringEnglish.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 				}
-				if(!StableMaps.weiCi.containsKey(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO])
-						&& cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE].contains(StableData.NLP_CI_WEI)) {
-					StableMaps.weiCi.put(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO], cInputString
-							.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+				if(!StableMaps.weiCi.containsKey(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO])
+						&& cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE].contains(StablePOS.NLP_CI_WEI)) {
+					StableMaps.weiCi.put(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO], cInputString
+							.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					if(null!= cInputStringKorea) {
-						StableMaps.weiCi.put(cInputStringKorea.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.weiCi.put(cInputStringKorea.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringJapan) {
-						StableMaps.weiCi.put(cInputStringJapan.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.weiCi.put(cInputStringJapan.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringTrandition) {
-						StableMaps.weiCi.put(cInputStringTrandition.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.weiCi.put(cInputStringTrandition.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringEnglish) {
-						StableMaps.weiCi.put(cInputStringEnglish.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.weiCi.put(cInputStringEnglish.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 				}
-				if(!StableMaps.shengLueCi.containsKey(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO])
-						&& cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE].contains(StableData.NLP_CI_SHENG_LUE)) {
-					StableMaps.shengLueCi.put(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO], cInputString
-							.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+				if(!StableMaps.shengLueCi.containsKey(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO])
+						&& cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE].contains(StablePOS.NLP_CI_SHENG_LUE)) {
+					StableMaps.shengLueCi.put(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO], cInputString
+							.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					if(null!= cInputStringKorea) {
-						StableMaps.shengLueCi.put(cInputStringKorea.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.shengLueCi.put(cInputStringKorea.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringJapan) {
-						StableMaps.shengLueCi.put(cInputStringJapan.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.shengLueCi.put(cInputStringJapan.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringTrandition) {
-						StableMaps.shengLueCi.put(cInputStringTrandition.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.shengLueCi.put(cInputStringTrandition.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringEnglish) {
-						StableMaps.shengLueCi.put(cInputStringEnglish.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.shengLueCi.put(cInputStringEnglish.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 				}
-				if(!StableMaps.qingTaiCi.containsKey(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO])
-						&& cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE].contains(StableData.NLP_CI_QING_TAI)) {
-					StableMaps.qingTaiCi.put(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO], cInputString
-							.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+				if(!StableMaps.qingTaiCi.containsKey(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO])
+						&& cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE].contains(StablePOS.NLP_CI_QING_TAI)) {
+					StableMaps.qingTaiCi.put(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO], cInputString
+							.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					if(null!= cInputStringKorea) {
-						StableMaps.qingTaiCi.put(cInputStringKorea.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.qingTaiCi.put(cInputStringKorea.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringJapan) {
-						StableMaps.qingTaiCi.put(cInputStringJapan.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.qingTaiCi.put(cInputStringJapan.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringTrandition) {
-						StableMaps.qingTaiCi.put(cInputStringTrandition.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.qingTaiCi.put(cInputStringTrandition.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringEnglish) {
-						StableMaps.qingTaiCi.put(cInputStringEnglish.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.qingTaiCi.put(cInputStringEnglish.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 				}
-				if(!StableMaps.xingWeiCi.containsKey(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO])
-						&& cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE].contains(StableData.NLP_CI_XING_WEI)) {
-					StableMaps.xingWeiCi.put(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO], cInputString
-							.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+				if(!StableMaps.xingWeiCi.containsKey(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO])
+						&& cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE].contains(StablePOS.NLP_CI_XING_WEI)) {
+					StableMaps.xingWeiCi.put(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO], cInputString
+							.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					if(null!= cInputStringKorea) {
-						StableMaps.xingWeiCi.put(cInputStringKorea.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.xingWeiCi.put(cInputStringKorea.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringJapan) {
-						StableMaps.xingWeiCi.put(cInputStringJapan.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.xingWeiCi.put(cInputStringJapan.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringTrandition) {
-						StableMaps.xingWeiCi.put(cInputStringTrandition.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.xingWeiCi.put(cInputStringTrandition.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringEnglish) {
-						StableMaps.xingWeiCi.put(cInputStringEnglish.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.xingWeiCi.put(cInputStringEnglish.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 				}
-				if(!StableMaps.shiTaiCi.containsKey(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO])
-						&& cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE].contains(StableData.NLP_CI_SHI_TAI)) {
-					StableMaps.shiTaiCi.put(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO], cInputString
-							.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+				if(!StableMaps.shiTaiCi.containsKey(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO])
+						&& cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE].contains(StablePOS.NLP_CI_SHI_TAI)) {
+					StableMaps.shiTaiCi.put(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO], cInputString
+							.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					if(null!= cInputStringKorea) {
-						StableMaps.shiTaiCi.put(cInputStringKorea.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.shiTaiCi.put(cInputStringKorea.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringJapan) {
-						StableMaps.shiTaiCi.put(cInputStringJapan.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.shiTaiCi.put(cInputStringJapan.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringTrandition) {
-						StableMaps.shiTaiCi.put(cInputStringTrandition.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.shiTaiCi.put(cInputStringTrandition.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringEnglish) {
-						StableMaps.shiTaiCi.put(cInputStringEnglish.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.shiTaiCi.put(cInputStringEnglish.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 				}
-				if(!StableMaps.dingMingCi.containsKey(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO])
-						&& cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE].contains(StableData.NLP_CI_DING_MING)) {
-					StableMaps.dingMingCi.put(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO], cInputString
-							.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+				if(!StableMaps.dingMingCi.containsKey(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO])
+						&& cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE].contains(StablePOS.NLP_CI_DING_MING)) {
+					StableMaps.dingMingCi.put(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO], cInputString
+							.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					if(null!= cInputStringKorea) {
-						StableMaps.dingMingCi.put(cInputStringKorea.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.dingMingCi.put(cInputStringKorea.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringJapan) {
-						StableMaps.dingMingCi.put(cInputStringJapan.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.dingMingCi.put(cInputStringJapan.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringTrandition) {
-						StableMaps.dingMingCi.put(cInputStringTrandition.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.dingMingCi.put(cInputStringTrandition.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 					if(null!= cInputStringEnglish) {
-						StableMaps.dingMingCi.put(cInputStringEnglish.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+						StableMaps.dingMingCi.put(cInputStringEnglish.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					}
 				}
-				studyPos.put(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO], cInputString
-						.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
-				posCnToCn.put(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO], cInputString
-						.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+				studyPos.put(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO], cInputString
+						.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
+				posCnToCn.put(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO], cInputString
+						.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 				linkedHashMap = loopLoadForest(cInputString);
 				if(null!= cInputStringKorea) {
-					posCnToCn.put(cInputStringKorea.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO], cInputString
-							.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+					posCnToCn.put(cInputStringKorea.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO], cInputString
+							.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 					linkedHashMap = loopLoadForest(cInputStringKorea);
 				}
 				if(null!= cInputStringJapan) {
-					if(!posCnToCn.containsKey(cInputStringJapan.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO])) {
-						posCnToCn.put(cInputStringJapan.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO],cInputStringJapan
-								.split(StableData.NLP_SYMBO_SLASH).length> StableData.INT_ONE?cInputStringJapan
-										.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]:"δ֪");
+					if(!posCnToCn.containsKey(cInputStringJapan.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO])) {
+						posCnToCn.put(cInputStringJapan.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO],cInputStringJapan
+								.split(StablePOS.NLP_SYMBO_SLASH).length> StablePOS.INT_ONE?cInputStringJapan
+										.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]:"δ֪");
 						linkedHashMap = loopLoadForest(cInputStringJapan);
 					}
 				}
 				if(null!= cInputStringTrandition) {
-					if(!posCnToCn.containsKey(cInputStringTrandition.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO])) {
-						posCnToCn.put(cInputStringTrandition.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO], cInputString
-								.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+					if(!posCnToCn.containsKey(cInputStringTrandition.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO])) {
+						posCnToCn.put(cInputStringTrandition.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO], cInputString
+								.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 						linkedHashMap = loopLoadForest(cInputStringTrandition);
 					}
 				}
 				if(null!= cInputStringEnglish) {
-					posCnToCn.put(cInputStringEnglish.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO].toLowerCase(), cInputString
-							.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+					posCnToCn.put(cInputStringEnglish.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO].toLowerCase(), cInputString
+							.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 				}
 				if(null!= cInputStringRs) {
-					posCnToCn.put(cInputStringRs.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO].toLowerCase()
-							, cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+					posCnToCn.put(cInputStringRs.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO].toLowerCase()
+							, cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 				}
 				if(null!= cInputStringAb) {
-					posCnToCn.put(cInputStringAb.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO].toLowerCase()
-							, cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+					posCnToCn.put(cInputStringAb.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO].toLowerCase()
+							, cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 				}
 			}
 		cReader.close();
@@ -598,103 +598,103 @@ public class FMHMMListOneTime_E implements FHMMList {
 		posCnToCn= new ConcurrentHashMap<>();
 		linkedHashMap= new ConcurrentHashMap<>();
 		listCn= new CopyOnWriteArrayList<>();
-		InputStream inputStream= getClass().getResourceAsStream(StableData.WORDS_SOURSE_LINK_POS_CN_TO_CN);
-		BufferedReader cReader= new BufferedReader(new InputStreamReader(inputStream, StableData.UTF8_STRING));
+		InputStream inputStream= getClass().getResourceAsStream(StablePOS.WORDS_SOURSE_LINK_POS_CN_TO_CN);
+		BufferedReader cReader= new BufferedReader(new InputStreamReader(inputStream, StablePOS.UTF8_STRING));
 		String cInputString;
 		Here:
 			while ((cInputString = cReader.readLine()) != null) {
 				listCn.add(cInputString);
-				if(!(!cInputString.replace(StableData.SPACE_STRING, StableData.EMPTY_STRING).equals(StableData.EMPTY_STRING)
-						&& cInputString.split(StableData.NLP_SYMBO_SLASH).length > StableData.INT_ONE )) {
+				if(!(!cInputString.replace(StablePOS.SPACE_STRING, StablePOS.EMPTY_STRING).equals(StablePOS.EMPTY_STRING)
+						&& cInputString.split(StablePOS.NLP_SYMBO_SLASH).length > StablePOS.INT_ONE )) {
 					continue Here;
 				}
-				if(!StableMaps.fuCi.containsKey(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO])
-						&& cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE].contains(StableData.NLP_CI_FU)) {
-					StableMaps.fuCi.put(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO], cInputString
-							.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+				if(!StableMaps.fuCi.containsKey(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO])
+						&& cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE].contains(StablePOS.NLP_CI_FU)) {
+					StableMaps.fuCi.put(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO], cInputString
+							.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 				}
-				if(!StableMaps.dongCi.containsKey(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO])
-						&& cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE].contains(StableData.NLP_CI_DONG)) {
-					StableMaps.dongCi.put(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO], cInputString
-							.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+				if(!StableMaps.dongCi.containsKey(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO])
+						&& cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE].contains(StablePOS.NLP_CI_DONG)) {
+					StableMaps.dongCi.put(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO], cInputString
+							.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 				}
-				if(!StableMaps.liangCi.containsKey(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO])
-						&& cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE].contains(StableData.NLP_CI_LIANG)) {
-					StableMaps.liangCi.put(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO], cInputString
-							.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+				if(!StableMaps.liangCi.containsKey(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO])
+						&& cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE].contains(StablePOS.NLP_CI_LIANG)) {
+					StableMaps.liangCi.put(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO], cInputString
+							.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 				}
-				if(!StableMaps.lianCi.containsKey(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO])
-						&& cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE].contains(StableData.NLP_CI_LIAN)) {
-					StableMaps.lianCi.put(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO], cInputString
-							.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+				if(!StableMaps.lianCi.containsKey(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO])
+						&& cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE].contains(StablePOS.NLP_CI_LIAN)) {
+					StableMaps.lianCi.put(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO], cInputString
+							.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 				}
-				if(!StableMaps.baDongCi.containsKey(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO])
-						&& cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE].contains(StableData.NLP_CI_BA_DONG)) {
-					StableMaps.baDongCi.put(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO], cInputString
-							.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+				if(!StableMaps.baDongCi.containsKey(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO])
+						&& cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE].contains(StablePOS.NLP_CI_BA_DONG)) {
+					StableMaps.baDongCi.put(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO], cInputString
+							.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 				}
-				if(!StableMaps.xianDingCi.containsKey(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO])
-						&& cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE].contains(StableData.NLP_CI_XIAN_DING)) {
-					StableMaps.xianDingCi.put(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO], cInputString
-							.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+				if(!StableMaps.xianDingCi.containsKey(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO])
+						&& cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE].contains(StablePOS.NLP_CI_XIAN_DING)) {
+					StableMaps.xianDingCi.put(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO], cInputString
+							.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 				}
-				if(!StableMaps.mingCi.containsKey(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO])
-						&& cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE].contains(StableData.NLP_CI_MING)) {
-					StableMaps.mingCi.put(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO], cInputString
-							.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+				if(!StableMaps.mingCi.containsKey(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO])
+						&& cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE].contains(StablePOS.NLP_CI_MING)) {
+					StableMaps.mingCi.put(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO], cInputString
+							.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 				}
-				if(!StableMaps.daiCi.containsKey(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO])
-						&& cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE].contains(StableData.NLP_CI_DAI)) {
-					StableMaps.daiCi.put(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO], cInputString
-							.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+				if(!StableMaps.daiCi.containsKey(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO])
+						&& cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE].contains(StablePOS.NLP_CI_DAI)) {
+					StableMaps.daiCi.put(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO], cInputString
+							.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 				}
-				if(!StableMaps.jieCi.containsKey(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO])
-						&& cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE].contains(StableData.NLP_CI_JIE)) {
-					StableMaps.jieCi.put(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO], cInputString
-							.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+				if(!StableMaps.jieCi.containsKey(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO])
+						&& cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE].contains(StablePOS.NLP_CI_JIE)) {
+					StableMaps.jieCi.put(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO], cInputString
+							.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 				}
-				if(!StableMaps.xingRongCi.containsKey(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO])
-						&& cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE].contains(StableData.NLP_CI_XING_RONG)) {
-					StableMaps.xingRongCi.put(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO], cInputString
-							.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+				if(!StableMaps.xingRongCi.containsKey(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO])
+						&& cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE].contains(StablePOS.NLP_CI_XING_RONG)) {
+					StableMaps.xingRongCi.put(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO], cInputString
+							.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 				}
-				if(!StableMaps.zhuCi.containsKey(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO])
-						&& cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE].contains(StableData.NLP_CI_ZHU)) {
-					StableMaps.zhuCi.put(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO], cInputString
-							.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+				if(!StableMaps.zhuCi.containsKey(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO])
+						&& cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE].contains(StablePOS.NLP_CI_ZHU)) {
+					StableMaps.zhuCi.put(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO], cInputString
+							.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 				}
-				if(!StableMaps.weiCi.containsKey(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO])
-						&& cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE].contains(StableData.NLP_CI_WEI)) {
-					StableMaps.weiCi.put(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO], cInputString
-							.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+				if(!StableMaps.weiCi.containsKey(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO])
+						&& cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE].contains(StablePOS.NLP_CI_WEI)) {
+					StableMaps.weiCi.put(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO], cInputString
+							.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 				}
-				if(!StableMaps.shengLueCi.containsKey(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO])
-						&& cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE].contains(StableData.NLP_CI_SHENG_LUE)) {
-					StableMaps.shengLueCi.put(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO], cInputString
-							.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+				if(!StableMaps.shengLueCi.containsKey(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO])
+						&& cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE].contains(StablePOS.NLP_CI_SHENG_LUE)) {
+					StableMaps.shengLueCi.put(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO], cInputString
+							.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 				}
-				if(!StableMaps.qingTaiCi.containsKey(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO])
-						&& cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE].contains(StableData.NLP_CI_QING_TAI)) {
-					StableMaps.qingTaiCi.put(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO], cInputString
-							.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+				if(!StableMaps.qingTaiCi.containsKey(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO])
+						&& cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE].contains(StablePOS.NLP_CI_QING_TAI)) {
+					StableMaps.qingTaiCi.put(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO], cInputString
+							.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 				}
-				if(!StableMaps.xingWeiCi.containsKey(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO])
-						&& cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE].contains(StableData.NLP_CI_XING_WEI)) {
-					StableMaps.xingWeiCi.put(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO], cInputString
-							.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+				if(!StableMaps.xingWeiCi.containsKey(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO])
+						&& cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE].contains(StablePOS.NLP_CI_XING_WEI)) {
+					StableMaps.xingWeiCi.put(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO], cInputString
+							.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 				}
-				if(!StableMaps.shiTaiCi.containsKey(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO])
-						&& cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE].contains(StableData.NLP_CI_SHI_TAI)) {
-					StableMaps.shiTaiCi.put(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO], cInputString
-							.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+				if(!StableMaps.shiTaiCi.containsKey(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO])
+						&& cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE].contains(StablePOS.NLP_CI_SHI_TAI)) {
+					StableMaps.shiTaiCi.put(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO], cInputString
+							.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 				}
-				if(!StableMaps.dingMingCi.containsKey(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO])
-						&& cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE].contains(StableData.NLP_CI_DING_MING)) {
-					StableMaps.dingMingCi.put(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO], cInputString
-							.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+				if(!StableMaps.dingMingCi.containsKey(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO])
+						&& cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE].contains(StablePOS.NLP_CI_DING_MING)) {
+					StableMaps.dingMingCi.put(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO], cInputString
+							.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 				}
-				posCnToCn.put(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO], cInputString
-						.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+				posCnToCn.put(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO], cInputString
+						.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 				linkedHashMap = loopLoadForest(cInputString);
 			}
 		cReader.close();
@@ -705,8 +705,8 @@ public class FMHMMListOneTime_E implements FHMMList {
 		Iterator<String> listee= listEn.iterator();
 		fullEnToCn= new HashMap<>();
 		while(listcc.hasNext()&&listee.hasNext()) {
-			fullEnToCn.put(listee.next().split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO].toLowerCase()
-					, listcc.next().split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO]);
+			fullEnToCn.put(listee.next().split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO].toLowerCase()
+					, listcc.next().split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO]);
 		}
 	}
 
@@ -715,8 +715,8 @@ public class FMHMMListOneTime_E implements FHMMList {
 		Iterator<String> listee= listEn.iterator();
 		fullCnToEn = new HashMap<>();
 		while(listcc.hasNext()&&listee.hasNext()) {
-			fullCnToEn.put(listcc.next().split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO]
-					, listee.next().split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO].toLowerCase());
+			fullCnToEn.put(listcc.next().split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO]
+					, listee.next().split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO].toLowerCase());
 		}
 	}
 	
@@ -725,8 +725,8 @@ public class FMHMMListOneTime_E implements FHMMList {
 		Iterator<String> listfn= listFn.iterator();
 		fullCnToFn = new HashMap<>();
 		while(listcc.hasNext()&&listfn.hasNext()) {
-			fullCnToFn.put(listcc.next().split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO]
-					, listfn.next().split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO].toLowerCase());
+			fullCnToFn.put(listcc.next().split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO]
+					, listfn.next().split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO].toLowerCase());
 		}
 	}
 	
@@ -735,8 +735,8 @@ public class FMHMMListOneTime_E implements FHMMList {
 		Iterator<String> listko= listKo.iterator();
 		fullCnToKo = new HashMap<>();
 		while(listcc.hasNext()&&listko.hasNext()) {
-			fullCnToKo.put(listcc.next().split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO]
-					, listko.next().split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO].toLowerCase());
+			fullCnToKo.put(listcc.next().split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO]
+					, listko.next().split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO].toLowerCase());
 		}
 	}
 	
@@ -745,8 +745,8 @@ public class FMHMMListOneTime_E implements FHMMList {
 		Iterator<String> listjp= listJp.iterator();
 		fullCnToJp = new HashMap<>();
 		while(listcc.hasNext()&&listjp.hasNext()) {
-			fullCnToJp.put(listcc.next().split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO]
-					, listjp.next().split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO].toLowerCase());
+			fullCnToJp.put(listcc.next().split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO]
+					, listjp.next().split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO].toLowerCase());
 		}
 	}
 	
@@ -755,8 +755,8 @@ public class FMHMMListOneTime_E implements FHMMList {
 		Iterator<String> listgm= listEn.iterator();
 		fullCnToGm = new HashMap<>();
 		while(listcc.hasNext()&&listgm.hasNext()) {
-			fullCnToGm.put(listcc.next().split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO]
-					, listgm.next().split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO].toLowerCase());
+			fullCnToGm.put(listcc.next().split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO]
+					, listgm.next().split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO].toLowerCase());
 		}
 	}
 	
@@ -765,8 +765,8 @@ public class FMHMMListOneTime_E implements FHMMList {
 		Iterator<String> listsp= listSp.iterator();
 		fullCnToSp = new HashMap<>();
 		while(listcc.hasNext()&&listsp.hasNext()) {
-			fullCnToSp.put(listcc.next().split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO]
-					, listsp.next().split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO].toLowerCase());
+			fullCnToSp.put(listcc.next().split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO]
+					, listsp.next().split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO].toLowerCase());
 		}
 	}
 	
@@ -775,8 +775,8 @@ public class FMHMMListOneTime_E implements FHMMList {
 		Iterator<String> listrs= listRs.iterator();
 		fullCnToRs = new HashMap<>();
 		while(listcc.hasNext()&&listrs.hasNext()) {
-			fullCnToRs.put(listcc.next().split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO]
-					, listrs.next().split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO].toLowerCase());
+			fullCnToRs.put(listcc.next().split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO]
+					, listrs.next().split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO].toLowerCase());
 		}
 	}
 	
@@ -785,8 +785,8 @@ public class FMHMMListOneTime_E implements FHMMList {
 		Iterator<String> listab= listAb.iterator();
 		fullCnToAb = new HashMap<>();
 		while(listcc.hasNext()&&listab.hasNext()) {
-			fullCnToAb.put(listcc.next().split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO]
-					, listab.next().split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO].toLowerCase());
+			fullCnToAb.put(listcc.next().split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO]
+					, listab.next().split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO].toLowerCase());
 		}
 	}
 	
@@ -795,8 +795,8 @@ public class FMHMMListOneTime_E implements FHMMList {
 		Iterator<String> listpy= listPy.iterator();
 		fullCnToPy = new HashMap<>();
 		while(listcc.hasNext()&&listpy.hasNext()) {
-			fullCnToPy.put(listcc.next().split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO]
-					, listpy.next().split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO].toLowerCase());
+			fullCnToPy.put(listcc.next().split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO]
+					, listpy.next().split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO].toLowerCase());
 		}
 	}
 
@@ -805,8 +805,8 @@ public class FMHMMListOneTime_E implements FHMMList {
 		Iterator<String> listtt= listTt.iterator();
 		fullCnToTt = new HashMap<>();
 		while(listcc.hasNext()&&listtt.hasNext()) {
-			fullCnToTt.put(listcc.next().split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO]
-					, listtt.next().split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO].toLowerCase());
+			fullCnToTt.put(listcc.next().split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO]
+					, listtt.next().split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO].toLowerCase());
 		}
 	}
 	
@@ -820,25 +820,25 @@ public class FMHMMListOneTime_E implements FHMMList {
 
 	public void indexPosEnToCn() throws IOException {
 		posEnToCn= new HashMap<>();
-		InputStream in= getClass().getResourceAsStream(StableData.WORDS_SOURSE_LINK_POS_EN_TO_CN);
-		BufferedReader cReader = new BufferedReader(new InputStreamReader(in, StableData.UTF8_STRING));
+		InputStream in= getClass().getResourceAsStream(StablePOS.WORDS_SOURSE_LINK_POS_EN_TO_CN);
+		BufferedReader cReader = new BufferedReader(new InputStreamReader(in, StablePOS.UTF8_STRING));
 		String cInputString;
 		Here:
 			while (null!= (cInputString= cReader.readLine())) {
-				if(!(!cInputString.replace(StableData.SPACE_STRING, StableData.EMPTY_STRING).equals(StableData.EMPTY_STRING)
-						&& cInputString.split(StableData.NLP_SYMBO_SLASH).length > StableData.INT_ONE )) {
+				if(!(!cInputString.replace(StablePOS.SPACE_STRING, StablePOS.EMPTY_STRING).equals(StablePOS.EMPTY_STRING)
+						&& cInputString.split(StablePOS.NLP_SYMBO_SLASH).length > StablePOS.INT_ONE )) {
 					continue Here;
 				}
-				posEnToCn.put(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO].toLowerCase(), cInputString
-						.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+				posEnToCn.put(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO].toLowerCase(), cInputString
+						.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 			}
 		cReader.close();
 	}
 	
 	public void indexFn() throws IOException {
 		listFn= new CopyOnWriteArrayList<>();
-		InputStream in= getClass().getResourceAsStream(StableData.WORDS_SOURSE_LINK_POS_CN_TO_FN);
-		BufferedReader cReader= new BufferedReader(new InputStreamReader(in, StableData.UTF8_STRING));
+		InputStream in= getClass().getResourceAsStream(StablePOS.WORDS_SOURSE_LINK_POS_CN_TO_FN);
+		BufferedReader cReader= new BufferedReader(new InputStreamReader(in, StablePOS.UTF8_STRING));
 		String cInputString;
 			while (null!= (cInputString= cReader.readLine())) {
 				listFn.add(cInputString);
@@ -848,8 +848,8 @@ public class FMHMMListOneTime_E implements FHMMList {
 	
 	public void indexKo() throws IOException {
 		listKo = new CopyOnWriteArrayList<>();
-		InputStream in = getClass().getResourceAsStream(StableData.WORDS_SOURSE_LINK_POS_CN_TO_KO);
-		BufferedReader cReader = new BufferedReader(new InputStreamReader(in, StableData.UTF8_STRING));
+		InputStream in = getClass().getResourceAsStream(StablePOS.WORDS_SOURSE_LINK_POS_CN_TO_KO);
+		BufferedReader cReader = new BufferedReader(new InputStreamReader(in, StablePOS.UTF8_STRING));
 		String cInputString;
 			while (null!= (cInputString = cReader.readLine())) {
 				listKo.add(cInputString);
@@ -859,8 +859,8 @@ public class FMHMMListOneTime_E implements FHMMList {
 	
 	public void indexJp() throws IOException {
 		listJp = new CopyOnWriteArrayList<>();
-		InputStream in = getClass().getResourceAsStream(StableData.WORDS_SOURSE_LINK_POS_CN_TO_JP);
-		BufferedReader cReader = new BufferedReader(new InputStreamReader(in, StableData.UTF8_STRING));
+		InputStream in = getClass().getResourceAsStream(StablePOS.WORDS_SOURSE_LINK_POS_CN_TO_JP);
+		BufferedReader cReader = new BufferedReader(new InputStreamReader(in, StablePOS.UTF8_STRING));
 		String cInputString;
 			while (null!= (cInputString = cReader.readLine())) {
 				listJp.add(cInputString);
@@ -870,8 +870,8 @@ public class FMHMMListOneTime_E implements FHMMList {
 	
 	public void indexGm() throws IOException {
 		listGm = new CopyOnWriteArrayList<>();
-		InputStream in = getClass().getResourceAsStream(StableData.WORDS_SOURSE_LINK_POS_CN_TO_GM);
-		BufferedReader cReader = new BufferedReader(new InputStreamReader(in, StableData.UTF8_STRING));
+		InputStream in = getClass().getResourceAsStream(StablePOS.WORDS_SOURSE_LINK_POS_CN_TO_GM);
+		BufferedReader cReader = new BufferedReader(new InputStreamReader(in, StablePOS.UTF8_STRING));
 		String cInputString;
 			while (null!= (cInputString = cReader.readLine())) {
 				listGm.add(cInputString);
@@ -881,8 +881,8 @@ public class FMHMMListOneTime_E implements FHMMList {
 	
 	public void indexSp() throws IOException {
 		listSp = new CopyOnWriteArrayList<>();
-		InputStream in = getClass().getResourceAsStream(StableData.WORDS_SOURSE_LINK_POS_CN_TO_SP);
-		BufferedReader cReader = new BufferedReader(new InputStreamReader(in, StableData.UTF8_STRING));
+		InputStream in = getClass().getResourceAsStream(StablePOS.WORDS_SOURSE_LINK_POS_CN_TO_SP);
+		BufferedReader cReader = new BufferedReader(new InputStreamReader(in, StablePOS.UTF8_STRING));
 		String cInputString;
 			while (null!= (cInputString = cReader.readLine())) {
 				listSp.add(cInputString);
@@ -892,8 +892,8 @@ public class FMHMMListOneTime_E implements FHMMList {
 	
 	public void indexAb() throws IOException {
 		listAb = new CopyOnWriteArrayList<>();
-		InputStream in = getClass().getResourceAsStream(StableData.WORDS_SOURSE_LINK_POS_CN_TO_AB);
-		BufferedReader cReader = new BufferedReader(new InputStreamReader(in, StableData.UTF8_STRING));
+		InputStream in = getClass().getResourceAsStream(StablePOS.WORDS_SOURSE_LINK_POS_CN_TO_AB);
+		BufferedReader cReader = new BufferedReader(new InputStreamReader(in, StablePOS.UTF8_STRING));
 		String cInputString;
 			while (null!= (cInputString = cReader.readLine())) {
 				listAb.add(cInputString);
@@ -903,8 +903,8 @@ public class FMHMMListOneTime_E implements FHMMList {
 	
 	public void indexRs() throws IOException {
 		listRs = new CopyOnWriteArrayList<>();
-		InputStream in = getClass().getResourceAsStream(StableData.WORDS_SOURSE_LINK_POS_CN_TO_RS);
-		BufferedReader cReader = new BufferedReader(new InputStreamReader(in, StableData.UTF8_STRING));
+		InputStream in = getClass().getResourceAsStream(StablePOS.WORDS_SOURSE_LINK_POS_CN_TO_RS);
+		BufferedReader cReader = new BufferedReader(new InputStreamReader(in, StablePOS.UTF8_STRING));
 		String cInputString;
 			while (null!= (cInputString = cReader.readLine())) {
 				listRs.add(cInputString);
@@ -914,8 +914,8 @@ public class FMHMMListOneTime_E implements FHMMList {
 	
 	public void indexPy() throws IOException {
 		listPy = new CopyOnWriteArrayList<>();
-		InputStream in = getClass().getResourceAsStream(StableData.WORDS_SOURSE_LINK_POS_CN_TO_PY);
-		BufferedReader cReader = new BufferedReader(new InputStreamReader(in, StableData.UTF8_STRING));
+		InputStream in = getClass().getResourceAsStream(StablePOS.WORDS_SOURSE_LINK_POS_CN_TO_PY);
+		BufferedReader cReader = new BufferedReader(new InputStreamReader(in, StablePOS.UTF8_STRING));
 		String cInputString;
 			while (null!= (cInputString = cReader.readLine())) {
 				listPy.add(cInputString);
@@ -925,8 +925,8 @@ public class FMHMMListOneTime_E implements FHMMList {
 
 	public void indexTt() throws IOException {
 		listTt = new CopyOnWriteArrayList<>();
-		InputStream in = getClass().getResourceAsStream(StableData.WORDS_SOURSE_LINK_POS_CN_TO_TT);
-		BufferedReader cReader = new BufferedReader(new InputStreamReader(in, StableData.UTF8_STRING));
+		InputStream in = getClass().getResourceAsStream(StablePOS.WORDS_SOURSE_LINK_POS_CN_TO_TT);
+		BufferedReader cReader = new BufferedReader(new InputStreamReader(in, StablePOS.UTF8_STRING));
 		String cInputString;
 			while (null!= (cInputString = cReader.readLine())) {
 				listTt.add(cInputString);
@@ -937,69 +937,69 @@ public class FMHMMListOneTime_E implements FHMMList {
 	public void indexPosEnToEn() throws IOException {
 		posEnToEn = new HashMap<>();
 		listEn = new CopyOnWriteArrayList<>();
-		InputStream in = getClass().getResourceAsStream(StableData.WORDS_SOURSE_LINK_POS_EN_TO_EN);
-		BufferedReader cReader = new BufferedReader(new InputStreamReader(in, StableData.UTF8_STRING));
+		InputStream in = getClass().getResourceAsStream(StablePOS.WORDS_SOURSE_LINK_POS_EN_TO_EN);
+		BufferedReader cReader = new BufferedReader(new InputStreamReader(in, StablePOS.UTF8_STRING));
 		String cInputString;
 		Here:
 			while (null!= (cInputString = cReader.readLine())) {
 				listEn.add(cInputString);
-				if(!(!cInputString.replace(StableData.SPACE_STRING, StableData.EMPTY_STRING).equals(StableData.EMPTY_STRING)
-						&& cInputString.split(StableData.NLP_SYMBO_SLASH).length > StableData.INT_ONE )) {
+				if(!(!cInputString.replace(StablePOS.SPACE_STRING, StablePOS.EMPTY_STRING).equals(StablePOS.EMPTY_STRING)
+						&& cInputString.split(StablePOS.NLP_SYMBO_SLASH).length > StablePOS.INT_ONE )) {
 					continue Here;
 				}
-				posEnToEn.put(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO].toLowerCase(), cInputString
-						.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE].toLowerCase());
+				posEnToEn.put(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO].toLowerCase(), cInputString
+						.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE].toLowerCase());
 			}
 		cReader.close();
 	}
 
 	public void indexEnToCn() throws IOException {
 		enToCn = new HashMap<>();
-		InputStream in = getClass().getResourceAsStream(StableData.WORDS_SOURSE_LINK_EN_TO_CN);
-		BufferedReader cReader = new BufferedReader(new InputStreamReader(in, StableData.UTF8_STRING));
+		InputStream in = getClass().getResourceAsStream(StablePOS.WORDS_SOURSE_LINK_EN_TO_CN);
+		BufferedReader cReader = new BufferedReader(new InputStreamReader(in, StablePOS.UTF8_STRING));
 		String cInputString;
 		Here:
 			while (null!= (cInputString = cReader.readLine())) {
-				if(!(!cInputString.replace(StableData.SPACE_STRING, StableData.EMPTY_STRING).equals(StableData.EMPTY_STRING)
-						&& cInputString.split(StableData.NLP_SYMBO_SLASH).length > StableData.INT_ONE )) {
+				if(!(!cInputString.replace(StablePOS.SPACE_STRING, StablePOS.EMPTY_STRING).equals(StablePOS.EMPTY_STRING)
+						&& cInputString.split(StablePOS.NLP_SYMBO_SLASH).length > StablePOS.INT_ONE )) {
 					continue Here;
 				}
-				enToCn.put(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO].toLowerCase(), cInputString
-						.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE]);
+				enToCn.put(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO].toLowerCase(), cInputString
+						.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE]);
 			}
 		cReader.close();
 	}
 
 	public void indexCnToEn() throws IOException {
 		cnToEn = new HashMap<>();
-		InputStream in = getClass().getResourceAsStream(StableData.WORDS_SOURSE_LINK_CN_TO_EN);
-		BufferedReader cReader = new BufferedReader(new InputStreamReader(in, StableData.UTF8_STRING));
+		InputStream in = getClass().getResourceAsStream(StablePOS.WORDS_SOURSE_LINK_CN_TO_EN);
+		BufferedReader cReader = new BufferedReader(new InputStreamReader(in, StablePOS.UTF8_STRING));
 		String cInputString;
 		Here:
 			while (null!= (cInputString = cReader.readLine())) {
-				if(!(!cInputString.replace(StableData.SPACE_STRING, StableData.EMPTY_STRING).equals(StableData.EMPTY_STRING)
-						&& cInputString.split(StableData.NLP_SYMBO_SLASH).length > StableData.INT_ONE )) {
+				if(!(!cInputString.replace(StablePOS.SPACE_STRING, StablePOS.EMPTY_STRING).equals(StablePOS.EMPTY_STRING)
+						&& cInputString.split(StablePOS.NLP_SYMBO_SLASH).length > StablePOS.INT_ONE )) {
 					continue Here;
 				}
-				cnToEn.put(cInputString.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ZERO], cInputString
-						.split(StableData.NLP_SYMBO_SLASH)[StableData.INT_ONE].toLowerCase());
+				cnToEn.put(cInputString.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ZERO], cInputString
+						.split(StablePOS.NLP_SYMBO_SLASH)[StablePOS.INT_ONE].toLowerCase());
 			}
 		cReader.close();
 	}
 
 	public Map<Long, FMHMMNode> loopLoadForest(String cInputString) {
 		Here:
-			for (int i = StableData.INT_ZERO; i < cInputString.length(); i++) {
+			for (int i = StablePOS.INT_ZERO; i < cInputString.length(); i++) {
 				if (linkedHashMap.containsKey(Long.valueOf(cInputString.charAt(i)))) {
 					FMHMMNode fHHMMNode = linkedHashMap.get(Long.valueOf(cInputString.charAt(i)));
 					linkedHashMap = doNeroPostCognitive(fHHMMNode, cInputString, i);
 					continue Here;
 				} 
 				FMHMMNode fHHMMNode = new FMHMMNode();
-				fHHMMNode.setVb(StableData.EMPTY_STRING + cInputString.charAt(i));
-				if (i + StableData.INT_ONE < cInputString.length()) {
+				fHHMMNode.setVb(StablePOS.EMPTY_STRING + cInputString.charAt(i));
+				if (i + StablePOS.INT_ONE < cInputString.length()) {
 					Map<String, Integer> next = new HashMap<>();
-					next.put(StableData.EMPTY_STRING + cInputString.charAt(i + StableData.INT_ONE), StableData.INT_ONE);
+					next.put(StablePOS.EMPTY_STRING + cInputString.charAt(i + StablePOS.INT_ONE), StablePOS.INT_ONE);
 					fHHMMNode.setNext(next);
 				}
 				linkedHashMap.put(Long.valueOf(cInputString.charAt(i)), fHHMMNode);
@@ -1009,15 +1009,15 @@ public class FMHMMListOneTime_E implements FHMMList {
 
 	public Map<Long, FMHMMNode> doNeroPostCognitive(FMHMMNode fFHMMNode, String cInputString, int i) {
 		if (null!= fFHMMNode.getNext()) {
-			if (i + StableData.INT_ONE < cInputString.length()) {
+			if (i + StablePOS.INT_ONE < cInputString.length()) {
 				linkedHashMap = doCheckAndRunNeroPostFix(fFHMMNode, cInputString, i);
 			}
 			return linkedHashMap;
 		}
 		HashMap<String, Integer> HashMap = new HashMap<>();
-		if (i + StableData.INT_ONE < cInputString.length()) {
-			HashMap.put(StableData.EMPTY_STRING + cInputString.charAt(i + StableData.INT_ONE)
-			,StableData.INT_ONE);
+		if (i + StablePOS.INT_ONE < cInputString.length()) {
+			HashMap.put(StablePOS.EMPTY_STRING + cInputString.charAt(i + StablePOS.INT_ONE)
+			,StablePOS.INT_ONE);
 		}
 		fFHMMNode.setNext(HashMap);
 		linkedHashMap.put(Long.valueOf(cInputString.charAt(i)), fFHMMNode);
@@ -1025,9 +1025,9 @@ public class FMHMMListOneTime_E implements FHMMList {
 	}
 
 	public Map<Long, FMHMMNode> doCheckAndRunNeroPostFix(FMHMMNode fFHMMNode, String cInputString, int i) {
-		if (!fFHMMNode.getNext().containsKey(StableData.EMPTY_STRING + cInputString.charAt(i + StableData.INT_ONE))) {
+		if (!fFHMMNode.getNext().containsKey(StablePOS.EMPTY_STRING + cInputString.charAt(i + StablePOS.INT_ONE))) {
 			Map<String, Integer> map = fFHMMNode.getNext();
-			map.put(StableData.EMPTY_STRING + cInputString.charAt(i + StableData.INT_ONE), StableData.INT_ONE);
+			map.put(StablePOS.EMPTY_STRING + cInputString.charAt(i + StablePOS.INT_ONE), StablePOS.INT_ONE);
 			fFHMMNode.setNext(map);
 			linkedHashMap.put(Long.valueOf(cInputString.charAt(i)), fFHMMNode);
 		}
@@ -1066,18 +1066,18 @@ public class FMHMMListOneTime_E implements FHMMList {
 	
 	public List<String> englishStringToWordsList(String string) {
 		List<String> list= new LinkedList<>();
-		string= string.replaceAll(StableData.NLP_SPASE_REP, StableData.SPACE_STRING);
+		string= string.replaceAll(StablePOS.NLP_SPASE_REP, StablePOS.SPACE_STRING);
 		StringBuilder sb= new StringBuilder();
 		for(int i= 0; i< string.length(); i++) {
-			if(StopSymbol_UTF8.symbol.contains(StableData.EMPTY_STRING+ string.charAt(i))) {
+			if(StopSymbol_UTF8.symbol.contains(StablePOS.EMPTY_STRING+ string.charAt(i))) {
 				list.add(sb.toString().toLowerCase());
-				sb.delete(StableData.INT_ZERO, sb.length());
+				sb.delete(StablePOS.INT_ZERO, sb.length());
 				list.add(String.valueOf(string.charAt(i)));
 			}else {
 				sb.append(string.charAt(i));
 			}
 		}
-		if(StableData.INT_ZERO< sb.length()) {
+		if(StablePOS.INT_ZERO< sb.length()) {
 			list.add(sb.toString().toLowerCase());
 		}
 		return list;
@@ -1169,12 +1169,12 @@ public class FMHMMListOneTime_E implements FHMMList {
 	
 	public void indexFullNegative() throws IOException {
 		fullNegative= new HashMap<>();
-		InputStream in= getClass().getResourceAsStream(StableData.WORDS_SOURSE_LINK_POS_NEGATIVE);
-		BufferedReader cReader= new BufferedReader(new InputStreamReader(in, StableData.UTF8_STRING));
+		InputStream in= getClass().getResourceAsStream(StablePOS.WORDS_SOURSE_LINK_POS_NEGATIVE);
+		BufferedReader cReader= new BufferedReader(new InputStreamReader(in, StablePOS.UTF8_STRING));
 		String cInputString;
 			while (null!= (cInputString= cReader.readLine())) {
 				if(!fullNegative.containsKey(cInputString)) {
-					fullNegative.put(cInputString, StableData.EMPTY_STRING);
+					fullNegative.put(cInputString, StablePOS.EMPTY_STRING);
 				}
 			}
 		cReader.close();
@@ -1182,12 +1182,12 @@ public class FMHMMListOneTime_E implements FHMMList {
 	
 	public void indexFullPositive() throws IOException {
 		fullPositive= new HashMap<>();
-		InputStream in= getClass().getResourceAsStream(StableData.WORDS_SOURSE_LINK_POS_POSITIVE);
-		BufferedReader cReader= new BufferedReader(new InputStreamReader(in, StableData.UTF8_STRING));
+		InputStream in= getClass().getResourceAsStream(StablePOS.WORDS_SOURSE_LINK_POS_POSITIVE);
+		BufferedReader cReader= new BufferedReader(new InputStreamReader(in, StablePOS.UTF8_STRING));
 		String cInputString;
 			while (null!= (cInputString= cReader.readLine())) {
 				if(!fullPositive.containsKey(cInputString)) {
-					fullPositive.put(cInputString, StableData.EMPTY_STRING);
+					fullPositive.put(cInputString, StablePOS.EMPTY_STRING);
 				}
 			}
 		cReader.close();
@@ -1210,15 +1210,15 @@ public class FMHMMListOneTime_E implements FHMMList {
 			String treeName= WordTree.next();
 			if(0<treeName.length()) {
 				Map<String, String> treeLeafs;
-				if(output.containsKey(Long.valueOf(treeName.charAt(StableData.INT_ZERO)))){
-					treeLeafs= output.get(Long.valueOf(treeName.charAt(StableData.INT_ZERO)));
+				if(output.containsKey(Long.valueOf(treeName.charAt(StablePOS.INT_ZERO)))){
+					treeLeafs= output.get(Long.valueOf(treeName.charAt(StablePOS.INT_ZERO)));
 					treeLeafs.put(treeName, posCnToCn.get(treeName)); 
-					output.put(Long.valueOf(treeName.charAt(StableData.INT_ZERO)), treeLeafs);
+					output.put(Long.valueOf(treeName.charAt(StablePOS.INT_ZERO)), treeLeafs);
 				}else {
 					treeLeafs= new HashMap<>();
 				}
 				treeLeafs.put(treeName, posCnToCn.get(treeName)); 
-				output.put(Long.valueOf(treeName.charAt(StableData.INT_ZERO)), treeLeafs);	
+				output.put(Long.valueOf(treeName.charAt(StablePOS.INT_ZERO)), treeLeafs);	
 			}
 		}
 		return output;	

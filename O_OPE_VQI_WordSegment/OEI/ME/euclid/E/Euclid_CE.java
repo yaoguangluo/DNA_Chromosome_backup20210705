@@ -2,22 +2,22 @@ package OEI.ME.euclid.E;
 import java.util.Map;
 
 import AVQ.ASQ.OVQ.OSQ.VSQ.obj.FMHMMNode;
-import AVQ.ASQ.OVQ.OSQ.VSQ.stable.StableData;
+import SVQ.stable.StablePOS;
 import OCI.ME.euclid.C.Euclid_C;
 
 import java.util.HashMap;
 import java.util.Iterator;
 public class Euclid_CE implements Euclid_C {
-	@SuppressWarnings({StableData.RAW_TYPES, StableData.UNCHECKED})
+	@SuppressWarnings({StablePOS.RAW_TYPES, StablePOS.UNCHECKED})
 	public Map<Integer, Map> mCogsEuclid(Map<Long, FMHMMNode> HashMap) {
 		Map<Integer, Map> HashMapRoot= new HashMap<>();
 		Iterator<Long> iter= HashMap.keySet().iterator();
 		Here:
 			while (iter.hasNext()) {
 				Long keyValue= iter.next();
-				Integer charOfKeyValueToInteger= Integer.valueOf(StableData.EMPTY_STRING + keyValue);
-				int range= (charOfKeyValueToInteger.intValue()>> StableData.INT_SIX);
-				int rangeHigh= range >> StableData.INT_FOUR;
+				Integer charOfKeyValueToInteger= Integer.valueOf(StablePOS.EMPTY_STRING + keyValue);
+				int range= (charOfKeyValueToInteger.intValue()>> StablePOS.INT_SIX);
+				int rangeHigh= range >> StablePOS.INT_FOUR;
 				if (!HashMapRoot.containsKey(rangeHigh)) {
 					HashMap<Long, FMHMMNode> innerHashMap = new HashMap<>();
 					innerHashMap.put(keyValue, HashMap.get(keyValue));

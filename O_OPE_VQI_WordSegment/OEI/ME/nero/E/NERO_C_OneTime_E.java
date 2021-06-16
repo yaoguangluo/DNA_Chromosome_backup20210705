@@ -2,13 +2,13 @@ package OEI.ME.nero.E;
 import java.util.Map;
 
 import AVQ.ASQ.OVQ.OSQ.VSQ.obj.FMHMMNode;
-import AVQ.ASQ.OVQ.OSQ.VSQ.stable.StableData;
+import SVQ.stable.StablePOS;
 import OCI.ME.nero.C.NERO_C_OneTime;
 public class NERO_C_OneTime_E implements NERO_C_OneTime {
 	public StringBuilder getBinaryForestRecurWordOneTime(StringBuilder outputWordNode, String inputString
 			, int charPosition, int inputStringLength, Map<Long, FMHMMNode> forestRoots, int forestDepth
 			, int charPositionNext) {
-		if (StableData.INT_THREE== forestDepth){
+		if (StablePOS.INT_THREE== forestDepth){
 			return outputWordNode;
 		}
 		FMHMMNode fFHMMNode= forestRoots.get(Long.valueOf(inputString.charAt(charPosition)));
@@ -30,7 +30,7 @@ public class NERO_C_OneTime_E implements NERO_C_OneTime {
 	public StringBuilder getBinaryForestsRecurWordOneTime(StringBuilder outputWordNode, String inputString
 			, int charPosition, int inputStringLength, Map<Long, FMHMMNode>[] forestsRoots, int forestDepth
 			,int charPositionNext) {
-		if (StableData.INT_THREE== forestDepth){
+		if (StablePOS.INT_THREE== forestDepth){
 			return outputWordNode;
 		}
 		FMHMMNode fFHMMNode= getFMHMMNode(forestsRoots,inputString,charPosition);
@@ -60,7 +60,7 @@ public class NERO_C_OneTime_E implements NERO_C_OneTime {
 
 	public StringBuilder getQuickForestRecurWord(StringBuilder outputWordNode, String inputString, int charPosition
 			, int inputStringLength, Map<String, String> posCntoCn, int forestDepth, int charPositionNext ) {
-		if (StableData.INT_THREE== forestDepth|| charPositionNext>= inputStringLength) {
+		if (StablePOS.INT_THREE== forestDepth|| charPositionNext>= inputStringLength) {
 			return outputWordNode;
 		}
 		char positionOfi= inputString.charAt(charPositionNext);

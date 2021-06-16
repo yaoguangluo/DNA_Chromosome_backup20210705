@@ -1,10 +1,10 @@
 package ME.APM.VSQ;
 
 import java.util.StringTokenizer;
-import ME.S.stables.PathLinkFile;
+import SVQ.stable.StableFile;
 public class SetLib{
 	public SetLib() {
-		PathLinkFile.DNA_PDN.put(this.getClass().getCanonicalName(), true);
+		StableFile.DNA_PDN.put(this.getClass().getCanonicalName(), true);
 		//String libname=".dll";
 		String libpath= System.getProperty("java.library.path");
 		if(libpath==null||libpath.length()==0){

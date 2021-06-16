@@ -16,7 +16,7 @@ import javax.swing.JTabbedPane;
 
 import ME.APM.VSQ.OPE.config.SectionJPanel;
 import OPM.ESU.admin.PLSQLSectionPanel;
-import ME.S.stables.PathLinkFile;
+import SVQ.stable.StableFile;
 
 public class AppConfig extends ScrollPane implements MouseListener, KeyListener, ActionListener{	
 	private static final long serialVersionUID= 1L;
@@ -25,7 +25,7 @@ public class AppConfig extends ScrollPane implements MouseListener, KeyListener,
 	public PLSQLSectionPanel pLSQLJPanel;
 	public SectionJPanel pLShellJPanel;
 	public void init(App app){
-		PathLinkFile.DNA_PDN.put(this.getClass().getCanonicalName(), true);
+		StableFile.DNA_PDN.put(this.getClass().getCanonicalName(), true);
 		JTabbedPane jTabbedpane= new JTabbedPane();
 		Container SectionJPanelContainer= new Container();
 		SectionJPanel= new SectionJPanel(app);

@@ -11,7 +11,7 @@ import MS.VPC.SH.Sleeper;
 import MS.VPC.SH.Sleeper_H;
 import MSV.PCS.C.RequestFilter_C;
 import OM.config.Config;
-import OP.SM.AOP.MEC.SIQ.stable.StableData;
+import SVQ.stable.StableWeb;
 import OSI.AOP.MS.VPC.S.hall.DatabaseLog_H;
 import VPC.VQS.DSU.utils.DetaUtil;
 public class ServerInit_C {
@@ -123,7 +123,7 @@ public class ServerInit_C {
 		+ timeProcess.duration()+ "∫¡√Î");
 		app.ready= true;
 		while(true){
-			if(sleeper_H.getThreadsCount()< StableData.SLEEPERS_RANGE){
+			if(sleeper_H.getThreadsCount()< StableWeb.SLEEPERS_RANGE){
 				Sleeper sleeper= new Sleeper(app);
 				try {
 					sleeper.hugPillow(sleeper_H, server.accept()

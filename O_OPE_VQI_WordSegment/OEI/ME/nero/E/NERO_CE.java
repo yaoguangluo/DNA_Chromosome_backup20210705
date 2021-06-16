@@ -2,22 +2,22 @@ package OEI.ME.nero.E;
 import java.util.Map;
 
 import AVQ.ASQ.OVQ.OSQ.VSQ.obj.FMHMMNode;
-import AVQ.ASQ.OVQ.OSQ.VSQ.stable.StableData;
+import SVQ.stable.StablePOS;
 import OCI.ME.nero.C.NERO_C;
 public class NERO_CE implements NERO_C {
-	@SuppressWarnings({StableData.RAW_TYPES, StableData.UNCHECKED})
+	@SuppressWarnings({StablePOS.RAW_TYPES, StablePOS.UNCHECKED})
 	public StringBuilder getBinaryForestRecurWord(StringBuilder outputWordNode, String inputString, int charPosition
 			, int inputStringLength, Map<Integer, Map> forestRoots, int forestDepth, int charPositionNext ) {
-		if (StableData.INT_THREE== forestDepth) {
+		if (StablePOS.INT_THREE== forestDepth) {
 			return outputWordNode;
 		}
 		char charAtPosition= inputString.charAt(charPosition);
-		int rangeHigh= charAtPosition>> StableData.INT_TEN;
+		int rangeHigh= charAtPosition>> StablePOS.INT_TEN;
 		Map<Integer, Map> trees= forestRoots.get(rangeHigh);
 		if (null== trees) {
 			return outputWordNode;
 		}
-		int range= charAtPosition>> StableData.INT_SIX;
+		int range= charAtPosition>> StablePOS.INT_SIX;
 		if (!trees.containsKey(range)) {
 			return outputWordNode;
 		}
@@ -34,7 +34,7 @@ public class NERO_CE implements NERO_C {
 		if (outputList.containsKey(String.valueOf(positionOfi))) {
 			outputWordNode= getBinaryForestRecurWord(outputWordNode.append(positionOfi), inputString
 					, charPositionNext, inputStringLength, forestRoots
-					, forestDepth+ StableData.INT_ONE, ++charPositionNext);
+					, forestDepth+ StablePOS.INT_ONE, ++charPositionNext);
 		}
 		return outputWordNode;
 	}

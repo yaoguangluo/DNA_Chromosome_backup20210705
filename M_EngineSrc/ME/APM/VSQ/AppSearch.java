@@ -27,12 +27,12 @@ import ME.APM.VSQ.OPE.search.TanJPanel;
 import ME.APM.VSQ.OPE.search.TongJPanel;
 import ME.APM.VSQ.OPE.search.XueJPanel;
 import ME.APM.VSQ.OPE.search.YangJPanel;
-import ME.S.stables.PathLinkFile;
+import SVQ.stable.StableFile;
 public class AppSearch extends ScrollPane implements MouseListener, KeyListener, ActionListener{	
 	private static final long serialVersionUID= 1L;
 	
 	public void init(JTextField name){
-		PathLinkFile.DNA_PDN.put(this.getClass().getCanonicalName(), true);
+		StableFile.DNA_PDN.put(this.getClass().getCanonicalName(), true);
 		JTabbedPane jTabbedpane= new JTabbedPane();
 		Container HanContainer= new Container();
 		HanJPanel hanJPanel= new HanJPanel(name);

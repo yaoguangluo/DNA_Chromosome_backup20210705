@@ -1,5 +1,5 @@
-package ME.S.stables;
-public interface StableDataSrc {
+package SVQ.stable;
+public interface StableTag {
 	//APP.JAVA
 	public static final String columnTitle_0 = "ID";
 	public static final String columnTitle_1 = "´ò·Ö";

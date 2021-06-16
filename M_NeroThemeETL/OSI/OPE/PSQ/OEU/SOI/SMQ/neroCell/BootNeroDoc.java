@@ -4,7 +4,7 @@ import java.util.Map;
 import javax.swing.JTextPane;
 
 import OSI.OPE.AOPM.VECS.IDUQ.OVU.PQE.flash.ThisCanvas;
-import OSI.OPE.MSQ.SS.stable.StableData;
+import SVQ.stable.StableAnnotation;
 import OSI.OPE.OEI.PVI.SOI.SMQ.load.LoadFile;
 import OSI.OPE.OVU.MVQ.OVU.PQE.nodeView.NodeShow;
 import OSI.OPE.OVU.MVU.OVU.PQE.nodeEdit.LinkList;
@@ -33,13 +33,13 @@ public class BootNeroDoc extends Thread implements Runnable{
 		try {
 			System.out.println(fileCurrentpath);
 			if(null== fileCurrentpath|| fileCurrentpath.isEmpty()
-					|| !fileCurrentpath.contains(StableData.FILE_FORMAT_ETL)) {
-				System.out.println(StableData.ATTENSION_RECHOICE);
+					|| !fileCurrentpath.contains(StableAnnotation.FILE_FORMAT_ETL)) {
+				System.out.println(StableAnnotation.ATTENSION_RECHOICE);
 				return;
 			}
 			File file= new File(fileCurrentpath);
 			if(!file.isFile()) {
-				System.out.println(StableData.ATTENSION_RECHOICE);
+				System.out.println(StableAnnotation.ATTENSION_RECHOICE);
 				return;
 			}
 			Thread.sleep(2);

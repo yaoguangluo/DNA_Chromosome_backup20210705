@@ -8,7 +8,7 @@ import java.awt.Image;
 import java.awt.Panel;  
 import java.awt.image.BufferedImage;  
 import javax.swing.ImageIcon;  
-import ME.S.stables.PathLinkFile;
+import SVQ.stable.StableFile;
 public class JingMai extends Panel{  
 	private static final long serialVersionUID = 1L;
 	public ImageIcon png1 = new ImageIcon(getClass().getResource("手厥阴心包经.png"));  
@@ -32,7 +32,7 @@ public class JingMai extends Panel{
 	private Image backgroundImage;  
 
 	public JingMai() {  
-		PathLinkFile.DNA_PDN.put(this.getClass().getCanonicalName(), true);
+		StableFile.DNA_PDN.put(this.getClass().getCanonicalName(), true);
 		loadImage();  
 		// 设定焦点在本窗体  
 		setFocusable(true);  

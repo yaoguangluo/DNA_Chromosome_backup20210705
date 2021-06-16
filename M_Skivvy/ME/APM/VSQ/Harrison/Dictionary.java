@@ -8,7 +8,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.concurrent.ConcurrentHashMap;
 
-import ME.S.stables.PathLinkFile;
+import SVQ.stable.StableFile;
 
 import java.util.List;
 import java.util.Map;
@@ -17,7 +17,7 @@ public class Dictionary{
 	public Map<String, String> dic_map;
 	public List<String> txtToListName() throws IOException{
 		List<String> TEMP_list = new ArrayList<>();
-		TEMP_list.add(PathLinkFile.HarrisonsPrinciplesofInternalMedicine_18ed1_txt);
+		TEMP_list.add(StableFile.HarrisonsPrinciplesofInternalMedicine_18ed1_txt);
 		return TEMP_list;
 	}
 	

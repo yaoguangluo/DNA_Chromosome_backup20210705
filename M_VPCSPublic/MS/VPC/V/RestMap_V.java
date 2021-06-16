@@ -1,6 +1,7 @@
 package MS.VPC.V;
 import java.io.BufferedReader;
 
+
 import java.io.BufferedWriter;
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
@@ -18,7 +19,8 @@ import java.util.List;
 
 import ME.APM.VSQ.App;
 import MS.OP.SM.AOP.MEC.SIQ.cache.DetaCache_M;
-import OP.SM.AOP.MEC.SIQ.stable.StableData;
+import SVQ.stable.StablePOS;
+import SVQ.stable.StableWeb;
 import OSI.AOP.VPC.rest.VPC;
 import PEU.P.zip.*;
 //这里出现了VPC的标识,让走四方看清楚,我有很多方法来继承,我就不用走四方的那种. VPCS 的STABLE就可以解决
@@ -66,12 +68,12 @@ public class RestMap_V {
 		String output= VPC.forward(app, vPCSRequest.getRequestLink()
 				, vPCSRequest.getRequestValue());
 		PrintWriter printWriter= new PrintWriter(new BufferedWriter(new OutputStreamWriter(vPCSResponse.getSocket()
-				.getOutputStream(),StableData.CHARSET_UTF_8)),true);
+				.getOutputStream(),StableWeb.CHARSET_UTF_8)),true);
 		printWriter.println("HTTP/1.1 200 OK\n\n"); 
-		output=output.charAt(StableData.INT_ZERO)=='"'?output.substring(StableData.INT_ONE, output.length())
+		output=output.charAt(StablePOS.INT_ZERO)=='"'?output.substring(StablePOS.INT_ONE, output.length())
 				:output;
-		output=output.charAt(output.length()-StableData.INT_ONE)=='"'?output.substring(StableData.INT_ZERO
-				, output.length()-StableData.INT_ONE):output;
+		output=output.charAt(output.length()-StablePOS.INT_ONE)=='"'?output.substring(StablePOS.INT_ZERO
+				, output.length()-StablePOS.INT_ONE):output;
 		printWriter.println(output.replace("\\\"","\""));
 		System.out.println("db:"+4);
 		printWriter.flush();
@@ -92,26 +94,26 @@ public class RestMap_V {
 		}else{
 			FileInputStream fileInputStream = new FileInputStream(new File(vPCSRequest.getRequestFilePath()));
 			ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-			byte[] byteArray = new byte[StableData.BUFFER_RANGE_MAX];
-			int lengthOfFile = StableData.INT_ZERO;
+			byte[] byteArray = new byte[StableWeb.BUFFER_RANGE_MAX];
+			int lengthOfFile = StablePOS.INT_ZERO;
 			list = new ArrayList<>();
 			//这段while函数思想来自 这篇文章：https://blog.csdn.net/top_code/article/details/41042413
 			//非常轻松处理len的长度溢出。谢谢。
-			while((lengthOfFile = fileInputStream.read(byteArray, StableData.INT_ZERO
-					, StableData.BUFFER_RANGE_MAX)) != StableData.INT_MINES_ONE){
-				byteArrayOutputStream.write(byteArray, StableData.INT_ZERO, lengthOfFile);
+			while((lengthOfFile = fileInputStream.read(byteArray, StablePOS.INT_ZERO
+					, StableWeb.BUFFER_RANGE_MAX)) != StablePOS.INT_ERROR){
+				byteArrayOutputStream.write(byteArray, StablePOS.INT_ZERO, lengthOfFile);
 			}
 			fileInputStream.close();
 			byte[] sniper = GzipUtil.compress(byteArrayOutputStream.toByteArray());
-			list.add(0, vPCSResponse.getResponseContentType().getBytes(StableData.CHARSET_UTF8));
-			list.add(0, (StableData.HEADER_CONTENT_LENGTH + sniper.length + StableData.STRING_SPACE_ENTER)
-					.getBytes(StableData.CHARSET_UTF8));
-			list.add(0, StableData.HEADER_CACHE_CONTROL.getBytes(StableData.CHARSET_UTF8));
-			list.add(0, StableData.HEADER_CONTENT_ENCODING_GZIP.getBytes(StableData.CHARSET_UTF8));
-			list.add(0, StableData.HEADER_ACCEPT_RANGES_BYTES.getBytes(StableData.CHARSET_UTF8));
-			list.add(0, StableData.HEADER_HOST.getBytes(StableData.CHARSET_UTF8));
-			list.add(0, StableData.HEADER_HTTP_200_OK.getBytes(StableData.CHARSET_UTF8));
-			if(null != sniper && sniper.length>StableData.INT_ZERO) {
+			list.add(0, vPCSResponse.getResponseContentType().getBytes(StableWeb.CHARSET_UTF8));
+			list.add(0, (StableWeb.HEADER_CONTENT_LENGTH + sniper.length + StableWeb.STRING_SPACE_ENTER)
+					.getBytes(StableWeb.CHARSET_UTF8));
+			list.add(0, StableWeb.HEADER_CACHE_CONTROL.getBytes(StableWeb.CHARSET_UTF8));
+			list.add(0, StableWeb.HEADER_CONTENT_ENCODING_GZIP.getBytes(StableWeb.CHARSET_UTF8));
+			list.add(0, StableWeb.HEADER_ACCEPT_RANGES_BYTES.getBytes(StableWeb.CHARSET_UTF8));
+			list.add(0, StableWeb.HEADER_HOST.getBytes(StableWeb.CHARSET_UTF8));
+			list.add(0, StableWeb.HEADER_HTTP_200_OK.getBytes(StableWeb.CHARSET_UTF8));
+			if(null != sniper && sniper.length>StablePOS.INT_ZERO) {
 				list.add(sniper);
 			}
 			DetaCache_M.putCacheOfBytesList(vPCSRequest.getRequestFilePath(), list);
@@ -130,9 +132,9 @@ public class RestMap_V {
 			builderToString = DetaCache_M.getCacheOfString(vPCSRequest.getRequestFilePath());
 		}else{
 			StringBuilder stringBuilder = new StringBuilder();
-			stringBuilder.append(StableData.HEADER_HTTP_200_OK);
-			stringBuilder.append(StableData.HEADER_HOST);
-			stringBuilder.append(StableData.HEADER_CACHE_CONTROL);
+			stringBuilder.append(StableWeb.HEADER_HTTP_200_OK);
+			stringBuilder.append(StableWeb.HEADER_HOST);
+			stringBuilder.append(StableWeb.HEADER_CACHE_CONTROL);
 			stringBuilder.append(vPCSResponse.getResponseContentType());
 			FileInputStream fileInputStream = new FileInputStream(new File(vPCSRequest.getRequestFilePath())); 
 			InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream
@@ -156,10 +158,10 @@ public class RestMap_V {
 	public static void P_BufferBytes(VPCSRequest vPCSRequest
 			, VPCSResponse vPCSResponse) throws UnsupportedEncodingException, IOException {
 		StringBuilder stringBuilder = new StringBuilder();
-		stringBuilder.append(StableData.HEADER_HTTP_200_OK);
-		stringBuilder.append(StableData.HEADER_HOST);
-		stringBuilder.append(StableData.HEADER_CACHE_CONTROL);
-		stringBuilder.append(StableData.HEADER_CONTENT_ENCODING_GZIP);
+		stringBuilder.append(StableWeb.HEADER_HTTP_200_OK);
+		stringBuilder.append(StableWeb.HEADER_HOST);
+		stringBuilder.append(StableWeb.HEADER_CACHE_CONTROL);
+		stringBuilder.append(StableWeb.HEADER_CONTENT_ENCODING_GZIP);
 		stringBuilder.append(vPCSResponse.getResponseContentType());
 		String builderToString= stringBuilder.toString();
 		String contentBuilderToString;
@@ -170,19 +172,19 @@ public class RestMap_V {
 			StringBuilder contentBuilder = new StringBuilder();
 			FileInputStream fileInputStream = new FileInputStream(new File(vPCSRequest
 					.getRequestFilePath()));
-			int lengthOfFile = StableData.INT_ZERO;
-			byte[] byteArray = new byte[StableData.BUFFER_RANGE_MAX];
-			while ((lengthOfFile = fileInputStream.read(byteArray)) != StableData.INT_MINES_ONE){
-				contentBuilder.append(new String(byteArray, StableData.INT_ZERO, lengthOfFile
-						, StableData.CHARSET_UTF_8));
+			int lengthOfFile = StablePOS.INT_ZERO;
+			byte[] byteArray = new byte[StableWeb.BUFFER_RANGE_MAX];
+			while ((lengthOfFile = fileInputStream.read(byteArray)) != StablePOS.INT_ERROR){
+				contentBuilder.append(new String(byteArray, StablePOS.INT_ZERO, lengthOfFile
+						, StableWeb.CHARSET_UTF_8));
 			}
 			fileInputStream.close();
 			contentBuilderToString = contentBuilder.toString();
 			DetaCache_M.putCacheOfString(vPCSRequest.getRequestFilePath(), contentBuilderToString);
 		}	
 		DataOutputStream dataOutputStream = new DataOutputStream(vPCSResponse.getSocket().getOutputStream());
-		dataOutputStream.write(builderToString.getBytes(StableData.CHARSET_UTF8));
-		dataOutputStream.write(GzipUtil.compress(contentBuilderToString.getBytes(StableData.CHARSET_UTF8)));
+		dataOutputStream.write(builderToString.getBytes(StableWeb.CHARSET_UTF8));
+		dataOutputStream.write(GzipUtil.compress(contentBuilderToString.getBytes(StableWeb.CHARSET_UTF8)));
 		dataOutputStream.flush();
 		dataOutputStream.close();
 	}

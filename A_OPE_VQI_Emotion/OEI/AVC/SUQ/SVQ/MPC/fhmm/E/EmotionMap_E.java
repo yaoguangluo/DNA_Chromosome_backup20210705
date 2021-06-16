@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
 
-import AVQ.ASQ.OVQ.OSQ.VSQ.stable.StableData;
+import SVQ.stable.StablePOS;
 import OCI.AVC.SUQ.SVQ.MPC.fhmm.C.EmotionMap;
 
 public class EmotionMap_E implements EmotionMap{
@@ -68,8 +68,8 @@ public class EmotionMap_E implements EmotionMap{
 	
 	public void initPositiveMap() throws IOException{
 		positiveMap = new HashMap<>();
-		InputStream in = getClass().getResourceAsStream(StableData.WORDS_SOURSE_LINK_POS_POSITIVE);
-		BufferedReader cReader = new BufferedReader(new InputStreamReader(in, StableData.UTF8_STRING));
+		InputStream in = getClass().getResourceAsStream(StablePOS.WORDS_SOURSE_LINK_POS_POSITIVE);
+		BufferedReader cReader = new BufferedReader(new InputStreamReader(in, StablePOS.UTF8_STRING));
 		String cInputString;
 		while ((cInputString = cReader.readLine()) != null) {
 			if(!positiveMap.containsKey(cInputString)) {
@@ -81,13 +81,13 @@ public class EmotionMap_E implements EmotionMap{
 	
 	public void initMotivationMap() throws IOException{
 		motivationMap = new HashMap<>();
-		InputStream in = getClass().getResourceAsStream(StableData.WORDS_SOURSE_LINK_MOTIVATION);
-		BufferedReader cReader = new BufferedReader(new InputStreamReader(in, StableData.UTF8_STRING));
+		InputStream in = getClass().getResourceAsStream(StablePOS.WORDS_SOURSE_LINK_MOTIVATION);
+		BufferedReader cReader = new BufferedReader(new InputStreamReader(in, StablePOS.UTF8_STRING));
 		String cInputString;
 		while ((cInputString = cReader.readLine()) != null) {
-			String[] value = cInputString.split(StableData.NLP_SYMBO_SLASH);
-			if(!motivationMap.containsKey(value[StableData.INT_ZERO])) {
-				motivationMap.put(value[StableData.INT_ZERO], value[StableData.INT_ONE]);
+			String[] value = cInputString.split(StablePOS.NLP_SYMBO_SLASH);
+			if(!motivationMap.containsKey(value[StablePOS.INT_ZERO])) {
+				motivationMap.put(value[StablePOS.INT_ZERO], value[StablePOS.INT_ONE]);
 			}
 		}
 		cReader.close();
@@ -95,13 +95,13 @@ public class EmotionMap_E implements EmotionMap{
 	
 	public void initTrendingMap() throws IOException{
 		trendingMap = new HashMap<>();
-		InputStream in = getClass().getResourceAsStream(StableData.WORDS_SOURSE_LINK_TRENDING);
-		BufferedReader cReader = new BufferedReader(new InputStreamReader(in, StableData.UTF8_STRING));
+		InputStream in = getClass().getResourceAsStream(StablePOS.WORDS_SOURSE_LINK_TRENDING);
+		BufferedReader cReader = new BufferedReader(new InputStreamReader(in, StablePOS.UTF8_STRING));
 		String cInputString;
 		while ((cInputString = cReader.readLine()) != null) {
-			String[] value= cInputString.split(StableData.NLP_SYMBO_SLASH);
-			if(!trendingMap.containsKey(value[StableData.INT_ZERO])) {
-				trendingMap.put(value[StableData.INT_ZERO], value[StableData.INT_ONE]);
+			String[] value= cInputString.split(StablePOS.NLP_SYMBO_SLASH);
+			if(!trendingMap.containsKey(value[StablePOS.INT_ZERO])) {
+				trendingMap.put(value[StablePOS.INT_ZERO], value[StablePOS.INT_ONE]);
 			}
 		}
 		cReader.close();
@@ -109,8 +109,8 @@ public class EmotionMap_E implements EmotionMap{
 	
 	public void initNegativeMap() throws IOException{
 		negativeMap = new HashMap<>();
-		InputStream in = getClass().getResourceAsStream(StableData.WORDS_SOURSE_LINK_POS_NEGATIVE);
-		BufferedReader cReader = new BufferedReader(new InputStreamReader(in, StableData.UTF8_STRING));
+		InputStream in = getClass().getResourceAsStream(StablePOS.WORDS_SOURSE_LINK_POS_NEGATIVE);
+		BufferedReader cReader = new BufferedReader(new InputStreamReader(in, StablePOS.UTF8_STRING));
 		String cInputString;
 		while ((cInputString = cReader.readLine()) != null) {
 			if(!negativeMap.containsKey(cInputString)) {
@@ -122,13 +122,13 @@ public class EmotionMap_E implements EmotionMap{
 
 	public void initPredictionMap() throws IOException {
 		predictionMap = new HashMap<>();
-		InputStream in = getClass().getResourceAsStream(StableData.WORDS_SOURSE_LINK_PREDICTION);
-		BufferedReader cReader = new BufferedReader(new InputStreamReader(in, StableData.UTF8_STRING));
+		InputStream in = getClass().getResourceAsStream(StablePOS.WORDS_SOURSE_LINK_PREDICTION);
+		BufferedReader cReader = new BufferedReader(new InputStreamReader(in, StablePOS.UTF8_STRING));
 		String cInputString;
 		while ((cInputString = cReader.readLine()) != null) {
-			String[] value= cInputString.split(StableData.NLP_SYMBO_SLASH);
-			if(!predictionMap.containsKey(value[StableData.INT_ZERO])) {
-				predictionMap.put(value[StableData.INT_ZERO], value[StableData.INT_ONE]);
+			String[] value= cInputString.split(StablePOS.NLP_SYMBO_SLASH);
+			if(!predictionMap.containsKey(value[StablePOS.INT_ZERO])) {
+				predictionMap.put(value[StablePOS.INT_ZERO], value[StablePOS.INT_ONE]);
 			}
 		}
 		cReader.close();
@@ -136,13 +136,13 @@ public class EmotionMap_E implements EmotionMap{
 
 	public void initDistinctionMap() throws IOException {
 		distinctionMap = new HashMap<>();
-		InputStream in = getClass().getResourceAsStream(StableData.WORDS_SOURSE_LINK_DISTINCTION);
-		BufferedReader cReader = new BufferedReader(new InputStreamReader(in, StableData.UTF8_STRING));
+		InputStream in = getClass().getResourceAsStream(StablePOS.WORDS_SOURSE_LINK_DISTINCTION);
+		BufferedReader cReader = new BufferedReader(new InputStreamReader(in, StablePOS.UTF8_STRING));
 		String cInputString;
 		while ((cInputString = cReader.readLine()) != null) {
-			String[] value= cInputString.split(StableData.NLP_SYMBO_SLASH);
-			if(!distinctionMap.containsKey(value[StableData.INT_ZERO])) {
-				distinctionMap.put(value[StableData.INT_ZERO], value[StableData.INT_ONE]);
+			String[] value= cInputString.split(StablePOS.NLP_SYMBO_SLASH);
+			if(!distinctionMap.containsKey(value[StablePOS.INT_ZERO])) {
+				distinctionMap.put(value[StablePOS.INT_ZERO], value[StablePOS.INT_ONE]);
 			}
 		}
 		cReader.close();

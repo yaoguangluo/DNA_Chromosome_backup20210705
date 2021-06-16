@@ -22,7 +22,7 @@ import ME.APM.VSQ.OPE.hospital.LinChuangJianYanBaoGaoA;
 import ME.APM.VSQ.OPE.hospital.LinChuangJianYanBaoGaoB;
 import ME.APM.VSQ.OPE.hospital.XiYaoJPanel;
 import ME.APM.VSQ.OPE.hospital.ZhongYaoJPanel;
-import ME.S.stables.PathLinkFile;
+import SVQ.stable.StableFile;
 import MVQ.label.DetaLabel;
 
 
@@ -30,7 +30,7 @@ public class AppHospital extends ScrollPane implements MouseListener, KeyListene
 	private static final long serialVersionUID= 1L;
 	public List<DetaLabel> jFrameList= new LinkedList<>();
 	public void init(JTextPane name, App app){
-		PathLinkFile.DNA_PDN.put(this.getClass().getCanonicalName(), true);
+		StableFile.DNA_PDN.put(this.getClass().getCanonicalName(), true);
 		JTabbedPane jTabbedpane= new JTabbedPane();
 		Container chuanRanJiZhenContainer= new Container();
 		LinChuangJianYanBaoGaoA chuanRanJiZhenPanel= new LinChuangJianYanBaoGaoA(name, jFrameList);

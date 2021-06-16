@@ -1,6 +1,6 @@
-package AVQ.ASQ.OVQ.OSQ.VSQ.stable;
+package SVQ.stable;
 
-public interface StableData {
+public interface StablePOS {
 	public static final String NLP_CI_MING= "名词";
 	public static final String NLP_CI_BA_DONG= "把动词";
 	public static final String NLP_CI_DAI= "代词";

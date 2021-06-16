@@ -1,10 +1,10 @@
 package OSI.OPE.AOPM.VECS.IDUQ.OVU.PQE.flash;
 import javax.swing.JFrame;
 
-import OSI.OPE.MSQ.SS.stable.StableData;
+import SVQ.stable.StableAnnotation;
 public class Flash extends GUISample{
 	private static final long serialVersionUID = 1L;
-	@SuppressWarnings(StableData.TAG_DEPRECATION)
+	@SuppressWarnings(StableAnnotation.TAG_DEPRECATION)
 	public static void main(String args[]){
 		GUISample NE= new GUISample();
 		JFrame frame= new JFrame("Deta ETL 1.0.2");   

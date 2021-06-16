@@ -29,7 +29,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 
 import AVQ.ASQ.OVQ.OSQ.VSQ.obj.WordFrequency;
-import AVQ.ASQ.OVQ.OSQ.VSQ.stable.StableData;
+import SVQ.stable.StablePOS;
 import ESU.list.List_ESU;
 import ESU.sort.Quick9DLYGWithString_ESU;
 import ESU.string.String_ESU;
@@ -148,11 +148,11 @@ public class JzkxPage extends Container implements MouseListener, KeyListener{
 							if(pos.get(setOfi).contains("名")||pos.get(setOfi).contains("动")||pos.get(setOfi).contains("形")) {
 								if (map.containsKey(setOfi)) {
 									WordFrequency wordFrequency = map.get(setOfi);
-									wordFrequency.setFrequency(wordFrequency.getFrequency() + StableData.INT_ONE);
+									wordFrequency.setFrequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
 									map.put(setOfi, wordFrequency);
 								} else {
 									WordFrequency wordFrequency = new WordFrequency();
-									wordFrequency.setFrequency(StableData.INT_ONE);
+									wordFrequency.setFrequency(StablePOS.INT_ONE);
 									wordFrequency.setWord(setOfi);
 									map.put(setOfi, wordFrequency);
 								}
@@ -245,11 +245,11 @@ public class JzkxPage extends Container implements MouseListener, KeyListener{
 							if(pos.get(setOfi).contains("名")||pos.get(setOfi).contains("动")||pos.get(setOfi).contains("形")) {
 								if (map.containsKey(setOfi)) {
 									WordFrequency wordFrequency = map.get(setOfi);
-									wordFrequency.setFrequency(wordFrequency.getFrequency() + StableData.INT_ONE);
+									wordFrequency.setFrequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
 									map.put(setOfi, wordFrequency);
 								} else {
 									WordFrequency wordFrequency = new WordFrequency();
-									wordFrequency.setFrequency(StableData.INT_ONE);
+									wordFrequency.setFrequency(StablePOS.INT_ONE);
 									wordFrequency.setWord(setOfi);
 									map.put(setOfi, wordFrequency);
 								}
@@ -554,11 +554,11 @@ public class JzkxPage extends Container implements MouseListener, KeyListener{
 						if((pos.get(setOfi).contains("名")||pos.get(setOfi).contains("动")||pos.get(setOfi).contains("形"))) {
 							if (map.containsKey(setOfi)) {
 								WordFrequency wordFrequency = map.get(setOfi);
-								wordFrequency.setFrequency(wordFrequency.getFrequency() + StableData.INT_ONE);
+								wordFrequency.setFrequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
 								map.put(setOfi, wordFrequency);
 							} else {
 								WordFrequency wordFrequency = new WordFrequency();
-								wordFrequency.setFrequency(StableData.INT_ONE);
+								wordFrequency.setFrequency(StablePOS.INT_ONE);
 								wordFrequency.setWord(setOfi);
 								map.put(setOfi, wordFrequency);
 							}
@@ -698,11 +698,11 @@ public class JzkxPage extends Container implements MouseListener, KeyListener{
 						if((pos.get(setOfi).contains("名")||pos.get(setOfi).contains("动")||pos.get(setOfi).contains("形"))) {
 							if (map.containsKey(setOfi)) {
 								WordFrequency wordFrequency = map.get(setOfi);
-								wordFrequency.setFrequency(wordFrequency.getFrequency() + StableData.INT_ONE);
+								wordFrequency.setFrequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
 								map.put(setOfi, wordFrequency);
 							} else {
 								WordFrequency wordFrequency = new WordFrequency();
-								wordFrequency.setFrequency(StableData.INT_ONE);
+								wordFrequency.setFrequency(StablePOS.INT_ONE);
 								wordFrequency.setWord(setOfi);
 								map.put(setOfi, wordFrequency);
 							}
@@ -938,11 +938,11 @@ public class JzkxPage extends Container implements MouseListener, KeyListener{
 					if(pos.get(setOfi).contains("名")||pos.get(setOfi).contains("动")||pos.get(setOfi).contains("形")) {
 						if (map.containsKey(setOfi)) {
 							WordFrequency wordFrequency = map.get(setOfi);
-							wordFrequency.setFrequency(wordFrequency.getFrequency() + StableData.INT_ONE);
+							wordFrequency.setFrequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
 							map.put(setOfi, wordFrequency);
 						} else {
 							WordFrequency wordFrequency = new WordFrequency();
-							wordFrequency.setFrequency(StableData.INT_ONE);
+							wordFrequency.setFrequency(StablePOS.INT_ONE);
 							wordFrequency.setWord(setOfi);
 							map.put(setOfi, wordFrequency);
 						}

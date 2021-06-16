@@ -17,7 +17,7 @@ import javax.swing.JTextPane;
 
 import OSI.OPE.MSQ.OVU.PQE.nodeInfo.NodeInfo;
 import OSI.OPE.MSQ.OVU.PQE.nodeProject.NodeProject;
-import OSI.OPE.MSQ.SS.stable.StableData;
+import SVQ.stable.StableAnnotation;
 import OSI.OPE.OVQ.MSQ.OVU.PQE.platForm.UnicornJSplitPane;
 import OSI.OPE.OVU.MVQ.OVU.PQE.nodeView.NodeShow;
 import OSI.OPE.OVU.MVU.OVU.PQE.nodeEdit.CheckRangeVPS;
@@ -86,7 +86,7 @@ public class ThisCanvas extends JPanel implements MouseMotionListener
 		checkRange= new CheckRangeVPS();
 		this.setBackground(Color.white);
 	}  
-	@SuppressWarnings(StableData.TAG_DEPRECATION)
+	@SuppressWarnings(StableAnnotation.TAG_DEPRECATION)
 	public void run() {
 		while(true){   
 			try{
@@ -106,7 +106,7 @@ public class ThisCanvas extends JPanel implements MouseMotionListener
 		}
 
 	}
-	@SuppressWarnings(StableData.TAG_DEPRECATION)
+	@SuppressWarnings(StableAnnotation.TAG_DEPRECATION)
 	public void stop() {
 		//threadApplet.destroy(); //jdk16 √ª”–¡Àdestroy
 		threadApplet.stop();

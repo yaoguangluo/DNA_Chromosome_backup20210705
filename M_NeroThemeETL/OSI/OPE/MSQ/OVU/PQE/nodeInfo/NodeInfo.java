@@ -4,8 +4,8 @@ import javax.swing.*;
 import javax.swing.ImageIcon;
 import javax.swing.JScrollPane;
 
-import OSI.OPE.MSQ.SS.stable.StableData;
-@SuppressWarnings({StableData.TAG_UNCHECKED, StableData.TAG_RAW_TYPES})
+import SVQ.stable.StableAnnotation;
+@SuppressWarnings({StableAnnotation.TAG_UNCHECKED, StableAnnotation.TAG_RAW_TYPES})
 public class NodeInfo extends JScrollPane {
 	private static final long serialVersionUID= 866589699634559456L;
 	String[] countryStrings= {"china", "ca", "denmark", "fr", "genmany"

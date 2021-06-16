@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import ME.S.stables.PathLinkFile;
+import SVQ.stable.StableFile;
 import PEU.S.verbal.VerbalSource;
 public class Dictionary{	
 	public List<String> dic_list;
@@ -29,7 +29,7 @@ public class Dictionary{
 	public Map<String,Object> dic_zf;
 	public List<String> txtToList() throws IOException{
 		List<String> dic_list= new ArrayList<>();
-		InputStream in= this.getClass().getResourceAsStream(PathLinkFile.bcqj_txt);
+		InputStream in= this.getClass().getResourceAsStream(StableFile.bcqj_txt);
 		BufferedReader cReader= new BufferedReader(new InputStreamReader(in));  
 		String ctempString= null; 
 		while ((ctempString= cReader.readLine()) != null) {  
@@ -63,7 +63,7 @@ public class Dictionary{
 	public Map<String, Object> mapToIndex(Map<String, Object> dic_map) {
 		Map<String,String> pinyin= new HashMap<>();
 		try {
-			InputStream inputStreamp= new VerbalSource().getClass().getResourceAsStream(PathLinkFile.PinYinCN_lyg);
+			InputStream inputStreamp= new VerbalSource().getClass().getResourceAsStream(StableFile.PinYinCN_lyg);
     		BufferedReader cReaderp= new BufferedReader(new InputStreamReader(inputStreamp, "GBK"));
     		//index
     		String cInputStringp;

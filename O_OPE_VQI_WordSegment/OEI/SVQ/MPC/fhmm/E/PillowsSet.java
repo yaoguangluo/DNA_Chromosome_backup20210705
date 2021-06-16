@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.TreeMap;
 import java.util.concurrent.ConcurrentHashMap;
 
-import AVQ.ASQ.OVQ.OSQ.VSQ.stable.StableData;
+import SVQ.stable.StablePOS;
 import PEU.P.time.*;
 public class PillowsSet{
 	public long index;
@@ -29,14 +29,14 @@ public class PillowsSet{
 				smallOrder= new PillowsSet();
 				smallOrder.preLargeOrder= this;
 			}
-			smallOrder.arrangePillow(index, object, pillows, depth, currentDepth + StableData.INT_ONE);
+			smallOrder.arrangePillow(index, object, pillows, depth, currentDepth + StablePOS.INT_ONE);
 		}
 		if(index> this.index) {
 			if(null== largeOrder) {
 				largeOrder= new PillowsSet();
 				largeOrder.preSmallOrder= this;
 			}
-			largeOrder.arrangePillow(index, object, pillows, depth, currentDepth + StableData.INT_ONE);
+			largeOrder.arrangePillow(index, object, pillows, depth, currentDepth + StablePOS.INT_ONE);
 		}
 	}
 
@@ -69,12 +69,12 @@ public class PillowsSet{
 	}
 
 	public static void main(String[] argv) throws CloneNotSupportedException {
-		int pillows= StableData.INT_ZERO;
-		int depth= pillows >> StableData.INT_ONE;
-		int currentDepth = StableData.INT_ZERO;
+		int pillows= StablePOS.INT_ZERO;
+		int depth= pillows >> StablePOS.INT_ONE;
+		int currentDepth = StablePOS.INT_ZERO;
 		PillowsSet pillowsMap= new PillowsSet();	
 
-		for(int i=StableData.INT_ZERO; i<5000; i++) {
+		for(int i=StablePOS.INT_ZERO; i<5000; i++) {
 			pillowsMap.arrangePillow(i, i, pillows++, depth, currentDepth);
 		}
 		pillowsMap.fixEntry();

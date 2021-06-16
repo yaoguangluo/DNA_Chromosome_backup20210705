@@ -14,7 +14,7 @@ import ESU.sort.Quick9DLYGWithString_ESU;
 import ME.APM.VSQ.App;
 import MSU.OCI.ME.SMS.translator.C.Translator;
 import MSU.OEI.ME.SMS.SEU.OSD.OSI.E.Translator_E;
-import OSI.OPE.MSQ.SS.stable.StableData;
+import SVQ.stable.StableAnnotation;
 
 public class RestMedicinePort_E {	
 	public static App kernel(App app, String string) {
@@ -35,67 +35,67 @@ public class RestMedicinePort_E {
 				zhongyao= key.toString();
 				Here:
 					for(int i= 0; i< key.length(); i++) {
-						if(StableData.feng.contains(""+ key.charAt(i))) {
+						if(StableAnnotation.feng.contains(""+ key.charAt(i))) {
 							key+= "风";
 							continue Here;
 						}
-						if(StableData.han.contains(""+ key.charAt(i))) {
+						if(StableAnnotation.han.contains(""+ key.charAt(i))) {
 							key+= "风寒";
 							continue Here;
 						}
-						if(StableData.hot.contains(""+ key.charAt(i))) {
+						if(StableAnnotation.hot.contains(""+ key.charAt(i))) {
 							key+= "风热";
 							continue Here;
 						}
-						if(StableData.shi.contains(""+ key.charAt(i))) {
+						if(StableAnnotation.shi.contains(""+ key.charAt(i))) {
 							key+= "风湿";
 							continue Here;
 						}
-						if(StableData.huo.contains(""+ key.charAt(i))) {
+						if(StableAnnotation.huo.contains(""+ key.charAt(i))) {
 							key+= "火";
 							continue Here;
 						}
-						if(StableData.zao.contains(""+ key.charAt(i))) {
+						if(StableAnnotation.zao.contains(""+ key.charAt(i))) {
 							key+= "燥";
 							continue Here;
 						}
-						if(StableData.liuYin.contains(""+ key.charAt(i))) {
+						if(StableAnnotation.liuYin.contains(""+ key.charAt(i))) {
 							key+= "六淫";
 							continue Here;
 						}
-						if(StableData.qiQing.contains(""+ key.charAt(i))) {
+						if(StableAnnotation.qiQing.contains(""+ key.charAt(i))) {
 							key+= "七情";
 							continue Here;
 						}
-						if(StableData.wangYang.contains(""+ key.charAt(i))) {
+						if(StableAnnotation.wangYang.contains(""+ key.charAt(i))) {
 							key+= "亡阳";
 							continue Here;
 						}
-						if(StableData.wangYin.contains(""+ key.charAt(i))) {
+						if(StableAnnotation.wangYin.contains(""+ key.charAt(i))) {
 							key+= "亡阴";
 							continue Here;
 						}
-						if(StableData.jiBaoShiChang.contains(""+ key.charAt(i))) {
+						if(StableAnnotation.jiBaoShiChang.contains(""+ key.charAt(i))) {
 							key+= "饥饱失常";
 							continue Here;
 						}
-						if(StableData.yinShiBuJie.contains(""+ key.charAt(i))) {
+						if(StableAnnotation.yinShiBuJie.contains(""+ key.charAt(i))) {
 							key+= "饮食不洁";
 							continue Here;
 						}
-						if(StableData.tiaoShiPianShe.contains(""+ key.charAt(i))) {
+						if(StableAnnotation.tiaoShiPianShe.contains(""+ key.charAt(i))) {
 							key+= "挑食偏食";
 							continue Here;
 						}
-						if(StableData.biaoHan.contains(""+ key.charAt(i))) {
+						if(StableAnnotation.biaoHan.contains(""+ key.charAt(i))) {
 							key+= "表寒";
 							continue Here;
 						}
-						if(StableData.biaoRe.contains(""+ key.charAt(i))) {
+						if(StableAnnotation.biaoRe.contains(""+ key.charAt(i))) {
 							key+= "表热";
 							continue Here;
 						}
-						if(StableData.yuXue.contains(""+ key.charAt(i))) {
+						if(StableAnnotation.yuXue.contains(""+ key.charAt(i))) {
 							key+= "淤";
 						}
 					}

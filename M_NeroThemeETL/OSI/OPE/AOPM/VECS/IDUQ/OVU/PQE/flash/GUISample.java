@@ -51,7 +51,7 @@ import OSI.OPE.MSI.OEI.SOI.SMQ.save.SaveAnd_U_File;
 import OSI.OPE.MSI.OEI.SOI.SMQ.save.SaveAs_I_File;
 import OSI.OPE.MSQ.OVU.PQE.nodeInfo.NodeInfo;
 import OSI.OPE.MSQ.OVU.PQE.nodeProject.NodeProject;
-import OSI.OPE.MSQ.SS.stable.StableData;
+import SVQ.stable.StableAnnotation;
 import OSI.OPE.OEI.PVI.SOI.SMQ.load.LoadFile;
 import OSI.OPE.OEQ.MCQ.OVU.PQE.osgi.NodeOSGI;
 import OSI.OPE.OEQ.MCQ.OVU.PQE.osgi.OSU_AVQ_ASQ_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI;
@@ -139,30 +139,30 @@ public class GUISample extends JApplet implements MouseMotionListener
 
 	public void Registrar() {
 		load.addActionListener(new java.awt.event.ActionListener() {
-			@SuppressWarnings({StableData.TAG_STATIC_ACCESS})
+			@SuppressWarnings({StableAnnotation.TAG_STATIC_ACCESS})
 			public void actionPerformed(ActionEvent e) {
 				try {
-					javax.swing.JOptionPane jOptionPane= new JOptionPane(StableData.ATTENSION_LOAD_ENSURE);
-					int confirm= jOptionPane.showConfirmDialog(canvas, StableData.ATTENSION_LOAD_ENSURE);
+					javax.swing.JOptionPane jOptionPane= new JOptionPane(StableAnnotation.ATTENSION_LOAD_ENSURE);
+					int confirm= jOptionPane.showConfirmDialog(canvas, StableAnnotation.ATTENSION_LOAD_ENSURE);
 					if(0!= confirm) {
-						rightBotJTextPane.setText(StableData.ATTENSION_CANCELLED_OPERATION);
+						rightBotJTextPane.setText(StableAnnotation.ATTENSION_CANCELLED_OPERATION);
 						rightBotJTextPane.validate();
 						return;
 					}
-					FileDialog filedialog= new FileDialog(new Frame(), StableData.ATTENSION_LOAD_HISTORY
+					FileDialog filedialog= new FileDialog(new Frame(), StableAnnotation.ATTENSION_LOAD_HISTORY
 							, FileDialog.LOAD);
-					filedialog.setFilenameFilter(new TXTFilter(StableData.FILE_FORMAT_ETL));
+					filedialog.setFilenameFilter(new TXTFilter(StableAnnotation.FILE_FORMAT_ETL));
 					filedialog.setVisible(true);
 					fileCurrentpath= filedialog.getDirectory()+ filedialog.getFile();
 					System.out.println(fileCurrentpath);
 					if(null== fileCurrentpath|| fileCurrentpath.isEmpty()|| !fileCurrentpath.contains
-							(StableData.FILE_FORMAT_ETL)) {
-						System.out.println(StableData.ATTENSION_RECHOICE);
+							(StableAnnotation.FILE_FORMAT_ETL)) {
+						System.out.println(StableAnnotation.ATTENSION_RECHOICE);
 						return;
 					}
 					File file= new File(fileCurrentpath);
 					if(!file.isFile()) {
-						System.out.println(StableData.ATTENSION_RECHOICE);
+						System.out.println(StableAnnotation.ATTENSION_RECHOICE);
 						return;
 					}
 					LinkNode needDeleteNode= first.first;
@@ -184,18 +184,18 @@ public class GUISample extends JApplet implements MouseMotionListener
 			}
 		});
 		save.addActionListener(new java.awt.event.ActionListener() {
-			@SuppressWarnings({StableData.TAG_STATIC_ACCESS})
+			@SuppressWarnings({StableAnnotation.TAG_STATIC_ACCESS})
 			public void actionPerformed(ActionEvent e) {
 				if(null== fileCurrentpath) {
-					System.out.println(StableData.ATTENSION_UNCURRENT_CHOICE);
+					System.out.println(StableAnnotation.ATTENSION_UNCURRENT_CHOICE);
 					return;
 				}
-				javax.swing.JOptionPane jOptionPane= new JOptionPane(StableData.ATTENSION_UPDATE_ENSURE
-						+ fileCurrentpath + StableData.MARK_QUESTION);
-				int confirm= jOptionPane.showConfirmDialog(canvas, StableData.ATTENSION_UPDATE_ENSURE
-						+ fileCurrentpath + StableData.MARK_QUESTION);
+				javax.swing.JOptionPane jOptionPane= new JOptionPane(StableAnnotation.ATTENSION_UPDATE_ENSURE
+						+ fileCurrentpath + StableAnnotation.MARK_QUESTION);
+				int confirm= jOptionPane.showConfirmDialog(canvas, StableAnnotation.ATTENSION_UPDATE_ENSURE
+						+ fileCurrentpath + StableAnnotation.MARK_QUESTION);
 				if(0!= confirm) {
-					rightBotJTextPane.setText(StableData.ATTENSION_CANCELLED_OPERATION);
+					rightBotJTextPane.setText(StableAnnotation.ATTENSION_CANCELLED_OPERATION);
 					rightBotJTextPane.validate();
 					return;
 				}
@@ -213,20 +213,20 @@ public class GUISample extends JApplet implements MouseMotionListener
 			@SuppressWarnings({ "static-access" })
 			public void actionPerformed(ActionEvent e) {
 				String jarCategoryLink= "";	
-				FileDialog filedialog= new FileDialog(new Frame(), StableData.ATTENSION_LOAD_HISTORY
+				FileDialog filedialog= new FileDialog(new Frame(), StableAnnotation.ATTENSION_LOAD_HISTORY
 						, FileDialog.LOAD);
-				filedialog.setFilenameFilter(new TXTFilter(StableData.FILE_FORMAT_ETL));
+				filedialog.setFilenameFilter(new TXTFilter(StableAnnotation.FILE_FORMAT_ETL));
 				filedialog.setVisible(true);
 				jarCategoryLink= filedialog.getDirectory();
 				//System.out.println(jarCategoryLink);
 				if(null== jarCategoryLink|| jarCategoryLink.isEmpty()|| jarCategoryLink.contains
-						(StableData.FILE_FORMAT_JAR)) {
-					System.out.println(StableData.ATTENSION_RECHOICE);
+						(StableAnnotation.FILE_FORMAT_JAR)) {
+					System.out.println(StableAnnotation.ATTENSION_RECHOICE);
 					return;
 				}
 				File file= new File(jarCategoryLink);
 				if(file.isFile()) {
-					System.out.println(StableData.ATTENSION_FILE_CHOICE);
+					System.out.println(StableAnnotation.ATTENSION_FILE_CHOICE);
 					return;
 				}
 				File[] files= file.listFiles();
@@ -240,7 +240,7 @@ public class GUISample extends JApplet implements MouseMotionListener
 						} catch (MalformedURLException e2) {
 							e2.printStackTrace();
 						}  
-						String filename= files[i].getName().replace(StableData.FILE_FORMAT_JAR, StableData.STRING_EMPTY);
+						String filename= files[i].getName().replace(StableAnnotation.FILE_FORMAT_JAR, StableAnnotation.STRING_EMPTY);
 						if(!filename.contains("OSI.OSU.")) {
 							continue Here;
 						}
@@ -262,7 +262,7 @@ public class GUISample extends JApplet implements MouseMotionListener
 						//System.out.println(filename.replace(filename.split(".").length, newChar)filename.split(".").length);
 						try {
 							String className= filename+ "."+ NewlastName
-									+ StableData.NODE_NODE_INTERFACE;
+									+ StableAnnotation.NODE_NODE_INTERFACE;
 							System.out.println(className);
 							myclass= loader.loadClass(className);
 						} catch (ClassNotFoundException e1) {
@@ -337,7 +337,7 @@ public class GUISample extends JApplet implements MouseMotionListener
 			public void actionPerformed(ActionEvent e) {
 				try {
 					BootNeroCell.bootCell(first.first, rightBotJTextPane, canvas);
-					rightBotJTextPane.setText(StableData.NODE_EXEC_SUCCESS);
+					rightBotJTextPane.setText(StableAnnotation.NODE_EXEC_SUCCESS);
 					rightBotJTextPane.validate();
 				} catch (IOException e1) {
 					rightBotJTextPane.setText(e1.getStackTrace().toString());
@@ -349,30 +349,30 @@ public class GUISample extends JApplet implements MouseMotionListener
 			}
 		});
 		bootETL.addActionListener(new java.awt.event.ActionListener() {
-			@SuppressWarnings(StableData.TAG_STATIC_ACCESS)
+			@SuppressWarnings(StableAnnotation.TAG_STATIC_ACCESS)
 			public void actionPerformed(ActionEvent e) {
 				try {
-					javax.swing.JOptionPane jOptionPane= new JOptionPane(StableData.ATTENSION_LOAD_ENSURE);
-					int confirm= jOptionPane.showConfirmDialog(canvas, StableData.ATTENSION_LOAD_ENSURE);
+					javax.swing.JOptionPane jOptionPane= new JOptionPane(StableAnnotation.ATTENSION_LOAD_ENSURE);
+					int confirm= jOptionPane.showConfirmDialog(canvas, StableAnnotation.ATTENSION_LOAD_ENSURE);
 					if(0!= confirm) {
-						rightBotJTextPane.setText(StableData.ATTENSION_CANCELLED_OPERATION);
+						rightBotJTextPane.setText(StableAnnotation.ATTENSION_CANCELLED_OPERATION);
 						rightBotJTextPane.validate();
 						return;
 					}
-					FileDialog filedialog= new FileDialog(new Frame(), StableData.ATTENSION_LOAD_HISTORY
+					FileDialog filedialog= new FileDialog(new Frame(), StableAnnotation.ATTENSION_LOAD_HISTORY
 							, FileDialog.LOAD);
-					filedialog.setFilenameFilter(new TXTFilter(StableData.FILE_FORMAT_ETL));
+					filedialog.setFilenameFilter(new TXTFilter(StableAnnotation.FILE_FORMAT_ETL));
 					filedialog.setVisible(true);
 					fileCurrentpath= filedialog.getDirectory()+ filedialog.getFile();
 					System.out.println(fileCurrentpath);
 					if(null== fileCurrentpath|| fileCurrentpath.isEmpty()|| !fileCurrentpath.contains
-							(StableData.FILE_FORMAT_ETL)) {
-						System.out.println(StableData.ATTENSION_RECHOICE);
+							(StableAnnotation.FILE_FORMAT_ETL)) {
+						System.out.println(StableAnnotation.ATTENSION_RECHOICE);
 						return;
 					}
 					File file= new File(fileCurrentpath);
 					if(!file.isFile()) {
-						System.out.println(StableData.ATTENSION_RECHOICE);
+						System.out.println(StableAnnotation.ATTENSION_RECHOICE);
 						return;
 					}
 					LinkNode needDeleteNode= first.first;
@@ -398,19 +398,19 @@ public class GUISample extends JApplet implements MouseMotionListener
 				} catch (UnsupportedAudioFileException | InterruptedException e1) {
 					e1.printStackTrace();
 				}
-				rightBotJTextPane.setText(StableData.NODE_EXEC_SUCCESS);
+				rightBotJTextPane.setText(StableAnnotation.NODE_EXEC_SUCCESS);
 				rightBotJTextPane.validate();
 			}
 		});
 		//delete
 		delete.addActionListener(new java.awt.event.ActionListener() {
-			@SuppressWarnings(StableData.TAG_STATIC_ACCESS)
+			@SuppressWarnings(StableAnnotation.TAG_STATIC_ACCESS)
 			public void actionPerformed(ActionEvent e) {
 				try {
-					javax.swing.JOptionPane jOptionPane= new JOptionPane(StableData.ATTENSION_CANCEL_ENSURE);
-					int confirm= jOptionPane.showConfirmDialog(canvas, StableData.ATTENSION_CANCEL_ENSURE);
+					javax.swing.JOptionPane jOptionPane= new JOptionPane(StableAnnotation.ATTENSION_CANCEL_ENSURE);
+					int confirm= jOptionPane.showConfirmDialog(canvas, StableAnnotation.ATTENSION_CANCEL_ENSURE);
 					if(0!= confirm) {
-						rightBotJTextPane.setText(StableData.ATTENSION_CANCELLED_OPERATION);
+						rightBotJTextPane.setText(StableAnnotation.ATTENSION_CANCELLED_OPERATION);
 						rightBotJTextPane.validate();
 						return;
 					}
@@ -427,7 +427,7 @@ public class GUISample extends JApplet implements MouseMotionListener
 				}catch(Exception E) {
 					canvas.repaint();
 				}
-				rightBotJTextPane.setText(StableData.ATTENSION_DELETE);
+				rightBotJTextPane.setText(StableAnnotation.ATTENSION_DELETE);
 				rightBotJTextPane.validate();
 			}	
 		});
@@ -516,16 +516,16 @@ public class GUISample extends JApplet implements MouseMotionListener
 						first.first= first.addNode(first.first, treeNodeName, 100, 50, nodeView.first);
 						righttopScrollPane.validate();
 					} catch (CloneNotSupportedException e1) {
-						rightBotJTextPane.setText(StableData.NODE_ADD_ERROR);
+						rightBotJTextPane.setText(StableAnnotation.NODE_ADD_ERROR);
 						rightBotJTextPane.validate();
 					} catch (InstantiationException e1) {
-						rightBotJTextPane.setText(StableData.NODE_ADD_ERROR);
+						rightBotJTextPane.setText(StableAnnotation.NODE_ADD_ERROR);
 						rightBotJTextPane.validate();
 					} catch (IllegalAccessException e1) {
-						rightBotJTextPane.setText(StableData.NODE_ADD_ERROR);
+						rightBotJTextPane.setText(StableAnnotation.NODE_ADD_ERROR);
 						rightBotJTextPane.validate();
 					} catch (IOException e1) {
-						rightBotJTextPane.setText(StableData.NODE_ADD_ERROR);
+						rightBotJTextPane.setText(StableAnnotation.NODE_ADD_ERROR);
 						rightBotJTextPane.validate();
 					}
 					rightBotJTextPane.setText("节点名："+ "treeNodeName");
@@ -555,13 +555,13 @@ public class GUISample extends JApplet implements MouseMotionListener
 							node.thisFace.SQ_OSU_MSQ_OSU_AVQ_ASQ_AOI_AOD_AOU_AOQ_VES.validate();
 							new OSI.OPE.SI.MCI.OEI.OVU.PQE.extOSGI.OSGI_chansfer(node, first.first);
 						} catch (IOException e1){
-							rightBotJTextPane.setText(StableData.NODE_UPDATE_ERROR);
+							rightBotJTextPane.setText(StableAnnotation.NODE_UPDATE_ERROR);
 							rightBotJTextPane.validate();
 						} 
 					}
 					node= node.next;
 				}	
-				rightBotJTextPane.setText(StableData.NODE_UPDATE_SUCCESS);
+				rightBotJTextPane.setText(StableAnnotation.NODE_UPDATE_SUCCESS);
 				rightBotJTextPane.validate();
 			}
 		}); 
@@ -576,22 +576,22 @@ public class GUISample extends JApplet implements MouseMotionListener
 						try {
 							node.thisFace.OPE_E(rightBotJTextPane);
 						} catch (FileNotFoundException e1) {
-							rightBotJTextPane.setText(StableData.NODE_EXEC_ERROR);
+							rightBotJTextPane.setText(StableAnnotation.NODE_EXEC_ERROR);
 							rightBotJTextPane.validate();
 						} catch (IOException e1) {
-							rightBotJTextPane.setText(StableData.NODE_EXEC_ERROR);
+							rightBotJTextPane.setText(StableAnnotation.NODE_EXEC_ERROR);
 							rightBotJTextPane.validate();
 						} catch (UnsupportedAudioFileException e2) {
-							rightBotJTextPane.setText(StableData.NODE_EXEC_ERROR);
+							rightBotJTextPane.setText(StableAnnotation.NODE_EXEC_ERROR);
 							rightBotJTextPane.validate();
 						} catch (InterruptedException e3) {
-							rightBotJTextPane.setText(StableData.NODE_EXEC_ERROR);
+							rightBotJTextPane.setText(StableAnnotation.NODE_EXEC_ERROR);
 							rightBotJTextPane.validate();
 						}
 					}
 					node= node.next;
 				}	
-				rightBotJTextPane.setText(StableData.NODE_EXEC_SUCCESS);
+				rightBotJTextPane.setText(StableAnnotation.NODE_EXEC_SUCCESS);
 				rightBotJTextPane.validate();
 			}
 		}); 
@@ -617,7 +617,7 @@ public class GUISample extends JApplet implements MouseMotionListener
 								node.thisFace.SQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.validate();
 							} catch (Exception e1) {
 								//e1.printStackTrace();
-								rightBotJTextPane.setText(StableData.NODE_INSPECT_ERROR);
+								rightBotJTextPane.setText(StableAnnotation.NODE_INSPECT_ERROR);
 								rightBotJTextPane.validate();
 							}  
 						}else{
@@ -626,7 +626,7 @@ public class GUISample extends JApplet implements MouseMotionListener
 					}
 					node=node.next;
 				}	
-				rightBotJTextPane.setText(StableData.NODE_INDICATE_SUCCESS);
+				rightBotJTextPane.setText(StableAnnotation.NODE_INDICATE_SUCCESS);
 				rightBotJTextPane.validate();
 			}
 		}); 
@@ -765,19 +765,19 @@ public class GUISample extends JApplet implements MouseMotionListener
 		getContentPane().add(nodeMenu);
 		engineMenu= new PopupMenu();
 		load= new MenuItem();
-		load.setLabel(StableData.CONFIG_LOAD);
+		load.setLabel(StableAnnotation.CONFIG_LOAD);
 		save= new MenuItem();
-		save.setLabel(StableData.CONFIG_UPDATE);
+		save.setLabel(StableAnnotation.CONFIG_UPDATE);
 		saveAs= new MenuItem();
-		saveAs.setLabel(StableData.CONFIG_SAVE);
+		saveAs.setLabel(StableAnnotation.CONFIG_SAVE);
 		delete= new MenuItem();
-		delete.setLabel(StableData.CONFIG_DELETE);
+		delete.setLabel(StableAnnotation.CONFIG_DELETE);
 		boot= new MenuItem();
-		boot.setLabel(StableData.CONFIG_BOOT);
+		boot.setLabel(StableAnnotation.CONFIG_BOOT);
 		bootETL= new MenuItem();
-		bootETL.setLabel(StableData.CONFIG_BOOT_ETL);
+		bootETL.setLabel(StableAnnotation.CONFIG_BOOT_ETL);
 		osgis= new MenuItem();
-		osgis.setLabel(StableData.CONFIG_OSGIS);
+		osgis.setLabel(StableAnnotation.CONFIG_OSGIS);
 		
 		engineMenu.add(load);
 		engineMenu.add(save);
@@ -797,27 +797,27 @@ public class GUISample extends JApplet implements MouseMotionListener
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				try {
-					javax.swing.JOptionPane jOptionPane= new JOptionPane(StableData.ATTENSION_LOAD_ENSURE);
-					int confirm= jOptionPane.showConfirmDialog(canvas, StableData.ATTENSION_LOAD_ENSURE);
+					javax.swing.JOptionPane jOptionPane= new JOptionPane(StableAnnotation.ATTENSION_LOAD_ENSURE);
+					int confirm= jOptionPane.showConfirmDialog(canvas, StableAnnotation.ATTENSION_LOAD_ENSURE);
 					if(0!= confirm) {
-						rightBotJTextPane.setText(StableData.ATTENSION_CANCELLED_OPERATION);
+						rightBotJTextPane.setText(StableAnnotation.ATTENSION_CANCELLED_OPERATION);
 						rightBotJTextPane.validate();
 						return;
 					}
-					FileDialog filedialog= new FileDialog(new Frame(), StableData.ATTENSION_LOAD_HISTORY
+					FileDialog filedialog= new FileDialog(new Frame(), StableAnnotation.ATTENSION_LOAD_HISTORY
 							, FileDialog.LOAD);
-					filedialog.setFilenameFilter(new TXTFilter(StableData.FILE_FORMAT_ETL));
+					filedialog.setFilenameFilter(new TXTFilter(StableAnnotation.FILE_FORMAT_ETL));
 					filedialog.setVisible(true);
 					fileCurrentpath= filedialog.getDirectory()+ filedialog.getFile();
 					System.out.println(fileCurrentpath);
 					if(null== fileCurrentpath|| fileCurrentpath.isEmpty()|| !fileCurrentpath.contains
-							(StableData.FILE_FORMAT_ETL)) {
-						System.out.println(StableData.ATTENSION_RECHOICE);
+							(StableAnnotation.FILE_FORMAT_ETL)) {
+						System.out.println(StableAnnotation.ATTENSION_RECHOICE);
 						return;
 					}
 					File file= new File(fileCurrentpath);
 					if(!file.isFile()) {
-						System.out.println(StableData.ATTENSION_RECHOICE);
+						System.out.println(StableAnnotation.ATTENSION_RECHOICE);
 						return;
 					}
 					LinkNode needDeleteNode= first.first;
@@ -857,27 +857,27 @@ public class GUISample extends JApplet implements MouseMotionListener
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				try {
-					javax.swing.JOptionPane jOptionPane= new JOptionPane(StableData.ATTENSION_LOAD_ENSURE);
-					int confirm= jOptionPane.showConfirmDialog(canvas, StableData.ATTENSION_LOAD_ENSURE);
+					javax.swing.JOptionPane jOptionPane= new JOptionPane(StableAnnotation.ATTENSION_LOAD_ENSURE);
+					int confirm= jOptionPane.showConfirmDialog(canvas, StableAnnotation.ATTENSION_LOAD_ENSURE);
 					if(0!= confirm) {
-						rightBotJTextPane.setText(StableData.ATTENSION_CANCELLED_OPERATION);
+						rightBotJTextPane.setText(StableAnnotation.ATTENSION_CANCELLED_OPERATION);
 						rightBotJTextPane.validate();
 						return;
 					}
-					FileDialog filedialog= new FileDialog(new Frame(), StableData.ATTENSION_LOAD_HISTORY
+					FileDialog filedialog= new FileDialog(new Frame(), StableAnnotation.ATTENSION_LOAD_HISTORY
 							, FileDialog.LOAD);
-					filedialog.setFilenameFilter(new TXTFilter(StableData.FILE_FORMAT_ETL));
+					filedialog.setFilenameFilter(new TXTFilter(StableAnnotation.FILE_FORMAT_ETL));
 					filedialog.setVisible(true);
 					fileCurrentpath= filedialog.getDirectory()+ filedialog.getFile();
 					System.out.println(fileCurrentpath);
 					if(null== fileCurrentpath|| fileCurrentpath.isEmpty()|| !fileCurrentpath.contains
-							(StableData.FILE_FORMAT_ETL)) {
-						System.out.println(StableData.ATTENSION_RECHOICE);
+							(StableAnnotation.FILE_FORMAT_ETL)) {
+						System.out.println(StableAnnotation.ATTENSION_RECHOICE);
 						return;
 					}
 					File file= new File(fileCurrentpath);
 					if(!file.isFile()) {
-						System.out.println(StableData.ATTENSION_RECHOICE);
+						System.out.println(StableAnnotation.ATTENSION_RECHOICE);
 						return;
 					}
 					LinkNode needDeleteNode= first.first;
@@ -903,7 +903,7 @@ public class GUISample extends JApplet implements MouseMotionListener
 				} catch (UnsupportedAudioFileException | InterruptedException e1) {
 					e1.printStackTrace();
 				}
-				rightBotJTextPane.setText(StableData.NODE_EXEC_SUCCESS);
+				rightBotJTextPane.setText(StableAnnotation.NODE_EXEC_SUCCESS);
 				rightBotJTextPane.validate();
 			}
 		});
@@ -916,15 +916,15 @@ public class GUISample extends JApplet implements MouseMotionListener
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				if(null== fileCurrentpath) {
-					System.out.println(StableData.ATTENSION_UNCURRENT_CHOICE);
+					System.out.println(StableAnnotation.ATTENSION_UNCURRENT_CHOICE);
 					return;
 				}
-				javax.swing.JOptionPane jOptionPane= new JOptionPane(StableData.ATTENSION_UPDATE_ENSURE
-						+ fileCurrentpath + StableData.MARK_QUESTION);
-				int confirm= jOptionPane.showConfirmDialog(canvas, StableData.ATTENSION_UPDATE_ENSURE
-						+ fileCurrentpath + StableData.MARK_QUESTION);
+				javax.swing.JOptionPane jOptionPane= new JOptionPane(StableAnnotation.ATTENSION_UPDATE_ENSURE
+						+ fileCurrentpath + StableAnnotation.MARK_QUESTION);
+				int confirm= jOptionPane.showConfirmDialog(canvas, StableAnnotation.ATTENSION_UPDATE_ENSURE
+						+ fileCurrentpath + StableAnnotation.MARK_QUESTION);
 				if(0!= confirm) {
-					rightBotJTextPane.setText(StableData.ATTENSION_CANCELLED_OPERATION);
+					rightBotJTextPane.setText(StableAnnotation.ATTENSION_CANCELLED_OPERATION);
 					rightBotJTextPane.validate();
 					return;
 				}
@@ -940,10 +940,10 @@ public class GUISample extends JApplet implements MouseMotionListener
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				try {
-					javax.swing.JOptionPane jOptionPane= new JOptionPane(StableData.ATTENSION_CANCEL_ENSURE);
-					int confirm= jOptionPane.showConfirmDialog(canvas, StableData.ATTENSION_CANCEL_ENSURE);
+					javax.swing.JOptionPane jOptionPane= new JOptionPane(StableAnnotation.ATTENSION_CANCEL_ENSURE);
+					int confirm= jOptionPane.showConfirmDialog(canvas, StableAnnotation.ATTENSION_CANCEL_ENSURE);
 					if(0!= confirm) {
-						rightBotJTextPane.setText(StableData.ATTENSION_CANCELLED_OPERATION);
+						rightBotJTextPane.setText(StableAnnotation.ATTENSION_CANCELLED_OPERATION);
 						rightBotJTextPane.validate();
 						return;
 					}
@@ -960,7 +960,7 @@ public class GUISample extends JApplet implements MouseMotionListener
 				}catch(Exception E) {
 					canvas.repaint();
 				}
-				rightBotJTextPane.setText(StableData.ATTENSION_DELETE);
+				rightBotJTextPane.setText(StableAnnotation.ATTENSION_DELETE);
 				rightBotJTextPane.validate();
 			}
 		});
@@ -973,20 +973,20 @@ public class GUISample extends JApplet implements MouseMotionListener
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				String jarCategoryLink= "";	
-				FileDialog filedialog= new FileDialog(new Frame(), StableData.ATTENSION_LOAD_HISTORY
+				FileDialog filedialog= new FileDialog(new Frame(), StableAnnotation.ATTENSION_LOAD_HISTORY
 						, FileDialog.LOAD);
-				filedialog.setFilenameFilter(new TXTFilter(StableData.FILE_FORMAT_ETL));
+				filedialog.setFilenameFilter(new TXTFilter(StableAnnotation.FILE_FORMAT_ETL));
 				filedialog.setVisible(true);
 				jarCategoryLink= filedialog.getDirectory();
 				//System.out.println(jarCategoryLink);
 				if(null== jarCategoryLink|| jarCategoryLink.isEmpty()|| jarCategoryLink.contains
-						(StableData.FILE_FORMAT_JAR)) {
-					System.out.println(StableData.ATTENSION_RECHOICE);
+						(StableAnnotation.FILE_FORMAT_JAR)) {
+					System.out.println(StableAnnotation.ATTENSION_RECHOICE);
 					return;
 				}
 				File file= new File(jarCategoryLink);
 				if(file.isFile()) {
-					System.out.println(StableData.ATTENSION_FILE_CHOICE);
+					System.out.println(StableAnnotation.ATTENSION_FILE_CHOICE);
 					return;
 				}
 				File[] files= file.listFiles();
@@ -1000,7 +1000,7 @@ public class GUISample extends JApplet implements MouseMotionListener
 					} catch (MalformedURLException e2) {
 						e2.printStackTrace();
 					}  
-					String filename= files[i].getName().replace(StableData.FILE_FORMAT_JAR, StableData.STRING_EMPTY);
+					String filename= files[i].getName().replace(StableAnnotation.FILE_FORMAT_JAR, StableAnnotation.STRING_EMPTY);
 					if(!filename.contains("OSI.OSU.")) {
 						continue Here;
 					}
@@ -1024,7 +1024,7 @@ public class GUISample extends JApplet implements MouseMotionListener
 					//System.out.println(filename.replace(filename.split(".").length, newChar)filename.split(".").length);
 					try {
 						String className= filename+ "."+ NewlastName
-								+ StableData.NODE_NODE_INTERFACE;
+								+ StableAnnotation.NODE_NODE_INTERFACE;
 						System.out.println(className);
 						myclass= loader.loadClass(className);
 					} catch (ClassNotFoundException e1) {
@@ -1099,7 +1099,7 @@ public class GUISample extends JApplet implements MouseMotionListener
 			public void actionPerformed(ActionEvent arg0) {
 				try {
 					BootNeroCell.bootCell(first.first, rightBotJTextPane, canvas);
-					rightBotJTextPane.setText(StableData.NODE_EXEC_SUCCESS);
+					rightBotJTextPane.setText(StableAnnotation.NODE_EXEC_SUCCESS);
 					rightBotJTextPane.validate();
 				} catch (IOException e1) {
 					rightBotJTextPane.setText(e1.getStackTrace().toString());
@@ -1177,7 +1177,7 @@ public class GUISample extends JApplet implements MouseMotionListener
 				@SuppressWarnings("static-access")
 				int confirm= jOptionPane.showConfirmDialog(canvas, "确认卸载吗？");
 				if(0!= confirm) {
-					rightBotJTextPane.setText(StableData.ATTENSION_CANCELLED_OPERATION);
+					rightBotJTextPane.setText(StableAnnotation.ATTENSION_CANCELLED_OPERATION);
 					rightBotJTextPane.validate();
 					return;
 				}

@@ -12,12 +12,12 @@ import java.awt.event.MouseListener;
 import javax.swing.ImageIcon;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
-import ME.S.stables.PathLinkFile;
+import SVQ.stable.StableFile;
 import ME.APM.VSQ.ESI.SVQ.search.CaiJPanel;
 public class TagSearch extends ScrollPane implements MouseListener, KeyListener, ActionListener{	
 	private static final long serialVersionUID= 1L;
 	public void init(JTextField name){
-		PathLinkFile.DNA_PDN.put(this.getClass().getCanonicalName(), true);
+		StableFile.DNA_PDN.put(this.getClass().getCanonicalName(), true);
 		JTabbedPane jTabbedpane= new JTabbedPane();
 		Container 多国语言Container= new Container();
 		CaiJPanel 多国语言JPanel= new CaiJPanel(name);

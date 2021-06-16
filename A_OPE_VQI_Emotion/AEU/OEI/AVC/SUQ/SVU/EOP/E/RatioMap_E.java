@@ -7,7 +7,7 @@ import java.util.Map;
 import AEU.OCI.AVC.SUQ.estimation.C.EmotionSample;
 import AEU.OCI.AVC.SUQ.estimation.C.RatioMap;
 import AVQ.ASQ.OVQ.OSQ.VSQ.obj.WordFrequency;
-import AVQ.ASQ.OVQ.OSQ.VSQ.stable.StableData;
+import SVQ.stable.StablePOS;
 
 public class RatioMap_E implements RatioMap{
 
@@ -15,8 +15,8 @@ public class RatioMap_E implements RatioMap{
 	public Map<String, EmotionSample> getEmotionSampleMap(Map<Integer, WordFrequency> wordFrequencyMap,
 			Map<String, Object> positive, Map<String, Object> negative) {
 		Map<String, EmotionSample> output = new HashMap<>();
-		for(int i = wordFrequencyMap.size() - StableData.INT_ONE; i >= StableData.INT_ZERO; i--) {
-			if(wordFrequencyMap.get(i).getWord().length() > StableData.INT_ONE) {
+		for(int i = wordFrequencyMap.size() - StablePOS.INT_ONE; i >= StablePOS.INT_ZERO; i--) {
+			if(wordFrequencyMap.get(i).getWord().length() > StablePOS.INT_ONE) {
 				EmotionSample emotionSample;
 				if(output.containsKey(wordFrequencyMap.get(i).getWord())) {
 					emotionSample = output.get(wordFrequencyMap.get(i).getWord());
@@ -125,7 +125,7 @@ public class RatioMap_E implements RatioMap{
 
 	@Override
 	public double findTotalPositiveCount(Map<String, EmotionSample> emotionSampleMap) {
-		double output = StableData.INT_ONE;
+		double output = StablePOS.INT_ONE;
 		Iterator<String> Iterator=emotionSampleMap.keySet().iterator();
 		while(Iterator.hasNext()) {
 			String word = Iterator.next();
@@ -137,7 +137,7 @@ public class RatioMap_E implements RatioMap{
 
 	@Override
 	public double findTotalNegativeCount(Map<String, EmotionSample> emotionSampleMap) {
-		double output = StableData.INT_ONE;
+		double output = StablePOS.INT_ONE;
 		Iterator<String> Iterator = emotionSampleMap.keySet().iterator();
 		while(Iterator.hasNext()) {
 			String word = Iterator.next();
@@ -164,7 +164,7 @@ public class RatioMap_E implements RatioMap{
 
 	@Override
 	public double findTotalKeyCount(Map<String, EmotionSample> emotionSampleMap) {
-		double output = StableData.INT_ONE;
+		double output = StablePOS.INT_ONE;
 		Iterator<String> Iterator = emotionSampleMap.keySet().iterator();
 		while(Iterator.hasNext()) {
 			String word = Iterator.next();
@@ -232,8 +232,8 @@ public class RatioMap_E implements RatioMap{
 	@Override
 	public Map<String, EmotionSample> getEnvironmentSampleMap(Map<Integer, WordFrequency> wordFrequencyMap) {
 		Map<String, EmotionSample> output = new HashMap<>();
-		for (int i = wordFrequencyMap.size() - StableData.INT_ONE; i >= StableData.INT_ZERO; i--) {
-			if(wordFrequencyMap.get(i).getWord().length() > StableData.INT_ONE) {
+		for (int i = wordFrequencyMap.size() - StablePOS.INT_ONE; i >= StablePOS.INT_ZERO; i--) {
+			if(wordFrequencyMap.get(i).getWord().length() > StablePOS.INT_ONE) {
 				EmotionSample emotionSample = new EmotionSample();
 				if(!output.containsKey(wordFrequencyMap.get(i).getWord())) {
 					output.put(wordFrequencyMap.get(i).getWord(), emotionSample);

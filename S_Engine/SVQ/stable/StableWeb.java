@@ -1,5 +1,5 @@
-package OP.SM.AOP.MEC.SIQ.stable;
-public interface StableData {
+package SVQ.stable;
+public interface StableWeb {
 	//DB
 	public static final String DB_BASE_NAME = "baseName";
 	//LOGIN
@@ -12,15 +12,6 @@ public interface StableData {
 	public static final String STRING_ENTER = "\n";
 	public static final String STRING_QUATE = ".";
 	public static final String STRING_JUNCTION = "&";
-	//NUMBER
-	public static final int INT_ZERO = 0;
-	public static final int INT_MINES_ONE = -1;
-	public static final int INT_ONE = 1;
-	public static final int INT_TWO = 2;
-	public static final int INT_THREE = 3;
-	public static final int INT_FOUR = 4;
-	public static final int INT_FIVE = 5;
-	public static final int INT_SIX = 6;
 	//BUFFER RANGE
 	public static final int BUFFER_RANGE_MAX = 1024;
 	//REST

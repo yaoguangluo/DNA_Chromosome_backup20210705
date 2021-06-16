@@ -12,7 +12,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import ME.S.stables.PathLinkFile;
+import SVQ.stable.StableFile;
 public class Dictionary{	
 	public List<String> dic_list;
 	public Map<String,Object> dic_map;
@@ -24,7 +24,7 @@ public class Dictionary{
 	public List<String> txtToList() throws IOException{
 		List<String> dic_list = new ArrayList<>();
 		List<String> TEMP_list = new ArrayList<>();
-		InputStream in = this.getClass().getResourceAsStream(PathLinkFile.z_txt);
+		InputStream in = this.getClass().getResourceAsStream(StableFile.z_txt);
 		BufferedReader cReader = new BufferedReader(new InputStreamReader(in, "UTF-8"));  
 		String ctempString = null; 
 		while ((ctempString = cReader.readLine()) != null) {  
@@ -41,7 +41,7 @@ public class Dictionary{
 			}	
 		}	
 		dic_list.add("[¸ÃÎÄÕÂ½áÊø]");
-		in = getClass().getResourceAsStream(PathLinkFile.shl_txt);
+		in = getClass().getResourceAsStream(StableFile.shl_txt);
 		cReader = new BufferedReader(new InputStreamReader(in, "GBK"));  
 		ctempString = null; 
 		while ((ctempString = cReader.readLine()) != null) {  

@@ -1,5 +1,5 @@
-package OSI.OPE.MSQ.SS.stable;
-public interface StableData {
+package SVQ.stable;
+public interface StableAnnotation {
 	public static final String ATTENSION_UNCURRENT_CHOICE= "当前没有选中文档。";
 	public static final String ATTENSION_UPDATE_ENSURE= "确认更新在该文档:";
 	public static final String ATTENSION_SELECT_ENSURE= "确认选择文档地址？";

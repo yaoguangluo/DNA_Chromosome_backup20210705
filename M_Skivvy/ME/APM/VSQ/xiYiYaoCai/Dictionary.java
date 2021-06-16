@@ -12,13 +12,13 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import ME.S.stables.PathLinkFile;
+import SVQ.stable.StableFile;
 public class Dictionary{	
 	public void txtToMap(Map<String, Object> dic_yao_ming, Map<String, Object> dic_chengfen_danwei,
 			Map<String, Object> dic_yong_fa, Map<String, Object> dic_yao_li, Map<String, Object> dic_zhu_yi,
 Map<String, Object> dic_shi_ying, Map<String, Object> dic_bu_liang_fan_ying, Map<String, Object> dic_yao_wu_xiang_hu_zuo_yong,
 Map<String, Object> dic_qi_ta, Map<String, Object> dic_yong_liang, Map<String, Object> dic_jie_shao) throws IOException{
-		InputStream in = this.getClass().getResourceAsStream(PathLinkFile._127个西医常用药品功能主治_txt);
+		InputStream in = this.getClass().getResourceAsStream(StableFile._127个西医常用药品功能主治_txt);
 		BufferedReader cReader = new BufferedReader(new InputStreamReader(in, "UTF-8"));  
 		String ctempString = null; 
 		while ((ctempString = cReader.readLine()) != null) {  
@@ -39,7 +39,7 @@ Map<String, Object> dic_qi_ta, Map<String, Object> dic_yong_liang, Map<String, O
 		}
 		cReader.close();
 		in.close();
-		in = this.getClass().getResourceAsStream(PathLinkFile.西医常用药_txt);
+		in = this.getClass().getResourceAsStream(StableFile.西医常用药_txt);
 		cReader = new BufferedReader(new InputStreamReader(in, "UTF-8"));  
 		ctempString = null; 
 		String yaoming = "";
@@ -103,7 +103,7 @@ Map<String, Object> dic_qi_ta, Map<String, Object> dic_yong_liang, Map<String, O
 			}
 		}
 		cReader.close();
-		in = this.getClass().getResourceAsStream(PathLinkFile.药理学_第七版_txt);
+		in = this.getClass().getResourceAsStream(StableFile.药理学_第七版_txt);
 		cReader = new BufferedReader(new InputStreamReader(in, "GBK"));  
 		ctempString = null; 
 		yaoming = "";
@@ -146,7 +146,7 @@ Map<String, Object> dic_qi_ta, Map<String, Object> dic_yong_liang, Map<String, O
 		}
 		cReader.close();
 		List<String> TEMP_list = new ArrayList<>();
-		in = this.getClass().getResourceAsStream(PathLinkFile.临床药物手册_txt);
+		in = this.getClass().getResourceAsStream(StableFile.临床药物手册_txt);
 		cReader = new BufferedReader(new InputStreamReader(in, "UTF8"));  
 		ctempString = null; 
 		while ((ctempString = cReader.readLine()) != null) {  

@@ -32,7 +32,7 @@ import com.jogamp.opengl.util.gl2.GLUT;
 
 import AVQ.ASQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import ME.APM.VSQ.App;
-import ME.S.stables.PathLinkFile;
+import SVQ.stable.StableFile;
 
 import javax.media.opengl.awt.GLCanvas;  
 import javax.media.opengl.glu.GLU;
@@ -478,35 +478,35 @@ public class CoAuthorForWord extends JPanel implements MouseMotionListener, Mous
 			ImageIcon bagua_dui= null; 
 			//×ÏÉ«£ºmegenda 
 			if(leafName.contains("Ùã")) {
-				bagua_dui= new ImageIcon(this.getClass().getResource(PathLinkFile.bg_xun_png)); 
+				bagua_dui= new ImageIcon(this.getClass().getResource(StableFile.bg_xun_png)); 
 				ga.setColor(new Color(226,5,9));
 			}else
 			if(leafName.contains("Àë")) {
-				bagua_dui= new ImageIcon(this.getClass().getResource(PathLinkFile.bg_li_png)); 
+				bagua_dui= new ImageIcon(this.getClass().getResource(StableFile.bg_li_png)); 
 				ga.setColor(new Color(240,45,216));//zi
 			}else
 			if(leafName.contains("À¤")) {
-				bagua_dui= new ImageIcon(this.getClass().getResource(PathLinkFile.bg_kun_png)); 
+				bagua_dui= new ImageIcon(this.getClass().getResource(StableFile.bg_kun_png)); 
 				ga.setColor(new Color(0,185,185));
 			}else
 			if(leafName.contains("¶Ò")) {
-				bagua_dui= new ImageIcon(this.getClass().getResource(PathLinkFile.bg_dui_png)); 
+				bagua_dui= new ImageIcon(this.getClass().getResource(StableFile.bg_dui_png)); 
 				ga.setColor(new Color(30,164,19));
 			}else
 			if(leafName.contains("Ç¬")) {
-				bagua_dui= new ImageIcon(this.getClass().getResource(PathLinkFile.bg_qian_png)); 
+				bagua_dui= new ImageIcon(this.getClass().getResource(StableFile.bg_qian_png)); 
 				ga.setColor(Color.BLUE);
 			}else
 			if(leafName.contains("¿²")) {
-				bagua_dui= new ImageIcon(this.getClass().getResource(PathLinkFile.bg_kan_png)); 
+				bagua_dui= new ImageIcon(this.getClass().getResource(StableFile.bg_kan_png)); 
 				ga.setColor(new Color(91,15,86));
 			}else
 			if(leafName.contains("ôÞ")) {
-				bagua_dui= new ImageIcon(this.getClass().getResource(PathLinkFile.bg_gen_png)); 
+				bagua_dui= new ImageIcon(this.getClass().getResource(StableFile.bg_gen_png)); 
 				ga.setColor(new Color(0, 255, 255));
 			}else
 			if(leafName.contains("Õð")) {
-				bagua_dui= new ImageIcon(this.getClass().getResource(PathLinkFile.bg_zhen_png)); 
+				bagua_dui= new ImageIcon(this.getClass().getResource(StableFile.bg_zhen_png)); 
 				ga.setColor(new Color(245, 249, 102));
 			}else
 			if(leafName.contains("Ä¾")) {

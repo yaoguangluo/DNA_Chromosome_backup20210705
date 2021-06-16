@@ -30,7 +30,7 @@ import javax.swing.table.JTableHeader;
 
 import AVQ.ASQ.OVQ.OSQ.VSQ.obj.Verbal;
 import AVQ.ASQ.OVQ.OSQ.VSQ.obj.WordFrequency;
-import AVQ.ASQ.OVQ.OSQ.VSQ.stable.StableData;
+import SVQ.stable.StablePOS;
 import ESU.list.List_ESU;
 import ESU.sort.Quick9DLYGWithString_ESU;
 import ME.APM.VSQ.App;
@@ -136,11 +136,11 @@ public class CecilPage extends Container implements MouseListener, KeyListener{
 							if(pecsi.contains("名")||pecsi.contains("动")||pecsi.contains("形")) {
 								if (map.containsKey(setOfi)) {
 									WordFrequency wordFrequency = map.get(setOfi);
-									wordFrequency.setFrequency(wordFrequency.getFrequency() + StableData.INT_ONE);
+									wordFrequency.setFrequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
 									map.put(setOfi, wordFrequency);
 								} else {
 									WordFrequency wordFrequency = new WordFrequency();
-									wordFrequency.setFrequency(StableData.INT_ONE);
+									wordFrequency.setFrequency(StablePOS.INT_ONE);
 									wordFrequency.setWord(setOfi);
 									map.put(setOfi, wordFrequency);
 								}
@@ -242,11 +242,11 @@ public class CecilPage extends Container implements MouseListener, KeyListener{
 							if(pecsi.contains("名")||pecsi.contains("动")||pecsi.contains("形")) {
 								if (map.containsKey(setOfi)) {
 									WordFrequency wordFrequency = map.get(setOfi);
-									wordFrequency.setFrequency(wordFrequency.getFrequency() + StableData.INT_ONE);
+									wordFrequency.setFrequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
 									map.put(setOfi, wordFrequency);
 								} else {
 									WordFrequency wordFrequency = new WordFrequency();
-									wordFrequency.setFrequency(StableData.INT_ONE);
+									wordFrequency.setFrequency(StablePOS.INT_ONE);
 									wordFrequency.setWord(setOfi);
 									map.put(setOfi, wordFrequency);
 								}
@@ -577,11 +577,11 @@ public class CecilPage extends Container implements MouseListener, KeyListener{
 					if(pecsi.contains("名")||pecsi.contains("动")||pecsi.contains("形")) {
 						if (map.containsKey(setOfi)) {
 							WordFrequency wordFrequency = map.get(setOfi);
-							wordFrequency.setFrequency(wordFrequency.getFrequency() + StableData.INT_ONE);
+							wordFrequency.setFrequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
 							map.put(setOfi, wordFrequency);
 						} else {
 							WordFrequency wordFrequency = new WordFrequency();
-							wordFrequency.setFrequency(StableData.INT_ONE);
+							wordFrequency.setFrequency(StablePOS.INT_ONE);
 							wordFrequency.setWord(setOfi);
 							map.put(setOfi, wordFrequency);
 						}

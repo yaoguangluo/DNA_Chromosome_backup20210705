@@ -8,13 +8,13 @@ import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
 
-import OSI.OPE.MSQ.SS.stable.StableData;
+import SVQ.stable.StableAnnotation;
 import OSI.OPE.OVU.MVQ.OVU.PQE.nodeView.NodeShow;
 import OSI.OPE.OVU.MVU.OVU.PQE.nodeEdit.LinkList;
 import OSI.OPE.OVU.MVU.OVU.PQE.nodeEdit.LinkNode;
 import OSI.OPE.OVU.MVU.OVU.PQE.nodeEdit.Sort;
 public class LoadFile{
-	@SuppressWarnings({StableData.TAG_RESOURCE})
+	@SuppressWarnings({StableAnnotation.TAG_RESOURCE})
 	public static LinkNode Load(LinkNode first, NodeShow nodeView, File file, LinkList thislist) {
 		//get path
 		try {
