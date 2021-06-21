@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+	<classpathentry kind="src" path="A_IDUQ"/>
+	<classpathentry kind="src" path="A_VECS"/>
+	<classpathentry kind="src" path="C_AOPM"/>
+	<classpathentry kind="src" path="C_IDUQ"/>
+	<classpathentry kind="src" path="D_AOPM"/>
+	<classpathentry kind="src" path="D_VECS"/>
+	<classpathentry kind="src" path="E_AOPM"/>
+	<classpathentry kind="src" path="E_IDUQ"/>
+	<classpathentry kind="src" path="I_AOPM"/>
+	<classpathentry kind="src" path="I_VECS"/>
+	<classpathentry kind="src" path="M_IDUQ"/>
+	<classpathentry kind="src" path="M_VECS"/>
+	<classpathentry kind="src" path="O_IDUQ"/>
+	<classpathentry kind="src" path="O_VECS"/>
+	<classpathentry kind="src" path="P_IDUQ"/>
+	<classpathentry kind="src" path="P_VECS"/>
+	<classpathentry kind="src" path="Q_AOPM"/>
+	<classpathentry kind="src" path="Q_VECS"/>
+	<classpathentry kind="src" path="S_AOPM"/>
+	<classpathentry kind="src" path="S_IDUQ"/>
+	<classpathentry kind="src" path="U_AOPM"/>
+	<classpathentry kind="src" path="U_VECS"/>
+	<classpathentry kind="src" path="V_AOPM"/>
+	<classpathentry kind="src" path="V_IDUQ"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.8.0_161"/>
 	<classpathentry kind="lib" path="/HRJ_YLJ_18111/lib/artoolkitplus-2.3.1-1.3.jar"/>
 	<classpathentry kind="lib" path="/HRJ_YLJ_18111/lib/bssm.jar"/>
@@ -72,29 +96,5 @@
 	<classpathentry kind="lib" path="/HRJ_YLJ_18111/lib/weka-src.jar"/>
 	<classpathentry kind="lib" path="/HRJ_YLJ_18111/lib/YLJHRJ3PT2.jar"/>
 	<classpathentry kind="lib" path="/HRJ_YLJ_18111/JACOB/jacob.jar"/>
-	<classpathentry kind="src" path="I_VECS"/>
-	<classpathentry kind="src" path="U_VECS"/>
-	<classpathentry kind="src" path="V_IDUQ"/>
-	<classpathentry kind="src" path="I_AOPM"/>
-	<classpathentry kind="src" path="V_AOPM"/>
-	<classpathentry kind="src" path="S_IDUQ"/>
-	<classpathentry kind="src" path="D_VECS"/>
-	<classpathentry kind="src" path="Q_VECS"/>
-	<classpathentry kind="src" path="U_AOPM"/>
-	<classpathentry kind="src" path="E_IDUQ"/>
-	<classpathentry kind="src" path="C_IDUQ"/>
-	<classpathentry kind="src" path="P_IDUQ"/>
-	<classpathentry kind="src" path="P_VECS"/>
-	<classpathentry kind="src" path="S_AOPM"/>
-	<classpathentry kind="src" path="O_VECS"/>
-	<classpathentry kind="src" path="A_VECS"/>
-	<classpathentry kind="src" path="E_AOPM"/>
-	<classpathentry kind="src" path="O_IDUQ"/>
-	<classpathentry kind="src" path="D_AOPM"/>
-	<classpathentry kind="src" path="M_VECS"/>
-	<classpathentry kind="src" path="Q_AOPM"/>
-	<classpathentry kind="src" path="A_IDUQ"/>
-	<classpathentry kind="src" path="C_AOPM"/>
-	<classpathentry kind="src" path="M_IDUQ"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
