@@ -150,7 +150,7 @@ public class ThisCanvas extends JPanel implements MouseMotionListener
 					checkRange.doCheckRange(first.first, node,arg0);
 				}
 			}
-			node.setchoose(false);
+			node.I_choose(false);
 			node.rightChoose= false;
 			node.actionNodeLeft= false;
 			node.actionNodeRight= false;
@@ -184,7 +184,7 @@ public class ThisCanvas extends JPanel implements MouseMotionListener
 			if(node.leftChoose&& !node.rightChoose){
 				node.actionNodeLeft= true;
 				node.actionNodeRight= false;
-				node.setxy(e.getX(), e.getY());
+				node.I_xy(e.getX(), e.getY());
 				actionNode= node;
 				//移动后 节点输出坐标和连线更新
 			}else {

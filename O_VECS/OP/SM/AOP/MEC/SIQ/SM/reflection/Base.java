@@ -5,7 +5,7 @@ public class Base{
 		return tables;
 	}
 
-	public void setTables(ConcurrentHashMap<String, Table> tables) {
+	public void I_Tables(ConcurrentHashMap<String, Table> tables) {
 		this.tables = tables;
 	}
 

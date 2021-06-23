@@ -9,7 +9,7 @@ public class DetaDBException extends RuntimeException {
 		return errorId;
 	}
 
-	public void setErrorId(String errorId) {
+	public void I_ErrorId(String errorId) {
 		this.errorId = errorId;
 	}
 
@@ -17,7 +17,7 @@ public class DetaDBException extends RuntimeException {
 		return errorMessage;
 	}
 
-	public void setErrorMessage(String errorMessage) {
+	public void I_ErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
 	}
 

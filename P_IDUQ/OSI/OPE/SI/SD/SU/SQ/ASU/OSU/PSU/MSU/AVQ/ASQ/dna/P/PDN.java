@@ -4,7 +4,7 @@ public class PDN{
 		return pdn;
 	}
 
-	public void setPdn(boolean[] pdn) {
+	public void I_Pdn(boolean[] pdn) {
 		this.pdn = pdn;
 	}
 

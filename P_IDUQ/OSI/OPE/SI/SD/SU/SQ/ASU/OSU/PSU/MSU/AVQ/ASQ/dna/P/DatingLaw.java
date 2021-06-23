@@ -5,15 +5,15 @@ public class DatingLaw{
 		RST son= new RST();
 		//random
 		if(Math.random()>0.5) {
-			son.setFatherDeque(father.getFatherDeque());
+			son.I_FatherDeque(father.getFatherDeque());
 		}else {
-			son.setFatherDeque(father.getMotherDeque());
+			son.I_FatherDeque(father.getMotherDeque());
 		}
 		
 		if(Math.random()<0.5) {
-			son.setMotherDeque(mother.getMotherDeque());
+			son.I_MotherDeque(mother.getMotherDeque());
 		}else {
-			son.setMotherDeque(mother.getFatherDeque());
+			son.I_MotherDeque(mother.getFatherDeque());
 		}	
 		return son;
 	}

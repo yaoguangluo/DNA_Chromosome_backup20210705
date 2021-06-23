@@ -136,12 +136,12 @@ public class CecilPage extends Container implements MouseListener, KeyListener{
 							if(pecsi.contains("名")||pecsi.contains("动")||pecsi.contains("形")) {
 								if (map.containsKey(setOfi)) {
 									WordFrequency wordFrequency = map.get(setOfi);
-									wordFrequency.setFrequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
+									wordFrequency.I_Frequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
 									map.put(setOfi, wordFrequency);
 								} else {
 									WordFrequency wordFrequency = new WordFrequency();
-									wordFrequency.setFrequency(StablePOS.INT_ONE);
-									wordFrequency.setWord(setOfi);
+									wordFrequency.I_Frequency(StablePOS.INT_ONE);
+									wordFrequency.I_Word(setOfi);
 									map.put(setOfi, wordFrequency);
 								}
 							}
@@ -242,12 +242,12 @@ public class CecilPage extends Container implements MouseListener, KeyListener{
 							if(pecsi.contains("名")||pecsi.contains("动")||pecsi.contains("形")) {
 								if (map.containsKey(setOfi)) {
 									WordFrequency wordFrequency = map.get(setOfi);
-									wordFrequency.setFrequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
+									wordFrequency.I_Frequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
 									map.put(setOfi, wordFrequency);
 								} else {
 									WordFrequency wordFrequency = new WordFrequency();
-									wordFrequency.setFrequency(StablePOS.INT_ONE);
-									wordFrequency.setWord(setOfi);
+									wordFrequency.I_Frequency(StablePOS.INT_ONE);
+									wordFrequency.I_Word(setOfi);
 									map.put(setOfi, wordFrequency);
 								}
 							}
@@ -444,12 +444,12 @@ public class CecilPage extends Container implements MouseListener, KeyListener{
 				if(!readEnglish.isAlive()) {
 					buttonETC.setLabel("语音阅读开");
 					readEnglish= new ReadChinese(app, _A);
-					readEnglish.setPreReadList(sets);
+					readEnglish.I_PreReadList(sets);
 					readEnglish.start();
 				}else {
 					buttonETC.setLabel("语音阅读关");
 					readEnglish.finish= 0;
-					readEnglish.setNullSap();
+					readEnglish.I_NullSap();
 					readEnglish.stop();
 				}
 			}
@@ -577,12 +577,12 @@ public class CecilPage extends Container implements MouseListener, KeyListener{
 					if(pecsi.contains("名")||pecsi.contains("动")||pecsi.contains("形")) {
 						if (map.containsKey(setOfi)) {
 							WordFrequency wordFrequency = map.get(setOfi);
-							wordFrequency.setFrequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
+							wordFrequency.I_Frequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
 							map.put(setOfi, wordFrequency);
 						} else {
 							WordFrequency wordFrequency = new WordFrequency();
-							wordFrequency.setFrequency(StablePOS.INT_ONE);
-							wordFrequency.setWord(setOfi);
+							wordFrequency.I_Frequency(StablePOS.INT_ONE);
+							wordFrequency.I_Word(setOfi);
 							map.put(setOfi, wordFrequency);
 						}
 					}

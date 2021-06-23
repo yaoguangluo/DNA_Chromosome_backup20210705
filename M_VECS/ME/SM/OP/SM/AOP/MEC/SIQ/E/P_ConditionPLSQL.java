@@ -27,7 +27,7 @@ public class P_ConditionPLSQL {
 			String rowIndex = iterator.next();
 			Row row = table.getRow(rowIndex);
 			Cell cell=new Cell();
-			cell.setCellValue(rowIndex.replace("row", ""));
+			cell.I_CellValue(rowIndex.replace("row", ""));
 			row.putCell("Index", cell);
 			if(sets[1].equalsIgnoreCase("<")||sets[1].equalsIgnoreCase("-lt")) {
 				double rowCellFromBigDecimal = new BigDecimal(row.getCell(sets[0])
@@ -304,7 +304,7 @@ public class P_ConditionPLSQL {
 										< new BigDecimal(sets[2].toString()).doubleValue()) {	
 									if(!((Map<Integer, Boolean>)(object.get("recordRows"))).containsKey(count)) {
 										Row bufferRow= new Row();
-										bufferRow.setCells(new ConcurrentHashMap<String, Cell>());
+										bufferRow.I_Cells(new ConcurrentHashMap<String, Cell>());
 										P_kernel(row, readDBTableRowIndexCulumnFile
 												, readDBTableRowIndexFile, reader// 似乎被猫腻哥动了手脚, 我会将手里硬盘数据2年的数据等会全部验算
 												, row, output, bufferRow, rowMap);
@@ -320,7 +320,7 @@ public class P_ConditionPLSQL {
 										<= new BigDecimal(sets[2].toString()).doubleValue()) {
 									if(!((Map<Integer, Boolean>)(object.get("recordRows"))).containsKey(count)) {
 										Row bufferRow= new Row();
-										bufferRow.setCells(new ConcurrentHashMap<String, Cell>());
+										bufferRow.I_Cells(new ConcurrentHashMap<String, Cell>());
 										P_kernel(row, readDBTableRowIndexCulumnFile
 												, readDBTableRowIndexFile, reader// 似乎被猫腻哥动了手脚, 我会将手里硬盘数据2年的数据等会全部验算
 												, row, output, bufferRow, rowMap);
@@ -336,7 +336,7 @@ public class P_ConditionPLSQL {
 										== new BigDecimal(sets[2].toString()).doubleValue()) {
 									if(!((Map<Integer, Boolean>)(object.get("recordRows"))).containsKey(count)) {
 										Row bufferRow= new Row();
-										bufferRow.setCells(new ConcurrentHashMap<String, Cell>());
+										bufferRow.I_Cells(new ConcurrentHashMap<String, Cell>());
 										P_kernel(row, readDBTableRowIndexCulumnFile
 												, readDBTableRowIndexFile, reader// 似乎被猫腻哥动了手脚, 我会将手里硬盘数据2年的数据等会全部验算
 												, row, output, bufferRow, rowMap);
@@ -352,7 +352,7 @@ public class P_ConditionPLSQL {
 										>= new BigDecimal(sets[2].toString()).doubleValue()) {
 									if(!((Map<Integer, Boolean>)(object.get("recordRows"))).containsKey(count)) {
 										Row bufferRow= new Row();
-										bufferRow.setCells(new ConcurrentHashMap<String, Cell>());
+										bufferRow.I_Cells(new ConcurrentHashMap<String, Cell>());
 										P_kernel(row, readDBTableRowIndexCulumnFile
 												, readDBTableRowIndexFile, reader// 似乎被猫腻哥动了手脚, 我会将手里硬盘数据2年的数据等会全部验算
 												, row, output, bufferRow, rowMap);
@@ -367,7 +367,7 @@ public class P_ConditionPLSQL {
 										> new BigDecimal(sets[2].toString()).doubleValue()) {
 									if(!((Map<Integer, Boolean>)(object.get("recordRows"))).containsKey(count)) {
 										Row bufferRow= new Row();
-										bufferRow.setCells(new ConcurrentHashMap<String, Cell>());
+										bufferRow.I_Cells(new ConcurrentHashMap<String, Cell>());
 										P_kernel(row, readDBTableRowIndexCulumnFile
 												, readDBTableRowIndexFile, reader// 似乎被猫腻哥动了手脚, 我会将手里硬盘数据2年的数据等会全部验算
 												, row, output, bufferRow, rowMap);
@@ -382,7 +382,7 @@ public class P_ConditionPLSQL {
 										!= new BigDecimal(sets[2].toString()).doubleValue()) {
 									if(!((Map<Integer, Boolean>)(object.get("recordRows"))).containsKey(count)) {
 										Row bufferRow= new Row();
-										bufferRow.setCells(new ConcurrentHashMap<String, Cell>());
+										bufferRow.I_Cells(new ConcurrentHashMap<String, Cell>());
 										P_kernel(row, readDBTableRowIndexCulumnFile
 												, readDBTableRowIndexFile, reader// 似乎被猫腻哥动了手脚, 我会将手里硬盘数据2年的数据等会全部验算
 												, row, output, bufferRow, rowMap);
@@ -397,7 +397,7 @@ public class P_ConditionPLSQL {
 								if(rowCellFromString.equalsIgnoreCase(sets[2].toString())) {
 									if(!((Map<Integer, Boolean>)(object.get("recordRows"))).containsKey(count)) {
 										Row bufferRow= new Row();
-										bufferRow.setCells(new ConcurrentHashMap<String, Cell>());
+										bufferRow.I_Cells(new ConcurrentHashMap<String, Cell>());
 										P_kernel(row, readDBTableRowIndexCulumnFile
 												, readDBTableRowIndexFile, reader// 似乎被猫腻哥动了手脚, 我会将手里硬盘数据2年的数据等会全部验算
 												, row, output, bufferRow, rowMap);
@@ -412,7 +412,7 @@ public class P_ConditionPLSQL {
 								if(!rowCellFromString.equalsIgnoreCase(sets[2].toString())) {
 									if(!((Map<Integer, Boolean>)(object.get("recordRows"))).containsKey(count)) {
 										Row bufferRow= new Row();
-										bufferRow.setCells(new ConcurrentHashMap<String, Cell>());
+										bufferRow.I_Cells(new ConcurrentHashMap<String, Cell>());
 										P_kernel(row, readDBTableRowIndexCulumnFile
 												, readDBTableRowIndexFile, reader// 似乎被猫腻哥动了手脚, 我会将手里硬盘数据2年的数据等会全部验算
 												, row, output, bufferRow, rowMap);
@@ -428,7 +428,7 @@ public class P_ConditionPLSQL {
 								if(set.contains("," + rowCellFromString + ",")) {
 									if(!((Map<Integer, Boolean>)(object.get("recordRows"))).containsKey(count)) {
 										Row bufferRow= new Row();
-										bufferRow.setCells(new ConcurrentHashMap<String, Cell>());
+										bufferRow.I_Cells(new ConcurrentHashMap<String, Cell>());
 										P_kernel(row, readDBTableRowIndexCulumnFile
 												, readDBTableRowIndexFile, reader// 似乎被猫腻哥动了手脚, 我会将手里硬盘数据2年的数据等会全部验算
 												, row, output, bufferRow, rowMap);
@@ -444,7 +444,7 @@ public class P_ConditionPLSQL {
 								if(!set.contains("," + rowCellFromString + ",")) {
 									if(!((Map<Integer, Boolean>)(object.get("recordRows"))).containsKey(count)) {
 										Row bufferRow= new Row();
-										bufferRow.setCells(new ConcurrentHashMap<String, Cell>());
+										bufferRow.I_Cells(new ConcurrentHashMap<String, Cell>());
 										P_kernel(row, readDBTableRowIndexCulumnFile
 												, readDBTableRowIndexFile, reader// 似乎被猫腻哥动了手脚, 我会将手里硬盘数据2年的数据等会全部验算
 												, row, output, bufferRow, rowMap);
@@ -486,11 +486,11 @@ public class P_ConditionPLSQL {
 					}
 					reader.close();
 					rowMap.put(culumn, temp);
-					cell.setCellValue(temp);
+					cell.I_CellValue(temp);
 					bufferRow.putCell(culumn, cell);
 				}else {
 					rowMap.put(culumn, null);
-					cell.setCellValue(null);
+					cell.I_CellValue(null);
 					bufferRow.putCell(culumn, cell);
 				}
 			}

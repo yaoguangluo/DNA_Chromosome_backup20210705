@@ -13,8 +13,8 @@ import SVQ.stable.StableWeb;
 public class RequestRecord_C {
 
 	public static void requestIpRecoder(VPCSRequest vPCSRequest, VPCSResponse vPCSResponse) {
-		vPCSRequest.setRequestIp(vPCSResponse.getSocket().getInetAddress().getHostAddress());
-		vPCSRequest.setRequestName(vPCSResponse.getSocket().getInetAddress().getHostName());
+		vPCSRequest.I_RequestIp(vPCSResponse.getSocket().getInetAddress().getHostAddress());
+		vPCSRequest.I_RequestName(vPCSResponse.getSocket().getInetAddress().getHostName());
 	}
 
 	public static void requestLinkRecoder(VPCSRequest vPCSRequest, VPCSResponse vPCSResponse)
@@ -37,14 +37,14 @@ public class RequestRecord_C {
 		}
 		String[] content = type[StablePOS.INT_ONE].split(StableWeb.STRING_SLASH_QUESTION);
 		if(content.length == StablePOS.INT_TWO){
-			vPCSRequest.setRequestIsRest(true);
+			vPCSRequest.I_RequestIsRest(true);
 			if(content[StablePOS.INT_ONE] == null){
 				vPCSResponse.returnErrorCode(StableWeb.HTTP_500);
 				return;
 			}
 		}
 		if(content[StablePOS.INT_ZERO].contains(StableWeb.STRING_QUATE)){
-			//			vPCSRequest.setRequestIsRest(false);
+			//			vPCSRequest.I_RequestIsRest(false);
 		}
 		if(vPCSRequest.getRequestIsRest()){
 			String[] column = content[StablePOS.INT_ONE].split(StableWeb.STRING_JUNCTION);
@@ -54,8 +54,8 @@ public class RequestRecord_C {
 				data.put(cells[StablePOS.INT_ZERO], URLDecoder.decode(cells[StablePOS.INT_ONE]
 						, StableWeb.CHARSET_UTF_8));
 			}
-			vPCSRequest.setRequestValue(data);	
+			vPCSRequest.I_RequestValue(data);	
 		}
-		vPCSRequest.setRequestLink(content[StablePOS.INT_ZERO]);	
+		vPCSRequest.I_RequestLink(content[StablePOS.INT_ZERO]);	
 	}
 }

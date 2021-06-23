@@ -9,7 +9,7 @@ public class Pillow{
 		//bootNeroDoc 需要拿出来的数据资源，比如可重用数据，运维数据，可控数据等。
 		Map<String, Object>map= new HashMap<>(); 
 		//...
-		bootNeroDoc.setPillow(map);
+		bootNeroDoc.I_Pillow(map);
 		pillowBase.put(bootNeroDoc.getId(), map);
 	}
 }

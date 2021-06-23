@@ -23,7 +23,7 @@ public class DetaDBBufferCache_M {
 	
 	public static void reflection() throws IOException {
 		ConcurrentHashMap<String, Base> bases= new ConcurrentHashMap<>();
-		db.setBases(bases);
+		db.I_Bases(bases);
 		//1»ñÈ¡dbÂ·¾¶£»
 		String dBPath= Cache_M.getCacheInfo("DBPath").getValue().toString();
 		File fileDBPath= new File(dBPath);
@@ -39,7 +39,7 @@ public class DetaDBBufferCache_M {
 	private static void loopBases(DB db, String dBPath, String baseName) throws IOException {
 		Base base = new Base();
 		ConcurrentHashMap<String, Table> tables= new ConcurrentHashMap<>();
-		base.setTables(tables);
+		base.I_Tables(tables);
 		String dBasePath = dBPath + "/" + baseName;
 		//get base
 		File fileDBasePath = new File(dBasePath);
@@ -70,7 +70,7 @@ public class DetaDBBufferCache_M {
 	private static void loopSpec(Table table, String specPath) throws IOException {
 		Spec spec = new Spec();
 		ConcurrentHashMap<String, String> culumnTypes = new ConcurrentHashMap<>();
-		spec.setCulumnTypes(culumnTypes);
+		spec.I_CulumnTypes(culumnTypes);
 		File fileSpecPath = new File(specPath);
 		if (fileSpecPath.isDirectory()) {
 			String[] specs = fileSpecPath.list();
@@ -85,15 +85,15 @@ public class DetaDBBufferCache_M {
 					temp += tempString;
 				}
 				reader.close();
-				spec.setCulumnType(specs[i], temp);
+				spec.I_CulumnType(specs[i], temp);
 			}
 		}
-		table.setSpec(spec);
+		table.I_Spec(spec);
 	}
 
 	private static void loopRows(Table table, String rowsPath) throws IOException {
 		ConcurrentHashMap<String, Row> rows = new ConcurrentHashMap<>();
-		table.setRows(rows);
+		table.I_Rows(rows);
 		File fileRowsPath = new File(rowsPath);
 		if (fileRowsPath.isDirectory()) {
 			String[] rowIndex = fileRowsPath.list();
@@ -106,7 +106,7 @@ public class DetaDBBufferCache_M {
 	private static void loopRow(Table table, File fileRowsPath, String rowIndex) throws IOException {
 		Row row = new Row();
 		ConcurrentHashMap<String, Cell> cells = new ConcurrentHashMap<>();
-		row.setCells(cells);
+		row.I_Cells(cells);
 		String rowIndexPath = fileRowsPath + "/" + rowIndex;
 		File fileRowPath = new File(rowIndexPath);
 		if (fileRowPath.isDirectory()) {
@@ -129,11 +129,11 @@ public class DetaDBBufferCache_M {
 					}
 					reader.close();
 					Cell cell = new Cell();
-					cell.setCellValue(temp);
+					cell.I_CellValue(temp);
 					row.putCell(culumns[i], cell);
 				}else {
 					Cell cell = new Cell();
-					cell.setCellValue("");
+					cell.I_CellValue("");
 					row.putCell(culumns[i], cell);
 				}
 			}

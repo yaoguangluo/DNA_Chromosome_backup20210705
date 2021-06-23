@@ -14,13 +14,13 @@ public class Sleeper extends Thread implements Runnable{
 		this.app= app;
 		vPCSRequest = new VPCSRequest();
 		vPCSResponse = new VPCSResponse();
-		vPCSResponse.setHashCode(this.hashCode());
+		vPCSResponse.I_HashCode(this.hashCode());
 	}
 	//ºÏ²¢
 	public Sleeper(){
 		vPCSRequest= new VPCSRequest();
 		vPCSResponse= new VPCSResponse();
-		vPCSResponse.setHashCode(this.hashCode());
+		vPCSResponse.I_HashCode(this.hashCode());
 	}
 	public void run(){
 		try{
@@ -83,7 +83,7 @@ public class Sleeper extends Thread implements Runnable{
 
 	public void hugPillow(Sleeper_H sleeper_H, Socket accept, int hashCode) {
 		sleeper_H.addE_Sleeper(hashCode, this);
-		vPCSResponse.setSocket(accept);
-		vPCSResponse.setSleeper_H(sleeper_H);
+		vPCSResponse.I_Socket(accept);
+		vPCSResponse.I_Sleeper_H(sleeper_H);
 	}
 }

@@ -60,12 +60,12 @@ public class LinkNode extends Thread{
 		primaryKey=""+ Math.random();
 	}
 
-	public void setxy(int x1,int y1){
+	public void I_xy(int x1,int y1){
 		x= x1;
 		y= y1;
 	}
 
-	public void setchoose(Boolean choose){
+	public void I_choose(Boolean choose){
 		leftChoose= choose;
 	}
 }

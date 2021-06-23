@@ -143,12 +143,12 @@ public class XinShengErKekx extends Container implements MouseListener, KeyListe
 							if(pos.get(setOfi).contains("名")||pos.get(setOfi).contains("动")||pos.get(setOfi).contains("形")) {
 								if (map.containsKey(setOfi)) {
 									WordFrequency wordFrequency = map.get(setOfi);
-									wordFrequency.setFrequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
+									wordFrequency.I_Frequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
 									map.put(setOfi, wordFrequency);
 								} else {
 									WordFrequency wordFrequency = new WordFrequency();
-									wordFrequency.setFrequency(StablePOS.INT_ONE);
-									wordFrequency.setWord(setOfi);
+									wordFrequency.I_Frequency(StablePOS.INT_ONE);
+									wordFrequency.I_Word(setOfi);
 									map.put(setOfi, wordFrequency);
 								}
 							}
@@ -241,12 +241,12 @@ public class XinShengErKekx extends Container implements MouseListener, KeyListe
 							if(pos.get(setOfi).contains("名")||pos.get(setOfi).contains("动")||pos.get(setOfi).contains("形")) {
 								if (map.containsKey(setOfi)) {
 									WordFrequency wordFrequency = map.get(setOfi);
-									wordFrequency.setFrequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
+									wordFrequency.I_Frequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
 									map.put(setOfi, wordFrequency);
 								} else {
 									WordFrequency wordFrequency = new WordFrequency();
-									wordFrequency.setFrequency(StablePOS.INT_ONE);
-									wordFrequency.setWord(setOfi);
+									wordFrequency.I_Frequency(StablePOS.INT_ONE);
+									wordFrequency.I_Word(setOfi);
 									map.put(setOfi, wordFrequency);
 								}
 							}
@@ -555,12 +555,12 @@ public class XinShengErKekx extends Container implements MouseListener, KeyListe
 						if((pos.get(setOfi).contains("名")||pos.get(setOfi).contains("动")||pos.get(setOfi).contains("形"))) {
 							if (map.containsKey(setOfi)) {
 								WordFrequency wordFrequency = map.get(setOfi);
-								wordFrequency.setFrequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
+								wordFrequency.I_Frequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
 								map.put(setOfi, wordFrequency);
 							} else {
 								WordFrequency wordFrequency = new WordFrequency();
-								wordFrequency.setFrequency(StablePOS.INT_ONE);
-								wordFrequency.setWord(setOfi);
+								wordFrequency.I_Frequency(StablePOS.INT_ONE);
+								wordFrequency.I_Word(setOfi);
 								map.put(setOfi, wordFrequency);
 							}
 						}
@@ -699,12 +699,12 @@ public class XinShengErKekx extends Container implements MouseListener, KeyListe
 						if((pos.get(setOfi).contains("名")||pos.get(setOfi).contains("动")||pos.get(setOfi).contains("形"))) {
 							if (map.containsKey(setOfi)) {
 								WordFrequency wordFrequency = map.get(setOfi);
-								wordFrequency.setFrequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
+								wordFrequency.I_Frequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
 								map.put(setOfi, wordFrequency);
 							} else {
 								WordFrequency wordFrequency = new WordFrequency();
-								wordFrequency.setFrequency(StablePOS.INT_ONE);
-								wordFrequency.setWord(setOfi);
+								wordFrequency.I_Frequency(StablePOS.INT_ONE);
+								wordFrequency.I_Word(setOfi);
 								map.put(setOfi, wordFrequency);
 							}
 						}
@@ -793,12 +793,12 @@ public class XinShengErKekx extends Container implements MouseListener, KeyListe
 				if(!readChinese.isAlive()) {
 					buttonCTV.setLabel("语音阅读开");
 					readChinese= new ReadChinese(app, _A);
-					readChinese.setPreReadList(sets);
+					readChinese.I_PreReadList(sets);
 					readChinese.start();
 				}else {
 					buttonCTV.setLabel("语音阅读关");
 					readChinese.finish= 0;
-					readChinese.setNullSap();
+					readChinese.I_NullSap();
 					readChinese.stop();
 				}
 			}
@@ -941,12 +941,12 @@ public class XinShengErKekx extends Container implements MouseListener, KeyListe
 					if(pos.get(setOfi).contains("名")|| pos.get(setOfi).contains("动")|| pos.get(setOfi).contains("形")) {
 						if (map.containsKey(setOfi)) {
 							WordFrequency wordFrequency= map.get(setOfi);
-							wordFrequency.setFrequency(wordFrequency.getFrequency()+ StablePOS.INT_ONE);
+							wordFrequency.I_Frequency(wordFrequency.getFrequency()+ StablePOS.INT_ONE);
 							map.put(setOfi, wordFrequency);
 						} else {
 							WordFrequency wordFrequency= new WordFrequency();
-							wordFrequency.setFrequency(StablePOS.INT_ONE);
-							wordFrequency.setWord(setOfi);
+							wordFrequency.I_Frequency(StablePOS.INT_ONE);
+							wordFrequency.I_Word(setOfi);
 							map.put(setOfi, wordFrequency);
 						}
 					}

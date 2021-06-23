@@ -5,7 +5,7 @@ public class RST{
 		return fatherDeque;
 	}
 	
-	public void setFatherDeque(DNA fatherDeque) {
+	public void I_FatherDeque(DNA fatherDeque) {
 		this.fatherDeque= fatherDeque;
 	}
 	
@@ -13,7 +13,7 @@ public class RST{
 		return motherDeque;
 	}
 	
-	public void setMotherDeque(DNA motherDeque) {
+	public void I_MotherDeque(DNA motherDeque) {
 		this.motherDeque= motherDeque;
 	}
 	

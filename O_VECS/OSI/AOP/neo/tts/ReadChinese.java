@@ -104,7 +104,7 @@ public class ReadChinese extends Thread implements Runnable{
 		finish= 0;
 	}
 	
-	public void setPreReadText(String text) {
+	public void I_PreReadText(String text) {
 		if(text.length()==0) {
 			return;
 		}
@@ -112,7 +112,7 @@ public class ReadChinese extends Thread implements Runnable{
 		this.text = text;
 	}
 	
-	public void setPreReadList(List<String> setsForGet) {
+	public void I_PreReadList(List<String> setsForGet) {
 		if(setsForGet.size()==0) {
 			return;
 		}
@@ -120,7 +120,7 @@ public class ReadChinese extends Thread implements Runnable{
 		this.setsForGet = setsForGet;
 	}
 
-	public void setNullSap() {
+	public void I_NullSap() {
 		try {
 			sapo= null;
 			sap= null;

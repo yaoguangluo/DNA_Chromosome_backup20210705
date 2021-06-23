@@ -4,7 +4,7 @@ import java.util.Map;
 
 public interface PLORM_C{
 	public String getPLSQL();
-	public void setPLSQL(String pLSQL);
+	public void I_PLSQL(String pLSQL);
 	public PLORM_C withTableCreate(String tableName);
 	public PLORM_C withTableDelete(String tableName);
 	public PLORM_C withTableInsert(String tableName);

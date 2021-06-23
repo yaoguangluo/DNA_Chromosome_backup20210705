@@ -85,7 +85,7 @@ public class UnicornSplitPaneUI extends BasicSplitPaneUI {
 			JButton b = new JButton() {   
 				private static final long serialVersionUID = 1L;
 
-				public void setBorder(Border border) {   
+				public void I_Border(Border border) {   
 				}   
 
 				@Override  
@@ -141,7 +141,7 @@ public class UnicornSplitPaneUI extends BasicSplitPaneUI {
 		protected JButton createLeftOneTouchButton() {   
 			JButton b = new JButton() {   
 				private static final long serialVersionUID = 1L;
-				public void setBorder(Border b) {   
+				public void I_Border(Border b) {   
 				}   
 
 				public void paint(Graphics g) {   

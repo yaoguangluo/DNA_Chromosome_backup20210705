@@ -23,7 +23,7 @@ public class JOGLOBJFace {
 	/**
 	 * @param verts The verts to set.
 	 */
-	public void setVerts(JOGLOBJVertex[] verts) {
+	public void I_Verts(JOGLOBJVertex[] verts) {
 		this.verts = verts;
 	}
 

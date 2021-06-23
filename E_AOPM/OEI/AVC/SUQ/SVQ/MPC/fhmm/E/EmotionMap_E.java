@@ -22,7 +22,7 @@ public class EmotionMap_E implements EmotionMap{
 		return predictionMap;
 	}
 
-	public void setPredictionMap(Map<String, Object> predictionMap) {
+	public void I_PredictionMap(Map<String, Object> predictionMap) {
 		this.predictionMap = predictionMap;
 	}
 	
@@ -30,7 +30,7 @@ public class EmotionMap_E implements EmotionMap{
 		return positiveMap;
 	}
 
-	public void setPositiveMap(Map<String, Object> positiveMap) {
+	public void I_PositiveMap(Map<String, Object> positiveMap) {
 		this.positiveMap = positiveMap;
 	}
 
@@ -38,7 +38,7 @@ public class EmotionMap_E implements EmotionMap{
 		return negativeMap;
 	}
 
-	public void setNegativeMap(Map<String, Object> negativeMap) {
+	public void I_NegativeMap(Map<String, Object> negativeMap) {
 		this.negativeMap = negativeMap;
 	}
 
@@ -46,7 +46,7 @@ public class EmotionMap_E implements EmotionMap{
 		return motivationMap;
 	}
 
-	public void setMotivationMap(Map<String, Object> motivationMap) {
+	public void I_MotivationMap(Map<String, Object> motivationMap) {
 		this.motivationMap = motivationMap;
 	}
 
@@ -54,7 +54,7 @@ public class EmotionMap_E implements EmotionMap{
 		return trendingMap;
 	}
 
-	public void setTrendingMap(Map<String, Object> trendingMap) {
+	public void I_TrendingMap(Map<String, Object> trendingMap) {
 		this.trendingMap = trendingMap;
 	}
 
@@ -62,7 +62,7 @@ public class EmotionMap_E implements EmotionMap{
 		return distinctionMap;
 	}
 
-	public void setDistinctionMap(Map<String, Object> distinctionMap) {
+	public void I_DistinctionMap(Map<String, Object> distinctionMap) {
 		this.distinctionMap = distinctionMap;
 	}
 	

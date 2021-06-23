@@ -121,33 +121,33 @@ public class Translator_E implements Translator{
 			String word = it.next();
 			Verbal verbal = new Verbal();
 			if(poscc.containsKey(word)) {
-				verbal.setChinese(word);
-				verbal.setPartOfSpeech(poscc.get(word));
+				verbal.I_Chinese(word);
+				verbal.I_PartOfSpeech(poscc.get(word));
 				if(cte.containsKey(word)) {
-					verbal.setEnglish(cte.get(word));
+					verbal.I_English(cte.get(word));
 					if(etc.containsKey(cte.get(word))) {
-						verbal.setExplain(etc.get(cte.get(word)));
+						verbal.I_Explain(etc.get(cte.get(word)));
 					}
 				}else if(fullcte.containsKey(word)){
-					verbal.setEnglish(fullcte.get(word));
-					verbal.setExplain(fullcte.get(word));
+					verbal.I_English(fullcte.get(word));
+					verbal.I_Explain(fullcte.get(word));
 				}
 			}else if(posee.containsKey(word)) {
-				verbal.setEnglish(word);
+				verbal.I_English(word);
 				if(fulletc.containsKey(word)) {
-					verbal.setChinese(fulletc.get(word));
+					verbal.I_Chinese(fulletc.get(word));
 				}
 				if(poscc.containsKey(fulletc.get(word))) {
-					verbal.setPartOfSpeech(poscc.get(fulletc.get(word)));
+					verbal.I_PartOfSpeech(poscc.get(fulletc.get(word)));
 				}
 				if(etc.containsKey(word)) {
-					verbal.setExplain(etc.get(word));
+					verbal.I_Explain(etc.get(word));
 				}
 			}else {
-				verbal.setEnglish(word);
-				verbal.setChinese(fulletc.get(word));
-				verbal.setPartOfSpeech(StablePOS.NLP_NULL);
-				verbal.setExplain(StablePOS.NLP_NULL);
+				verbal.I_English(word);
+				verbal.I_Chinese(fulletc.get(word));
+				verbal.I_PartOfSpeech(StablePOS.NLP_NULL);
+				verbal.I_Explain(StablePOS.NLP_NULL);
 			}	
 			verbals.add(verbal);
 		}
@@ -162,7 +162,7 @@ public class Translator_E implements Translator{
 						if(i - StablePOS.INT_ONE > StablePOS.INT_ZERO && verbals.get(i - StablePOS.INT_ONE)
 								.getEnglish().contains(StablePOS.NLP_ENGLISH_OF)) {
 							Verbal temp = verbals.get(i);
-							temp.setPartOfSpeech(StablePOS.NLP_CI_DONG_MING);
+							temp.I_PartOfSpeech(StablePOS.NLP_CI_DONG_MING);
 							String english = temp.getEnglish().replace(StablePOS.SPACE_STRING, StablePOS.EMPTY_STRING);
 							if(english.charAt(english.length() - StablePOS.INT_ONE) == StablePOS.NLP_CHAR_E) {
 								english = StablePOS.NLP_ENGLISH_THE + StablePOS.SPACE_STRING 
@@ -171,7 +171,7 @@ public class Translator_E implements Translator{
 							}else {
 								english = StablePOS.NLP_ENGLISH_THE + StablePOS.SPACE_STRING + english + StablePOS.NLP_ENGLISH_ING;
 							}
-							temp.setEnglish(english);
+							temp.I_English(english);
 						}else if(verbals.get(i + StablePOS.INT_ONE).getPartOfSpeech().contains(StablePOS.NLP_ZI_MING)){
 							if(i - StablePOS.INT_ONE >= StablePOS.INT_ZERO && !verbals.get(i - StablePOS.INT_ONE).getPartOfSpeech()
 									.contains(StablePOS.NLP_ZI_MING)){
@@ -180,12 +180,12 @@ public class Translator_E implements Translator{
 										if(verbals.get(i - StablePOS.INT_ONE).getChinese().contains(StablePOS.NLP_ZI_ZAI)){
 											if(verbals.get(i + StablePOS.INT_ONE).getChinese().contains(StablePOS.NLP_ZI_ZHONG)){
 												Verbal temp = verbals.get(i + StablePOS.INT_ONE);
-												temp.setEnglish(StablePOS.NLP_ENGLISH_STATUS);
+												temp.I_English(StablePOS.NLP_ENGLISH_STATUS);
 											}
 										}
 									}
 									Verbal temp = verbals.get(i);
-									temp.setPartOfSpeech(StablePOS.NLP_CI_DONG_MING);
+									temp.I_PartOfSpeech(StablePOS.NLP_CI_DONG_MING);
 									String english = temp.getEnglish().replace(StablePOS.SPACE_STRING, StablePOS.EMPTY_STRING);
 									if(english.charAt(english.length()-StablePOS.INT_ONE) == StablePOS.NLP_CHAR_E) {
 										english = StablePOS.NLP_ENGLISH_THE + StablePOS.SPACE_STRING 
@@ -194,14 +194,14 @@ public class Translator_E implements Translator{
 									}else {
 										english = StablePOS.NLP_ENGLISH_THE + StablePOS.SPACE_STRING + english + StablePOS.NLP_ENGLISH_ING;
 									}
-									temp.setEnglish(english);
+									temp.I_English(english);
 								}
 							}
 							if(verbals.get(i + StablePOS.INT_TWO).getPartOfSpeech().contains(StablePOS.NLP_ZI_DONG)){
 								if(!verbals.get(i + StablePOS.INT_TWO).getPartOfSpeech().contains(StablePOS.NLP_ZI_MING)){
 									if(verbals.get(i + StablePOS.INT_THREE).getPartOfSpeech().contains(StablePOS.NLP_ZI_MING)){
 										Verbal temp = verbals.get(i + StablePOS.INT_TWO);
-										temp.setPartOfSpeech(StablePOS.NLP_CI_DONG_MING);
+										temp.I_PartOfSpeech(StablePOS.NLP_CI_DONG_MING);
 										String english = temp.getEnglish().replace(StablePOS.SPACE_STRING, StablePOS.EMPTY_STRING);
 										if(english.charAt(english.length() - StablePOS.INT_ONE) == StablePOS.NLP_CHAR_E) {
 											english = StablePOS.NLP_ENGLISH_OF + StablePOS.SPACE_STRING +
@@ -212,14 +212,14 @@ public class Translator_E implements Translator{
 											english = StablePOS.NLP_ENGLISH_OF + StablePOS.SPACE_STRING +
 													StablePOS.NLP_ENGLISH_THE + StablePOS.SPACE_STRING + english + StablePOS.NLP_ENGLISH_ING;
 										}
-										temp.setEnglish(english);
+										temp.I_English(english);
 									}
 								}
 							}
 						}else if(i - StablePOS.INT_ONE >= StablePOS.INT_ZERO && verbals.get(i - StablePOS.INT_ONE)
 								.getPartOfSpeech().contains(StablePOS.NLP_ZI_JIE)){
 							Verbal temp = verbals.get(i);
-							temp.setPartOfSpeech(StablePOS.NLP_CI_DONG_MING);
+							temp.I_PartOfSpeech(StablePOS.NLP_CI_DONG_MING);
 							String english = temp.getEnglish().replace(StablePOS.SPACE_STRING, StablePOS.EMPTY_STRING);
 							if(english.charAt(english.length() - StablePOS.INT_ONE) == StablePOS.NLP_CHAR_E) {
 								english = StablePOS.NLP_ENGLISH_THE + StablePOS.SPACE_STRING + english.substring(StablePOS.INT_ZERO
@@ -227,11 +227,11 @@ public class Translator_E implements Translator{
 							}else {
 								english = StablePOS.NLP_ENGLISH_THE + StablePOS.SPACE_STRING  + english + StablePOS.NLP_ENGLISH_ING;
 							}
-							temp.setEnglish(english);
+							temp.I_English(english);
 						}else if(i - StablePOS.INT_ONE >= StablePOS.INT_ZERO && verbals.get(i - StablePOS.INT_ONE).getPartOfSpeech()
 								.contains(StablePOS.NLP_ZI_FU)){
 							Verbal temp = verbals.get(i);
-							temp.setPartOfSpeech(StablePOS.NLP_CI_DONG_MING);
+							temp.I_PartOfSpeech(StablePOS.NLP_CI_DONG_MING);
 							String english = temp.getEnglish().replace(StablePOS.SPACE_STRING, StablePOS.EMPTY_STRING);
 							if(english.charAt(english.length() - StablePOS.INT_ONE) == StablePOS.NLP_CHAR_E) {
 								english = english.substring(StablePOS.INT_ZERO, english.length() - StablePOS.INT_ONE) 
@@ -239,7 +239,7 @@ public class Translator_E implements Translator{
 							}else {
 								english += StablePOS.NLP_ENGLISH_ING;
 							}
-							temp.setEnglish(english);
+							temp.I_English(english);
 						}
 					}
 				}else if(verbals.get(i).getPartOfSpeech().contains(StablePOS.NLP_ZI_MING)){
@@ -253,7 +253,7 @@ public class Translator_E implements Translator{
 						}else {
 							english += StablePOS.NLP_ENGLISH_S;
 						}
-						temp.setEnglish(english);
+						temp.I_English(english);
 					}
 				}else if(verbals.get(i).getPartOfSpeech().contains(StablePOS.NLP_CI_FU)){
 					if(i - StablePOS.INT_ONE >= StablePOS.INT_ZERO && (verbals.get(i-StablePOS.INT_ONE)
@@ -266,13 +266,13 @@ public class Translator_E implements Translator{
 							if(verbals.get(i).getEnglish().contains(StablePOS.NLP_HAVE_HAS)) {
 								Verbal temp = verbals.get(i);
 								String english = temp.getEnglish().replace(StablePOS.NLP_HAVE_HAS, StablePOS.NLP_HAVE);
-								temp.setEnglish(english);
+								temp.I_English(english);
 							}
 						}else {
 							if(verbals.get(i).getEnglish().contains(StablePOS.NLP_HAVE_HAS)) {
 								Verbal temp = verbals.get(i);
 								String english = temp.getEnglish().replace(StablePOS.NLP_HAVE_HAS, StablePOS.NLP_HAS);
-								temp.setEnglish(english);
+								temp.I_English(english);
 							}
 						}
 					}	
@@ -285,13 +285,13 @@ public class Translator_E implements Translator{
 							if(verbals.get(i).getEnglish().contains(StablePOS.NLP_HAVE_HAS)) {
 								Verbal temp = verbals.get(i);
 								String english = temp.getEnglish().replace(StablePOS.NLP_HAVE_HAS, StablePOS.NLP_HAVE);
-								temp.setEnglish(english);
+								temp.I_English(english);
 							}
 						}else {
 							if(verbals.get(i).getEnglish().contains(StablePOS.NLP_HAVE_HAS)) {
 								Verbal temp = verbals.get(i);
 								String english = temp.getEnglish().replace(StablePOS.NLP_HAVE_HAS, StablePOS.NLP_HAS);
-								temp.setEnglish(english);
+								temp.I_English(english);
 							}
 						}
 					}	 

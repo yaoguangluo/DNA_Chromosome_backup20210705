@@ -5,7 +5,7 @@ public class Table{
 		return spec;
 	}
 	
-	public void setSpec(Spec spec) {
+	public void I_Spec(Spec spec) {
 		this.spec = spec;
 	}
 	
@@ -13,7 +13,7 @@ public class Table{
 		return rows;
 	}
 	
-	public void setRows(ConcurrentHashMap<String, Row> rows) {
+	public void I_Rows(ConcurrentHashMap<String, Row> rows) {
 		this.rows = rows;
 	}
 	

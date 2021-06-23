@@ -7,7 +7,7 @@ public class FMHMMNode extends HMMNode {
 		return next;
 	}
 
-	public void setNext(Map<String, Integer> next) {
+	public void I_Next(Map<String, Integer> next) {
 		this.next = next;
 	}
 

@@ -74,12 +74,12 @@ public class LoginServiceImpl {// implements LoginService {
         Token sessiontoken= new Token();
         js.put("uKey", key);
 		String dnaPassword= TokenUtil.getFirstDNAPassword(key, usrToken.getuPassword(), sessiontoken);
-		sessiontoken.setuEmail(usr.getuEmail());
-		sessiontoken.setuKey(key);
+		sessiontoken.I_uEmail(usr.getuEmail());
+		sessiontoken.I_uKey(key);
 		//sessiontoken.
-		sessiontoken.setuTime(new Date().getTime());
-		//token.setmPassword(mPassword);
-		sessiontoken.setmPassword(dnaPassword);
+		sessiontoken.I_uTime(new Date().getTime());
+		//token.I_mPassword(mPassword);
+		sessiontoken.I_mPassword(dnaPassword);
 		//return sessiontoken
 		//if (!uPassword.equals(password)) {
 		if (!uPassword.equals(dnaPassword)) {

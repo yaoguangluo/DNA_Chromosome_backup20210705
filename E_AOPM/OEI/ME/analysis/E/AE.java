@@ -326,13 +326,13 @@ public class AE implements A {
 				String setOfi = iterator.next();
 				if (map.containsKey(setOfi)) {
 					WordFrequency wordFrequency = map.get(setOfi);
-					wordFrequency.setFrequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
+					wordFrequency.I_Frequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
 					map.put(setOfi, wordFrequency);
 					continue Here;
 				} 
 				WordFrequency wordFrequency = new WordFrequency();
-				wordFrequency.setFrequency(StablePOS.INT_ONE);
-				wordFrequency.setWord(setOfi);
+				wordFrequency.I_Frequency(StablePOS.INT_ONE);
+				wordFrequency.I_Word(setOfi);
 				map.put(setOfi, wordFrequency);
 			}
 		return map;
@@ -428,12 +428,12 @@ public class AE implements A {
 						String temp=it.next();
 						if (outputList.containsKey(temp)) {
 							WordFrequency wordFrequency = outputList.get(temp);
-							wordFrequency.setFrequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
+							wordFrequency.I_Frequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
 							outputList.put(temp, wordFrequency);
 						} else {
 							WordFrequency wordFrequency = new WordFrequency();
-							wordFrequency.setFrequency(StablePOS.INT_ONE);
-							wordFrequency.setWord(temp);
+							wordFrequency.I_Frequency(StablePOS.INT_ONE);
+							wordFrequency.I_Word(temp);
 							outputList.put(temp, wordFrequency);
 						}
 					}
@@ -459,12 +459,12 @@ public class AE implements A {
 				if (compare == StablePOS.INT_ONE) {
 					if (outputList.containsKey(countWordNode)) {
 						WordFrequency wordFrequency = outputList.get(countWordNode);
-						wordFrequency.setFrequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
+						wordFrequency.I_Frequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
 						outputList.put(countWordNode, wordFrequency);
 					} else {
 						WordFrequency wordFrequency = new WordFrequency();
-						wordFrequency.setFrequency(StablePOS.INT_ONE);
-						wordFrequency.setWord(fixWords[StablePOS.INT_ZERO].toString());
+						wordFrequency.I_Frequency(StablePOS.INT_ONE);
+						wordFrequency.I_Word(fixWords[StablePOS.INT_ZERO].toString());
 						outputList.put(countWordNode, wordFrequency);
 					}
 					fixWords[StablePOS.INT_ZERO].delete(StablePOS.INT_ZERO, fixWords[StablePOS.INT_ZERO].length());
@@ -491,7 +491,7 @@ public class AE implements A {
 			map= fFHMMNode.getNext();
 		}
 		map.put(token, StablePOS.INT_ONE);
-		fFHMMNode.setNext(map);
+		fFHMMNode.I_Next(map);
 		forestRoots.put(Long.valueOf(study.charAt(StablePOS.INT_ZERO)), fFHMMNode);
 		//learn new pos
 		fHMMList.studyNewPos(study+token, posStudy);

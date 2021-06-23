@@ -9,15 +9,15 @@ public interface EmotionMap{
 	void initPredictionMap() throws IOException;
 	void initDistinctionMap() throws IOException;
 	public Map<String, Object> getPositiveMap();
-	public void setPositiveMap(Map<String, Object> positiveMap);
+	public void I_PositiveMap(Map<String, Object> positiveMap);
 	public Map<String, Object> getNegativeMap();
-	public void setNegativeMap(Map<String, Object> negativeMap);
+	public void I_NegativeMap(Map<String, Object> negativeMap);
 	public Map<String, Object> getMotivationMap() ;
-	public void setMotivationMap(Map<String, Object> motivationMap);
+	public void I_MotivationMap(Map<String, Object> motivationMap);
 	public Map<String, Object> getTrendingMap() ;
-	public void setTrendingMap(Map<String, Object> trendingMap);
+	public void I_TrendingMap(Map<String, Object> trendingMap);
 	public Map<String, Object> getPredictionMap() ;
-	public void setPredictionMap(Map<String, Object> predictionMap);
+	public void I_PredictionMap(Map<String, Object> predictionMap);
 	public Map<String, Object> getDistinctionMap() ;
-	public void setDistinctionMap(Map<String, Object> distinctionMap);
+	public void I_DistinctionMap(Map<String, Object> distinctionMap);
 }

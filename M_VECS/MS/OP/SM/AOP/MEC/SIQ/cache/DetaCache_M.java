@@ -12,8 +12,8 @@ public class DetaCache_M {
 	
 	public static String putCache(String key, String value, long timeOut){
 		DetaCache c = new DetaCache();
-		c.setValue(value);
-		c.setTimeOut(timeOut);
+		c.I_Value(value);
+		c.I_TimeOut(timeOut);
 		cacheMap.put(key, c);
 		return "success";
 	}

@@ -27,69 +27,69 @@ public class Forward_V {
 					||filePath.contains(StableWeb.FILE_WOFF2)
 					||filePath.contains(StableWeb.FILE_OTF)){
 				String code = VPC.getCode(filePath);
-				vPCSRequest.setRequestFilePath(filePath);
-				vPCSRequest.setRequestFileCode(code);
-				vPCSRequest.setRequestForwardType(StableWeb.STREAM_BUFFER);
-				vPCSResponse.setResponseContentType(StableWeb.HEADER_CONTENT_TYPE_FONT_WOFF);
+				vPCSRequest.I_RequestFilePath(filePath);
+				vPCSRequest.I_RequestFileCode(code);
+				vPCSRequest.I_RequestForwardType(StableWeb.STREAM_BUFFER);
+				vPCSResponse.I_ResponseContentType(StableWeb.HEADER_CONTENT_TYPE_FONT_WOFF);
 				return;
 			}	
-			vPCSRequest.setRequestForwardType(StableWeb.STREAM_REST);
+			vPCSRequest.I_RequestForwardType(StableWeb.STREAM_REST);
 		}else{
 			String filePath = VPC.getFilePath(vPCSRequest.getRequestLink());
 			String code = VPC.getCode(filePath);
-			vPCSRequest.setRequestFilePath(filePath);
-			vPCSRequest.setRequestFileCode(code);
+			vPCSRequest.I_RequestFilePath(filePath);
+			vPCSRequest.I_RequestFileCode(code);
 			if(filePath.contains(StableWeb.FILE_PNG)){ 
-				vPCSRequest.setRequestForwardType(StableWeb.STREAM_BYTES);
-				vPCSResponse.setResponseContentType(StableWeb.HEADER_CONTENT_TYPE_PNG);
+				vPCSRequest.I_RequestForwardType(StableWeb.STREAM_BYTES);
+				vPCSResponse.I_ResponseContentType(StableWeb.HEADER_CONTENT_TYPE_PNG);
 			}
 			if(filePath.contains(StableWeb.FILE_JPEG)){ 
-				vPCSRequest.setRequestForwardType(StableWeb.STREAM_BYTES);
-				vPCSResponse.setResponseContentType(StableWeb.HEADER_CONTENT_TYPE_JPEG);
+				vPCSRequest.I_RequestForwardType(StableWeb.STREAM_BYTES);
+				vPCSResponse.I_ResponseContentType(StableWeb.HEADER_CONTENT_TYPE_JPEG);
 			}
 			if(filePath.contains(StableWeb.FILE_JPG)){ 
-				vPCSRequest.setRequestForwardType(StableWeb.STREAM_BYTES);
-				vPCSResponse.setResponseContentType(StableWeb.HEADER_CONTENT_TYPE_JPG);
+				vPCSRequest.I_RequestForwardType(StableWeb.STREAM_BYTES);
+				vPCSResponse.I_ResponseContentType(StableWeb.HEADER_CONTENT_TYPE_JPG);
 			}
 			if(filePath.contains(StableWeb.FILE_GIF)){ 
-				vPCSRequest.setRequestForwardType(StableWeb.STREAM_BYTES);
-				vPCSResponse.setResponseContentType(StableWeb.HEADER_CONTENT_TYPE_GIF);
+				vPCSRequest.I_RequestForwardType(StableWeb.STREAM_BYTES);
+				vPCSResponse.I_ResponseContentType(StableWeb.HEADER_CONTENT_TYPE_GIF);
 			}
 			if(filePath.contains(StableWeb.FILE_JS) && code.equalsIgnoreCase(StableWeb.CHARSET_UTF_8)){	
-				vPCSRequest.setRequestForwardType(StableWeb.STREAM_BYTES_BUFFER);
-				vPCSResponse.setResponseContentType(StableWeb.HEADER_CONTENT_TYPE_JS);
+				vPCSRequest.I_RequestForwardType(StableWeb.STREAM_BYTES_BUFFER);
+				vPCSResponse.I_ResponseContentType(StableWeb.HEADER_CONTENT_TYPE_JS);
 			}
 			if(filePath.contains(StableWeb.FILE_CSS)){
-				vPCSRequest.setRequestForwardType(StableWeb.STREAM_BUFFER);
-				vPCSResponse.setResponseContentType(StableWeb.HEADER_CONTENT_TYPE_CSS);
+				vPCSRequest.I_RequestForwardType(StableWeb.STREAM_BUFFER);
+				vPCSResponse.I_ResponseContentType(StableWeb.HEADER_CONTENT_TYPE_CSS);
 			}
 			if(filePath.contains(StableWeb.FILE_HTML)){
-				vPCSRequest.setRequestForwardType(StableWeb.STREAM_BUFFER);
-				vPCSResponse.setResponseContentType(StableWeb.HEADER_CONTENT_TYPE_HTML);
+				vPCSRequest.I_RequestForwardType(StableWeb.STREAM_BUFFER);
+				vPCSResponse.I_ResponseContentType(StableWeb.HEADER_CONTENT_TYPE_HTML);
 			}	
 			if(filePath.contains(StableWeb.FILE_PDF)){
-				vPCSRequest.setRequestForwardType(StableWeb.STREAM_BYTES_WITHOUT_ZIP);
-				vPCSResponse.setResponseContentType(StableWeb.HEADER_CONTENT_TYPE_PDF);
+				vPCSRequest.I_RequestForwardType(StableWeb.STREAM_BYTES_WITHOUT_ZIP);
+				vPCSResponse.I_ResponseContentType(StableWeb.HEADER_CONTENT_TYPE_PDF);
 			}
 			if(filePath.contains(StableWeb.FILE_ZIP)){
-				vPCSRequest.setRequestForwardType(StableWeb.STREAM_BYTES_WITHOUT_ZIP);
-				vPCSResponse.setResponseContentType(StableWeb.HEADER_CONTENT_TYPE_ZIP);
+				vPCSRequest.I_RequestForwardType(StableWeb.STREAM_BYTES_WITHOUT_ZIP);
+				vPCSResponse.I_ResponseContentType(StableWeb.HEADER_CONTENT_TYPE_ZIP);
 			}
 			if(filePath.contains(StableWeb.FILE_WAV)){
-				vPCSRequest.setRequestForwardType(StableWeb.STREAM_BUFFER);
-				vPCSResponse.setResponseContentType(StableWeb.HEADER_CONTENT_TYPE_WAV);
+				vPCSRequest.I_RequestForwardType(StableWeb.STREAM_BUFFER);
+				vPCSResponse.I_ResponseContentType(StableWeb.HEADER_CONTENT_TYPE_WAV);
 			}
 				if(filePath.contains(StableWeb.FILE_RAR)){
-				vPCSRequest.setRequestForwardType(StableWeb.STREAM_BYTES_WITHOUT_ZIP);
-				vPCSResponse.setResponseContentType(StableWeb.HEADER_CONTENT_TYPE_RAR);
+				vPCSRequest.I_RequestForwardType(StableWeb.STREAM_BYTES_WITHOUT_ZIP);
+				vPCSResponse.I_ResponseContentType(StableWeb.HEADER_CONTENT_TYPE_RAR);
 			}
 			if(filePath.contains(StableWeb.FILE_XML)){
-				vPCSRequest.setRequestForwardType(StableWeb.STREAM_BYTES_WITHOUT_ZIP);
-				vPCSResponse.setResponseContentType(StableWeb.HEADER_CONTENT_TYPE_XML);
+				vPCSRequest.I_RequestForwardType(StableWeb.STREAM_BYTES_WITHOUT_ZIP);
+				vPCSResponse.I_ResponseContentType(StableWeb.HEADER_CONTENT_TYPE_XML);
 			}
 			if(filePath.contains(StableWeb.FILE_TXT)){
-				vPCSRequest.setRequestForwardType(StableWeb.STREAM_BYTES_WITHOUT_ZIP);
-				vPCSResponse.setResponseContentType(StableWeb.HEADER_CONTENT_TYPE_TXT);
+				vPCSRequest.I_RequestForwardType(StableWeb.STREAM_BYTES_WITHOUT_ZIP);
+				vPCSResponse.I_ResponseContentType(StableWeb.HEADER_CONTENT_TYPE_TXT);
 			}
 		}	
 	}

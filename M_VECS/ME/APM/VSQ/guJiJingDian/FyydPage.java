@@ -131,12 +131,12 @@ public class FyydPage extends Container implements MouseListener, KeyListener{
 							if(pos.get(setOfi).contains("名")||pos.get(setOfi).contains("动")||pos.get(setOfi).contains("形")) {
 								if (map.containsKey(setOfi)) {
 									WordFrequency wordFrequency = map.get(setOfi);
-									wordFrequency.setFrequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
+									wordFrequency.I_Frequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
 									map.put(setOfi, wordFrequency);
 								} else {
 									WordFrequency wordFrequency = new WordFrequency();
-									wordFrequency.setFrequency(StablePOS.INT_ONE);
-									wordFrequency.setWord(setOfi);
+									wordFrequency.I_Frequency(StablePOS.INT_ONE);
+									wordFrequency.I_Word(setOfi);
 									map.put(setOfi, wordFrequency);
 								}
 							}
@@ -227,12 +227,12 @@ public class FyydPage extends Container implements MouseListener, KeyListener{
 								if(pos.get(setOfi).contains("名")||pos.get(setOfi).contains("动")||pos.get(setOfi).contains("形")) {
 									if (map.containsKey(setOfi)) {
 										WordFrequency wordFrequency = map.get(setOfi);
-										wordFrequency.setFrequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
+										wordFrequency.I_Frequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
 										map.put(setOfi, wordFrequency);
 									} else {
 										WordFrequency wordFrequency = new WordFrequency();
-										wordFrequency.setFrequency(StablePOS.INT_ONE);
-										wordFrequency.setWord(setOfi);
+										wordFrequency.I_Frequency(StablePOS.INT_ONE);
+										wordFrequency.I_Word(setOfi);
 										map.put(setOfi, wordFrequency);
 									}
 								}
@@ -535,12 +535,12 @@ public class FyydPage extends Container implements MouseListener, KeyListener{
 						if((pos.get(setOfi).contains("名")||pos.get(setOfi).contains("动")||pos.get(setOfi).contains("形"))) {
 							if (map.containsKey(setOfi)) {
 								WordFrequency wordFrequency = map.get(setOfi);
-								wordFrequency.setFrequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
+								wordFrequency.I_Frequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
 								map.put(setOfi, wordFrequency);
 							} else {
 								WordFrequency wordFrequency = new WordFrequency();
-								wordFrequency.setFrequency(StablePOS.INT_ONE);
-								wordFrequency.setWord(setOfi);
+								wordFrequency.I_Frequency(StablePOS.INT_ONE);
+								wordFrequency.I_Word(setOfi);
 								map.put(setOfi, wordFrequency);
 							}
 						}
@@ -630,12 +630,12 @@ public class FyydPage extends Container implements MouseListener, KeyListener{
 				if(!readEnglish.isAlive()) {
 					buttonCTV.setLabel("语音阅读开");
 					readEnglish= new ReadChinese(u, _A);
-					readEnglish.setPreReadList(sets);
+					readEnglish.I_PreReadList(sets);
 					readEnglish.start();
 				}else {
 					buttonCTV.setLabel("语音阅读关");
 					readEnglish.finish= 0;
-					readEnglish.setNullSap();
+					readEnglish.I_NullSap();
 					readEnglish.stop();
 				}
 			}
@@ -795,12 +795,12 @@ public class FyydPage extends Container implements MouseListener, KeyListener{
 					if(pos.get(setOfi).contains("名")||pos.get(setOfi).contains("动")||pos.get(setOfi).contains("形")) {
 						if (map.containsKey(setOfi)) {
 							WordFrequency wordFrequency = map.get(setOfi);
-							wordFrequency.setFrequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
+							wordFrequency.I_Frequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
 							map.put(setOfi, wordFrequency);
 						} else {
 							WordFrequency wordFrequency = new WordFrequency();
-							wordFrequency.setFrequency(StablePOS.INT_ONE);
-							wordFrequency.setWord(setOfi);
+							wordFrequency.I_Frequency(StablePOS.INT_ONE);
+							wordFrequency.I_Word(setOfi);
 							map.put(setOfi, wordFrequency);
 						}
 					}

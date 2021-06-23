@@ -33,7 +33,7 @@ public class CfxButton extends JButton{
 			
 			public void mouseMoved(MouseEvent e) {
 				Graphics g = getGraphics();
-				setcolor(g);
+				I_color(g);
 				//g.setColor(new Color(255,0,255,128));
 				int xPoints[]={8,8+15,8};
 				int yPoints[]={8,8,8+15};
@@ -50,7 +50,7 @@ public class CfxButton extends JButton{
 		Graphics g = getGraphics();
 		this.callback(g); 
 	}
-	protected void setcolor(Graphics g) {
+	protected void I_color(Graphics g) {
 		// TODO Auto-generated method stub
 		int x=1+new Random().nextInt(9);
 		if(1==x){
@@ -88,33 +88,33 @@ public class CfxButton extends JButton{
 				if(null==g){
 					return;
 				}
-				setcolor(g);
+				I_color(g);
 				g.drawLine(0, 0,0,y);
 				g.drawLine(0, 0,x,0);	
 				g.drawLine(x, y,x,0);
 				g.drawLine(x, y,0,y);
-				setcolor(g);
+				I_color(g);
 				g.drawLine(2, 2,2,y-2);
 				g.drawLine(2, 2,x-2,2);	
 				g.drawLine(x-2, y-2,x-2,2);
 				g.drawLine(x-2, y-2,2,y-2);
-				setcolor(g);
+				I_color(g);
 				g.drawLine(4, 4,4,y-4);
 				g.drawLine(4, 4,x-4,4);	
 				g.drawLine(x-4, y-4,x-4,4);
 				g.drawLine(x-4, y-4,4,y-4);
-				setcolor(g);
+				I_color(g);
 				g.drawLine(6, 6,6,y-6);
 				g.drawLine(6, 6,x-6,6);	
 				g.drawLine(x-6, y-6,x-6,6);
 				g.drawLine(x-6, y-6,6,y-6);
-				setcolor(g);
+				I_color(g);
 				g.drawLine(8, 8,8,y-8);
 				g.drawLine(8, 8,x-8,8);	
 				g.drawLine(x-8, y-8,x-8,8);
 				g.drawLine(x-8, y-8,8,y-8);
 			}
-			private void setcolor(Graphics g) {
+			private void I_color(Graphics g) {
 				int x=1+new Random().nextInt(9);
 				if(1==x){
 					g.setColor(Color.BLACK);

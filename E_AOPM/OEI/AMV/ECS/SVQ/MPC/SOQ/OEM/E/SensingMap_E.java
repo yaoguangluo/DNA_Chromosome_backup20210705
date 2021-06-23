@@ -15,7 +15,7 @@ public class SensingMap_E implements SensingMap{
 	}
 
 	@Override
-	public void setLenovoMap(Map<String, Object> lenovoMap) {
+	public void I_LenovoMap(Map<String, Object> lenovoMap) {
 		 this.lenovoMap = lenovoMap;
 	}
 

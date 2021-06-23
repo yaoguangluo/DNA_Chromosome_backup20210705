@@ -5,7 +5,7 @@ public class WordFrequency {
 		return POS;
 	}
 
-	public void setPOS(String POS) {
+	public void I_POS(String POS) {
 		this.POS = POS;
 	}
 
@@ -13,7 +13,7 @@ public class WordFrequency {
 		return word;
 	}
 
-	public void setWord(String word) {
+	public void I_Word(String word) {
 		this.word = word;
 	}
 
@@ -21,7 +21,7 @@ public class WordFrequency {
 		return frequency;
 	}
 
-	public void setFrequency(int frequency) {
+	public void I_Frequency(int frequency) {
 		this.frequency = frequency;
 	}
 
@@ -29,7 +29,7 @@ public class WordFrequency {
 		return left;
 	}
 
-	public void setLeft(WordFrequency left) {
+	public void I_Left(WordFrequency left) {
 		this.left = left;
 	}
 
@@ -37,7 +37,7 @@ public class WordFrequency {
 		return right;
 	}
 
-	public void setRight(WordFrequency right) {
+	public void I_Right(WordFrequency right) {
 		this.right = right;
 	}
 

@@ -18,7 +18,7 @@ public class PDE_Increment_FullDNAFormular_XCDX {
 					Initon initonNext= initonLink.forwardNext();
 					if(initonNext.getStore().equalsIgnoreCase("S")) {					
 						Initon initonIncrementA= new Initon();
-						initonIncrementA.setA(); //新增一个数据A
+						initonIncrementA.I_A(); //新增一个数据A
 						if(initonNext.hasNext()) {
 							initonIncrementA.next= initonNext.next; //A后序替换
 							initonIncrementA.next.prev= initonIncrementA;//A后序前序恒等
@@ -51,20 +51,20 @@ public class PDE_Increment_FullDNAFormular_XCDX {
 						Initon initonNext= iterator.next();
 						if(initonNext.getStore().equalsIgnoreCase("S")) {
 							Initon initonIncrementA= new Initon();
-							initonIncrementA.setA();
+							initonIncrementA.I_A();
 							output.add(initonIncrementA);
 							continue HERE;
 						}
 						Initon initonIncrementV= new Initon();
-						initonIncrementV.setV();
+						initonIncrementV.I_V();
 						Initon initonIncrementS= new Initon();
-						initonIncrementS.setS();
+						initonIncrementS.I_S();
 						output.add(initonIncrementV);
 						output.add(initonIncrementS);
 						continue HERE;
 					}
 					Initon initonIncrementV= new Initon();
-					initonIncrementV.setV();
+					initonIncrementV.I_V();
 					output.add(initonIncrementV);
 					continue HERE;
 				}
@@ -82,7 +82,7 @@ public class PDE_Increment_FullDNAFormular_XCDX {
 					Initon initonNext= initonLink.forwardNext();
 					if(initonNext.getStore().equalsIgnoreCase("S")) {					
 						Initon initonIncrementO= new Initon();
-						initonIncrementO.setO(); //新增一个数据O
+						initonIncrementO.I_O(); //新增一个数据O
 						if(initonNext.hasNext()) {
 							initonIncrementO.next= initonNext.next; //O后序替换
 							initonIncrementO.next.prev= initonIncrementO;//O后序前序恒等
@@ -112,7 +112,7 @@ public class PDE_Increment_FullDNAFormular_XCDX {
 					Initon initonNext= initonLink.forwardNext();
 					if(initonNext.getStore().equalsIgnoreCase("C")) {					
 						Initon initonIncrementP= new Initon();
-						initonIncrementP.setP(); //新增一个数据P
+						initonIncrementP.I_P(); //新增一个数据P
 						if(initonNext.hasNext()) {
 							initonIncrementP.next= initonNext.next; //P后序替换
 							initonIncrementP.next.prev= initonIncrementP;//P后序前序恒等
@@ -141,7 +141,7 @@ public class PDE_Increment_FullDNAFormular_XCDX {
 					Initon initonNext= initonLink.forwardNext();
 					if(initonNext.getStore().equalsIgnoreCase("S")) {					
 						Initon initonIncrementM= new Initon();
-						initonIncrementM.setM(); //新增一个数据M
+						initonIncrementM.I_M(); //新增一个数据M
 						if(initonNext.hasNext()) {
 							initonIncrementM.next= initonNext.next; //M后序替换
 							initonIncrementM.next.prev= initonIncrementM;//M后序前序恒等
@@ -172,7 +172,7 @@ public class PDE_Increment_FullDNAFormular_XCDX {
 					Initon initonNext= initonLink.forwardNext();
 					if(initonNext.getStore().equalsIgnoreCase("Q")) {					
 						Initon initonIncrementV= new Initon();
-						initonIncrementV.setV(); //新增一个数据V
+						initonIncrementV.I_V(); //新增一个数据V
 						if(initonNext.hasNext()) {
 							initonIncrementV.next= initonNext.next; //V后序替换
 							initonIncrementV.next.prev= initonIncrementV;//V后序前序恒等
@@ -202,7 +202,7 @@ public class PDE_Increment_FullDNAFormular_XCDX {
 			if(initonLink.getStore().equalsIgnoreCase("D")
 					|| initonLink.getStore().equalsIgnoreCase("U")) {
 				Initon initonIncrementE= new Initon();
-				initonIncrementE.setE(); //新增一个数据S
+				initonIncrementE.I_E(); //新增一个数据S
 				if(initonString.equalsIgnoreCase("D")) {
 					pDE_RNA_Formular.pdeieKey+= "0";
 				}else if(initonString.equalsIgnoreCase("U")) {
@@ -236,7 +236,7 @@ public class PDE_Increment_FullDNAFormular_XCDX {
 					Initon initonNext= initonLink.forwardNext();
 					if(initonNext.getStore().equalsIgnoreCase("D")) {					
 						Initon initonIncrementC= new Initon();
-						initonIncrementC.setC(); //新增一个数据C
+						initonIncrementC.I_C(); //新增一个数据C
 						if(initonNext.hasNext()) {
 							initonIncrementC.next= initonNext.next; //C后序替换
 							initonIncrementC.next.prev= initonIncrementC;//C后序前序恒等
@@ -267,22 +267,22 @@ public class PDE_Increment_FullDNAFormular_XCDX {
 			if(initonLink.getStore().equalsIgnoreCase("I")
 					|| initonLink.getStore().equalsIgnoreCase("Q")) {
 				Initon initonIncrementS= new Initon();
-				initonIncrementS.setS(); //新增一个数据S
+				initonIncrementS.I_S(); //新增一个数据S
 				if(initonString.equalsIgnoreCase("I")) {
 					pDE_RNA_Formular.pdeisKey+= "0";
 				}else if(initonString.equalsIgnoreCase("Q")) {
 					pDE_RNA_Formular.pdeisKey+= "1";
 				}
 //				if(pDE_RNA_Formular.pdedsKey.charAt(index)== '0') { 
-//					initonIncrementS.setS(); //新增一个数据S
+//					initonIncrementS.I_S(); //新增一个数据S
 //				}else if(pDE_RNA_Formular.pdedsKey.charAt(index)== '1') { 
-//					initonIncrementS.setS(); //新增一个数据S
+//					initonIncrementS.I_S(); //新增一个数据S
 //				}else if(pDE_RNA_Formular.pdedsKey.charAt(index)== '2') { 
 //					if(initonString.equalsIgnoreCase("I")) {
-//						initonIncrementS.setI();
+//						initonIncrementS.I_I();
 //						//pDE_RNA_Formular.pdeisKey+= "0";
 //					}else if(initonString.equalsIgnoreCase("Q")) {
-//						initonIncrementS.setQ();
+//						initonIncrementS.I_Q();
 //						//pDE_RNA_Formular.pdeisKey+= "1";
 //					}
 //				}	

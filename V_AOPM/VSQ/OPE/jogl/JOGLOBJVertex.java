@@ -11,10 +11,10 @@ public class JOGLOBJVertex {
 	public JOGLOBJVertex(double x, double y, double z) {
 		location = new JOGLOBJVec4(x, y, z, 1.0);
 	}
-	public void setTexCoords(double u, double v, double w) {
+	public void I_TexCoords(double u, double v, double w) {
 		texcoords = new JOGLOBJVec4(u, v, w, 0.0);
 	}
-	public void setNormal(double x, double y, double z) {
+	public void I_Normal(double x, double y, double z) {
 		normal = new JOGLOBJVec4(x, y, z, 0.0);
 	}
 	/**

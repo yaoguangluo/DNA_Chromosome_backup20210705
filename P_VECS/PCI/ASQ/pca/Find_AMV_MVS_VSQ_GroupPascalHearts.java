@@ -48,8 +48,8 @@ public class Find_AMV_MVS_VSQ_GroupPascalHearts{
 		while(iterator.hasNext()) {
 			double key= iterator.next();
 			Line2D value= new Line2D();
-			value.setBegin(pascalMids.get(key));
-			value.setEnd(pascalHearts.get(key));
+			value.I_Begin(pascalMids.get(key));
+			value.I_End(pascalHearts.get(key));
 			pascalDirections.put(key, value);
 		}
 		return pascalDirections;
@@ -62,8 +62,8 @@ public class Find_AMV_MVS_VSQ_GroupPascalHearts{
 		while(iterator.hasNext()) {
 			double key= iterator.next();
 			Line3D value= new Line3D();
-			value.setBegin(pascalMids.get(key));
-			value.setEnd(pascalHearts.get(key));
+			value.I_Begin(pascalMids.get(key));
+			value.I_End(pascalHearts.get(key));
 			pascalDirections.put(key, value);
 		}
 		return pascalDirections;

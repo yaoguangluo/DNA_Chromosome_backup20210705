@@ -65,11 +65,11 @@ public class LoginService_E {
 		Token sessiontoken = new Token();
 		js.put("uKey", key);
 		String dnaPassword = TokenUtil.getFirstDNAPassword(key, usrToken.getuPassword(), sessiontoken);
-		sessiontoken.setuEmail(usr.getuEmail());
-		sessiontoken.setuKey(key);
-		sessiontoken.setuTime(new Date().getTime());
-		//token.setmPassword(mPassword);
-		sessiontoken.setmPassword(dnaPassword);
+		sessiontoken.I_uEmail(usr.getuEmail());
+		sessiontoken.I_uKey(key);
+		sessiontoken.I_uTime(new Date().getTime());
+		//token.I_mPassword(mPassword);
+		sessiontoken.I_mPassword(dnaPassword);
 
 		//String password = TokenUtil.getFirstMD5Password(js.getString("uKey"), usrToken.getuPassword());
 		//if (!uPassword.equals(password)) {
@@ -114,11 +114,11 @@ public class LoginService_E {
 		}
 		Token sessiontoken = new Token();
 		String dnaPassword = TokenUtil.getFirstDNAPassword(key, inPassword, sessiontoken);
-		sessiontoken.setuEmail(usr.getuEmail());
-		sessiontoken.setuKey(key);
-		sessiontoken.setuTime(new Date().getTime());
-		//token.setmPassword(mPassword);
-		sessiontoken.setmPassword(dnaPassword);
+		sessiontoken.I_uEmail(usr.getuEmail());
+		sessiontoken.I_uKey(key);
+		sessiontoken.I_uTime(new Date().getTime());
+		//token.I_mPassword(mPassword);
+		sessiontoken.I_mPassword(dnaPassword);
 
 
 		//String password = TokenUtil.getSecondMD5Password(inPassword);
@@ -163,11 +163,11 @@ public class LoginService_E {
 		Token sessiontoken = new Token();
 		js.put("uKey", key);
 		String dnaPassword = TokenUtil.getFirstDNAPassword(key, usrToken.getuPassword(), sessiontoken);
-		sessiontoken.setuEmail(usr.getuEmail());
-		sessiontoken.setuKey(key);
-		sessiontoken.setuTime(new Date().getTime());
-		//token.setmPassword(mPassword);
-		sessiontoken.setmPassword(dnaPassword);
+		sessiontoken.I_uEmail(usr.getuEmail());
+		sessiontoken.I_uKey(key);
+		sessiontoken.I_uTime(new Date().getTime());
+		//token.I_mPassword(mPassword);
+		sessiontoken.I_mPassword(dnaPassword);
 
 
 

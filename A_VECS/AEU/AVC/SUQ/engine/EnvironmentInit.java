@@ -16,7 +16,7 @@ public class EnvironmentInit{
 		return emotionMap;
 	}
 
-	public void setEmotionMap(EmotionMap emotionMap) {
+	public void I_EmotionMap(EmotionMap emotionMap) {
 		this.emotionMap = emotionMap;
 	}
 
@@ -24,7 +24,7 @@ public class EnvironmentInit{
 		return _A;
 	}
 
-	public void set_A(A _A) {
+	public void I__A(A _A) {
 		this._A = _A;
 	}
 
@@ -32,7 +32,7 @@ public class EnvironmentInit{
 		return positive;
 	}
 
-	public void setPositive(Map<String, Object> positive) {
+	public void I_Positive(Map<String, Object> positive) {
 		this.positive = positive;
 	}
 
@@ -40,7 +40,7 @@ public class EnvironmentInit{
 		return negative;
 	}
 
-	public void setNegative(Map<String, Object> negative) {
+	public void I_Negative(Map<String, Object> negative) {
 		this.negative = negative;
 	}
 
@@ -48,7 +48,7 @@ public class EnvironmentInit{
 		return motivation;
 	}
 
-	public void setMotivation(Map<String, Object> motivation) {
+	public void I_Motivation(Map<String, Object> motivation) {
 		this.motivation = motivation;
 	}
 
@@ -56,7 +56,7 @@ public class EnvironmentInit{
 		return trending;
 	}
 
-	public void setTrending(Map<String, Object> trending) {
+	public void I_Trending(Map<String, Object> trending) {
 		this.trending = trending;
 	}
 
@@ -64,7 +64,7 @@ public class EnvironmentInit{
 		return prediction;
 	}
 
-	public void setPrediction(Map<String, Object> prediction) {
+	public void I_Prediction(Map<String, Object> prediction) {
 		this.prediction = prediction;
 	}
 
@@ -72,7 +72,7 @@ public class EnvironmentInit{
 		return sets;
 	}
 
-	public void setSets(List<String> sets) {
+	public void I_Sets(List<String> sets) {
 		this.sets = sets;
 	}
 
@@ -80,7 +80,7 @@ public class EnvironmentInit{
 		return rationMap;
 	}
 
-	public void setRationMap(RatioMap rationMap) {
+	public void I_RationMap(RatioMap rationMap) {
 		this.rationMap = rationMap;
 	}
 
@@ -88,7 +88,7 @@ public class EnvironmentInit{
 		return wordFrequencyMap;
 	}
 
-	public void setWordFrequencyMap(Map<Integer, WordFrequency> wordFrequencyMap) {
+	public void I_WordFrequencyMap(Map<Integer, WordFrequency> wordFrequencyMap) {
 		this.wordFrequencyMap = wordFrequencyMap;
 	}
 
@@ -96,7 +96,7 @@ public class EnvironmentInit{
 		return emotionSampleMap;
 	}
 
-	public void setEmotionSampleMap(Map<String, EmotionSample> emotionSampleMap) {
+	public void I_EmotionSampleMap(Map<String, EmotionSample> emotionSampleMap) {
 		this.emotionSampleMap = emotionSampleMap;
 	}
 
@@ -104,7 +104,7 @@ public class EnvironmentInit{
 		return positiveCount;
 	}
 
-	public void setPositiveCount(double positiveCount) {
+	public void I_PositiveCount(double positiveCount) {
 		this.positiveCount = positiveCount;
 	}
 
@@ -112,7 +112,7 @@ public class EnvironmentInit{
 		return negativeCount;
 	}
 
-	public void setNegativeCount(double negativeCount) {
+	public void I_NegativeCount(double negativeCount) {
 		this.negativeCount = negativeCount;
 	}
 
@@ -120,7 +120,7 @@ public class EnvironmentInit{
 		return totalCount;
 	}
 
-	public void setTotalCount(double totalCount) {
+	public void I_TotalCount(double totalCount) {
 		this.totalCount = totalCount;
 	}
 
@@ -128,7 +128,7 @@ public class EnvironmentInit{
 		return distinction;
 	}
 
-	public void setDistinction(Map<String, Object> distinction) {
+	public void I_Distinction(Map<String, Object> distinction) {
 		this.distinction = distinction;
 	}
 	private EmotionMap emotionMap;

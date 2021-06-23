@@ -26,7 +26,7 @@ public class CopyLaw{
 				booleanPdnNew[i]= !booleanPdn[i];
 			}
 			PDN pdnNew= new PDN();
-			pdnNew.setPdn(booleanPdnNew);
+			pdnNew.I_Pdn(booleanPdnNew);
 			output.put(count++, pdnNew);
 		}
 		return output;
@@ -61,7 +61,7 @@ public class CopyLaw{
 				booleanPdnNew[i]= !booleanPdn[i];
 			}
 			PDN pdnNew= new PDN();
-			pdnNew.setPdn(booleanPdnNew);
+			pdnNew.I_Pdn(booleanPdnNew);
 			output.add(pdnNew);
 		}
 		return output;

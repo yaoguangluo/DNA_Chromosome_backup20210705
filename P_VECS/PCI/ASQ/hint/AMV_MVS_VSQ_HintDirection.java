@@ -16,8 +16,8 @@ public class AMV_MVS_VSQ_HintDirection{
 		AMV_MVS_VSQ_2D mid= Euclid.findMidPosition2D(inputs);
 		AMV_MVS_VSQ_2D heart= Euclid.findHeartPosition2D(inputs);
 		Line2D line2D= new Line2D();
-		line2D.setBegin(mid);
-		line2D.setEnd(heart);
+		line2D.I_Begin(mid);
+		line2D.I_End(heart);
 		return line2D;	
 	} 
 	
@@ -25,8 +25,8 @@ public class AMV_MVS_VSQ_HintDirection{
 		AMV_MVS_VSQ_3D mid= Euclid.findMidPosition3D(inputs);
 		AMV_MVS_VSQ_3D heart= Euclid.findHeartPosition3D(inputs);
 		Line3D line3D= new Line3D();
-		line3D.setBegin(mid);
-		line3D.setEnd(heart);
+		line3D.I_Begin(mid);
+		line3D.I_End(heart);
 		return line3D;	
 	} 
 }

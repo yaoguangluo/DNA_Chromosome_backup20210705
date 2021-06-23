@@ -11,7 +11,7 @@ public class JOGLOBJShape {
 	private String name=null;
 	private ArrayList<JOGLOBJFace> faces = new ArrayList<JOGLOBJFace>();
 	
-	public void setName(String name) {
+	public void I_Name(String name) {
 		this.name = name;
 		
 	}

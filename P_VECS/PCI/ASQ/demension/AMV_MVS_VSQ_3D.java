@@ -3,9 +3,9 @@ package PCI.ASQ.demension;
 //Application: Yaoguang.luo
 public class AMV_MVS_VSQ_3D{
 	public AMV_MVS_VSQ_3D(double x, double y, double z) {
-		this.setX(x);
-		this.setY(y);
-		this.setZ(z);
+		this.I_X(x);
+		this.I_Y(y);
+		this.I_Z(z);
 	}
 	public AMV_MVS_VSQ_3D() {
 		// TODO Auto-generated constructor stub
@@ -13,19 +13,19 @@ public class AMV_MVS_VSQ_3D{
 	public double getX() {
 		return x;
 	}
-	public void setX(double x) {
+	public void I_X(double x) {
 		this.x = x;
 	}
 	public double getY() {
 		return y;
 	}
-	public void setY(double y) {
+	public void I_Y(double y) {
 		this.y = y;
 	}
 	public double getZ() {
 		return z;
 	}
-	public void setZ(double z) {
+	public void I_Z(double z) {
 		this.z = z;
 	}
 	private double x;
@@ -34,7 +34,7 @@ public class AMV_MVS_VSQ_3D{
 	public String getTag() {
 		return tag;
 	}
-	public void setTag(String tag) {
+	public void I_Tag(String tag) {
 		this.tag = tag;
 	}
 	private String tag;

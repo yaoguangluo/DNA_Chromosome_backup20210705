@@ -10,7 +10,7 @@ public class PLORM_E implements PLORM_C{
 		return PLSQL;
 	}
 
-	public void setPLSQL(String pLSQL) {
+	public void I_PLSQL(String pLSQL) {
 		PLSQL= pLSQL;
 	}
 

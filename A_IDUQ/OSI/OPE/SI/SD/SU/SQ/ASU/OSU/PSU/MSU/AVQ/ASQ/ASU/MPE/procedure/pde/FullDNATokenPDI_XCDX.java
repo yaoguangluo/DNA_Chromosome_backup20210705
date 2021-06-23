@@ -28,7 +28,7 @@ public class FullDNATokenPDI_XCDX {
 			if(initon[i]== null) {
 				initon[i]= new Initon();
 			}
-			initon[i].setIniton(""+ initons.charAt(i)); 
+			initon[i].I_Initon(""+ initons.charAt(i)); 
 			if(i+ 1< initons.length()) {
 				if(initon[i+ 1]== null) {
 					initon[i+ 1]= new Initon();
@@ -70,7 +70,7 @@ public class FullDNATokenPDI_XCDX {
 			if(initon[i]== null) {
 				initon[i]= new Initon();
 			}
-			initon[i].setIniton(""+ initons.charAt(i)); 
+			initon[i].I_Initon(""+ initons.charAt(i)); 
 			if(i+ 1< initons.length()) {
 				if(initon[i+ 1]== null) {
 					initon[i+ 1]= new Initon();
@@ -92,7 +92,7 @@ public class FullDNATokenPDI_XCDX {
 			if(initon[i]== null) {
 				initon[i]= new Initon();
 			}
-			initon[i].setIniton(""+ initons.charAt(i)); 
+			initon[i].I_Initon(""+ initons.charAt(i)); 
 			if(i+ 1< initons.length()) {
 				if(initon[i+ 1]== null) {
 					initon[i+ 1]= new Initon();
@@ -112,7 +112,7 @@ public class FullDNATokenPDI_XCDX {
 			if(initon[i]== null) {
 				initon[i]= new Initon();
 			}
-			initon[i].setIniton(""+ initons.charAt(i)); 
+			initon[i].I_Initon(""+ initons.charAt(i)); 
 			if(i+ 1< initons.length()) {
 				if(initon[i+ 1]== null) {
 					initon[i+ 1]= new Initon();
@@ -130,7 +130,7 @@ public class FullDNATokenPDI_XCDX {
 			if(initon[i]== null) {
 				initon[i]= new Initon();
 			}
-			initon[i].setIniton(""+ initons.charAt(i)); 
+			initon[i].I_Initon(""+ initons.charAt(i)); 
 			if(i+ 1< initons.length()) {
 				if(initon[i+ 1]== null) {
 					initon[i+ 1]= new Initon();
@@ -148,7 +148,7 @@ public class FullDNATokenPDI_XCDX {
 			if(initon[i]== null) {
 				initon[i]= new Initon();
 			}
-			initon[i].setIniton(""+ initons.charAt(i)); 
+			initon[i].I_Initon(""+ initons.charAt(i)); 
 			if(i+ 1< initons.length()) {
 				if(initon[i+ 1]== null) {
 					initon[i+ 1]= new Initon();

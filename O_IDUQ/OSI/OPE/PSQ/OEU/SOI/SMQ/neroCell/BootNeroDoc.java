@@ -26,7 +26,7 @@ public class BootNeroDoc extends Thread implements Runnable{
 		this.rightBotJTextPane= rightBotJTextPane;
 		this.canvas= canvas;
 	}
-	public void setPillow(Map<String, Object> map) {
+	public void I_Pillow(Map<String, Object> map) {
 		this.pillow= map;//map 提供运维，可控等数据
 	}
 	public void run() {

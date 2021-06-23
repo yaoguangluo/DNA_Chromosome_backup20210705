@@ -3,8 +3,8 @@ package PCI.ASQ.demension;
 //Application: Yaoguang.luo
 public class AMV_MVS_VSQ_2D{
 	public AMV_MVS_VSQ_2D(double x, double y) {
-		this.setX(x);
-		this.setY(y);
+		this.I_X(x);
+		this.I_Y(y);
 	}
 	public AMV_MVS_VSQ_2D() {
 		// TODO Auto-generated constructor stub
@@ -12,13 +12,13 @@ public class AMV_MVS_VSQ_2D{
 	public double getX() {
 		return x;
 	}
-	public void setX(double x) {
+	public void I_X(double x) {
 		this.x = x;
 	}
 	public double getY() {
 		return y;
 	}
-	public void setY(double y) {
+	public void I_Y(double y) {
 		this.y = y;
 	}
 	private double x;
@@ -26,7 +26,7 @@ public class AMV_MVS_VSQ_2D{
 	public String getTag() {
 		return tag;
 	}
-	public void setTag(String tag) {
+	public void I_Tag(String tag) {
 		this.tag = tag;
 	}
 	private String tag;

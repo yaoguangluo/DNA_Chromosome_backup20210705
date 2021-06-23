@@ -47,7 +47,7 @@ public class ReadEnglish extends Thread implements Runnable{
 		finish=0;
 	}
 	
-	public void setPreReadText(String text) {
+	public void I_PreReadText(String text) {
 		if(text.length()==0) {
 			return;
 		}
@@ -55,7 +55,7 @@ public class ReadEnglish extends Thread implements Runnable{
 		this.text = text;
 	}
 	
-	public void setPreReadList(List<String> setsForGet) {
+	public void I_PreReadList(List<String> setsForGet) {
 		if(setsForGet.size()==0) {
 			return;
 		}

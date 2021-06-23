@@ -629,12 +629,12 @@ public class App extends JApplet implements MouseListener, KeyListener, ActionLi
 				if(!readChinese.isAlive()) {
 					buttonCTV.setLabel("ÓïÒôÔÄ¶Á¿ª");
 					readChinese= new ReadChinese(appInstance, _A);
-					readChinese.setPreReadList(sets);
+					readChinese.I_PreReadList(sets);
 					readChinese.start();
 				}else {
 					buttonCTV.setLabel("ÓïÒôÔÄ¶Á¹Ø");
 					readChinese.finish= 0;
-					readChinese.setNullSap();
+					readChinese.I_NullSap();
 					readChinese.stop();
 				}
 			}

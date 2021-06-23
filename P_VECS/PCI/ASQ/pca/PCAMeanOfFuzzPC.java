@@ -31,15 +31,15 @@ public class PCAMeanOfFuzzPC{
 		Iterator<RatioMatrix> iteratorsOutput= output.iterator();
 		while(iteratorsOutput.hasNext()) {
 			RatioMatrix ratio= iteratorsOutput.next();
-			outputMean.setErrorErrorRatio(ratio.getErrorErrorRatio()+ outputMean.getErrorErrorRatio());
-			outputMean.setErrorRightRatio(ratio.getErrorRightRatio()+ outputMean.getErrorRightRatio());
-			outputMean.setRightErrorRatio(ratio.getRightErrorRatio()+ outputMean.getRightErrorRatio());
-			outputMean.setRightRightRatio(ratio.getRightRightRatio()+ outputMean.getRightRightRatio());
+			outputMean.I_ErrorErrorRatio(ratio.getErrorErrorRatio()+ outputMean.getErrorErrorRatio());
+			outputMean.I_ErrorRightRatio(ratio.getErrorRightRatio()+ outputMean.getErrorRightRatio());
+			outputMean.I_RightErrorRatio(ratio.getRightErrorRatio()+ outputMean.getRightErrorRatio());
+			outputMean.I_RightRightRatio(ratio.getRightRightRatio()+ outputMean.getRightRightRatio());
 		}
-		outputMean.setErrorErrorRatio(outputMean.getErrorErrorRatio()/ output.size());
-		outputMean.setErrorRightRatio(outputMean.getErrorRightRatio()/ output.size());
-		outputMean.setRightErrorRatio(outputMean.getRightErrorRatio()/ output.size());
-		outputMean.setRightRightRatio(outputMean.getRightRightRatio()/ output.size());
+		outputMean.I_ErrorErrorRatio(outputMean.getErrorErrorRatio()/ output.size());
+		outputMean.I_ErrorRightRatio(outputMean.getErrorRightRatio()/ output.size());
+		outputMean.I_RightErrorRatio(outputMean.getRightErrorRatio()/ output.size());
+		outputMean.I_RightRightRatio(outputMean.getRightRightRatio()/ output.size());
 		return outputMean;	
 	}	
 }

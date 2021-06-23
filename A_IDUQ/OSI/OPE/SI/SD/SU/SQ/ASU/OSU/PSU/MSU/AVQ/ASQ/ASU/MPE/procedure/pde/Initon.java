@@ -25,43 +25,43 @@ public class Initon {
 		thisIniton.prev= initon;
 		return thisIniton;
 	}
-	public void setIniton(String initon) {
+	public void I_Initon(String initon) {
 		this.store= initon;
 	}
-	public void setA() {
+	public void I_A() {
 		this.store= "A";
 	}
-	public void setO() {
+	public void I_O() {
 		this.store= "O";
 	}
-	public void setP() {
+	public void I_P() {
 		this.store= "P";
 	}
-	public void setM() {
+	public void I_M() {
 		this.store= "M";
 	}
-	public void setV() {
+	public void I_V() {
 		this.store= "V";
 	}
-	public void setE() {
+	public void I_E() {
 		this.store= "E";
 	}
-	public void setC() {
+	public void I_C() {
 		this.store= "C";
 	}
-	public void setS() {
+	public void I_S() {
 		this.store= "S";
 	}
-	public void setI() {
+	public void I_I() {
 		this.store= "I";
 	}
-	public void setD() {
+	public void I_D() {
 		this.store= "D";
 	}
-	public void setU() {
+	public void I_U() {
 		this.store= "U";
 	}
-	public void setQ() {
+	public void I_Q() {
 		this.store= "Q";
 	}
 

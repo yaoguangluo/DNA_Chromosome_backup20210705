@@ -26,18 +26,18 @@ public class LoginDAO_E {
 		List<Map<String, Object>> list = Q_Rows_E.selectRowsByAttribute("backend", "usr", "u_id", "" + uId);	
 		Usr usr = new Usr();
 		if(list.size() > 0) {
-			usr.setuAddress(list.get(0).get("u_address")
+			usr.I_uAddress(list.get(0).get("u_address")
 					!=null?list.get(0).get("u_address").toString():"");
-			usr.setuAge(Integer.valueOf(list.get(0).get("u_age")
+			usr.I_uAge(Integer.valueOf(list.get(0).get("u_age")
 					!=null?list.get(0).get("u_age").toString():"0"));
-			usr.setuClass(list.get(0).get("u_class")!=null?list.get(0).get("u_class").toString():"");
-			usr.setuEmail(list.get(0).get("u_email").toString());
-			usr.setuId(Integer.valueOf(list.get(0).get("u_id").toString()));
-			usr.setuName(list.get(0).get("u_name").toString());
-			usr.setuPhone(list.get(0).get("u_phone")!=null?list.get(0).get("u_phone").toString():"");
-			usr.setuQq(list.get(0).get("u_qq")!=null?list.get(0).get("u_qq").toString():"");
-			usr.setuSex(list.get(0).get("u_sex")!=null?list.get(0).get("u_sex").toString():"");
-			usr.setuWeChat(list.get(0).get("u_weChat")!=null?list.get(0).get("u_weChat").toString():"");
+			usr.I_uClass(list.get(0).get("u_class")!=null?list.get(0).get("u_class").toString():"");
+			usr.I_uEmail(list.get(0).get("u_email").toString());
+			usr.I_uId(Integer.valueOf(list.get(0).get("u_id").toString()));
+			usr.I_uName(list.get(0).get("u_name").toString());
+			usr.I_uPhone(list.get(0).get("u_phone")!=null?list.get(0).get("u_phone").toString():"");
+			usr.I_uQq(list.get(0).get("u_qq")!=null?list.get(0).get("u_qq").toString():"");
+			usr.I_uSex(list.get(0).get("u_sex")!=null?list.get(0).get("u_sex").toString():"");
+			usr.I_uWeChat(list.get(0).get("u_weChat")!=null?list.get(0).get("u_weChat").toString():"");
 		}
 		return usr;
 	}
@@ -47,13 +47,13 @@ public class LoginDAO_E {
 		= Q_Rows_E.selectRowsByAttribute("backend", "usrToken", "u_id", ""+uId);	
 		UsrToken usrToken = new UsrToken();
 		if(list.size() > 0) {	
-			usrToken.setuId(Integer.valueOf(list.get(0).get("u_id").toString()));
-			usrToken.setuKey(list.get(0).get("u_key")
+			usrToken.I_uId(Integer.valueOf(list.get(0).get("u_id").toString()));
+			usrToken.I_uKey(list.get(0).get("u_key")
 					!= null?list.get(0).get("u_key").toString():"");
-			usrToken.setuPassword(list.get(0).get("u_password").toString());
-			usrToken.setuTime(Integer.valueOf(list.get(0).get("u_time")
+			usrToken.I_uPassword(list.get(0).get("u_password").toString());
+			usrToken.I_uTime(Integer.valueOf(list.get(0).get("u_time")
 					!= null?list.get(0).get("u_time").toString():"0"));
-			usrToken.setuLevel(list.get(0).get("u_level")
+			usrToken.I_uLevel(list.get(0).get("u_level")
 					!= null?list.get(0).get("u_level").toString():"");
 		}
 		return usrToken;
@@ -68,24 +68,24 @@ public class LoginDAO_E {
 		List<Map<String, Object>> list = Q_Rows_E.selectRowsByAttribute("backend", "usr", "u_email", uEmail);	
 		Usr usr = new Usr();
 		if(list.size() > 0) {
-			usr.setuAddress(list.get(0).get("u_address")
+			usr.I_uAddress(list.get(0).get("u_address")
 					!= null?list.get(0).get("u_address").toString():"");
-			usr.setuAge(Integer.valueOf(list.get(0).get("u_age")
+			usr.I_uAge(Integer.valueOf(list.get(0).get("u_age")
 					!= null?list.get(0).get("u_age").toString():"0"));
-			usr.setuClass(list.get(0).get("u_class")
+			usr.I_uClass(list.get(0).get("u_class")
 					!= null?list.get(0).get("u_class").toString():"");
-			usr.setuEmail(list.get(0).get("u_email").toString());
-			usr.setuId(Integer.valueOf(list.get(0).get("u_id").toString()));
-			usr.setuName(list.get(0).get("u_name").toString());
-			usr.setuPhone(list.get(0).get("u_phone")
+			usr.I_uEmail(list.get(0).get("u_email").toString());
+			usr.I_uId(Integer.valueOf(list.get(0).get("u_id").toString()));
+			usr.I_uName(list.get(0).get("u_name").toString());
+			usr.I_uPhone(list.get(0).get("u_phone")
 					!= null?list.get(0).get("u_phone").toString():"");
-			usr.setuQq(list.get(0).get("u_qq")
+			usr.I_uQq(list.get(0).get("u_qq")
 					!= null?list.get(0).get("u_qq").toString():"");
-			usr.setuSex(list.get(0).get("u_sex")
+			usr.I_uSex(list.get(0).get("u_sex")
 					!= null?list.get(0).get("u_sex").toString():"");
-			usr.setuWeChat(list.get(0).get("u_weChat")
+			usr.I_uWeChat(list.get(0).get("u_weChat")
 					!= null?list.get(0).get("u_weChat").toString():"");
-			usr.setuPassword(list.get(0).get("u_password")
+			usr.I_uPassword(list.get(0).get("u_password")
 					!= null?list.get(0).get("u_password").toString():"");
 		}
 		return usr;

@@ -4,64 +4,64 @@ public class EmotionSample{
 	public double getPositiveCount() {
 		return positiveCount;
 	}
-	public void setPositiveCount(double positiveCount) {
+	public void I_PositiveCount(double positiveCount) {
 		this.positiveCount = positiveCount;
 	}
 	public double getNegativeCount() {
 		return negativeCount;
 	}
-	public void setNegativeCount(double negativeCount) {
+	public void I_NegativeCount(double negativeCount) {
 		this.negativeCount = negativeCount;
 	}
 	public double getEmotionRatio() {
 		return emotionRatio;
 	}
-	public void setEmotionRatio(double emotionRatio) {
+	public void I_EmotionRatio(double emotionRatio) {
 		this.emotionRatio = emotionRatio;
 	}
 	public double getMotivationRatio() {
 		return motivationRatio;
 	}
-	public void setMotivationRatio(double motivationRatio) {
+	public void I_MotivationRatio(double motivationRatio) {
 		this.motivationRatio = motivationRatio;
 	}
 	public double getCorrelationRatio() {
 		return correlationRatio;
 	}
-	public void setCorrelationRatio(double correlationRatio) {
+	public void I_CorrelationRatio(double correlationRatio) {
 		this.correlationRatio = correlationRatio;
 	}
 	public double getContinusRatio() {
 		return continusRatio;
 	}
-	public void setContinusRatio(double continusRatio) {
+	public void I_ContinusRatio(double continusRatio) {
 		this.continusRatio = continusRatio;
 	}
 	public double getTrendsRatio() {
 		return trendsRatio;
 	}
-	public void setTrendsRatio(double trendsRatio) {
+	public void I_TrendsRatio(double trendsRatio) {
 		this.trendsRatio = trendsRatio;
 	}
 	public double getPredictionRatio() {
 		return predictionRatio;
 	}
-	public void setPredictionRatio(double predictionRatio) {
+	public void I_PredictionRatio(double predictionRatio) {
 		this.predictionRatio = predictionRatio;
 	}
 	public double getGuessRatio() {
 		return guessRatio;
 	}
-	public void setGuessRatio(double guessRatio) {
+	public void I_GuessRatio(double guessRatio) {
 		this.guessRatio = guessRatio;
 	}
 	public double getSensingRatio() {
 		return sensingRatio;
 	}
-	public void setSensingRatio(double sensingRatio) {
+	public void I_SensingRatio(double sensingRatio) {
 		this.sensingRatio = sensingRatio;
 	}
-	public void setMedCount(int frequency) {
+	public void I_MedCount(int frequency) {
 		this.medCount = frequency;
 	}
 	public double getMedCount() {
@@ -70,28 +70,28 @@ public class EmotionSample{
 	public String getMotivation() {
 		return motivation;
 	}
-	public void setMotivation(String motivation) {
+	public void I_Motivation(String motivation) {
 		this.motivation = motivation;
 	}
 	public String getTrending() {
 		return trending;
 	}
-	public void setTrending(String trending) {
+	public void I_Trending(String trending) {
 		this.trending = trending;
 	}
 	public String getPrediction() {
 		return prediction;
 	}
-	public void setPrediction(String prediction) {
+	public void I_Prediction(String prediction) {
 		this.prediction = prediction;
 	}
-	public void setMedCount(double medCount) {
+	public void I_MedCount(double medCount) {
 		this.medCount = medCount;
 	}
 	public String getDistinction() {
 		return distinction;
 	}
-	public void setDistinction(String distinction) {
+	public void I_Distinction(String distinction) {
 		this.distinction = distinction;
 	}
 	double positiveCount;

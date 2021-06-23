@@ -32,7 +32,7 @@ public class IU_Rows_E {
 			if (fileDBTableRowsPath.isDirectory()) {
 				Row row = new Row();
 				ConcurrentHashMap<String, Cell> cells = new ConcurrentHashMap<>();
-				row.setCells(cells);
+				row.I_Cells(cells);
 				String DBTableRowIndexPath = DBTableRowsPath + "/row" + rowInsertIndex ;	
 				File readDBTableRowIndexFile = new File(DBTableRowIndexPath);
 				if (!readDBTableRowIndexFile.exists()) {
@@ -51,7 +51,7 @@ public class IU_Rows_E {
 							fw.close();
 							//buffer reflection update
 							Cell cell = new Cell();
-							cell.setCellValue(null == culumnValue ? "" : culumnValue);
+							cell.I_CellValue(null == culumnValue ? "" : culumnValue);
 							row.putCell(culumnName, cell);
 						} catch (IOException e) {
 							e.printStackTrace();
@@ -78,7 +78,7 @@ public class IU_Rows_E {
 			String DBTableRowsPath = tablePath + "/rows";	
 			Row row = new Row();
 			ConcurrentHashMap<String, Cell> cells = new ConcurrentHashMap<>();
-			row.setCells(cells);
+			row.I_Cells(cells);
 			File fileDBTableRowsPath = new File(DBTableRowsPath);
 			if (fileDBTableRowsPath.isDirectory()) {
 				int rowInsertIndex = fileDBTableRowsPath.list().length;
@@ -117,7 +117,7 @@ public class IU_Rows_E {
 						}
 						//add buffer
 						Cell cell = new Cell();
-						cell.setCellValue(null == culumnValue? "" : culumnValue);
+						cell.I_CellValue(null == culumnValue? "" : culumnValue);
 						if(mod) {
 							row.putCell(culumnName, cell);
 						}

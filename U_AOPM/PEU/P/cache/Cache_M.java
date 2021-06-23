@@ -61,7 +61,7 @@ public class Cache_M {
 		if (hasCache(key)) {
 			Cache cache = getCache(key);
 			if (cacheExpired(cache)) {
-				cache.setExpired(true);
+				cache.I_Expired(true);
 			}
 			return cache;
 		} else
@@ -70,19 +70,19 @@ public class Cache_M {
 	@SuppressWarnings("unchecked")
 	public static void putCacheInfo(String key, Cache obj, long dt, boolean expired) {
 		Cache cache = new Cache();
-		cache.setKey(key);
-		cache.setTimeOut(dt + System.currentTimeMillis());
-		cache.setValue(obj);
-		cache.setExpired(expired);
+		cache.I_Key(key);
+		cache.I_TimeOut(dt + System.currentTimeMillis());
+		cache.I_Value(obj);
+		cache.I_Expired(expired);
 		cacheMap.put(key, cache);
 	}
 	@SuppressWarnings("unchecked")
 	public static void putCacheInfo(String key, Cache obj, long dt) {
 		Cache cache = new Cache();
-		cache.setKey(key);
-		cache.setTimeOut(dt + System.currentTimeMillis());
-		cache.setValue(obj);
-		cache.setExpired(false);
+		cache.I_Key(key);
+		cache.I_TimeOut(dt + System.currentTimeMillis());
+		cache.I_Value(obj);
+		cache.I_Expired(false);
 		cacheMap.put(key, cache);
 	}
 	public static boolean cacheExpired(Cache cache) {

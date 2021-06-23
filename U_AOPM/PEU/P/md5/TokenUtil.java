@@ -8,10 +8,10 @@ public class TokenUtil {
 		String key = String.valueOf(Double.valueOf(Math.random() * 10000000).intValue());
 		String mPassword = TokenUtil.getFirstMD5Password(key, usrToken.getuPassword());
 		Token token = new Token();
-		token.setuEmail(usr.getuEmail());
-		token.setuKey(key);
-		token.setuTime(new Date().getTime());
-		token.setmPassword(mPassword);
+		token.I_uEmail(usr.getuEmail());
+		token.I_uKey(key);
+		token.I_uTime(new Date().getTime());
+		token.I_mPassword(mPassword);
 		return token;
 	}
 	public static String getSecondMD5Password(String uPassword) throws Exception {

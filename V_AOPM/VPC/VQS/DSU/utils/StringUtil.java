@@ -69,10 +69,10 @@ public class StringUtil {
 		pDE_RNA_Formular.bys= "0.6/0.3/0.5/0.632";
 		System.out.println("æ≤Ã¨√‹‘ø: " + pDE_RNA_Formular.bys);
 		pDE_RNA_Formular.doKeyPress(pDE_RNA_Formular.code, pDE_RNA_Formular, false);
-		token.setUpdsde(pDE_RNA_Formular.pdedeKey);
-		token.setUpdsds(pDE_RNA_Formular.pdedsKey);
-		token.setUpdsie(pDE_RNA_Formular.pdeieKey);
-		token.setUpdsis(pDE_RNA_Formular.pdeisKey);
+		token.I_Updsde(pDE_RNA_Formular.pdedeKey);
+		token.I_Updsds(pDE_RNA_Formular.pdedsKey);
+		token.I_Updsie(pDE_RNA_Formular.pdeieKey);
+		token.I_Updsis(pDE_RNA_Formular.pdeisKey);
 		pDE_RNA_Formular.time= "" + System.currentTimeMillis();
 		pDE_RNA_Formular.cacheId= "ID" + Math.random() + ":" + Math.random();
 		System.out.println(" ±º‰:  " + pDE_RNA_Formular.time);

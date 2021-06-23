@@ -30,12 +30,12 @@ public class Application extends Thread {
 		Family family= new Family();
 		ConcurrentHashMap<String, Life> familyLife= new ConcurrentHashMap<>();
 		familyLife.put("Tin", life);
-		family.setFamily(familyLife);
+		family.I_Family(familyLife);
 		//register race
 		Race race= new Race();
 		ConcurrentHashMap<String, Family> raceFamily= new ConcurrentHashMap<>();
 		raceFamily.put("Royal", family);
-		race.setRace(raceFamily);
+		race.I_Race(raceFamily);
 		//init analysis
 		LoveIssues loveIssues= new LoveIssues();
 		StudyIssues studyIssues= new StudyIssues();

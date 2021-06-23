@@ -27,7 +27,7 @@ public class Q_JoinRows_E {
 			object.put("recordRows", recordRows);
 		}
 		Spec spec = new Spec();
-		spec.setCulumnTypes(new ConcurrentHashMap<String, String>());
+		spec.I_CulumnTypes(new ConcurrentHashMap<String, String>());
 		String objectType = "";
 		List<Map<String, Object>> output = new ArrayList<>();
 		//Ëø¶¨Êý¾Ý¿â
@@ -53,7 +53,7 @@ public class Q_JoinRows_E {
 							objectType = tempString;			
 						}
 						reader.close();
-						spec.setCulumnType(fileList[i], objectType);
+						spec.I_CulumnType(fileList[i], objectType);
 					}
 					List<String[]> conditionValues = (List<String[]>) object.get("condition");
 					Iterator<String[]> iterator = conditionValues.iterator();

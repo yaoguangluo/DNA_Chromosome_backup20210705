@@ -6,5 +6,5 @@ import OCI.ME.analysis.C.A;
 public interface SensingMap{
 	void initLenovoMap(A _A) throws IOException;
 	public Map<String, Object> getLenovoMap();
-	public void setLenovoMap(Map<String, Object> lenovoMap);
+	public void I_LenovoMap(Map<String, Object> lenovoMap);
 }

@@ -28,7 +28,7 @@ public class FullTokenPDI {
 			if(initon[i]== null) {
 				initon[i]= new Initon();
 			}
-			initon[i].setIniton(""+ initons.charAt(i)); 
+			initon[i].I_Initon(""+ initons.charAt(i)); 
 			if(i+ 1< initons.length()) {
 				if(initon[i+ 1]== null) {
 					initon[i+ 1]= new Initon();
@@ -134,7 +134,7 @@ public class FullTokenPDI {
 			if(initon[i]== null) {
 				initon[i]= new Initon();
 			}
-			initon[i].setIniton(""+ initons.charAt(i)); 
+			initon[i].I_Initon(""+ initons.charAt(i)); 
 			if(i+ 1< initons.length()) {
 				if(initon[i+ 1]== null) {
 					initon[i+ 1]= new Initon();
@@ -194,7 +194,7 @@ public class FullTokenPDI {
 			if(initon[i]== null) {
 				initon[i]= new Initon();
 			}
-			initon[i].setIniton(""+ initons.charAt(i)); 
+			initon[i].I_Initon(""+ initons.charAt(i)); 
 			if(i+ 1< initons.length()) {
 				if(initon[i+ 1]== null) {
 					initon[i+ 1]= new Initon();
@@ -252,7 +252,7 @@ public class FullTokenPDI {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
 		}
-		initonLinkDNA.setInitonLink(InitonPDE);
+		initonLinkDNA.I_InitonLink(InitonPDE);
 		InitonPDE= new PDE_Increment_FullFormular().PDE_IncrementA(initonLinkDNA);
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
@@ -269,7 +269,7 @@ public class FullTokenPDI {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
 		}
-		initonLinkDNA.setInitonLink(InitonPDE);
+		initonLinkDNA.I_InitonLink(InitonPDE);
 		InitonPDE= new PDE_Increment_FullFormular().PDE_IncrementO(initonLinkDNA);
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
@@ -286,7 +286,7 @@ public class FullTokenPDI {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
 		}
-		initonLinkDNA.setInitonLink(InitonPDE);
+		initonLinkDNA.I_InitonLink(InitonPDE);
 		InitonPDE= new PDE_Increment_FullFormular().PDE_IncrementP(initonLinkDNA);
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
@@ -303,7 +303,7 @@ public class FullTokenPDI {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
 		}
-		initonLinkDNA.setInitonLink(InitonPDE);
+		initonLinkDNA.I_InitonLink(InitonPDE);
 		InitonPDE= new PDE_Increment_FullFormular().PDE_IncrementM(initonLinkDNA);
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
@@ -320,7 +320,7 @@ public class FullTokenPDI {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
 		}
-		initonLinkDNA.setInitonLink(InitonPDE);
+		initonLinkDNA.I_InitonLink(InitonPDE);
 		InitonPDE= new PDE_Increment_FullFormular().PDE_IncrementV(initonLinkDNA);
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
@@ -337,7 +337,7 @@ public class FullTokenPDI {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
 		}
-		initonLinkDNA.setInitonLink(InitonPDE);
+		initonLinkDNA.I_InitonLink(InitonPDE);
 		InitonPDE= new PDE_Increment_FullFormular().PDE_IncrementC(initonLinkDNA);
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
@@ -354,7 +354,7 @@ public class FullTokenPDI {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
 		}
-		initonLinkDNA.setInitonLink(InitonPDE);
+		initonLinkDNA.I_InitonLink(InitonPDE);
 		InitonPDE= new PDE_Increment_FullFormular().PDE_IncrementE_DU(initonLinkDNA, pDE_RNA_FullFormular, bYS);
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
@@ -371,7 +371,7 @@ public class FullTokenPDI {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
 		}
-		initonLinkDNA.setInitonLink(InitonPDE);
+		initonLinkDNA.I_InitonLink(InitonPDE);
 		InitonPDE= new PDE_Increment_FullFormular().PDE_IncrementS_IQ(initonLinkDNA, pDE_RNA_FullFormular);
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
@@ -389,7 +389,7 @@ public class FullTokenPDI {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
 		}
-		initonLinkDNA.setInitonLink(InitonPDE);
+		initonLinkDNA.I_InitonLink(InitonPDE);
 		InitonPDE= new PDE_Decrement_FullFormular().PDE_DecrementA(initonLinkDNA);
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
@@ -407,7 +407,7 @@ public class FullTokenPDI {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
 		}
-		initonLinkDNA.setInitonLink(InitonPDE);
+		initonLinkDNA.I_InitonLink(InitonPDE);
 		InitonPDE= new PDE_Decrement_FullFormular().PDE_DecrementO(initonLinkDNA);
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
@@ -424,7 +424,7 @@ public class FullTokenPDI {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
 		}
-		initonLinkDNA.setInitonLink(InitonPDE);
+		initonLinkDNA.I_InitonLink(InitonPDE);
 		InitonPDE= new PDE_Decrement_FullFormular().PDE_DecrementP(initonLinkDNA);
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
@@ -441,7 +441,7 @@ public class FullTokenPDI {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
 		}
-		initonLinkDNA.setInitonLink(InitonPDE);
+		initonLinkDNA.I_InitonLink(InitonPDE);
 		InitonPDE= new PDE_Decrement_FullFormular().PDE_DecrementM(initonLinkDNA);
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
@@ -458,7 +458,7 @@ public class FullTokenPDI {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
 		}
-		initonLinkDNA.setInitonLink(InitonPDE);
+		initonLinkDNA.I_InitonLink(InitonPDE);
 		InitonPDE= new PDE_Decrement_FullFormular().PDE_DecrementV(initonLinkDNA);
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
@@ -475,7 +475,7 @@ public class FullTokenPDI {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
 		}
-		initonLinkDNA.setInitonLink(InitonPDE);
+		initonLinkDNA.I_InitonLink(InitonPDE);
 		InitonPDE= new PDE_Decrement_FullFormular().PDE_DecrementC(initonLinkDNA);
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
@@ -492,7 +492,7 @@ public class FullTokenPDI {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
 		}
-		initonLinkDNA.setInitonLink(InitonPDE);
+		initonLinkDNA.I_InitonLink(InitonPDE);
 		InitonPDE= new PDE_Decrement_FullFormular().PDE_DecrementE_DU(initonLinkDNA, pDE_RNA_FullFormular, bYS);
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
@@ -509,7 +509,7 @@ public class FullTokenPDI {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
 		}
-		initonLinkDNA.setInitonLink(InitonPDE);
+		initonLinkDNA.I_InitonLink(InitonPDE);
 		InitonPDE= new PDE_Decrement_FullFormular().PDE_DecrementS_IQ(initonLinkDNA, pDE_RNA_FullFormular, bYS);
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;

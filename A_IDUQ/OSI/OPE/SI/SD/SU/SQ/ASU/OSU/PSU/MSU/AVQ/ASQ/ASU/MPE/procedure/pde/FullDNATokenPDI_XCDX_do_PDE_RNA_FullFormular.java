@@ -3,22 +3,6 @@ package OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.ASU.MPE.procedure.pde;
 //注意: 该 文件对应的是罗瑶光先生 DNA 编码 与 计算的两本  国家软著作 思想的编码 实现. 
 //公安部 与 知识产权委员会 已经备案 , 可阅读 相关 著作权 原文  进行逻辑辨别.  
 public class FullDNATokenPDI_XCDX_do_PDE_RNA_FullFormular {
-	public double[] key= new double[4];
-	public String bys= "";
-	public String pdw= "";
-	public String pds= "";
-	public String pde= "";
-	public String time= "";
-	public String session_key= "";
-	public String text;
-	public String cacheId;
-	public String code= "";
-	public String lock= "";
-	public String pdedeKey= "";
-	public String pdedsKey= "";
-	public String pdeieKey= "";
-	public String pdeisKey= "";
-
 
 	public void de_PDE_RNA_FullFormularForDB(Initon initon, FullDNATokenPDI_XCDX pDE_RNA_FullFormular, boolean bYS) {
 		// TODO Auto-generated method stub
@@ -108,7 +92,7 @@ public class FullDNATokenPDI_XCDX_do_PDE_RNA_FullFormular {
 			if(initon[i]== null) {
 				initon[i]= new Initon();
 			}
-			initon[i].setIniton(""+ initons.charAt(i)); 
+			initon[i].I_Initon(""+ initons.charAt(i)); 
 			if(i+ 1< initons.length()) {
 				if(initon[i+ 1]== null) {
 					initon[i+ 1]= new Initon();

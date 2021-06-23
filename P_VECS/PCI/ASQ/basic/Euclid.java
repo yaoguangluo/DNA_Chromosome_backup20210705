@@ -18,15 +18,15 @@ public class Euclid{
 			sumOfY+= position2D.getY();
 		}
 		AMV_MVS_VSQ_2D position2D= new AMV_MVS_VSQ_2D();
-		position2D.setX(sumOfX/ List.size());
-		position2D.setY(sumOfY/ List.size());
+		position2D.I_X(sumOfX/ List.size());
+		position2D.I_Y(sumOfY/ List.size());
 		return position2D;
 	}
 	
 	public static AMV_MVS_VSQ_2D findCryptionPosition2D(AMV_MVS_VSQ_2D heart, AMV_MVS_VSQ_2D oneMore) {
 		AMV_MVS_VSQ_2D position2D= new AMV_MVS_VSQ_2D();
-		position2D.setX((heart.getX()+ oneMore.getX())/ 2);
-		position2D.setY((heart.getY()+ oneMore.getY())/ 2);
+		position2D.I_X((heart.getX()+ oneMore.getX())/ 2);
+		position2D.I_Y((heart.getY()+ oneMore.getY())/ 2);
 		return position2D;
 	}
 	
@@ -42,17 +42,17 @@ public class Euclid{
 			sumOfZ+= position3D.getZ();
 		}
 		AMV_MVS_VSQ_3D position3D= new AMV_MVS_VSQ_3D();
-		position3D.setX(sumOfX/ List.size());
-		position3D.setY(sumOfY/ List.size());
-		position3D.setZ(sumOfZ/ List.size());
+		position3D.I_X(sumOfX/ List.size());
+		position3D.I_Y(sumOfY/ List.size());
+		position3D.I_Z(sumOfZ/ List.size());
 		return position3D;
 	}
 	
 	public static AMV_MVS_VSQ_3D findCryptionPosition3D(AMV_MVS_VSQ_3D heart, AMV_MVS_VSQ_3D oneMore) {
 		AMV_MVS_VSQ_3D position3D= new AMV_MVS_VSQ_3D();
-		position3D.setX((heart.getX()+ oneMore.getX())/ 2);
-		position3D.setY((heart.getY()+ oneMore.getY())/ 2);
-		position3D.setZ((heart.getZ()+ oneMore.getZ())/ 2);
+		position3D.I_X((heart.getX()+ oneMore.getX())/ 2);
+		position3D.I_Y((heart.getY()+ oneMore.getY())/ 2);
+		position3D.I_Z((heart.getZ()+ oneMore.getZ())/ 2);
 		return position3D;
 	}
 
@@ -85,8 +85,8 @@ public class Euclid{
 			}
 		}
 		AMV_MVS_VSQ_2D mid= new AMV_MVS_VSQ_2D();
-		mid.setX((xMin+ xMax)/ 2);
-		mid.setY((yMin+ yMax)/ 2);
+		mid.I_X((xMin+ xMax)/ 2);
+		mid.I_Y((yMin+ yMax)/ 2);
 		return mid;
 	}
 	
@@ -129,9 +129,9 @@ public class Euclid{
 			}
 		}
 		AMV_MVS_VSQ_3D mid= new AMV_MVS_VSQ_3D();
-		mid.setX((xMin+ xMax)/ 2);
-		mid.setY((yMin+ yMax)/ 2);
-		mid.setZ((zMin+ zMax)/ 2);
+		mid.I_X((xMin+ xMax)/ 2);
+		mid.I_Y((yMin+ yMax)/ 2);
+		mid.I_Z((zMin+ zMax)/ 2);
 		return mid;
 	}
 }

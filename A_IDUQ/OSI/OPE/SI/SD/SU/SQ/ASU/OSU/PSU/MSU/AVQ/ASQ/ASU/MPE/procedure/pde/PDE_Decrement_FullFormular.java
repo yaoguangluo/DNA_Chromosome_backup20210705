@@ -9,9 +9,9 @@ public class PDE_Decrement_FullFormular {
 		while(null!= initonLink) {
 			if(initonLink.getStore().equalsIgnoreCase("A")) {
 				Initon initonIncrementV= new Initon();
-				initonIncrementV.setV(); //新增一个数据V
+				initonIncrementV.I_V(); //新增一个数据V
 				Initon initonIncrementS= new Initon();
-				initonIncrementS.setS(); //新增一个数据S
+				initonIncrementS.I_S(); //新增一个数据S
 
 				initonIncrementV.next= initonIncrementS;  //V初始
 				initonIncrementV.prev= initonLink.prev;
@@ -40,9 +40,9 @@ public class PDE_Decrement_FullFormular {
 		while(null!= initonLink) {
 			if(initonLink.getStore().equalsIgnoreCase("O")) {
 				Initon initonIncrementE= new Initon();
-				initonIncrementE.setE(); //新增一个数据E
+				initonIncrementE.I_E(); //新增一个数据E
 				Initon initonIncrementS= new Initon();
-				initonIncrementS.setS(); //新增一个数据S
+				initonIncrementS.I_S(); //新增一个数据S
 
 				initonIncrementE.next= initonIncrementS;  //E初始
 				initonIncrementE.prev= initonLink.prev;
@@ -71,9 +71,9 @@ public class PDE_Decrement_FullFormular {
 		while(null!= initonLink) {
 			if(initonLink.getStore().equalsIgnoreCase("P")) {
 				Initon initonIncrementE= new Initon();
-				initonIncrementE.setE(); //新增一个数据E
+				initonIncrementE.I_E(); //新增一个数据E
 				Initon initonIncrementC= new Initon();
-				initonIncrementC.setC(); //新增一个数据C
+				initonIncrementC.I_C(); //新增一个数据C
 
 				initonIncrementE.next= initonIncrementC;  //E初始
 				initonIncrementE.prev= initonLink.prev;
@@ -101,9 +101,9 @@ public class PDE_Decrement_FullFormular {
 		while(null!= initonLink) {
 			if(initonLink.getStore().equalsIgnoreCase("M")) {
 				Initon initonIncrementC= new Initon();
-				initonIncrementC.setC(); //新增一个数据C
+				initonIncrementC.I_C(); //新增一个数据C
 				Initon initonIncrementS= new Initon();
-				initonIncrementS.setS(); //新增一个数据S
+				initonIncrementS.I_S(); //新增一个数据S
 
 				initonIncrementC.next= initonIncrementS;  //C初始
 				initonIncrementC.prev= initonLink.prev;
@@ -131,9 +131,9 @@ public class PDE_Decrement_FullFormular {
 		while(null!= initonLink) {
 			if(initonLink.getStore().equalsIgnoreCase("V")) {
 				Initon initonIncrementU= new Initon();
-				initonIncrementU.setU(); //新增一个数据U
+				initonIncrementU.I_U(); //新增一个数据U
 				Initon initonIncrementQ= new Initon();
-				initonIncrementQ.setQ(); //新增一个数据Q
+				initonIncrementQ.I_Q(); //新增一个数据Q
 
 				initonIncrementU.next= initonIncrementQ;  //U初始
 				initonIncrementU.prev= initonLink.prev;
@@ -170,12 +170,12 @@ public class PDE_Decrement_FullFormular {
 				if(bYS) {
 					try {
 						if(pDE_RNA_Formular.pdedeKey.charAt(index)== '0') { 
-							initonIncrementI.setD(); //新增一个数据D
+							initonIncrementI.I_D(); //新增一个数据D
 						}if(pDE_RNA_Formular.pdedeKey.charAt(index)== '1') { 
-							initonIncrementI.setU(); //新增一个数据U
+							initonIncrementI.I_U(); //新增一个数据U
 						}
 						//else {
-						//	initonIncrementI.setE(); //新增一个数据E
+						//	initonIncrementI.I_E(); //新增一个数据E
 						//}		
 						index++;
 					}catch(Exception e) {
@@ -185,10 +185,10 @@ public class PDE_Decrement_FullFormular {
 				}else {
 					if(Math.random()< pDE_RNA_Formular.key[1]) { 
 						pDE_RNA_Formular.pdedeKey+= "0";
-						initonIncrementI.setD();
+						initonIncrementI.I_D();
 					}else {
 						pDE_RNA_Formular.pdedeKey+= "1";
-						initonIncrementI.setU();
+						initonIncrementI.I_U();
 					}
 				}
 				initonIncrementI.prev= initonLink.prev;
@@ -223,9 +223,9 @@ public class PDE_Decrement_FullFormular {
 		while(null!= initonLink) {
 			if(initonLink.getStore().equalsIgnoreCase("C")) {
 				Initon initonIncrementI= new Initon();
-				initonIncrementI.setI(); //新增一个数据I
+				initonIncrementI.I_I(); //新增一个数据I
 				Initon initonIncrementD= new Initon();
-				initonIncrementD.setD(); //新增一个数据D
+				initonIncrementD.I_D(); //新增一个数据D
 
 				initonIncrementI.next= initonIncrementD;  //I初始
 				initonIncrementI.prev= initonLink.prev;
@@ -259,12 +259,12 @@ public class PDE_Decrement_FullFormular {
 				if(bYS) {
 					try {
 						if(pDE_RNA_Formular.pdedsKey.charAt(index)== '0') { 
-							initonIncrementI.setI(); //新增一个数据D
+							initonIncrementI.I_I(); //新增一个数据D
 						}if(pDE_RNA_Formular.pdedsKey.charAt(index)== '1') { 
-							initonIncrementI.setQ(); //新增一个数据U
+							initonIncrementI.I_Q(); //新增一个数据U
 						}
 //						else {
-//							initonIncrementI.setS(); //新增一个数据E
+//							initonIncrementI.I_S(); //新增一个数据E
 //						}		
 						index++;
 					}catch(Exception e) {
@@ -274,10 +274,10 @@ public class PDE_Decrement_FullFormular {
 				}else {
 					if(Math.random()< pDE_RNA_Formular.key[1]) { 
 						pDE_RNA_Formular.pdedsKey+= "0";
-						initonIncrementI.setI();
+						initonIncrementI.I_I();
 					}else {
 						pDE_RNA_Formular.pdedsKey+= "1";
-						initonIncrementI.setQ();
+						initonIncrementI.I_Q();
 					}
 				}
 				initonIncrementI.prev= initonLink.prev;

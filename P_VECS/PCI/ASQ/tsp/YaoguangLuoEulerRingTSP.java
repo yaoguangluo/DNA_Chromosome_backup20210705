@@ -30,7 +30,7 @@ public class YaoguangLuoEulerRingTSP{
 		String tag= "tag";
 		while(iterator.hasNext()) {
 			AMV_MVS_VSQ_2D AMV_MVS_VSQ2D=  iterator.next();
-			AMV_MVS_VSQ2D.setTag(tag+ i++);
+			AMV_MVS_VSQ2D.I_Tag(tag+ i++);
 			AMV_MVS_VSQ2DTag.add(AMV_MVS_VSQ2D);
 		}
 		AMV_MVS_VSQs= AMV_MVS_VSQ2DTag;
@@ -44,8 +44,8 @@ public class YaoguangLuoEulerRingTSP{
 			while(iteratorInner.hasNext()) {
 				AMV_MVS_VSQ_2D AMV_MVS_VSQ2DInner= iteratorOuter.next();
 				Line2D line2D= new Line2D();
-				line2D.setBegin(AMV_MVS_VSQ2DOuter);
-				line2D.setEnd(AMV_MVS_VSQ2DInner);
+				line2D.I_Begin(AMV_MVS_VSQ2DOuter);
+				line2D.I_End(AMV_MVS_VSQ2DInner);
 				linesMap.add(line2D);
 			}
 		}
@@ -128,7 +128,7 @@ public class YaoguangLuoEulerRingTSP{
 		String tag= "tag";
 		while(iterator.hasNext()) {
 			AMV_MVS_VSQ_3D AMV_MVS_VSQ3D=  iterator.next();
-			AMV_MVS_VSQ3D.setTag(tag+ i++);
+			AMV_MVS_VSQ3D.I_Tag(tag+ i++);
 			AMV_MVS_VSQ3DTag.add(AMV_MVS_VSQ3D);
 		}
 		AMV_MVS_VSQs= AMV_MVS_VSQ3DTag;
@@ -142,8 +142,8 @@ public class YaoguangLuoEulerRingTSP{
 			while(iteratorInner.hasNext()) {
 				AMV_MVS_VSQ_3D AMV_MVS_VSQ3DInner= iteratorOuter.next();
 				Line3D line3D= new Line3D();
-				line3D.setBegin(AMV_MVS_VSQ3DOuter);
-				line3D.setEnd(AMV_MVS_VSQ3DInner);
+				line3D.I_Begin(AMV_MVS_VSQ3DOuter);
+				line3D.I_End(AMV_MVS_VSQ3DInner);
 				linesMap.add(line3D);
 			}
 		}

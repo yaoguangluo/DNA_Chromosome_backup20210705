@@ -1111,7 +1111,7 @@ public class Monitor extends JApplet{
 						if(findr== 2) {
 							if(readEnglish.finish== 1) {
 								readEnglish= new ReadEnglish();
-								readEnglish.setPreReadText("attension please");
+								readEnglish.I_PreReadText("attension please");
 								readEnglish.start();
 							}
 							//write

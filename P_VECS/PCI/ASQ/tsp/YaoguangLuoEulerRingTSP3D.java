@@ -29,7 +29,7 @@ public class YaoguangLuoEulerRingTSP3D{
 		String tag= "tag";
 		while(iterator.hasNext()) {
 			AMV_MVS_VSQ_2D position2D=  iterator.next();
-			position2D.setTag(tag+ i++);
+			position2D.I_Tag(tag+ i++);
 			position2DTag.add(position2D);
 		}
 		positions= position2DTag;
@@ -45,8 +45,8 @@ public class YaoguangLuoEulerRingTSP3D{
 			while(iteratorInner.hasNext()) {
 				AMV_MVS_VSQ_2D position2DInner= iteratorOuter.next();
 				Line2D line2D= new Line2D();
-				line2D.setBegin(position2DOuter);
-				line2D.setEnd(position2DInner);
+				line2D.I_Begin(position2DOuter);
+				line2D.I_End(position2DInner);
 				//2.1 delete the De-reflection redundant lines
 				if(indexMap.containsKey(position2DInner.getTag())) {
 					continue Next;
@@ -147,7 +147,7 @@ public class YaoguangLuoEulerRingTSP3D{
 		String tag= "tag";
 		while(iterator.hasNext()) {
 			AMV_MVS_VSQ_3D position3D=  iterator.next();
-			position3D.setTag(tag+ i++);
+			position3D.I_Tag(tag+ i++);
 			position3DTag.add(position3D);
 		}
 		positions= position3DTag;
@@ -163,8 +163,8 @@ public class YaoguangLuoEulerRingTSP3D{
 			while(iteratorInner.hasNext()) {
 				AMV_MVS_VSQ_3D position3DInner= iteratorOuter.next();
 				Line3D line3D= new Line3D();
-				line3D.setBegin(position3DOuter);
-				line3D.setEnd(position3DInner);
+				line3D.I_Begin(position3DOuter);
+				line3D.I_End(position3DInner);
 				//2.1 delete the De-reflection redundant lines
 				if(indexMap.containsKey(position3DInner.getTag())) {
 					continue Next;

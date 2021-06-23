@@ -5,7 +5,7 @@ public class Family{
 		return family;
 	}
 
-	public void setFamily(ConcurrentHashMap<String, Life> family) {
+	public void I_Family(ConcurrentHashMap<String, Life> family) {
 		this.family = family;
 	}
 

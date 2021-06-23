@@ -9,7 +9,7 @@ public class VPCSResponse{
 		return socket;
 	}
 
-	public void setSocket(Socket socket) {
+	public void I_Socket(Socket socket) {
 		this.socket = socket;
 	}
 
@@ -17,7 +17,7 @@ public class VPCSResponse{
 		return sleeper_H;
 	}
 
-	public void setSleeper_H(Sleeper_H sleeper_H) {
+	public void I_Sleeper_H(Sleeper_H sleeper_H) {
 		this.sleeper_H = sleeper_H;
 	}
 
@@ -25,7 +25,7 @@ public class VPCSResponse{
 		return hashCode;
 	}
 
-	public void setHashCode(Integer hashCode) {
+	public void I_HashCode(Integer hashCode) {
 		this.hashCode = hashCode;
 	}
 
@@ -33,7 +33,7 @@ public class VPCSResponse{
 		return errorCode;
 	}
 
-	public void setErrorCode(int errorCode) {
+	public void I_ErrorCode(int errorCode) {
 		this.errorCode = errorCode;
 	}
 
@@ -41,7 +41,7 @@ public class VPCSResponse{
 		return ResponseContentType;
 	}
 
-	public void setResponseContentType(String responseContentType) {
+	public void I_ResponseContentType(String responseContentType) {
 		ResponseContentType = responseContentType;
 	}
 

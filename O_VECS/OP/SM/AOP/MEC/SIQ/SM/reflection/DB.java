@@ -7,7 +7,7 @@ public class DB{
 		return bases;
 	}
 
-	public void setBases(ConcurrentHashMap<String, Base> bases) {
+	public void I_Bases(ConcurrentHashMap<String, Base> bases) {
 		this.bases = bases;
 	}
 	

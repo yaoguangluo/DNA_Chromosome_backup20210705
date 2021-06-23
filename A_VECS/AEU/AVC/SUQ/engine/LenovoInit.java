@@ -12,7 +12,7 @@ public class LenovoInit{
 		return sensingMap;
 	}
 
-	public void setSensingMap(SensingMap sensingMap) {
+	public void I_SensingMap(SensingMap sensingMap) {
 		this.sensingMap = sensingMap;
 	}
 
@@ -20,7 +20,7 @@ public class LenovoInit{
 		return environmentInit;
 	}
 
-	public void setEnvironmentInit(EnvironmentInit environmentInit) {
+	public void I_EnvironmentInit(EnvironmentInit environmentInit) {
 		this.environmentInit = environmentInit;
 	}
 

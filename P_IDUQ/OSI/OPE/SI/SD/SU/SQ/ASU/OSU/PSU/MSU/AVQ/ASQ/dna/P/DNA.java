@@ -8,7 +8,7 @@ public class DNA{
 		return functionLineDeque;
 	}
 	
-	public void setFunctionLineDeque(ConcurrentLinkedDeque<PDN> functionLineDeque) {
+	public void I_FunctionLineDeque(ConcurrentLinkedDeque<PDN> functionLineDeque) {
 		this.functionLineDeque = functionLineDeque;
 	}
 	
@@ -16,7 +16,7 @@ public class DNA{
 		return maskLineDeque;
 	}
 	
-	public void setMaskLineDeque(ConcurrentLinkedDeque<PDN> maskLineDeque) {
+	public void I_MaskLineDeque(ConcurrentLinkedDeque<PDN> maskLineDeque) {
 		this.maskLineDeque = maskLineDeque;
 	}
 	
@@ -24,7 +24,7 @@ public class DNA{
 		return functionLineMap;
 	}
 	
-	public void setFunctionLineMap(ConcurrentHashMap<Integer, PDN> functionLineMap) {
+	public void I_FunctionLineMap(ConcurrentHashMap<Integer, PDN> functionLineMap) {
 		this.functionLineMap = functionLineMap;
 	}
 	
@@ -32,7 +32,7 @@ public class DNA{
 		return maskLineMap;
 	}
 	
-	public void setMaskLineMap(ConcurrentHashMap<Integer, PDN> maskLineMap) {
+	public void I_MaskLineMap(ConcurrentHashMap<Integer, PDN> maskLineMap) {
 		this.maskLineMap = maskLineMap;
 	}
 	

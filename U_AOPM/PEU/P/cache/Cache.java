@@ -27,15 +27,15 @@ public class Cache {
 		return value;
 	}
 
-	public void setKey(String string) {
+	public void I_Key(String string) {
 		key = string;
 	}
 
-	public void setTimeOut(long l) {
+	public void I_TimeOut(long l) {
 		timeOut = l;
 	}
 
-	public void setValue(Object object) {
+	public void I_Value(Object object) {
 		value = object;
 	}
 
@@ -43,7 +43,7 @@ public class Cache {
 		return expired;
 	}
 
-	public void setExpired(boolean b) {
+	public void I_Expired(boolean b) {
 		expired = b;
 	}
 } 

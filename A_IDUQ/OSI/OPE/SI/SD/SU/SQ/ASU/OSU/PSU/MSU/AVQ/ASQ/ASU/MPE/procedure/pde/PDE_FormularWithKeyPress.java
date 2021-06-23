@@ -18,7 +18,7 @@ public class PDE_FormularWithKeyPress {
 			if(initon[i]== null) {
 				initon[i]= new Initon();
 			}
-			initon[i].setIniton(""+ initons.charAt(i)); 
+			initon[i].I_Initon(""+ initons.charAt(i)); 
 			if(i+ 1< initons.length()) {
 				if(initon[i+ 1]== null) {
 					initon[i+ 1]= new Initon();
@@ -84,7 +84,7 @@ public class PDE_FormularWithKeyPress {
 			InitonPDE= InitonPDE.forwardPrev();
 		}
 		InitonLinkDNA initonLinkDNA= new InitonLinkDNA();
-		initonLinkDNA.setInitonLink(InitonPDE);
+		initonLinkDNA.I_InitonLink(InitonPDE);
 		InitonPDE= new PDE_Decrement_Formular().PDE_DecrementA(initonLinkDNA);
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.forwardPrev();
@@ -99,7 +99,7 @@ public class PDE_FormularWithKeyPress {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.forwardPrev();
 		}
-		initonLinkDNA.setInitonLink(InitonPDE);
+		initonLinkDNA.I_InitonLink(InitonPDE);
 		InitonPDE= new PDE_Decrement_Formular().PDE_DecrementO(initonLinkDNA);
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.forwardPrev();
@@ -114,7 +114,7 @@ public class PDE_FormularWithKeyPress {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.forwardPrev();
 		}
-		initonLinkDNA.setInitonLink(InitonPDE);
+		initonLinkDNA.I_InitonLink(InitonPDE);
 		InitonPDE= new PDE_Decrement_Formular().PDE_DecrementP(initonLinkDNA);
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.forwardPrev();
@@ -129,7 +129,7 @@ public class PDE_FormularWithKeyPress {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.forwardPrev();
 		}
-		initonLinkDNA.setInitonLink(InitonPDE);
+		initonLinkDNA.I_InitonLink(InitonPDE);
 		InitonPDE= new PDE_Decrement_Formular().PDE_DecrementM(initonLinkDNA);
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.forwardPrev();
@@ -144,7 +144,7 @@ public class PDE_FormularWithKeyPress {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.forwardPrev();
 		}
-		initonLinkDNA.setInitonLink(InitonPDE);
+		initonLinkDNA.I_InitonLink(InitonPDE);
 		InitonPDE= new PDE_Decrement_Formular().PDE_DecrementV(initonLinkDNA);
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.forwardPrev();
@@ -159,7 +159,7 @@ public class PDE_FormularWithKeyPress {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.forwardPrev();
 		}
-		initonLinkDNA.setInitonLink(InitonPDE);
+		initonLinkDNA.I_InitonLink(InitonPDE);
 		Initon InitonPDE_COPY= InitonPDE.copyRNA(InitonPDE);
 
 		if(Math.random()<pDE_RNA_Formular.key[0]) {
@@ -167,7 +167,7 @@ public class PDE_FormularWithKeyPress {
 			////System.out.println("1降元概率IU");
 			doE_IU(InitonPDE, initonLinkDNA, pDE_RNA_Formular); 
 		}else {
-			initonLinkDNA.setInitonLink(InitonPDE_COPY);
+			initonLinkDNA.I_InitonLink(InitonPDE_COPY);
 			////System.out.println();
 			////System.out.println("2降元概率DU");
 			doE_DU(InitonPDE_COPY, initonLinkDNA, pDE_RNA_Formular); 
@@ -189,7 +189,7 @@ public class PDE_FormularWithKeyPress {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.forwardPrev();
 		}
-		initonLinkDNA.setInitonLink(InitonPDE);
+		initonLinkDNA.I_InitonLink(InitonPDE);
 		InitonPDE= new PDE_Decrement_Formular().PDE_DecrementC(initonLinkDNA);
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.forwardPrev();
@@ -204,9 +204,9 @@ public class PDE_FormularWithKeyPress {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.forwardPrev();
 		}
-		initonLinkDNA.setInitonLink(InitonPDE);    
+		initonLinkDNA.I_InitonLink(InitonPDE);    
 
-		initonLinkDNA.setInitonLink(InitonPDE);
+		initonLinkDNA.I_InitonLink(InitonPDE);
 		Initon InitonPDE_COPYSI= InitonPDE.copyRNA(InitonPDE);
 		Initon InitonPDE_COPYSQ= InitonPDE.copyRNA(InitonPDE);
 
@@ -217,14 +217,14 @@ public class PDE_FormularWithKeyPress {
 		////System.out.println("1111概率S");
 		//doS(s, InitonPDE, initonLinkDNA); 
 
-		initonLinkDNA.setInitonLink(InitonPDE_COPYSI);
+		initonLinkDNA.I_InitonLink(InitonPDE_COPYSI);
 
 		if(Math.random()< pDE_RNA_Formular.key[1]) {
 			//System.out.println();
 			//System.out.println("1112概率S_I");
 			doS_I("", InitonPDE_COPYSI, initonLinkDNA, pDE_RNA_Formular);
 		}else {
-			initonLinkDNA.setInitonLink(InitonPDE_COPYSQ);
+			initonLinkDNA.I_InitonLink(InitonPDE_COPYSQ);
 			//System.out.println();
 			//System.out.println("1113概率S_Q");
 			doS_Q("", InitonPDE_COPYSQ, initonLinkDNA, pDE_RNA_Formular);
@@ -249,7 +249,7 @@ public class PDE_FormularWithKeyPress {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.forwardPrev();
 		}
-		initonLinkDNA.setInitonLink(InitonPDE);
+		initonLinkDNA.I_InitonLink(InitonPDE);
 		//全部 收
 		//System.out.println();
 		//System.out.println(sq+ "肽展 增元");
@@ -257,7 +257,7 @@ public class PDE_FormularWithKeyPress {
 			InitonPDE= InitonPDE.forwardPrev();
 		}
 		initonLinkDNA= new InitonLinkDNA();
-		initonLinkDNA.setInitonLink(InitonPDE);
+		initonLinkDNA.I_InitonLink(InitonPDE);
 		InitonPDE= new PDE_Increment_Formular().PDE_IncrementV(initonLinkDNA);
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.forwardPrev();
@@ -272,7 +272,7 @@ public class PDE_FormularWithKeyPress {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.forwardPrev();
 		}
-		initonLinkDNA.setInitonLink(InitonPDE);
+		initonLinkDNA.I_InitonLink(InitonPDE);
 		Initon InitonPDE_COPY= InitonPDE.copyRNA(InitonPDE);
 
 		if(Math.random()< pDE_RNA_Formular.key[2]) {
@@ -280,7 +280,7 @@ public class PDE_FormularWithKeyPress {
 			//System.out.println(sq+ "概率Increment IU");
 			doIncrementE_IU(sq, InitonPDE, initonLinkDNA, pDE_RNA_Formular); 
 		}else {
-			initonLinkDNA.setInitonLink(InitonPDE_COPY);
+			initonLinkDNA.I_InitonLink(InitonPDE_COPY);
 			//System.out.println();
 			//System.out.println(sq+ "概率Increment DU");
 			doIncrementE_DU(sq, InitonPDE_COPY, initonLinkDNA, pDE_RNA_Formular); 
@@ -304,7 +304,7 @@ public class PDE_FormularWithKeyPress {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.forwardPrev();
 		}
-		initonLinkDNA.setInitonLink(InitonPDE);
+		initonLinkDNA.I_InitonLink(InitonPDE);
 
 		//全部 收
 		//System.out.println();
@@ -313,7 +313,7 @@ public class PDE_FormularWithKeyPress {
 			InitonPDE= InitonPDE.forwardPrev();
 		}
 		initonLinkDNA= new InitonLinkDNA();
-		initonLinkDNA.setInitonLink(InitonPDE);
+		initonLinkDNA.I_InitonLink(InitonPDE);
 		InitonPDE= new PDE_Increment_Formular().PDE_IncrementV(initonLinkDNA);
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.forwardPrev();
@@ -328,7 +328,7 @@ public class PDE_FormularWithKeyPress {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.forwardPrev();
 		}
-		initonLinkDNA.setInitonLink(InitonPDE);
+		initonLinkDNA.I_InitonLink(InitonPDE);
 		Initon InitonPDE_COPY= InitonPDE.copyRNA(InitonPDE);
 
 		if(Math.random()< pDE_RNA_Formular.key[2]) {
@@ -336,7 +336,7 @@ public class PDE_FormularWithKeyPress {
 			//System.out.println(si+ "111概率Increment IU");
 			doIncrementE_IU(si, InitonPDE, initonLinkDNA, pDE_RNA_Formular); 
 		}else {
-			initonLinkDNA.setInitonLink(InitonPDE_COPY);
+			initonLinkDNA.I_InitonLink(InitonPDE_COPY);
 			//System.out.println();
 			//System.out.println(si+ "112概率Increment DU");
 			doIncrementE_DU(si, InitonPDE_COPY, initonLinkDNA, pDE_RNA_Formular); 
@@ -361,7 +361,7 @@ public class PDE_FormularWithKeyPress {
 	//		while(InitonPDE.hasPrev()) {
 	//			InitonPDE= InitonPDE.forwardPrev();
 	//		}
-	//		initonLinkDNA.setInitonLink(InitonPDE);
+	//		initonLinkDNA.I_InitonLink(InitonPDE);
 	//
 	//		//全部 收
 	//		//System.out.println();
@@ -370,7 +370,7 @@ public class PDE_FormularWithKeyPress {
 	//			InitonPDE= InitonPDE.forwardPrev();
 	//		}
 	//		initonLinkDNA= new InitonLinkDNA();
-	//		initonLinkDNA.setInitonLink(InitonPDE);
+	//		initonLinkDNA.I_InitonLink(InitonPDE);
 	//		InitonPDE= new PDE_Increment_Formular().PDE_IncrementV(initonLinkDNA);
 	//		while(InitonPDE.hasPrev()) {
 	//			InitonPDE= InitonPDE.forwardPrev();
@@ -385,13 +385,13 @@ public class PDE_FormularWithKeyPress {
 	//		while(InitonPDE.hasPrev()) {
 	//			InitonPDE= InitonPDE.forwardPrev();
 	//		}
-	//		initonLinkDNA.setInitonLink(InitonPDE);
+	//		initonLinkDNA.I_InitonLink(InitonPDE);
 	//		Initon InitonPDE_COPY= InitonPDE.copyRNA(InitonPDE);
 	//		//System.out.println();
 	//		//System.out.println(s+ "111概率Increment IU");
 	//		doIncrementE_IU(s, InitonPDE, initonLinkDNA); 
 	//
-	//		initonLinkDNA.setInitonLink(InitonPDE_COPY);
+	//		initonLinkDNA.I_InitonLink(InitonPDE_COPY);
 	//		//System.out.println();
 	//		//System.out.println(s+ "112概率Increment DU");
 	//		doIncrementE_DU(s, InitonPDE_COPY, initonLinkDNA); 
@@ -412,7 +412,7 @@ public class PDE_FormularWithKeyPress {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.forwardPrev();
 		}
-		initonLinkDNA.setInitonLink(InitonPDE);
+		initonLinkDNA.I_InitonLink(InitonPDE);
 		InitonPDE= new PDE_Decrement_Formular().PDE_DecrementC(initonLinkDNA);
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.forwardPrev();
@@ -428,7 +428,7 @@ public class PDE_FormularWithKeyPress {
 			InitonPDE= InitonPDE.forwardPrev();
 		}
 
-		initonLinkDNA.setInitonLink(InitonPDE);
+		initonLinkDNA.I_InitonLink(InitonPDE);
 		Initon InitonPDE_COPYSI= InitonPDE.copyRNA(InitonPDE);
 		Initon InitonPDE_COPYSQ= InitonPDE.copyRNA(InitonPDE);
 		//	String s= "2222概率S_";
@@ -438,13 +438,13 @@ public class PDE_FormularWithKeyPress {
 		//	//System.out.println("2111概率S");
 		//	doS(s, InitonPDE, initonLinkDNA); 
 
-		initonLinkDNA.setInitonLink(InitonPDE_COPYSI);
+		initonLinkDNA.I_InitonLink(InitonPDE_COPYSI);
 		if(Math.random()< pDE_RNA_Formular.key[1]) {
 			//System.out.println();
 			//System.out.println("2112概率S_I");
 			doS_I("", InitonPDE_COPYSI, initonLinkDNA, pDE_RNA_Formular); 
 		}else {
-			initonLinkDNA.setInitonLink(InitonPDE_COPYSQ);
+			initonLinkDNA.I_InitonLink(InitonPDE_COPYSQ);
 			//System.out.println();
 			//System.out.println("2113概率S_Q");
 			doS_Q("", InitonPDE_COPYSQ, initonLinkDNA, pDE_RNA_Formular); 
@@ -452,7 +452,7 @@ public class PDE_FormularWithKeyPress {
 	}
 
 	private static void doIncrementE_DU(String sq, Initon InitonPDE, InitonLinkDNA initonLinkDNA, PDE_FormularWithKeyPress pDE_RNA_Formular) {
-		initonLinkDNA.setInitonLink(InitonPDE);
+		initonLinkDNA.I_InitonLink(InitonPDE);
 		InitonPDE= new PDE_Increment_Formular().PDE_IncrementE_DU(initonLinkDNA);
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.forwardPrev();
@@ -467,7 +467,7 @@ public class PDE_FormularWithKeyPress {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.forwardPrev();
 		}
-		initonLinkDNA.setInitonLink(InitonPDE);
+		initonLinkDNA.I_InitonLink(InitonPDE);
 		InitonPDE= new PDE_Increment_Formular().PDE_IncrementC(initonLinkDNA);
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.forwardPrev();
@@ -482,9 +482,9 @@ public class PDE_FormularWithKeyPress {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.forwardPrev();
 		}
-		initonLinkDNA.setInitonLink(InitonPDE);
+		initonLinkDNA.I_InitonLink(InitonPDE);
 
-		initonLinkDNA.setInitonLink(InitonPDE);
+		initonLinkDNA.I_InitonLink(InitonPDE);
 		Initon InitonPDE_COPYSI= InitonPDE.copyRNA(InitonPDE);
 		Initon InitonPDE_COPYSQ= InitonPDE.copyRNA(InitonPDE);
 
@@ -498,7 +498,7 @@ public class PDE_FormularWithKeyPress {
 	}
 
 	private static void doIncrementE_IU(String s, Initon InitonPDE, InitonLinkDNA initonLinkDNA, PDE_FormularWithKeyPress pDE_RNA_Formular) {
-		initonLinkDNA.setInitonLink(InitonPDE);
+		initonLinkDNA.I_InitonLink(InitonPDE);
 		InitonPDE= new PDE_Increment_Formular().PDE_IncrementE_IU(initonLinkDNA, null, false);
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.forwardPrev();
@@ -513,7 +513,7 @@ public class PDE_FormularWithKeyPress {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.forwardPrev();
 		}
-		initonLinkDNA.setInitonLink(InitonPDE);
+		initonLinkDNA.I_InitonLink(InitonPDE);
 		InitonPDE= new PDE_Increment_Formular().PDE_IncrementC(initonLinkDNA);
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.forwardPrev();
@@ -528,12 +528,12 @@ public class PDE_FormularWithKeyPress {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.forwardPrev();
 		}
-		initonLinkDNA.setInitonLink(InitonPDE);
+		initonLinkDNA.I_InitonLink(InitonPDE);
 		InitonPDE= new PDE_Increment_Formular().PDE_IncrementS(initonLinkDNA);
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.forwardPrev();
 		}
-		initonLinkDNA.setInitonLink(InitonPDE);
+		initonLinkDNA.I_InitonLink(InitonPDE);
 		Initon InitonPDE_COPYSI= InitonPDE.copyRNA(InitonPDE);
 		Initon InitonPDE_COPYSQ= InitonPDE.copyRNA(InitonPDE);
 
@@ -547,7 +547,7 @@ public class PDE_FormularWithKeyPress {
 	}
 
 	private static void doIncrementS_Q(String s, Initon InitonPDE, InitonLinkDNA initonLinkDNA, PDE_FormularWithKeyPress pDE_RNA_Formular) {
-		initonLinkDNA.setInitonLink(InitonPDE);
+		initonLinkDNA.I_InitonLink(InitonPDE);
 		InitonPDE= new PDE_Increment_Formular().PDE_IncrementS_Q(initonLinkDNA);
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.forwardPrev();
@@ -562,12 +562,12 @@ public class PDE_FormularWithKeyPress {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.forwardPrev();
 		}
-		initonLinkDNA.setInitonLink(InitonPDE);
+		initonLinkDNA.I_InitonLink(InitonPDE);
 		doIncrementAOPM(s, InitonPDE, initonLinkDNA, pDE_RNA_Formular);
 	}
 
 	private static void doIncrementS_I(String s, Initon InitonPDE, InitonLinkDNA initonLinkDNA, PDE_FormularWithKeyPress pDE_RNA_Formular) {
-		initonLinkDNA.setInitonLink(InitonPDE);
+		initonLinkDNA.I_InitonLink(InitonPDE);
 		InitonPDE= new PDE_Increment_Formular().PDE_IncrementS_I(initonLinkDNA, null);
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.forwardPrev();
@@ -582,13 +582,13 @@ public class PDE_FormularWithKeyPress {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.forwardPrev();
 		}
-		initonLinkDNA.setInitonLink(InitonPDE);
+		initonLinkDNA.I_InitonLink(InitonPDE);
 		doIncrementAOPM(s, InitonPDE, initonLinkDNA, pDE_RNA_Formular);
 	}
 
 	//	@SuppressWarnings("unused")
 	//	private static void doIncrementS(String s, Initon InitonPDE, InitonLinkDNA initonLinkDNA) {
-	//		initonLinkDNA.setInitonLink(InitonPDE);
+	//		initonLinkDNA.I_InitonLink(InitonPDE);
 	//		InitonPDE= new PDE_Increment_Formular().PDE_IncrementS(initonLinkDNA);
 	//		while(InitonPDE.hasPrev()) {
 	//			InitonPDE= InitonPDE.forwardPrev();
@@ -603,7 +603,7 @@ public class PDE_FormularWithKeyPress {
 	//		while(InitonPDE.hasPrev()) {
 	//			InitonPDE= InitonPDE.forwardPrev();
 	//		}
-	//		initonLinkDNA.setInitonLink(InitonPDE);
+	//		initonLinkDNA.I_InitonLink(InitonPDE);
 	//		doIncrementAOPM(s, InitonPDE, initonLinkDNA);
 	//	}
 
@@ -622,7 +622,7 @@ public class PDE_FormularWithKeyPress {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.forwardPrev();
 		}
-		initonLinkDNA.setInitonLink(InitonPDE);
+		initonLinkDNA.I_InitonLink(InitonPDE);
 		InitonPDE= new PDE_Increment_Formular().PDE_IncrementO(initonLinkDNA);
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.forwardPrev();
@@ -637,7 +637,7 @@ public class PDE_FormularWithKeyPress {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.forwardPrev();
 		}
-		initonLinkDNA.setInitonLink(InitonPDE);
+		initonLinkDNA.I_InitonLink(InitonPDE);
 		InitonPDE= new PDE_Increment_Formular().PDE_IncrementP(initonLinkDNA);
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.forwardPrev();
@@ -652,7 +652,7 @@ public class PDE_FormularWithKeyPress {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.forwardPrev();
 		}
-		initonLinkDNA.setInitonLink(InitonPDE);
+		initonLinkDNA.I_InitonLink(InitonPDE);
 		InitonPDE= new PDE_Increment_Formular().PDE_IncrementM(initonLinkDNA);
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.forwardPrev();
@@ -669,6 +669,6 @@ public class PDE_FormularWithKeyPress {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.forwardPrev();
 		}
-		initonLinkDNA.setInitonLink(InitonPDE);
+		initonLinkDNA.I_InitonLink(InitonPDE);
 	}
 }

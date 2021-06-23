@@ -19,7 +19,7 @@ public class InitBehaviorICAKernel{
 		return kernel;
 	}
 
-	public void setKernel(double[] kernel) {
+	public void I_Kernel(double[] kernel) {
 		this.kernel = kernel;
 	}
 
@@ -27,7 +27,7 @@ public class InitBehaviorICAKernel{
 		return forRestReturn;
 	}
 
-	public void setForRestReturn(List<String> forRestReturn) {
+	public void I_ForRestReturn(List<String> forRestReturn) {
 		this.forRestReturn = forRestReturn;
 	}
 

@@ -65,10 +65,10 @@ public class SessionValidation{
 		//		System.out.println("肽锁: "+ pDE_RNA_FullFormular.lock);
 		//		System.out.println("散列肽语:"+ pDE_RNA_FullFormular.code);
 		TokenCerts tokenCerts= new TokenCerts();
-		tokenCerts.setPdnKey(pDE_RNA_FullFormular.pdw);
-		tokenCerts.setPdnLock(pDE_RNA_FullFormular.lock);
-		tokenCerts.setPassword(humanWordsPassword);
-		tokenCerts.setPdnPassword(pDE_RNA_FullFormular.code);
+		tokenCerts.I_PdnKey(pDE_RNA_FullFormular.pdw);
+		tokenCerts.I_PdnLock(pDE_RNA_FullFormular.lock);
+		tokenCerts.I_Password(humanWordsPassword);
+		tokenCerts.I_PdnPassword(pDE_RNA_FullFormular.code);
 		return tokenCerts;
 	}
 
@@ -80,11 +80,11 @@ public class SessionValidation{
 		//		System.out.println("静态肽展降元概率钥匙E: "+ pDE_RNA_Formular.pdedeKey);
 		//		System.out.println("静态肽展降元概率钥匙S: "+ pDE_RNA_Formular.pdedsKey);
 		//		System.out.println("静态肽展降元: "+ pDE_RNA_Formular.pds);
-		tokenCerts.setPds(pDE_RNA_Formular.pds);
-		token.setUpdsde(pDE_RNA_Formular.pdedeKey);
-		token.setUpdsds(pDE_RNA_Formular.pdedsKey);
-		token.setUpdsie(pDE_RNA_Formular.pdeieKey);
-		token.setUpdsis(pDE_RNA_Formular.pdeisKey);
+		tokenCerts.I_Pds(pDE_RNA_Formular.pds);
+		token.I_Updsde(pDE_RNA_Formular.pdedeKey);
+		token.I_Updsds(pDE_RNA_Formular.pdedsKey);
+		token.I_Updsie(pDE_RNA_Formular.pdeieKey);
+		token.I_Updsis(pDE_RNA_Formular.pdeisKey);
 		//		System.out.println("静态肽展增元概率钥匙E: "+ pDE_RNA_Formular.pdeieKey);
 		//		System.out.println("静态肽展增元概率钥匙S: "+ pDE_RNA_Formular.pdeisKey);
 		//		System.out.println("静态肽展增元: "+ pDE_RNA_Formular.pde);
@@ -94,7 +94,7 @@ public class SessionValidation{
 		//		System.out.println("账号随机缓存字符串:  " + pDE_RNA_Formular.cacheId);
 		pDE_RNA_Formular.session_key= pDE_RNA_Formular.pde;
 		//		System.out.println("Session: " + pDE_RNA_Formular.session_key);
-		token.setmPassword(pDE_RNA_Formular.pde);
+		token.I_mPassword(pDE_RNA_Formular.pde);
 		return token;
 	}
 
@@ -112,14 +112,14 @@ public class SessionValidation{
 		}
 		Token sessiontoken= new Token();//大家注意这个password 是元基, 明文要转化下.
 		String dnaPassword= TokenUtil.getFirstDNAPassword(key, tokenCerts.getPdnPassword(), sessiontoken);
-		sessiontoken.setuEmail("313699483@qq.com");
-		sessiontoken.setuKey(key);
+		sessiontoken.I_uEmail("313699483@qq.com");
+		sessiontoken.I_uKey(key);
 		//下面注意这个时间要和ETC的时区进行时区计算.进行统一.
 		//我准备将下面这个时间稍后也同样肽加密, 不然别人改时间一样能用.
 		//如果是服务器端的缓存有时间失效设置, 那就可以不考虑.
-		sessiontoken.setuTime(new Date().getTime());
+		sessiontoken.I_uTime(new Date().getTime());
 		//token.setmPassword(mPassword);
-		sessiontoken.setmPassword(dnaPassword);
+		sessiontoken.I_mPassword(dnaPassword);
 		return sessiontoken;
 	}
 

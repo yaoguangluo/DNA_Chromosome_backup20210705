@@ -10,13 +10,13 @@ public class WordFrequencyUtil {
 		String string= fixWords[StablePOS.INT_ZERO].toString();
 		if (outputList.containsKey(string)) {
 			WordFrequency wordFrequency= outputList.get(string);
-			wordFrequency.setFrequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
+			wordFrequency.I_Frequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
 			outputList.put(string, wordFrequency);
 			return;
 		}
 		WordFrequency wordFrequency= new WordFrequency();
-		wordFrequency.setFrequency(StablePOS.INT_ONE);
-		wordFrequency.setWord(string);
+		wordFrequency.I_Frequency(StablePOS.INT_ONE);
+		wordFrequency.I_Word(string);
 		outputList.put(string, wordFrequency);
 	}
 
@@ -24,13 +24,13 @@ public class WordFrequencyUtil {
 			String countWordNode) {
 		if (outputList.containsKey(countWordNode)) {
 			WordFrequency wordFrequency=outputList.get(countWordNode);
-			wordFrequency.setFrequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
+			wordFrequency.I_Frequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
 			outputList.put(countWordNode, wordFrequency);
 			return;
 		}
 		WordFrequency wordFrequency=new WordFrequency();
-		wordFrequency.setFrequency(StablePOS.INT_ONE);
-		wordFrequency.setWord(fixWords[StablePOS.INT_ZERO].toString());
+		wordFrequency.I_Frequency(StablePOS.INT_ONE);
+		wordFrequency.I_Word(fixWords[StablePOS.INT_ZERO].toString());
 		outputList.put(countWordNode,wordFrequency);
 	}
 }

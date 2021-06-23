@@ -18,7 +18,7 @@ public class InitonLinkDNA {
 		return initonLink;
 	}
 	
-	public void setInitonLink(Initon initons) {
+	public void I_InitonLink(Initon initons) {
 		initonLink= initons;
 	}
 }

@@ -51,7 +51,7 @@ public class JOGLOBJVec4 {
 	/**
 	 * @param w The w to set.
 	 */
-	public void setW(double w) {
+	public void I_W(double w) {
 		this.w = w;
 	}
 	/**
@@ -63,7 +63,7 @@ public class JOGLOBJVec4 {
 	/**
 	 * @param x The x to set.
 	 */
-	public void setX(double x) {
+	public void I_X(double x) {
 		this.x = x;
 	}
 	/**
@@ -75,7 +75,7 @@ public class JOGLOBJVec4 {
 	/**
 	 * @param y The y to set.
 	 */
-	public void setY(double y) {
+	public void I_Y(double y) {
 		this.y = y;
 	}
 	/**
@@ -87,7 +87,7 @@ public class JOGLOBJVec4 {
 	/**
 	 * @param z The z to set.
 	 */
-	public void setZ(double z) {
+	public void I_Z(double z) {
 		this.z = z;
 	}
 	

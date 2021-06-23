@@ -4,15 +4,15 @@ public class MutationLaw{
 		RST son= new RST();
 		//random
 		if(Math.random()>0.5) {
-			son.setFatherDeque(father.getFatherDeque());
+			son.I_FatherDeque(father.getFatherDeque());
 		}else {
-			son.setFatherDeque(mother.getFatherDeque());
+			son.I_FatherDeque(mother.getFatherDeque());
 		}
 		
 		if(Math.random()<0.5) {
-			son.setMotherDeque(mother.getMotherDeque());
+			son.I_MotherDeque(mother.getMotherDeque());
 		}else {
-			son.setMotherDeque(father.getMotherDeque());
+			son.I_MotherDeque(father.getMotherDeque());
 		}	
 		return son;
 	}

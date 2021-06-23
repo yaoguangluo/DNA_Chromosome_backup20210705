@@ -5,7 +5,7 @@ public class Row{
 		return cells;
 	}
 
-	public void setCells(ConcurrentHashMap<String, Cell> cells) {
+	public void I_Cells(ConcurrentHashMap<String, Cell> cells) {
 		this.cells = cells;
 	}
 

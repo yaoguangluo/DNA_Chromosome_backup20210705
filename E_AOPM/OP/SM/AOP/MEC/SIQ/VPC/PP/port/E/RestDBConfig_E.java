@@ -28,7 +28,7 @@ public class RestDBConfig_E {
 		fw.close();
 		//Ð´»º´æ
 		Cache c = new Cache();
-		c.setValue(basePath);
+		c.I_Value(basePath);
 		Cache_M.putCache("DBPath", c);
 		//Ëø¶¨±í
 		File fileDBPath = new File(basePath);

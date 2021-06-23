@@ -5,7 +5,7 @@ public class Race{
 		return race;
 	}
 
-	public void setRace(ConcurrentHashMap<String, Family> race) {
+	public void I_Race(ConcurrentHashMap<String, Family> race) {
 		this.race = race;
 	}
 

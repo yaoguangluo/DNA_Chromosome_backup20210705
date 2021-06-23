@@ -5,7 +5,7 @@ public abstract class HMMNode {
 		return vb;
 	}
 
-	public void setVb(String vb) {
+	public void I_Vb(String vb) {
 		this.vb = vb;
 	}
 

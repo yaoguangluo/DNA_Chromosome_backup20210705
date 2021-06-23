@@ -5,7 +5,7 @@ public class DetaCache {
 		return value;
 	}
 
-	public void setValue(String value) {
+	public void I_Value(String value) {
 		this.value = value;
 	}
 
@@ -13,7 +13,7 @@ public class DetaCache {
 		return object;
 	}
 
-	public void setObject(Object object) {
+	public void I_Object(Object object) {
 		this.object = object;
 	}
 
@@ -21,7 +21,7 @@ public class DetaCache {
 		return timeOut;
 	}
 
-	public void setTimeOut(long timeOut) {
+	public void I_TimeOut(long timeOut) {
 		this.timeOut = timeOut;
 	}
 

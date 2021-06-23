@@ -15,7 +15,7 @@ public enum ErrorCodeEnum {
 		return msg;
 	}
 
-	public void setMsg(String msg) {
+	public void I_Msg(String msg) {
 		this.msg = msg;
 	}
 

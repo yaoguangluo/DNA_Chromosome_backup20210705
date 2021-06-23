@@ -21,7 +21,7 @@ public class DetaUtil {
 				String tempString;
 				while ((tempString = reader.readLine()) != null) {
 					Cache c = new Cache();
-					c.setValue(tempString.split("->")[1]);
+					c.I_Value(tempString.split("->")[1]);
 					Cache_M.putCache("DBPath", c);
 					File fileDBPath = new File(tempString.split("->")[1]);
 					if (fileDBPath.isDirectory()) {
@@ -47,7 +47,7 @@ public class DetaUtil {
 					fileDBPath.mkdir();
 				}
 				Cache c = new Cache();
-				c.setValue("C:/DetaDB");
+				c.I_Value("C:/DetaDB");
 				Cache_M.putCache("DBPath", c);
 			} catch (IOException e) {
 				e.printStackTrace();

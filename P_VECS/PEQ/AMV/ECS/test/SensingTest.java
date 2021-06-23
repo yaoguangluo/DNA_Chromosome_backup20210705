@@ -19,7 +19,7 @@ public class SensingTest{
 		return sets;
 	}
 
-	public void setSets(List<String> sets) {
+	public void I_Sets(List<String> sets) {
 		this.sets = sets;
 	}
 

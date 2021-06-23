@@ -362,12 +362,12 @@ public class POS_CE implements POS_C{
 			if (wordsForest.containsKey(strings[StablePOS.INT_ONE])){
 				if (outputList.containsKey(strings[StablePOS.INT_ONE])){
 					WordFrequency wordFrequency = outputList.get(strings[StablePOS.INT_ONE]);
-					wordFrequency.setFrequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
+					wordFrequency.I_Frequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
 					outputList.put(strings[StablePOS.INT_ONE], wordFrequency);
 				} else{
 					WordFrequency wordFrequency = new WordFrequency();
-					wordFrequency.setFrequency(StablePOS.INT_ONE);
-					wordFrequency.setWord(strings[StablePOS.INT_ONE]);
+					wordFrequency.I_Frequency(StablePOS.INT_ONE);
+					wordFrequency.I_Word(strings[StablePOS.INT_ONE]);
 					outputList.put(strings[StablePOS.INT_ONE], wordFrequency);
 				}
 				fixWord[StablePOS.INT_ZERO].delete(StablePOS.INT_ZERO, fixWord[StablePOS.INT_ZERO].length());
@@ -384,12 +384,12 @@ public class POS_CE implements POS_C{
 		countInputStringLength -= StablePOS.INT_TWO;
 		if (outputList.containsKey(strings[StablePOS.INT_ZERO])){
 			WordFrequency wordFrequency = outputList.get(strings[StablePOS.INT_ZERO]);
-			wordFrequency.setFrequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
+			wordFrequency.I_Frequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
 			outputList.put(strings[StablePOS.INT_ZERO], wordFrequency);
 		} else{
 			WordFrequency wordFrequency = new WordFrequency();
-			wordFrequency.setFrequency(StablePOS.INT_ONE);
-			wordFrequency.setWord(strings[StablePOS.INT_ZERO]);
+			wordFrequency.I_Frequency(StablePOS.INT_ONE);
+			wordFrequency.I_Word(strings[StablePOS.INT_ZERO]);
 			outputList.put(strings[StablePOS.INT_ZERO], wordFrequency);
 		}
 		fixWord[StablePOS.INT_ZERO].delete(StablePOS.INT_ZERO, fixWord[StablePOS.INT_ZERO].length());
@@ -410,12 +410,12 @@ public class POS_CE implements POS_C{
 			if (wordsForest.containsKey(strings[StablePOS.INT_ONE])){
 				if (outputList.containsKey(strings[StablePOS.INT_ONE])){
 					WordFrequency wordFrequency = outputList.get(strings[StablePOS.INT_ONE]);
-					wordFrequency.setFrequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
+					wordFrequency.I_Frequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
 					outputList.put(strings[StablePOS.INT_ONE], wordFrequency);
 				} else{
 					WordFrequency wordFrequency = new WordFrequency();
-					wordFrequency.setFrequency(StablePOS.INT_ONE);
-					wordFrequency.setWord(strings[StablePOS.INT_ONE]);
+					wordFrequency.I_Frequency(StablePOS.INT_ONE);
+					wordFrequency.I_Word(strings[StablePOS.INT_ONE]);
 					outputList.put(strings[StablePOS.INT_ONE], wordFrequency);
 				}
 				fixWord[StablePOS.INT_ZERO].delete(StablePOS.INT_ZERO, fixWord[StablePOS.INT_ZERO].length());
@@ -432,22 +432,22 @@ public class POS_CE implements POS_C{
 		if (outputList.size()== StablePOS.INT_ZERO&& StableMaps.weiCi.containsKey(strings[StablePOS.INT_TWO])){
 			if (outputList.containsKey(strings[StablePOS.INT_ZERO])){
 				WordFrequency wordFrequency= outputList.get(strings[StablePOS.INT_ZERO]);
-				wordFrequency.setFrequency(wordFrequency.getFrequency()+ StablePOS.INT_ONE);
+				wordFrequency.I_Frequency(wordFrequency.getFrequency()+ StablePOS.INT_ONE);
 				outputList.put(strings[StablePOS.INT_ZERO], wordFrequency);
 			} else{
 				WordFrequency wordFrequency= new WordFrequency();
-				wordFrequency.setFrequency(StablePOS.INT_ONE);
-				wordFrequency.setWord(strings[StablePOS.INT_ZERO]);
+				wordFrequency.I_Frequency(StablePOS.INT_ONE);
+				wordFrequency.I_Word(strings[StablePOS.INT_ZERO]);
 				outputList.put(strings[StablePOS.INT_ZERO], wordFrequency);
 			}
 			if (outputList.containsKey(strings[StablePOS.INT_TWO])){
 				WordFrequency wordFrequency= outputList.get(strings[StablePOS.INT_TWO]);
-				wordFrequency.setFrequency(wordFrequency.getFrequency()+ StablePOS.INT_ONE);
+				wordFrequency.I_Frequency(wordFrequency.getFrequency()+ StablePOS.INT_ONE);
 				outputList.put(strings[StablePOS.INT_TWO], wordFrequency);
 			} else{
 				WordFrequency wordFrequency= new WordFrequency();
-				wordFrequency.setFrequency(StablePOS.INT_ONE);
-				wordFrequency.setWord(strings[StablePOS.INT_TWO]);
+				wordFrequency.I_Frequency(StablePOS.INT_ONE);
+				wordFrequency.I_Word(strings[StablePOS.INT_TWO]);
 				outputList.put(strings[StablePOS.INT_TWO], wordFrequency);
 			}
 			fixWord[StablePOS.INT_ZERO].delete(StablePOS.INT_ZERO, fixWord[StablePOS.INT_ZERO].length());
@@ -464,12 +464,12 @@ public class POS_CE implements POS_C{
 				if (wordsForest.containsKey(strings[StablePOS.INT_ONE])){
 					if (outputList.containsKey(strings[StablePOS.INT_ONE])){
 						WordFrequency wordFrequency= outputList.get(strings[StablePOS.INT_ONE]);
-						wordFrequency.setFrequency(wordFrequency.getFrequency()+ StablePOS.INT_ONE);
+						wordFrequency.I_Frequency(wordFrequency.getFrequency()+ StablePOS.INT_ONE);
 						outputList.put(strings[StablePOS.INT_ONE], wordFrequency);
 					} else{
 						WordFrequency wordFrequency= new WordFrequency();
-						wordFrequency.setFrequency(StablePOS.INT_ONE);
-						wordFrequency.setWord(strings[StablePOS.INT_ONE]);
+						wordFrequency.I_Frequency(StablePOS.INT_ONE);
+						wordFrequency.I_Word(strings[StablePOS.INT_ONE]);
 						outputList.put(strings[StablePOS.INT_ONE], wordFrequency);
 					}
 					fixWord[StablePOS.INT_ZERO].delete(StablePOS.INT_ZERO, fixWord[StablePOS.INT_ZERO].length());
@@ -512,12 +512,12 @@ public class POS_CE implements POS_C{
 			if (wordsForest.containsKey(strings[StablePOS.INT_ONE])){
 				if (outputList.containsKey(strings[StablePOS.INT_ONE])){
 					WordFrequency wordFrequency= outputList.get(strings[StablePOS.INT_ONE]);
-					wordFrequency.setFrequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
+					wordFrequency.I_Frequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
 					outputList.put(strings[StablePOS.INT_ONE], wordFrequency);
 				} else{
 					WordFrequency wordFrequency = new WordFrequency();
-					wordFrequency.setFrequency(StablePOS.INT_ONE);
-					wordFrequency.setWord(strings[StablePOS.INT_ONE]);
+					wordFrequency.I_Frequency(StablePOS.INT_ONE);
+					wordFrequency.I_Word(strings[StablePOS.INT_ONE]);
 					outputList.put(strings[StablePOS.INT_ONE], wordFrequency);
 				}
 				fixWord[StablePOS.INT_ZERO].delete(StablePOS.INT_ZERO, fixWord[StablePOS.INT_ZERO].length());
@@ -530,12 +530,12 @@ public class POS_CE implements POS_C{
 		if (wordsForest.containsKey(strings[StablePOS.INT_ONE])){
 			if (outputList.containsKey(strings[StablePOS.INT_ONE])){
 				WordFrequency wordFrequency = outputList.get(strings[StablePOS.INT_ONE]);
-				wordFrequency.setFrequency(wordFrequency.getFrequency()+ StablePOS.INT_ONE);
+				wordFrequency.I_Frequency(wordFrequency.getFrequency()+ StablePOS.INT_ONE);
 				outputList.put(strings[StablePOS.INT_ONE], wordFrequency);
 			} else{
 				WordFrequency wordFrequency= new WordFrequency();
-				wordFrequency.setFrequency(StablePOS.INT_ONE);
-				wordFrequency.setWord(strings[StablePOS.INT_ONE]);
+				wordFrequency.I_Frequency(StablePOS.INT_ONE);
+				wordFrequency.I_Word(strings[StablePOS.INT_ONE]);
 				outputList.put(strings[StablePOS.INT_ONE], wordFrequency);
 			}
 			fixWord[StablePOS.INT_ZERO].delete(StablePOS.INT_ZERO, fixWord[StablePOS.INT_ZERO].length());
@@ -571,12 +571,12 @@ public class POS_CE implements POS_C{
 				if (wordsForest.containsKey(strings[StablePOS.INT_ONE])){
 					if (outputList.containsKey(strings[StablePOS.INT_ONE])){
 						WordFrequency wordFrequency= outputList.get(strings[StablePOS.INT_ONE]);
-						wordFrequency.setFrequency(wordFrequency.getFrequency()+ StablePOS.INT_ONE);
+						wordFrequency.I_Frequency(wordFrequency.getFrequency()+ StablePOS.INT_ONE);
 						outputList.put(strings[StablePOS.INT_ONE], wordFrequency);
 					} else{
 						WordFrequency wordFrequency= new WordFrequency();
-						wordFrequency.setFrequency(StablePOS.INT_ONE);
-						wordFrequency.setWord(strings[StablePOS.INT_ONE]);
+						wordFrequency.I_Frequency(StablePOS.INT_ONE);
+						wordFrequency.I_Word(strings[StablePOS.INT_ONE]);
 						outputList.put(strings[StablePOS.INT_ONE], wordFrequency);
 					}
 					fixWord[StablePOS.INT_ZERO].delete(StablePOS.INT_ZERO, fixWord[StablePOS.INT_ZERO].length());
@@ -597,22 +597,22 @@ public class POS_CE implements POS_C{
 		if (StableMaps.fuCi.containsKey(strings[StablePOS.INT_TWO])){
 			if (outputList.containsKey(strings[StablePOS.INT_ZERO])){
 				WordFrequency wordFrequency= outputList.get(strings[StablePOS.INT_ZERO]);
-				wordFrequency.setFrequency(wordFrequency.getFrequency()+ StablePOS.INT_ONE);
+				wordFrequency.I_Frequency(wordFrequency.getFrequency()+ StablePOS.INT_ONE);
 				outputList.put(strings[StablePOS.INT_ZERO], wordFrequency);
 			} else{
 				WordFrequency wordFrequency= new WordFrequency();
-				wordFrequency.setFrequency(StablePOS.INT_ONE);
-				wordFrequency.setWord(strings[StablePOS.INT_ZERO]);
+				wordFrequency.I_Frequency(StablePOS.INT_ONE);
+				wordFrequency.I_Word(strings[StablePOS.INT_ZERO]);
 				outputList.put(strings[StablePOS.INT_ZERO], wordFrequency);
 			}
 			if (outputList.containsKey(strings[StablePOS.INT_TWO])){
 				WordFrequency wordFrequency= outputList.get(strings[StablePOS.INT_TWO]);
-				wordFrequency.setFrequency(wordFrequency.getFrequency()+ StablePOS.INT_ONE);
+				wordFrequency.I_Frequency(wordFrequency.getFrequency()+ StablePOS.INT_ONE);
 				outputList.put(strings[StablePOS.INT_TWO], wordFrequency);
 			} else{
 				WordFrequency wordFrequency= new WordFrequency();
-				wordFrequency.setFrequency(StablePOS.INT_ONE);
-				wordFrequency.setWord(strings[StablePOS.INT_TWO]);
+				wordFrequency.I_Frequency(StablePOS.INT_ONE);
+				wordFrequency.I_Word(strings[StablePOS.INT_TWO]);
 				outputList.put(strings[StablePOS.INT_TWO], wordFrequency);
 			}
 			fixWord[StablePOS.INT_ZERO].delete(StablePOS.INT_ZERO, fixWord[StablePOS.INT_ZERO].length());
@@ -625,12 +625,12 @@ public class POS_CE implements POS_C{
 		countInputStringLength-= StablePOS.INT_THREE;
 		if (outputList.containsKey(strings[StablePOS.INT_ZERO])){
 			WordFrequency wordFrequency = outputList.get(strings[StablePOS.INT_ZERO]);
-			wordFrequency.setFrequency(wordFrequency.getFrequency()+ StablePOS.INT_ONE);
+			wordFrequency.I_Frequency(wordFrequency.getFrequency()+ StablePOS.INT_ONE);
 			outputList.put(strings[StablePOS.INT_ZERO], wordFrequency);
 		} else{
 			WordFrequency wordFrequency= new WordFrequency();
-			wordFrequency.setFrequency(StablePOS.INT_ONE);
-			wordFrequency.setWord(strings[StablePOS.INT_ZERO]);
+			wordFrequency.I_Frequency(StablePOS.INT_ONE);
+			wordFrequency.I_Word(strings[StablePOS.INT_ZERO]);
 			outputList.put(strings[StablePOS.INT_ZERO], wordFrequency);
 		}
 		fixWord[StablePOS.INT_ZERO].delete(StablePOS.INT_ZERO, fixWord[StablePOS.INT_ZERO].length());
@@ -639,12 +639,12 @@ public class POS_CE implements POS_C{
 		if (wordsForest.containsKey(strings[StablePOS.INT_TWO])){
 			if (outputList.containsKey(strings[StablePOS.INT_TWO])){
 				WordFrequency wordFrequency= outputList.get(strings[StablePOS.INT_TWO]);
-				wordFrequency.setFrequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
+				wordFrequency.I_Frequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
 				outputList.put(strings[StablePOS.INT_TWO], wordFrequency);
 			} else{
 				WordFrequency wordFrequency= new WordFrequency();
-				wordFrequency.setFrequency(StablePOS.INT_ONE);
-				wordFrequency.setWord(strings[StablePOS.INT_TWO]);
+				wordFrequency.I_Frequency(StablePOS.INT_ONE);
+				wordFrequency.I_Word(strings[StablePOS.INT_TWO]);
 				outputList.put(strings[StablePOS.INT_TWO], wordFrequency);
 			}
 			fixWord[StablePOS.INT_ZERO].delete(StablePOS.INT_ZERO, fixWord[StablePOS.INT_ZERO].length());

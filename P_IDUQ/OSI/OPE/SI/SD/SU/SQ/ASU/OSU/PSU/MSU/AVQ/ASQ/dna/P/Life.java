@@ -5,7 +5,7 @@ public class Life{
 		return lifeDeque;
 	}
 	
-	public void setLife(ConcurrentLinkedDeque<RST> lifeDeque) {
+	public void I_Life(ConcurrentLinkedDeque<RST> lifeDeque) {
 		this.lifeDeque= lifeDeque;
 	}
 
@@ -31,10 +31,10 @@ public class Life{
 		PdnsFather.add(workFather);
 		PdnsFather.add(helpFather);
 		DNA dnaFather= new DNA();
-		dnaFather.setMaskLineDeque(PdnsFather);
-		dnaFather.setFunctionLineDeque(new CopyLaw().copy(PdnsFather));
-		dnaFather.setMaskLineMap(new CopyLaw().copyMap(dnaFather.getFunctionLineDeque()));
-		dnaFather.setFunctionLineMap(new CopyLaw().copyMap(dnaFather.getMaskLineDeque()));
+		dnaFather.I_MaskLineDeque(PdnsFather);
+		dnaFather.I_FunctionLineDeque(new CopyLaw().copy(PdnsFather));
+		dnaFather.I_MaskLineMap(new CopyLaw().copyMap(dnaFather.getFunctionLineDeque()));
+		dnaFather.I_FunctionLineMap(new CopyLaw().copyMap(dnaFather.getMaskLineDeque()));
 		
 		PDN helpMother= new PDN();
 		PDN loveMother= new PDN();
@@ -56,17 +56,17 @@ public class Life{
 		PdnsMother.add(workMother);
 		PdnsMother.add(helpMother);
 		DNA dnaMother= new DNA();
-		dnaMother.setMaskLineDeque(PdnsMother);
-		dnaMother.setFunctionLineDeque(new CopyLaw().copy(PdnsMother));
-		dnaMother.setMaskLineMap(new CopyLaw().copyMap(dnaMother.getFunctionLineDeque()));
-		dnaMother.setFunctionLineMap(new CopyLaw().copyMap(dnaMother.getMaskLineDeque()));
+		dnaMother.I_MaskLineDeque(PdnsMother);
+		dnaMother.I_FunctionLineDeque(new CopyLaw().copy(PdnsMother));
+		dnaMother.I_MaskLineMap(new CopyLaw().copyMap(dnaMother.getFunctionLineDeque()));
+		dnaMother.I_FunctionLineMap(new CopyLaw().copyMap(dnaMother.getMaskLineDeque()));
 		
 		RST rst= new RST();
-		rst.setFatherDeque(dnaFather);
-		rst.setMotherDeque(dnaMother);
+		rst.I_FatherDeque(dnaFather);
+		rst.I_MotherDeque(dnaMother);
 		ConcurrentLinkedDeque<RST> born= new ConcurrentLinkedDeque<>();
 		born.add(rst);
-		this.setLife(born);
+		this.I_Life(born);
 	}
 
 	public void evolve() {

@@ -18,7 +18,7 @@ public class EmotionInit{
 		return emotionMap;
 	}
 
-	public void setEmotionMap(EmotionMap emotionMap) {
+	public void I_EmotionMap(EmotionMap emotionMap) {
 		this.emotionMap = emotionMap;
 	}
 
@@ -26,7 +26,7 @@ public class EmotionInit{
 		return _A;
 	}
 
-	public void set_A(A _A) {
+	public void I__A(A _A) {
 		this._A = _A;
 	}
 
@@ -34,7 +34,7 @@ public class EmotionInit{
 		return positive;
 	}
 
-	public void setPositive(Map<String, Object> positive) {
+	public void I_Positive(Map<String, Object> positive) {
 		this.positive = positive;
 	}
 
@@ -42,7 +42,7 @@ public class EmotionInit{
 		return negative;
 	}
 
-	public void setNegative(Map<String, Object> negative) {
+	public void I_Negative(Map<String, Object> negative) {
 		this.negative = negative;
 	}
 
@@ -50,7 +50,7 @@ public class EmotionInit{
 		return motivation;
 	}
 
-	public void setMotivation(Map<String, Object> motivation) {
+	public void I_Motivation(Map<String, Object> motivation) {
 		this.motivation = motivation;
 	}
 
@@ -58,7 +58,7 @@ public class EmotionInit{
 		return trending;
 	}
 
-	public void setTrending(Map<String, Object> trending) {
+	public void I_Trending(Map<String, Object> trending) {
 		this.trending = trending;
 	}
 
@@ -66,7 +66,7 @@ public class EmotionInit{
 		return prediction;
 	}
 
-	public void setPrediction(Map<String, Object> prediction) {
+	public void I_Prediction(Map<String, Object> prediction) {
 		this.prediction = prediction;
 	}
 
@@ -74,7 +74,7 @@ public class EmotionInit{
 		return sets;
 	}
 
-	public void setSets(List<String> sets) {
+	public void I_Sets(List<String> sets) {
 		this.sets = sets;
 	}
 
@@ -82,7 +82,7 @@ public class EmotionInit{
 		return rationMap;
 	}
 
-	public void setRationMap(RatioMap rationMap) {
+	public void I_RationMap(RatioMap rationMap) {
 		this.rationMap = rationMap;
 	}
 
@@ -90,7 +90,7 @@ public class EmotionInit{
 		return wordFrequencyMap;
 	}
 
-	public void setWordFrequencyMap(Map<Integer, WordFrequency> wordFrequencyMap) {
+	public void I_WordFrequencyMap(Map<Integer, WordFrequency> wordFrequencyMap) {
 		this.wordFrequencyMap = wordFrequencyMap;
 	}
 
@@ -98,7 +98,7 @@ public class EmotionInit{
 		return emotionSampleMap;
 	}
 
-	public void setEmotionSampleMap(Map<String, EmotionSample> emotionSampleMap) {
+	public void I_EmotionSampleMap(Map<String, EmotionSample> emotionSampleMap) {
 		this.emotionSampleMap = emotionSampleMap;
 	}
 
@@ -106,7 +106,7 @@ public class EmotionInit{
 		return positiveCount;
 	}
 
-	public void setPositiveCount(double positiveCount) {
+	public void I_PositiveCount(double positiveCount) {
 		this.positiveCount = positiveCount;
 	}
 
@@ -114,7 +114,7 @@ public class EmotionInit{
 		return negativeCount;
 	}
 
-	public void setNegativeCount(double negativeCount) {
+	public void I_NegativeCount(double negativeCount) {
 		this.negativeCount = negativeCount;
 	}
 
@@ -122,7 +122,7 @@ public class EmotionInit{
 		return totalCount;
 	}
 
-	public void setTotalCount(double totalCount) {
+	public void I_TotalCount(double totalCount) {
 		this.totalCount = totalCount;
 	}
 

@@ -429,11 +429,11 @@ public class EditPane extends Container implements MouseListener, KeyListener{
 				}
 				if(!readChinese.isAlive()) {
 					readChinese= new ReadChinese(null, _A);
-					readChinese.setPreReadText(text.getText());
+					readChinese.I_PreReadText(text.getText());
 					readChinese.start();
 				}else {
 					readChinese.finish= 0;
-					readChinese.setNullSap();
+					readChinese.I_NullSap();
 					readChinese.stop();
 				}
 //				//get path

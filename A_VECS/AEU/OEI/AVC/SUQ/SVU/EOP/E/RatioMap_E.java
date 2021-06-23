@@ -24,11 +24,11 @@ public class RatioMap_E implements RatioMap{
 					emotionSample = new EmotionSample();
 				}
 				if(positive.containsKey(wordFrequencyMap.get(i).getWord())) {
-					emotionSample.setPositiveCount(wordFrequencyMap.get(i).getFrequency());
+					emotionSample.I_PositiveCount(wordFrequencyMap.get(i).getFrequency());
 				}else if(negative.containsKey(wordFrequencyMap.get(i).getWord())) {
-					emotionSample.setNegativeCount(wordFrequencyMap.get(i).getFrequency());
+					emotionSample.I_NegativeCount(wordFrequencyMap.get(i).getFrequency());
 				}else {
-					emotionSample.setMedCount(wordFrequencyMap.get(i).getFrequency());
+					emotionSample.I_MedCount(wordFrequencyMap.get(i).getFrequency());
 				}
 				output.put(wordFrequencyMap.get(i).getWord(), emotionSample);
 			}
@@ -42,7 +42,7 @@ public class RatioMap_E implements RatioMap{
 		while(Iterator.hasNext()) {
 			String word = Iterator.next();
 			EmotionSample emotionSample = emotionSampleMap.get(word);
-			emotionSample.setMotivationRatio(emotionSample.getEmotionRatio()/sumOfEmotion);
+			emotionSample.I_MotivationRatio(emotionSample.getEmotionRatio()/sumOfEmotion);
 			emotionSampleMap.put(word, emotionSample);
 		}
 
@@ -54,7 +54,7 @@ public class RatioMap_E implements RatioMap{
 		while(Iterator.hasNext()) {
 			String word = Iterator.next();
 			EmotionSample emotionSample = emotionSampleMap.get(word);
-			emotionSample.setCorrelationRatio((emotionSample.getPositiveCount()
+			emotionSample.I_CorrelationRatio((emotionSample.getPositiveCount()
 					+ emotionSample.getNegativeCount() + emotionSample.getMedCount())/sumOfEmotion);
 			emotionSampleMap.put(word, emotionSample);
 		}
@@ -66,7 +66,7 @@ public class RatioMap_E implements RatioMap{
 		while(Iterator.hasNext()) {
 			String word = Iterator.next();
 			EmotionSample emotionSample = emotionSampleMap.get(word);
-			emotionSample.setContinusRatio((emotionSample.getPositiveCount()
+			emotionSample.I_ContinusRatio((emotionSample.getPositiveCount()
 					+ emotionSample.getNegativeCount() + emotionSample.getMedCount()) * emotionRatio);
 			emotionSampleMap.put(word, emotionSample);
 		}
@@ -78,7 +78,7 @@ public class RatioMap_E implements RatioMap{
 		while(Iterator.hasNext()) {
 			String word = Iterator.next();
 			EmotionSample emotionSample = emotionSampleMap.get(word);
-			emotionSample.setTrendsRatio(emotionSample.getEmotionRatio() * emotionSample.getContinusRatio() 
+			emotionSample.I_TrendsRatio(emotionSample.getEmotionRatio() * emotionSample.getContinusRatio() 
 					* emotionSample.getCorrelationRatio());
 			emotionSampleMap.put(word, emotionSample);
 		}
@@ -91,7 +91,7 @@ public class RatioMap_E implements RatioMap{
 		while(Iterator.hasNext()) {
 			String word = Iterator.next();
 			EmotionSample emotionSample = emotionSampleMap.get(word);
-			emotionSample.setPredictionRatio(emotionSample.getMotivationRatio()*emotionSample.getCorrelationRatio());
+			emotionSample.I_PredictionRatio(emotionSample.getMotivationRatio()*emotionSample.getCorrelationRatio());
 			emotionSampleMap.put(word, emotionSample);
 		}
 
@@ -103,7 +103,7 @@ public class RatioMap_E implements RatioMap{
 		while(Iterator.hasNext()) {
 			String word = Iterator.next();
 			EmotionSample emotionSample = emotionSampleMap.get(word);
-			emotionSample.setGuessRatio(emotionSample.getPredictionRatio()*emotionSample.getTrendsRatio());
+			emotionSample.I_GuessRatio(emotionSample.getPredictionRatio()*emotionSample.getTrendsRatio());
 			emotionSampleMap.put(word, emotionSample);
 		}
 	}
@@ -115,9 +115,9 @@ public class RatioMap_E implements RatioMap{
 			String word = Iterator.next();
 			EmotionSample emotionSample = emotionSampleMap.get(word);
 			if(0==emotionSample.getTrendsRatio()) {
-				emotionSample.setSensingRatio(0);
+				emotionSample.I_SensingRatio(0);
 			}else {
-				emotionSample.setSensingRatio(emotionSample.getPredictionRatio()/emotionSample.getTrendsRatio());
+				emotionSample.I_SensingRatio(emotionSample.getPredictionRatio()/emotionSample.getTrendsRatio());
 			}
 			emotionSampleMap.put(word, emotionSample);
 		}
@@ -157,7 +157,7 @@ public class RatioMap_E implements RatioMap{
 			double negRate = emotionSample.getNegativeCount()/negativeCount;
 			double posRate = emotionSample.getPositiveCount()/positiveCount;
 			double medRate = emotionSample.getMedCount()/medCount;
-			emotionSample.setEmotionRatio(negRate + posRate + medRate);
+			emotionSample.I_EmotionRatio(negRate + posRate + medRate);
 			emotionSampleMap.put(word, emotionSample);
 		}
 	}
@@ -182,7 +182,7 @@ public class RatioMap_E implements RatioMap{
 			String word = Iterator.next();
 			EmotionSample emotionSample = emotionSampleMap.get(word);
 			if(motivation.containsKey(word)) {
-				emotionSample.setMotivation(motivation.get(word).toString());
+				emotionSample.I_Motivation(motivation.get(word).toString());
 			}  
 			emotionSampleMap.put(word, emotionSample);
 		}	
@@ -195,7 +195,7 @@ public class RatioMap_E implements RatioMap{
 			String word = Iterator.next();
 			EmotionSample emotionSample = emotionSampleMap.get(word);
 			if(trending.containsKey(word)) {
-				emotionSample.setTrending(trending.get(word).toString());
+				emotionSample.I_Trending(trending.get(word).toString());
 			}  
 			emotionSampleMap.put(word, emotionSample);
 		}		
@@ -208,9 +208,9 @@ public class RatioMap_E implements RatioMap{
 			String word = Iterator.next();
 			EmotionSample emotionSample = emotionSampleMap.get(word);
 			if(prediction.containsKey(emotionSample.getTrending())) {
-				emotionSample.setPrediction(prediction.get(emotionSample.getTrending()).toString());
+				emotionSample.I_Prediction(prediction.get(emotionSample.getTrending()).toString());
 			} else if(prediction.containsKey(emotionSample.getMotivation())) {
-				emotionSample.setPrediction(prediction.get(emotionSample.getMotivation()).toString());
+				emotionSample.I_Prediction(prediction.get(emotionSample.getMotivation()).toString());
 			} 
 			emotionSampleMap.put(word, emotionSample);
 		}	
@@ -223,7 +223,7 @@ public class RatioMap_E implements RatioMap{
 			String word = Iterator.next();
 			EmotionSample emotionSample = emotionSampleMap.get(word);
 			if(distinction.containsKey(word)) {
-				emotionSample.setDistinction(distinction.get(word).toString());
+				emotionSample.I_Distinction(distinction.get(word).toString());
 			}  
 			emotionSampleMap.put(word, emotionSample);
 		}	

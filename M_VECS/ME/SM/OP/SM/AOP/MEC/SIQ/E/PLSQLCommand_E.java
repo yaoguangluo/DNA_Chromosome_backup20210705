@@ -30,13 +30,13 @@ public class PLSQLCommand_E {
 			if(!file.exists()) {
 				file.mkdirs();
 				Cache c = new Cache();
-				c.setValue(dbPath);
+				c.I_Value(dbPath);
 				Cache_M.putCache("DBPath", c);
 			}else if(file.isFile()) {
 				throw new Exception();
 			}else if(file.isDirectory()) {
 				Cache c = new Cache();
-				c.setValue(dbPath);
+				c.I_Value(dbPath);
 				Cache_M.putCache("DBPath", c);
 			}
 		}

@@ -52,11 +52,11 @@ public class FMHMMList_E implements FMHMMList {
 					continue Here;
 				} else {
 					FMHMMNode fHHMMNode = new FMHMMNode();
-					fHHMMNode.setVb(StablePOS.EMPTY_STRING + cInputString.charAt(i));
+					fHHMMNode.I_Vb(StablePOS.EMPTY_STRING + cInputString.charAt(i));
 					if (i + StablePOS.INT_ONE < cInputString.length()) {
 						Map<String, Integer> next = new ConcurrentHashMap<>();
 						next.put(StablePOS.EMPTY_STRING + cInputString.charAt(i + StablePOS.INT_ONE), StablePOS.INT_ONE);
-						fHHMMNode.setNext(next);
+						fHHMMNode.I_Next(next);
 					}
 					linkedHashMap.put(Long.valueOf(cInputString.charAt(i)), fHHMMNode);
 				}
@@ -75,7 +75,7 @@ public class FMHMMList_E implements FMHMMList {
 				concurrentHashMap.put(StablePOS.EMPTY_STRING + cInputString.charAt(i + StablePOS.INT_ONE),
 						StablePOS.INT_ONE);
 			}
-			fFHMMNode.setNext(concurrentHashMap);
+			fFHMMNode.I_Next(concurrentHashMap);
 			linkedHashMap.put(Long.valueOf(cInputString.charAt(i)), fFHMMNode);
 		}
 		return linkedHashMap;
@@ -85,7 +85,7 @@ public class FMHMMList_E implements FMHMMList {
 		if (!fFHMMNode.getNext().containsKey(StablePOS.EMPTY_STRING + cInputString.charAt(i + StablePOS.INT_ONE))) {
 			Map<String, Integer> map = fFHMMNode.getNext();
 			map.put(StablePOS.EMPTY_STRING + cInputString.charAt(i + StablePOS.INT_ONE), StablePOS.INT_ONE);
-			fFHMMNode.setNext(map);
+			fFHMMNode.I_Next(map);
 			linkedHashMap.put(Long.valueOf(cInputString.charAt(i)), fFHMMNode);
 		}
 		return linkedHashMap;

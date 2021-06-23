@@ -4,67 +4,67 @@ public class Usr {
 	public Integer getuAge() {
 		return uAge;
 	}
-	public void setuAge(Integer uAge) {
+	public void I_uAge(Integer uAge) {
 		this.uAge = uAge;
 	}
 	public Integer getuId() {
 		return uId;
 	}
-	public void setuId(Integer uId) {
+	public void I_uId(Integer uId) {
 		this.uId = uId;
 	}
 	public String getuName() {
 		return uName;
 	}
-	public void setuName(String uName) {
+	public void I_uName(String uName) {
 		this.uName = uName;
 	}
 	public String getuSex() {
 		return uSex;
 	}
-	public void setuSex(String uSex) {
+	public void I_uSex(String uSex) {
 		this.uSex = uSex;
 	}
 	public String getuPhone() {
 		return uPhone;
 	}
-	public void setuPhone(String uPhone) {
+	public void I_uPhone(String uPhone) {
 		this.uPhone = uPhone;
 	}
 	public String getuAddress() {
 		return uAddress;
 	}
-	public void setuAddress(String uAddress) {
+	public void I_uAddress(String uAddress) {
 		this.uAddress = uAddress;
 	}
 	public String getuWeChat() {
 		return uWeChat;
 	}
-	public void setuWeChat(String uWeChat) {
+	public void I_uWeChat(String uWeChat) {
 		this.uWeChat = uWeChat;
 	}
 	public String getuClass() {
 		return uClass;
 	}
-	public void setuClass(String uClass) {
+	public void I_uClass(String uClass) {
 		this.uClass = uClass;
 	}
 	public String getuEmail() {
 		return uEmail;
 	}
-	public void setuEmail(String uEmail) {
+	public void I_uEmail(String uEmail) {
 		this.uEmail = uEmail;
 	}
 	public String getuQq() {
 		return uQq;
 	}
-	public void setuQq(String uQq) {
+	public void I_uQq(String uQq) {
 		this.uQq = uQq;
 	}
 	public String getuPassword() {
 		return uPassword;
 	}
-	public void setuPassword(String uPassword) {
+	public void I_uPassword(String uPassword) {
 		this.uPassword = uPassword;
 	}
 	private Integer uAge;

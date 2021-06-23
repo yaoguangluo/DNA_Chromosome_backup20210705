@@ -4,11 +4,11 @@ public class Spec{
 	public ConcurrentHashMap<String, String> getCulumnTypes() {
 		return culumnTypes;
 	}
-	public void setCulumnTypes(ConcurrentHashMap<String, String> culumnTypes) {
+	public void I_CulumnTypes(ConcurrentHashMap<String, String> culumnTypes) {
 		this.culumnTypes = culumnTypes;
 	}
 	///
-	public void setCulumnType(String culumnName, String culumnType) {
+	public void I_CulumnType(String culumnName, String culumnType) {
 		this.culumnTypes.put(culumnName, culumnType);
 	}
 	

@@ -95,8 +95,8 @@ public class CorrectionCoosMap{
 		Iterator<AMV_MVS_VSQ_2D> iterator= inputs.iterator();
 		while(iterator.hasNext()) {
 			AMV_MVS_VSQ_2D position2D= iterator.next();
-			position2D.setX(position2D.getX()+ xRange);
-			position2D.setY(position2D.getY()+ yRange);
+			position2D.I_X(position2D.getX()+ xRange);
+			position2D.I_Y(position2D.getY()+ yRange);
 			output.add(position2D);
 		}
 		return output;
@@ -108,9 +108,9 @@ public class CorrectionCoosMap{
 		Iterator<AMV_MVS_VSQ_3D> iterator= inputs.iterator();
 		while(iterator.hasNext()) {
 			AMV_MVS_VSQ_3D position3D= iterator.next();
-			position3D.setX(position3D.getX()+ xRange);
-			position3D.setY(position3D.getY()+ yRange);
-			position3D.setZ(position3D.getZ()+ zRange);
+			position3D.I_X(position3D.getX()+ xRange);
+			position3D.I_Y(position3D.getY()+ yRange);
+			position3D.I_Z(position3D.getZ()+ zRange);
 			output.add(position3D);
 		}
 		return output;

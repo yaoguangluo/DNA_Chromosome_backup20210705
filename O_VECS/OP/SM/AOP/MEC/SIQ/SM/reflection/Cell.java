@@ -4,7 +4,7 @@ public class Cell{
 		return cellValue;
 	}
 
-	public void setCellValue(Object cellValue) {
+	public void I_CellValue(Object cellValue) {
 		this.cellValue = cellValue;
 	}
 

@@ -5,13 +5,13 @@ public class Ratio{
 	public double getErrorRatio() {
 		return errorRatio;
 	}
-	public void setErrorRatio(double errorRatio) {
+	public void I_ErrorRatio(double errorRatio) {
 		this.errorRatio = errorRatio;
 	}
 	public double getRightRatio() {
 		return rightRatio;
 	}
-	public void setRightRatio(double rightRatio) {
+	public void I_RightRatio(double rightRatio) {
 		this.rightRatio = rightRatio;
 	}
 	private double errorRatio;

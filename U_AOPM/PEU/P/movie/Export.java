@@ -66,7 +66,7 @@ public class Export extends JMFrame implements Runnable {
 		// TODO Auto-generated method stub
 	}
 
-	public void setDefaultCloseOperation(int exitOnClose) {
+	public void I_DefaultCloseOperation(int exitOnClose) {
 		// TODO Auto-generated method stub
 	}
 

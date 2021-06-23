@@ -19,7 +19,7 @@ public class VPCSRequest {
 		return requestIp;
 	}
 
-	public void setRequestIp(String requestIp) {
+	public void I_RequestIp(String requestIp) {
 		this.requestIp = requestIp;
 	}
 
@@ -27,7 +27,7 @@ public class VPCSRequest {
 		return requestName;
 	}
 
-	public void setRequestName(String requestName) {
+	public void I_RequestName(String requestName) {
 		this.requestName = requestName;
 	}
 
@@ -35,7 +35,7 @@ public class VPCSRequest {
 		return requestLink;
 	}
 
-	public void setRequestLink(String requestLink) {
+	public void I_RequestLink(String requestLink) {
 		this.requestLink = requestLink;
 	}
 
@@ -43,7 +43,7 @@ public class VPCSRequest {
 		return requestIpFix;
 	}
 
-	public void setRequestIpFix(String requestIpFix) {
+	public void I_RequestIpFix(String requestIpFix) {
 		this.requestIpFix = requestIpFix;
 	}
 
@@ -51,7 +51,7 @@ public class VPCSRequest {
 		return requestNameFix;
 	}
 
-	public void setRequestNameFix(String requestNameFix) {
+	public void I_RequestNameFix(String requestNameFix) {
 		this.requestNameFix = requestNameFix;
 	}
 
@@ -59,7 +59,7 @@ public class VPCSRequest {
 		return requestLinkFix;
 	}
 
-	public void setRequestLinkFix(String requestLinkFix) {
+	public void I_RequestLinkFix(String requestLinkFix) {
 		this.requestLinkFix = requestLinkFix;
 	}
 
@@ -67,7 +67,7 @@ public class VPCSRequest {
 		return requestValue;
 	}
 
-	public void setRequestValue(Map<String, String> requestValue) {
+	public void I_RequestValue(Map<String, String> requestValue) {
 		this.requestValue = requestValue;
 	}
 
@@ -75,7 +75,7 @@ public class VPCSRequest {
 		return requestIsRest;
 	}
 
-	public void setRequestIsRest(boolean requestIsRest) {
+	public void I_RequestIsRest(boolean requestIsRest) {
 		this.requestIsRest = requestIsRest;
 	}
 
@@ -83,7 +83,7 @@ public class VPCSRequest {
 		return requestForwardType;
 	}
 
-	public void setRequestForwardType(String requestForwardType) {
+	public void I_RequestForwardType(String requestForwardType) {
 		this.requestForwardType = requestForwardType;
 	}
 
@@ -91,7 +91,7 @@ public class VPCSRequest {
 		return requestFilePath;
 	}
 
-	public void setRequestFilePath(String requestFilePath) {
+	public void I_RequestFilePath(String requestFilePath) {
 		this.requestFilePath = requestFilePath;
 	}
 
@@ -99,7 +99,7 @@ public class VPCSRequest {
 		return requestFileCode;
 	}
 
-	public void setRequestFileCode(String requestFileCode) {
+	public void I_RequestFileCode(String requestFileCode) {
 		this.requestFileCode = requestFileCode;
 	}
 }

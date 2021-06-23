@@ -55,7 +55,7 @@ public class U_Rows_E {
 							fw.close();
 							//fix buffer refresh
 							Cell cell = new Cell();
-							cell.setCellValue(null == culumnValue ? "" : culumnValue);
+							cell.I_CellValue(null == culumnValue ? "" : culumnValue);
 							DetaDBBufferCache_M.db.getBase(sets[sets.length - 2])
 							.getTable(sets[sets.length - 1]).getRow("row" + pageIndex).putCell(culumnName, cell);	
 						} catch (IOException e) {
@@ -116,7 +116,7 @@ public class U_Rows_E {
 									fw.close();
 									//fix buffer refresh
 									Cell cell = new Cell();
-									cell.setCellValue(null == culumnValueOfjs ? "" : culumnValueOfjs);
+									cell.I_CellValue(null == culumnValueOfjs ? "" : culumnValueOfjs);
 									DetaDBBufferCache_M.db.getBase(sets[sets.length - 2])
 									.getTable(sets[sets.length - 1]).getRow("row" + i).putCell(culumnNameOfjs, cell);
 								} catch (IOException e) {
@@ -164,7 +164,7 @@ public class U_Rows_E {
 						}
 					}
 					Cell cell = new Cell();
-					cell.setCellValue(culumns[2]);
+					cell.I_CellValue(culumns[2]);
 					Row row = DetaDBBufferCache_M.db.getBase(object.get("baseName").toString())
 							.getTable(object.get("tableName").toString()).getRow(rowIndex);
 					if(mod) {
@@ -183,7 +183,7 @@ public class U_Rows_E {
 			object.put("recordRows", recordRows);
 		}
 		Spec spec = new Spec();
-		spec.setCulumnTypes(new ConcurrentHashMap<String, String>());
+		spec.I_CulumnTypes(new ConcurrentHashMap<String, String>());
 		String objectType = "";
 		List<Map<String, Object>> output = new ArrayList<>();
 		//Ëø¶¨Êý¾Ý¿â
@@ -209,7 +209,7 @@ public class U_Rows_E {
 							objectType = tempString;			
 						}
 						reader.close();
-						spec.setCulumnType(fileList[i], objectType);
+						spec.I_CulumnType(fileList[i], objectType);
 					}
 					List<String[]> conditionValues = (List<String[]>) object.get("condition");
 					Iterator<String[]> iterator = conditionValues.iterator();

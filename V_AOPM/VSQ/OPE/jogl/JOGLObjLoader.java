@@ -45,21 +45,21 @@ public class JOGLObjLoader {
 			return x;
 		}
 		@SuppressWarnings("unused")
-		public void setX(double x) {
+		public void I_X(double x) {
 			this.x = x;
 		}
 		public double getY() {
 			return y;
 		}
 		@SuppressWarnings("unused")
-		public void setY(double y) {
+		public void I_Y(double y) {
 			this.y = y;
 		}
 		public double getZ() {
 			return z;
 		}
 		@SuppressWarnings("unused")
-		public void setZ(double z) {
+		public void I_Z(double z) {
 			this.z = z;
 		}
 	}
@@ -113,7 +113,7 @@ public class JOGLObjLoader {
 			} else if (mtllibm.find()) {
 			} else if (usemtlm.find()) {
 			} else if (om.find()) {
-				mesh.setName(om.group(1));
+				mesh.I_Name(om.group(1));
 			} else if (vm.find()) {
 				vertices.add(new V3(DetaDouble.parseDouble(vm.group(1)), DetaDouble.parseDouble(vm.group(2)), DetaDouble.parseDouble(vm.group(3))));
 			} else if (vnm.find()) {
@@ -229,11 +229,11 @@ public class JOGLObjLoader {
 		JOGLOBJVertex v = new JOGLOBJVertex(vert.getX(), vert.getY(), vert.getZ());
 		if (tcnum != 0){
 			V3 tc = texcoords.get(tcnum);
-			v.setTexCoords(tc.getX(), tc.getY(), tc.getZ());
+			v.I_TexCoords(tc.getX(), tc.getY(), tc.getZ());
 		}
 		if (nnum != 0) {
 			V3 n = normals.get(nnum);
-			v.setNormal(n.getX(), n.getY(), n.getZ());
+			v.I_Normal(n.getX(), n.getY(), n.getZ());
 		}
 		return v;
 	}
