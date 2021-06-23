@@ -3,7 +3,7 @@ package OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.ASU.MPE.procedure.pde;
 //注意: 该 文件对应的是罗瑶光先生 DNA 编码 与 计算的两本  国家软著作 思想的编码 实现. 
 //公安部 与 知识产权委员会 已经备案, 可阅读 相关 著作权 原文  进行逻辑辨别.
 //模拟数据新陈代谢, 先从分离main函数开始,方便以后变成测试函数.
-public class FullDNATokenPDI_XCDX_Test {
+public class FullDNATokenPDITest_XCDX {
 	
 	public static void main(String[] argv) {	
 		FullDNATokenPDI_XCDX pDE_RNA_FullFormular= new FullDNATokenPDI_XCDX();
