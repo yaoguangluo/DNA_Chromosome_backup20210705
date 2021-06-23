@@ -1,7 +1,6 @@
 package ME.APM.VSQ;
 import java.awt.event.ActionEvent;
 
-
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -40,7 +39,8 @@ import OSI.AOP.neo.tts.ReadChinese;
 import OSI.AOP.rest.medicine.RestMedicinePort_E;
 import SVQ.stable.StableAnnotation;
 import OSI.OPE.OEQ.MCQ.OVU.PQE.osgi.OSU_AVQ_ASQ_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI;
-import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.ASU.MPE.procedure.pde.FullDNATokenPDI;
+//import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.ASU.MPE.procedure.pde.FullDNATokenPDI;
+import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.ASU.MPE.procedure.pde.FullDNATokenPDI_XCDX;
 import OSI.VSQ.SSI.ASU.OSU.PSU.MSU.ASU.MPE.AOP.MEC.SIQ.search.ZhongYaoSearch;
 import PEU.P.map.*;
 
@@ -592,18 +592,18 @@ public class App extends JApplet implements MouseListener, KeyListener, ActionLi
 							"culumnValue:ID:"+ table.getValueAt(i, 0).toString().replace(":", "@biky@")+ ";" + 
 							"culumnValue:打分:"+ table.getValueAt(i, 1).toString().replace(":", "@biky@")+ ";" + 
 							"culumnValue:中药名称:"+ table.getValueAt(i, 2).toString().replace(":", "@biky@")+ ";" + 
-							"culumnValue:笔记原文:"+ new FullDNATokenPDI().initonSect(table.getValueAt(i, 3).toString().replace(":", "@biky@"))+ ";" + 
-							"culumnValue:功效:"+ new FullDNATokenPDI().initonSect(table.getValueAt(i, 4).toString().replace(":", "@biky@"))+ ";" + 
-							"culumnValue:风险规避:"+ new FullDNATokenPDI().initonSect(table.getValueAt(i, 5).toString().replace(":", "@biky@"))+ ";" + 
-							"culumnValue:用量:"+ new FullDNATokenPDI().initonSect(table.getValueAt(i, 6).toString().replace(":", "@biky@"))+ ";" + 
-							"culumnValue:性味:"+ new FullDNATokenPDI().initonSect(table.getValueAt(i, 7).toString().replace(":", "@biky@"))+ ";" + 
-							"culumnValue:经脉:"+ new FullDNATokenPDI().initonSect(table.getValueAt(i, 8).toString().replace(":", "@biky@"))+ ";" + 
-							"culumnValue:中医馆药理:"+ new FullDNATokenPDI().initonSect(table.getValueAt(i, 9).toString().replace(":", "@biky@"))+ ";" + 
-							"culumnValue:经解:"+ new FullDNATokenPDI().initonSect(table.getValueAt(i, 10).toString().replace(":", "@biky@"))+ ";" + 
-							"culumnValue:崇源:"+ new FullDNATokenPDI().initonSect(table.getValueAt(i, 11).toString().replace(":", "@biky@"))+ ";" + 
-							"culumnValue:愚按:"+ new FullDNATokenPDI().initonSect(table.getValueAt(i, 12).toString().replace(":", "@biky@"))+ ";" + 
-							"culumnValue:搭配:"+ new FullDNATokenPDI().initonSect(table.getValueAt(i, 13).toString().replace(":", "@biky@"))+ ";" +  
-							"culumnValue:常见药:"+ new FullDNATokenPDI().initonSect(table.getValueAt(i, 14).toString().replace(":", "@biky@"))+ ";";
+							"culumnValue:笔记原文:"+ new FullDNATokenPDI_XCDX().initonSect(table.getValueAt(i, 3).toString().replace(":", "@biky@"))+ ";" + 
+							"culumnValue:功效:"+ new FullDNATokenPDI_XCDX().initonSect(table.getValueAt(i, 4).toString().replace(":", "@biky@"))+ ";" + 
+							"culumnValue:风险规避:"+ new FullDNATokenPDI_XCDX().initonSect(table.getValueAt(i, 5).toString().replace(":", "@biky@"))+ ";" + 
+							"culumnValue:用量:"+ new FullDNATokenPDI_XCDX().initonSect(table.getValueAt(i, 6).toString().replace(":", "@biky@"))+ ";" + 
+							"culumnValue:性味:"+ new FullDNATokenPDI_XCDX().initonSect(table.getValueAt(i, 7).toString().replace(":", "@biky@"))+ ";" + 
+							"culumnValue:经脉:"+ new FullDNATokenPDI_XCDX().initonSect(table.getValueAt(i, 8).toString().replace(":", "@biky@"))+ ";" + 
+							"culumnValue:中医馆药理:"+ new FullDNATokenPDI_XCDX().initonSect(table.getValueAt(i, 9).toString().replace(":", "@biky@"))+ ";" + 
+							"culumnValue:经解:"+ new FullDNATokenPDI_XCDX().initonSect(table.getValueAt(i, 10).toString().replace(":", "@biky@"))+ ";" + 
+							"culumnValue:崇源:"+ new FullDNATokenPDI_XCDX().initonSect(table.getValueAt(i, 11).toString().replace(":", "@biky@"))+ ";" + 
+							"culumnValue:愚按:"+ new FullDNATokenPDI_XCDX().initonSect(table.getValueAt(i, 12).toString().replace(":", "@biky@"))+ ";" + 
+							"culumnValue:搭配:"+ new FullDNATokenPDI_XCDX().initonSect(table.getValueAt(i, 13).toString().replace(":", "@biky@"))+ ";" +  
+							"culumnValue:常见药:"+ new FullDNATokenPDI_XCDX().initonSect(table.getValueAt(i, 14).toString().replace(":", "@biky@"))+ ";";
 					try {
 						ME.SM.OP.SM.AOP.MEC.SIQ.E.E_PLSQL_E.E_PLSQL(plsql, mod);
 					}catch(Exception e1) {
