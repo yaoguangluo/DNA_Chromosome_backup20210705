@@ -5,7 +5,7 @@ import java.util.Map;
 
 //注意: 该 文件对应的是罗瑶光先生 DNA 编码 与 计算的两本  国家软著作 思想的编码 实现. 
 //公安部 与 知识产权委员会 已经备案 , 可阅读 相关 著作权 原文  进行逻辑辨别.  
-public class FullDNATokenPDI {
+public class FullDNATokenPDI_XCDX {
 	public double[] key= new double[4];
 	public String bys= "";
 	public String pdw= "";
@@ -22,7 +22,7 @@ public class FullDNATokenPDI {
 	public String pdeieKey= "";
 	public String pdeisKey= "";
 	
-	public void doKeyPress(String initons, FullDNATokenPDI pDE_RNA_FullFormular, boolean bYS) {	
+	public void doKeyPress(String initons, FullDNATokenPDI_XCDX pDE_RNA_FullFormular, boolean bYS) {	
 		Initon[] initon= new Initon[initons.length()];
 		for(int i= 0; i< initons.length(); i++) {
 			if(initon[i]== null) {
@@ -45,7 +45,7 @@ public class FullDNATokenPDI {
 	public String[] encodeDNA(String humanWord) {
 		String[] string= new String[5];
 		//0e  1s  2 humanword 3 seccode 4dna initons 
-		FullDNATokenPDI pDE_RNA_FullFormular= new FullDNATokenPDI();
+		FullDNATokenPDI_XCDX pDE_RNA_FullFormular= new FullDNATokenPDI_XCDX();
 		pDE_RNA_FullFormular.code= pDE_RNA_FullFormular.initonSect(humanWord);
 		System.out.println(pDE_RNA_FullFormular.code);
 		pDE_RNA_FullFormular.enSecCode(pDE_RNA_FullFormular, false);
@@ -62,8 +62,7 @@ public class FullDNATokenPDI {
 		System.out.println(pDE_RNA_FullFormular.pde);
 		return string;
 	}
-	
-	public void deSecCode(FullDNATokenPDI pDE_RNA_FullFormular, boolean b) {
+	private void deSecCode(FullDNATokenPDI_XCDX pDE_RNA_FullFormular, boolean b) {
 		//
 		String initons= pDE_RNA_FullFormular.code;
 		Initon[] initon= new Initon[initons.length()];
@@ -86,19 +85,19 @@ public class FullDNATokenPDI {
 		}	
 	}
 
-	private void de_PDE_RNA_FullFormularForDB(Initon initon, FullDNATokenPDI pDE_RNA_FullFormular, boolean bYS) {
+	private void de_PDE_RNA_FullFormularForDB(Initon initon, FullDNATokenPDI_XCDX pDE_RNA_FullFormular, boolean bYS) {
 		// TODO Auto-generated method stub
 		Initon InitonPDE= initon; 
 		InitonLinkDNA initonLinkDNA= new InitonLinkDNA();
-		Initon InitonPDE1V= doIncrementV(InitonPDE, initonLinkDNA, pDE_RNA_FullFormular);	
-		Initon InitonPDE1E= doIncrementE(InitonPDE1V, initonLinkDNA, pDE_RNA_FullFormular, bYS);
-		Initon InitonPDE1C= doIncrementC(InitonPDE1E, initonLinkDNA, pDE_RNA_FullFormular);	
-		Initon InitonPDE1S= doIncrementS(InitonPDE1C, initonLinkDNA, pDE_RNA_FullFormular, bYS);
+		Initon InitonPDE1V= new FullDNATokenPDI_XCDX_doIncrement().doIncrementV(InitonPDE, initonLinkDNA, pDE_RNA_FullFormular);	
+		Initon InitonPDE1E= new FullDNATokenPDI_XCDX_doIncrement().doIncrementE(InitonPDE1V, initonLinkDNA, pDE_RNA_FullFormular, bYS);
+		Initon InitonPDE1C= new FullDNATokenPDI_XCDX_doIncrement().doIncrementC(InitonPDE1E, initonLinkDNA, pDE_RNA_FullFormular);	
+		Initon InitonPDE1S= new FullDNATokenPDI_XCDX_doIncrement().doIncrementS(InitonPDE1C, initonLinkDNA, pDE_RNA_FullFormular, bYS);
 		
-//		Initon InitonPDE1A= doIncrementA(InitonPDE1S, initonLinkDNA, pDE_RNA_FullFormular);	
-//		Initon InitonPDE1O= doIncrementO(InitonPDE1A, initonLinkDNA, pDE_RNA_FullFormular);
-//		Initon InitonPDE1P= doIncrementP(InitonPDE1O, initonLinkDNA, pDE_RNA_FullFormular); 
-//		Initon InitonPDE2= doIncrementM(InitonPDE1P, initonLinkDNA, pDE_RNA_FullFormular);
+//		Initon InitonPDE1A= new FullDNATokenPDI_XCDX_doIncrement().doIncrementA(InitonPDE1S, initonLinkDNA, pDE_RNA_FullFormular);	
+//		Initon InitonPDE1O= new FullDNATokenPDI_XCDX_doIncrement().doIncrementO(InitonPDE1A, initonLinkDNA, pDE_RNA_FullFormular);
+//		Initon InitonPDE1P= new FullDNATokenPDI_XCDX_doIncrement().doIncrementP(InitonPDE1O, initonLinkDNA, pDE_RNA_FullFormular); 
+//		Initon InitonPDE2= new FullDNATokenPDI_XCDX_doIncrement().doIncrementM(InitonPDE1P, initonLinkDNA, pDE_RNA_FullFormular);
 		while(InitonPDE1S.hasNext()) { 
 			pDE_RNA_FullFormular.pde+= InitonPDE1S.getStore();
 			InitonPDE1S= InitonPDE1S.next;
@@ -108,15 +107,15 @@ public class FullDNATokenPDI {
 			InitonPDE1S= InitonPDE1S.prev;
 		}
 		
-//		Initon InitonPDEM= doDecrementM(InitonPDE2, initonLinkDNA, pDE_RNA_FullFormular);
-//		Initon InitonPDEP= doDecrementP(InitonPDEM, initonLinkDNA, pDE_RNA_FullFormular);
-//		Initon InitonPDEO= doDecrementO(InitonPDEP, initonLinkDNA, pDE_RNA_FullFormular);
-//		Initon InitonPDEA= doDecrementA(InitonPDEO, initonLinkDNA, pDE_RNA_FullFormular);
+//		Initon InitonPDEM= new FullDNATokenPDI_XCDX_doDecrement().doDecrementM(InitonPDE2, initonLinkDNA, pDE_RNA_FullFormular);
+//		Initon InitonPDEP= new FullDNATokenPDI_XCDX_doDecrement().doDecrementP(InitonPDEM, initonLinkDNA, pDE_RNA_FullFormular);
+//		Initon InitonPDEO= new FullDNATokenPDI_XCDX_doDecrement().doDecrementO(InitonPDEP, initonLinkDNA, pDE_RNA_FullFormular);
+//		Initon InitonPDEA= new FullDNATokenPDI_XCDX_doDecrement().doDecrementA(InitonPDEO, initonLinkDNA, pDE_RNA_FullFormular);
 //
-//		Initon InitonPDES= doDecrementS(InitonPDEA, initonLinkDNA, pDE_RNA_FullFormular, bYS);
-//		Initon InitonPDEC= doDecrementC(InitonPDES, initonLinkDNA, pDE_RNA_FullFormular);	
-//		Initon InitonPDEE= doDecrementE(InitonPDEC, initonLinkDNA, pDE_RNA_FullFormular, bYS);
-//		Initon InitonPDE1= doDecrementV(InitonPDEE, initonLinkDNA, pDE_RNA_FullFormular); 
+//		Initon InitonPDES= new FullDNATokenPDI_XCDX_doDecrement().doDecrementS(InitonPDEA, initonLinkDNA, pDE_RNA_FullFormular, bYS);
+//		Initon InitonPDEC= new FullDNATokenPDI_XCDX_doDecrement().doDecrementC(InitonPDES, initonLinkDNA, pDE_RNA_FullFormular);	
+//		Initon InitonPDEE= new FullDNATokenPDI_XCDX_doDecrement().doDecrementE(InitonPDEC, initonLinkDNA, pDE_RNA_FullFormular, bYS);
+//		Initon InitonPDE1= new FullDNATokenPDI_XCDX_doDecrement().doDecrementV(InitonPDEE, initonLinkDNA, pDE_RNA_FullFormular); 
 //		while(InitonPDE1.hasNext()) { 
 //			pDE_RNA_FullFormular.pds+= InitonPDE1.getStore();
 //			InitonPDE1= InitonPDE1.next;
@@ -129,7 +128,7 @@ public class FullDNATokenPDI {
 		
 	}
 
-	public void enSecCode(FullDNATokenPDI pDE_RNA_FullFormular, boolean bys) {
+	private void enSecCode(FullDNATokenPDI_XCDX pDE_RNA_FullFormular, boolean bys) {
 		String initons= pDE_RNA_FullFormular.code;
 		Initon[] initon= new Initon[initons.length()];
 		for(int i= 0; i< initons.length(); i++) {
@@ -152,7 +151,7 @@ public class FullDNATokenPDI {
 
 	
 //	public static void main(String[] argv) {	
-//		FullDNATokenPDI pDE_RNA_FullFormular= new FullDNATokenPDI();
+//		FullDNATokenPDI_XCDX pDE_RNA_FullFormular= new FullDNATokenPDI_XCDX();
 //		String a= "luoyaoguang";
 //		pDE_RNA_FullFormular.encodeDNA(a);
 //		
@@ -209,7 +208,7 @@ public class FullDNATokenPDI {
 //		System.out.println("开始概率钥匙解析：" + pDE_RNA_FullFormular.pdedeKey+ pDE_RNA_FullFormular.pdedsKey
 //				+ pDE_RNA_FullFormular.pdeieKey+ pDE_RNA_FullFormular.pdeisKey);
 //		
-//		FullDNATokenPDI pDE_RNA_FullFormular1= new FullDNATokenPDI();
+//		FullDNATokenPDI_XCDX pDE_RNA_FullFormular1= new FullDNATokenPDI_XCDX();
 //		pDE_RNA_FullFormular1.pdedeKey= pDE_RNA_FullFormular.pdedeKey.toString();
 //		pDE_RNA_FullFormular1.pdedsKey= pDE_RNA_FullFormular.pdedsKey.toString();
 //		pDE_RNA_FullFormular1.pdeieKey= pDE_RNA_FullFormular.pdeieKey.toString();
@@ -226,7 +225,7 @@ public class FullDNATokenPDI {
 //			
 //		System.out.println("=======================================================================");
 //		System.out.println("开始后序验证：");
-//		FullDNATokenPDI pDE_RNA_FullFormular2= new FullDNATokenPDI();
+//		FullDNATokenPDI_XCDX pDE_RNA_FullFormular2= new FullDNATokenPDI_XCDX();
 //		pDE_RNA_FullFormular2.pdeieKey= pDE_RNA_FullFormular.pdedeKey.toString();
 //		pDE_RNA_FullFormular2.pdeisKey= pDE_RNA_FullFormular.pdedsKey.toString();
 //		pDE_RNA_FullFormular2.pdedeKey= pDE_RNA_FullFormular.pdeieKey.toString();
@@ -241,7 +240,7 @@ public class FullDNATokenPDI {
 //	
 //		System.out.println("=========================================================================");
 //		System.out.println("开始整序验证：");
-//		FullDNATokenPDI pDE_RNA_FullFormular3= new FullDNATokenPDI();
+//		FullDNATokenPDI_XCDX pDE_RNA_FullFormular3= new FullDNATokenPDI_XCDX();
 //
 //		
 //		pDE_RNA_FullFormular3.pdeieKey= pDE_RNA_FullFormular.pdeieKey.toString();
@@ -263,7 +262,7 @@ public class FullDNATokenPDI {
 //		
 //	}
 
-	public void doFullSessionKeyUnPress(String initons, FullDNATokenPDI pDE_RNA_FullFormular3, boolean bYS) {
+	public void doFullSessionKeyUnPress(String initons, FullDNATokenPDI_XCDX pDE_RNA_FullFormular3, boolean bYS) {
 		Initon[] initon= new Initon[initons.length()];
 		for(int i= 0; i< initons.length(); i++) {
 			if(initon[i]== null) {
@@ -281,19 +280,19 @@ public class FullDNATokenPDI {
 		do_PDE_RNA_FullFormular_FullBack(initon[0], pDE_RNA_FullFormular3, bYS);	
 	}
 
-	private void do_PDE_RNA_FullFormular_FullBack(Initon initon, FullDNATokenPDI pDE_RNA_FullFormular3
+	private void do_PDE_RNA_FullFormular_FullBack(Initon initon, FullDNATokenPDI_XCDX pDE_RNA_FullFormular3
 			, boolean bYS) {
 		Initon InitonPDE= initon; 
 		InitonLinkDNA initonLinkDNA= new InitonLinkDNA();
-		Initon InitonPDE1V= doIncrementV(InitonPDE, initonLinkDNA, pDE_RNA_FullFormular3);	
-		Initon InitonPDE1E= doIncrementE(InitonPDE1V, initonLinkDNA, pDE_RNA_FullFormular3, bYS);
-		Initon InitonPDE1C= doIncrementC(InitonPDE1E, initonLinkDNA, pDE_RNA_FullFormular3);	
-		Initon InitonPDE1S= doIncrementS(InitonPDE1C, initonLinkDNA, pDE_RNA_FullFormular3, bYS);
+		Initon InitonPDE1V= new FullDNATokenPDI_XCDX_doIncrement().doIncrementV(InitonPDE, initonLinkDNA, pDE_RNA_FullFormular3);	
+		Initon InitonPDE1E= new FullDNATokenPDI_XCDX_doIncrement().doIncrementE(InitonPDE1V, initonLinkDNA, pDE_RNA_FullFormular3, bYS);
+		Initon InitonPDE1C= new FullDNATokenPDI_XCDX_doIncrement().doIncrementC(InitonPDE1E, initonLinkDNA, pDE_RNA_FullFormular3);	
+		Initon InitonPDE1S= new FullDNATokenPDI_XCDX_doIncrement().doIncrementS(InitonPDE1C, initonLinkDNA, pDE_RNA_FullFormular3, bYS);
 		
-		Initon InitonPDE1A= doIncrementA(InitonPDE1S, initonLinkDNA, pDE_RNA_FullFormular3);	
-		Initon InitonPDE1O= doIncrementO(InitonPDE1A, initonLinkDNA, pDE_RNA_FullFormular3);
-		Initon InitonPDE1P= doIncrementP(InitonPDE1O, initonLinkDNA, pDE_RNA_FullFormular3); 
-		Initon InitonPDE2= doIncrementM(InitonPDE1P, initonLinkDNA, pDE_RNA_FullFormular3);
+		Initon InitonPDE1A= new FullDNATokenPDI_XCDX_doIncrement().doIncrementA(InitonPDE1S, initonLinkDNA, pDE_RNA_FullFormular3);	
+		Initon InitonPDE1O= new FullDNATokenPDI_XCDX_doIncrement().doIncrementO(InitonPDE1A, initonLinkDNA, pDE_RNA_FullFormular3);
+		Initon InitonPDE1P= new FullDNATokenPDI_XCDX_doIncrement().doIncrementP(InitonPDE1O, initonLinkDNA, pDE_RNA_FullFormular3); 
+		Initon InitonPDE2= new FullDNATokenPDI_XCDX_doIncrement().doIncrementM(InitonPDE1P, initonLinkDNA, pDE_RNA_FullFormular3);
 		while(InitonPDE2.hasNext()) { 
 			pDE_RNA_FullFormular3.pde+= InitonPDE2.getStore();
 			InitonPDE2= InitonPDE2.next;
@@ -303,15 +302,15 @@ public class FullDNATokenPDI {
 			InitonPDE2= InitonPDE2.prev;
 		}
 		
-		Initon InitonPDEM= doDecrementM(InitonPDE2, initonLinkDNA, pDE_RNA_FullFormular3);
-		Initon InitonPDEP= doDecrementP(InitonPDEM, initonLinkDNA, pDE_RNA_FullFormular3);
-		Initon InitonPDEO= doDecrementO(InitonPDEP, initonLinkDNA, pDE_RNA_FullFormular3);
-		Initon InitonPDEA= doDecrementA(InitonPDEO, initonLinkDNA, pDE_RNA_FullFormular3);
+		Initon InitonPDEM= new FullDNATokenPDI_XCDX_doDecrement().doDecrementM(InitonPDE2, initonLinkDNA, pDE_RNA_FullFormular3);
+		Initon InitonPDEP= new FullDNATokenPDI_XCDX_doDecrement().doDecrementP(InitonPDEM, initonLinkDNA, pDE_RNA_FullFormular3);
+		Initon InitonPDEO= new FullDNATokenPDI_XCDX_doDecrement().doDecrementO(InitonPDEP, initonLinkDNA, pDE_RNA_FullFormular3);
+		Initon InitonPDEA= new FullDNATokenPDI_XCDX_doDecrement().doDecrementA(InitonPDEO, initonLinkDNA, pDE_RNA_FullFormular3);
 
-		Initon InitonPDES= doDecrementS(InitonPDEA, initonLinkDNA, pDE_RNA_FullFormular3, bYS);
-		Initon InitonPDEC= doDecrementC(InitonPDES, initonLinkDNA, pDE_RNA_FullFormular3);	
-		Initon InitonPDEE= doDecrementE(InitonPDEC, initonLinkDNA, pDE_RNA_FullFormular3, bYS);
-		Initon InitonPDE1= doDecrementV(InitonPDEE, initonLinkDNA, pDE_RNA_FullFormular3); 
+		Initon InitonPDES= new FullDNATokenPDI_XCDX_doDecrement().doDecrementS(InitonPDEA, initonLinkDNA, pDE_RNA_FullFormular3, bYS);
+		Initon InitonPDEC= new FullDNATokenPDI_XCDX_doDecrement().doDecrementC(InitonPDES, initonLinkDNA, pDE_RNA_FullFormular3);	
+		Initon InitonPDEE= new FullDNATokenPDI_XCDX_doDecrement().doDecrementE(InitonPDEC, initonLinkDNA, pDE_RNA_FullFormular3, bYS);
+		Initon InitonPDE1= new FullDNATokenPDI_XCDX_doDecrement().doDecrementV(InitonPDEE, initonLinkDNA, pDE_RNA_FullFormular3); 
 		while(InitonPDE1.hasNext()) { 
 			pDE_RNA_FullFormular3.pds+= InitonPDE1.getStore();
 			InitonPDE1= InitonPDE1.next;
@@ -322,7 +321,7 @@ public class FullDNATokenPDI {
 		}
 	}
 
-	public void doSessionKeyUnPress(String initons, FullDNATokenPDI pDE_RNA_FullFormular2, boolean bYS) {
+	public void doSessionKeyUnPress(String initons, FullDNATokenPDI_XCDX pDE_RNA_FullFormular2, boolean bYS) {
 		Initon[] initon= new Initon[initons.length()];
 		for(int i= 0; i< initons.length(); i++) {
 			if(initon[i]== null) {
@@ -340,19 +339,19 @@ public class FullDNATokenPDI {
 		do_PDE_RNA_FullFormular_Back(initon[0], pDE_RNA_FullFormular2, bYS);
 	}
 
-	private void do_PDE_RNA_FullFormular_Back(Initon initon, FullDNATokenPDI pDE_RNA_FullFormular
+	private void do_PDE_RNA_FullFormular_Back(Initon initon, FullDNATokenPDI_XCDX pDE_RNA_FullFormular
 			, boolean bYS) {
 		Initon InitonPDE= initon; 
 		InitonLinkDNA initonLinkDNA= new InitonLinkDNA();
-		Initon InitonPDEM= doDecrementM(InitonPDE, initonLinkDNA, pDE_RNA_FullFormular);
-		Initon InitonPDEP= doDecrementP(InitonPDEM, initonLinkDNA, pDE_RNA_FullFormular);
-		Initon InitonPDEO= doDecrementO(InitonPDEP, initonLinkDNA, pDE_RNA_FullFormular);
-		Initon InitonPDEA= doDecrementA(InitonPDEO, initonLinkDNA, pDE_RNA_FullFormular);
+		Initon InitonPDEM= new FullDNATokenPDI_XCDX_doDecrement().doDecrementM(InitonPDE, initonLinkDNA, pDE_RNA_FullFormular);
+		Initon InitonPDEP= new FullDNATokenPDI_XCDX_doDecrement().doDecrementP(InitonPDEM, initonLinkDNA, pDE_RNA_FullFormular);
+		Initon InitonPDEO= new FullDNATokenPDI_XCDX_doDecrement().doDecrementO(InitonPDEP, initonLinkDNA, pDE_RNA_FullFormular);
+		Initon InitonPDEA= new FullDNATokenPDI_XCDX_doDecrement().doDecrementA(InitonPDEO, initonLinkDNA, pDE_RNA_FullFormular);
 
-		Initon InitonPDES= doDecrementS(InitonPDEA, initonLinkDNA, pDE_RNA_FullFormular, bYS);
-		Initon InitonPDEC= doDecrementC(InitonPDES, initonLinkDNA, pDE_RNA_FullFormular);	
-		Initon InitonPDEE= doDecrementE(InitonPDEC, initonLinkDNA, pDE_RNA_FullFormular, bYS);
-		Initon InitonPDE1= doDecrementV(InitonPDEE, initonLinkDNA, pDE_RNA_FullFormular); 
+		Initon InitonPDES= new FullDNATokenPDI_XCDX_doDecrement().doDecrementS(InitonPDEA, initonLinkDNA, pDE_RNA_FullFormular, bYS);
+		Initon InitonPDEC= new FullDNATokenPDI_XCDX_doDecrement().doDecrementC(InitonPDES, initonLinkDNA, pDE_RNA_FullFormular);	
+		Initon InitonPDEE= new FullDNATokenPDI_XCDX_doDecrement().doDecrementE(InitonPDEC, initonLinkDNA, pDE_RNA_FullFormular, bYS);
+		Initon InitonPDE1= new FullDNATokenPDI_XCDX_doDecrement().doDecrementV(InitonPDEE, initonLinkDNA, pDE_RNA_FullFormular); 
 		while(InitonPDE1.hasNext()) { 
 			pDE_RNA_FullFormular.pds+= InitonPDE1.getStore();
 			InitonPDE1= InitonPDE1.next;
@@ -361,14 +360,14 @@ public class FullDNATokenPDI {
 		while(InitonPDE1.hasPrev()) {
 			InitonPDE1= InitonPDE1.prev;
 		}
-//		Initon InitonPDE1S= doIncrementS(InitonPDE1, initonLinkDNA, pDE_RNA_FullFormular, bYS);
-//		Initon InitonPDE1C= doIncrementC(InitonPDE1S, initonLinkDNA, pDE_RNA_FullFormular);
-//		Initon InitonPDE1E= doIncrementE(InitonPDE1C, initonLinkDNA, pDE_RNA_FullFormular, bYS);	
-//		Initon InitonPDE1V= doIncrementV(InitonPDE1E, initonLinkDNA, pDE_RNA_FullFormular);
-//		Initon InitonPDE1M= doIncrementM(InitonPDE1V, initonLinkDNA, pDE_RNA_FullFormular);	
-//		Initon InitonPDE1P= doIncrementP(InitonPDE1M, initonLinkDNA, pDE_RNA_FullFormular);
-//		Initon InitonPDE1O= doIncrementO(InitonPDE1P, initonLinkDNA, pDE_RNA_FullFormular); 
-//		Initon InitonPDE2= doIncrementA(InitonPDE1O, initonLinkDNA, pDE_RNA_FullFormular);
+//		Initon InitonPDE1S= new FullDNATokenPDI_XCDX_doIncrement().doIncrementS(InitonPDE1, initonLinkDNA, pDE_RNA_FullFormular, bYS);
+//		Initon InitonPDE1C= new FullDNATokenPDI_XCDX_doIncrement().doIncrementC(InitonPDE1S, initonLinkDNA, pDE_RNA_FullFormular);
+//		Initon InitonPDE1E= new FullDNATokenPDI_XCDX_doIncrement().doIncrementE(InitonPDE1C, initonLinkDNA, pDE_RNA_FullFormular, bYS);	
+//		Initon InitonPDE1V= new FullDNATokenPDI_XCDX_doIncrement().doIncrementV(InitonPDE1E, initonLinkDNA, pDE_RNA_FullFormular);
+//		Initon InitonPDE1M= new FullDNATokenPDI_XCDX_doIncrement().doIncrementM(InitonPDE1V, initonLinkDNA, pDE_RNA_FullFormular);	
+//		Initon InitonPDE1P= new FullDNATokenPDI_XCDX_doIncrement().doIncrementP(InitonPDE1M, initonLinkDNA, pDE_RNA_FullFormular);
+//		Initon InitonPDE1O= new FullDNATokenPDI_XCDX_doIncrement().doIncrementO(InitonPDE1P, initonLinkDNA, pDE_RNA_FullFormular); 
+//		Initon InitonPDE2= new FullDNATokenPDI_XCDX_doIncrement().doIncrementA(InitonPDE1O, initonLinkDNA, pDE_RNA_FullFormular);
 //		while(InitonPDE2.hasNext()) { 
 //			pDE_RNA_FullFormular.pde+= InitonPDE2.getStore();
 //			InitonPDE2= InitonPDE2.next;
@@ -379,7 +378,7 @@ public class FullDNATokenPDI {
 //		}
 	}
 
-	public void doKeyUnPress(String initons, FullDNATokenPDI pDE_RNA_FullFormular, boolean bYS) {
+	public void doKeyUnPress(String initons, FullDNATokenPDI_XCDX pDE_RNA_FullFormular, boolean bYS) {
 		Initon[] initon= new Initon[initons.length()];
 		for(int i= 0; i< initons.length(); i++) {
 			if(initon[i]== null) {
@@ -397,18 +396,18 @@ public class FullDNATokenPDI {
 		do_PDE_RNA_FullFormular(initon[0], pDE_RNA_FullFormular, bYS);
 	}
 
-	private void do_PDE_RNA_FullFormularForDB(Initon initon, FullDNATokenPDI pDE_RNA_FullFormular, boolean bYS) {
+	private void do_PDE_RNA_FullFormularForDB(Initon initon, FullDNATokenPDI_XCDX pDE_RNA_FullFormular, boolean bYS) {
 		// TODO Auto-generated method stub
 		Initon InitonPDE= initon; 
 		InitonLinkDNA initonLinkDNA= new InitonLinkDNA();
-		Initon InitonPDE1V= doDecrementV(InitonPDE, initonLinkDNA, pDE_RNA_FullFormular);
-		Initon InitonPDE1E= doDecrementE(InitonPDE1V, initonLinkDNA, pDE_RNA_FullFormular, bYS);
-		Initon InitonPDE1C= doDecrementC(InitonPDE1E, initonLinkDNA, pDE_RNA_FullFormular);		
-		Initon InitonPDE1S= doDecrementS(InitonPDE1C, initonLinkDNA, pDE_RNA_FullFormular, bYS);
-//		Initon InitonPDE1A= doIncrementA(InitonPDE1S, initonLinkDNA, pDE_RNA_FullFormular);	
-//		Initon InitonPDE1O= doIncrementO(InitonPDE1A, initonLinkDNA, pDE_RNA_FullFormular);
-//		Initon InitonPDE1P= doIncrementP(InitonPDE1O, initonLinkDNA, pDE_RNA_FullFormular); 
-//		Initon InitonPDE2= doIncrementM(InitonPDE1P, initonLinkDNA, pDE_RNA_FullFormular);
+		Initon InitonPDE1V= new FullDNATokenPDI_XCDX_doDecrement().doDecrementV(InitonPDE, initonLinkDNA, pDE_RNA_FullFormular);
+		Initon InitonPDE1E= new FullDNATokenPDI_XCDX_doDecrement().doDecrementE(InitonPDE1V, initonLinkDNA, pDE_RNA_FullFormular, bYS);
+		Initon InitonPDE1C= new FullDNATokenPDI_XCDX_doDecrement().doDecrementC(InitonPDE1E, initonLinkDNA, pDE_RNA_FullFormular);		
+		Initon InitonPDE1S= new FullDNATokenPDI_XCDX_doDecrement().doDecrementS(InitonPDE1C, initonLinkDNA, pDE_RNA_FullFormular, bYS);
+//		Initon InitonPDE1A= new FullDNATokenPDI_XCDX_doIncrement().doIncrementA(InitonPDE1S, initonLinkDNA, pDE_RNA_FullFormular);	
+//		Initon InitonPDE1O= new FullDNATokenPDI_XCDX_doIncrement().doIncrementO(InitonPDE1A, initonLinkDNA, pDE_RNA_FullFormular);
+//		Initon InitonPDE1P= new FullDNATokenPDI_XCDX_doIncrement().doIncrementP(InitonPDE1O, initonLinkDNA, pDE_RNA_FullFormular); 
+//		Initon InitonPDE2= new FullDNATokenPDI_XCDX_doIncrement().doIncrementM(InitonPDE1P, initonLinkDNA, pDE_RNA_FullFormular);
 		while(InitonPDE1S.hasNext()) { 
 			pDE_RNA_FullFormular.pde+= InitonPDE1S.getStore();
 			InitonPDE1S= InitonPDE1S.next;
@@ -419,19 +418,19 @@ public class FullDNATokenPDI {
 		}
 	}
 
-	public void do_PDE_RNA_FullFormular(Initon initon, FullDNATokenPDI pDE_RNA_FullFormular
+	public void do_PDE_RNA_FullFormular(Initon initon, FullDNATokenPDI_XCDX pDE_RNA_FullFormular
 			, boolean bYS) {	
 		Initon InitonPDE= initon; 
 		InitonLinkDNA initonLinkDNA= new InitonLinkDNA();
 		//a->b
-		Initon InitonPDEA= doDecrementA(InitonPDE, initonLinkDNA, pDE_RNA_FullFormular);
-		Initon InitonPDEO= doDecrementO(InitonPDEA, initonLinkDNA, pDE_RNA_FullFormular);	
-		Initon InitonPDEP= doDecrementP(InitonPDEO, initonLinkDNA, pDE_RNA_FullFormular);
-		Initon InitonPDEM= doDecrementM(InitonPDEP, initonLinkDNA, pDE_RNA_FullFormular); 
-		Initon InitonPDEV= doDecrementV(InitonPDEM, initonLinkDNA, pDE_RNA_FullFormular);
-		Initon InitonPDEE= doDecrementE(InitonPDEV, initonLinkDNA, pDE_RNA_FullFormular, bYS);
-		Initon InitonPDEC= doDecrementC(InitonPDEE, initonLinkDNA, pDE_RNA_FullFormular);
-		Initon InitonPDE1= doDecrementS(InitonPDEC, initonLinkDNA, pDE_RNA_FullFormular, bYS);
+		Initon InitonPDEA= new FullDNATokenPDI_XCDX_doDecrement().doDecrementA(InitonPDE, initonLinkDNA, pDE_RNA_FullFormular);
+		Initon InitonPDEO= new FullDNATokenPDI_XCDX_doDecrement().doDecrementO(InitonPDEA, initonLinkDNA, pDE_RNA_FullFormular);	
+		Initon InitonPDEP= new FullDNATokenPDI_XCDX_doDecrement().doDecrementP(InitonPDEO, initonLinkDNA, pDE_RNA_FullFormular);
+		Initon InitonPDEM= new FullDNATokenPDI_XCDX_doDecrement().doDecrementM(InitonPDEP, initonLinkDNA, pDE_RNA_FullFormular); 
+		Initon InitonPDEV= new FullDNATokenPDI_XCDX_doDecrement().doDecrementV(InitonPDEM, initonLinkDNA, pDE_RNA_FullFormular);
+		Initon InitonPDEE= new FullDNATokenPDI_XCDX_doDecrement().doDecrementE(InitonPDEV, initonLinkDNA, pDE_RNA_FullFormular, bYS);
+		Initon InitonPDEC= new FullDNATokenPDI_XCDX_doDecrement().doDecrementC(InitonPDEE, initonLinkDNA, pDE_RNA_FullFormular);
+		Initon InitonPDE1= new FullDNATokenPDI_XCDX_doDecrement().doDecrementS(InitonPDEC, initonLinkDNA, pDE_RNA_FullFormular, bYS);
 		while(InitonPDE1.hasNext()) { 
 			pDE_RNA_FullFormular.pds+= InitonPDE1.getStore();
 			InitonPDE1= InitonPDE1.next;
@@ -441,14 +440,14 @@ public class FullDNATokenPDI {
 			InitonPDE1= InitonPDE1.prev;
 		}
 		//b->c
-		Initon InitonPDE1V= doIncrementV(InitonPDE1, initonLinkDNA, pDE_RNA_FullFormular);
-		Initon InitonPDE1E= doIncrementE(InitonPDE1V, initonLinkDNA, pDE_RNA_FullFormular, bYS);
-		Initon InitonPDE1C= doIncrementC(InitonPDE1E, initonLinkDNA, pDE_RNA_FullFormular);		
-		Initon InitonPDE1S= doIncrementS(InitonPDE1C, initonLinkDNA, pDE_RNA_FullFormular, bYS);
-		Initon InitonPDE1A= doIncrementA(InitonPDE1S, initonLinkDNA, pDE_RNA_FullFormular);	
-		Initon InitonPDE1O= doIncrementO(InitonPDE1A, initonLinkDNA, pDE_RNA_FullFormular);
-		Initon InitonPDE1P= doIncrementP(InitonPDE1O, initonLinkDNA, pDE_RNA_FullFormular); 
-		Initon InitonPDE2= doIncrementM(InitonPDE1P, initonLinkDNA, pDE_RNA_FullFormular);
+		Initon InitonPDE1V= new FullDNATokenPDI_XCDX_doIncrement().doIncrementV(InitonPDE1, initonLinkDNA, pDE_RNA_FullFormular);
+		Initon InitonPDE1E= new FullDNATokenPDI_XCDX_doIncrement().doIncrementE(InitonPDE1V, initonLinkDNA, pDE_RNA_FullFormular, bYS);
+		Initon InitonPDE1C= new FullDNATokenPDI_XCDX_doIncrement().doIncrementC(InitonPDE1E, initonLinkDNA, pDE_RNA_FullFormular);		
+		Initon InitonPDE1S= new FullDNATokenPDI_XCDX_doIncrement().doIncrementS(InitonPDE1C, initonLinkDNA, pDE_RNA_FullFormular, bYS);
+		Initon InitonPDE1A= new FullDNATokenPDI_XCDX_doIncrement().doIncrementA(InitonPDE1S, initonLinkDNA, pDE_RNA_FullFormular);	
+		Initon InitonPDE1O= new FullDNATokenPDI_XCDX_doIncrement().doIncrementO(InitonPDE1A, initonLinkDNA, pDE_RNA_FullFormular);
+		Initon InitonPDE1P= new FullDNATokenPDI_XCDX_doIncrement().doIncrementP(InitonPDE1O, initonLinkDNA, pDE_RNA_FullFormular); 
+		Initon InitonPDE2= new FullDNATokenPDI_XCDX_doIncrement().doIncrementM(InitonPDE1P, initonLinkDNA, pDE_RNA_FullFormular);
 		while(InitonPDE2.hasNext()) { 
 			pDE_RNA_FullFormular.pde+= InitonPDE2.getStore();
 			InitonPDE2= InitonPDE2.next;
@@ -462,7 +461,7 @@ public class FullDNATokenPDI {
 /////INITONS SWAP	
 	
 	public Initon doIncrementA(Initon InitonPDE, InitonLinkDNA initonLinkDNA
-			, FullDNATokenPDI pDE_RNA_FullFormular) {
+			, FullDNATokenPDI_XCDX pDE_RNA_FullFormular) {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
 		}
@@ -483,7 +482,7 @@ public class FullDNATokenPDI {
 		return InitonPDE;
 	}
 	public Initon doIncrementO(Initon InitonPDE, InitonLinkDNA initonLinkDNA
-			, FullDNATokenPDI pDE_RNA_FullFormular) {
+			, FullDNATokenPDI_XCDX pDE_RNA_FullFormular) {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
 		}
@@ -504,7 +503,7 @@ public class FullDNATokenPDI {
 		return InitonPDE;
 	}
 	public Initon doIncrementP(Initon InitonPDE, InitonLinkDNA initonLinkDNA
-			, FullDNATokenPDI pDE_RNA_FullFormular) {
+			, FullDNATokenPDI_XCDX pDE_RNA_FullFormular) {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
 		}
@@ -525,7 +524,7 @@ public class FullDNATokenPDI {
 		return InitonPDE;
 	}
 	public Initon doIncrementM(Initon InitonPDE, InitonLinkDNA initonLinkDNA
-			, FullDNATokenPDI pDE_RNA_FullFormular) {
+			, FullDNATokenPDI_XCDX pDE_RNA_FullFormular) {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
 		}
@@ -546,7 +545,7 @@ public class FullDNATokenPDI {
 		return InitonPDE;
 	}
 	public Initon doIncrementV(Initon InitonPDE, InitonLinkDNA initonLinkDNA
-			, FullDNATokenPDI pDE_RNA_FullFormular) {
+			, FullDNATokenPDI_XCDX pDE_RNA_FullFormular) {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
 		}
@@ -567,7 +566,7 @@ public class FullDNATokenPDI {
 		return InitonPDE;
 	}
 	public Initon doIncrementC(Initon InitonPDE, InitonLinkDNA initonLinkDNA
-			, FullDNATokenPDI pDE_RNA_FullFormular) {
+			, FullDNATokenPDI_XCDX pDE_RNA_FullFormular) {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
 		}
@@ -588,12 +587,12 @@ public class FullDNATokenPDI {
 		return InitonPDE;
 	}
 	public Initon doIncrementE(Initon InitonPDE, InitonLinkDNA initonLinkDNA
-			, FullDNATokenPDI pDE_RNA_FullFormular, boolean bYS) {
+			, FullDNATokenPDI_XCDX pDE_RNA_FullFormular, boolean bYS) {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
 		}
 		initonLinkDNA.setInitonLink(InitonPDE);
-		InitonPDE= new PDE_Increment_FullDNAFormular().PDE_IncrementE_DU(initonLinkDNA
+		InitonPDE= new PDE_Increment_FullDNAFormular_XCDX().PDE_IncrementE_DU(initonLinkDNA
 				, pDE_RNA_FullFormular, bYS);
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
@@ -610,12 +609,12 @@ public class FullDNATokenPDI {
 		return InitonPDE;
 	}
 	public Initon doIncrementS(Initon InitonPDE, InitonLinkDNA initonLinkDNA
-			, FullDNATokenPDI pDE_RNA_FullFormular, boolean bYS) {
+			, FullDNATokenPDI_XCDX pDE_RNA_FullFormular, boolean bYS) {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
 		}
 		initonLinkDNA.setInitonLink(InitonPDE);
-		InitonPDE= new PDE_Increment_FullDNAFormular().PDE_IncrementS_IQ(initonLinkDNA
+		InitonPDE= new PDE_Increment_FullDNAFormular_XCDX().PDE_IncrementS_IQ(initonLinkDNA
 				, pDE_RNA_FullFormular);
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
@@ -633,7 +632,7 @@ public class FullDNATokenPDI {
 	}
 	
 	public Initon doDecrementA(Initon InitonPDE, InitonLinkDNA initonLinkDNA
-			, FullDNATokenPDI pDE_RNA_FullFormular) {
+			, FullDNATokenPDI_XCDX pDE_RNA_FullFormular) {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
 		}
@@ -655,7 +654,7 @@ public class FullDNATokenPDI {
 	}
 	
 	public Initon doDecrementO(Initon InitonPDE, InitonLinkDNA initonLinkDNA
-			, FullDNATokenPDI pDE_RNA_FullFormular) {
+			, FullDNATokenPDI_XCDX pDE_RNA_FullFormular) {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
 		}
@@ -676,7 +675,7 @@ public class FullDNATokenPDI {
 		return InitonPDE;
 	}
 	public Initon doDecrementP(Initon InitonPDE, InitonLinkDNA initonLinkDNA
-			, FullDNATokenPDI pDE_RNA_FullFormular) {
+			, FullDNATokenPDI_XCDX pDE_RNA_FullFormular) {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
 		}
@@ -697,7 +696,7 @@ public class FullDNATokenPDI {
 		return InitonPDE;
 	}
 	public Initon doDecrementM(Initon InitonPDE, InitonLinkDNA initonLinkDNA
-			, FullDNATokenPDI pDE_RNA_FullFormular) {
+			, FullDNATokenPDI_XCDX pDE_RNA_FullFormular) {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
 		}
@@ -718,7 +717,7 @@ public class FullDNATokenPDI {
 		return InitonPDE;
 	}
 	public Initon doDecrementV(Initon InitonPDE, InitonLinkDNA initonLinkDNA
-			, FullDNATokenPDI pDE_RNA_FullFormular) {
+			, FullDNATokenPDI_XCDX pDE_RNA_FullFormular) {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
 		}
@@ -739,7 +738,7 @@ public class FullDNATokenPDI {
 		return InitonPDE;
 	}
 	public Initon doDecrementC(Initon InitonPDE, InitonLinkDNA initonLinkDNA
-			, FullDNATokenPDI pDE_RNA_FullFormular) {
+			, FullDNATokenPDI_XCDX pDE_RNA_FullFormular) {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
 		}
@@ -760,12 +759,12 @@ public class FullDNATokenPDI {
 		return InitonPDE;
 	}
 	public Initon doDecrementE(Initon InitonPDE, InitonLinkDNA initonLinkDNA
-			, FullDNATokenPDI pDE_RNA_FullFormular, boolean bYS) {
+			, FullDNATokenPDI_XCDX pDE_RNA_FullFormular, boolean bYS) {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
 		}
 		initonLinkDNA.setInitonLink(InitonPDE);
-		InitonPDE= new PDE_Decrement_FullDNAFormular().PDE_DecrementE_DU(initonLinkDNA
+		InitonPDE= new PDE_Decrement_FullDNAFormular_XCDX().PDE_DecrementE_DU(initonLinkDNA
 				, pDE_RNA_FullFormular, bYS);
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
@@ -782,12 +781,12 @@ public class FullDNATokenPDI {
 		return InitonPDE;
 	}
 	public Initon doDecrementS(Initon InitonPDE, InitonLinkDNA initonLinkDNA
-			, FullDNATokenPDI pDE_RNA_FullFormular, boolean bYS) {
+			, FullDNATokenPDI_XCDX pDE_RNA_FullFormular, boolean bYS) {
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
 		}
 		initonLinkDNA.setInitonLink(InitonPDE);
-		InitonPDE= new PDE_Decrement_FullDNAFormular().PDE_DecrementS_IQ(initonLinkDNA
+		InitonPDE= new PDE_Decrement_FullDNAFormular_XCDX().PDE_DecrementS_IQ(initonLinkDNA
 				, pDE_RNA_FullFormular, bYS);
 		while(InitonPDE.hasPrev()) {
 			InitonPDE= InitonPDE.prev;
