@@ -15,7 +15,7 @@ public class BreadthRun extends Thread{
 	@Override
 	public void run(){
 		result=false;
-		check(temp1);
+		Q_(temp1);
 		while(head!=null){
 			pop();
 		}
@@ -90,7 +90,7 @@ public class BreadthRun extends Thread{
 		head=head.next;
 		vv=null;
 	}
-	private void check(Leaf temp) {
+	private void Q_(Leaf temp) {
 		// TODO Auto-generated method stub
 		if(temp!=null){
 			if(temp.sort==0){

@@ -25,7 +25,7 @@ public class TransactionDelegate {
 		Token token = TokenUtil.getNewTokenFromUsrAndUsrToken(usr, usrToken);
 		String json = new Gson().toJson(token);
 		String jsonToken = StringUtil.encode(json);
-		LoginService_E.updateUsrTokenByUId(usr.getuId(), token.getuKey()
+		LoginService_E.U_UsrTokenByUId(usr.getuId(), token.getuKey()
 				, password, token.getuTime()/1000);
 		Map<String, Object> out = new HashMap<>();
 		out.put("userToken", jsonToken);

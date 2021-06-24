@@ -199,7 +199,7 @@ public class GUISample extends JApplet implements MouseMotionListener
 					rightBotJTextPane.validate();
 					return;
 				}
-				SaveAnd_U_File.update(fileCurrentpath, first.first);
+				SaveAnd_U_File.U_(fileCurrentpath, first.first);
 			}
 		});
 		
@@ -328,7 +328,7 @@ public class GUISample extends JApplet implements MouseMotionListener
 						nodeView.first= nodeView.link.addNode(nodeView.first
 								, OSU_AVQ_ASQ_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI);
 					}	
-				nodeView.updateTree();
+				nodeView.U_Tree();
 				getContentPane().validate();	
 			}
 		});
@@ -928,7 +928,7 @@ public class GUISample extends JApplet implements MouseMotionListener
 					rightBotJTextPane.validate();
 					return;
 				}
-				SaveAnd_U_File.update(fileCurrentpath, first.first);
+				SaveAnd_U_File.U_(fileCurrentpath, first.first);
 			}
 		});
 		buttonBox.add(updateButton);
@@ -1086,7 +1086,7 @@ public class GUISample extends JApplet implements MouseMotionListener
 					nodeView.first= nodeView.link.addNode(nodeView.first
 							, OSU_AVQ_ASQ_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI);
 				}	
-				nodeView.updateTree();
+				nodeView.U_Tree();
 				getContentPane().validate();	
 			}
 		});
@@ -1210,7 +1210,7 @@ public class GUISample extends JApplet implements MouseMotionListener
 					linkNode= linkNode.pre;	
 				}	
 				nodeView.first= linkNode;
-				nodeView.updateTree();
+				nodeView.U_Tree();
 				rightBotJTextPane.setText("–∂‘ÿ≥…π¶!");
 				rightBotJTextPane.validate();
 			}

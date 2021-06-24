@@ -25,9 +25,9 @@ public class LoginService_E {
 		return usrToken;
 	}
 
-	public static void updateUsrTokenByUId(Integer uId, String key
+	public static void U_UsrTokenByUId(Integer uId, String key
 			, String uPassword, long uTime) throws IOException {
-		LoginDAO_E.updateUsrTokenByUId(uId, key, uPassword, uTime);
+		LoginDAO_E.U_UsrTokenByUId(uId, key, uPassword, uTime);
 	}
 
 	public static void insertRowByTablePath(String baseName, String tableName

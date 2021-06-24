@@ -15,11 +15,11 @@ public class DepthRun extends Thread{
 	@Override
 	public void run(){
 		result=false;
-		check(temp1);			
+		Q_(temp1);			
 		end=true;	
 	}
 
-	private void check(Leaf temp) {
+	private void Q_(Leaf temp) {
 		if(temp!=null){
 			if(temp.sort==0){
 				if(temp.hasO1==1){
@@ -67,21 +67,21 @@ public class DepthRun extends Thread{
 				}
 				temp.sort=1;
 				if(temp.O1!=null&&temp.O1.sort==0)
-					check(temp.O1);	
+					Q_(temp.O1);	
 				if(temp.O2!=null&&temp.O2.sort==0)
-					check(temp.O2);
+					Q_(temp.O2);
 				if(temp.O3!=null&&temp.O3.sort==0)
-					check(temp.O3);
+					Q_(temp.O3);
 				if(temp.O4!=null&&temp.O4.sort==0)
-					check(temp.O4);
+					Q_(temp.O4);
 				if(temp.O5!=null&&temp.O5.sort==0)
-					check(temp.O5);
+					Q_(temp.O5);
 				if(temp.O6!=null&&temp.O6.sort==0)
-					check(temp.O6);	
+					Q_(temp.O6);	
 				if(temp.O7!=null&&temp.O7.sort==0)
-					check(temp.O7);
+					Q_(temp.O7);
 				if(temp.O8!=null&&temp.O8.sort==0)
-					check(temp.O8);
+					Q_(temp.O8);
 			}
 		}
 	}

@@ -91,7 +91,7 @@ public class LoginDAO_E {
 		return usr;
 	}
 
-	public static void updateUsrByUId(Integer uId, String uName, String uAge
+	public static void U_UsrByUId(Integer uId, String uName, String uAge
 			, String uSex, String uPhone, String uAddress,
 			String uWeChat, String uClass, String uEmail, String uQq) throws IOException {
 		JSONObject jobj = new JSONObject();
@@ -111,7 +111,7 @@ public class LoginDAO_E {
 		// TODO Auto-generated method stub
 	}
 
-	public static void updateUsrTokenByUId(Integer uId, String uKey, String uPassword
+	public static void U_UsrTokenByUId(Integer uId, String uKey, String uPassword
 			, long uTime) throws IOException {
 		JSONObject jobj = new JSONObject();
 		jobj.put("u_id", uId);

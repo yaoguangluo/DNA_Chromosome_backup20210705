@@ -46,10 +46,10 @@ public class NodeShow extends JScrollPane {
 		link= new LinkOSGI();
 		first= new OSI_OSU_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI_register(this.tableData_old, this.text, this.u
 				, this._A, this.pos).Rigester(first, link);
-		updateTree();
+		U_Tree();
 	}
 	
-	public void updateTree() {
+	public void U_Tree() {
 		DefaultMutableTreeNode root= new DefaultMutableTreeNode("Node");
 		treeModel= new DefaultTreeModel(root);
 		if(null== tree) {

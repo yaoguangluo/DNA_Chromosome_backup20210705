@@ -17,7 +17,7 @@ public class TTreeSort{
 			heap=root;
 			addleaf(a[i]);
 		}
-		check(root);
+		Q_(root);
 		return a1;
 	}
 
@@ -37,21 +37,21 @@ public class TTreeSort{
 		return root;
 	}
 	
-	private void check(Leaf temp) {
+	private void Q_(Leaf temp) {
 		// TODO Auto-generated method stub
 		if(temp!=null){
-			check(temp.O1);
+			Q_(temp.O1);
 			if(temp.hasO1==1){
 				a1[c]=temp.value[0];
 				c+=1;
 			}
-			check(temp.O2);
+			Q_(temp.O2);
 			if(temp.hasO2==1)
 			{
 				a1[c]=temp.value[1];
 				c+=1;
 			}
-			check(temp.O3);
+			Q_(temp.O3);
 		}	
 	}
 	

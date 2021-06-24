@@ -17,7 +17,7 @@ public class OTreeSort{
 			heap=root;
 			addleaf(a[i]);
 		}
-		check(root);
+		Q_(root);
 		return a1;
 	}
 
@@ -37,45 +37,45 @@ public class OTreeSort{
 		return root;
 	}
 
-	private void check(Leaf temp) {
+	private void Q_(Leaf temp) {
 		// TODO Auto-generated method stub
 		if(temp!=null){
-			check(temp.O1);	
+			Q_(temp.O1);	
 			if(temp.hasO1==1){
 				a1[c]=temp.value[0];
 				c+=1;
 			}
-			check(temp.O2);
+			Q_(temp.O2);
 			if(temp.hasO2==1){
 				a1[c]=temp.value[1];
 				c+=1;
 			}
-			check(temp.O3);
+			Q_(temp.O3);
 			if(temp.hasO3==1){
 				a1[c]=temp.value[2];
 				c+=1;
 			}
-			check(temp.O4);
+			Q_(temp.O4);
 			if(temp.hasO4==1){
 				a1[c]=temp.value[3];
 				c+=1;
 			}
-			check(temp.O5);
+			Q_(temp.O5);
 			if(temp.hasO5==1){
 				a1[c]=temp.value[4];
 				c+=1;
 			}
-			check(temp.O6);
+			Q_(temp.O6);
 			if(temp.hasO6==1){
 				a1[c]=temp.value[5];
 				c+=1;
 			}
-			check(temp.O7);
+			Q_(temp.O7);
 			if(temp.hasO7==1){
 				a1[c]=temp.value[6];
 				c+=1;
 			}
-			check(temp.O8);
+			Q_(temp.O8);
 		}	
 	}
 	

@@ -19,16 +19,16 @@ public class BTreeSort
 			addleaf(a[i]);
 		}
 		heap=root;
-		check(heap);
+		Q_(heap);
 		return a1;
 	}
-	private void check(Leaf temp) {
+	private void Q_(Leaf temp) {
 		// TODO Auto-generated method stub
 		if(temp!=null){
-			check(temp.O1);
+			Q_(temp.O1);
 			a1[c]=temp.value[0];
 			c+=1;
-			check(temp.O2);
+			Q_(temp.O2);
 		}	
 	}
 	private void addleaf(int i) {

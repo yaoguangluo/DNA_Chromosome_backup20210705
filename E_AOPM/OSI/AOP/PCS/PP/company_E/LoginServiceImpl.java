@@ -27,8 +27,8 @@ public class LoginServiceImpl {// implements LoginService {
 		return usrToken;
 	}
 
-	public static void updateUsrTokenByUId(Integer uId, String key, String uPassword, long uTime) throws IOException {
-		LoginDAOImpl.updateUsrTokenByUId(uId, key, uPassword, uTime);
+	public static void U_UsrTokenByUId(Integer uId, String key, String uPassword, long uTime) throws IOException {
+		LoginDAOImpl.U_UsrTokenByUId(uId, key, uPassword, uTime);
 	}
 
 	public static void insertRowByTablePath(String baseName, String tableName, JSONObject jsobj) throws FileNotFoundException, IOException {

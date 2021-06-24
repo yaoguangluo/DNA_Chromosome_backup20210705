@@ -6,7 +6,7 @@ import java.io.FileWriter;
 import OSI.OPE.OVU.MVU.OVU.PQE.nodeEdit.LinkNode;
 
 public class SaveAnd_U_File{
-	public static void update(String fileCurrentpath, LinkNode first) {
+	public static void U_(String fileCurrentpath, LinkNode first) {
 		//delete file 
 		File file= new File(fileCurrentpath);
 		if(file.exists()&& file.isFile()) {

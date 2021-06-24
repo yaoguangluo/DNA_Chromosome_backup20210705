@@ -39,7 +39,7 @@ public class DatabaseLog_H {
 	}
 
 	public static void writeLogFile(long when, String who, String plsql) {
-		checkCurrentFileRange();
+		Q_CurrentFileRange();
 		//zip text string and write; im thinking about a new method to make string write small.
 		String logString ="#@:" + when + "@:" + who + "@:" + plsql;
 		FileWriter fw = null;
@@ -55,7 +55,7 @@ public class DatabaseLog_H {
 		}
 	}
 
-	private static void checkCurrentFileRange() {
+	private static void Q_CurrentFileRange() {
 		long yearMonthDay = System.currentTimeMillis();
 		long day = yearMonthDay/(1000 * 60 * 60 * 24);
 		String willMakeFile = logCategoryPath + "/log/logger" + day + ".det";
