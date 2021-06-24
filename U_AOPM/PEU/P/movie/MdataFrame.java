@@ -12,7 +12,7 @@ public class MdataFrame{
 	}
 	public void D_Frame(){	
 	}
-	public void insertFrame(){	
+	public void IU_Frame(){	
 	}
 	public void searchFrame(){
 	}

@@ -139,7 +139,7 @@ public class IU_Rows_E {
 		return output;
 	}
 
-	public static void insertRowByAttributes(Map<String, Object> object, boolean mod) throws Exception {
+	public static void IU_RowByAttributes(Map<String, Object> object, boolean mod) throws Exception {
 		JSONObject jsobj = new JSONObject();
 		//for late will make an exception record queue system, to control all of the db write;
 		List<String[]> culumnValues = (List<String[]>)object.get("culumnValue");

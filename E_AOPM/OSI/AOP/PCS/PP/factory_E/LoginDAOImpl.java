@@ -117,18 +117,18 @@ public class LoginDAOImpl{// implements LoginDAO{
 				+ URLEncoder.encode("313699483@qq.com") + "&password=" + URLEncoder.encode("Fengyue1985!") + "&auth=" + "0");		
 	}
 
-	public static void insertUsr(String uName, String uAge, String uSex, String uPhone, String uAddress, String uWeChat,
+	public static void IU_Usr(String uName, String uAge, String uSex, String uPhone, String uAddress, String uWeChat,
 			String uClass, String uEmail, String uQq) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	public static void insertUsroken(Integer uId, String uKey, String uPassword, long uTime) {
+	public static void IU_Usroken(Integer uId, String uKey, String uPassword, long uTime) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	public static void insertRowByTablePath(String baseName, String tableName, JSONObject culumnOfNewRow) throws FileNotFoundException, IOException {
+	public static void IU_RowByTablePath(String baseName, String tableName, JSONObject culumnOfNewRow) throws FileNotFoundException, IOException {
 		String json = DetaDBUtil.DBRequest("/insertRowByBaseName?baseName=" + baseName + "&tableName=" 
 				+ tableName + "&culumnOfNewRow=" + culumnOfNewRow.toString() + "&email="
 				+ URLEncoder.encode("313699483@qq.com") + "&password=" + URLEncoder.encode("Fengyue1985!") 

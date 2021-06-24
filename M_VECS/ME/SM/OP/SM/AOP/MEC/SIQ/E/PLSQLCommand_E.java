@@ -163,7 +163,7 @@ public class PLSQLCommand_E {
 		}
 		if(object.get("type").toString().equalsIgnoreCase("insert")) {
 			if(object.containsKey("culumnValue")) {
-				IU_Rows_E.insertRowByAttributes(object, mod);
+				IU_Rows_E.IU_RowByAttributes(object, mod);
 			}
 		}
 		if(object.get("type").toString().equalsIgnoreCase("delete")) {

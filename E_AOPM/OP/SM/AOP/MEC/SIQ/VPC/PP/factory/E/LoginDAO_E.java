@@ -124,19 +124,19 @@ public class LoginDAO_E {
 		// TODO Auto-generated method stub	
 	}
 
-	public static void insertUsr(String uName, String uAge, String uSex, String uPhone
+	public static void IU_Usr(String uName, String uAge, String uSex, String uPhone
 			, String uAddress, String uWeChat,
 			String uClass, String uEmail, String uQq) {
 		// TODO Auto-generated method stub
 
 	}
 
-	public static void insertUsroken(Integer uId, String uKey, String uPassword, long uTime) {
+	public static void IU_Usroken(Integer uId, String uKey, String uPassword, long uTime) {
 		// TODO Auto-generated method stub
 
 	}
 
-	public static void insertRowByTablePath(String baseName, String tableName
+	public static void IU_RowByTablePath(String baseName, String tableName
 			, JSONObject jsobj) throws Exception {
 		IU_Rows_E.insertRowByBaseName(baseName, tableName, jsobj, true);
 	}

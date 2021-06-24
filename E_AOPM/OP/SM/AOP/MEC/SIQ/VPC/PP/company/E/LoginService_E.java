@@ -30,9 +30,9 @@ public class LoginService_E {
 		LoginDAO_E.U_UsrTokenByUId(uId, key, uPassword, uTime);
 	}
 
-	public static void insertRowByTablePath(String baseName, String tableName
+	public static void IU_RowByTablePath(String baseName, String tableName
 			, JSONObject jsobj) throws Exception {
-		LoginDAO_E.insertRowByTablePath(baseName, tableName, jsobj);
+		LoginDAO_E.IU_RowByTablePath(baseName, tableName, jsobj);
 	}
 
 	public static String checkTokenStatus(String token, String level) throws Exception {

@@ -78,13 +78,13 @@ public class TransactionDelegate {
 		jsobj.put("u_age", uAge);
 		jsobj.put("u_sex", uSex);
 		jsobj.put("u_id", "random");
-		LoginServiceImpl.insertRowByTablePath("backend", "usr", jsobj);
+		LoginServiceImpl.IU_RowByTablePath("backend", "usr", jsobj);
 		usr = LoginServiceImpl.findUsrByUEmail(uEmail);
 		JSONObject jsobjToken = new JSONObject();
 		jsobjToken.put("u_id", usr.getuId());
 		jsobjToken.put("u_level", "low");
 		jsobjToken.put("u_password", TokenUtil.getFirstDNAPassword(key, uPassword, sessiontoken));
-		LoginServiceImpl.insertRowByTablePath("backend", "usrToken", jsobjToken);
+		LoginServiceImpl.IU_RowByTablePath("backend", "usrToken", jsobjToken);
 		return transactionLogin(uEmail, uPassword);
 	}
 }

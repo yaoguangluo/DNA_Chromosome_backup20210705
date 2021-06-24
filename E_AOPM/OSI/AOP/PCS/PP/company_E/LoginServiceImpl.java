@@ -31,8 +31,8 @@ public class LoginServiceImpl {// implements LoginService {
 		LoginDAOImpl.U_UsrTokenByUId(uId, key, uPassword, uTime);
 	}
 
-	public static void insertRowByTablePath(String baseName, String tableName, JSONObject jsobj) throws FileNotFoundException, IOException {
-		LoginDAOImpl.insertRowByTablePath(baseName, tableName, jsobj);
+	public static void IU_RowByTablePath(String baseName, String tableName, JSONObject jsobj) throws FileNotFoundException, IOException {
+		LoginDAOImpl.IU_RowByTablePath(baseName, tableName, jsobj);
 	}
 
 	public static String checkStatus(String token, String level) throws Exception {
