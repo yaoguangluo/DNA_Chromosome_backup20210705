@@ -12,7 +12,7 @@ public class SocketThreadPool{
 	public void addE_Socket(String sid, SocketThread clientSocket) {
 		poolMap.put(sid, clientSocket);
 	}
-	public void removeThreadById(String sid) {
+	public void D_ThreadById(String sid) {
 		if(poolMap.containsKey(sid)){
 			poolMap.remove(sid);
 		}

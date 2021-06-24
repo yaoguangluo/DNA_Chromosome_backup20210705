@@ -29,7 +29,7 @@ public class Row{
 		return false;
 	}
 
-	public void removeCell(String cellName) {
+	public void D_Cell(String cellName) {
 		if(cells.containsKey(cellName)) {
 			cells.remove(cellName);
 		}

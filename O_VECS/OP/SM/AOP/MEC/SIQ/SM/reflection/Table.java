@@ -30,7 +30,7 @@ public class Table{
 	
 	private Spec spec;
 	private ConcurrentHashMap<String, Row> rows;
-	public void removeRow(String rowName) {
+	public void D_Row(String rowName) {
 		if(rows.containsKey(rowName)) {
 			rows.remove(rowName);
 		}

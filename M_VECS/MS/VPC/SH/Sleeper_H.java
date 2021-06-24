@@ -12,7 +12,7 @@ public class Sleeper_H{
 	public void addE_Sleeper(Integer sid, Sleeper sleeper) {
 		sleepersMap.put(sid, sleeper);
 	}
-	public void removeThreadById(Integer sid) {
+	public void D_ThreadById(Integer sid) {
 		if(sleepersMap.containsKey(sid)){
 			sleepersMap.remove(sid);
 		}
