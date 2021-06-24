@@ -319,7 +319,7 @@ public class UnicornSplitPaneUI extends BasicSplitPaneUI {
 				return minimumLayoutSize(c);   
 			}   
 
-			public void D_LayoutComponent(Component c) {   
+			public void removeLayoutComponent(Component c) {   
 			}   
 
 			public void addLayoutComponent(String string, Component c) {   

@@ -63,7 +63,7 @@ public class SocketThread extends Thread implements Runnable{
 				}
 			}
 		}
-		socketThreadPool.removeThreadById(this.sid);
+		socketThreadPool.D_ThreadById(this.sid);
 	}
 
 	private void error500() throws IOException {
@@ -72,7 +72,7 @@ public class SocketThread extends Thread implements Runnable{
 		pw.flush();
 		pw.close();
 		socket.close();
-		socketThreadPool.removeThreadById(this.sid);
+		socketThreadPool.D_ThreadById(this.sid);
 		return;
 	}
 

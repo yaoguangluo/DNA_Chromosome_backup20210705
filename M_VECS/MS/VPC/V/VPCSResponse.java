@@ -52,7 +52,7 @@ public class VPCSResponse{
 	private String ResponseContentType;
 	public void return404() throws IOException {
 		if(socket.isClosed()) {
-			this.sleeper_H.removeThreadById(this.hashCode);
+			this.sleeper_H.D_ThreadById(this.hashCode);
 			return;
 		}
 		PrintWriter pw = new PrintWriter(this.socket.getOutputStream(), true);
@@ -60,12 +60,12 @@ public class VPCSResponse{
 		pw.flush();
 		pw.close();
 		socket.close();
-		this.sleeper_H.removeThreadById(this.hashCode);
+		this.sleeper_H.D_ThreadById(this.hashCode);
 	}
 
 	public void returnErrorCode(Integer errorCode) throws IOException {
 		if(socket.isClosed()) {
-			this.sleeper_H.removeThreadById(this.hashCode);
+			this.sleeper_H.D_ThreadById(this.hashCode);
 			return;
 		}
 		PrintWriter pw = new PrintWriter(this.socket.getOutputStream(), true);
@@ -73,6 +73,6 @@ public class VPCSResponse{
 		pw.flush();
 		pw.close();
 		socket.close();
-		this.sleeper_H.removeThreadById(this.hashCode);
+		this.sleeper_H.D_ThreadById(this.hashCode);
 	}
 }

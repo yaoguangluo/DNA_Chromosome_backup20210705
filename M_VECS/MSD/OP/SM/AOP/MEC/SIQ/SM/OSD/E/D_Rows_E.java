@@ -47,7 +47,7 @@ public class D_Rows_E {
 		String indexName = "row"+pageIndex;
 		Table table = DetaDBBufferCache_M.db.getBase(baseName).getTable(tableName);
 		if(mod) {
-			table.removeRow(indexName);
+			table.D_Row(indexName);
 		}
 		return output;
 	}

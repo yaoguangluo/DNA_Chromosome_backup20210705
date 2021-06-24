@@ -17,7 +17,7 @@ public class Response_C {
 		pw.flush();
 		pw.close();
 		socket.close();
-		sleeper_H.removeThreadById(sId);
+		sleeper_H.D_ThreadById(sId);
 		return;
 	}
 
@@ -29,7 +29,7 @@ public class Response_C {
 		pw.flush();
 		pw.close();
 		socket.close();
-		sleeper_H.removeThreadById(sId);
+		sleeper_H.D_ThreadById(sId);
 		return;
 	}
 }
