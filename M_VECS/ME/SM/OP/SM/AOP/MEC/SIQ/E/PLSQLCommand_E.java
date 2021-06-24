@@ -168,7 +168,7 @@ public class PLSQLCommand_E {
 		}
 		if(object.get("type").toString().equalsIgnoreCase("delete")) {
 			if(object.containsKey("condition")) {
-				D_Rows_E.deleteRowByAttributesOfCondition(object, mod);
+				D_Rows_E.D_RowByAttributesOfCondition(object, mod);
 			}
 		}
 		object.remove("condition");

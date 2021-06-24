@@ -226,7 +226,7 @@ public class ThisCanvas extends JPanel implements MouseMotionListener
 				node.flash= node.flash> 100? 0: node.flash;
 				//如果一个节点是移动节点 或者这个节点的连接前序节点是移动节点 
 				if(node.actionNodeLeft) {
-					DrawFlashSide.deleteFlashSide(graphics2D, node.oldx, node.oldy);
+					DrawFlashSide.D_FlashSide(graphics2D, node.oldx, node.oldy);
 				}
 				if(0== is_O) {
 					DrawFlashSide.drawFlashSide(graphics2D, node.x, node.y, node.flash++ % 3);
