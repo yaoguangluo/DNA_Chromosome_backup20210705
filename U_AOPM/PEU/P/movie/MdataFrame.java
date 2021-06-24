@@ -10,7 +10,7 @@ public class MdataFrame{
 	}
 	public void addFrame(){	
 	}
-	public void deleteFrame(){	
+	public void D_Frame(){	
 	}
 	public void insertFrame(){	
 	}

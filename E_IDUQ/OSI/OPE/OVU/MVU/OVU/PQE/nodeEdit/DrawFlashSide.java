@@ -31,7 +31,7 @@ public class DrawFlashSide{
 		graphics2D.drawOval(x + 62, y + 26, 4, 4);	
 	}
 	
-	public static void deleteFlashSide(Graphics2D graphics2D, int x, int y) {
+	public static void D_FlashSide(Graphics2D graphics2D, int x, int y) {
 		graphics2D.setColor(new Color(240, 240, 240));
 		DrawSinLineVPS.drawCosLine(x, y , graphics2D);
 		graphics2D.setColor(new Color(240, 240, 240));

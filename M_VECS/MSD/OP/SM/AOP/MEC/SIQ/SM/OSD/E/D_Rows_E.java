@@ -53,7 +53,7 @@ public class D_Rows_E {
 	}
 
 	@SuppressWarnings({"unchecked"})
-	public static void deleteRowByAttributesOfCondition(Map<String, Object> object, boolean mod) throws IOException {
+	public static void D_RowByAttributesOfCondition(Map<String, Object> object, boolean mod) throws IOException {
 		if(!object.containsKey("baseName")||!object.containsKey("tableName")){
 			return;
 		}
