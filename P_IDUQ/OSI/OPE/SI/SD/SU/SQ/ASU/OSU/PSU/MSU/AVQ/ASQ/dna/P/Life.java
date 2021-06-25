@@ -77,7 +77,7 @@ public class Life{
 		
 	}
     
-	public void getInformation() {
+	public void IQ_Information() {
 		
 	}
 }

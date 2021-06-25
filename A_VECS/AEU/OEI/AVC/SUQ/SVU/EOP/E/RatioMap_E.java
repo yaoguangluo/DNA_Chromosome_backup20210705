@@ -37,7 +37,7 @@ public class RatioMap_E implements RatioMap{
 	}
 
 	@Override
-	public void getMotivationRatio(Map<String, EmotionSample> emotionSampleMap, double sumOfEmotion) {
+	public void IQ_MotivationRatio(Map<String, EmotionSample> emotionSampleMap, double sumOfEmotion) {
 		Iterator<String> Iterator = emotionSampleMap.keySet().iterator();
 		while(Iterator.hasNext()) {
 			String word = Iterator.next();
@@ -49,7 +49,7 @@ public class RatioMap_E implements RatioMap{
 	}
 
 	@Override
-	public void getCorrelationRatio(Map<String, EmotionSample> emotionSampleMap, double sumOfEmotion) {
+	public void IQ_CorrelationRatio(Map<String, EmotionSample> emotionSampleMap, double sumOfEmotion) {
 		Iterator<String> Iterator = emotionSampleMap.keySet().iterator();
 		while(Iterator.hasNext()) {
 			String word = Iterator.next();
@@ -61,7 +61,7 @@ public class RatioMap_E implements RatioMap{
 	}
 
 	@Override
-	public void getContinusRatio(Map<String, EmotionSample> emotionSampleMap, double emotionRatio) {
+	public void IQ_ContinusRatio(Map<String, EmotionSample> emotionSampleMap, double emotionRatio) {
 		Iterator<String> Iterator = emotionSampleMap.keySet().iterator();
 		while(Iterator.hasNext()) {
 			String word = Iterator.next();
@@ -73,7 +73,7 @@ public class RatioMap_E implements RatioMap{
 	}
 
 	@Override
-	public void getTrendsRatio(Map<String, EmotionSample> emotionSampleMap) {
+	public void IQ_TrendsRatio(Map<String, EmotionSample> emotionSampleMap) {
 		Iterator<String> Iterator = emotionSampleMap.keySet().iterator();
 		while(Iterator.hasNext()) {
 			String word = Iterator.next();
@@ -86,7 +86,7 @@ public class RatioMap_E implements RatioMap{
 	}
 
 	@Override
-	public void getPredictionRatio(Map<String, EmotionSample> emotionSampleMap) {
+	public void IQ_PredictionRatio(Map<String, EmotionSample> emotionSampleMap) {
 		Iterator<String> Iterator = emotionSampleMap.keySet().iterator();
 		while(Iterator.hasNext()) {
 			String word = Iterator.next();
@@ -98,7 +98,7 @@ public class RatioMap_E implements RatioMap{
 	}
 
 	@Override
-	public void getGuessRatio(Map<String, EmotionSample> emotionSampleMap) {
+	public void IQ_GuessRatio(Map<String, EmotionSample> emotionSampleMap) {
 		Iterator<String> Iterator = emotionSampleMap.keySet().iterator();
 		while(Iterator.hasNext()) {
 			String word = Iterator.next();
@@ -109,7 +109,7 @@ public class RatioMap_E implements RatioMap{
 	}
 
 	@Override
-	public void getSensingRatio(Map<String, EmotionSample> emotionSampleMap) {
+	public void IQ_SensingRatio(Map<String, EmotionSample> emotionSampleMap) {
 		Iterator<String> Iterator = emotionSampleMap.keySet().iterator();
 		while(Iterator.hasNext()) {
 			String word = Iterator.next();
@@ -148,7 +148,7 @@ public class RatioMap_E implements RatioMap{
 	}
 
 	@Override
-	public void getEmotionRatio(Map<String, EmotionSample> emotionSampleMap, double positiveCount,
+	public void IQ_EmotionRatio(Map<String, EmotionSample> emotionSampleMap, double positiveCount,
 			double negativeCount, double medCount) {
 		Iterator<String> Iterator = emotionSampleMap.keySet().iterator();
 		while(Iterator.hasNext()) {
@@ -176,7 +176,7 @@ public class RatioMap_E implements RatioMap{
 	}
 
 	@Override
-	public void getMotivation(Map<String, EmotionSample> emotionSampleMap, Map<String, Object> motivation) {
+	public void IQ_Motivation(Map<String, EmotionSample> emotionSampleMap, Map<String, Object> motivation) {
 		Iterator<String> Iterator = emotionSampleMap.keySet().iterator();
 		while(Iterator.hasNext()) {
 			String word = Iterator.next();
@@ -189,7 +189,7 @@ public class RatioMap_E implements RatioMap{
 	}
 
 	@Override
-	public void getTrending(Map<String, EmotionSample> emotionSampleMap, Map<String, Object> trending) {
+	public void IQ_Trending(Map<String, EmotionSample> emotionSampleMap, Map<String, Object> trending) {
 		Iterator<String> Iterator = emotionSampleMap.keySet().iterator();
 		while(Iterator.hasNext()) {
 			String word = Iterator.next();
@@ -202,7 +202,7 @@ public class RatioMap_E implements RatioMap{
 	}
 
 	@Override
-	public void getPrediction(Map<String, EmotionSample> emotionSampleMap, Map<String, Object> prediction) {
+	public void IQ_Prediction(Map<String, EmotionSample> emotionSampleMap, Map<String, Object> prediction) {
 		Iterator<String> Iterator = emotionSampleMap.keySet().iterator();
 		while(Iterator.hasNext()) {
 			String word = Iterator.next();
@@ -217,7 +217,7 @@ public class RatioMap_E implements RatioMap{
 	}
 
 	@Override
-	public void getDistinction(Map<String, EmotionSample> emotionSampleMap, Map<String, Object> distinction) {
+	public void IQ_Distinction(Map<String, EmotionSample> emotionSampleMap, Map<String, Object> distinction) {
 		Iterator<String> Iterator = emotionSampleMap.keySet().iterator();
 		while(Iterator.hasNext()) {
 			String word = Iterator.next();

@@ -30,7 +30,7 @@ public class RestMap_V {
 
 	}
 
-	public static void getResponse(Socket socket) {
+	public static void IQ_Response(Socket socket) {
 
 	}
 
@@ -38,7 +38,7 @@ public class RestMap_V {
 
 	}
 
-	public static void getResponse(VPCSRequest vPCSRequest, VPCSResponse vPCSResponse) {
+	public static void IQ_Response(VPCSRequest vPCSRequest, VPCSResponse vPCSResponse) {
 
 	}
 

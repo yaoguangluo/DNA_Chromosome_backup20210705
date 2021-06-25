@@ -10,13 +10,13 @@ public class Forward_V {
 	public static void main(String[] args){
 	}
 
-	public static void getForwardType(Socket socket) {
+	public static void IQ_ForwardType(Socket socket) {
 	}
 
 	public static void forwardToRestMap(Socket socket) {
 	}
 
-	public static void getForwardType(VPCSRequest vPCSRequest
+	public static void IQ_ForwardType(VPCSRequest vPCSRequest
 			, VPCSResponse vPCSResponse) throws IOException {
 		if(vPCSRequest.getRequestIsRest()){
 			String filePath = VPC.getFilePath(vPCSRequest.getRequestLink());

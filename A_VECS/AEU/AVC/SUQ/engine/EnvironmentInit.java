@@ -184,10 +184,10 @@ public class EnvironmentInit{
 		wordFrequencyMap = _A.getWordFrequencyByReturnSortMap(sets);
 		rationMap = new RatioMap_E();
 		emotionSampleMap = rationMap.getEnvironmentSampleMap(wordFrequencyMap);
-		rationMap.getMotivation(emotionSampleMap, motivation);
-		rationMap.getTrending(emotionSampleMap, trending);
-		rationMap.getPrediction(emotionSampleMap, prediction);
-		rationMap.getDistinction(emotionSampleMap, distinction);
+		rationMap.IQ_Motivation(emotionSampleMap, motivation);
+		rationMap.IQ_Trending(emotionSampleMap, trending);
+		rationMap.IQ_Prediction(emotionSampleMap, prediction);
+		rationMap.IQ_Distinction(emotionSampleMap, distinction);
 	}
 	
 	public void initExclude_A(String text, A _AInput) throws IOException {
@@ -205,10 +205,10 @@ public class EnvironmentInit{
 		wordFrequencyMap = _AInput.getWordFrequencyByReturnSortMap(sets);
 		rationMap = new RatioMap_E();
 		emotionSampleMap = rationMap.getEnvironmentSampleMap(wordFrequencyMap);
-		rationMap.getMotivation(emotionSampleMap, motivation);
-		rationMap.getTrending(emotionSampleMap, trending);
-		rationMap.getPrediction(emotionSampleMap, prediction);
-		rationMap.getDistinction(emotionSampleMap, distinction);
+		rationMap.IQ_Motivation(emotionSampleMap, motivation);
+		rationMap.IQ_Trending(emotionSampleMap, trending);
+		rationMap.IQ_Prediction(emotionSampleMap, prediction);
+		rationMap.IQ_Distinction(emotionSampleMap, distinction);
 	}
 	
 	public void initFromEmotion(Map<Integer, WordFrequency> getWordFrequencyMap) throws IOException {
@@ -225,10 +225,10 @@ public class EnvironmentInit{
 		//map
 		rationMap = new RatioMap_E();
 		emotionSampleMap = rationMap.getEnvironmentSampleMap(getWordFrequencyMap);
-		rationMap.getMotivation(emotionSampleMap, motivation);
-		rationMap.getTrending(emotionSampleMap, trending);
-		rationMap.getPrediction(emotionSampleMap, prediction);
-		rationMap.getDistinction(emotionSampleMap, distinction);
+		rationMap.IQ_Motivation(emotionSampleMap, motivation);
+		rationMap.IQ_Trending(emotionSampleMap, trending);
+		rationMap.IQ_Prediction(emotionSampleMap, prediction);
+		rationMap.IQ_Distinction(emotionSampleMap, distinction);
 	}
 	
 	public void initFromEmotionExcludeEmotion(Map<Integer, WordFrequency> getWordFrequencyMap, EmotionMap emotionMapInput) throws IOException {
@@ -239,10 +239,10 @@ public class EnvironmentInit{
 		distinction = emotionMap.getDistinctionMap();
 		rationMap = new RatioMap_E();
 		emotionSampleMap = rationMap.getEnvironmentSampleMap(getWordFrequencyMap);
-		rationMap.getMotivation(emotionSampleMap, motivation);
-		rationMap.getTrending(emotionSampleMap, trending);
-		rationMap.getPrediction(emotionSampleMap, prediction);
-		rationMap.getDistinction(emotionSampleMap, distinction);
+		rationMap.IQ_Motivation(emotionSampleMap, motivation);
+		rationMap.IQ_Trending(emotionSampleMap, trending);
+		rationMap.IQ_Prediction(emotionSampleMap, prediction);
+		rationMap.IQ_Distinction(emotionSampleMap, distinction);
 	}
 	
 }

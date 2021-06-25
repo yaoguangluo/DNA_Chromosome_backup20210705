@@ -54,7 +54,7 @@ public class Sleeper extends Thread implements Runnable{
 			if(vPCSResponse.getSocket().isClosed()) {
 				return;
 			}
-			MS.VPC.V.Forward_V.getForwardType(vPCSRequest, vPCSResponse);
+			MS.VPC.V.Forward_V.IQ_ForwardType(vPCSRequest, vPCSResponse);
 			if(vPCSResponse.getSocket().isClosed()) {
 				return;
 			}
@@ -62,7 +62,7 @@ public class Sleeper extends Thread implements Runnable{
 			if(vPCSResponse.getSocket().isClosed()) {
 				return;
 			}
-			MS.VPC.V.RestMap_V.getResponse(vPCSRequest, vPCSResponse);
+			MS.VPC.V.RestMap_V.IQ_Response(vPCSRequest, vPCSResponse);
 			if(vPCSResponse.getSocket().isClosed()) {
 				return;
 			}
