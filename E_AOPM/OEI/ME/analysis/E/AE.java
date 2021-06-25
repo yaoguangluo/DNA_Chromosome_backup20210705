@@ -38,7 +38,7 @@ public class AE implements A {
 	protected Map<String, String> wordsForest;
 	protected EmotionMap emotionMap;
 	protected SensingTest sensingTest;
-	public void init() throws IOException {
+	public void IV_() throws IOException {
 		this.fHMMList= new FMHMMListOneTime_E();
 		fHMMList.index();
 		fHMMList.indexPosEnToCn();
@@ -57,7 +57,7 @@ public class AE implements A {
 		wordsForests= fHMMList.getWordsForests();
 	}
 
-	public void initMixed() throws IOException {
+	public void IV_Mixed() throws IOException {
 		this.fHMMList= new FMHMMListOneTime_E();
 		fHMMList.indexMixed();
 		fHMMList.indexPosEnToCn();
@@ -81,11 +81,11 @@ public class AE implements A {
 		wordsForest= fHMMList.getPosCnToCn();
 		wordsForests= fHMMList.getWordsForests();
 		emotionMap= new EmotionMap_E(); 
-		emotionMap.initMotivationMap();
-		emotionMap.initNegativeMap();
-		emotionMap.initPositiveMap();
-		emotionMap.initTrendingMap();
-		emotionMap.initPredictionMap();
+		emotionMap.IV_MotivationMap();
+		emotionMap.IV_NegativeMap();
+		emotionMap.IV_PositiveMap();
+		emotionMap.IV_TrendingMap();
+		emotionMap.IV_PredictionMap();
 		sensingTest= new SensingTest();
 	}
 	

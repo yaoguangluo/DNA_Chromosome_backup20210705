@@ -55,7 +55,7 @@ public class LYGFileIO{
 		lYGFileIO.adataFrame= new AdataFrame();
 		//lYGFileIO.adataFrame.audioArray= new double[(int)lYGFileIO.header.SFrameRate];
 		DFT dFT= new DFT();
-		dFT.init(1024);
+		dFT.IV_(1024);
 		fft[10]= 10000;
 		double[] array= dFT.ft(fft);
 		lYGFileIO.adataFrame.audioArray= array;
@@ -67,7 +67,7 @@ public class LYGFileIO{
 				lYGFileIO.header.SFrameSize,
 				lYGFileIO.header.SFrameRate,
 				lYGFileIO.header.SBigEndian);	
-		lYGFileIO.initByAudioBytes(af);
+		lYGFileIO.IV_ByAudioBytes(af);
 //		double times;
 //		long milliseconds= (long)((header.SFrameLeangth * 1000)/ header.SFrameRate);
 //		lYGFileIO.header.times= milliseconds/ 1000.0;
@@ -289,7 +289,7 @@ public class LYGFileIO{
 		}	
 	}
 	
-	public void init(){
+	public void IV_(){
 		toHead();
 		AudioFormat af=new AudioFormat(header.SEn,
 				header.SSampleRate , 
@@ -484,7 +484,7 @@ public class LYGFileIO{
 		System.out.println("end header get");	
 	}
 	
-	public void initByAudioBytes(AudioFormat af) {	
+	public void IV_ByAudioBytes(AudioFormat af) {	
 		//en /1sample rate /2samplesize /3 channels /4framesize  /5 framrate /bigendianture 
 		adataFrame.audioIS = new BytestoAIS().getAIS(adataFrame.fftarray, af, adataFrame.audioIS);		
 		// TODO Auto - generated method stub

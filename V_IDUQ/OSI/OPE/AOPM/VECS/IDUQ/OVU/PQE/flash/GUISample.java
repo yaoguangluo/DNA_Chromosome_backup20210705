@@ -667,7 +667,7 @@ public class GUISample extends JApplet implements MouseMotionListener
 		}); 
 	}	
 
-	public void init(){
+	public void IV_(){
 		try {
 			CreatMap();
 		} catch (IOException e) {
@@ -677,7 +677,7 @@ public class GUISample extends JApplet implements MouseMotionListener
 		this.resize(w,h);	
 	}
 
-	public void init(Object[][] tableData_old,JTextPane text, App u
+	public void IV_(Object[][] tableData_old,JTextPane text, App u
 			, A _A, Map<String, String> pos){
 		try {
 			this.text= text;
@@ -1228,7 +1228,7 @@ public class GUISample extends JApplet implements MouseMotionListener
 				if(null== jFrame) {
 					detaBuy= new DetaBuy();
 					try {
-						detaBuy.init(null);
+						detaBuy.IV_(null);
 					} catch (IOException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();

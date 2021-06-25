@@ -77,7 +77,7 @@ public class WavReadOSU_MSQ_OPE_OPC_ECI extends OSU_AVQ_ASQ_OPE_OPC_ECI{
 				//out
 				toplygin.duration=times;
 				toplygin.toHead();
-				toplygin.init();
+				toplygin.IV_();
 
 				SQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.lygout=toplygin;
 		  		SQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.aisout=topaisin;

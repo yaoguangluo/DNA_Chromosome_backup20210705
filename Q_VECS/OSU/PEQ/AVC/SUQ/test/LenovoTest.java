@@ -12,7 +12,7 @@ public class LenovoTest{
 				"¡£";
 
 		LenovoInit lenovoInit = new LenovoInit();
-		lenovoInit.init(text);
+		lenovoInit.IV_(text);
 		Map<String, EmotionSample> environmentSampleMap = lenovoInit.getEnvironmentInit().getEmotionSampleMap();
 		Map<String, Object> lenovo = lenovoInit.getSensingMap().getLenovoMap();
 		//reduce

@@ -143,15 +143,15 @@ public class EmotionInit{
 	private double totalCount;
 	public static void main(String[] argv) throws IOException {
 		EmotionInit emotionInit = new EmotionInit();
-		emotionInit.init(StableString.text1);
+		emotionInit.IV_(StableString.text1);
 	}
 
-	public void init(String text) throws IOException {
+	public void IV_(String text) throws IOException {
 		emotionMap = new EmotionMap_E(); 
-		emotionMap.initNegativeMap();
-		emotionMap.initPositiveMap();
+		emotionMap.IV_NegativeMap();
+		emotionMap.IV_PositiveMap();
 		_A = new CogsBinaryForest_AE();
-		_A.init();
+		_A.IV_();
 		positive = emotionMap.getPositiveMap();
 		negative = emotionMap.getNegativeMap();
 		sets = _A.parserString(text);
@@ -163,7 +163,7 @@ public class EmotionInit{
 		totalCount = rationMap.findTotalKeyCount(emotionSampleMap);
 	}
 
-	public void initExclude_A(String text, A _AInput, EmotionMap emotionMapInput) throws IOException {
+	public void IV_Exclude_A(String text, A _AInput, EmotionMap emotionMapInput) throws IOException {
 		emotionMap = emotionMapInput;
 		_A = _AInput;
 		positive = emotionMap.getPositiveMap();

@@ -60,7 +60,7 @@ public class RestNLPPortImpl{// implements RestLoginPort {
 	public static Map<String, Object> dataCY(A _A, String string) throws IOException {
 		//System.out.printntln(string);
 		LenovoInit lenovoInit = new LenovoInit();
-		lenovoInit.initExclude_A(string, _A);	
+		lenovoInit.IV_Exclude_A(string, _A);	
 		Map<String, EmotionSample> environmentSampleMap = lenovoInit.getEnvironmentInit().getEmotionSampleMap();
 		Map<String, Object> lenovo = lenovoInit.getSensingMap().getLenovoMap();
 		Map<String, Object> output = new HashMap<>();

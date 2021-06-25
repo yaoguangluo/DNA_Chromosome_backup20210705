@@ -3,7 +3,7 @@ public class Dilation{
 	int[][]kernel;
 	int[][]GetRegion;
 	int [][]tempG;
-	private void initTemp(int[][]thisG) {
+	private void IV_Temp(int[][]thisG) {
 		tempG=new int[thisG.length][thisG[0].length];
 		for(int i = 0;i<thisG.length;i++){
 			for(int j = 0;j<thisG[0].length;j++){
@@ -23,7 +23,7 @@ public class Dilation{
 			thisG = new Reflection().PadImage(g, kenel.length, kenel[0].length+1); 
 		if((kenel.length%2 == 1)&&(kenel[0].length%2 == 1))
 			thisG= new Reflection().PadImage(g, kenel.length, kenel[0].length); 
-		initTemp(thisG);	
+		IV_Temp(thisG);	
 		int w=kenel.length;
 		int h=kenel[0].length;
 		for(int i=w/2;i<thisw+w/2;i++){

@@ -63,7 +63,7 @@ public class RequestFilter_C {
 	
     //先注释掉 之后测试 20210405 罗瑶光
 	//DB在此处出错后能能DMA读写了. 罗瑶光 20210406 稍后进行block list函数设计 优先级降低
-	public static void initBlockList() throws IOException {
+	public static void IV_BlockList() throws IOException {
 		ipBlock = new ConcurrentHashMap<>();
 //		FileInputStream fileInputStream = new FileInputStream(
 //				new File("src/main/resources/ipBlock.ips")); 

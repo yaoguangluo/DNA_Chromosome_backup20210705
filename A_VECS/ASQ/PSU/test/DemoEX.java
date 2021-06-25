@@ -20,16 +20,16 @@ public class DemoEX {
 	@SuppressWarnings("unused")
 	public static void main(String[] args) throws IOException {
 		A _A = new CogsBinaryForest_AE();
-		//_A.init();
-		_A.initMixed();
+		//_A.IV_();
+		_A.IV_Mixed();
 		Map<String, String> pos = _A.getPosCnToCn();
 		List<String> sets = new ArrayList<>();
 		Map<String, WordFrequency> seta = new ConcurrentHashMap<>();
 		TimeCheck t = new TimeCheck();
-		String ss = "西红�?????";//32�?????
+		String ss = "?????";//
 		DemoEX demoEX=new DemoEX();
 		t.begin();
-		for (int i = 0; i < 10; i++) { //重复500万次�????? 相当于处�????? 1.6亿字  耗费 �????? 7.280�????? 
+		for (int i = 0; i < 10; i++) { 
 				sets= _A.parserMixedString(ss);
 		}
 		t.end();
@@ -59,7 +59,7 @@ public class DemoEX {
 		System.out.println("");
 //		t.duration();
 		System.out.println("");
-		System.out.println("词�?�分�?????-->");
+		System.out.println("?????-->");
 //		t.begin();
 		for (int j = 0; j < 1; j++) {
 			for (int i = 0; i < sets.size(); i++) {
@@ -72,7 +72,7 @@ public class DemoEX {
 		System.out.println("");
 //		t.duration();
 		System.out.println("");
-		System.out.println("词频分析-->");
+		System.out.println("-->");
 //		t.begin();
 		Map<Integer, WordFrequency> fwa = _A.getWordFrequencyByReturnSortMap(sets);
 //		t.end();

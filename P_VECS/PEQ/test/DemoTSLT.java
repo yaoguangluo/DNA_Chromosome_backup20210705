@@ -16,7 +16,7 @@ public class DemoTSLT {
 	@SuppressWarnings("unused")
 	public static void main(String[] args) throws IOException {
 		A _A = new CogsBinaryForest_AE();
-		_A.init();
+		_A.IV_();
 		Map<String, String> ce = _A.getCnToEn();
 		Map<String, String> ec = _A.getEnToCn();
 		Map<String, String> poscc = _A.getPosCnToCn();
@@ -32,7 +32,7 @@ public class DemoTSLT {
 //		String v = "他也一直在奔跑，他同样需要一双翅膀！";
 		System.out.println(v);
 		Translator ts = new Translator_E();
-		ts.init(_A); 
+		ts.IV_(_A); 
 //		TimeCheck t = new TimeCheck();
 //		t.begin();
 		List<Verbal> verbals = ts.index(_A, v);

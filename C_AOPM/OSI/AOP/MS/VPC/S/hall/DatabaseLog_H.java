@@ -18,19 +18,19 @@ public class DatabaseLog_H {
 	static String logCurrentFile;
 	public static void I_BinLog_H() throws Exception {
 		//db write operation
-		initLogCategoryPath();
-		initCurrentFilePath();
+		IV_LogCategoryPath();
+		IV_CurrentFilePath();
 		//write error rollback
 		//binlog
 	}
 
-	private static void initCurrentFilePath() {
+	private static void IV_CurrentFilePath() {
 		long yearMonthDay = System.currentTimeMillis();
 		long day = yearMonthDay/(1000 * 60 * 60 * 24);
 		logCurrentFilePath = logCategoryPath + "/log/logger" + day + ".det";
 	}
 
-	private static void initLogCategoryPath() throws Exception {
+	private static void IV_LogCategoryPath() throws Exception {
 		if(null != Cache_M.getCacheInfo("DBPath")) {
 			logCategoryPath = Cache_M.getCacheInfo("DBPath").getValue().toString();	
 		}else {

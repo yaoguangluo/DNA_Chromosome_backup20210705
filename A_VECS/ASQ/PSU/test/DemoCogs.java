@@ -29,7 +29,7 @@ public class DemoCogs {
         //Analyzer _A = new PrettyAnalyzerImp();
         //Analyzer _A = new BaseAnalyzerImp();
         //Analyzer _A = new ScoreAnalyzerImp();
-        _A.initMixed();
+        _A.IV_Mixed();
         sets = new CopyOnWriteArrayList<>();
         String ss = "从容易开始从容易知";
         System.out.println("");

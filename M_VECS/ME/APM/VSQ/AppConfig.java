@@ -24,7 +24,7 @@ public class AppConfig extends ScrollPane implements MouseListener, KeyListener,
 	public SectionJPanel SectionJPanel;
 	public PLSQLSectionPanel pLSQLJPanel;
 	public SectionJPanel pLShellJPanel;
-	public void init(App app){
+	public void IV_(App app){
 		StableFile.DNA_PDN.put(this.getClass().getCanonicalName(), true);
 		JTabbedPane jTabbedpane= new JTabbedPane();
 		Container SectionJPanelContainer= new Container();

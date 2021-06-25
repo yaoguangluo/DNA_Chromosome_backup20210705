@@ -568,7 +568,7 @@ public class CoDNAAuthorForWord extends JPanel implements MouseMotionListener, M
 
 	public static void main(String[] args) throws HeadlessException, InterruptedException  {  
 		Application application= new Application();
-		application.init();
+		application.IV_();
 		CoDNAAuthorForWord app= new CoDNAAuthorForWord(null, null, null);   
 		app.setSize(1700, 950);
 		app.setVisible(true);

@@ -5,7 +5,7 @@ public class DFT{
 	public double coss[];
 	public double sins[];
 	double Pi = 3.1415926;
-	public void init(int size) {
+	public void IV_(int size) {
 		cos=this.ft_cos(size);
 		sin=this.ft_sin(size);
 	}

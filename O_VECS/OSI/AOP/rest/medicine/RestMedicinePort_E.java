@@ -145,7 +145,7 @@ public class RestMedicinePort_E {
 				}
 				Translator ts= new Translator_E();
 				try {
-					ts.init(app._A);
+					ts.IV_(app._A);
 				} catch (IOException e) {
 				} 
 				List<Verbal> verbals= ts.index(app._A, forE);

@@ -22,7 +22,7 @@ public class DetaBuy extends ScrollPane implements MouseListener, KeyListener, A
 	private static final long serialVersionUID= 1L;
 	public boolean isConfig= true;
 	public DetaJPanel SectionJPanel;
-	public void init(App app) throws IOException{
+	public void IV_(App app) throws IOException{
 		StableFile.DNA_PDN.put(this.getClass().getCanonicalName(), true);
 		JTabbedPane jTabbedpane= new JTabbedPane();
 		Container SectionJPanelContainer= new Container();

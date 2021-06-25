@@ -18,7 +18,7 @@ public class DEMO_LYG_to_WAV{
 		IO.lygRead("C:\\Users\\yaoguang\\Desktop\\study\\sound\\newlyg.lyg");
 		//IO.lygRead("C:\\Users\\yaoguang\\Desktop\\study\\sound\\newluo.lyg");
 		IO.toHead();
-		IO.init();
+		IO.IV_();
 		if(IO.adataFrame!=null){
 			new SoundPlay().Play(IO.adataFrame.audioIS);
 			while(IO.adataFrame.next!=null){
@@ -29,7 +29,7 @@ public class DEMO_LYG_to_WAV{
 		}
 
 		IO.toHead();
-		IO.init();
+		IO.IV_();
 		if(IO.adataFrame!=null){
 			new SoundPlay().Play(IO.adataFrame.audioIS);
 			while(IO.adataFrame.next!=null){

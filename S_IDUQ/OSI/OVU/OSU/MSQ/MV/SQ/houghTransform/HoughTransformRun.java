@@ -21,7 +21,7 @@ public class HoughTransformRun extends OSU_AVQ_ASQ_OPE_OPC_ECI{
 		RegionGet thisfile =new RegionGet(out);
 		int []region=thisfile.new_region;
 		HoughTransform ht = new HoughTransform();
-		ht.initHTMatrix(out);
+		ht.IV_HTMatrix(out);
 		for(int i=1;i<region.length;i++){
 			ht.HoughTransformLoop(out,region[i],1);
 		}

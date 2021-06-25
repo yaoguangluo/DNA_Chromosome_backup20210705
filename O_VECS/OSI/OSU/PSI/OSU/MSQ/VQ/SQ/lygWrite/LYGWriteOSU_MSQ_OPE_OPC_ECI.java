@@ -18,7 +18,7 @@ public class LYGWriteOSU_MSQ_OPE_OPC_ECI extends OSU_AVQ_ASQ_OPE_OPC_ECI{
 		toplygin.reset();
 		toplygin.lygRead(filepath);
 		//IO.lygRead("C:\\Users\\yaoguang\\Desktop\\study\\sound\\newluo.lyg");
-		toplygin.init();
+		toplygin.IV_();
 	    SQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.lygout=toplygin;
 	    System.out.println("run end");
 	}

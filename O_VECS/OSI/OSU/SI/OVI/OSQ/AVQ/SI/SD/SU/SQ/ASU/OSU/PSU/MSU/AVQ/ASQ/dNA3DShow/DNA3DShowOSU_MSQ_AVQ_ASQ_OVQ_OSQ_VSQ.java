@@ -21,7 +21,7 @@ public class DNA3DShowOSU_MSQ_AVQ_ASQ_OVQ_OSQ_VSQ extends OSU_AVQ_ASQ_AVQ_ASQ_OV
 	}
 	public void view() throws Exception{
 		Application application= new Application();
-		application.init();
+		application.IV_();
 		try {
 			CoDNAAuthorForWord app = null;
 			try {

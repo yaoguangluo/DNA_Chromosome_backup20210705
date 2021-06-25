@@ -13,7 +13,7 @@ import PEU.P.cache.*;
 //import cacheProcessor.Cache_M;
 
 public class DetaUtil {
-	public static void initDB(String dbConfigPath){
+	public static void IV_DB(String dbConfigPath){
 		File config = new File(dbConfigPath);
 		if (config.exists()) {
 			try {

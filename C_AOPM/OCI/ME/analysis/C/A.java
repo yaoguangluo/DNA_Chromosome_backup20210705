@@ -7,8 +7,8 @@ import AVQ.ASQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import OCI.AVC.SUQ.SVQ.MPC.fhmm.C.EmotionMap;
 import PEQ.AMV.ECS.test.SensingTest;
 public interface A {
-	void init() throws IOException;
-	void initMixed() throws IOException;
+	void IV_() throws IOException;
+	void IV_Mixed() throws IOException;
 	List<String> parserString(String input);
 	void I_FixWords(int charPosition, String inputString,StringBuilder[] fixWords);
 	Map<String, WordFrequency> getWordFrequencyMap(List<String> sets) throws IOException;

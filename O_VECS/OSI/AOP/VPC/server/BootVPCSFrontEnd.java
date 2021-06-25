@@ -13,11 +13,11 @@ public class BootVPCSFrontEnd extends Thread{
 		new BootVPCSFrontEnd(null).bootFrontEnd();
 	}
 	public void bootFrontEnd() throws IOException {
-		new ServerInit_C_VPCSFrontEnd().initServer(this.app);
+		new ServerInit_C_VPCSFrontEnd().IV_Server(this.app);
 	}
 	public void run() {
 		try {
-			new ServerInit_C_VPCSFrontEnd().initServer(this.app);
+			new ServerInit_C_VPCSFrontEnd().IV_Server(this.app);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

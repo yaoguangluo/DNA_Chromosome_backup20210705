@@ -343,7 +343,7 @@ public class MakeContainerZNSZ extends Thread implements Runnable{
 			jsp_panel_sc.setBounds(1050+ 30, 15, 235, 330+ 20);
 			jsp_panel_scm.setBounds(1050+ 30, 350+ 20, 235, 368- 33- 28-50);
 			DFT dFt= new DFT();
-			dFt.init(1024);
+			dFt.IV_(1024);
 			BufferedImage imageForOutput= new BufferedImage(1400, 700, BufferedImage.TYPE_INT_RGB);
 			app.soundWaveJPanel= new SoundWaveJPanel(jpanelFourth, dFt, app.text, imageForOutput, this);
 			app.soundWaveJPanel.setVisible(true);

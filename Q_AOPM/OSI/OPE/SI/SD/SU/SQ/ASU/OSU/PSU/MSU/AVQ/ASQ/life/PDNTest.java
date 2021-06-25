@@ -9,7 +9,7 @@ import IMO.EVU.bi_P.CoDNAAuthorForWord;
 public class PDNTest{
 	public static void main(String[] argv) throws InterruptedException {
 		Application application= new Application();
-		application.init();
+		application.IV_();
 		try {
 			CoDNAAuthorForWord app = null;
 			try {

@@ -232,10 +232,10 @@ public class App extends JApplet implements MouseListener, KeyListener, ActionLi
 	public boolean bootDBInTXTWay= false;
 	public boolean bootDBInBaseWay= false;
 	public boolean bootDBInWebWay= false;
-	public void init(){
+	public void IV_(){
 		try {
 			appInit= new AppInit();
-			appInit.init(this);
+			appInit.IV_(this);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -383,7 +383,7 @@ public class App extends JApplet implements MouseListener, KeyListener, ActionLi
 						//3 Éú³Éframe
 						if(null== frameTag) {
 							tagSearch= new TagSearch();
-							tagSearch.init(name);
+							tagSearch.IV_(name);
 							tagSearch.setBounds(0, 0, 435, 355);
 							tagSearch.setVisible(true);
 							tagSearch.show();
@@ -857,7 +857,7 @@ public class App extends JApplet implements MouseListener, KeyListener, ActionLi
 
 		Translator ts= new Translator_E();
 		try {
-			ts.init(_A);
+			ts.IV_(_A);
 		} catch (IOException e) {
 		} 
 		List<Verbal> verbals= ts.index(_A, forE);

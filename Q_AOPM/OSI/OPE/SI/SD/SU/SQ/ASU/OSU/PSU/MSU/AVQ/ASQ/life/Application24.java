@@ -76,7 +76,7 @@ public class Application24 extends Thread {
 		return false;
 	}
 
-	public void init() throws InterruptedException {
+	public void IV_() throws InterruptedException {
 		//Application application= new Application();
 		//application.run();
 		//PRINT YANGLIAOJING FUNCTIONS APINAME
@@ -86,8 +86,8 @@ public class Application24 extends Thread {
 		
 		String string1= "C:\\Users\\Lenovo\\eclipse-workspace\\HRJ_YLJ_18111";
 		String string2= "C:\\Users\\Lenovo\\eclipse-workspace\\HRJ_YLJ_18111";
-		pdns.init();
-		cmss.init();
+		pdns.IV_();
+		cmss.IV_();
 	    
 		String[] DNA_CHOMOS= new String[16];
 		DNA_CHOMOS[0]="AV";DNA_CHOMOS[1]="AE";DNA_CHOMOS[2]="AC";DNA_CHOMOS[3]="AS";
@@ -212,7 +212,7 @@ public class Application24 extends Thread {
 								if(list.containsKey(pdn)) {
 									pDN= list.get(pdn);	
 								}else {
-									pDN.init();
+									pDN.IV_();
 								}
 								List<String> PDNlist;
 								if(pDN.javaPDNs.containsKey(pdn)) {

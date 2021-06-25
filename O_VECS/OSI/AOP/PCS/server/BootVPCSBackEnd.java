@@ -25,7 +25,7 @@ public class BootVPCSBackEnd extends Thread{
 	public BootVPCSBackEnd(A _A) throws IOException {
 		if(null== _A) {
 			this._A = new CogsBinaryForest_AE();
-			this._A.initMixed();
+			this._A.IV_Mixed();
 		}else {
 			this._A= _A;
 		}
@@ -35,22 +35,22 @@ public class BootVPCSBackEnd extends Thread{
 	}
 	
     // 因为首页已经init了,我之后会改成_A带入就是了. 罗瑶光20210420
-	public void init() {
+	public void IV_() {
 		try {
 			//port = Integer.parseInt(properties.getProperty("port"));
 			port= Config.detaVPCSBackEndPort;
 			server = new ServerSocket(port);
 			if(null== this._A) {
 				this._A = new CogsBinaryForest_AE();
-				this._A.initMixed();
+				this._A.IV_Mixed();
 			}
 			emotionMap = new EmotionMap_E(); 
-			emotionMap.initNegativeMap();
-			emotionMap.initPositiveMap();
-			emotionMap.initMotivationMap();
-			emotionMap.initTrendingMap();
-			emotionMap.initPredictionMap();
-			emotionMap.initDistinctionMap();
+			emotionMap.IV_NegativeMap();
+			emotionMap.IV_PositiveMap();
+			emotionMap.IV_MotivationMap();
+			emotionMap.IV_TrendingMap();
+			emotionMap.IV_PredictionMap();
+			emotionMap.IV_DistinctionMap();
 			System.out.println();
 			System.out.println("----德塔VPCS后端服务器端口启动:" + port);
 			//MrTin.born.start();;
@@ -63,7 +63,7 @@ public class BootVPCSBackEnd extends Thread{
 	public void bootBackEnd() throws IOException {
 		SocketThreadPool socketThreadPool= new SocketThreadPool();
 		long before = System.currentTimeMillis();
-		init();
+		IV_();
 		I_RestService();
 		long now = System.currentTimeMillis();
 		System.out.println("----DETA VPCS BackEnd--2.0");

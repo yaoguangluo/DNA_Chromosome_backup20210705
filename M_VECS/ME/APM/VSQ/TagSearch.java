@@ -16,7 +16,7 @@ import SVQ.stable.StableFile;
 import ME.APM.VSQ.ESI.SVQ.search.CaiJPanel;
 public class TagSearch extends ScrollPane implements MouseListener, KeyListener, ActionListener{	
 	private static final long serialVersionUID= 1L;
-	public void init(JTextField name){
+	public void IV_(JTextField name){
 		StableFile.DNA_PDN.put(this.getClass().getCanonicalName(), true);
 		JTabbedPane jTabbedpane= new JTabbedPane();
 		Container ∂‡π˙”Ô—‘Container= new Container();

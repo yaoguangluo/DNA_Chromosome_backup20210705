@@ -2,12 +2,12 @@ package OCI.AVC.SUQ.SVQ.MPC.fhmm.C;
 import java.io.IOException;
 import java.util.Map;
 public interface EmotionMap{
-	void initMotivationMap() throws IOException;
-	void initPositiveMap() throws IOException;
-	void initNegativeMap() throws IOException;
-	void initTrendingMap() throws IOException;
-	void initPredictionMap() throws IOException;
-	void initDistinctionMap() throws IOException;
+	void IV_MotivationMap() throws IOException;
+	void IV_PositiveMap() throws IOException;
+	void IV_NegativeMap() throws IOException;
+	void IV_TrendingMap() throws IOException;
+	void IV_PredictionMap() throws IOException;
+	void IV_DistinctionMap() throws IOException;
 	public Map<String, Object> getPositiveMap();
 	public void I_PositiveMap(Map<String, Object> positiveMap);
 	public Map<String, Object> getNegativeMap();

@@ -63,7 +63,7 @@ public class DetaDBUtil {
 		return out;
 	}
 
-	public static void initCulumnNameType() {
+	public static void IV_CulumnNameType() {
 		culumnType = new ConcurrentHashMap<>();
 		culumnType.put("int", true);
 		culumnType.put("long", true);

@@ -20,15 +20,15 @@ public class ServerInit_C_VPCSFrontEnd {
 			System.out.println("----德塔VPCS前端服务器资源载入:成功！");
 	}
 
-	public void init() throws IOException {
+	public void IV_() throws IOException {
 		try {
 			port= Config.detaVPCSFrontEndPort;
 			server= new ServerSocket(port);
 			System.out.println("----德塔VPCS前端服务器端口启动:" + port);
 			if(null!= app.dbConfigPath&& !app.dbConfigPath.isEmpty()) {
-				DetaUtil.initDB(app.dbConfigPath);//稍后整理下
+				DetaUtil.IV_DB(app.dbConfigPath);//稍后整理下
 			}else {
-				DetaUtil.initDB("C:/DBconfig.lyg");
+				DetaUtil.IV_DB("C:/DBconfig.lyg");
 			}
 			System.out.println("----德塔VPCS前端服务器DMA确认:成功！");	
 		} catch (Exception e) {
@@ -40,7 +40,7 @@ public class ServerInit_C_VPCSFrontEnd {
 		sleeper_H.callSkivvy(); 
 	}
 
-	public void initServer(App app) throws IOException {
+	public void IV_Server(App app) throws IOException {
 		this.app= app;
 		System.out.println("");
 		System.out.println("----DETA VPCS--2.0");
@@ -49,7 +49,7 @@ public class ServerInit_C_VPCSFrontEnd {
 		Time_P time_P= new Time_P();
 		time_P.begin();
 		Sleeper_H sleeper_H= new Sleeper_H();
-		init();
+		IV_();
 		time_P.end();
 		System.out.println("----德塔VPCS前端服务器启动一切正常-总耗时:"+ time_P.duration()+ "毫秒");
 		while(true){	

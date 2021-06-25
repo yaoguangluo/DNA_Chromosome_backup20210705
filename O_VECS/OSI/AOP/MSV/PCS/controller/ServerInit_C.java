@@ -31,7 +31,7 @@ public class ServerInit_C {
 //		}
 	}
 
-	public static void initService(JTextPane jTextPane) throws IOException {
+	public static void IV_Service(JTextPane jTextPane) throws IOException {
 		try {
 			//port= Integer.parseInt(properties.getProperty(StableData.TCP_PORT));
 			port= Config.detaVPCSDBPort;
@@ -45,10 +45,10 @@ public class ServerInit_C {
 			}
 			if(null!= dbConfigPath && !dbConfigPath.isEmpty()) {
 				dbConfigPath.replace("\\", "/"); //支持 linux reg 格式
-				DetaUtil.initDB(dbConfigPath);
+				DetaUtil.IV_DB(dbConfigPath);
 			}else {
 				dbConfigPath= "C:/DBconfig.lyg";
-				DetaUtil.initDB(dbConfigPath);
+				DetaUtil.IV_DB(dbConfigPath);
 			}
 			System.out.println("----德塔VPCS数据库服务器DMA确认:成功！");
 			if(jTextPane!= null) {
@@ -57,7 +57,7 @@ public class ServerInit_C {
 				text="\r\n"+ "...";
 				jTextPane.setText(text);
 			}
-			RequestFilter_C.initBlockList();
+			RequestFilter_C.IV_BlockList();
 			System.out.println("----德塔VPCS数据库服务器IP过滤服务启动:成功！");
 			if(jTextPane!= null) {
 				String text= jTextPane.getText();
@@ -94,7 +94,7 @@ public class ServerInit_C {
 		sleeper_H.callSkivvy(); 
 	}
 
-	public static void initServer(App app) throws IOException {
+	public static void IV_Server(App app) throws IOException {
 		dbConfigPath= app.dbConfigPath;
 		System.out.println("----DETA VPCS--2.0");
 		System.out.println("----Author: 罗瑶光");
@@ -110,7 +110,7 @@ public class ServerInit_C {
 		Time_P time_P= new Time_P();
 		time_P.begin();
 		Sleeper_H sleeper_H = new Sleeper_H();
-		initService(app.appConfig.SectionJPanel.jTextPane);
+		IV_Service(app.appConfig.SectionJPanel.jTextPane);
 		time_P.end();
 		if(app.appConfig.SectionJPanel.jTextPane!= null) {
 			String text= app.appConfig.SectionJPanel.jTextPane.getText();

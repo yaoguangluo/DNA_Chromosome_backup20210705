@@ -14,7 +14,7 @@ import org.reportMap.ReportIndex;
 public class DetaLabelConjunction{
 	public static DetaLabelConjunction detaLabelConjunction;
 	public Map<String, Boolean> checkSets= new HashMap<>();
-	public void init() throws IOException {
+	public void IV_() throws IOException {
 		InputStream inputStream= new ReportIndex().getClass().getResourceAsStream("report.txt");
 		BufferedReader cReader= new BufferedReader(new InputStreamReader(inputStream));  
 		String ctempString= null; 

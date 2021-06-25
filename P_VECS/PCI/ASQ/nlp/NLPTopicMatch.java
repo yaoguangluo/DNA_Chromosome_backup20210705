@@ -24,7 +24,7 @@ public class NLPTopicMatch{
 			, String[] sampleSentences) throws IOException {
 		//init the deta mixed parser engine.
 		A _A= new CogsBinaryForest_AE();
-		_A.initMixed();
+		_A.IV_Mixed();
 		//init the nlp POS(part of speech) functions.
 		Map<String, String> nlp = _A.getPosCnToCn();
 		List<String> keys= _A.parserMixedString(searchString);
@@ -110,7 +110,7 @@ public class NLPTopicMatch{
 			, String[] sampleSentences) throws IOException {
 		//init the deta mixed parser engine.
 		A _A= new CogsBinaryForest_AE();
-		_A.initMixed();
+		_A.IV_Mixed();
 		//init the nlp POS(part of speech) functions.
 		Map<String, String> nlp = _A.getPosCnToCn();
 		List<String> keys= _A.parserMixedString(searchString);

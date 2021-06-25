@@ -59,10 +59,10 @@ import MSU.OEI.ME.SMS.SEU.OSD.OSI.E.Translator_E;
 import ME.APM.VSQ.OPE.hospital.DetaLabelStables;
 public class AppInit {	
 	@SuppressWarnings({ "deprecation", "resource" })
-	public void init(App app) throws IOException{
+	public void IV_(App app) throws IOException{
 		//Register Medicine Report
 		DetaLabelConjunction.detaLabelConjunction = new DetaLabelConjunction();
-		DetaLabelConjunction.detaLabelConjunction.init();
+		DetaLabelConjunction.detaLabelConjunction.IV_();
 		//Register ELEC hospital global actions clean 
 		DetaLabelStables.stableImages= new DetaLabelStables();
 		DetaLabelStables.stableImages.setStableImages();
@@ -117,7 +117,7 @@ public class AppInit {
 		});
 
 		app.appInstance= app;
-		app.appConfig.init(app.appInstance);
+		app.appConfig.IV_(app.appInstance);
 		//stop cursor
 		while(app.appConfig.SectionJPanel.isConfig) {
 			try {
@@ -151,7 +151,7 @@ public class AppInit {
 				Thread.sleep(300);
 			}
 			Thread.sleep(2000);
-			app._A.initMixed();
+			app._A.IV_Mixed();
 			app.pos= app._A.getPosCnToCn();
 			app.pose= app._A.getPosEnToEn();
 			app.posec= app._A.getPosEnToCn();
@@ -177,7 +177,7 @@ public class AppInit {
 				app.appConfig.SectionJPanel.jTextPane.setText(text);
 			}
 			app.translator= new Translator_E();
-			app.translator.init(app._A);
+			app.translator.IV_(app._A);
 			app.text= new JTextPane();
 			app.jText= new JTextPane();
 			app.jxText= new JTextPane();
@@ -211,7 +211,7 @@ public class AppInit {
 				public void actionPerformed(ActionEvent e) {
 					if(null== app.frame) {
 						app.appSearch= new AppSearch();
-						app.appSearch.init(app.name);
+						app.appSearch.IV_(app.name);
 						app.appSearch.setBounds(0, 0, 785, 655);
 						app.appSearch.setVisible(true);
 						app.appSearch.show();
@@ -497,7 +497,7 @@ public class AppInit {
 
 					if(null== app.frameHospital) {
 						app.appHospital= new AppHospital();
-						app.appHospital.init(app.jText, app.appInstance);
+						app.appHospital.IV_(app.jText, app.appInstance);
 						app.appHospital.setBounds(0, 0, 1145, 455);
 						app.appHospital.setVisible(true);
 						app.appHospital.show();
@@ -512,7 +512,7 @@ public class AppInit {
 						app.frameHospital.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);	
 					}else {						
 						app.appHospital= new AppHospital();
-						app.appHospital.init(app.jText, app.appInstance);
+						app.appHospital.IV_(app.jText, app.appInstance);
 						app.appHospital.setBounds(0, 0, 1145, 455);
 						app.appHospital.setVisible(true);
 						app.appHospital.show();

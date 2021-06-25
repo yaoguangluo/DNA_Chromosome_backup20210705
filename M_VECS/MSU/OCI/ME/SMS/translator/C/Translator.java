@@ -5,7 +5,7 @@ import java.util.List;
 import AVQ.ASQ.OVQ.OSQ.VSQ.obj.Verbal;
 import OCI.ME.analysis.C.A;
 public interface Translator{	
-	void init(A _A) throws IOException;
+	void IV_(A _A) throws IOException;
 	String EnglishStringToChineseString(A _A, String EnglishString);
 	String ChineseStringToEnglishString(A _A, String ChineseString);
 	String MixedStringToChineseString(A _A, String key);

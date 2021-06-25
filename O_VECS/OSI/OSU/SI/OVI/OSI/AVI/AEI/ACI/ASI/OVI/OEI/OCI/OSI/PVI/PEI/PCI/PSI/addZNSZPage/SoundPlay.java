@@ -426,7 +426,7 @@ public class SoundPlay implements Runnable {
 				e2.printStackTrace();
 		}
 			DFT dFT= new DFT();
-			dFT.init(1024);
+			dFT.IV_(1024);
 			double[] fft= new double[1024];
 			fft[2]= cur.makeContainerZNSZ.source2* 60;
 			fft[3]= cur.makeContainerZNSZ.source3* 60;

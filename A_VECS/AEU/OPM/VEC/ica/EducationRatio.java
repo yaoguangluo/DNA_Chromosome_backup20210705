@@ -15,7 +15,7 @@ public class EducationRatio{
 
 	public double[] getEducationKernel(String text) throws IOException {
 		A _A = new CogsBinaryForest_AE();
-		_A.init();
+		_A.IV_();
 		Map<String, String> pos = _A.getPosCnToCn();
 		List<String> sets = _A.parserString(text);
 		Map<Integer, WordFrequency> map = _A.getWordFrequencyByReturnSortMap(sets);

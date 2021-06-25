@@ -8,7 +8,7 @@ import SVQ.stable.StableString;
 public class EmotionTest{
 	public static void main(String[] argv) throws IOException {
 		EmotionInit emotionInit = new EmotionInit();
-		emotionInit.init(StableString.text1);
+		emotionInit.IV_(StableString.text1);
 		//reduce
 		double positiveCount = emotionInit.getPositiveCount();
 		double negativeCount = emotionInit.getNegativeCount();

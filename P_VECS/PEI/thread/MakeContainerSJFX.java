@@ -44,7 +44,7 @@ public class MakeContainerSJFX extends Thread implements Runnable{
 			Thread.sleep(1000* 5);
 			jpanelSecond.setBounds(0, 0, 1490, 980);
 			GUISample NE= new GUISample();
-			NE.init(this.tableData_old,this.text, this.u, this._A, this.pos);
+			NE.IV_(this.tableData_old,this.text, this.u, this._A, this.pos);
 			NE.start();
 			jpanelSecond.add(NE);
 			jpanelSecond.setName(tabNames.get(1));

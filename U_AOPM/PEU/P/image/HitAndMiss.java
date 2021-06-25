@@ -4,7 +4,7 @@ public class HitAndMiss{
 	int[][]kernel;
 	int[][]GetRegion;
 	int[][]tempG;
-	private void initTemp(int[][]thisG) {
+	private void IV_Temp(int[][]thisG) {
 		tempG=new int[thisG.length][thisG[0].length];
 		for(int i=0;i<thisG.length;i++){
 			for(int j=0;j<thisG[0].length;j++){
@@ -40,7 +40,7 @@ public class HitAndMiss{
 				}
 			}
 		}
-		initTemp(thisG);	
+		IV_Temp(thisG);	
 		for(int i=w/2;i<thisw+w/2;i++){
 			for(int j=h/2;j<thish+h/2;j++){
 				int last=0;

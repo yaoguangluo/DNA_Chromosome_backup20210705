@@ -10,7 +10,7 @@ public class EnvironmentTest{
 	public static void main(String[] argv) throws IOException {
 		//init
 		EnvironmentInit environmentInit = new EnvironmentInit();
-		environmentInit.init(StableString.text1);
+		environmentInit.IV_(StableString.text1);
 		Map<String, EmotionSample> environmentSampleMap = environmentInit.getEmotionSampleMap();
 		//reduce
 		System.out.println("»·    ¾³£º");

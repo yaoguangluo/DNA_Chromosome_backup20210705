@@ -384,7 +384,7 @@ public class Monitor extends JApplet{
 		}
 		@Override
 		public void init() {
-			decadeToPDS.init(decadeToPDS);
+			decadeToPDS.IV_(decadeToPDS);
 			readEnglish= new ReadEnglish();
 			grabber= new OpenCVFrameGrabber(0);
 			converter= new OpenCVFrameConverter.ToIplImage();

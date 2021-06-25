@@ -17,7 +17,7 @@ public class Translator_E implements Translator{
 	public Map<String, String> cte;
 	public Map<String, String> fulletc;
 	public Map<String, String> fullcte;
-	public void init(A _A) throws IOException {
+	public void IV_(A _A) throws IOException {
 		posec = _A.getPosEnToCn();
 		posee = _A.getPosEnToEn();
 		poscc = _A.getPosCnToCn();

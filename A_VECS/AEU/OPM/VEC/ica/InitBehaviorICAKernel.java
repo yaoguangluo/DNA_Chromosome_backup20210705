@@ -34,7 +34,7 @@ public class InitBehaviorICAKernel{
 	private List<String> forRestReturn;
 	public double getTrustRate(String text) throws IOException {
 		EmotionInit emotionInitEnvironment = new EmotionInit();
-		emotionInitEnvironment.init(text);
+		emotionInitEnvironment.IV_(text);
 		double positiveCountEnvironment = emotionInitEnvironment.getPositiveCount();
 		double totalCountEnvironment = emotionInitEnvironment.getTotalCount();
 		positiveCountEnvironment += StablePOS.INT_ONE;
@@ -43,7 +43,7 @@ public class InitBehaviorICAKernel{
 
 	public double getTrustRate(String text, A _A, EmotionMap emotionMap) throws IOException {
 		EmotionInit emotionInitEnvironment = new EmotionInit();
-		emotionInitEnvironment.initExclude_A(text, _A, emotionMap);
+		emotionInitEnvironment.IV_Exclude_A(text, _A, emotionMap);
 		//reduce
 		double positiveCountEnvironment = emotionInitEnvironment.getPositiveCount();
 		double totalCountEnvironment = emotionInitEnvironment.getTotalCount();
@@ -55,7 +55,7 @@ public class InitBehaviorICAKernel{
 		forRestReturn = new LinkedList<>();
 		kernel = new double[StablePOS.INT_SEVEN];	
 		EmotionInit emotionInit = new EmotionInit();
-		emotionInit.init(text);
+		emotionInit.IV_(text);
 		double positiveCount = emotionInit.getPositiveCount();
 		double negativeCount = emotionInit.getNegativeCount();
 		double totalCount = emotionInit.getTotalCount();
@@ -77,7 +77,7 @@ public class InitBehaviorICAKernel{
 		kernel[StablePOS.INT_ONE] = phychologicRatio;
 		kernel[StablePOS.INT_TWO] = infectionRatio;
 		EnvironmentInit environmentInit = new EnvironmentInit();
-		environmentInit.initFromEmotion(emotionInit.getWordFrequencyMap());
+		environmentInit.IV_FromEmotion(emotionInit.getWordFrequencyMap());
 		Map<String, EmotionSample> environmentSampleMap = environmentInit.getEmotionSampleMap();
 		forRestReturn.add("观测角度：");
 		String environmentText = "";
@@ -138,7 +138,7 @@ public class InitBehaviorICAKernel{
 		forRestReturn = new LinkedList<>();
 		kernel = new double[StablePOS.INT_SEVEN];	
 		EmotionInit emotionInit = new EmotionInit();
-		emotionInit.initExclude_A(text, _A, emotionMap);
+		emotionInit.IV_Exclude_A(text, _A, emotionMap);
 		double positiveCount = emotionInit.getPositiveCount();
 		double negativeCount = emotionInit.getNegativeCount();
 		double totalCount = emotionInit.getTotalCount();
@@ -160,7 +160,7 @@ public class InitBehaviorICAKernel{
 		kernel[StablePOS.INT_ONE] = phychologicRatio;
 		kernel[StablePOS.INT_TWO] = infectionRatio;
 		EnvironmentInit environmentInit = new EnvironmentInit();
-		environmentInit.initFromEmotionExcludeEmotion(emotionInit.getWordFrequencyMap(), emotionMap);
+		environmentInit.IV_FromEmotionExcludeEmotion(emotionInit.getWordFrequencyMap(), emotionMap);
 		Map<String, EmotionSample> environmentSampleMap = environmentInit.getEmotionSampleMap();
 		forRestReturn.add("观测角度：");
 		String environmentText = StablePOS.EMPTY_STRING;

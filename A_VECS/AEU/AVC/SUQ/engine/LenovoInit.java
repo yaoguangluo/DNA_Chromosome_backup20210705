@@ -31,22 +31,22 @@ public class LenovoInit{
 	@SuppressWarnings("unused")
 	public static void main(String[] argv) throws IOException {
 		LenovoInit lenovoInit = new LenovoInit();
-		lenovoInit.init(StableString.text1);
+		lenovoInit.IV_(StableString.text1);
 		Map<String, EmotionSample> environmentSampleMap = lenovoInit.getEnvironmentInit().getEmotionSampleMap();
 		Map<String, Object> lenovo = lenovoInit.getSensingMap().getLenovoMap();
 	}
 
-	public void init(String text) throws IOException {
+	public void IV_(String text) throws IOException {
 		environmentInit = new EnvironmentInit();
-		environmentInit.init(text);
+		environmentInit.IV_(text);
 		sensingMap = new SensingMap_E();
-		sensingMap.initLenovoMap(environmentInit.get_A());	
+		sensingMap.IV_LenovoMap(environmentInit.get_A());	
 	}
 	
-	public void initExclude_A(String text, A _A) throws IOException {
+	public void IV_Exclude_A(String text, A _A) throws IOException {
 		environmentInit = new EnvironmentInit();
-		environmentInit.initExclude_A(text, _A);
+		environmentInit.IV_Exclude_A(text, _A);
 		sensingMap = new SensingMap_E();
-		sensingMap.initLenovoMap(environmentInit.get_A());	
+		sensingMap.IV_LenovoMap(environmentInit.get_A());	
 	}
 }

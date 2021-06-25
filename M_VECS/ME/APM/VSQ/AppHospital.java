@@ -29,7 +29,7 @@ import MVQ.label.DetaLabel;
 public class AppHospital extends ScrollPane implements MouseListener, KeyListener, ActionListener, MouseMotionListener{	
 	private static final long serialVersionUID= 1L;
 	public List<DetaLabel> jFrameList= new LinkedList<>();
-	public void init(JTextPane name, App app){
+	public void IV_(JTextPane name, App app){
 		StableFile.DNA_PDN.put(this.getClass().getCanonicalName(), true);
 		JTabbedPane jTabbedpane= new JTabbedPane();
 		Container chuanRanJiZhenContainer= new Container();

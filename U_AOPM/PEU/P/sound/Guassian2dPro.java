@@ -123,7 +123,7 @@ public class Guassian2dPro{
 	}
 	@SuppressWarnings("rawtypes")
 	public Vector getVectorLines(LYGFileIO toplygin) {
-		toplygin.init();	 
+		toplygin.IV_();	 
 		if(toplygin.adataFrame!=null){
 			this.getVectorLines(toplygin.adataFrame.audioIS);
 			while(toplygin.adataFrame.next!=null)
@@ -132,7 +132,7 @@ public class Guassian2dPro{
 				this.getVectorLines(toplygin.adataFrame.audioIS);
 			}
 		}
-		toplygin.init();
+		toplygin.IV_();
 		// TODO Auto-generated method stub
 		return null;
 	}

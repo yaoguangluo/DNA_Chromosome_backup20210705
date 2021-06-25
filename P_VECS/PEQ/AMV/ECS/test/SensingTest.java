@@ -31,13 +31,13 @@ public class SensingTest{
 	private Map<String, String> pos;
 	public String[][] getMatrix() throws IOException {
 		EmotionMap emotionMap = new EmotionMap_E(); 
-		emotionMap.initMotivationMap();
-		emotionMap.initNegativeMap();
-		emotionMap.initPositiveMap();
-		emotionMap.initTrendingMap();
-		emotionMap.initPredictionMap();
+		emotionMap.IV_MotivationMap();
+		emotionMap.IV_NegativeMap();
+		emotionMap.IV_PositiveMap();
+		emotionMap.IV_TrendingMap();
+		emotionMap.IV_PredictionMap();
 		A _A = new CogsBinaryForest_AE();
-		_A.initMixed();
+		_A.IV_Mixed();
 		pos = _A.getPosCnToCn();
 		Map<String, Object> positive= emotionMap.getPositiveMap();
 		Map<String, Object> negative= emotionMap.getNegativeMap();

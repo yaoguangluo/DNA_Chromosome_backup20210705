@@ -17,7 +17,7 @@ public class HoughTransform {
 		}
 	}
 
-	public void initHTMatrix(int[][] g) {
+	public void IV_HTMatrix(int[][] g) {
 		int max=0;
 		for(int i=0;i<g.length;i++){
 			for(int j=0;j<g[0].length;j++){

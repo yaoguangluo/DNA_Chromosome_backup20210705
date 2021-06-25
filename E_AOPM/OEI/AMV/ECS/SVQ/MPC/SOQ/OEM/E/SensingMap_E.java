@@ -20,7 +20,7 @@ public class SensingMap_E implements SensingMap{
 	}
 
 	@Override
-	public void initLenovoMap(A _A) throws IOException {
+	public void IV_LenovoMap(A _A) throws IOException {
 		lenovoMap= new HashMap<>();
 		Map<String, String> CnToEnMap= _A.getFullCnToEn();
 		Map<String, String> EnToCnMap= _A.getEnToCn();

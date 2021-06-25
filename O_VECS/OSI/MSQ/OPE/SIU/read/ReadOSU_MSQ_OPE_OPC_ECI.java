@@ -32,7 +32,7 @@ public class ReadOSU_MSQ_OPE_OPC_ECI extends OSU_AVQ_ASQ_OPE_OPC_ECI{
 	public void run(final ReadOSU_MSQ_AVQ_ASQ_OVQ_OSQ_VSQ SQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ) 
 			throws IOException{
 		_A= new CogsBinaryForest_AE();
-		_A.initMixed();
+		_A.IV_Mixed();
 		//拿到中文数据
 		pos= _A.getPosCnToCn();
 		indexResult= new ArrayList<String[]>();

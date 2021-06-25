@@ -150,18 +150,18 @@ public class EnvironmentInit{
 	@SuppressWarnings("unused")
 	public static void main(String[] argv) throws IOException {
 		EnvironmentInit environmentInit = new EnvironmentInit();
-		environmentInit.init(StableString.text1);
+		environmentInit.IV_(StableString.text1);
 		Map<String, EmotionSample> environmentSampleMap = environmentInit.getEmotionSampleMap();
 	}
 
-	public void init(String text) throws IOException {
+	public void IV_(String text) throws IOException {
 		emotionMap = new EmotionMap_E(); 
-		emotionMap.initMotivationMap();
-		emotionMap.initTrendingMap();
-		emotionMap.initPredictionMap();
-		emotionMap.initDistinctionMap();
+		emotionMap.IV_MotivationMap();
+		emotionMap.IV_TrendingMap();
+		emotionMap.IV_PredictionMap();
+		emotionMap.IV_DistinctionMap();
 		_A = new CogsBinaryForest_AE();
-		_A.init();
+		_A.IV_();
 		motivation = emotionMap.getMotivationMap();
 		trending = emotionMap.getTrendingMap();
 		prediction = emotionMap.getPredictionMap();
@@ -176,12 +176,12 @@ public class EnvironmentInit{
 		rationMap.IQ_Distinction(emotionSampleMap, distinction);
 	}
 	
-	public void initExclude_A(String text, A _AInput) throws IOException {
+	public void IV_Exclude_A(String text, A _AInput) throws IOException {
 		emotionMap = new EmotionMap_E(); 
-		emotionMap.initMotivationMap();
-		emotionMap.initTrendingMap();
-		emotionMap.initPredictionMap();
-		emotionMap.initDistinctionMap();
+		emotionMap.IV_MotivationMap();
+		emotionMap.IV_TrendingMap();
+		emotionMap.IV_PredictionMap();
+		emotionMap.IV_DistinctionMap();
 		_A = _AInput;
 		motivation = emotionMap.getMotivationMap();
 		trending = emotionMap.getTrendingMap();
@@ -197,12 +197,12 @@ public class EnvironmentInit{
 		rationMap.IQ_Distinction(emotionSampleMap, distinction);
 	}
 	
-	public void initFromEmotion(Map<Integer, WordFrequency> getWordFrequencyMap) throws IOException {
+	public void IV_FromEmotion(Map<Integer, WordFrequency> getWordFrequencyMap) throws IOException {
 		emotionMap = new EmotionMap_E(); 
-		emotionMap.initMotivationMap();
-		emotionMap.initTrendingMap();
-		emotionMap.initPredictionMap();
-		emotionMap.initDistinctionMap();
+		emotionMap.IV_MotivationMap();
+		emotionMap.IV_TrendingMap();
+		emotionMap.IV_PredictionMap();
+		emotionMap.IV_DistinctionMap();
 		//parser sentence
 		motivation = emotionMap.getMotivationMap();
 		trending = emotionMap.getTrendingMap();
@@ -217,7 +217,7 @@ public class EnvironmentInit{
 		rationMap.IQ_Distinction(emotionSampleMap, distinction);
 	}
 	
-	public void initFromEmotionExcludeEmotion(Map<Integer, WordFrequency> getWordFrequencyMap, EmotionMap emotionMapInput) throws IOException {
+	public void IV_FromEmotionExcludeEmotion(Map<Integer, WordFrequency> getWordFrequencyMap, EmotionMap emotionMapInput) throws IOException {
 		emotionMap = emotionMapInput;
 		motivation = emotionMap.getMotivationMap();
 		trending = emotionMap.getTrendingMap();

@@ -164,7 +164,7 @@ public class FullDNATokenPDI {
 //		pDE_RNA_FullFormular.key[3]= 0.632;
 //
 //		pDE_RNA_FullFormular.text= "控制吸收";
-//		pDE_RNA_FullFormular.pdw= pDE_RNA_FullFormular.initonSect(pDE_RNA_FullFormular.text);
+//		pDE_RNA_FullFormular.pdw= pDE_RNA_FullFormular.IV_onSect(pDE_RNA_FullFormular.text);
 //		System.out.println("原文: "+ pDE_RNA_FullFormular.text);
 //		//pDE_RNA_FullFormular.pdw= "字典保密：MSIOCUOCIPCUPCI";
 //		String[] lock= new String[12];

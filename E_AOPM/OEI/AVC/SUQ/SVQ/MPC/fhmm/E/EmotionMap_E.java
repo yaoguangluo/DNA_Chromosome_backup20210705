@@ -66,7 +66,7 @@ public class EmotionMap_E implements EmotionMap{
 		this.distinctionMap = distinctionMap;
 	}
 	
-	public void initPositiveMap() throws IOException{
+	public void IV_PositiveMap() throws IOException{
 		positiveMap = new HashMap<>();
 		InputStream in = getClass().getResourceAsStream(StablePOS.WORDS_SOURSE_LINK_POS_POSITIVE);
 		BufferedReader cReader = new BufferedReader(new InputStreamReader(in, StablePOS.UTF8_STRING));
@@ -79,7 +79,7 @@ public class EmotionMap_E implements EmotionMap{
 		cReader.close();
 	}
 	
-	public void initMotivationMap() throws IOException{
+	public void IV_MotivationMap() throws IOException{
 		motivationMap = new HashMap<>();
 		InputStream in = getClass().getResourceAsStream(StablePOS.WORDS_SOURSE_LINK_MOTIVATION);
 		BufferedReader cReader = new BufferedReader(new InputStreamReader(in, StablePOS.UTF8_STRING));
@@ -93,7 +93,7 @@ public class EmotionMap_E implements EmotionMap{
 		cReader.close();
 	}
 	
-	public void initTrendingMap() throws IOException{
+	public void IV_TrendingMap() throws IOException{
 		trendingMap = new HashMap<>();
 		InputStream in = getClass().getResourceAsStream(StablePOS.WORDS_SOURSE_LINK_TRENDING);
 		BufferedReader cReader = new BufferedReader(new InputStreamReader(in, StablePOS.UTF8_STRING));
@@ -107,7 +107,7 @@ public class EmotionMap_E implements EmotionMap{
 		cReader.close();
 	}
 	
-	public void initNegativeMap() throws IOException{
+	public void IV_NegativeMap() throws IOException{
 		negativeMap = new HashMap<>();
 		InputStream in = getClass().getResourceAsStream(StablePOS.WORDS_SOURSE_LINK_POS_NEGATIVE);
 		BufferedReader cReader = new BufferedReader(new InputStreamReader(in, StablePOS.UTF8_STRING));
@@ -120,7 +120,7 @@ public class EmotionMap_E implements EmotionMap{
 		cReader.close();
 	}
 
-	public void initPredictionMap() throws IOException {
+	public void IV_PredictionMap() throws IOException {
 		predictionMap = new HashMap<>();
 		InputStream in = getClass().getResourceAsStream(StablePOS.WORDS_SOURSE_LINK_PREDICTION);
 		BufferedReader cReader = new BufferedReader(new InputStreamReader(in, StablePOS.UTF8_STRING));
@@ -134,7 +134,7 @@ public class EmotionMap_E implements EmotionMap{
 		cReader.close();
 	}
 
-	public void initDistinctionMap() throws IOException {
+	public void IV_DistinctionMap() throws IOException {
 		distinctionMap = new HashMap<>();
 		InputStream in = getClass().getResourceAsStream(StablePOS.WORDS_SOURSE_LINK_DISTINCTION);
 		BufferedReader cReader = new BufferedReader(new InputStreamReader(in, StablePOS.UTF8_STRING));

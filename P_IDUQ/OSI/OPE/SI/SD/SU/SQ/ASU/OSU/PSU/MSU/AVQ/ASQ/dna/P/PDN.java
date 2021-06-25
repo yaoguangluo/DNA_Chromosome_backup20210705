@@ -9,7 +9,7 @@ public class PDN{
 	}
 
 	private boolean[] pdn;
-	public void init(boolean isMale) {
+	public void IV_(boolean isMale) {
 		pdn= new  boolean[1985525];
 		for(int i= 0; i< pdn.length; i++) {
 			if(isMale) {
