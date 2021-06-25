@@ -363,13 +363,13 @@ public class LinChuangJianYanBaoGaoB  extends JPanel implements MouseListener, K
 		this.add(胰高糖素);
 		this.add(胰高糖素_box);	
 		//
-		addSecondColomns(诊断结果_box, jFrameList);
-		addThirdColomns(诊断结果_box, jFrameList);
-		addFourthColomns(诊断结果_box, jFrameList);
-		addFifthColomns(诊断结果_box, jFrameList);
+		I_SecondColomns(诊断结果_box, jFrameList);
+		I_ThirdColomns(诊断结果_box, jFrameList);
+		I_FourthColomns(诊断结果_box, jFrameList);
+		I_FifthColomns(诊断结果_box, jFrameList);
 		this.validate();
 	}
-	private void addFifthColomns(JTextField 诊断结果_box2, List<DetaLabel> jFrameList) {
+	private void I_FifthColomns(JTextField 诊断结果_box2, List<DetaLabel> jFrameList) {
 		// TODO Auto-generated method stub
 		//copy tab
 		DetaLabel 军团菌抗原检测= new DetaLabel("军团菌抗原检测:");  
@@ -606,7 +606,7 @@ public class LinChuangJianYanBaoGaoB  extends JPanel implements MouseListener, K
 		this.add(肺炎支原体igg_box);	
 	}
 
-	void addFourthColomns(JTextField 诊断结果_box2, List<DetaLabel> jFrameList) {
+	void I_FourthColomns(JTextField 诊断结果_box2, List<DetaLabel> jFrameList) {
 		// TODO Auto-generated method stub
 		//copy tab
 		DetaLabel 淋球菌培养取材= new DetaLabel("淋球菌培养取材cultureofneisseriagonorrhoen:");  
@@ -856,7 +856,7 @@ public class LinChuangJianYanBaoGaoB  extends JPanel implements MouseListener, K
 		this.add(醋酸萘酚酯酶染色_box);	
 	}
 
-	private void addThirdColomns(JTextField 诊断结果_box2, List<DetaLabel> jFrameList) {
+	private void I_ThirdColomns(JTextField 诊断结果_box2, List<DetaLabel> jFrameList) {
 		// TODO Auto-generated method stub
 		//copy tab
 		DetaLabel 血浆同型半胱氨酸= new DetaLabel("血浆同型半胱氨酸hcy:");  
@@ -1130,7 +1130,7 @@ public class LinChuangJianYanBaoGaoB  extends JPanel implements MouseListener, K
 		this.add(setSet_box);	
 	}
 
-	private void addSecondColomns(JTextField 诊断结果_box2, List<DetaLabel> jFrameList) {
+	private void I_SecondColomns(JTextField 诊断结果_box2, List<DetaLabel> jFrameList) {
 		// TODO Auto-generated method stub
 		//copy tab
 		DetaLabel 胎盘糖旦白胎盘糖旦白= new DetaLabel("胎盘糖旦白胎盘糖旦白:");  

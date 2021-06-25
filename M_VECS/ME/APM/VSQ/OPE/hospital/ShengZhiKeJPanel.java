@@ -250,12 +250,12 @@ public class ShengZhiKeJPanel  extends JPanel implements MouseListener, KeyListe
 		this.add(label614);
 		this.add(label614_box);	
 		//
-		addSecondColomns();
-		addThirdColomns();
-		addFourthColomns();
-		addFifthColomns();
+		I_SecondColomns();
+		I_ThirdColomns();
+		I_FourthColomns();
+		I_FifthColomns();
 	}
-	private void addFifthColomns() {
+	private void I_FifthColomns() {
 		// TODO Auto-generated method stub
 		//copy tab
 		JLabel baiDanBai222223= new JLabel("ÑªÉøÍ¸Ñ¹Ñªosm:");  
@@ -470,7 +470,7 @@ public class ShengZhiKeJPanel  extends JPanel implements MouseListener, KeyListe
 		this.add(label614222223_box);	
 	}
 	
-	void addFourthColomns() {
+	void I_FourthColomns() {
 		// TODO Auto-generated method stub
 		//copy tab
 		JLabel baiDanBai222223= new JLabel("ldhÍ¬¹¤Ã¸is0-ldh :");  
@@ -685,7 +685,7 @@ public class ShengZhiKeJPanel  extends JPanel implements MouseListener, KeyListe
 		this.add(label614222223_box);	
 	}
 	
-	private void addThirdColomns() {
+	private void I_ThirdColomns() {
 		// TODO Auto-generated method stub
 		//copy tab
 		JLabel baiDanBai222223= new JLabel("½ê´¯¾µ¼ì sarcoptes scabidi examination:");  
@@ -900,7 +900,7 @@ public class ShengZhiKeJPanel  extends JPanel implements MouseListener, KeyListe
 		this.add(label614222223_box);	
 	}
 	
-	private void addSecondColomns() {
+	private void I_SecondColomns() {
 		// TODO Auto-generated method stub
 		//copy tab
 		JLabel baiDanBai22= new JLabel("È«Ñªð¤¶È:");  

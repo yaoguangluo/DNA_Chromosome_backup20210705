@@ -95,7 +95,7 @@ public class ZhongYaoTable implements MouseListener {
 		};  
 		//		TableSorterWithLYG4DQS4D sorter= new TableSorterWithLYG4DQS4D(newTableModel); //ADDE
 		TableSorterZYNK sorter= new TableSorterZYNK(app.newTableModel); //ADD
-		sorter.addTableName("zybc");
+		sorter.I_TableName("zybc");
 		sorter.setTableHeader(app.table.getTableHeader());
 		app.table.setModel(sorter); 
 		app.table.setRowHeight(35);                                        //…Ë÷√∏ﬂ∂»

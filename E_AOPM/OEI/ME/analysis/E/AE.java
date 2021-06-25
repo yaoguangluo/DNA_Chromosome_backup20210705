@@ -153,13 +153,13 @@ public class AE implements A {
 					continue Here;
 				}
 				if (StablePOS.INT_THREE == compare) {
-					addFixWords(charPosition, mixedString, fixWords);
+					I_FixWords(charPosition, mixedString, fixWords);
 					countInputStringLength = nlpController.doPOSAndEMMCheckOfThree(countInputStringLength, outputList
 							, wordsForest, stringBuilder, fixWords, posController, charPosition, mixedString);
 					continue Here;
 				}
 				if (StablePOS.INT_FOUR == compare) {
-					addFixWords(charPosition, mixedString, fixWords);
+					I_FixWords(charPosition, mixedString, fixWords);
 					countInputStringLength = nlpController.doSlangCheck(countInputStringLength, outputList, stringBuilder
 							, wordsForest, fixWords, posController, charPosition, mixedString);
 				}
@@ -218,13 +218,13 @@ public class AE implements A {
 					continue Here;
 				}
 				if (compare== StablePOS.INT_THREE) {
-					addFixWords(charPosition, inputString, fixWords);
+					I_FixWords(charPosition, inputString, fixWords);
 					countInputStringLength= nlpController.doPOSAndEMMCheckOfThree(countInputStringLength, outputList
 							, wordsForest, stringBuilder, fixWords, posController, charPosition, inputString);
 					continue Here;
 				}
 				if (compare== StablePOS.INT_FOUR) {
-					addFixWords(charPosition, inputString, fixWords);
+					I_FixWords(charPosition, inputString, fixWords);
 					countInputStringLength= nlpController.doSlangCheck(countInputStringLength, outputList, stringBuilder
 							, wordsForest, fixWords, posController, charPosition, inputString);
 				}
@@ -285,13 +285,13 @@ public class AE implements A {
 					continue Here;
 				}
 				if (compare == StablePOS.INT_THREE) {
-					addFixWords(charPosition, inputString, fixWords);
+					I_FixWords(charPosition, inputString, fixWords);
 					countInputStringLength = nlpController.doPOSAndEMMCheckOfThreeForMap(countInputStringLength, outputList
 							, wordsForest, stringBuilder, fixWords, posController);
 					continue Here;
 				}
 				if (compare == StablePOS.INT_FOUR) {
-					addFixWords(charPosition, inputString, fixWords);
+					I_FixWords(charPosition, inputString, fixWords);
 					countInputStringLength = nlpController.doSlangCheckForMap(countInputStringLength, outputList, stringBuilder
 							, wordsForest, fixWords, posController);
 				}
@@ -299,7 +299,7 @@ public class AE implements A {
 		return outputList;
 	}
 	
-	public void addFixWords(int charPosition, String inputString, StringBuilder[] fixWords) {
+	public void I_FixWords(int charPosition, String inputString, StringBuilder[] fixWords) {
 		fixWords[StablePOS.INT_ONE].delete(StablePOS.INT_ZERO, fixWords[StablePOS.INT_ONE].length());
 		if (charPosition + StablePOS.INT_EIGHT < inputString.length()) {
 			fixWords[StablePOS.INT_ONE].append(inputString.substring(charPosition + StablePOS.INT_THREE
@@ -451,7 +451,7 @@ public class AE implements A {
 					continue Here;
 				}
 				if (compare == StablePOS.INT_THREE) {
-					addFixWords(charPosition, mixedString, fixWords);
+					I_FixWords(charPosition, mixedString, fixWords);
 					countInputStringLength = nlpController.doPOSAndEMMCheckOfThreeForMap(countInputStringLength, outputList
 							, wordsForest, stringBuilder, fixWords, posController);
 					continue Here;
@@ -472,7 +472,7 @@ public class AE implements A {
 					continue Here;
 				}
 				if (compare == StablePOS.INT_FOUR) {
-					addFixWords(charPosition, mixedString, fixWords);
+					I_FixWords(charPosition, mixedString, fixWords);
 					countInputStringLength = nlpController.doSlangCheckForMap(countInputStringLength, outputList, stringBuilder
 							, wordsForest, fixWords, posController);
 				}

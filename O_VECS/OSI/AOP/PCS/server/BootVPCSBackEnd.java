@@ -64,7 +64,7 @@ public class BootVPCSBackEnd extends Thread{
 		SocketThreadPool socketThreadPool= new SocketThreadPool();
 		long before = System.currentTimeMillis();
 		init();
-		addRestService();
+		I_RestService();
 		long now = System.currentTimeMillis();
 		System.out.println("----DETA VPCS BackEnd--2.0");
 		System.out.println("----Author: ยÞัþนโ");
@@ -75,7 +75,7 @@ public class BootVPCSBackEnd extends Thread{
 			if(socketThreadPool.getThreadsCount() < 300){
 				SocketThread clientSocket= new SocketThread(emotionMap, _A, socketThreadPool, server.accept()
 						, System.currentTimeMillis()+ "" + new Random().nextLong());
-				socketThreadPool.addE_Socket(clientSocket.getSid(), clientSocket);
+				socketThreadPool.I_E_Socket(clientSocket.getSid(), clientSocket);
 				clientSocket.start();
 			}
 		}
@@ -94,6 +94,6 @@ public class BootVPCSBackEnd extends Thread{
 		}
 	}
 	
-	private void addRestService() {	
+	private void I_RestService() {	
 	}
 }

@@ -111,7 +111,7 @@ public class TableSorterZYNK extends AbstractTableModel {
 	private String tableName= "default";
 	//public static LYG9DWithChineseMixStringSort9D lYG9DWithChineseMixStringSort9D;
 	
-	public void addTableName(String thisTableName) {
+	public void I_TableName(String thisTableName) {
 		tableName= thisTableName;
 	}
 	

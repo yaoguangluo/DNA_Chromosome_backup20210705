@@ -10,7 +10,7 @@ public interface POS_C {
 	int chuLiMingCiOfTwo(Map<String, String> wordsForest, List<String> outputList, int countInputStringLength
 			, String[] strings, StringBuilder[] fixWord, int charPosition, String inputString);
 
-	void addFixWordsOfTwo(int charPosition, String inputString, StringBuilder[] fixWords);
+	void I_FixWordsOfTwo(int charPosition, String inputString, StringBuilder[] fixWords);
 	int parserFirstCharOfTwo(int countInputStringLength, List<String> outputList, String[] strings
 			, StringBuilder[] fixWord);
 

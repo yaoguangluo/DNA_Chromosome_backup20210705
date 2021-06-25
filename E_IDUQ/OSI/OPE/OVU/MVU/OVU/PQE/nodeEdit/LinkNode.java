@@ -40,7 +40,7 @@ public class LinkNode extends Thread{
 	public int oldx, oldy;
 	public OSU_AVQ_ASQ_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI thisFace; 
 	public LinkNode(){}
-	public void addName(String SQ_OSU_MSQ_OSU_AVQ_ASQ_SQ_VPC_PCS, int x1,int y1,int id1){
+	public void I_Name(String SQ_OSU_MSQ_OSU_AVQ_ASQ_SQ_VPC_PCS, int x1,int y1,int id1){
 		beconnect= false;
 		rightChoose= false;
 		leftChoose= false;

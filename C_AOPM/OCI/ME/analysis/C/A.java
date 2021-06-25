@@ -10,7 +10,7 @@ public interface A {
 	void init() throws IOException;
 	void initMixed() throws IOException;
 	List<String> parserString(String input);
-	void addFixWords(int charPosition, String inputString,StringBuilder[] fixWords);
+	void I_FixWords(int charPosition, String inputString,StringBuilder[] fixWords);
 	Map<String, WordFrequency> getWordFrequencyMap(List<String> sets) throws IOException;
 	List<WordFrequency> sortWordFrequencyMap(Map<String,WordFrequency> map) throws IOException;
 	List<WordFrequency> getWordFrequency(List<String> sets)throws IOException;

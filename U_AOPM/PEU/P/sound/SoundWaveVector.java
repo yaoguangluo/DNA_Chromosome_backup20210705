@@ -292,19 +292,19 @@ public class SoundWaveVector implements Runnable{
 		int pos=0;
 		if(lygout.adataFrame!=null){
 			aisout = new BytestoAIS().getAIS(lygout.adataFrame.audioArray,lygout.adataFrame.audioIS);
-			addSerparate(aisout,lygout.duration,pos);
+			I_Serparate(aisout,lygout.duration,pos);
 			while(lygout.adataFrame.next!=null){
 				pos+=1;
 				lygout.adataFrame=lygout.adataFrame.next;
 
 				aisout = new BytestoAIS().getAIS(lygout.adataFrame.audioArray,lygout.adataFrame.audioIS);
-				addSerparate(aisout,lygout.duration,pos);
+				I_Serparate(aisout,lygout.duration,pos);
 			}
 		}
 		return lines;
 	}
 
-	private void addSerparate(AudioInputStream ais,
+	private void I_Serparate(AudioInputStream ais,
 			double duration, int pos) {
 		// clear the old vector
 		AudioFormat af = ais.getFormat();
@@ -387,14 +387,14 @@ public class SoundWaveVector implements Runnable{
 		int pos=0;
 		if(lygout.adataFrame!=null){
 			aisout = new BytestoAIS().getAIS(lygout.adataFrame.audioArray,lygout.adataFrame.audioIS);
-			addSerparate(aisout,lygout.duration,pos);
+			I_Serparate(aisout,lygout.duration,pos);
 			while(lygout.adataFrame.next!=null){
 				pos+=1;
 				lygout.adataFrame=lygout.adataFrame.next;
 
 				aisout = new BytestoAIS().getAIS(lygout.adataFrame.audioArray,lygout.adataFrame.audioIS);
 				//lygout.adataFrame.audioIS= new BytestoAIS().getAIS(lygout.adataFrame.audioArray,lygout.adataFrame.audioIS);
-				addSerparate(aisout,lygout.duration,pos);
+				I_Serparate(aisout,lygout.duration,pos);
 			}
 		}
 		return lines;

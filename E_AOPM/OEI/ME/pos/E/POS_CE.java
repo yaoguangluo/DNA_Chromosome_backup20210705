@@ -49,7 +49,7 @@ public class POS_CE implements POS_C{
 				countInputStringLength= parserFirstCharOfTwo(countInputStringLength, outputList, strings, fixWord);
 				return countInputStringLength;
 			}
-			addFixWordsOfTwo(charPosition, inputString, fixWord);
+			I_FixWordsOfTwo(charPosition, inputString, fixWord);
 			if (StablePOS.INT_ZERO< fixWord[StablePOS.INT_ONE].length()&& StableMaps.fuCi.containsKey(StablePOS.EMPTY_STRING
 					+ fixWord[StablePOS.INT_ONE].toString().charAt(StablePOS.INT_ZERO))){
 				countInputStringLength= parserFirstCharOfTwo(countInputStringLength, outputList, strings, fixWord);
@@ -67,7 +67,7 @@ public class POS_CE implements POS_C{
 		return countInputStringLength;
 	}
 	
-	public void addFixWordsOfTwo(int charPosition, String inputString, StringBuilder[] fixWords) {
+	public void I_FixWordsOfTwo(int charPosition, String inputString, StringBuilder[] fixWords) {
 		fixWords[StablePOS.INT_ONE].delete(StablePOS.INT_ZERO, fixWords[StablePOS.INT_ONE].length());
 		if (charPosition+ StablePOS.INT_SEVEN < inputString.length()) {
 			fixWords[StablePOS.INT_ONE].append(inputString.substring(charPosition + StablePOS.INT_TWO

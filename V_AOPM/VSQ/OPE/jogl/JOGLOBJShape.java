@@ -23,7 +23,7 @@ public class JOGLOBJShape {
 		return name;
 	}
 
-	public void add(JOGLOBJFace f) {
+	public void I_(JOGLOBJFace f) {
 		faces.add(f);
 	}
 

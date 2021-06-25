@@ -185,7 +185,7 @@ public class JOGLObjLoader {
 					faceverts = new JOGLOBJVertex[] {v1, v2, v3, v4};
 				} 
 				JOGLOBJFace f = new JOGLOBJFace(faceverts);
-				mesh.add(f);
+				mesh.I_(f);
 		  /*
 				
 				int vert1 = Integer.parseInt(fm.group(1));

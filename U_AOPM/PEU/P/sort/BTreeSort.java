@@ -16,7 +16,7 @@ public class BTreeSort
 		}
 		for(int i=1;i<a.length;i++){
 			heap=root;
-			addleaf(a[i]);
+			I_leaf(a[i]);
 		}
 		heap=root;
 		Q_(heap);
@@ -31,7 +31,7 @@ public class BTreeSort
 			Q_(temp.O2);
 		}	
 	}
-	private void addleaf(int i) {
+	private void I_leaf(int i) {
 		if(i<=heap.value[0]){
 			if(heap.O1==null){
 				heap.O1=new Leaf();
@@ -42,7 +42,7 @@ public class BTreeSort
 			}
 			else{
 				heap=heap.O1;
-				addleaf(i);
+				I_leaf(i);
 			}
 		}
 		else{
@@ -54,7 +54,7 @@ public class BTreeSort
 				return;
 			}else{
 				heap=heap.O2;
-				addleaf(i);
+				I_leaf(i);
 			}	
 		}	 
 	}
@@ -65,7 +65,7 @@ public class BTreeSort
 			root.hasO1=1;
 		}for(int i=1;i<a.length;i++){
 			heap=root;
-			addleaf(a[i]);
+			I_leaf(a[i]);
 		}
 		// TODO Auto-generated method stub
 		return root;

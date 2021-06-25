@@ -82,7 +82,7 @@ public class Sleeper extends Thread implements Runnable{
 	}
 
 	public void hugPillow(Sleeper_H sleeper_H, Socket accept, int hashCode) {
-		sleeper_H.addE_Sleeper(hashCode, this);
+		sleeper_H.I_E_Sleeper(hashCode, this);
 		vPCSResponse.I_Socket(accept);
 		vPCSResponse.I_Sleeper_H(sleeper_H);
 	}

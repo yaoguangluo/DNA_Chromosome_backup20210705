@@ -15,7 +15,7 @@ public class TTreeSort{
 		}
 		for(int i=1;i<a.length;i++){
 			heap=root;
-			addleaf(a[i]);
+			I_leaf(a[i]);
 		}
 		Q_(root);
 		return a1;
@@ -30,7 +30,7 @@ public class TTreeSort{
 		for(int i=1;i<a.length;i++)
 		{
 			heap=root;
-			addleaf(a[i]);
+			I_leaf(a[i]);
 		}
 
 		// TODO Auto-generated method stub
@@ -55,7 +55,7 @@ public class TTreeSort{
 		}	
 	}
 	
-	private void addleaf(int i) {
+	private void I_leaf(int i) {
 		if(heap.hasO1==1&&heap.hasO2==0){
 			if(heap.value[0]<=i){
 				heap.value[1]=i;
@@ -76,7 +76,7 @@ public class TTreeSort{
 					return;
 				}else{
 					heap=heap.O1;
-					addleaf(i);
+					I_leaf(i);
 				}
 			}
 			else if(i>heap.value[0] && i<=heap.value[1]){
@@ -88,7 +88,7 @@ public class TTreeSort{
 					return;
 				}else{
 					heap=heap.O2;
-					addleaf(i);
+					I_leaf(i);
 				}	
 			} else{
 				if(heap.O3==null){
@@ -99,7 +99,7 @@ public class TTreeSort{
 					return;
 				}else{
 					heap=heap.O3;
-					addleaf(i);
+					I_leaf(i);
 				}	
 			}	 
 		}

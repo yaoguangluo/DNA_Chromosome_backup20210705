@@ -58,23 +58,23 @@ public class EditPane extends Container implements MouseListener, KeyListener{
 		jsp_data.setBounds(5+600, 30, 1440-130-620, 650-50);
 		JScrollPane jsp_text = new JScrollPane(this.text);
 		jsp_text.setBounds(5, 30, 1440-130-720, 650-50);
-		addOutputButton();
-		addTranslateButton();
-		addExplainButton();
-		addClearButton();
-		addTxtButton();
-		addPrintButton();
-		addReadButton();
-		addPinYinButton();
-		addArabicButton();
-		addTranditionButton();
-		addJapanButton();
-		addRussianButton();
+		I_OutputButton();
+		I_TranslateButton();
+		I_ExplainButton();
+		I_ClearButton();
+		I_TxtButton();
+		I_PrintButton();
+		I_ReadButton();
+		I_PinYinButton();
+		I_ArabicButton();
+		I_TranditionButton();
+		I_JapanButton();
+		I_RussianButton();
 		this.add(jsp_data); 
 		this.add(jsp_text); 
 	}
 
-	private void addArabicButton() {
+	private void I_ArabicButton() {
 		MVQ.button.DetaButton button= new MVQ.button.DetaButton("∞¢”Ô");
 		button.setBounds(5+ 105+ 105+ 105+ 105+ 105+ 105+ 105+ 105+ 105, 3, 100, 20);
 		button.addActionListener(new ActionListener(){
@@ -143,7 +143,7 @@ public class EditPane extends Container implements MouseListener, KeyListener{
 		this.add(button); 
 	}
 	
-	private void addRussianButton() {
+	private void I_RussianButton() {
 		MVQ.button.DetaButton button= new MVQ.button.DetaButton("∂Ì”Ô");
 		button.setBounds(5+ 105+ 105+ 105+ 105+ 105+ 105+ 105+ 105+ 105+ 105+ 105, 3, 100, 20);
 		button.addActionListener(new ActionListener(){
@@ -212,7 +212,7 @@ public class EditPane extends Container implements MouseListener, KeyListener{
 		this.add(button); 
 	}
 	
-	private void addTranditionButton() {
+	private void I_TranditionButton() {
 		MVQ.button.DetaButton button= new MVQ.button.DetaButton("∑±ÃÂ");
 		button.setBounds(5+ 105+ 105+ 105+ 105+ 105+ 105+ 105+ 105, 3, 100, 20);
 		button.addActionListener(new ActionListener(){
@@ -282,7 +282,7 @@ public class EditPane extends Container implements MouseListener, KeyListener{
 		this.add(button); 
 	}
 	
-	private void addJapanButton() {
+	private void I_JapanButton() {
 		MVQ.button.DetaButton button= new MVQ.button.DetaButton("»’”Ô");
 		button.setBounds(5+ 105+ 105+ 105+ 105+ 105+ 105+ 105+ 105+ 105+ 105, 3, 100, 20);
 		button.addActionListener(new ActionListener(){
@@ -352,7 +352,7 @@ public class EditPane extends Container implements MouseListener, KeyListener{
 		this.add(button); 
 	}
 	
-	private void addPinYinButton() {
+	private void I_PinYinButton() {
 		MVQ.button.DetaButton button= new MVQ.button.DetaButton("∆¥“Ù");
 		button.setBounds(5+ 105+ 105+ 105+ 105+ 105+ 105+ 105, 3, 100, 20);
 		button.addActionListener(new ActionListener(){
@@ -416,7 +416,7 @@ public class EditPane extends Container implements MouseListener, KeyListener{
 		this.add(button); 
 	}
 	
-	private void addReadButton() {
+	private void I_ReadButton() {
 		MVQ.button.DetaButton button= new MVQ.button.DetaButton("‘ƒ∂¡");
 		button.setBounds(5+ 105+ 105+ 105+ 105+ 105+ 105, 3, 100, 20);
 		button.addActionListener(new ActionListener(){
@@ -456,7 +456,7 @@ public class EditPane extends Container implements MouseListener, KeyListener{
 		this.add(button); 
 	}
 	
-	private void addPrintButton() {
+	private void I_PrintButton() {
 		DetaButton button= new DetaButton("¥Ú”°");
 		button.setBounds(5+105+105+105+105+105, 3, 100, 20);
 		button.addActionListener(new ActionListener(){
@@ -488,7 +488,7 @@ public class EditPane extends Container implements MouseListener, KeyListener{
 		this.add(button); 
 	}
 
-	private void addTxtButton() {
+	private void I_TxtButton() {
 		DetaButton button= new DetaButton("…˙≥…TXT");
 		button.setBounds(5+105+105+105+105, 3, 100, 20);
 		button.addActionListener(new ActionListener(){
@@ -523,7 +523,7 @@ public class EditPane extends Container implements MouseListener, KeyListener{
 		this.add(button); 
 	}
 
-	private void addClearButton() {
+	private void I_ClearButton() {
 		DetaButton button =new DetaButton("ªπ‘≠");
 		button.setBounds(5+105+105+105, 3, 100, 20);
 		button.addActionListener(new ActionListener(){
@@ -579,7 +579,7 @@ public class EditPane extends Container implements MouseListener, KeyListener{
 		this.add(button); 
 	}
 
-	private void addExplainButton() {
+	private void I_ExplainButton() {
 		DetaButton button =new DetaButton("Ω‚ Õ");
 		button.setBounds(5+105+105, 3, 100, 20);
 		button.addActionListener(new ActionListener(){
@@ -635,7 +635,7 @@ public class EditPane extends Container implements MouseListener, KeyListener{
 		this.add(button); 
 	}
 
-	private void addTranslateButton() {
+	private void I_TranslateButton() {
 		DetaButton button =new DetaButton("”¢“Î");
 		button.setBounds(5+105, 3, 100, 20);
 		button.addActionListener(new ActionListener(){
@@ -691,7 +691,7 @@ public class EditPane extends Container implements MouseListener, KeyListener{
 		this.add(button); 
 	}
 
-	private void addOutputButton() {
+	private void I_OutputButton() {
 		DetaButton button =new DetaButton("∏ﬂ¡¡");
 		button.setBounds(5, 3, 100, 20);
 		button.addActionListener(new ActionListener(){

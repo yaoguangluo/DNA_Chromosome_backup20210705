@@ -537,13 +537,13 @@ public class LinChuangJianYanBaoGaoA extends JPanel implements MouseListener, Ke
 		this.add(碱性磷酸酶);
 		this.add(碱性磷酸酶_box);	
 		//
-		addSecondColomns(诊断结果_box, jFrameList);
-		addThirdColomns(诊断结果_box, jFrameList);
-		addFourthColomns(诊断结果_box, jFrameList);
-		addFifthColomns(诊断结果_box, jFrameList);
+		I_SecondColomns(诊断结果_box, jFrameList);
+		I_ThirdColomns(诊断结果_box, jFrameList);
+		I_FourthColomns(诊断结果_box, jFrameList);
+		I_FifthColomns(诊断结果_box, jFrameList);
 		this.validate();
 	}
-	private void addFifthColomns(JTextField 诊断结果_box, List<DetaLabel> jFrameList) {
+	private void I_FifthColomns(JTextField 诊断结果_box, List<DetaLabel> jFrameList) {
 		// TODO Auto-generated method stub
 		//copy tab
 		DetaLabel 血渗透压血osm= new DetaLabel("血渗透压血osm:");  
@@ -973,7 +973,7 @@ public class LinChuangJianYanBaoGaoA extends JPanel implements MouseListener, Ke
 			诊断结果_box.setText(诊断结果_box.getText().replace(maxString, "").replace(minString, ""));	
 		}
 	}
-	void addFourthColomns(JTextField 诊断结果_box, List<DetaLabel> jFrameList) {
+	void I_FourthColomns(JTextField 诊断结果_box, List<DetaLabel> jFrameList) {
 		// TODO Auto-generated method stub
 		//copy tab
 		DetaLabel ldh同工酶is= new DetaLabel("ldh同工酶is0-ldh:");  
@@ -1210,7 +1210,7 @@ public class LinChuangJianYanBaoGaoA extends JPanel implements MouseListener, Ke
 		this.add(尖锐湿疣醋酸白_box);	
 	}
 
-	private void addThirdColomns(JTextField 诊断结果_box, List<DetaLabel> jFrameList) {
+	private void I_ThirdColomns(JTextField 诊断结果_box, List<DetaLabel> jFrameList) {
 		// TODO Auto-generated method stub
 		//copy tab
 		DetaLabel 疥疮镜检sarcoptes= new DetaLabel("疥疮镜检sarcoptesscabidiexamination:");  
@@ -1460,7 +1460,7 @@ public class LinChuangJianYanBaoGaoA extends JPanel implements MouseListener, Ke
 		this.add(叶酸_box);	
 	}
 
-	private void addSecondColomns(JTextField 诊断结果_box, List<DetaLabel> jFrameList) {
+	private void I_SecondColomns(JTextField 诊断结果_box, List<DetaLabel> jFrameList) {
 		// TODO Auto-generated method stub
 		//copy tab
 		DetaLabel 磷尿= new DetaLabel("磷（尿）:");  

@@ -23,7 +23,7 @@ public class NodeOSGI{
 		thisIcon= null;
 		SQ_OSU_MSQ_OSU_AVQ_ASQ_SQ_VPC_PCS= null;
 	}
-	public void addName(OSU_AVQ_ASQ_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI thisface){
+	public void I_Name(OSU_AVQ_ASQ_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI thisface){
 		next= null;
 		pre= null;
 		currentFace= thisface;

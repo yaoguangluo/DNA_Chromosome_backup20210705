@@ -10,7 +10,7 @@ public class ArffNode
 		pre=null;
 		SQ_OSU_MSQ_OSU_AVQ_ASQ_SQ_VPC_PCS=null;
 	}
-	public void addName(String name)
+	public void I_Name(String name)
 	{
 		next=null;
 		pre=null;

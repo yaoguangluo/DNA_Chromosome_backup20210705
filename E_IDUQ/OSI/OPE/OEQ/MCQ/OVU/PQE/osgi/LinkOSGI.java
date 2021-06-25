@@ -4,7 +4,7 @@ public class LinkOSGI{
 			, OSU_AVQ_ASQ_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI currentFace) {
 		if(null== currentNode){
 			currentNode= new NodeOSGI();
-			currentNode.addName(currentFace);
+			currentNode.I_Name(currentFace);
 			currentNode.next= null;
 			currentNode.pre= null;
 			return currentNode;
@@ -13,7 +13,7 @@ public class LinkOSGI{
 			currentNode= currentNode.next;
 		}
 		NodeOSGI node= new NodeOSGI();
-		node.addName(currentFace);
+		node.I_Name(currentFace);
 		node.pre= currentNode;
 		currentNode.next= node;
 		while(null!= currentNode.pre){

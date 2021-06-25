@@ -25,7 +25,7 @@ public class ArffLink{
 	public ArffNode addNode(ArffNode currentnode, String name) {
 		if(currentnode == null){
 			currentnode = new ArffNode();
-			currentnode.addName(name);
+			currentnode.I_Name(name);
 			currentnode.next = null;
 			currentnode.pre = null;
 			return currentnode;
@@ -34,7 +34,7 @@ public class ArffLink{
 			currentnode = currentnode.next;
 		}
 		ArffNode node = new ArffNode();
-		node.addName(name);
+		node.I_Name(name);
 		node.pre = currentnode;
 		currentnode.next = node;
 		while(currentnode.pre != null){

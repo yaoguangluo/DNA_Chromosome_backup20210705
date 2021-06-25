@@ -15,7 +15,7 @@ public class OTreeSort{
 		}
 		for(int i=1;i<a.length;i++){
 			heap=root;
-			addleaf(a[i]);
+			I_leaf(a[i]);
 		}
 		Q_(root);
 		return a1;
@@ -31,7 +31,7 @@ public class OTreeSort{
 		}
 		for(int i=1;i<a.length;i++){
 			heap=root;
-			addleaf(a[i]);
+			I_leaf(a[i]);
 		}
 		// TODO Auto-generated method stub
 		return root;
@@ -79,7 +79,7 @@ public class OTreeSort{
 		}	
 	}
 	
-	private void addleaf(int i){
+	private void I_leaf(int i){
 		int count=heap.hasO1+heap.hasO2+heap.hasO3+heap.hasO4+heap.hasO5+heap.hasO6+heap.hasO7;
 		if(count<7){
 			if(count==1){
@@ -112,7 +112,7 @@ public class OTreeSort{
 					return;
 				}else{
 					heap=heap.O1;
-					addleaf(i);
+					I_leaf(i);
 				}
 			}
 			else if(i>heap.value[0] && i<=heap.value[1]){
@@ -123,7 +123,7 @@ public class OTreeSort{
 					return;
 				}else{
 					heap=heap.O2;
-					addleaf(i);
+					I_leaf(i);
 				}
 			}	 
 			else if(i>heap.value[1] && i<=heap.value[2]){
@@ -134,7 +134,7 @@ public class OTreeSort{
 					return;
 				}else{
 					heap=heap.O3;
-					addleaf(i);
+					I_leaf(i);
 				}
 			}	
 			else if(i>heap.value[2] && i<=heap.value[3]){
@@ -145,7 +145,7 @@ public class OTreeSort{
 					return;
 				}else{
 					heap=heap.O4;
-					addleaf(i);
+					I_leaf(i);
 				}
 			}
 			else if(i>heap.value[3] && i<=heap.value[4]){
@@ -156,7 +156,7 @@ public class OTreeSort{
 					return;
 				}else{
 					heap=heap.O5;
-					addleaf(i);
+					I_leaf(i);
 				}
 			}
 			else if(i>heap.value[4] && i<=heap.value[5]){
@@ -167,7 +167,7 @@ public class OTreeSort{
 					return;
 				}else{
 					heap=heap.O6;
-					addleaf(i);
+					I_leaf(i);
 				}
 
 			}
@@ -179,7 +179,7 @@ public class OTreeSort{
 					return;
 				}else{
 					heap=heap.O7;
-					addleaf(i);
+					I_leaf(i);
 				}
 			}
 			else{
@@ -190,7 +190,7 @@ public class OTreeSort{
 					return;
 				}else{
 					heap=heap.O8;
-					addleaf(i);
+					I_leaf(i);
 				}	
 			}
 		}

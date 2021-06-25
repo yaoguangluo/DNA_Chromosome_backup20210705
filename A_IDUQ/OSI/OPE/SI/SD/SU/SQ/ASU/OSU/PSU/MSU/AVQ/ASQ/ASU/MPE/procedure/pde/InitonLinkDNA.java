@@ -6,11 +6,11 @@ public class InitonLinkDNA {
 	private Initon initonLink;
 	private List<Initon> initonList;
 	
-	public void addNextIniton(Initon initon) {
+	public void I_NextIniton(Initon initon) {
 		initonLink= initonLink.addNextInitons(initon);
 		initonList.add(initon);
 	}
-	public void addPrevIniton(Initon initon) {
+	public void I_PrevIniton(Initon initon) {
 		initonLink= initonLink.addPrevInitons(initon);
 		initonList.add(0, initon);
 	}

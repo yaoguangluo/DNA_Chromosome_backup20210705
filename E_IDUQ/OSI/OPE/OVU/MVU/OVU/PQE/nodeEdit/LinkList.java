@@ -61,7 +61,7 @@ public class LinkList{
 			while(null!= currentOSGI){
 				if(currentOSGI.SQ_OSU_MSQ_OSU_AVQ_ASQ_SQ_VPC_PCS.equals(treeNodeName)){
 					linkNode= new LinkNode();
-					linkNode.addName(treeNodeName, x, y, ++index);
+					linkNode.I_Name(treeNodeName, x, y, ++index);
 					linkNode.thisFace= currentOSGI.currentFace.AOP_MVE_CSI_DUQ();
 					linkNode.next= null;
 					linkNode.pre= null;
@@ -78,7 +78,7 @@ public class LinkList{
 			if(currentOSGI.SQ_OSU_MSQ_OSU_AVQ_ASQ_SQ_VPC_PCS.equals(treeNodeName)){
 				//linkNode=new linkNode();
 				LinkNode node= new LinkNode();
-				node.addName(treeNodeName, x, y, ++index);
+				node.I_Name(treeNodeName, x, y, ++index);
 				node.thisFace= currentOSGI.currentFace.AOP_MVE_CSI_DUQ();
 				node.pre= linkNode;
 				linkNode.next= node;

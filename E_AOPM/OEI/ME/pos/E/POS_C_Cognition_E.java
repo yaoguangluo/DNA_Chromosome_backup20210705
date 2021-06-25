@@ -23,7 +23,7 @@ public class POS_C_Cognition_E implements POS_C{
 	}
 
 	@Override
-	public void addFixWordsOfTwo(int charPosition, String inputString, StringBuilder[] fixWords) {
+	public void I_FixWordsOfTwo(int charPosition, String inputString, StringBuilder[] fixWords) {
 		// TODO Auto-generated method stub
 		
 	}

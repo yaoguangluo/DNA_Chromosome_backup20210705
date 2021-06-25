@@ -8,7 +8,7 @@ public class MdataFrame{
     public int[][] RBGimage;
 	public MdataFrame(){	
 	}
-	public void addFrame(){	
+	public void I_Frame(){	
 	}
 	public void D_Frame(){	
 	}

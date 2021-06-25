@@ -251,12 +251,12 @@ public class NeiKeJPanel  extends JPanel implements MouseListener, KeyListener, 
 			this.add(label614);
 			this.add(label614_box);	
 			//
-			addSecondColomns();
-			addThirdColomns();
-			addFourthColomns();
-			addFifthColomns();
+			I_SecondColomns();
+			I_ThirdColomns();
+			I_FourthColomns();
+			I_FifthColomns();
 		}
-		private void addFifthColomns() {
+		private void I_FifthColomns() {
 			// TODO Auto-generated method stub
 			//copy tab
 			JLabel baiDanBai222223= new JLabel("ÑªÉøÍ¸Ñ¹Ñªosm:");  
@@ -471,7 +471,7 @@ public class NeiKeJPanel  extends JPanel implements MouseListener, KeyListener, 
 			this.add(label614222223_box);	
 		}
 		
-		void addFourthColomns() {
+		void I_FourthColomns() {
 			// TODO Auto-generated method stub
 			//copy tab
 			JLabel baiDanBai222223= new JLabel("ldhÍ¬¹¤Ã¸is0-ldh :");  
@@ -686,7 +686,7 @@ public class NeiKeJPanel  extends JPanel implements MouseListener, KeyListener, 
 			this.add(label614222223_box);	
 		}
 		
-		private void addThirdColomns() {
+		private void I_ThirdColomns() {
 			// TODO Auto-generated method stub
 			//copy tab
 			JLabel baiDanBai222223= new JLabel("¾üÍÅ¾ú¿¹Ô­¼ì²â:");  
@@ -901,7 +901,7 @@ public class NeiKeJPanel  extends JPanel implements MouseListener, KeyListener, 
 			this.add(label614222223_box);	
 		}
 		
-		private void addSecondColomns() {
+		private void I_SecondColomns() {
 			// TODO Auto-generated method stub
 			//copy tab
 			JLabel baiDanBai22= new JLabel("ÁÜÇò¾úÅàÑøÈ¡²Äcultureofneisseriagonorrhoen:");  
