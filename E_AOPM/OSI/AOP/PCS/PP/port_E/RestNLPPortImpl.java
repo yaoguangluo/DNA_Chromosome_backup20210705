@@ -179,7 +179,7 @@ public class RestNLPPortImpl{// implements RestLoginPort {
 		InitBehaviorICAKernel InitBehaviorICAKernel = new InitBehaviorICAKernel();
 		kernel[0] = InitBehaviorICAKernel.getBehaviorICAKernel(string, _A, emotionMap);
 		SuccessICATest successICATest=new SuccessICATest();
-		successICATest.getKernelCNN(kernel);
+		successICATest.IQ_KernelCNN(kernel);
 		Map<String, Object> output = new HashMap<>();
 		String cj = "\r\n";
 		Iterator<String> iterator = InitBehaviorICAKernel.getForRestReturn().iterator();

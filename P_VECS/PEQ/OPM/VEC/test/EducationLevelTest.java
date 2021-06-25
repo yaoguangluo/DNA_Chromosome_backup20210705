@@ -6,7 +6,7 @@ import SVQ.stable.StablePOS;
 public class EducationLevelTest{
 	double[] EducationLevel;
 	double EducationDuration;
-	public void getEducationLevel(double[][] measurement) {
+	public void IQ_EducationLevel(double[][] measurement) {
 		EducationLevel = new double[measurement.length];
 		for(int i = StablePOS.INT_ZERO; i < measurement.length; i++) {
 			EducationLevel[i] = (measurement[i][StablePOS.INT_THREE] + measurement[i][StablePOS.INT_FOUR])
@@ -183,6 +183,6 @@ public class EducationLevelTest{
 		kernelRatio[1] = new EducationRatio().getEducationRatioKernel(kernel[1]);
 		kernelRatio[2] = new EducationRatio().getEducationRatioKernel(kernel[2]);
 		EducationLevelTest educationLevelTest = new EducationLevelTest();
-		educationLevelTest.getEducationLevel(kernelRatio);
+		educationLevelTest.IQ_EducationLevel(kernelRatio);
 	}
 }

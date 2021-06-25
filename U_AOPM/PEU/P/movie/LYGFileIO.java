@@ -312,7 +312,7 @@ public class LYGFileIO{
 		toHead();
 	}
 	
-	public void getheader(RandomAccessFile raf) throws IOException {
+	public void IQ_header(RandomAccessFile raf) throws IOException {
 		header=new Header();
 		raf.seek(0);
 		long headpos=0;

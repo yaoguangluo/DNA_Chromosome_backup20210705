@@ -7,7 +7,7 @@ import SVQ.stable.StablePOS;
 public class LiterarinessLevelTest{
 	double[] literarinessLevel;
 	double literarinessDuration;
-	public void getEducationLevel(double[][] measurement) {
+	public void IQ_EducationLevel(double[][] measurement) {
 		literarinessLevel= new double[measurement.length];
 		for(int i= StablePOS.INT_ZERO; i< measurement.length; i++) {
 			literarinessLevel[i]=(measurement[i][StablePOS.INT_ZERO]*measurement[i][StablePOS.INT_THREE])
@@ -176,6 +176,6 @@ public class LiterarinessLevelTest{
 		kernel[1] = new InitBehaviorICAKernel().getBehaviorICAKernel(text2);
 		kernel[2] = new InitBehaviorICAKernel().getBehaviorICAKernel(text3);
 		LiterarinessLevelTest educationLevelTest = new LiterarinessLevelTest();
-		educationLevelTest.getEducationLevel(kernel);
+		educationLevelTest.IQ_EducationLevel(kernel);
 	}
 }

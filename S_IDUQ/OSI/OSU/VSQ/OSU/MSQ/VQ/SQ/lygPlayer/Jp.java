@@ -50,7 +50,7 @@ public class Jp extends JPanel{
 		io=new LYGFileIO();
 		//read get pos of audio
 		try {
-			io.getheader(raf);
+			io.IQ_header(raf);
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}

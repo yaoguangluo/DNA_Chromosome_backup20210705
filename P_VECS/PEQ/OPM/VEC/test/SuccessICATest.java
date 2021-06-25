@@ -7,7 +7,7 @@ import PEU.P.matrix.*;
 
 public class SuccessICATest{
 	public double[][] kernelCNN;
-	public void getKernelCNN(double[][] kernel) {
+	public void IQ_KernelCNN(double[][] kernel) {
 		kernelCNN = new CnnMeasure().getCnnMeansure(kernel);
 	}
 	public static void main(String[] argv) throws IOException {
@@ -135,7 +135,7 @@ public class SuccessICATest{
 		kernel[1] = new InitBehaviorICAKernel().getBehaviorICAKernel(text2);
 		kernel[2] = new InitBehaviorICAKernel().getBehaviorICAKernel(text3);
 		SuccessICATest successICATest=new SuccessICATest();
-		successICATest.getKernelCNN(kernel);
+		successICATest.IQ_KernelCNN(kernel);
 		for(int i=0;i<successICATest.kernelCNN.length;i++) {
 			for(int j=0;j<successICATest.kernelCNN[0].length;j++) {
 				System.out.print(successICATest.kernelCNN[i][j] + " ");
