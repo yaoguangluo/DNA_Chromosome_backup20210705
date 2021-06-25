@@ -232,7 +232,7 @@ public class App extends JApplet implements MouseListener, KeyListener, ActionLi
 	public boolean bootDBInTXTWay= false;
 	public boolean bootDBInBaseWay= false;
 	public boolean bootDBInWebWay= false;
-	public void IV_(){
+	public void init(){
 		try {
 			appInit= new AppInit();
 			appInit.IV_(this);
