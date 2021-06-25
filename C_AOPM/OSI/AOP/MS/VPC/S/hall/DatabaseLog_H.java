@@ -16,7 +16,7 @@ public class DatabaseLog_H {
 	static String logCategoryPath;
 	static String logCurrentFilePath;
 	static String logCurrentFile;
-	public static void createBinLog_H() throws Exception {
+	public static void I_BinLog_H() throws Exception {
 		//db write operation
 		initLogCategoryPath();
 		initCurrentFilePath();

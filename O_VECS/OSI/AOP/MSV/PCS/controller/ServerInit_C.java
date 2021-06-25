@@ -73,7 +73,7 @@ public class ServerInit_C {
 				text="\r\n"+ "...";
 				jTextPane.setText(text);
 			}
-			DatabaseLog_H.createBinLog_H();
+			DatabaseLog_H.I_BinLog_H();
 			System.out.println("----德塔VPCS数据库服务器启动整库过程映射服务:成功！");
 			if(jTextPane!= null) {
 				String text= jTextPane.getText();

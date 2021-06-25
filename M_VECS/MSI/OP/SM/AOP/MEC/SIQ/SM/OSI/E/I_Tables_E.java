@@ -9,7 +9,7 @@ import PEU.P.cache.*;
 import VPC.VQS.DSU.utils.DetaDBUtil;
 @SuppressWarnings("unchecked")
 public class I_Tables_E {
-	public static void createTable(Map<String, Object> object, boolean mod) throws Exception {
+	public static void I_Table(Map<String, Object> object, boolean mod) throws Exception {
 		if(!object.containsKey("baseName")||!object.containsKey("tableName")){
 			return;
 		}

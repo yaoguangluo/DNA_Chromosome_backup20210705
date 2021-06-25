@@ -125,7 +125,7 @@ public class PLSQLCommand_E {
 		}
 		if(object.get("type").toString().equalsIgnoreCase("create")){
 			if(object.containsKey("culumnName")) {
-				I_Tables_E.createTable(object, mod);
+				I_Tables_E.I_Table(object, mod);
 			}
 			object.remove("recordRows");
 		}
