@@ -256,9 +256,9 @@ public class APPInit_XCDX_AddMainButton{
 				}
 			});
 
-			JButton button2= new CfxButton("德塔在线", 100, 50, Color.cyan); 
-			button2.setBounds(30+60+760+130+130+130-100-50, 6, 100, 50);
-			button2.addActionListener(new ActionListener() {
+			JButton button_德塔在线= new CfxButton("德塔在线", 100, 50, Color.cyan); 
+			button_德塔在线.setBounds(30+60+760+130+130+130-100-50, 6, 100, 50);
+			button_德塔在线.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					try {
 						String link= "http://tinos.qicp.vip/data.html";
@@ -269,9 +269,9 @@ public class APPInit_XCDX_AddMainButton{
 				}
 			});
 
-			JButton button5= new CfxButton("卫健委", 100, 50, Color.orange); 
-			button5.setBounds(10+ 70+ 760+ 130+ 130+ 130+ 130- 100- 50, 6, 100, 50);
-			button5.addActionListener(new ActionListener() {
+			JButton button_卫健委= new CfxButton("卫健委", 100, 50, Color.orange); 
+			button_卫健委.setBounds(10+ 70+ 760+ 130+ 130+ 130+ 130- 100- 50, 6, 100, 50);
+			button_卫健委.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					try {
 						String link="http://www.nhc.gov.cn";
@@ -282,8 +282,8 @@ public class APPInit_XCDX_AddMainButton{
 				}
 			});	
 			jPanel.add(addChuFang);
-			jPanel.add(button2);
-			jPanel.add(button5);
+			jPanel.add(button_德塔在线);
+			jPanel.add(button_卫健委);
 			jPanel.add(jlabel_button);
 			jPanel.add(yin_button);
 	}
