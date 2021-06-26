@@ -202,7 +202,7 @@ public class AppInit {
 			app.tabNames.add("编辑页");
 			app.tabNames.add("哈里森大内科");
 
-			app.jsp_name= new JScrollPane(app.name());
+			app.jsp_name= new JScrollPane(app.app_XCDX.name());
 			app.jsp_name.setBounds(10+50, 6, 580- 300, 50);
 
 			MVQ.button.DetaButton jlabel_button= new MVQ.button.DetaButton("搜:");
@@ -253,7 +253,7 @@ public class AppInit {
 			jlabel_filter.setBounds(60+ 15+ 7+ 585+ 100, -6, 100, 50);
 
 			JScrollPane jsp_name_filter= null;
-			jsp_name_filter= new JScrollPane(app.name_filter());
+			jsp_name_filter= new JScrollPane(app.app_XCDX.name_filter());
 			jsp_name_filter.setBounds(60+15+30+580+ 100+ 40, 8, 580- 455, 22);	
 
 			JLabel jlabel_filter_not_have= new JLabel("有关经络:");  
@@ -261,7 +261,7 @@ public class AppInit {
 			jlabel_filter_not_have.setBounds(50+15+7+485+7, 20, 100, 50);
 
 			JScrollPane jsp_name_filter_not_have= null;
-			jsp_name_filter_not_have= new JScrollPane(app.name_filter_not_have());
+			jsp_name_filter_not_have= new JScrollPane(app.app_XCDX.name_filter_not_have());
 			jsp_name_filter_not_have.setBounds(50+15+7+485+7+20+ 40, 6+28, 580- 459, 22);
 
 			JLabel risk_filter= new JLabel("风险过滤:");  
@@ -273,7 +273,7 @@ public class AppInit {
 			feel_filter.setBounds(60+15+7+585+ 100, 20, 100, 50);
 
 			JScrollPane jsp_nameFeelFilter= null;
-			jsp_nameFeelFilter= new JScrollPane(app.nameFeelFilter());
+			jsp_nameFeelFilter= new JScrollPane(app.app_XCDX.nameFeelFilter());
 			jsp_nameFeelFilter.setBounds(60+15+30+580+ 100+ 40, 6+28, 580- 455, 22);
 
 

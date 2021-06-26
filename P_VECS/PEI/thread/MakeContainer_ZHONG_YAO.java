@@ -50,7 +50,7 @@ public class MakeContainer_ZHONG_YAO extends Thread implements Runnable, MouseLi
 	public void start(){ 
 		try {
 			JScrollPane jsp_data= null;
-			jsp_data= new JScrollPane(u.data());
+			jsp_data= new JScrollPane(u.app_XCDX.data());
 			jsp_data.setBounds(5, 290+ 100- 65+ 50- 215+ 80+ 25, 397, 230-30);
 			u.panel.setSize(500, 500);
 			u.panel.setBackground(Color.white);
@@ -59,10 +59,10 @@ public class MakeContainer_ZHONG_YAO extends Thread implements Runnable, MouseLi
 			jsp_jingmai.setBounds(405, 290+ 100- 65+ 50- 215+ 80, 285, 255-30);
 			jsp_jingmai.setBackground(Color.white);
 			JScrollPane jsp_yaotu= null;
-			jsp_yaotu= new JScrollPane(u.panel());
+			jsp_yaotu= new JScrollPane(u.app_XCDX.panel());
 			jsp_yaotu.setBounds(5, 600+ 100- 65+ 50- 215+ 25+ 3-30, 685, 182-20);	
 			jsp_yaotu.setBackground(Color.white);
-			buttonBox= u.getBox();
+			buttonBox= u.app_XCDX.getBox();
 			buttonBox.setBackground(Color.white);
 			buttonBox.setBounds(5, 290+ 100- 65+ 50- 215+ 80, 398, 22);
 			jpanelFirst.add(jsp_yaotu);  
