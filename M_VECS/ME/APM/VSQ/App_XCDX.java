@@ -40,7 +40,7 @@ import javax.swing.text.BadLocationException;
 import SVQ.stable.StableFile;
 public class App_XCDX {	
 	public App app;
-	public App_XCDX(App app) {
+	public void IV_(App app) {
 		this.app= app;
 	}
 	//

@@ -220,7 +220,8 @@ public class App extends JApplet implements MouseListener, KeyListener, ActionLi
 	public App_XCDX app_XCDX;
 	public void init(){
 		try {
-			app_XCDX= new App_XCDX(this);
+			app_XCDX= new App_XCDX();
+			app_XCDX.IV_(this);
 			appInit= new AppInit_XCDX();
 			appInit.IV_(this);
 		} catch (IOException e) {
