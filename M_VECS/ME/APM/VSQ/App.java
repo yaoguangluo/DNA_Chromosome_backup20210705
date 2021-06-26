@@ -227,14 +227,14 @@ public class App extends JApplet implements MouseListener, KeyListener, ActionLi
 	public BufferedImage tempBufferedImage;
 	public int ¥ﬂªØ±»÷µrot;
 	public boolean DNASearchIsClick;
-	public AppInit appInit;
+	public AppInit_XCDX appInit;
 	public String dbConfigPath;
 	public boolean bootDBInTXTWay= false;
 	public boolean bootDBInBaseWay= false;
 	public boolean bootDBInWebWay= false;
 	public void init(){
 		try {
-			appInit= new AppInit();
+			appInit= new AppInit_XCDX();
 			appInit.IV_(this);
 		} catch (IOException e) {
 			e.printStackTrace();
