@@ -24,7 +24,7 @@ import javax.swing.JTabbedPane;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-import AVQ.OEQ.cap.Monitor;
+import AVQ.OEQ.cap.Monitor_XCDX;
 import AVQ.PVU.vedio.PlayerControl;
 import AVQ.PVU.vedio.PlayerShow;
 import ME.APM.VSQ.App;
@@ -62,7 +62,7 @@ public class MakeContainerZNXZ extends Thread implements Runnable{
 			Thread.sleep(1000*5);
 			jpanelThird.setLayout(null);
 			jpanelThird.setBounds(0, 0, 1490, 980);	
-			u.monitor = new Monitor();
+			u.monitor = new Monitor_XCDX();
 			u.monitor.setVisible(true);
 			u.monitor.init();
 			u.monitor.sliderx = new JSlider(0,360);

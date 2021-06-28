@@ -9,7 +9,8 @@ import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 
 import AVQ.ASQ.OVQ.OSQ.VSQ.obj.Verbal;
-import AVQ.OEQ.cap.Monitor;
+//import AVQ.OEQ.cap.Monitor;
+import AVQ.OEQ.cap.Monitor_XCDX;
 import IMO.EVU.bi_P.CoAuthorForWord;
 import IMS.EUQ.SP.SoundWaveJPanel;
 import ME.APM.VSQ.Harrison.CecilPage;
@@ -89,7 +90,7 @@ public class App extends JApplet implements MouseListener, KeyListener, ActionLi
 	public AppConfig appConfig;
 	public A _A;
 	public CoAuthorForWord coAuthorForWord;
-	public Monitor monitor;
+	public Monitor_XCDX monitor;
 	public JSlider look;
 	public Map<String, String> pos;
 	public Map<String, String> posec;
