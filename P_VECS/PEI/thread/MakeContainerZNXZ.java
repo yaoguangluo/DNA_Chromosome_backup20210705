@@ -933,7 +933,8 @@ public class MakeContainerZNXZ extends Thread implements Runnable{
 									u.monitor.getGraphics().drawImage(u.monitor.img, 0, 0, 900, 680, u.monitor);// 绘出图形文件
 								} catch (IOException e1) {
 									// TODO Auto-generated catch block
-									e1.printStackTrace();
+									//..SIVQ..
+									//e1.printStackTrace();
 								}
 								//imge format
 								//leftPanel.img= image.getScaledInstance(605, 365, java.awt.Image.SCALE_SMOOTH);
