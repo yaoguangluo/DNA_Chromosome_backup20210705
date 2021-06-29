@@ -25,41 +25,41 @@ public class Monitor_XCDX_Animation_Pca{
 				stg= monitor.gp;
 				stb= monitor.bp;
 			}
-			int[][] r2r= new int[image.getWidth()][image.getHeight()];
-			int[][] r2g= new int[image.getWidth()][image.getHeight()];
-			int[][] r2b= new int[image.getWidth()][image.getHeight()];
+			monitor.r2r= new int[image.getWidth()][image.getHeight()];
+			monitor.r2g= new int[image.getWidth()][image.getHeight()];
+			monitor.r2b= new int[image.getWidth()][image.getHeight()];
 			if(monitor.isSblButton) {
 				if(monitor.isRedButton) {
-					r2r= new PEU.P.image.Sobel().P(str, 1);
+					monitor.r2r= new PEU.P.image.Sobel().P(str, 1);
 				}
 				if(monitor.isGreenButton) {
-					r2g= new PEU.P.image.Sobel().P(stg, 1);
+					monitor.r2g= new PEU.P.image.Sobel().P(stg, 1);
 				}
 				if(monitor.isBlueButton) {
-					r2b= new PEU.P.image.Sobel().P(stb, 1);
+					monitor.r2b= new PEU.P.image.Sobel().P(stb, 1);
 				}
 			}else {
-				r2r= str;
-				r2g= stg;
-				r2b= stb;
+				monitor.r2r= str;
+				monitor.r2g= stg;
+				monitor.r2b= stb;
 			}
 			int[][] gthdr= new int[image.getWidth()][image.getHeight()];
 			int[][] gthdg= new int[image.getWidth()][image.getHeight()];
 			int[][] gthdb= new int[image.getWidth()][image.getHeight()]; 
 			if(monitor.isSblButton) {
 				if(monitor.isRedButton) {
-					gthdr= new PEU.P.image.Threshold().P(r2r, monitor.facx);
+					gthdr= new PEU.P.image.Threshold().P(monitor.r2r, monitor.facx);
 				}
 				if(monitor.isGreenButton) {
-					gthdg= new PEU.P.image.Threshold().P(r2g, monitor.facx);
+					gthdg= new PEU.P.image.Threshold().P(monitor.r2g, monitor.facx);
 				}
 				if(monitor.isBlueButton) {
-					gthdb= new PEU.P.image.Threshold().P(r2b, monitor.facx);
+					gthdb= new PEU.P.image.Threshold().P(monitor.r2b, monitor.facx);
 				}
 			}else {
-				gthdr= r2r;
-				gthdg= r2g;
-				gthdb= r2b;
+				gthdr= monitor.r2r;
+				gthdg= monitor.r2g;
+				gthdb= monitor.r2b;
 			}
 			monitor.diffr= monitor.findDiff(gthdr, monitor.out_oldr);	
 			monitor.diffg= monitor.findDiff(gthdg, monitor.out_oldg);	
