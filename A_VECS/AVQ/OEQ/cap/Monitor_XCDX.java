@@ -25,6 +25,9 @@ import OSI.SSI.ASU.OSU.PSU.MSU.pde.DecadeToPDS;
 
 public class Monitor_XCDX extends JApplet{
 	private static final long serialVersionUID = 1L;
+	public int[][] mskr;
+	public int[][] mskb;
+	public int[][] mskg;
 	public int[][] diffg;
 	public int[][] diffr;
 	public int[][] diffb;

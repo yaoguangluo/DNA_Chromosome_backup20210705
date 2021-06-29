@@ -9,9 +9,9 @@ public class Monitor_XCDX_Animation_Ica{
 	public static void XCDX_paint_ica(Monitor_XCDX monitor, Graphics g, BufferedImage image){
 		try {
 			//ICA
-			int[][] mskr= new int[image.getWidth()][image.getHeight()];
-			int[][] mskg= new int[image.getWidth()][image.getHeight()];
-			int[][] mskb= new int[image.getWidth()][image.getHeight()];
+			monitor.mskr= new int[image.getWidth()][image.getHeight()];
+			monitor.mskg= new int[image.getWidth()][image.getHeight()];
+			monitor.mskb= new int[image.getWidth()][image.getHeight()];
 			monitor.gpcar = new int[image.getWidth()][image.getHeight()];
 			monitor.gpcag = new int[image.getWidth()][image.getHeight()];
 			monitor.gpcab = new int[image.getWidth()][image.getHeight()];
@@ -20,9 +20,9 @@ public class Monitor_XCDX_Animation_Ica{
 				for (int i= 0; i< image.getHeight(); ++i) {
 					for (int j= 0; j< image.getWidth(); ++j) {
 						if(monitor.isRedButton) {
-							if(mskr[j][i]== 0) {
+							if(monitor.mskr[j][i]== 0) {
 								map= new ConcurrentHashMap<>();
-								int size= monitor.getMskFilter(monitor.diffr, mskr, i, j, 0, map);
+								int size= monitor.getMskFilter(monitor.diffr, monitor.mskr, i, j, 0, map);
 								if(size> monitor.facy){
 									Iterator< String> it= map.keySet().iterator();
 									while(it.hasNext()){
@@ -37,9 +37,9 @@ public class Monitor_XCDX_Animation_Ica{
 							}
 						}
 						if(monitor.isGreenButton) {
-							if(mskg[j][i]== 0) {
+							if(monitor.mskg[j][i]== 0) {
 								map= new ConcurrentHashMap<>();
-								int size= monitor.getMskFilter(monitor.diffg, mskg, i, j, 0, map);
+								int size= monitor.getMskFilter(monitor.diffg, monitor.mskg, i, j, 0, map);
 								if(size> monitor.facy) {
 									Iterator< String> it= map.keySet().iterator();
 									while(it.hasNext()){
@@ -55,9 +55,9 @@ public class Monitor_XCDX_Animation_Ica{
 						}
 						if(monitor.isBlueButton) {
 							if(monitor.isGreenButton) {
-								if(mskb[j][i]== 0) {
+								if(monitor.mskb[j][i]== 0) {
 									map= new ConcurrentHashMap<>();
-									int size= monitor.getMskFilter(monitor.diffb, mskb, i, j, 0, map);
+									int size= monitor.getMskFilter(monitor.diffb, monitor.mskb, i, j, 0, map);
 									if(size> monitor.facy) {
 										Iterator< String> it = map.keySet().iterator();
 										while(it.hasNext()){
