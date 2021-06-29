@@ -25,6 +25,19 @@ import OSI.SSI.ASU.OSU.PSU.MSU.pde.DecadeToPDS;
 
 public class Monitor_XCDX extends JApplet{
 	private static final long serialVersionUID = 1L;
+	public int[][] diffg;
+	public int[][] diffr;
+	public int[][] diffb;
+	public int[][] rp;
+	public int[][] gp;
+	public int[][] bp;
+	public int[][] r2r;
+	public int[][] r2g;
+	public int[][] r2b;
+	public int[][] gpcar;
+	public int[][] gpcag;
+	public int[][] gpcab;
+		
 	public int[][] showOCLDr;
 	public int[][] showORGNr;
 	public int[][] showOCLDg;
@@ -56,7 +69,7 @@ public class Monitor_XCDX extends JApplet{
 	public boolean recordStop= true;
 	public DecadeToPDS decadeToPDS= new DecadeToPDS();
 	public BufferedImage stopBufferedImage;
-	public Map<String, Boolean> eyeShows=new HashMap<>();
+	public Map<String, Boolean> eyeShows= new HashMap<>();
 	public ArrayList<int[][]> imageList= new ArrayList<>();
 	public boolean isStop= false;	
 	public String time = "";
@@ -208,17 +221,6 @@ public class Monitor_XCDX extends JApplet{
 	public Box b5= new Box(BoxLayout.X_AXIS);  
 	public Box b6= new Box(BoxLayout.X_AXIS);  
 	public Box b7= new Box(BoxLayout.X_AXIS);  
-
-	public int[][] diaMask= new int[][] {
-		{1, 0, 1, 0, 1, 0, 1, 0, 1}
-		,{0, 1, 0, 1, 0, 1, 0, 1, 0}
-		,{1, 0, 1, 0, 1, 0, 1, 0, 1}
-		,{0, 1, 0, 1, 0, 1, 0, 1, 0}
-		,{1, 0, 1, 0, 1, 0, 1, 0, 1}
-		,{0, 1, 0, 1, 0, 1, 0, 1, 0}
-		,{1, 0, 1, 0, 1, 0, 1, 0, 1}
-		,{0, 1, 0, 1, 0, 1, 0, 1, 0}
-		,{1, 0, 1, 0, 1, 0, 1, 0, 1}};
 
 		public Button btn;
 		public int[][] gdif;

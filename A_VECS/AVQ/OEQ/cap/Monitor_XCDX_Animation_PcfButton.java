@@ -3,6 +3,8 @@ import java.awt.*;
 
 import java.awt.image.BufferedImage;
 
+import SVQ.stable.StableVision;
+
 public class Monitor_XCDX_Animation_PcfButton{
 	@SuppressWarnings({"unused"})
 	public static void XCDX_paint_PcfButton(Monitor_XCDX monitor, Graphics g, BufferedImage image
@@ -19,17 +21,17 @@ public class Monitor_XCDX_Animation_PcfButton{
 				if(monitor.isRedButton) {
 					diff2r= monitor.findDiff(gpcar, monitor.out_old2r);
 					ccar= new PEU.P.image.Dilation()
-							.P(diff2r, monitor.diaMask);
+							.P(diff2r, StableVision.diaMask);
 				}
 				if(monitor.isGreenButton == true) {
 					diff2g = monitor.findDiff(gpcag, monitor.out_old2g);
 					ccag = new PEU.P.image.Dilation()
-							.P(diff2g, monitor.diaMask);
+							.P(diff2g, StableVision.diaMask);
 				}
 				if(monitor.isBlueButton == true) {
 					diff2b = monitor.findDiff(gpcab, monitor.out_old2b);
 					ccab = new PEU.P.image.Dilation()
-							.P(diff2b, monitor.diaMask);
+							.P(diff2b, StableVision.diaMask);
 				}
 			}else {
 				ccar= gpcar;
