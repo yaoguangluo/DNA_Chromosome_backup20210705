@@ -38,7 +38,7 @@ public class Monitor_XCDX_Animation_PcfButton{
 				ccag= gpcag;
 				ccab= gpcab;	
 			}
-			
+
 			//OJLID
 			int cxr= 0;
 			int cyr= 0;
@@ -54,7 +54,7 @@ public class Monitor_XCDX_Animation_PcfButton{
 			int findb= 0;
 			monitor.showOCLDb= new int[image.getWidth()][image.getHeight()];
 			monitor.showORGNb= new int[image.getWidth()][image.getHeight()];
-			
+
 			if(monitor.isPcfButton) {
 				for(int i= 0; i< image.getHeight(); ++i) {
 					for(int j= 0; j< image.getWidth(); ++j) {

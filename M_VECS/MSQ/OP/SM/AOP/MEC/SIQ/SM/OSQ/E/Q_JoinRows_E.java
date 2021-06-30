@@ -12,7 +12,11 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import ME.SM.OP.SM.AOP.MEC.SIQ.E.P_AggregationPLSQL;
-import ME.SM.OP.SM.AOP.MEC.SIQ.E.P_ConditionPLSQL;
+import ME.SM.OP.SM.AOP.MEC.SIQ.E.P_ConditionPLSQL_XCDX;
+import ME.SM.OP.SM.AOP.MEC.SIQ.E.P_ConditionPLSQL_XCDX_Cache;
+import ME.SM.OP.SM.AOP.MEC.SIQ.E.P_ConditionPLSQL_XCDX_Map;
+import ME.SM.OP.SM.AOP.MEC.SIQ.E.P_ConditionPLSQL_XCDX_Table;
+//import ME.SM.OP.SM.AOP.MEC.SIQ.E.P_ConditionPLSQL;
 import ME.SM.OP.SM.AOP.MEC.SIQ.E.P_GetCulumnsPLSQL;
 import ME.SM.OP.SM.AOP.MEC.SIQ.E.P_RelationPLSQL;
 import MS.OP.SM.AOP.MEC.SIQ.cache.DetaDBBufferCache_M;
@@ -55,23 +59,23 @@ public class Q_JoinRows_E {
 						reader.close();
 						spec.I_CulumnType(fileList[i], objectType);
 					}
-					List<String[]> conditionValues = (List<String[]>) object.get("condition");
-					Iterator<String[]> iterator = conditionValues.iterator();
+					List<String[]> conditionValues= (List<String[]>) object.get("condition");
+					Iterator<String[]> iterator= conditionValues.iterator();
 					while(iterator.hasNext()) {
-						boolean overMap = output.size() == 0? false: true;
+						boolean overMap= output.size() == 0? false: true;
 						String[] conditionValueArray = iterator.next();
-						String type = conditionValueArray[1];
-						boolean andMap = type.equalsIgnoreCase("and")?true:false;
+						String type= conditionValueArray[1];
+						boolean andMap= type.equalsIgnoreCase("and")?true:false;
 						for(int i = 2; i < conditionValueArray.length; i++) {
 							String[] sets = conditionValueArray[i].split("\\|");
 							if(overMap && andMap) {
-								P_ConditionPLSQL.P_Map(sets, output, DBTablePath);//1
+								P_ConditionPLSQL_XCDX_Map.P_Map(sets, output, DBTablePath);//1
 							}else if(DetaDBBufferCache_M.dbCache){
-								P_ConditionPLSQL.P_Cache(sets, output
+								P_ConditionPLSQL_XCDX_Cache.P_Cache(sets, output
 										, object.get("joinTableName").toString()
 										, object.get("joinBaseName").toString(), object);//1
 							}else {
-								P_ConditionPLSQL.P_Table(sets, output, DBTablePath, object);//1
+								P_ConditionPLSQL_XCDX_Table.P_Table(sets, output, DBTablePath, object);//1
 							}
 						}
 					}

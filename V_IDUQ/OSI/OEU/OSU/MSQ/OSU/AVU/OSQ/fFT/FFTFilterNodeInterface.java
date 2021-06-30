@@ -19,8 +19,8 @@ public class FFTFilterNodeInterface extends OSU_AVQ_ASQ_ASQ_OCQ_OSI_PCI_PCU_MCI_
 		thisIcon = new ImageIcon(newimg);
  	}
 	public void MEI_MSU(JTextPane jTextPane, ThisCanvas canvas) throws IOException{
-		SQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ=new FFTFilterOSU_MSQ_AVQ_ASQ_OVQ_OSQ_VSQ();
-		SQ_OSU_MSQ_OSU_AVQ_ASQ_OPE_OPC_ECI=new FFTFilterOSU_MSQ_OPE_OPC_ECI();
+		SQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ= new FFTFilterOSU_MSQ_AVQ_ASQ_OVQ_OSQ_VSQ();
+		SQ_OSU_MSQ_OSU_AVQ_ASQ_OPE_OPC_ECI= new FFTFilterOSU_MSQ_OPE_OPC_ECI();
 		SQ_OSU_MSQ_OSU_AVQ_ASQ_AOI_AOD_AOU_AOQ_VES
 		=new FFTFilterOSU_MSQ_AOI_AOD_AOU_AOQ_VES((FFTFilterOSU_MSQ_OPE_OPC_ECI) SQ_OSU_MSQ_OSU_AVQ_ASQ_OPE_OPC_ECI);
 		SQ_OSU_MSQ_OSU_AVQ_ASQ_AOI_AOD_AOU_AOQ_VES.config();
@@ -35,7 +35,7 @@ public class FFTFilterNodeInterface extends OSU_AVQ_ASQ_ASQ_OCQ_OSI_PCI_PCU_MCI_
 		showed=true;
 	}
 	public OSU_AVQ_ASQ_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI AOP_MVE_CSI_DUQ() throws CloneNotSupportedException, IOException {  
-	        SQ_OSU_MSQ_OSU_AVQ_ASQ_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI = new FFTFilterNodeInterface();   
+	        SQ_OSU_MSQ_OSU_AVQ_ASQ_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI= new FFTFilterNodeInterface();   
 	        return SQ_OSU_MSQ_OSU_AVQ_ASQ_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI;  
 	}
 }
