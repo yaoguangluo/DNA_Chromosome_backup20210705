@@ -1,6 +1,7 @@
 package MSU.OP.SM.AOP.MEC.SIQ.SM.update.E;
 import java.io.BufferedReader;
 
+
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
@@ -12,7 +13,10 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import ME.SM.OP.SM.AOP.MEC.SIQ.E.P_AggregationPLSQL;
-import ME.SM.OP.SM.AOP.MEC.SIQ.E.P_ConditionPLSQL;
+//import ME.SM.OP.SM.AOP.MEC.SIQ.E.P_ConditionPLSQL;
+import ME.SM.OP.SM.AOP.MEC.SIQ.E.P_ConditionPLSQL_XCDX_Cache;
+import ME.SM.OP.SM.AOP.MEC.SIQ.E.P_ConditionPLSQL_XCDX_Map;
+import ME.SM.OP.SM.AOP.MEC.SIQ.E.P_ConditionPLSQL_XCDX_Table;
 import ME.SM.OP.SM.AOP.MEC.SIQ.E.P_GetCulumnsPLSQL;
 import ME.SM.OP.SM.AOP.MEC.SIQ.E.P_RelationPLSQL;
 import MS.OP.SM.AOP.MEC.SIQ.cache.DetaDBBufferCache_M;
@@ -65,12 +69,12 @@ public class U_JoinRows_E {
 						for(int i = 2; i < conditionValueArray.length; i++) {
 							String[] sets = conditionValueArray[i].split("\\|");
 							if(overMap && andMap) {
-								P_ConditionPLSQL.P_Map(sets, output, DBTablePath);
+								P_ConditionPLSQL_XCDX_Map.P_Map(sets, output, DBTablePath);
 							}else if(DetaDBBufferCache_M.dbCache){
-								P_ConditionPLSQL.P_Cache(sets, output, object.get("joinTableName").toString()
+								P_ConditionPLSQL_XCDX_Cache.P_Cache(sets, output, object.get("joinTableName").toString()
 										, object.get("joinBaseName").toString(), object);
 							}else {
-								P_ConditionPLSQL.P_Table(sets, output, DBTablePath, object);
+								P_ConditionPLSQL_XCDX_Table.P_Table(sets, output, DBTablePath, object);
 							}
 						}
 					}
