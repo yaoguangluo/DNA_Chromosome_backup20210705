@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 import OCI.ME.analysis.C.A;
+import OEI.ME.analysis.E.CogsBinaryForest_AE;
 public class RNN_IDETest{
 	public static void main(String[] argv) throws IOException, InstantiationException, IllegalAccessException {
 		RNN_IDETest rNN_IDETest= new RNN_IDETest();
@@ -70,7 +71,7 @@ public class RNN_IDETest{
 		return ideMatrix;
 	}
 
-	public String[][] getIDEMatrixExclude_A(A _A, String string) throws IOException {
+	public String[][] getIDEMatrixExclude_A(CogsBinaryForest_AE _A, String string) throws IOException {
 		SensingTest sensingTest = new SensingTest();
 		String[][] sensingMatrix = sensingTest.getMatrix(string, _A);
 		Map<String, List<Double>> map = new HashMap<>();

@@ -8,15 +8,16 @@ import java.net.Socket;
 
 import OCI.AVC.SUQ.SVQ.MPC.fhmm.C.EmotionMap;
 import OCI.ME.analysis.C.A;
+import OEI.ME.analysis.E.CogsBinaryForest_AE;
 import OSI.AOP.PCS.rest.RestMap;
 
 public class SocketThread extends Thread implements Runnable{
 	private Socket socket;
-	private A _A;
+	private CogsBinaryForest_AE _A;
 	private EmotionMap emotionMap;
 	private String sid;
 	private SocketThreadPool socketThreadPool;
-	public SocketThread(EmotionMap emotionMap, A _A, SocketThreadPool socketThreadPool
+	public SocketThread(EmotionMap emotionMap, CogsBinaryForest_AE _A, SocketThreadPool socketThreadPool
 			, Socket socket, String id){
 		this.socket= socket;
 		this.sid= id;

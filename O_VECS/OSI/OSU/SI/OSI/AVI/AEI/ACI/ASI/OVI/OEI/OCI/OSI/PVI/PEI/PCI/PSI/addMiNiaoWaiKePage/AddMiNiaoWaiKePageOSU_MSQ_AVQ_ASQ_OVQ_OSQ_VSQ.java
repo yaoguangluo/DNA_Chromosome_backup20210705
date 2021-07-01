@@ -7,13 +7,14 @@ import javax.swing.JFrame;
 import IMO.EVU.bi_P.CoAuthorForWord;
 import ME.APM.VSQ.App;
 import OCI.ME.analysis.C.A;
+import OEI.ME.analysis.E.CogsBinaryForest_AE;
 import OSI.OPE.OEQ.MCQ.OVU.PQE.osgi.*;
 public class AddMiNiaoWaiKePageOSU_MSQ_AVQ_ASQ_OVQ_OSQ_VSQ extends OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ{
 	private static final long serialVersionUID = 1L;
 	public JButton button;
 	public String path;
 	public App u;
-	public A _A;
+	public CogsBinaryForest_AE _A;
 	public Map<String, String> pos;
 	public String DNNtext;
 	public AddMiNiaoWaiKePageOSU_MSQ_AVQ_ASQ_OVQ_OSQ_VSQ(){

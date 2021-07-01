@@ -1,17 +1,22 @@
 package OEI.ME.analysis.E;
 import java.io.IOException;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import AVQ.ASQ.OVQ.OSQ.VSQ.obj.FMHMMNode;
 import AVQ.ASQ.OVQ.OSQ.VSQ.obj.WordFrequency;
+import SVQ.stable.StablePOS;
 import ME.utils.WordFrequencyUtil;
 import OCI.AVC.SUQ.SVQ.MPC.fhmm.C.EmotionMap;
-import OCI.ME.analysis.C.CogsBinaryForest_A;
-import SVQ.stable.StablePOS;
-public class CogsBinaryForest_AE extends BinaryForest_AE implements CogsBinaryForest_A {
+import OCI.ME.analysis.C.A_XCDX_Map;
+
+import java.util.Iterator;
+//PARSER XCDX
+//Yaoguang.Luo
+//20210702
+//一种元基枝 写法结构 处理子类接口 分类.
+public class AE_XCDX_Map extends AE implements A_XCDX_Map{
 	public Map<String, WordFrequency> parserStringByReturnFrequencyMap(String inputString) {
 		Map<String, String> wordsForest = fHMMList.getPosCnToCn();
 		Map<String, WordFrequency> outputList = new ConcurrentHashMap<>();
@@ -215,9 +220,4 @@ public class CogsBinaryForest_AE extends BinaryForest_AE implements CogsBinaryFo
 	public EmotionMap getEmotionMap() {
 		return this.emotionMap;
 	}
-	
-	
-	
-	
-	
 }

@@ -1,7 +1,6 @@
 package ME.APM.VSQ.Harrison;
 import java.awt.Color;
 
-
 import java.awt.Component;
 import java.awt.Container;
 import java.awt.Font;
@@ -36,7 +35,8 @@ import ESU.sort.Quick9DLYGWithString_ESU;
 import ME.APM.VSQ.App;
 import PEU.P.table.TableSorterZYNK;
 import MVQ.button.DetaButton;
-import OCI.ME.analysis.C.A;
+//import OCI.ME.analysis.C.A;
+import OEI.ME.analysis.E.CogsBinaryForest_AE;
 import OSI.AOP.neo.tts.ReadChinese;
 public class CecilPage extends Container implements MouseListener, KeyListener{
 	private static final long serialVersionUID = 1L;
@@ -57,7 +57,7 @@ public class CecilPage extends Container implements MouseListener, KeyListener{
 	public List<String> dic_list;
 	public Map<String, String> dic_map;
 	public Object[] columnTitle = {"ID", "打分", "书名", "段落"};
-	public A _A; 
+	public CogsBinaryForest_AE _A; 
 	public Map<String, String> pos;
 	public DetaButton buttonCTE;
 	public DetaButton buttonFRS;
@@ -71,7 +71,7 @@ public class CecilPage extends Container implements MouseListener, KeyListener{
 	public JTextPane text ;
 	public List<Verbal> verbals;
 	public App app;
-	public CecilPage(JTextPane text,A _A, Map<String, String> pos, Map<String, String> pose
+	public CecilPage(JTextPane text, CogsBinaryForest_AE _A, Map<String, String> pos, Map<String, String> pose
 			, Map<String, String> etc, Map<String, String> cte, Map<String, String> posec
 			, Map<String, String> posFullec, App app) throws IOException{
 		this.text = text;	this.pose = pose;

@@ -38,7 +38,8 @@ import ME.APM.VSQ.App;
 import MSU.AMS.VQS.SQV.SI.OSU.SMV.http.RestCall;
 import PEU.P.table.TableSorterZYNK;
 import MVQ.button.DetaButton;
-import OCI.ME.analysis.C.A;
+//import OCI.ME.analysis.C.A;
+import OEI.ME.analysis.E.CogsBinaryForest_AE;
 import OSI.AOP.neo.tts.ReadChinese;
 import OSV.VCQ.standard.DictionaryStandardDB;
 //import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.ASU.MPE.procedure.pde.FullDNATokenPDI;
@@ -61,7 +62,7 @@ public class FqzPage extends Container implements MouseListener, KeyListener{
 	public List<String> dic_list;
 	public Map<String, Object> dic_map;
 	public Object[] columnTitle = {"ID", "打分", "病名", "内容用药"};
-	public A _A;  	
+	public CogsBinaryForest_AE _A;  	
 	public Map<String, String> pos;
 	public DetaButton buttonCTE;
 	public DetaButton buttonFRS;
@@ -76,7 +77,7 @@ public class FqzPage extends Container implements MouseListener, KeyListener{
 	private DetaButton buttonCTV;
 	protected int row;
 	//private DetaButton buttonZYSZ;
-	public FqzPage(JTextPane text,A _A, Map<String, String> pos, Map<String, String> pose
+	public FqzPage(JTextPane text, CogsBinaryForest_AE _A, Map<String, String> pos, Map<String, String> pose
 			, Map<String, String> etc, Map<String, String> cte, JTabbedPane jTabbedpane, App u) throws IOException{
 		this.text = text;	this.pose = pose;
 		this.etc = etc;

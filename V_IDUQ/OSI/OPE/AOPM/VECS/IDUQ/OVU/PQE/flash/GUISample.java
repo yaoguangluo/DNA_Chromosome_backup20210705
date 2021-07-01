@@ -22,6 +22,7 @@ import javax.swing.tree.TreePath;
 
 import ME.APM.VSQ.App;
 import OCI.ME.analysis.C.A;
+import OEI.ME.analysis.E.CogsBinaryForest_AE;
 import OSI.OPE.MSQ.OVU.PQE.nodeInfo.NodeInfo;
 import OSI.OPE.MSQ.OVU.PQE.nodeProject.NodeProject;
 import OSI.OPE.OVQ.MSQ.OVU.PQE.platForm.UnicornJSplitPane;
@@ -71,7 +72,7 @@ public class GUISample extends JApplet implements MouseMotionListener
 	public Object[][] tableData_old; 
 	public U_RelatedLineVPS updateRelatedLine;
 	public App u;
-	public A _A;
+	public CogsBinaryForest_AE _A;
 	public Map<String, String> pos;
 	public void run() {
 		try {
@@ -113,7 +114,7 @@ public class GUISample extends JApplet implements MouseMotionListener
 	}
 
 	public void IV_(Object[][] tableData_old,JTextPane text, App u
-			, A _A, Map<String, String> pos){
+			, CogsBinaryForest_AE _A, Map<String, String> pos){
 		try {
 			this.text= text;
 			this.tableData_old= tableData_old;

@@ -3,12 +3,13 @@ import java.util.Map;
 
 import OCI.AVC.SUQ.SVQ.MPC.fhmm.C.EmotionMap;
 import OCI.ME.analysis.C.A;
+import OEI.ME.analysis.E.CogsBinaryForest_AE;
 import OSI.AOP.PCS.PP.port_E.RestLoginPortImpl;
 import OSI.AOP.PCS.PP.port_E.RestNLPPortImpl;
 import PCS.VQS.DSU.V.VtoV;
 public class VPCBackEnd {
 //	public static RestLoginPort restLoginPort;
-	public static String forward(EmotionMap emotionMap, A _A, String string, Map<String, String> data) 
+	public static String forward(EmotionMap emotionMap, CogsBinaryForest_AE _A, String string, Map<String, String> data) 
 			throws Exception {
 		if(string.equalsIgnoreCase("/login")){
 			return new VtoV().ObjectToJsonString(RestLoginPortImpl.login(data.get("uEmail"),data.get("uPassword")));	

@@ -1,5 +1,6 @@
 package ME.APM.VSQ.xlx;
 import java.awt.*;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -23,7 +24,8 @@ import javax.media.opengl.*;
 
 import MVQ.button.DetaButton;
 import MVQ.slider.DetaSlider;
-import OCI.ME.analysis.C.A;
+//import OCI.ME.analysis.C.A;
+import OEI.ME.analysis.E.CogsBinaryForest_AE;
 import VSQ.OPE.jogl.JOGLOBJShape;
 
 import com.jogamp.opengl.util.FPSAnimator;
@@ -51,7 +53,7 @@ public class CoAuthorForWord extends JPanel implements MouseMotionListener, Mous
 	public App u;
 	public Map<String, Object> dic_li ;
 	public Map<String, Object> dic_yl;
-	public A _A;
+	public CogsBinaryForest_AE _A;
 	public int c = 0;
 	private static final long serialVersionUID = 1L;
 	public FPSAnimator animator = null;  
@@ -108,7 +110,7 @@ public class CoAuthorForWord extends JPanel implements MouseMotionListener, Mous
 	JOGLOBJShape shape=null;
 	public double t = 1.0d;
 	public String rootWord;  
-	public CoAuthorForWord(App u, A _A
+	public CoAuthorForWord(App u, CogsBinaryForest_AE _A
 			, Map<String, String> pos) throws HeadlessException, InterruptedException  {  
 		Thread.sleep(100);
 		rootWord="";

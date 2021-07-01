@@ -12,6 +12,7 @@ import javax.swing.*;
 
 import ME.APM.VSQ.App;
 import OCI.ME.analysis.C.A;
+import OEI.ME.analysis.E.CogsBinaryForest_AE;
 import OSI.OPE.AOPM.VECS.IDUQ.OVU.PQE.flash.ThisCanvas;
 import OSI.OPE.OEQ.MCQ.OVU.PQE.osgi.*;
 
@@ -28,7 +29,7 @@ public class AddHLSBookNodeASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI extends OSU_AVQ_ASQ_A
 	}
 	
 	public AddHLSBookNodeASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI(Object[][] tableData_old, JTextPane text, App u
-			, A _A, Map<String, String> pos) throws IOException{
+			, CogsBinaryForest_AE _A, Map<String, String> pos) throws IOException{
 		this.text= text;
 		this.tableData_old= tableData_old;
 		thisIcon= new ImageIcon(this.getClass().getResource("addHLSBook.jpg"));

@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import AVQ.ASQ.OVQ.OSQ.VSQ.obj.WordFrequency;
-import OCI.ME.analysis.C.A;
+//import OCI.ME.analysis.C.A;
 import OEI.ME.analysis.E.CogsBinaryForest_AE;
 public class DemoEX {
 	int a=0;
@@ -19,7 +19,7 @@ public class DemoEX {
 	
 	@SuppressWarnings("unused")
 	public static void main(String[] args) throws IOException {
-		A _A = new CogsBinaryForest_AE();
+		CogsBinaryForest_AE _A = new CogsBinaryForest_AE();
 		//_A.IV_();
 		_A.IV_Mixed();
 		Map<String, String> pos = _A.getPosCnToCn();

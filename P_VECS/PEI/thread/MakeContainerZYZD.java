@@ -11,17 +11,18 @@ import javax.swing.JTabbedPane;
 import ME.APM.VSQ.App;
 import ME.APM.VSQ.zhongYiZhenDuanXue.ZyzdxPage;
 import OCI.ME.analysis.C.A;
+import OEI.ME.analysis.E.CogsBinaryForest_AE;
 public class MakeContainerZYZD extends Thread implements Runnable{
 	public Container jpanelSecond;
 	public App u;
 	public JTabbedPane jTabbedpane;
 	public List<String> tabNames;
-	public A _A;
+	public CogsBinaryForest_AE _A;
 	public Map<String, String> pos;
 	public Map<String, String> pose;
 	public Map<String, String> etc;
 	public Map<String, String> cte;
-	public MakeContainerZYZD(A _A,App u2, JTabbedPane jTabbedpane, List<String> tabNames2, Map<String, String> pos, Map<String, String> pose, Map<String, String> etc, Map<String, String> cte) {
+	public MakeContainerZYZD(CogsBinaryForest_AE _A,App u2, JTabbedPane jTabbedpane, List<String> tabNames2, Map<String, String> pos, Map<String, String> pose, Map<String, String> etc, Map<String, String> cte) {
 		super();
 		this.u = u2;
 		this.tabNames = tabNames2;

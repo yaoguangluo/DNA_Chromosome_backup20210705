@@ -21,17 +21,18 @@ import javax.swing.JTabbedPane;
 import AVQ.OVU.semaphone.TaskMakeCoWorker;
 import ME.APM.VSQ.App;
 import ME.APM.VSQ.zhongYao.ZhongYaoTable;
-import OCI.ME.analysis.C.A;
+//import OCI.ME.analysis.C.A;
+import OEI.ME.analysis.E.CogsBinaryForest_AE;
 public class MakeContainer_ZHONG_YAO extends Thread implements Runnable, MouseListener{
 	public Container jpanelFirst;
 	public App u;
 	public JTabbedPane jTabbedpane;
 	public List<String> tabNames;
 	public Box buttonBox;
-	public A _A;
+	public CogsBinaryForest_AE _A;
 	public Map<String, String> pos;
 	public TaskMakeCoWorker taskMakeCoWorker;
-	public MakeContainer_ZHONG_YAO(A _A,Container jpanelFirst, App u2, List<String> tabNames2
+	public MakeContainer_ZHONG_YAO(CogsBinaryForest_AE _A,Container jpanelFirst, App u2, List<String> tabNames2
 			, Map<String, String> pos, JTabbedPane jTabbedpane) throws IOException {
 		super();
 		this.jpanelFirst= jpanelFirst;

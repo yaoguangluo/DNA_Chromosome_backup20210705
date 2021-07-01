@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import OCI.ME.analysis.C.A;
+import OEI.ME.analysis.E.CogsBinaryForest_AE;
 import PEU.P.nlp.*;
 public class ANNTest{
 	public static void main(String[] argv) throws IOException, InstantiationException, IllegalAccessException {
@@ -30,7 +31,7 @@ public class ANNTest{
 		return AnnMatrix;
 	}
 
-	public String[][] getANNMatrix(String string, A _A) throws IOException
+	public String[][] getANNMatrix(String string, CogsBinaryForest_AE _A) throws IOException
 	, InstantiationException, IllegalAccessException {
 		SensingTest sensingTest= new SensingTest();
 		//SUM OF ANN MAP CULUMN KERNEL
@@ -63,7 +64,7 @@ public class ANNTest{
 		return PCANLP;		 	
 	}
 
-	public String[][] getANNMatrix(SensingTest sensingTest, String string, A _A) 
+	public String[][] getANNMatrix(SensingTest sensingTest, String string, CogsBinaryForest_AE _A) 
 			throws IOException, InstantiationException, IllegalAccessException {
 		//SUM OF ANN MAP CULUMN KERNEL
 		String[][] preAnnMatrix = sensingTest.getMatrix(string, _A);

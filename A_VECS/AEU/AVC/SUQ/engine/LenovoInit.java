@@ -7,6 +7,7 @@ import AEU.OCI.AVC.SUQ.estimation.C.EmotionSample;
 import OCI.AMV.ECS.SVQ.MPC.fhmm.C.SensingMap;
 import OCI.ME.analysis.C.A;
 import OEI.AMV.ECS.SVQ.MPC.SOQ.OEM.E.SensingMap_E;
+import OEI.ME.analysis.E.CogsBinaryForest_AE;
 import SVQ.stable.StableString;
 public class LenovoInit{
 	public SensingMap getSensingMap() {
@@ -43,7 +44,7 @@ public class LenovoInit{
 		sensingMap.IV_LenovoMap(environmentInit.get_A());	
 	}
 	
-	public void IV_Exclude_A(String text, A _A) throws IOException {
+	public void IV_Exclude_A(String text, CogsBinaryForest_AE _A) throws IOException {
 		environmentInit = new EnvironmentInit();
 		environmentInit.IV_Exclude_A(text, _A);
 		sensingMap = new SensingMap_E();

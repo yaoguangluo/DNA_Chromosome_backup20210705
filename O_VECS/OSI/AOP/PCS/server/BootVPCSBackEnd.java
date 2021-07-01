@@ -15,14 +15,14 @@ public class BootVPCSBackEnd extends Thread{
 	private static ServerSocket server;
 	@SuppressWarnings("unused")
 	private static Properties properties;
-	private A _A;
+	private CogsBinaryForest_AE _A;
 	private EmotionMap emotionMap;
 	private int port;
 	static {
 		properties = new Properties();
 	}
 
-	public BootVPCSBackEnd(A _A) throws IOException {
+	public BootVPCSBackEnd(CogsBinaryForest_AE _A) throws IOException {
 		if(null== _A) {
 			this._A = new CogsBinaryForest_AE();
 			this._A.IV_Mixed();

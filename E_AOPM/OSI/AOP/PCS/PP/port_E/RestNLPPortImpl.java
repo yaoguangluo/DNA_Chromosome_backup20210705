@@ -23,6 +23,8 @@ import AVQ.ASQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import MSV.OSQ.sets.DetaDouble;
 import OCI.AVC.SUQ.SVQ.MPC.fhmm.C.EmotionMap;
 import OCI.ME.analysis.C.A;
+//import OEI.ME.analysis.E.AE_XCDX_Map;
+import OEI.ME.analysis.E.CogsBinaryForest_AE;
 import OEU.LYG4DQS4D.Quick_7D_luoyaoguang_Sort;
 public class RestNLPPortImpl{// implements RestLoginPort {
 	public static Map<String, Object> dataWS(A _A, String string) throws IOException {
@@ -57,7 +59,7 @@ public class RestNLPPortImpl{// implements RestLoginPort {
 		return outputMap;
 	}
 
-	public static Map<String, Object> dataCY(A _A, String string) throws IOException {
+	public static Map<String, Object> dataCY(CogsBinaryForest_AE _A, String string) throws IOException {
 		//System.out.printntln(string);
 		LenovoInit lenovoInit = new LenovoInit();
 		lenovoInit.IV_Exclude_A(string, _A);	
@@ -130,7 +132,7 @@ public class RestNLPPortImpl{// implements RestLoginPort {
 		return output;
 	}
 
-	public static Map<String, Object> dataCG(A _A, String string) throws InstantiationException
+	public static Map<String, Object> dataCG(CogsBinaryForest_AE _A, String string) throws InstantiationException
 	, IllegalAccessException, IOException {
 		//System.out.printntln(string);
 		SensingTest sensingTest = _A.getSensingTest();
@@ -173,7 +175,7 @@ public class RestNLPPortImpl{// implements RestLoginPort {
 		return output;
 	}
 
-	public static Map<String, Object> dataCJ(EmotionMap emotionMap, A _A, String string) throws IOException {
+	public static Map<String, Object> dataCJ(EmotionMap emotionMap, CogsBinaryForest_AE _A, String string) throws IOException {
 		//System.out.printntln(string);
 		double[][] kernel = new double[1][];
 		InitBehaviorICAKernel InitBehaviorICAKernel = new InitBehaviorICAKernel();
@@ -266,8 +268,10 @@ public class RestNLPPortImpl{// implements RestLoginPort {
 		return output;
 	}
 
-	public static Object dataCP(A _A, String string) throws IOException {
+	public static Object dataCP(CogsBinaryForest_AE _A, String string) throws IOException {
 		List<String> sets= _A.parserMixedString(string);
+		//Map<Integer, WordFrequency> fwa = AE_XCDX_Map.getWordFrequencyByReturnSortMap(sets);
+		//Map<Integer, WordFrequency> fwa = new AE_XCDX_Map().getWordFrequencyByReturnSortMap(sets);
 		Map<Integer, WordFrequency> fwa = _A.getWordFrequencyByReturnSortMap(sets);
 		Map<String, Object> output = new HashMap<>();
 		String cp= "";
@@ -384,7 +388,7 @@ public class RestNLPPortImpl{// implements RestLoginPort {
 		return outputMap;
 	}
 
-	public static Object dataXL(A _A, String string) throws IOException, InstantiationException, IllegalAccessException{
+	public static Object dataXL(CogsBinaryForest_AE _A, String string) throws IOException, InstantiationException, IllegalAccessException{
 		//System.out.printntln(string);
 		ANNTest aNNTest= new ANNTest();
 		String[][] ann= aNNTest.getANNMatrix(string, _A);
@@ -404,7 +408,7 @@ public class RestNLPPortImpl{// implements RestLoginPort {
 		return output;
 	}
 
-	public static Object dataRN(A _A, String string) throws IOException {
+	public static Object dataRN(CogsBinaryForest_AE _A, String string) throws IOException {
 		RNN_IDETest rNN_IDETest= new RNN_IDETest();
 		String[][] rnn= rNN_IDETest.getIDEMatrixExclude_A(_A, string);
 		Map<String, Object> output= new HashMap<>();

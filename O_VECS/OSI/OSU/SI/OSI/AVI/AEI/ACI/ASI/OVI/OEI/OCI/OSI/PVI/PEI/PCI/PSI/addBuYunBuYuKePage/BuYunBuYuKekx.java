@@ -37,7 +37,8 @@ import ME.APM.VSQ.App;
 import MSU.AMS.VQS.SQV.SI.OSU.SMV.http.RestCall;
 import PEU.P.table.TableSorterZYNK;
 import MVQ.button.DetaButton;
-import OCI.ME.analysis.C.A;
+//import OCI.ME.analysis.C.A;
+import OEI.ME.analysis.E.CogsBinaryForest_AE;
 import OSI.AOP.neo.tts.ReadChinese;
 public class BuYunBuYuKekx extends Container implements MouseListener, KeyListener{
 	private static final long serialVersionUID = 1L;
@@ -72,7 +73,7 @@ public class BuYunBuYuKekx extends Container implements MouseListener, KeyListen
 	public Map<String, Object> dic_yh;
 	public Map<String, Object> dic_yf;
 	public Map<String, Object> dic_yx;
-	public A _A;
+	public CogsBinaryForest_AE _A;
 	public Map<String, String> pos;
 	public DetaButton buttonCTE;
 	public DetaButton buttonFRS;
@@ -80,15 +81,15 @@ public class BuYunBuYuKekx extends Container implements MouseListener, KeyListen
 	public Map<String, String> pose;
 	public Map<String, String> etc;
 	public Map<String, String> cte;
-	public Object[] columnTitle = {"ID", "´ò·Ö", "²¡Ö¢Ãû", "Ô­Êé±Ê¼Ç", "¸ÅÄî", "Á÷ÐÐ²¡Ñ§",
-			"²¡Òò&·¢²¡»úÖÆ", "Î£ÏÕÒòËØ", "²¡Àí·ÖÀà", "ÁÙ´²±íÏÖ&ÀàÐÍ&·ÖÐÍ", "ÊµÑéÊÒºÍÆäËû¼ì²é", "Õï¶Ï&¼ø±ðÕï¶Ï", "²¢·¢Ö¢",
-			"ÖÎÁÆ&ÖÎÁÆ·½°¸&Ô­Ôò", "½ÌÓý&¹ÜÀí", "Ô¤ºó&Ó°Ïì", "Ô¤·À", "Ó°ÏñÓë¼ì²é"};  
+	public Object[] columnTitle = {"ID", "ï¿½ï¿½ï¿½", "ï¿½ï¿½Ö¢ï¿½ï¿½", "Ô­ï¿½ï¿½Ê¼ï¿½", "ï¿½ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½Ð²ï¿½Ñ§",
+			"ï¿½ï¿½ï¿½ï¿½&ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "Î£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "ï¿½Ù´ï¿½ï¿½ï¿½ï¿½ï¿½&ï¿½ï¿½ï¿½ï¿½&ï¿½ï¿½ï¿½ï¿½", "Êµï¿½ï¿½ï¿½Òºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½&ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½ï¿½Ö¢",
+			"ï¿½ï¿½ï¿½ï¿½&ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½&Ô­ï¿½ï¿½", "ï¿½ï¿½ï¿½ï¿½&ï¿½ï¿½ï¿½ï¿½", "Ô¤ï¿½ï¿½&Ó°ï¿½ï¿½", "Ô¤ï¿½ï¿½", "Ó°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"};  
 	public JTextPane text;
 	public JTabbedPane jTabbedpane;
 	public App app;
 	public ReadChinese readChinese;
 	private int row;
-	public BuYunBuYuKekx(JTextPane text, A _A, Map<String, String> pos, Map<String, String> pose
+	public BuYunBuYuKekx(JTextPane text, CogsBinaryForest_AE _A, Map<String, String> pos, Map<String, String> pose
 			, Map<String, String> etc, Map<String, String> cte, JTabbedPane jTabbedpane, App app) throws IOException{
 		this.text = text;
 		this.app= app;
@@ -106,7 +107,7 @@ public class BuYunBuYuKekx extends Container implements MouseListener, KeyListen
 		JScrollPane jsp_statistic = new JScrollPane(this.statistic());
 		jsp_statistic.setBounds(5, 290 + 100 - 80 + 200-260, 1440 - 650 - 645, 500-166+90-44);
 		jsp_data.setBounds(5 + 800-650, 290 + 100 - 80 + 200-260+26, 1440-800+650-130, 500-166+90-70);
-		JLabel jlabel = new JLabel("ÐÅÏ¢ËÑË÷:");  
+		JLabel jlabel = new JLabel("ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½:");  
 		jlabel.setBounds(5, 15, 100, 50);
 		JScrollPane jsp = new JScrollPane(this.jTable());
 		jsp.setBounds(5, 80-80, 1440-130, 200+100+200-260);
@@ -118,11 +119,11 @@ public class BuYunBuYuKekx extends Container implements MouseListener, KeyListen
 	public JTextPane data() throws IOException {
 		data = new JTextPane();  
 		data.setBounds(850, 150, 1440-600, 800-70);
-		buttonSum = new DetaButton("¹²ÓÐ " + (sets==null?0:(1 + sets.size() / 2001))+ " Ò³");
+		buttonSum = new DetaButton("ï¿½ï¿½ï¿½ï¿½ " + (sets==null?0:(1 + sets.size() / 2001))+ " Ò³");
 		buttonSum.setBounds(0, 0, 100, 30);
-		buttonCrt = new DetaButton("µ±Ç°Ò³Ãæ£º" + (currentPage + 1));
+		buttonCrt = new DetaButton("ï¿½ï¿½Ç°Ò³ï¿½æ£º" + (currentPage + 1));
 		buttonCrt.setBounds(120, 0, 150, 30);
-		buttonPrev= new DetaButton("<-ÏòÇ°·­Ò³");
+		buttonPrev= new DetaButton("<-ï¿½ï¿½Ç°ï¿½ï¿½Ò³");
 		buttonPrev.setBounds(290, 0, 100, 30);
 		buttonPrev.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -140,7 +141,7 @@ public class BuYunBuYuKekx extends Container implements MouseListener, KeyListen
 								page.append("<span style=\"background:#F1F1F1\"><font color=\"black\" size=\"5\">" + setOfi + "</font></span>");
 								continue Here;
 							}
-							if(pos.get(setOfi).contains("Ãû")||pos.get(setOfi).contains("¶¯")||pos.get(setOfi).contains("ÐÎ")) {
+							if(pos.get(setOfi).contains("ï¿½ï¿½")||pos.get(setOfi).contains("ï¿½ï¿½")||pos.get(setOfi).contains("ï¿½ï¿½")) {
 								if (map.containsKey(setOfi)) {
 									WordFrequency wordFrequency = map.get(setOfi);
 									wordFrequency.I_Frequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
@@ -153,30 +154,30 @@ public class BuYunBuYuKekx extends Container implements MouseListener, KeyListen
 								}
 							}
 							if (!setOfi.equals("")) {
-								if(key.contains(setOfi)&&(pos.get(setOfi).contains("Ãû")||pos.get(setOfi).contains("¶¯")||pos.get(setOfi).contains("ÐÎ"))) {
+								if(key.contains(setOfi)&&(pos.get(setOfi).contains("ï¿½ï¿½")||pos.get(setOfi).contains("ï¿½ï¿½")||pos.get(setOfi).contains("ï¿½ï¿½"))) {
 									page.append("<span style=\"background:red\"><font color=\"white\">"+setOfi+"</font></span>");
 				    				continue Here;
 				    			}
-								if(pos.get(setOfi).contains("Ãû")) {
+								if(pos.get(setOfi).contains("ï¿½ï¿½")) {
 									page.append("<span style=\"background:"+new PEU.P.image.Color_P().P(255, 245, 255)+"\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");
 									continue Here;
 								}
-								if(pos.get(setOfi).contains("¶¯")) {
+								if(pos.get(setOfi).contains("ï¿½ï¿½")) {
 									page.append("<span style=\"background:"+new PEU.P.image.Color_P().P(245, 255, 245)+"\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");
 									continue Here;
 								}
-								if(pos.get(setOfi).contains("ÐÎ")) {
+								if(pos.get(setOfi).contains("ï¿½ï¿½")) {
 									page.append("<span style=\"background:"+new PEU.P.image.Color_P().P(255, 255, 245)+"\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");
 									continue Here;
 								}
-								if(pos.get(setOfi).contains("¸±")) {
+								if(pos.get(setOfi).contains("ï¿½ï¿½")) {
 									page.append("<span style=\"background:#F1FFFF\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");
 									continue Here;
 								} 
 								page.append("<span style=\"background:white\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");			 
 							}
 						}	
-					buttonCrt.setText("µ±Ç°Ò³Ãæ£º" + (currentPage + 1));
+					buttonCrt.setText("ï¿½ï¿½Ç°Ò³ï¿½æ£º" + (currentPage + 1));
 					data.setText(page.toString());
 					data.setSelectionStart(0);
 					data.setSelectionEnd(0);
@@ -197,15 +198,15 @@ public class BuYunBuYuKekx extends Container implements MouseListener, KeyListen
 									page.append("<div style=\"background:black\"><font color=\"white\">" + fwa.get(i).getWord()+""+fwa.get(i).getFrequency() + "</font></div>");
 									continue Here;
 								}
-								if(pos.get(fwa.get(i).getWord()).contains("Ãû")) {
+								if(pos.get(fwa.get(i).getWord()).contains("ï¿½ï¿½")) {
 									page.append( "<div style=\"background:#FF44FF\"><font color=\"white\">" + fwa.get(i).getWord()+""+fwa.get(i).getFrequency() +"</font></div>");
 									continue Here;
 								}
-								if(pos.get(fwa.get(i).getWord()).contains("¶¯")) {
+								if(pos.get(fwa.get(i).getWord()).contains("ï¿½ï¿½")) {
 									page.append("<div style=\"background:#8CEA00\"><font color=\"black\" size=\"5\">" + fwa.get(i).getWord()+""+fwa.get(i).getFrequency() +"</font></div>");
 									continue Here;
 								}
-								if(pos.get(fwa.get(i).getWord()).contains("ÐÎ")) {
+								if(pos.get(fwa.get(i).getWord()).contains("ï¿½ï¿½")) {
 									page.append("<div style=\"background:#FF9224\"><font color=\"black\" size=\"5\">" + fwa.get(i).getWord()+""+fwa.get(i).getFrequency() +"</font></div>");
 								}
 							}
@@ -220,7 +221,7 @@ public class BuYunBuYuKekx extends Container implements MouseListener, KeyListen
 				}          
 			}
 		});
-		buttonNext= new DetaButton("Ïòºó·­Ò³->");
+		buttonNext= new DetaButton("ï¿½ï¿½ï¿½Ò³->");
 		buttonNext.setBounds(410, 0, 100, 30);
 		buttonNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -238,7 +239,7 @@ public class BuYunBuYuKekx extends Container implements MouseListener, KeyListen
 								page.append("<span style=\"background:#F1F1F1\"><font color=\"black\" size=\"5\">" + setOfi + "</font></span>");
 								continue Here;
 							}
-							if(pos.get(setOfi).contains("Ãû")||pos.get(setOfi).contains("¶¯")||pos.get(setOfi).contains("ÐÎ")) {
+							if(pos.get(setOfi).contains("ï¿½ï¿½")||pos.get(setOfi).contains("ï¿½ï¿½")||pos.get(setOfi).contains("ï¿½ï¿½")) {
 								if (map.containsKey(setOfi)) {
 									WordFrequency wordFrequency = map.get(setOfi);
 									wordFrequency.I_Frequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
@@ -251,30 +252,30 @@ public class BuYunBuYuKekx extends Container implements MouseListener, KeyListen
 								}
 							}
 							if (!setOfi.equals("")) {
-								if(key.contains(setOfi)&&(pos.get(setOfi).contains("Ãû")||pos.get(setOfi).contains("¶¯")||pos.get(setOfi).contains("ÐÎ"))) {
+								if(key.contains(setOfi)&&(pos.get(setOfi).contains("ï¿½ï¿½")||pos.get(setOfi).contains("ï¿½ï¿½")||pos.get(setOfi).contains("ï¿½ï¿½"))) {
 									page.append("<span style=\"background:red\"><font color=\"white\">"+setOfi+"</font></span>");
 				    				continue Here;
 				    			}
-								if(pos.get(setOfi).contains("Ãû")) {
+								if(pos.get(setOfi).contains("ï¿½ï¿½")) {
 									page.append("<span style=\"background:"+new PEU.P.image.Color_P().P(255, 254, 255)+"\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");
 									continue Here;
 								}
-								if(pos.get(setOfi).contains("¶¯")) {
+								if(pos.get(setOfi).contains("ï¿½ï¿½")) {
 									page.append("<span style=\"background:"+new PEU.P.image.Color_P().P(254, 255, 254)+"\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");
 									continue Here;
 								}
-								if(pos.get(setOfi).contains("ÐÎ")) {
+								if(pos.get(setOfi).contains("ï¿½ï¿½")) {
 									page.append("<span style=\"background:"+new PEU.P.image.Color_P().P(255, 255, 254)+"\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");
 									continue Here;
 								}
-								if(pos.get(setOfi).contains("¸±")) {
+								if(pos.get(setOfi).contains("ï¿½ï¿½")) {
 									page.append("<span style=\"background:#FEFFFF\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");
 									continue Here;
 								} 
 								page.append("<span style=\"background:white\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");			 
 							}
 						}
-					buttonCrt.setText("µ±Ç°Ò³Ãæ£º" + (currentPage + 1));
+					buttonCrt.setText("ï¿½ï¿½Ç°Ò³ï¿½æ£º" + (currentPage + 1));
 					data.setText(page.toString());
 					data.setSelectionStart(0);
 					data.setSelectionEnd(0);
@@ -295,15 +296,15 @@ public class BuYunBuYuKekx extends Container implements MouseListener, KeyListen
 									page.append("<div style=\"background:black\"><font color=\"white\">" + fwa.get(i).getWord()+""+fwa.get(i).getFrequency() + "</font></div>");
 									continue Here;
 								}
-								if(pos.get(fwa.get(i).getWord()).contains("Ãû")) {
+								if(pos.get(fwa.get(i).getWord()).contains("ï¿½ï¿½")) {
 									page.append( "<div style=\"background:#FF44FF\"><font color=\"white\">" + fwa.get(i).getWord()+""+fwa.get(i).getFrequency() +"</font></div>");
 									continue Here;
 								}
-								if(pos.get(fwa.get(i).getWord()).contains("¶¯")) {
+								if(pos.get(fwa.get(i).getWord()).contains("ï¿½ï¿½")) {
 									page.append("<div style=\"background:#8CEA00\"><font color=\"black\" size=\"5\">" + fwa.get(i).getWord()+""+fwa.get(i).getFrequency() +"</font></div>");
 									continue Here;
 								}
-								if(pos.get(fwa.get(i).getWord()).contains("ÐÎ")) {
+								if(pos.get(fwa.get(i).getWord()).contains("ï¿½ï¿½")) {
 									page.append("<div style=\"background:#FF9224\"><font color=\"black\" size=\"5\">" + fwa.get(i).getWord()+""+fwa.get(i).getFrequency() +"</font></div>");
 								}
 							}
@@ -318,7 +319,7 @@ public class BuYunBuYuKekx extends Container implements MouseListener, KeyListen
 				}  
 			}
 		});
-		buttonCTE = new DetaButton("Ó¢ÎÄ×¢ÊÍ");
+		buttonCTE = new DetaButton("Ó¢ï¿½ï¿½×¢ï¿½ï¿½");
 		buttonCTE.setBounds(630, 0, 100, 30);
 		buttonCTE.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -336,30 +337,30 @@ public class BuYunBuYuKekx extends Container implements MouseListener, KeyListen
 							continue Here;
 						}
 						if (!setOfi.equals("")) {
-							if(key.contains(setOfi)&&(pos.get(setOfi).contains("Ãû")||pos.get(setOfi).contains("¶¯")||pos.get(setOfi).contains("ÐÎ"))) {
+							if(key.contains(setOfi)&&(pos.get(setOfi).contains("ï¿½ï¿½")||pos.get(setOfi).contains("ï¿½ï¿½")||pos.get(setOfi).contains("ï¿½ï¿½"))) {
 								page.append("<span style=\"background:red\"><font color=\"white\">" + setOfi +(cte.containsKey(setOfi)?":("+cte.get(setOfi)+")":"") + "</font></span>");
 			    				continue Here;
 			    			}
-							if(pos.get(setOfi).contains("Ãû")) {
+							if(pos.get(setOfi).contains("ï¿½ï¿½")) {
 								page.append("<span style=\"background:"+new PEU.P.image.Color_P().P(255, 245, 255)+"\"><font color=\"black\" size=\"5\">" + setOfi +(cte.containsKey(setOfi)?":("+cte.get(setOfi)+")":"") + "</font></span>");
 								continue Here;
 							}
-							if(pos.get(setOfi).contains("¶¯")) {
+							if(pos.get(setOfi).contains("ï¿½ï¿½")) {
 								page.append("<span style=\"background:"+new PEU.P.image.Color_P().P(245, 255, 245)+"\"><font color=\"black\" size=\"5\">" + setOfi +(cte.containsKey(setOfi)?":("+cte.get(setOfi)+")":"") + "</font></span>");
 								continue Here;
 							}
-							if(pos.get(setOfi).contains("ÐÎ")) {
+							if(pos.get(setOfi).contains("ï¿½ï¿½")) {
 								page.append("<span style=\"background:"+new PEU.P.image.Color_P().P(255, 255, 245)+"\"><font color=\"black\" size=\"5\">" + setOfi +(cte.containsKey(setOfi)?":("+cte.get(setOfi)+")":"") + "</font></span>");
 								continue Here;
 							}
-							if(pos.get(setOfi).contains("¸±")) {
+							if(pos.get(setOfi).contains("ï¿½ï¿½")) {
 								page.append("<span style=\"background:#F1FFFF\"><font color=\"black\" size=\"5\">" + setOfi +(cte.containsKey(setOfi)?":("+cte.get(setOfi)+")":"") + "</font></span>");
 								continue Here;
 							} 
 							page.append("<span style=\"background:white\"><font color=\"black\" size=\"5\">" + setOfi +(cte.containsKey(setOfi)?":("+cte.get(setOfi)+")":"") + "</font></span>");			 
 						}
 					}	
-				buttonCrt.setText("µ±Ç°Ò³Ãæ£º" + (currentPage + 1));
+				buttonCrt.setText("ï¿½ï¿½Ç°Ò³ï¿½æ£º" + (currentPage + 1));
 				data.setText(page.toString());
 				data.setSelectionStart(0);
 				data.setSelectionEnd(0);
@@ -367,7 +368,7 @@ public class BuYunBuYuKekx extends Container implements MouseListener, KeyListen
 			}
 		});
 		
-		buttonFRS = new DetaButton("ÖÐÎÄ»¹Ô­");
+		buttonFRS = new DetaButton("ï¿½ï¿½ï¿½Ä»ï¿½Ô­");
 		buttonFRS.setBounds(520, 0, 100, 30);
 		buttonFRS.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -385,30 +386,30 @@ public class BuYunBuYuKekx extends Container implements MouseListener, KeyListen
 							continue Here;
 						}
 						if (!setOfi.equals("")) {
-							if(key.contains(setOfi)&&(pos.get(setOfi).contains("Ãû")||pos.get(setOfi).contains("¶¯")||pos.get(setOfi).contains("ÐÎ"))) {
+							if(key.contains(setOfi)&&(pos.get(setOfi).contains("ï¿½ï¿½")||pos.get(setOfi).contains("ï¿½ï¿½")||pos.get(setOfi).contains("ï¿½ï¿½"))) {
 								page.append("<span style=\"background:red\"><font color=\"white\">"+setOfi +"</font></span>");
 			    				continue Here;
 			    			}
-							if(pos.get(setOfi).contains("Ãû")) {
+							if(pos.get(setOfi).contains("ï¿½ï¿½")) {
 								page.append("<span style=\"background:"+new PEU.P.image.Color_P().P(255, 245, 255)+"\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");
 								continue Here;
 							}
-							if(pos.get(setOfi).contains("¶¯")) {
+							if(pos.get(setOfi).contains("ï¿½ï¿½")) {
 								page.append("<span style=\"background:"+new PEU.P.image.Color_P().P(245, 255, 245)+"\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");
 								continue Here;
 							}
-							if(pos.get(setOfi).contains("ÐÎ")) {
+							if(pos.get(setOfi).contains("ï¿½ï¿½")) {
 								page.append("<span style=\"background:"+new PEU.P.image.Color_P().P(255, 255, 245)+"\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");
 								continue Here;
 							}
-							if(pos.get(setOfi).contains("¸±")) {
+							if(pos.get(setOfi).contains("ï¿½ï¿½")) {
 								page.append("<span style=\"background:#F1FFFF\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");
 								continue Here;
 							} 
 							page.append("<span style=\"background:white\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");			 
 						}
 					}	
-				buttonCrt.setText("µ±Ç°Ò³Ãæ£º" + (currentPage + 1));
+				buttonCrt.setText("ï¿½ï¿½Ç°Ò³ï¿½æ£º" + (currentPage + 1));
 				data.setText(page.toString());
 				data.setSelectionStart(0);
 				data.setSelectionEnd(0);
@@ -416,7 +417,7 @@ public class BuYunBuYuKekx extends Container implements MouseListener, KeyListen
 			}
 		});
 		
-		buttonETC = new DetaButton("Í¬ÒåÃèÊö");
+		buttonETC = new DetaButton("Í¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 		buttonETC.setBounds(740, 0, 100, 30);
 		buttonETC.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -434,30 +435,30 @@ public class BuYunBuYuKekx extends Container implements MouseListener, KeyListen
 							continue Here;
 						}
 						if (!setOfi.equals("")) {
-							if(key.contains(setOfi)&&(pos.get(setOfi).contains("Ãû")||pos.get(setOfi).contains("¶¯")||pos.get(setOfi).contains("ÐÎ"))) {
+							if(key.contains(setOfi)&&(pos.get(setOfi).contains("ï¿½ï¿½")||pos.get(setOfi).contains("ï¿½ï¿½")||pos.get(setOfi).contains("ï¿½ï¿½"))) {
 								page.append("<span style=\"background:red\"><font color=\"white\">" + setOfi +(cte.containsKey(setOfi)?(etc.containsKey(cte.get(setOfi))?":("+etc.get(cte.get(setOfi))+")":""):"") + "</font></span>");
 			    				continue Here;
 			    			}
-							if(pos.get(setOfi).contains("Ãû")) {
+							if(pos.get(setOfi).contains("ï¿½ï¿½")) {
 								page.append("<span style=\"background:"+new PEU.P.image.Color_P().P(255, 245, 255)+"\"><font color=\"black\" size=\"5\">"  + setOfi +(cte.containsKey(setOfi)?(etc.containsKey(cte.get(setOfi))?":("+etc.get(cte.get(setOfi))+")":""):"") +  "</font></span>");
 								continue Here;
 							}
-							if(pos.get(setOfi).contains("¶¯")) {
+							if(pos.get(setOfi).contains("ï¿½ï¿½")) {
 								page.append("<span style=\"background:"+new PEU.P.image.Color_P().P(245, 255, 245)+"\"><font color=\"black\" size=\"5\">" + setOfi +(cte.containsKey(setOfi)?(etc.containsKey(cte.get(setOfi))?":("+etc.get(cte.get(setOfi))+")":""):"") + "</font></span>");
 								continue Here;
 							}
-							if(pos.get(setOfi).contains("ÐÎ")) {
+							if(pos.get(setOfi).contains("ï¿½ï¿½")) {
 								page.append("<span style=\"background:"+new PEU.P.image.Color_P().P(255, 255, 245)+"\"><font color=\"black\" size=\"5\">" + setOfi +(cte.containsKey(setOfi)?(etc.containsKey(cte.get(setOfi))?":("+etc.get(cte.get(setOfi))+")":""):"") + "</font></span>");
 								continue Here;
 							}
-							if(pos.get(setOfi).contains("¸±")) {
+							if(pos.get(setOfi).contains("ï¿½ï¿½")) {
 								page.append("<span style=\"background:#F1FFFF\"><font color=\"black\" size=\"5\">"  + setOfi +(cte.containsKey(setOfi)?(etc.containsKey(cte.get(setOfi))?":("+etc.get(cte.get(setOfi))+")":""):"") +  "</font></span>");
 								continue Here;
 							} 
 							page.append("<span style=\"background:white\"><font color=\"black\" size=\"5\">" + setOfi +(cte.containsKey(setOfi)?(etc.containsKey(cte.get(setOfi))?":("+etc.get(cte.get(setOfi))+")":""):"") +  "</font></span>");			 
 						}
 					}	
-				buttonCrt.setText("µ±Ç°Ò³Ãæ£º" + (currentPage + 1));
+				buttonCrt.setText("ï¿½ï¿½Ç°Ò³ï¿½æ£º" + (currentPage + 1));
 				data.setText(page.toString());
 				data.setSelectionStart(0);
 				data.setSelectionEnd(0);
@@ -465,7 +466,7 @@ public class BuYunBuYuKekx extends Container implements MouseListener, KeyListen
 			}
 		});
 		
-		DetaButton buttonADD = new DetaButton("Ìí¼Óµ½±à¼­Ò³");
+		DetaButton buttonADD = new DetaButton("ï¿½ï¿½Óµï¿½ï¿½à¼­Ò³");
 		buttonADD.setBounds(868, 0, 115, 30);
 		buttonADD.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -491,7 +492,7 @@ public class BuYunBuYuKekx extends Container implements MouseListener, KeyListen
 			}
 		});
 		
-		DetaButton buttonKSLJ= new DetaButton("ÖÐÒ©DNN");
+		DetaButton buttonKSLJ= new DetaButton("ï¿½ï¿½Ò©DNN");
 		buttonKSLJ.setBounds(990, 0, 115, 30);
 		buttonKSLJ.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -534,7 +535,7 @@ public class BuYunBuYuKekx extends Container implements MouseListener, KeyListen
 				}else {
 					response=app.CacheString.get(keyCache);
 				}
-				//dnnÉ­ÁÖ
+				//dnnÉ­ï¿½ï¿½
 				try {
 					String[] dnn= response.replace("\r\n", "<br/>").split("<br/>");
 					app.coAuthorForWord.bootDetaDnnFlowerForest(app, table.getValueAt(row, 2).toString(), dnn, true);
@@ -552,7 +553,7 @@ public class BuYunBuYuKekx extends Container implements MouseListener, KeyListen
 							page.append("<span style=\"background:#F1F1F1\"><font color=\"black\" size=\"5\">" + setOfi + "</font></span>");
 							continue Here;
 						}
-						if((pos.get(setOfi).contains("Ãû")||pos.get(setOfi).contains("¶¯")||pos.get(setOfi).contains("ÐÎ"))) {
+						if((pos.get(setOfi).contains("ï¿½ï¿½")||pos.get(setOfi).contains("ï¿½ï¿½")||pos.get(setOfi).contains("ï¿½ï¿½"))) {
 							if (map.containsKey(setOfi)) {
 								WordFrequency wordFrequency = map.get(setOfi);
 								wordFrequency.I_Frequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
@@ -569,31 +570,31 @@ public class BuYunBuYuKekx extends Container implements MouseListener, KeyListen
 								page.append("<span style=\"background:"+new PEU.P.image.Color_P().P(255, 145, 255)+"\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");
 								continue Here;
 							} 
-							if(key.contains(setOfi)&&(pos.get(setOfi).contains("Ãû")||pos.get(setOfi).contains("¶¯")||pos.get(setOfi).contains("ÐÎ"))) {
+							if(key.contains(setOfi)&&(pos.get(setOfi).contains("ï¿½ï¿½")||pos.get(setOfi).contains("ï¿½ï¿½")||pos.get(setOfi).contains("ï¿½ï¿½"))) {
 								page.append("<span style=\"background:red\"><font color=\"white\">"+setOfi+"</font></span>");
 								continue Here;
 							}
-							if(pos.get(setOfi).contains("Ãû")) {
+							if(pos.get(setOfi).contains("ï¿½ï¿½")) {
 								page.append("<span style=\"background:"+new PEU.P.image.Color_P().P(255, 245, 255)+"\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");
 								continue Here;
 							}
-							if(pos.get(setOfi).contains("¶¯")) {
+							if(pos.get(setOfi).contains("ï¿½ï¿½")) {
 								page.append("<span style=\"background:"+new PEU.P.image.Color_P().P(245, 255, 245)+"\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");
 								continue Here;
 							}
-							if(pos.get(setOfi).contains("ÐÎ")) {
+							if(pos.get(setOfi).contains("ï¿½ï¿½")) {
 								page.append("<span style=\"background:"+new PEU.P.image.Color_P().P(255, 255, 245)+"\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");
 								continue Here;
 							}
-							if(pos.get(setOfi).contains("¸±")) {
+							if(pos.get(setOfi).contains("ï¿½ï¿½")) {
 								page.append("<span style=\"background:#F1FFFF\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");
 								continue Here;
 							} 
 							page.append("<span style=\"background:white\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");			 
 						}
 					}	
-				buttonSum.setText("¹²ÓÐ " + (sets == null ? 0 : (1 + sets.size() / 2001)) + " Ò³");
-				buttonCrt.setText("µ±Ç°Ò³Ãæ£º" + (sets == null? 0 : 1));
+				buttonSum.setText("ï¿½ï¿½ï¿½ï¿½ " + (sets == null ? 0 : (1 + sets.size() / 2001)) + " Ò³");
+				buttonCrt.setText("ï¿½ï¿½Ç°Ò³ï¿½æ£º" + (sets == null? 0 : 1));
 				data.setText(page.toString());
 				data.setSelectionStart(0);
 				data.setSelectionEnd(0);
@@ -612,15 +613,15 @@ public class BuYunBuYuKekx extends Container implements MouseListener, KeyListen
 									stringBuilder.append("<div style=\"background:black\"><font color=\"white\">" +fwa[i] + "</font></div>");
 									continue Here;
 								}
-								if(pos.get(fwa[i].split(":")[0]).contains("Ãû")) {
+								if(pos.get(fwa[i].split(":")[0]).contains("ï¿½ï¿½")) {
 									stringBuilder.append( "<div style=\"background:#FF44FF\"><font color=\"white\">" + fwa[i] +"</font></div>");
 									continue Here;
 								}
-								if(pos.get(fwa[i].split(":")[0]).contains("¶¯")) {
+								if(pos.get(fwa[i].split(":")[0]).contains("ï¿½ï¿½")) {
 									stringBuilder.append("<div style=\"background:#8CEA00\"><font color=\"black\" size=\"5\">" + fwa[i] +"</font></div>");
 									continue Here;
 								}
-								if(pos.get(fwa[i].split(":")[0]).contains("ÐÎ")) {
+								if(pos.get(fwa[i].split(":")[0]).contains("ï¿½ï¿½")) {
 									stringBuilder.append("<div style=\"background:#FF9224\"><font color=\"black\" size=\"5\">" + fwa[i] +"</font></div>");
 								}
 							}
@@ -635,7 +636,7 @@ public class BuYunBuYuKekx extends Container implements MouseListener, KeyListen
 			}
 		});
 		
-		DetaButton buttonKSLJB= new DetaButton("Î÷Ò©DNN");
+		DetaButton buttonKSLJB= new DetaButton("ï¿½ï¿½Ò©DNN");
 		buttonKSLJB.setBounds(990+ 115+ 7, 0, 115, 30);
 		buttonKSLJB.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -678,7 +679,7 @@ public class BuYunBuYuKekx extends Container implements MouseListener, KeyListen
 				}else {
 					response=app.CacheString.get(keyCache);
 				}
-				//dnnÉ­ÁÖ
+				//dnnÉ­ï¿½ï¿½
 				try {
 					String[] dnn= response.replace("\r\n", "<br/>").split("<br/>");
 					app.coAuthorForWord.bootDetaBingMingDnnFlowerForest(app, table.getValueAt(row, 2).toString(), dnn, true);
@@ -696,7 +697,7 @@ public class BuYunBuYuKekx extends Container implements MouseListener, KeyListen
 							page.append("<span style=\"background:#F1F1F1\"><font color=\"black\" size=\"5\">" + setOfi + "</font></span>");
 							continue Here;
 						}
-						if((pos.get(setOfi).contains("Ãû")||pos.get(setOfi).contains("¶¯")||pos.get(setOfi).contains("ÐÎ"))) {
+						if((pos.get(setOfi).contains("ï¿½ï¿½")||pos.get(setOfi).contains("ï¿½ï¿½")||pos.get(setOfi).contains("ï¿½ï¿½"))) {
 							if (map.containsKey(setOfi)) {
 								WordFrequency wordFrequency = map.get(setOfi);
 								wordFrequency.I_Frequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
@@ -713,31 +714,31 @@ public class BuYunBuYuKekx extends Container implements MouseListener, KeyListen
 								page.append("<span style=\"background:"+new PEU.P.image.Color_P().P(255, 145, 255)+"\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");
 								continue Here;
 							} 
-							if(key.contains(setOfi)&&(pos.get(setOfi).contains("Ãû")||pos.get(setOfi).contains("¶¯")||pos.get(setOfi).contains("ÐÎ"))) {
+							if(key.contains(setOfi)&&(pos.get(setOfi).contains("ï¿½ï¿½")||pos.get(setOfi).contains("ï¿½ï¿½")||pos.get(setOfi).contains("ï¿½ï¿½"))) {
 								page.append("<span style=\"background:red\"><font color=\"white\">"+setOfi+"</font></span>");
 								continue Here;
 							}
-							if(pos.get(setOfi).contains("Ãû")) {
+							if(pos.get(setOfi).contains("ï¿½ï¿½")) {
 								page.append("<span style=\"background:"+new PEU.P.image.Color_P().P(255, 245, 255)+"\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");
 								continue Here;
 							}
-							if(pos.get(setOfi).contains("¶¯")) {
+							if(pos.get(setOfi).contains("ï¿½ï¿½")) {
 								page.append("<span style=\"background:"+new PEU.P.image.Color_P().P(245, 255, 245)+"\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");
 								continue Here;
 							}
-							if(pos.get(setOfi).contains("ÐÎ")) {
+							if(pos.get(setOfi).contains("ï¿½ï¿½")) {
 								page.append("<span style=\"background:"+new PEU.P.image.Color_P().P(255, 255, 245)+"\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");
 								continue Here;
 							}
-							if(pos.get(setOfi).contains("¸±")) {
+							if(pos.get(setOfi).contains("ï¿½ï¿½")) {
 								page.append("<span style=\"background:#F1FFFF\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");
 								continue Here;
 							} 
 							page.append("<span style=\"background:white\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");			 
 						}
 					}	
-				buttonSum.setText("¹²ÓÐ " + (sets == null ? 0 : (1 + sets.size() / 2001)) + " Ò³");
-				buttonCrt.setText("µ±Ç°Ò³Ãæ£º" + (sets == null? 0 : 1));
+				buttonSum.setText("ï¿½ï¿½ï¿½ï¿½ " + (sets == null ? 0 : (1 + sets.size() / 2001)) + " Ò³");
+				buttonCrt.setText("ï¿½ï¿½Ç°Ò³ï¿½æ£º" + (sets == null? 0 : 1));
 				data.setText(page.toString());
 				data.setSelectionStart(0);
 				data.setSelectionEnd(0);
@@ -756,15 +757,15 @@ public class BuYunBuYuKekx extends Container implements MouseListener, KeyListen
 									stringBuilder.append("<div style=\"background:black\"><font color=\"white\">" +fwa[i] + "</font></div>");
 									continue Here;
 								}
-								if(pos.get(fwa[i].split(":")[0]).contains("Ãû")) {
+								if(pos.get(fwa[i].split(":")[0]).contains("ï¿½ï¿½")) {
 									stringBuilder.append( "<div style=\"background:#FF44FF\"><font color=\"white\">" + fwa[i] +"</font></div>");
 									continue Here;
 								}
-								if(pos.get(fwa[i].split(":")[0]).contains("¶¯")) {
+								if(pos.get(fwa[i].split(":")[0]).contains("ï¿½ï¿½")) {
 									stringBuilder.append("<div style=\"background:#8CEA00\"><font color=\"black\" size=\"5\">" + fwa[i] +"</font></div>");
 									continue Here;
 								}
-								if(pos.get(fwa[i].split(":")[0]).contains("ÐÎ")) {
+								if(pos.get(fwa[i].split(":")[0]).contains("ï¿½ï¿½")) {
 									stringBuilder.append("<div style=\"background:#FF9224\"><font color=\"black\" size=\"5\">" + fwa[i] +"</font></div>");
 								}
 							}
@@ -780,7 +781,7 @@ public class BuYunBuYuKekx extends Container implements MouseListener, KeyListen
 		});
 		
 		readChinese= new ReadChinese(app, _A);
-		buttonCTV= new DetaButton("ÓïÒôÔÄ¶Á¹Ø");
+		buttonCTV= new DetaButton("ï¿½ï¿½ï¿½ï¿½ï¿½Ä¶ï¿½ï¿½ï¿½");
 		buttonCTV.setBounds(740, 0, 100, 30);
 		buttonCTV.addActionListener(new ActionListener() {
 			@SuppressWarnings("deprecation")
@@ -791,12 +792,12 @@ public class BuYunBuYuKekx extends Container implements MouseListener, KeyListen
 //				List<String> setsForGet = sets.subList(currentPage * 2000, (currentPage + 1)*2000<sets.size()
 //						? (currentPage + 1)*2000: sets.size());
 				if(!readChinese.isAlive()) {
-					buttonCTV.setLabel("ÓïÒôÔÄ¶Á¿ª");
+					buttonCTV.setLabel("ï¿½ï¿½ï¿½ï¿½ï¿½Ä¶ï¿½ï¿½ï¿½");
 					readChinese= new ReadChinese(app, _A);
 					readChinese.I_PreReadList(sets);
 					readChinese.start();
 				}else {
-					buttonCTV.setLabel("ÓïÒôÔÄ¶Á¹Ø");
+					buttonCTV.setLabel("ï¿½ï¿½ï¿½ï¿½ï¿½Ä¶ï¿½ï¿½ï¿½");
 					readChinese.finish= 0;
 					readChinese.I_NullSap();
 					readChinese.stop();
@@ -859,8 +860,8 @@ public class BuYunBuYuKekx extends Container implements MouseListener, KeyListen
 		while (iter.hasNext())
 			copy.add(iter.next());
 		for(int i=0;i<copy.size();i++) {
-			tableData_old[i]= new Object[]{""+(i+1),""+0,copy.get(i).replaceAll("¡²+", "¡²").trim(),
-					dic_map.get(copy.get(i)).toString().replaceAll("\\s*", "").replaceAll("¡²+", "¡²"),
+			tableData_old[i]= new Object[]{""+(i+1),""+0,copy.get(i).replaceAll("ï¿½ï¿½+", "ï¿½ï¿½").trim(),
+					dic_map.get(copy.get(i)).toString().replaceAll("\\s*", "").replaceAll("ï¿½ï¿½+", "ï¿½ï¿½"),
 					dic_gn.get(copy.get(i)).toString().replaceAll("\\s*", ""),
 					dic_lx.get(copy.get(i)).toString().replaceAll("\\s*", ""),
 					dic_by.get(copy.get(i)).toString().replaceAll("\\s*", ""),
@@ -887,9 +888,9 @@ public class BuYunBuYuKekx extends Container implements MouseListener, KeyListen
 		TableSorterZYNK sorter= new TableSorterZYNK(newTableModel); //ADDE
 		sorter.setTableHeader(table.getTableHeader());
 		table.setModel(sorter); 
-		table.setRowHeight(35);                                        //ÉèÖÃ¸ß¶È
+		table.setRowHeight(35);                                        //ï¿½ï¿½ï¿½Ã¸ß¶ï¿½
 		JTableHeader header=table.getTableHeader();
-		header.setFont(new Font("¿¬Ìå", Font.PLAIN, 18));// ÉèÖÃ±í¸ñ×ÖÌå
+		header.setFont(new Font("ï¿½ï¿½ï¿½ï¿½", Font.PLAIN, 18));// ï¿½ï¿½ï¿½Ã±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		table.getColumnModel().getColumn(0).setPreferredWidth(80+30);
 		table.getColumnModel().getColumn(1).setPreferredWidth(80+30);
 		table.getColumnModel().getColumn(2).setPreferredWidth(80+130);
@@ -925,7 +926,7 @@ public class BuYunBuYuKekx extends Container implements MouseListener, KeyListen
 			int col= table.getSelectedColumn();
 			String value= (String) table.getValueAt(row, col);
 			data.setSize(500, 800);
-			sets= _A.parserMixedString(value);//´ÊÐÔ·ÖÎö		
+			sets= _A.parserMixedString(value);//ï¿½ï¿½ï¿½Ô·ï¿½ï¿½ï¿½		
 			data.setContentType("text/html");
 			StringBuilder page = new StringBuilder().append("");
 			currentPage= 0;
@@ -938,7 +939,7 @@ public class BuYunBuYuKekx extends Container implements MouseListener, KeyListen
 						page.append("<span style=\"background:#F1F1F1\"><font color=\"black\" size=\"5\">" + setOfi + "</font></span>");
 						continue Here;
 					}
-					if(pos.get(setOfi).contains("Ãû")|| pos.get(setOfi).contains("¶¯")|| pos.get(setOfi).contains("ÐÎ")) {
+					if(pos.get(setOfi).contains("ï¿½ï¿½")|| pos.get(setOfi).contains("ï¿½ï¿½")|| pos.get(setOfi).contains("ï¿½ï¿½")) {
 						if (map.containsKey(setOfi)) {
 							WordFrequency wordFrequency= map.get(setOfi);
 							wordFrequency.I_Frequency(wordFrequency.getFrequency()+ StablePOS.INT_ONE);
@@ -951,31 +952,31 @@ public class BuYunBuYuKekx extends Container implements MouseListener, KeyListen
 						}
 					}
 					if (!setOfi.equals("")) {
-						if(key.contains(setOfi)&&(pos.get(setOfi).contains("Ãû")|| pos.get(setOfi).contains("¶¯")||pos.get(setOfi).contains("ÐÎ"))) {
+						if(key.contains(setOfi)&&(pos.get(setOfi).contains("ï¿½ï¿½")|| pos.get(setOfi).contains("ï¿½ï¿½")||pos.get(setOfi).contains("ï¿½ï¿½"))) {
 							page.append("<span style=\"background:red\"><font color=\"white\">"+setOfi+"</font></span>");
 		    				continue Here;
 		    			}
-						if(pos.get(setOfi).contains("Ãû")) {
+						if(pos.get(setOfi).contains("ï¿½ï¿½")) {
 							page.append("<span style=\"background:"+new PEU.P.image.Color_P().P(255, 245, 255)+"\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");
 							continue Here;
 						}
-						if(pos.get(setOfi).contains("¶¯")) {
+						if(pos.get(setOfi).contains("ï¿½ï¿½")) {
 							page.append("<span style=\"background:"+new PEU.P.image.Color_P().P(245, 255, 245)+"\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");
 							continue Here;
 						}
-						if(pos.get(setOfi).contains("ÐÎ")) {
+						if(pos.get(setOfi).contains("ï¿½ï¿½")) {
 							page.append("<span style=\"background:"+new PEU.P.image.Color_P().P(255, 255, 245)+"\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");
 							continue Here;
 						}
-						if(pos.get(setOfi).contains("¸±")) {
+						if(pos.get(setOfi).contains("ï¿½ï¿½")) {
 							page.append("<span style=\"background:#F1FFFF\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");
 							continue Here;
 						} 
 						page.append("<span style=\"background:white\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");				 
 					}
 				}	
-			buttonSum.setText("¹²ÓÐ " + (sets == null ? 0 : (1 + sets.size() / 2001)) + " Ò³");
-			buttonCrt.setText("µ±Ç°Ò³Ãæ£º" + (sets == null? 0 : 1));
+			buttonSum.setText("ï¿½ï¿½ï¿½ï¿½ " + (sets == null ? 0 : (1 + sets.size() / 2001)) + " Ò³");
+			buttonCrt.setText("ï¿½ï¿½Ç°Ò³ï¿½æ£º" + (sets == null? 0 : 1));
 			data.setText(page.toString());
 			data.setSelectionStart(0);
 			data.setSelectionEnd(0);
@@ -996,15 +997,15 @@ public class BuYunBuYuKekx extends Container implements MouseListener, KeyListen
 							page.append("<div style=\"background:black\"><font color=\"white\">" + fwa.get(i).getWord()+""+fwa.get(i).getFrequency() + "</font></div>");
 							continue Here;
 						}
-						if(pos.get(fwa.get(i).getWord()).contains("Ãû")) {
+						if(pos.get(fwa.get(i).getWord()).contains("ï¿½ï¿½")) {
 							page.append( "<div style=\"background:#FF44FF\"><font color=\"white\">" + fwa.get(i).getWord()+""+fwa.get(i).getFrequency() +"</font></div>");
 							continue Here;
 						}
-						if(pos.get(fwa.get(i).getWord()).contains("¶¯")) {
+						if(pos.get(fwa.get(i).getWord()).contains("ï¿½ï¿½")) {
 							page.append("<div style=\"background:#8CEA00\"><font color=\"black\" size=\"5\">" + fwa.get(i).getWord()+""+fwa.get(i).getFrequency() +"</font></div>");
 							continue Here;
 						}
-						if(pos.get(fwa.get(i).getWord()).contains("ÐÎ")) {
+						if(pos.get(fwa.get(i).getWord()).contains("ï¿½ï¿½")) {
 							page.append("<div style=\"background:#FF9224\"><font color=\"black\" size=\"5\">" + fwa.get(i).getWord()+""+fwa.get(i).getFrequency() +"</font></div>");
 						}
 					}
@@ -1083,13 +1084,13 @@ public class BuYunBuYuKekx extends Container implements MouseListener, KeyListen
 							score_code[copyCount] += 1 << mapSearchaAtII.length() << wordFrequencySearch.getFrequency() ;
 							continue Here;
 						}
-						if(pos.get(mapSearchaAtII).contains("Ãû")||pos.get(mapSearchaAtII).contains("¶¯")
-								||pos.get(mapSearchaAtII).contains("ÐÎ")||pos.get(mapSearchaAtII).contains("Î½")) {
+						if(pos.get(mapSearchaAtII).contains("ï¿½ï¿½")||pos.get(mapSearchaAtII).contains("ï¿½ï¿½")
+								||pos.get(mapSearchaAtII).contains("ï¿½ï¿½")||pos.get(mapSearchaAtII).contains("Î½")) {
 							reg[copyCount] += 2;
 						}
 						reg[copyCount] += 1;
 						score_code[copyCount] += (iteratorForCopyString.contains(mapSearchaAtII) ? 2 : 1) 
-							* (!pos.get(mapSearchaAtII).contains("Ãû") ? pos.get(mapSearchaAtII).contains("¶¯")? 50 : 1 : 50) 
+							* (!pos.get(mapSearchaAtII).contains("ï¿½ï¿½") ? pos.get(mapSearchaAtII).contains("ï¿½ï¿½")? 50 : 1 : 50) 
 								<< mapSearchaAtII.length() * wordFrequencySearch.getFrequency();
 						continue Here;
 					}
@@ -1102,9 +1103,9 @@ public class BuYunBuYuKekx extends Container implements MouseListener, KeyListen
 								score[copyCount] = iteratorForCopyString;
 								score_code[copyCount]+=1;
 								if(pos.containsKey(String.valueOf(mapSearchaAtII.charAt(j)))&&(
-										pos.get(String.valueOf(mapSearchaAtII.charAt(j))).contains("Ãû")
-										||pos.get(String.valueOf(mapSearchaAtII.charAt(j))).contains("¶¯")
-										||pos.get(String.valueOf(mapSearchaAtII.charAt(j))).contains("ÐÎ")
+										pos.get(String.valueOf(mapSearchaAtII.charAt(j))).contains("ï¿½ï¿½")
+										||pos.get(String.valueOf(mapSearchaAtII.charAt(j))).contains("ï¿½ï¿½")
+										||pos.get(String.valueOf(mapSearchaAtII.charAt(j))).contains("ï¿½ï¿½")
 										||pos.get(String.valueOf(mapSearchaAtII.charAt(j))).contains("Î½")
 										)) {
 									reg[copyCount] += 2;
@@ -1116,18 +1117,18 @@ public class BuYunBuYuKekx extends Container implements MouseListener, KeyListen
 					}
 				}
 			score_code[copyCount] = score_code[copyCount] * reg[copyCount];
-			//´Ê¾à
+			//ï¿½Ê¾ï¿½
 			int code= 100;
 			int tempb= 0;
 			int tempa= score_code[copyCount];
 			if(key.length()> 4) {
-				//È«´Ê
+				//È«ï¿½ï¿½
 				for(int i= 0; i< string.length; i++) {
 					if(temps.contains(string[i])) {
 						tempb+= code;
 					}
 				}
-				//¶Ï¾ä
+				//ï¿½Ï¾ï¿½
 				for(int i= 0; i< stringReg.length; i++) {
 					if(temps.contains(stringReg[i])) {
 						tempb+= code;
@@ -1170,8 +1171,8 @@ public class BuYunBuYuKekx extends Container implements MouseListener, KeyListen
 						}	
 					}
 				}
-				tableData[new_count]= new Object[]{new_count+1,score_code[i],score[i].replace("¡²¡²¡²", "¡²"),
-						dic_map.get(score[i]).toString().replace("¡²¡²¡²", "¡²"),
+				tableData[new_count]= new Object[]{new_count+1,score_code[i],score[i].replace("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "ï¿½ï¿½"),
+						dic_map.get(score[i]).toString().replace("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "ï¿½ï¿½"),
 						dic_gn.get(score[i]).toString(),
 						dic_lx.get(score[i]).toString(),
 						dic_by.get(score[i]).toString(),
@@ -1199,18 +1200,18 @@ public class BuYunBuYuKekx extends Container implements MouseListener, KeyListen
 		public Component getTableCellRendererComponent(JTable table,Object value, boolean isSelected, boolean hasFocus, int row,
 				int column) {
 			if (isSelected && hasFocus && row== table.getSelectedRow() && column == table.getSelectedColumn()) {
-				//2.ÉèÖÃµ±Ç°CellµÄÑÕÉ«
+				//2.ï¿½ï¿½ï¿½Ãµï¿½Ç°Cellï¿½ï¿½ï¿½ï¿½É«
 				Component c= super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
-				c.setBackground(Color.CYAN);//ÉèÖÃ±³¾°É«
-				c.setForeground(Color.gray);//ÉèÖÃÇ°¾°É«
+				c.setBackground(Color.CYAN);//ï¿½ï¿½ï¿½Ã±ï¿½ï¿½ï¿½É«
+				c.setForeground(Color.gray);//ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½É«
 				return c;
 			} else {
-				//3.ÉèÖÃµ¥ÊýÐÐ£¬Å¼ÊýÐÐµÄÑÕÉ«
-				if (row % 3 == 0) {//Å¼ÊýÐÐÊ±µÄÑÕÉ«
+				//3.ï¿½ï¿½ï¿½Ãµï¿½ï¿½ï¿½ï¿½Ð£ï¿½Å¼ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½É«
+				if (row % 3 == 0) {//Å¼ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½É«
 					setBackground(new Color(253,233,254));
-				}else if (row % 3 == 1) {//ÉèÖÃµ¥ÊýÐÐµÄÑÕÉ«
+				}else if (row % 3 == 1) {//ï¿½ï¿½ï¿½Ãµï¿½ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½É«
 					setBackground(new Color(233,254,234));
-				}else if (row % 3 == 2) {//ÉèÖÃµ¥ÊýÐÐµÄÑÕÉ«
+				}else if (row % 3 == 2) {//ï¿½ï¿½ï¿½Ãµï¿½ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½É«
 					setBackground(new Color(255,251,232));
 				}
 				return super.getTableCellRendererComponent(table, value,

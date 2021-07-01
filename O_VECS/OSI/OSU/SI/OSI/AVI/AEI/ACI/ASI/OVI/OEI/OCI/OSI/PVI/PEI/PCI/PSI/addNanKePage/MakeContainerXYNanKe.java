@@ -12,19 +12,20 @@ import javax.swing.JTabbedPane;
 
 import ME.APM.VSQ.App;
 import OCI.ME.analysis.C.A;
+import OEI.ME.analysis.E.CogsBinaryForest_AE;
 
 public class MakeContainerXYNanKe extends Thread implements Runnable{
 	public NanKekx nanKekx;
 	public App u;
 	public JTabbedPane jTabbedpane;
 	public List<String> tabNames;
-	public A _A;
+	public CogsBinaryForest_AE _A;
 	public Map<String, String> pos;
 	public Map<String, String> pose;
 	public Map<String, String> etc;
 	public Map<String, String> cte;
 	
-	public MakeContainerXYNanKe(A _A, Container jpanelSecond, App u2, JTabbedPane jTabbedpane
+	public MakeContainerXYNanKe(CogsBinaryForest_AE _A, Container jpanelSecond, App u2, JTabbedPane jTabbedpane
 			, List<String> tabNames2, Map<String, String> pos, Map<String, String> pose, Map<String, String> etc
 			, Map<String, String> cte) {
 		super();

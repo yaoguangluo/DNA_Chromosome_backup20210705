@@ -11,13 +11,13 @@ public interface A {
 	void IV_Mixed() throws IOException;
 	List<String> parserString(String input);
 	void I_FixWords(int charPosition, String inputString,StringBuilder[] fixWords);
-	Map<String, WordFrequency> getWordFrequencyMap(List<String> sets) throws IOException;
-	List<WordFrequency> sortWordFrequencyMap(Map<String,WordFrequency> map) throws IOException;
-	List<WordFrequency> getWordFrequency(List<String> sets)throws IOException;
-	Map<Integer,WordFrequency> getWordFrequencyByReturnSortMap(List<String> sets) throws IOException;
-	Map<Integer,WordFrequency> sortWordFrequencyMapToUnsortMap(Map<String,WordFrequency> map);
-	Map<Integer,WordFrequency> sortWordFrequencyMapToSortMap(Map<String,WordFrequency> map);
-	Map<String,WordFrequency> parserStringByReturnFrequencyMap(String inputString);
+	//Map<String, WordFrequency> getWordFrequencyMap(List<String> sets) throws IOException;
+	//List<WordFrequency> sortWordFrequencyMap(Map<String,WordFrequency> map) throws IOException;
+    //List<WordFrequency> getWordFrequency(List<String> sets)throws IOException;
+	//Map<Integer,WordFrequency> getWordFrequencyByReturnSortMap(List<String> sets) throws IOException;
+	//Map<Integer,WordFrequency> sortWordFrequencyMapToUnsortMap(Map<String,WordFrequency> map);
+	//Map<Integer,WordFrequency> sortWordFrequencyMapToSortMap(Map<String,WordFrequency> map);
+	//Map<String,WordFrequency> parserStringByReturnFrequencyMap(String inputString);
 	Map<String,String> getPosEnToCn();
 	Map<String,String> getPosEnToEn();
 	Map<String,String> getPosCnToCn();
@@ -27,7 +27,7 @@ public interface A {
 	Map<String,String> getFullCnToEn();
 	String[] parserEnglishString(String englishString);
 	List<String> parserMixedString(String mixedString);
-	Map<String,WordFrequency> parserMixStringByReturnFrequencyMap(String key);
+	//Map<String,WordFrequency> parserMixStringByReturnFrequencyMap(String key);
 	void studyNewWord(String study, String token, String posStudy);
 	Map<String, String> getStudyPos();
 	Map<String, String> getPinYin();
@@ -36,6 +36,6 @@ public interface A {
 	Map<String, String> getCtJ();
 	Map<String, String> getCtR();
 	Map<String, String> getCtA();
-	EmotionMap getEmotionMap();
+	//EmotionMap getEmotionMap();
 	SensingTest getSensingTest();
 }

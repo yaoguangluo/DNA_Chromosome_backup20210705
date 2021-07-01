@@ -33,6 +33,7 @@ import MVQ.button.DetaButton;
 import MVQ.button.YLJShowButton;
 import MVQ.filenameFilter.TXTFilter;
 import OCI.ME.analysis.C.A;
+import OEI.ME.analysis.E.CogsBinaryForest_AE;
 import SVQ.stable.StableAnnotation;
 
 public class MakeContainerYXTP extends Thread implements Runnable{
@@ -40,7 +41,7 @@ public class MakeContainerYXTP extends Thread implements Runnable{
 	public App app;
 	public JTabbedPane jTabbedpane;
 	public List<String> tabNames;
-	public A _A;
+	public CogsBinaryForest_AE _A;
 	public Map<String, String> pos;
 	public Map<String, String> pose;
 	public Map<String, String> etc;
@@ -61,7 +62,7 @@ public class MakeContainerYXTP extends Thread implements Runnable{
 	public BufferedImage bufferedImageNullPG;
 	//public LinkedList<DetaButton> topList= new LinkedList<>(); 
 
-	public MakeContainerYXTP(A _A, Container jpanelFourth, App app, JTabbedPane jTabbedpane
+	public MakeContainerYXTP(CogsBinaryForest_AE _A, Container jpanelFourth, App app, JTabbedPane jTabbedpane
 			, List<String> tabNames2, Map<String, String> pos, Map<String, String> pose, Map<String, String> etc
 			, Map<String, String> cte) {
 		super();

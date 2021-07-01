@@ -23,7 +23,7 @@ public class NLPTopicMatch{
 	public static String NLPBestSentenceMatch(String searchString
 			, String[] sampleSentences) throws IOException {
 		//init the deta mixed parser engine.
-		A _A= new CogsBinaryForest_AE();
+		CogsBinaryForest_AE _A= new CogsBinaryForest_AE();
 		_A.IV_Mixed();
 		//init the nlp POS(part of speech) functions.
 		Map<String, String> nlp = _A.getPosCnToCn();
@@ -109,7 +109,7 @@ public class NLPTopicMatch{
 	private static double[] getNLPBestSentencesMatchScore(String searchString
 			, String[] sampleSentences) throws IOException {
 		//init the deta mixed parser engine.
-		A _A= new CogsBinaryForest_AE();
+		CogsBinaryForest_AE _A= new CogsBinaryForest_AE();
 		_A.IV_Mixed();
 		//init the nlp POS(part of speech) functions.
 		Map<String, String> nlp = _A.getPosCnToCn();

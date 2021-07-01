@@ -14,6 +14,7 @@ import SVQ.stable.StableString;
 import OCI.AVC.SUQ.SVQ.MPC.fhmm.C.EmotionMap;
 import OCI.ME.analysis.C.A;
 import OEI.AVC.SUQ.SVQ.MPC.fhmm.E.EmotionMap_E;
+import OEI.ME.analysis.E.AE_XCDX_Map;
 import OEI.ME.analysis.E.CogsBinaryForest_AE;
 public class SensingTest{
 	public List<String> getSets() {
@@ -36,7 +37,8 @@ public class SensingTest{
 		emotionMap.IV_PositiveMap();
 		emotionMap.IV_TrendingMap();
 		emotionMap.IV_PredictionMap();
-		A _A = new CogsBinaryForest_AE();
+		//A _A = new CogsBinaryForest_AE();
+		CogsBinaryForest_AE _A= new CogsBinaryForest_AE();
 		_A.IV_Mixed();
 		pos = _A.getPosCnToCn();
 		Map<String, Object> positive= emotionMap.getPositiveMap();
@@ -95,7 +97,7 @@ public class SensingTest{
 		sensingTest.getMatrix();
 	}
 
-	public String[][] getMatrix(String text, A _A) throws IOException {
+	public String[][] getMatrix(String text, CogsBinaryForest_AE _A) throws IOException {
 		pos= _A.getPosCnToCn();
 		EmotionMap emotionMap= _A.getEmotionMap();
 		Map<String, Object> positive= emotionMap.getPositiveMap();

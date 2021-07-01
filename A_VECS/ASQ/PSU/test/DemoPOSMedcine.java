@@ -15,7 +15,7 @@ import static java.lang.System.*;
 @SuppressWarnings("unused")
 public class DemoPOSMedcine {
     public static void main(String[] args) throws IOException {
-        A _A = new CogsBinaryForest_AE();
+    	CogsBinaryForest_AE _A = new CogsBinaryForest_AE();
         _A.IV_();
         Map<String, String> nlp = _A.getPosCnToCn();
         List<String> sets = new ArrayList<>();

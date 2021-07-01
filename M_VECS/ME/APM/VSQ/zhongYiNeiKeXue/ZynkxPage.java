@@ -38,7 +38,8 @@ import ME.APM.VSQ.App;
 import MSU.AMS.VQS.SQV.SI.OSU.SMV.http.RestCall;
 import PEU.P.table.TableSorterZYNK;
 import MVQ.button.DetaButton;
-import OCI.ME.analysis.C.A;
+//import OCI.ME.analysis.C.A;
+import OEI.ME.analysis.E.CogsBinaryForest_AE;
 import OSI.AOP.neo.tts.ReadChinese;
 //import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.ASU.MPE.procedure.pde.FullDNATokenPDI;
 import OSI.VSQ.SSI.ASU.OSU.PSU.MSU.ASU.MPE.AOP.MEC.SIQ.search.ZhongYaoSearch;
@@ -73,7 +74,7 @@ public class ZynkxPage extends Container implements MouseListener, KeyListener{
 	int row;
 	int col; 
 	public Object[] columnTitle = {"ID", "打分", "病症&药名", "用药参考", "正常成人标准处方", "脉症", "制法", "应用", "使用", "讨论", "附方", "方歌"};
-	public A _A;  
+	public CogsBinaryForest_AE _A;  
 	public Map<String, String> pos;
 	public DetaButton buttonCTE;
 	public DetaButton buttonFRS;
@@ -87,7 +88,7 @@ public class ZynkxPage extends Container implements MouseListener, KeyListener{
 	private ReadChinese readChinese;
 	private DetaButton buttonCTV;
 	//private DetaButton buttonZYFJ;
-	public ZynkxPage(JTextPane text,A _A, Map<String, String> pos, Map<String, String> pose
+	public ZynkxPage(JTextPane text, CogsBinaryForest_AE _A, Map<String, String> pos, Map<String, String> pose
 			, Map<String, String> etc, Map<String, String> cte, App u, JTabbedPane jTabbedpane) throws IOException{
 		this.text = text;
 		this.pose = pose;
@@ -1005,7 +1006,7 @@ public class ZynkxPage extends Container implements MouseListener, KeyListener{
 		int[] reg = new int[copy.size()];
 		int count=0;
 		Map<String, WordFrequency> mapSearchWithoutSort = null;
-		mapSearchWithoutSort = _A.parserMixStringByReturnFrequencyMap(key);
+		mapSearchWithoutSort= _A.parserMixStringByReturnFrequencyMap(key);
 		Iterator<String> iteratorForCopy = copy.iterator();	
 		int copyCount = 0;
 		

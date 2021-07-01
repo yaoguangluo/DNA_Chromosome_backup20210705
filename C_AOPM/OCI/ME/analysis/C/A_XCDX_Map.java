@@ -1,14 +1,14 @@
 package OCI.ME.analysis.C;
-
 import java.io.IOException;
+
 import java.util.List;
 import java.util.Map;
 
 import AVQ.ASQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import OCI.AVC.SUQ.SVQ.MPC.fhmm.C.EmotionMap;
-
-public interface CogsBinaryForest_A extends BinaryForest_A {
-	Map<String, WordFrequency> getWordFrequencyMap(List<String> sets) throws IOException;
+//import PEQ.AMV.ECS.test.SensingTest;
+public interface A_XCDX_Map {
+    Map<String, WordFrequency> getWordFrequencyMap(List<String> sets) throws IOException;
 	Map<Integer,WordFrequency> getWordFrequencyByReturnSortMap(List<String> sets) throws IOException;
 	Map<Integer,WordFrequency> sortWordFrequencyMapToUnsortMap(Map<String,WordFrequency> map);
 	Map<Integer,WordFrequency> sortWordFrequencyMapToSortMap(Map<String,WordFrequency> map);

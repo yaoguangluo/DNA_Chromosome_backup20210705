@@ -7,13 +7,13 @@ import javax.swing.JScrollPane;
 
 import IMO.EVU.bi_P.CoAuthorForWord;
 import ME.APM.VSQ.App;
-import OCI.ME.analysis.C.A;
+import OEI.ME.analysis.E.CogsBinaryForest_AE;
 public class TaskMakeCoWorker extends Thread implements Runnable{
 	public App u;
-	public A _A;
+	public CogsBinaryForest_AE _A;
 	public Container jpanelFirstu;
 	public Map<String, String> pos;
-	public TaskMakeCoWorker(App u, Container jpanelFirstu, A _A, Map<String, String> pos) {
+	public TaskMakeCoWorker(App u, Container jpanelFirstu, CogsBinaryForest_AE _A, Map<String, String> pos) {
 		this.u= u;
 		this.jpanelFirstu = jpanelFirstu;
 		this._A = _A;

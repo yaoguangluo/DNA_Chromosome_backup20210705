@@ -37,7 +37,8 @@ import ME.APM.VSQ.App;
 import MSU.AMS.VQS.SQV.SI.OSU.SMV.http.RestCall;
 import PEU.P.table.TableSorterZYNK;
 import MVQ.button.DetaButton;
-import OCI.ME.analysis.C.A;
+//import OCI.ME.analysis.C.A;
+import OEI.ME.analysis.E.CogsBinaryForest_AE;
 import OSI.AOP.neo.tts.ReadChinese;
 public class WkxPage extends Container implements MouseListener, KeyListener{
 	private static final long serialVersionUID = 1L;
@@ -73,7 +74,7 @@ public class WkxPage extends Container implements MouseListener, KeyListener{
 	public Map<String,Object> dic_yh;
 	public Map<String,Object> dic_yf;
 	public Map<String,Object> dic_yx;
-	public A _A;
+	public CogsBinaryForest_AE _A;
 	public Map<String, String> pos;
 	public DetaButton buttonCTE;
 	public DetaButton buttonFRS;
@@ -88,7 +89,7 @@ public class WkxPage extends Container implements MouseListener, KeyListener{
 	private ReadChinese readChinese;
 	private DetaButton buttonCTV;
 	protected int row;
-	public WkxPage(JTextPane text,A _A, Map<String, String> pos, Map<String, String> pose
+	public WkxPage(JTextPane text, CogsBinaryForest_AE _A, Map<String, String> pos, Map<String, String> pose
 			, Map<String, String> etc, Map<String, String> cte, App u, JTabbedPane jTabbedpane) throws IOException{
 		this.text = text;	this.pose = pose;
 		this.etc = etc;

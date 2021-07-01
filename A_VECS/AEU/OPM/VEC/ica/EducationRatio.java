@@ -2,19 +2,20 @@ package AEU.OPM.VEC.ica;
 
 import java.io.IOException;
 
+
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
 import AVQ.ASQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import SVQ.stable.StablePOS;
-import OCI.ME.analysis.C.A;
+//import OCI.ME.analysis.C.A;
 import OEI.ME.analysis.E.CogsBinaryForest_AE;
 
 public class EducationRatio{
 
 	public double[] getEducationKernel(String text) throws IOException {
-		A _A = new CogsBinaryForest_AE();
+		CogsBinaryForest_AE _A = new CogsBinaryForest_AE();
 		_A.IV_();
 		Map<String, String> pos = _A.getPosCnToCn();
 		List<String> sets = _A.parserString(text);

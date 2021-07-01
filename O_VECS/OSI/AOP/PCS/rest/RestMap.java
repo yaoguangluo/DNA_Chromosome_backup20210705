@@ -10,9 +10,10 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import OCI.AVC.SUQ.SVQ.MPC.fhmm.C.EmotionMap;
-import OCI.ME.analysis.C.A;
+//import OCI.ME.analysis.C.A;
+import OEI.ME.analysis.E.CogsBinaryForest_AE;
 public class RestMap {
-	public static void P(String[] type, Socket socket, A _A, EmotionMap emotionMap) 
+	public static void P(String[] type, Socket socket, CogsBinaryForest_AE _A, EmotionMap emotionMap) 
 			throws IOException {
 		String[] column = type[1].split("&");
 		Map<String, String> data = new ConcurrentHashMap<>();

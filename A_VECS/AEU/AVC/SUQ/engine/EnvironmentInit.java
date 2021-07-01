@@ -25,7 +25,7 @@ public class EnvironmentInit{
 		return _A;
 	}
 
-	public void I__A(A _A) {
+	public void I__A(CogsBinaryForest_AE _A) {
 		this._A = _A;
 	}
 
@@ -133,7 +133,7 @@ public class EnvironmentInit{
 		this.distinction = distinction;
 	}
 	private EmotionMap emotionMap;
-	private A _A;
+	private CogsBinaryForest_AE _A;
 	private Map<String, Object> positive;
 	private Map<String, Object> negative;
 	private Map<String, Object> motivation;
@@ -176,7 +176,7 @@ public class EnvironmentInit{
 		rationMap.IQ_Distinction(emotionSampleMap, distinction);
 	}
 	
-	public void IV_Exclude_A(String text, A _AInput) throws IOException {
+	public void IV_Exclude_A(String text, CogsBinaryForest_AE _AInput) throws IOException {
 		emotionMap = new EmotionMap_E(); 
 		emotionMap.IV_MotivationMap();
 		emotionMap.IV_TrendingMap();

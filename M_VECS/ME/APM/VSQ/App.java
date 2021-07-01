@@ -33,7 +33,8 @@ import MSU.OEI.ME.SMS.SEU.OSD.OSI.E.Translator_E;
 import MVQ.button.DetaButton;
 import MVQ.tabbedpane.DetabbedPane;
 import MVQ.textfield.CfxTextField;
-import OCI.ME.analysis.C.A;
+//import OCI.ME.analysis.C.A;
+import OEI.ME.analysis.E.CogsBinaryForest_AE;
 import OSI.AOP.neo.tts.ReadChinese;
 import SVQ.stable.StableAnnotation;
 import OSI.OPE.OEQ.MCQ.OVU.PQE.osgi.OSU_AVQ_ASQ_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI;
@@ -88,7 +89,7 @@ public class App extends JApplet implements MouseListener, KeyListener, ActionLi
 	public AppSearch appSearch;
 	public AppHospital appHospital;
 	public AppConfig appConfig;
-	public A _A;
+	public CogsBinaryForest_AE _A;
 	public CoAuthorForWord coAuthorForWord;
 	public Monitor_XCDX monitor;
 	public JSlider look;

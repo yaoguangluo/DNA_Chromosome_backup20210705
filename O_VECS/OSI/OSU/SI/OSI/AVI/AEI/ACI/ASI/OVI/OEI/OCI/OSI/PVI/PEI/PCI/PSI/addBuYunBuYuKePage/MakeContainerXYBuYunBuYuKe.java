@@ -11,20 +11,21 @@ import javax.swing.ImageIcon;
 import javax.swing.JTabbedPane;
 
 import ME.APM.VSQ.App;
-import OCI.ME.analysis.C.A;
+//import OCI.ME.analysis.C.A;
+import OEI.ME.analysis.E.CogsBinaryForest_AE;
 
 public class MakeContainerXYBuYunBuYuKe extends Thread implements Runnable{
 	public BuYunBuYuKekx jpanelSecond;
 	public App u;
 	public JTabbedPane jTabbedpane;
 	public List<String> tabNames;
-	public A _A;
+	public CogsBinaryForest_AE _A;
 	public Map<String, String> pos;
 	public Map<String, String> pose;
 	public Map<String, String> etc;
 	public Map<String, String> cte;
 	
-	public MakeContainerXYBuYunBuYuKe(A _A, Container jpanelSecond, App u2, JTabbedPane jTabbedpane
+	public MakeContainerXYBuYunBuYuKe(CogsBinaryForest_AE _A, Container jpanelSecond, App u2, JTabbedPane jTabbedpane
 			, List<String> tabNames2, Map<String, String> pos, Map<String, String> pose, Map<String, String> etc
 			, Map<String, String> cte) {
 		super();
@@ -43,13 +44,13 @@ public class MakeContainerXYBuYunBuYuKe extends Thread implements Runnable{
 		try {
 			jTabbedpane.validate();
 			Thread.sleep(1000* 3);
-			tabNames.add("ä¸å­•ä¸è‚²ç§‘");
+			tabNames.add("²»ÔĞ²»Óı¿Æ");
 			jpanelSecond= new BuYunBuYuKekx(u.text, this._A, pos, pose, etc, cte, jTabbedpane, u);
-			jpanelSecond.setName("ä¸å­•ä¸è‚²ç§‘");
+			jpanelSecond.setName("²»ÔĞ²»Óı¿Æ");
 			
 //			u.jpanel11= new MakeContainerXYBuYunBuYuKe(u.text, this._A, pos, pose, etc, cte, jTabbedpane, u);
 //			u.jpanel11.setName(tabNames.get(10));
-			jTabbedpane.addTab("ä¸å­•ä¸è‚²ç§‘", new ImageIcon() ,jpanelSecond, "æ·»åŠ ä¸å­•ä¸è‚²ç§‘é¡µ");// ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ò³ï¿½ï¿½  
+			jTabbedpane.addTab("²»ÔĞ²»Óı¿Æ", new ImageIcon() ,jpanelSecond, "Ìí¼Ó²»ÔĞ²»Óı¿ÆÒ³");// 
 			Color[] colors= new Color[3];
 			colors[0]= new Color(253,233,254);
 			colors[1]= new Color(233,254,234);

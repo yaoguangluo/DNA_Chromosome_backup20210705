@@ -27,7 +27,7 @@ public class EmotionInit{
 		return _A;
 	}
 
-	public void I__A(A _A) {
+	public void I__A(CogsBinaryForest_AE _A) {
 		this._A = _A;
 	}
 
@@ -128,7 +128,7 @@ public class EmotionInit{
 	}
 
 	private EmotionMap emotionMap;
-	private A _A;
+	private CogsBinaryForest_AE _A;
 	private Map<String, Object> positive;
 	private Map<String, Object> negative;
 	private Map<String, Object> motivation;
@@ -163,7 +163,7 @@ public class EmotionInit{
 		totalCount = rationMap.findTotalKeyCount(emotionSampleMap);
 	}
 
-	public void IV_Exclude_A(String text, A _AInput, EmotionMap emotionMapInput) throws IOException {
+	public void IV_Exclude_A(String text, CogsBinaryForest_AE _AInput, EmotionMap emotionMapInput) throws IOException {
 		emotionMap = emotionMapInput;
 		_A = _AInput;
 		positive = emotionMap.getPositiveMap();
