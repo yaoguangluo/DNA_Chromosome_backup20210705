@@ -12,9 +12,9 @@ import AVQ.ASQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import SVQ.stable.StablePOS;
 import SVQ.stable.StableString;
 import OCI.AVC.SUQ.SVQ.MPC.fhmm.C.EmotionMap;
-import OCI.ME.analysis.C.A;
+//import OCI.ME.analysis.C.A;
 import OEI.AVC.SUQ.SVQ.MPC.fhmm.E.EmotionMap_E;
-import OEI.ME.analysis.E.AE_XCDX_Map;
+//import OEI.ME.analysis.E.AE_XCDX_Map;
 import OEI.ME.analysis.E.CogsBinaryForest_AE;
 public class SensingTest{
 	public List<String> getSets() {

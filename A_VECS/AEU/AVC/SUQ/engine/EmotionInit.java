@@ -10,6 +10,7 @@ import AEU.OEI.AVC.SUQ.SVU.EOP.E.RatioMap_E;
 import AVQ.ASQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import OCI.AVC.SUQ.SVQ.MPC.fhmm.C.EmotionMap;
 import OCI.ME.analysis.C.A;
+//import OCI.ME.analysis.C.A;
 import OEI.AVC.SUQ.SVQ.MPC.fhmm.E.EmotionMap_E;
 import OEI.ME.analysis.E.CogsBinaryForest_AE;
 import SVQ.stable.StableString;
@@ -22,7 +23,8 @@ public class EmotionInit{
 	public void I_EmotionMap(EmotionMap emotionMap) {
 		this.emotionMap = emotionMap;
 	}
-
+	//稍后进行 A 新陈代谢分化
+	//20210702
 	public A get_A() {
 		return _A;
 	}

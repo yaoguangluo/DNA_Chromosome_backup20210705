@@ -10,7 +10,7 @@ import javax.swing.JTabbedPane;
 
 import ME.APM.VSQ.App;
 import ME.APM.VSQ.xiYiYaoCai.XyscPage;
-import OCI.ME.analysis.C.A;
+//import OCI.ME.analysis.C.A;
 import OEI.ME.analysis.E.CogsBinaryForest_AE;
 public class MakeContainerXYCF extends Thread implements Runnable{
 	public Container jpanelSecond;
