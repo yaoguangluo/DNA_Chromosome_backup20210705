@@ -13,13 +13,17 @@ import OCI.ME.analysis.C.A;
 import OCI.ME.liner.C.Quick6DLuoYaoguangSort;
 import OCI.ME.nero.C.NERO_C_OneTime;
 import OCI.ME.nlp.C.NLP_C;
-import OCI.ME.pos.C.POS_C;
+//import OCI.ME.pos.C.POS_C;
+//import OCI.ME.pos.C.Pos_C_XCDX;
+import OCI.ME.pos.C.Pos_C_XCDX_P;
 import OCI.SVQ.MPC.fhmm.C.FHMMList;
 import OEI.AVC.SUQ.SVQ.MPC.fhmm.E.EmotionMap_E;
 import OEI.ME.liner.E.Quick6DLuoYaoguangSort3DMap_E;
 import OEI.ME.nero.E.NERO_C_OneTime_E;
 import OEI.ME.nlp.E.NLP_CE;
-import OEI.ME.pos.E.POS_CE;
+//import OEI.ME.pos.E.POS_CE;
+//import OEI.ME.pos.E.Pos_CE_XCDX;
+import OEI.ME.pos.E.Pos_CE_XCDX_P;
 import OEI.SVQ.MPC.fhmm.E.FMHMMListOneTime_E;
 
 import java.util.Iterator;
@@ -30,7 +34,7 @@ public class AE implements A {
 	protected FHMMList fHMMList;
 	protected NERO_C_OneTime neroController;
 	protected NLP_C nlpController;
-	protected POS_C posController;
+	protected Pos_C_XCDX_P posController;
 	protected Quick6DLuoYaoguangSort quick6DLuoYaoguangSort;	
 	protected Map<Long, FMHMMNode> forestRoots;
 	protected Map<Long, Map<String, String>> wordsForests;
@@ -49,7 +53,7 @@ public class AE implements A {
 		fHMMList.indexFullCnToEn();
 		neroController= new NERO_C_OneTime_E();
 		nlpController= new NLP_CE();
-		posController= new POS_CE();
+		posController= new Pos_CE_XCDX_P();
 		quick6DLuoYaoguangSort= new Quick6DLuoYaoguangSort3DMap_E();
 		forestRoots= fHMMList.getMap();
 		forestsRoots= fHMMList.getMaps();
@@ -74,7 +78,7 @@ public class AE implements A {
 		fHMMList.indexFullCnToAb();
 		neroController= new NERO_C_OneTime_E();
 		nlpController= new NLP_CE();
-		posController= new POS_CE();
+		posController= new Pos_CE_XCDX_P();
 		quick6DLuoYaoguangSort= new Quick6DLuoYaoguangSort3DMap_E();
 		forestRoots= fHMMList.getMap();
 		forestsRoots= fHMMList.getMaps();
@@ -231,73 +235,6 @@ public class AE implements A {
 			}
 		return outputList;
 	}
-
-//	public Map<String, WordFrequency> parserStringByReturnFrequencyMap(String inputString) {
-//		Map<String, String> wordsForest = fHMMList.getPosCnToCn();
-//		Map<String, WordFrequency> outputList = new ConcurrentHashMap<>();
-//		Map<Long, FMHMMNode> forestRoots = fHMMList.getMap();
-//		int inputStringLength = inputString.length();
-//		int forestDepth = StablePOS.INT_ZERO;
-//		int countInputStringLength;
-//		StringBuilder[] fixWords = new StringBuilder[StablePOS.INT_TWO];
-//		fixWords[StablePOS.INT_ZERO] = new StringBuilder();
-//		fixWords[StablePOS.INT_ONE] = new StringBuilder();
-//		StringBuilder stringBuilder = new StringBuilder();
-//		int find = StablePOS.INT_ZERO;
-//		Here:
-//			for (int charPosition= StablePOS.INT_ZERO; charPosition< inputStringLength; charPosition
-//					+= (countInputStringLength== StablePOS.INT_ZERO? StablePOS.INT_ONE: countInputStringLength)) {
-//				if(inputString.charAt(charPosition)< StablePOS.INT_ONE_TWO_EIGHT){
-//					if(fixWords[StablePOS.INT_ZERO].length()> StablePOS.INT_ZERO) {
-//						if(fixWords[StablePOS.INT_ZERO].charAt(fixWords[StablePOS.INT_ZERO].length()- StablePOS.INT_ONE)
-//								< StablePOS.INT_ONE_TWO_EIGHT) {
-//							fixWords[StablePOS.INT_ZERO].append(inputString.charAt(charPosition));
-//							countInputStringLength= StablePOS.INT_ONE;
-//							find = StablePOS.INT_ONE;
-//							continue Here;
-//						}
-//						fixWords[StablePOS.INT_ZERO].delete(StablePOS.INT_ZERO, fixWords[StablePOS.INT_ZERO].length());
-//					}
-//					find=StablePOS.INT_ONE;
-//					fixWords[StablePOS.INT_ZERO].append(inputString.charAt(charPosition));
-//					countInputStringLength = StablePOS.INT_ONE;
-//					continue Here;
-//				}
-//				if(find == StablePOS.INT_ONE) {
-//					find = StablePOS.INT_ZERO;
-//					WordFrequencyUtil.WordFrequencyFindCheck(outputList, fixWords);
-//				}
-//				stringBuilder.delete(StablePOS.INT_ZERO, stringBuilder.length());
-//				stringBuilder = neroController.getBinaryForestRecurWordOneTime(stringBuilder.append(inputString
-//						.charAt(charPosition)), inputString, charPosition, inputStringLength, forestRoots, forestDepth
-//						, charPosition + StablePOS.INT_ONE);
-//				String countWordNode = stringBuilder.toString();
-//				int compare = countInputStringLength = countWordNode.length();
-//				if (compare == StablePOS.INT_ONE) {
-//					WordFrequencyUtil.WordFrequencyCompareCheck(outputList, fixWords, countWordNode);
-//					fixWords[StablePOS.INT_ZERO].delete(StablePOS.INT_ZERO, fixWords[StablePOS.INT_ZERO].length());
-//					fixWords[StablePOS.INT_ZERO].append(countWordNode);
-//					continue Here;
-//				}
-//				if (compare == StablePOS.INT_TWO) {
-//					countInputStringLength = nlpController.doSlangPartAndPOSCheckForTwoCharForMap(countInputStringLength
-//							, outputList, stringBuilder, wordsForest, fixWords, posController);
-//					continue Here;
-//				}
-//				if (compare == StablePOS.INT_THREE) {
-//					I_FixWords(charPosition, inputString, fixWords);
-//					countInputStringLength = nlpController.doPOSAndEMMCheckOfThreeForMap(countInputStringLength, outputList
-//							, wordsForest, stringBuilder, fixWords, posController);
-//					continue Here;
-//				}
-//				if (compare == StablePOS.INT_FOUR) {
-//					I_FixWords(charPosition, inputString, fixWords);
-//					countInputStringLength = nlpController.doSlangCheckForMap(countInputStringLength, outputList, stringBuilder
-//							, wordsForest, fixWords, posController);
-//				}
-//			}
-//		return outputList;
-//	}
 	
 	public void I_FixWords(int charPosition, String inputString, StringBuilder[] fixWords) {
 		fixWords[StablePOS.INT_ONE].delete(StablePOS.INT_ZERO, fixWords[StablePOS.INT_ONE].length());
@@ -317,54 +254,7 @@ public class AE implements A {
 	public Map<String, String> getCnToEn() {
 		return fHMMList.getCnToEn();
 	}
-
-//	public Map<String, WordFrequency> getWordFrequencyMap(List<String> sets) throws IOException {
-//		Map<String, WordFrequency> map = new ConcurrentHashMap<>();
-//		Iterator <String> iterator = sets.iterator();
-//		Here:
-//			while(iterator.hasNext()){
-//				String setOfi = iterator.next();
-//				if (map.containsKey(setOfi)) {
-//					WordFrequency wordFrequency = map.get(setOfi);
-//					wordFrequency.I_Frequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
-//					map.put(setOfi, wordFrequency);
-//					continue Here;
-//				} 
-//				WordFrequency wordFrequency = new WordFrequency();
-//				wordFrequency.I_Frequency(StablePOS.INT_ONE);
-//				wordFrequency.I_Word(setOfi);
-//				map.put(setOfi, wordFrequency);
-//			}
-//		return map;
-//	}
-
-//	public List<WordFrequency> sortWordFrequencyMap(Map<String, WordFrequency> map) throws IOException {
-//		List<WordFrequency> list = quick6DLuoYaoguangSort.frequencyWordMapToList(map);
-//		quick6DLuoYaoguangSort.quick6DLuoYaoGuangSortWordFrequency(list, StablePOS.INT_ZERO
-//				, list.size() - StablePOS.INT_ONE);
-//		return list;
-//	}
-
-//	public List<WordFrequency> getWordFrequency(List<String> sets) throws IOException {
-//		return sortWordFrequencyMap(getWordFrequencyMap(sets));
-//	}	
-
-//	public Map<Integer, WordFrequency> getWordFrequencyByReturnSortMap(List<String> sets) throws IOException {
-//		return sortWordFrequencyMapToSortMap(getWordFrequencyMap(sets));
-//	}	
-
-//	public Map<Integer, WordFrequency> sortWordFrequencyMapToUnsortMap(Map<String, WordFrequency> map){
-//		Map<Integer, WordFrequency> listMap = quick6DLuoYaoguangSort.frequencyWordMapToMap(map);
-//		return listMap;
-//	}
-
-//	public Map<Integer, WordFrequency> sortWordFrequencyMapToSortMap(Map<String, WordFrequency> map){
-//		Map<Integer, WordFrequency> listMap = quick6DLuoYaoguangSort.frequencyWordMapToMap(map);
-//		quick6DLuoYaoguangSort.quick6DLuoYaoGuangSortWordFrequency(listMap, StablePOS.INT_ZERO
-//				, listMap.size() - StablePOS.INT_ONE);
-//		return listMap;
-//	}
-
+	
 	public String[] parserEnglishString(String englishString) {
 		String[] words = englishString.replaceAll(StablePOS.NLP_SPASE_REP, StablePOS.SPACE_STRING)
 				.split(StablePOS.SPACE_STRING);
@@ -393,92 +283,6 @@ public class AE implements A {
 	public Map<String, String> getFullCnToEn() {
 		return fHMMList.getFullCnToEn();
 	}
-
-//	public Map<String, WordFrequency> parserMixStringByReturnFrequencyMap(String mixedString) {
-//		mixedString += StablePOS.SPACE_STRING;
-//		Map<String, String> wordsForest = fHMMList.getPosCnToCn();
-//		Map<String, WordFrequency> outputList = new ConcurrentHashMap<>();
-//		Map<Long, FMHMMNode> forestRoots = fHMMList.getMap();//.getRoot();
-//		int inputStringLength = mixedString.length();
-//		int forestDepth = StablePOS.INT_ZERO;
-//		int countInputStringLength;
-//		StringBuilder[] fixWords = new StringBuilder[StablePOS.INT_TWO];
-//		fixWords[StablePOS.INT_ZERO] = new StringBuilder();
-//		fixWords[StablePOS.INT_ONE] = new StringBuilder();
-//		StringBuilder stringBuilder = new StringBuilder();
-//		int find = StablePOS.INT_ZERO;
-//		Here:
-//			for (int charPosition = StablePOS.INT_ZERO; charPosition < inputStringLength; charPosition
-//					+= (countInputStringLength == StablePOS.INT_ZERO ? StablePOS.INT_ONE : countInputStringLength)) {
-//				//luan ma
-//				if(mixedString.charAt(charPosition) < StablePOS.INT_ONE_TWO_EIGHT && charPosition < mixedString.length()
-//						- StablePOS.INT_ONE){
-//					if(find == StablePOS.INT_ZERO) {
-//						fixWords[StablePOS.INT_ZERO].delete(StablePOS.INT_ZERO, fixWords[StablePOS.INT_ZERO].length());
-//					}
-//					fixWords[StablePOS.INT_ZERO].append(mixedString.charAt(charPosition));
-//					countInputStringLength = StablePOS.INT_ONE;
-//					find = StablePOS.INT_ONE;
-//					continue Here;
-//				}
-//				if(find == StablePOS.INT_ONE) {
-//					find = StablePOS.INT_ZERO;	
-//					Iterator<String> it = fHMMList.englishStringToWordsList(fixWords[StablePOS.INT_ZERO].toString()).iterator();
-//					while(it.hasNext()) {
-//						String temp=it.next();
-//						if (outputList.containsKey(temp)) {
-//							WordFrequency wordFrequency = outputList.get(temp);
-//							wordFrequency.I_Frequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
-//							outputList.put(temp, wordFrequency);
-//						} else {
-//							WordFrequency wordFrequency = new WordFrequency();
-//							wordFrequency.I_Frequency(StablePOS.INT_ONE);
-//							wordFrequency.I_Word(temp);
-//							outputList.put(temp, wordFrequency);
-//						}
-//					}
-//					fixWords[StablePOS.INT_ZERO].delete(StablePOS.INT_ZERO, fixWords[StablePOS.INT_ZERO].length());
-//				}
-//				stringBuilder.delete(StablePOS.INT_ZERO, stringBuilder.length());
-//				stringBuilder = neroController.getBinaryForestRecurWordOneTime(stringBuilder.append(mixedString
-//						.charAt(charPosition)), mixedString, charPosition, inputStringLength, forestRoots, forestDepth
-//						, charPosition + StablePOS.INT_ONE);
-//				String countWordNode = stringBuilder.toString();
-//				int compare = countInputStringLength = countWordNode.length();
-//				if (compare == StablePOS.INT_TWO) {
-//					countInputStringLength = nlpController.doSlangPartAndPOSCheckForTwoCharForMap(countInputStringLength
-//							, outputList, stringBuilder, wordsForest, fixWords, posController);
-//					continue Here;
-//				}
-//				if (compare == StablePOS.INT_THREE) {
-//					I_FixWords(charPosition, mixedString, fixWords);
-//					countInputStringLength = nlpController.doPOSAndEMMCheckOfThreeForMap(countInputStringLength, outputList
-//							, wordsForest, stringBuilder, fixWords, posController);
-//					continue Here;
-//				}
-//				if (compare == StablePOS.INT_ONE) {
-//					if (outputList.containsKey(countWordNode)) {
-//						WordFrequency wordFrequency = outputList.get(countWordNode);
-//						wordFrequency.I_Frequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
-//						outputList.put(countWordNode, wordFrequency);
-//					} else {
-//						WordFrequency wordFrequency = new WordFrequency();
-//						wordFrequency.I_Frequency(StablePOS.INT_ONE);
-//						wordFrequency.I_Word(fixWords[StablePOS.INT_ZERO].toString());
-//						outputList.put(countWordNode, wordFrequency);
-//					}
-//					fixWords[StablePOS.INT_ZERO].delete(StablePOS.INT_ZERO, fixWords[StablePOS.INT_ZERO].length());
-//					fixWords[StablePOS.INT_ZERO].append(countWordNode);
-//					continue Here;
-//				}
-//				if (compare == StablePOS.INT_FOUR) {
-//					I_FixWords(charPosition, mixedString, fixWords);
-//					countInputStringLength = nlpController.doSlangCheckForMap(countInputStringLength, outputList, stringBuilder
-//							, wordsForest, fixWords, posController);
-//				}
-//			}
-//		return outputList;
-//	}
 
 	public void studyNewWord(String study, String token, String posStudy) {
 		//learn new word
@@ -534,62 +338,10 @@ public class AE implements A {
 		return fHMMList.getFullCnToAb();
 	}
 
-//	@Override
-//	public EmotionMap getEmotionMap() {
-//		return this.emotionMap;
-//	}
 
 	@Override
 	public SensingTest getSensingTest() {
 		// TODO Auto-generated method stub
 		return this.sensingTest;
 	}
-
-//	@Override
-//	public Map<String, WordFrequency> getWordFrequencyMap(List<String> sets) throws IOException {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//
-//	@Override
-//	public List<WordFrequency> sortWordFrequencyMap(Map<String, WordFrequency> map) throws IOException {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-
-//	@Override
-//	public Map<Integer, WordFrequency> getWordFrequencyByReturnSortMap(List<String> sets) throws IOException {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//
-//	@Override
-//	public Map<Integer, WordFrequency> sortWordFrequencyMapToUnsortMap(Map<String, WordFrequency> map) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-
-//	@Override
-//	public Map<Integer, WordFrequency> sortWordFrequencyMapToSortMap(Map<String, WordFrequency> map) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//
-//	@Override
-//	public Map<String, WordFrequency> parserStringByReturnFrequencyMap(String inputString) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-
-//	@Override
-//	public Map<String, WordFrequency> parserMixStringByReturnFrequencyMap(String key) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//
-//	@Override
-//	public EmotionMap getEmotionMap() {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
 }

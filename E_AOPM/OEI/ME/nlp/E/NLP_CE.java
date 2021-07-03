@@ -8,11 +8,13 @@ import SVQ.stable.StablePOS;
 import SVQ.stable.StableMaps;
 import ME.utils.WordForestUtil;
 import OCI.ME.nlp.C.NLP_C;
-import OCI.ME.pos.C.POS_C;
+//import OCI.ME.pos.C.POS_C;
+import OCI.ME.pos.C.Pos_C_XCDX_P;
+import OCI.ME.pos.C.Pos_C_XCDX_O;
 public class NLP_CE implements NLP_C{
 	public int doSlangPartAndPOSCheckForTwoChar(int countInputStringLength, List<String> outputList
 			, StringBuilder stringBuilder, Map<String, String> wordsForest, StringBuilder[] prefixWord
-			, POS_C posUtils, int charPosition, String textInputString){
+			, Pos_C_XCDX_P posUtils, int charPosition, String textInputString){
 		String countWordNode= stringBuilder.toString();
 		if (prefixWord[StablePOS.INT_ZERO].length()== StablePOS.INT_ZERO){
 			if(StableMaps.CiTwo.containsKey(countWordNode)) {
@@ -42,7 +44,7 @@ public class NLP_CE implements NLP_C{
 		if (StableMaps.jieCi.containsKey(strings[StablePOS.INT_ZERO].toString())){
 			if (StableMaps.dongCi.containsKey(prefixWord[StablePOS.INT_ZERO].toString())){
 				if (!StableMaps.jieCi.containsKey(countWordNode)){
-					countInputStringLength= posUtils.parserFirstCharOfTwo(countInputStringLength, outputList, strings, prefixWord);
+					countInputStringLength= ((Pos_C_XCDX_O)posUtils).parserFirstCharOfTwo(countInputStringLength, outputList, strings, prefixWord);
 					return countInputStringLength;
 				}
 			}
@@ -53,13 +55,13 @@ public class NLP_CE implements NLP_C{
 			outputList.add(countWordNode);
 			return countInputStringLength;
 		}
-		countInputStringLength= posUtils.parserFirstCharOfTwo(countInputStringLength, outputList, strings, prefixWord);
+		countInputStringLength= ((Pos_C_XCDX_O)posUtils).parserFirstCharOfTwo(countInputStringLength, outputList, strings, prefixWord);
 		return countInputStringLength;
 	}
 
 	public int doPOSAndEMMCheckOfThree(int countInputLength, List<String> outputList
 			, Map<String, String> wordsForest, StringBuilder stringBuilder, StringBuilder[] prefixWord
-			, POS_C posUtils, int charPosition, String textInputString){
+			, Pos_C_XCDX_P posUtils, int charPosition, String textInputString){
 		String inputString= stringBuilder.toString();
 		if (StableMaps.CiThree.containsKey(inputString)){
 			prefixWord[StablePOS.INT_ZERO].delete(StablePOS.INT_ZERO, prefixWord[StablePOS.INT_ZERO].length());
@@ -124,12 +126,12 @@ public class NLP_CE implements NLP_C{
 			if(StableMaps.zhuCi.containsKey(prefixWord[StablePOS.INT_ZERO].toString())
 					&& (StableMaps.liangCi.containsKey(strings[StablePOS.INT_TWO])
 					|| StableMaps.jieCi.containsKey(strings[StablePOS.INT_TWO]))) {
-				countInputLength = posUtils.parserFirstCharOfThree(countInputLength, outputList, strings, prefixWord);
+				countInputLength = ((Pos_C_XCDX_O)posUtils).parserFirstCharOfThree(countInputLength, outputList, strings, prefixWord);
 				return countInputLength;
 			}
 			if(StableMaps.fuCi.containsKey(strings[StablePOS.INT_TWO])||StableMaps.mingCi.containsKey(strings[StablePOS.INT_TWO])
 					||StableMaps.daiCi.containsKey(strings[StablePOS.INT_TWO])) {
-				countInputLength = posUtils.parserFirstCharOfThree(countInputLength, outputList, strings, prefixWord);
+				countInputLength = ((Pos_C_XCDX_O)posUtils).parserFirstCharOfThree(countInputLength, outputList, strings, prefixWord);
 				return countInputLength;
 			}
 		}
@@ -157,7 +159,7 @@ public class NLP_CE implements NLP_C{
 //		|| StableMaps.xingRongCi.containsKey(postRegister)|| StableMaps.xingWeiCi.containsKey(postRegister)|| StableMaps.liangCi.containsKey(preRegister)
 //		|| StableMaps.fuCi.containsKey(postRegister)|| StableMaps.jieCi.containsKey(postRegister)) {
 	public int doSlangCheck(int countInputStringLength, List<String> output, StringBuilder stringBuilder,
-			Map<String, String> wordsForest, StringBuilder[] prefixWord, POS_C posUtils, int charPosition, String textInputString){
+			Map<String, String> wordsForest, StringBuilder[] prefixWord, Pos_C_XCDX_P posUtils, int charPosition, String textInputString){
 		String inputString = stringBuilder.toString();
 		if (StableMaps.CiFour.containsKey(inputString)){
 			output.add(inputString);
@@ -247,7 +249,7 @@ public class NLP_CE implements NLP_C{
 //	return countInputStringLength;
 //}
 	public int doSlangCheckForMap(int countInputStringLength, List<String> output, StringBuilder stringBuilder
-			, Map<String, String> wordsForest, StringBuilder[] prefixWord, POS_C posUtils, int charPosition, String textInputString){
+			, Map<String, String> wordsForest, StringBuilder[] prefixWord, Pos_C_XCDX_P posUtils, int charPosition, String textInputString){
 		String inputString= stringBuilder.toString();
 		if (wordsForest.containsKey(inputString)){
 			output.add(inputString);
@@ -262,7 +264,7 @@ public class NLP_CE implements NLP_C{
 
 	public int doSlangPartAndPOSCheckForTwoCharForMap(int countInputStringLength, Map<String, WordFrequency> outputList
 			, StringBuilder stringBuilder, Map<String, String> wordsForest, StringBuilder[] prefixWord
-			, POS_C posUtils){
+			, Pos_C_XCDX_P posUtils){
 		String countWordNode= stringBuilder.toString();
 		if (!wordsForest.containsKey(countWordNode)){
 			WordForestUtil.wordsForestNotContainsKey(outputList, countWordNode, prefixWord);
@@ -292,7 +294,7 @@ public class NLP_CE implements NLP_C{
 
 	public int doPOSAndEMMCheckOfThreeForMap(int countInputLength, Map<String, WordFrequency> outputList
 			, Map<String, String> wordsForest, StringBuilder stringBuilder, StringBuilder[] prefixWord
-			, POS_C posUtils){
+			, Pos_C_XCDX_P posUtils){
 		String inputString= stringBuilder.toString();
 		if (wordsForest.containsKey(inputString)){
 			WordForestUtil.wordsForestContainsKey(outputList, inputString, prefixWord);
@@ -348,7 +350,7 @@ public class NLP_CE implements NLP_C{
 	} 
 
 	public int doSlangCheckForMap(int countInputStringLength, Map<String, WordFrequency> output, StringBuilder stringBuilder
-			, Map<String, String> wordsForest, StringBuilder[] prefixWord, POS_C posUtils){
+			, Map<String, String> wordsForest, StringBuilder[] prefixWord, Pos_C_XCDX_P posUtils){
 		String inputString= stringBuilder.toString();
 		if (wordsForest.containsKey(inputString)){
 			WordForestUtil.wordsForestContainsKey(output, inputString, prefixWord);
