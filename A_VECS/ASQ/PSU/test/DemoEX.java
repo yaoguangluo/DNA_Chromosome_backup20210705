@@ -26,10 +26,10 @@ public class DemoEX {
 		List<String> sets = new ArrayList<>();
 		Map<String, WordFrequency> seta = new ConcurrentHashMap<>();
 		TimeCheck t = new TimeCheck();
-		String ss = "?????";//
-		DemoEX demoEX=new DemoEX();
+		String ss = "从容易开始从从容容易从容易开始从从容容易从容易开始从从容容易从容易开始从从容容易";//
+		//DemoEX demoEX=new DemoEX();
 		t.begin();
-		for (int i = 0; i < 10; i++) { 
+		for (int i = 0; i < 1000000; i++) { 
 				sets= _A.parserMixedString(ss);
 		}
 		t.end();
