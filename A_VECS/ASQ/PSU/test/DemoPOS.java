@@ -1,5 +1,6 @@
 package ASQ.PSU.test;
 import java.io.IOException;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -7,14 +8,14 @@ import java.util.Map;
 import OCI.ME.analysis.C.A;
 //import OCI.ME.analysis.C.A;
 import OEI.ME.analysis.E.CogsBinaryForest_AE;
-
+import OEI.ME.analysis.E.BinaryForest_AE;
 import static java.lang.System.*;
 
 public class DemoPOS {
 	public static void main(String[] args) throws IOException {
 		A _A = new CogsBinaryForest_AE();
 		_A.IV_Mixed();//.init();
-		Map<String, String> nlp = _A.getPosCnToCn();
+		Map<String, String> nlp = ((BinaryForest_AE) _A).getPosCnToCn();
 		List<String> sets = new ArrayList<>();
 		String[] ss = new String[37];
 		String[] ss1 = new String[37];

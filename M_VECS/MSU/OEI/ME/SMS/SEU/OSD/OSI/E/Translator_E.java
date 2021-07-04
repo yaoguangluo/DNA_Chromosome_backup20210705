@@ -9,6 +9,7 @@ import AVQ.ASQ.OVQ.OSQ.VSQ.obj.Verbal;
 import SVQ.stable.StablePOS;
 import MSU.OCI.ME.SMS.translator.C.Translator;
 import OCI.ME.analysis.C.A;
+import OCI.ME.analysis.C.BinaryForest_A;
 public class Translator_E implements Translator{
 	public Map<String, String> poscc;
 	public Map<String, String> posec;
@@ -17,14 +18,14 @@ public class Translator_E implements Translator{
 	public Map<String, String> cte;
 	public Map<String, String> fulletc;
 	public Map<String, String> fullcte;
-	public void IV_(A _A) throws IOException {
-		posec = _A.getPosEnToCn();
-		posee = _A.getPosEnToEn();
-		poscc = _A.getPosCnToCn();
-		etc = _A.getEnToCn();
-		cte = _A.getCnToEn();
-		fulletc = _A.getFullEnToCn();
-		fullcte = _A.getFullCnToEn();
+	public void IV_(BinaryForest_A _A) throws IOException {
+		posec= _A.getPosEnToCn();
+		posee= _A.getPosEnToEn();
+		poscc= _A.getPosCnToCn();
+		etc= _A.getEnToCn();
+		cte= _A.getCnToEn();
+		fulletc= _A.getFullEnToCn();
+		fullcte= _A.getFullCnToEn();
 	}
 
 	public String EnglishStringToChineseString(A _A, String EnglishString) {

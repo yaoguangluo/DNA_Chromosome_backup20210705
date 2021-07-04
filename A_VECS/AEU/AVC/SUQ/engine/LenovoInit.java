@@ -6,6 +6,7 @@ import java.util.Map;
 import AEU.OCI.AVC.SUQ.estimation.C.EmotionSample;
 import OCI.AMV.ECS.SVQ.MPC.fhmm.C.SensingMap;
 import OEI.AMV.ECS.SVQ.MPC.SOQ.OEM.E.SensingMap_E;
+import OEI.ME.analysis.E.BinaryForest_AE;
 import OEI.ME.analysis.E.CogsBinaryForest_AE;
 import SVQ.stable.StableString;
 public class LenovoInit{
@@ -40,13 +41,13 @@ public class LenovoInit{
 		environmentInit = new EnvironmentInit();
 		environmentInit.IV_(text);
 		sensingMap = new SensingMap_E();
-		sensingMap.IV_LenovoMap(environmentInit.get_A());	
+		sensingMap.IV_LenovoMap(((BinaryForest_AE)environmentInit.get_A()));	
 	}
 	
 	public void IV_Exclude_A(String text, CogsBinaryForest_AE _A) throws IOException {
 		environmentInit = new EnvironmentInit();
 		environmentInit.IV_Exclude_A(text, _A);
 		sensingMap = new SensingMap_E();
-		sensingMap.IV_LenovoMap(environmentInit.get_A());	
+		sensingMap.IV_LenovoMap(((BinaryForest_AE)environmentInit.get_A()));	
 	}
 }

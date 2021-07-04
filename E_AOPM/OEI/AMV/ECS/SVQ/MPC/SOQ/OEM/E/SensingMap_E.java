@@ -5,7 +5,8 @@ import java.util.Iterator;
 import java.util.Map;
 
 import OCI.AMV.ECS.SVQ.MPC.fhmm.C.SensingMap;
-import OCI.ME.analysis.C.A;
+//import OCI.ME.analysis.C.A;
+import OCI.ME.analysis.C.BinaryForest_A;
 public class SensingMap_E implements SensingMap{
 	private Map<String, Object> lenovoMap;
 	
@@ -20,7 +21,7 @@ public class SensingMap_E implements SensingMap{
 	}
 
 	@Override
-	public void IV_LenovoMap(A _A) throws IOException {
+	public void IV_LenovoMap(BinaryForest_A _A) throws IOException {
 		lenovoMap= new HashMap<>();
 		Map<String, String> CnToEnMap= _A.getFullCnToEn();
 		Map<String, String> EnToCnMap= _A.getEnToCn();

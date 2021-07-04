@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 import OCI.ME.analysis.C.A;
+import OEI.ME.analysis.E.BinaryForest_AE;
 import OEI.ME.analysis.E.CogsBinaryForest_AE;
 import OSI.OPE.OEQ.MCQ.OVU.PQE.osgi.*;
 public class ReadOSU_MSQ_OPE_OPC_ECI extends OSU_AVQ_ASQ_OPE_OPC_ECI{
@@ -34,7 +35,7 @@ public class ReadOSU_MSQ_OPE_OPC_ECI extends OSU_AVQ_ASQ_OPE_OPC_ECI{
 		_A= new CogsBinaryForest_AE();
 		_A.IV_Mixed();
 		//拿到中文数据
-		pos= _A.getPosCnToCn();
+		pos= ((BinaryForest_AE)_A).getPosCnToCn();
 		indexResult= new ArrayList<String[]>();
 		System.out.println("runed"+ value); 
 		//SQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.path= new String(filepath); 

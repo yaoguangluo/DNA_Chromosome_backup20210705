@@ -2,7 +2,7 @@ package OEI.ME.analysis.E;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
+//import java.util.concurrent.ConcurrentHashMap;
 
 import AVQ.ASQ.OVQ.OSQ.VSQ.obj.FMHMMNode;
 //import AVQ.ASQ.OVQ.OSQ.VSQ.obj.WordFrequency;
@@ -247,14 +247,6 @@ public class AE implements A {
 		fixWords[StablePOS.INT_ONE].append(inputString.substring(charPosition + StablePOS.INT_THREE
 				, inputString.length()));
 	}
-
-	public Map<String, String> getEnToCn() {
-		return fHMMList.getEnToCn();
-	}
-
-	public Map<String, String> getCnToEn() {
-		return fHMMList.getCnToEn();
-	}
 	
 	public String[] parserEnglishString(String englishString) {
 		String[] words = englishString.replaceAll(StablePOS.NLP_SPASE_REP, StablePOS.SPACE_STRING)
@@ -263,86 +255,5 @@ public class AE implements A {
 			return new String[] {StablePOS.SPACE_STRING};
 		}
 		return words;
-	}
-
-	public Map<String, String> getPosEnToCn() {
-		return fHMMList.getPosEnToCn();
-	}
-
-	public Map<String, String> getPosEnToEn() {
-		return fHMMList.getPosEnToEn();
-	}
-
-	public Map<String, String> getPosCnToCn() {
-		return fHMMList.getPosCnToCn();
-	}
-
-	public Map<String, String> getFullEnToCn() {
-		return fHMMList.getFullEnToCn();
-	}
-
-	public Map<String, String> getFullCnToEn() {
-		return fHMMList.getFullCnToEn();
-	}
-
-	public void studyNewWord(String study, String token, String posStudy) {
-		//learn new word
-		FMHMMNode fFHMMNode= forestRoots.get(Long.valueOf(study.charAt(StablePOS.INT_ZERO)));
-		Map<String, Integer> map;
-		if(null== fFHMMNode) {
-			fFHMMNode= new FMHMMNode();
-			map= new ConcurrentHashMap<>();
-		}else {
-			map= fFHMMNode.getNext();
-		}
-		map.put(token, StablePOS.INT_ONE);
-		fFHMMNode.I_Next(map);
-		forestRoots.put(Long.valueOf(study.charAt(StablePOS.INT_ZERO)), fFHMMNode);
-		//learn new pos
-		fHMMList.studyNewPos(study+token, posStudy);
-	}
-
-	@Override
-	public Map<String, String> getStudyPos() {
-		return fHMMList.getStudyPos();
-	}
-
-	@Override
-	public Map<String, String> getPinYin() {
-		return fHMMList.getFullCnToPy();
-	}
-
-	@Override
-	public Map<String, String> getCtT() {
-		return fHMMList.getFullCnToTt();
-	}
-
-	@Override
-	public Map<String, String> getCtK() {
-		return fHMMList.getFullCnToKo();
-	}
-
-	@Override
-	public Map<String, String> getCtJ() {
-		return fHMMList.getFullCnToJp();
-	}
-
-	@Override
-	public Map<String, String> getCtR() {
-		// TODO Auto-generated method stub
-		return fHMMList.getFullCnToRs();
-	}
-
-	@Override
-	public Map<String, String> getCtA() {
-		// TODO Auto-generated method stub
-		return fHMMList.getFullCnToAb();
-	}
-
-
-	@Override
-	public SensingTest getSensingTest() {
-		// TODO Auto-generated method stub
-		return this.sensingTest;
 	}
 }

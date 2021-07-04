@@ -23,6 +23,7 @@ import AVQ.ASQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import MSV.OSQ.sets.DetaDouble;
 import OCI.AVC.SUQ.SVQ.MPC.fhmm.C.EmotionMap;
 import OCI.ME.analysis.C.A;
+import OCI.ME.analysis.C.BinaryForest_A;
 //import OEI.ME.analysis.E.AE_XCDX_Map;
 import OEI.ME.analysis.E.CogsBinaryForest_AE;
 import OEU.LYG4DQS4D.Quick_7D_luoyaoguang_Sort;
@@ -42,10 +43,10 @@ public class RestNLPPortImpl{// implements RestLoginPort {
 		return output;
 	}
 
-	public static Map<String, Object> dataCX(A _A, String string) throws UnsupportedEncodingException {
+	public static Map<String, Object> dataCX(BinaryForest_A _A, String string) throws UnsupportedEncodingException {
 		//System.out.printntln(string);
 		Map<String, String> pos = _A.getPosCnToCn();
-		List<String> sets = _A.parserString(string);
+		List<String> sets = ((A)_A).parserString(string);
 		Iterator<String> iterator = sets.iterator();
 		String cx = "";
 		while(iterator.hasNext()) {
@@ -196,11 +197,11 @@ public class RestNLPPortImpl{// implements RestLoginPort {
 		return null;
 	}
 
-	public synchronized static Object dataXX(A _A, String string) throws IOException {
+	public synchronized static Object dataXX(BinaryForest_A _A, String string) throws IOException {
 		//System.out.printntln(string);
 		Map<String, String> pos = _A.getPosCnToCn();
 		Map<String, String> studyPos = _A.getStudyPos();
-		List<String> sets = _A.parserString(string);
+		List<String> sets = ((A)_A).parserString(string);
 		Iterator<String> iterator = sets.iterator();
 		String xx = "";
 		String pres = "";
@@ -282,9 +283,9 @@ public class RestNLPPortImpl{// implements RestLoginPort {
 		return output;
 	}
 
-	public static Object dataZF(A _A, String string) throws UnsupportedEncodingException {
+	public static Object dataZF(BinaryForest_A _A, String string) throws UnsupportedEncodingException {
 		//System.out.printntln(string);
-		List<String> sets= _A.parserMixedString(string);
+		List<String> sets= ((A)_A).parserMixedString(string);
 		Map<String, String> pos= _A.getPosCnToCn();
 		String zf= "";
 		Iterator<String> iterator= sets.iterator();

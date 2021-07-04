@@ -1,7 +1,6 @@
 package PEQ.test;
 import java.io.IOException;
 
-
 import java.util.List;
 import java.util.Map;
 
@@ -10,6 +9,7 @@ import MSU.OCI.ME.SMS.translator.C.Translator;
 import MSU.OEI.ME.SMS.SEU.OSD.OSI.E.Translator_E;
 import OCI.ME.analysis.C.A;
 import OEI.ME.analysis.E.CogsBinaryForest_AE;
+import OEI.ME.analysis.E.BinaryForest_AE;
 
 //import time_Por.TimeCheck;
 public class DemoTSLT {
@@ -17,13 +17,13 @@ public class DemoTSLT {
 	public static void main(String[] args) throws IOException {
 		A _A = new CogsBinaryForest_AE();
 		_A.IV_();
-		Map<String, String> ce = _A.getCnToEn();
-		Map<String, String> ec = _A.getEnToCn();
-		Map<String, String> poscc = _A.getPosCnToCn();
-		Map<String, String> posec = _A.getPosEnToCn();
-		Map<String, String> posee = _A.getPosEnToEn();
-		Map<String, String> fce = _A.getFullCnToEn();
-		Map<String, String> fec = _A.getFullEnToCn();
+		Map<String, String> ce= ((BinaryForest_AE)_A).getCnToEn();
+		Map<String, String> ec= ((BinaryForest_AE)_A).getEnToCn();
+		Map<String, String> poscc= ((BinaryForest_AE)_A).getPosCnToCn();
+		Map<String, String> posec= ((BinaryForest_AE)_A).getPosEnToCn();
+		Map<String, String> posee= ((BinaryForest_AE)_A).getPosEnToEn();
+		Map<String, String> fce= ((BinaryForest_AE)_A).getFullCnToEn();
+		Map<String, String> fec= ((BinaryForest_AE)_A).getFullEnToCn();
 		System.out.println("输入");
 		 String v = "如流枫之回雪，若浣花洗月";
 ////		 //String v = "数据一直在更新中";
@@ -32,7 +32,7 @@ public class DemoTSLT {
 //		String v = "他也一直在奔跑，他同样需要一双翅膀！";
 		System.out.println(v);
 		Translator ts = new Translator_E();
-		ts.IV_(_A); 
+		ts.IV_((BinaryForest_AE)_A); 
 //		TimeCheck t = new TimeCheck();
 //		t.begin();
 		List<Verbal> verbals = ts.index(_A, v);

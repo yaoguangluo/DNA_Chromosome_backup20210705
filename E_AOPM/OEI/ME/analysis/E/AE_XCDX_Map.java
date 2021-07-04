@@ -18,11 +18,11 @@ import java.util.Iterator;
 //一种元基枝 写法结构 处理子类接口 分类.
 public class AE_XCDX_Map extends AE implements A_XCDX_Map{
 	public Map<String, WordFrequency> parserStringByReturnFrequencyMap(String inputString) {
-		Map<String, String> wordsForest = fHMMList.getPosCnToCn();
+		Map<String, String> wordsForest= fHMMList.getPosCnToCn();
 		Map<String, WordFrequency> outputList = new ConcurrentHashMap<>();
-		Map<Long, FMHMMNode> forestRoots = fHMMList.getMap();
-		int inputStringLength = inputString.length();
-		int forestDepth = StablePOS.INT_ZERO;
+		Map<Long, FMHMMNode> forestRoots= fHMMList.getMap();
+		int inputStringLength= inputString.length();
+		int forestDepth= StablePOS.INT_ZERO;
 		int countInputStringLength;
 		StringBuilder[] fixWords = new StringBuilder[StablePOS.INT_TWO];
 		fixWords[StablePOS.INT_ZERO] = new StringBuilder();
