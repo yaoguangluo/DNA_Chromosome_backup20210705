@@ -13,14 +13,7 @@ import java.util.Map;
 //import PEU.S.verbal.VerbalSource;
 //今天将新陈代谢技术应用到 中文拼音笔画分词上.
 //罗瑶光
-public class LYG10DWCMSSort13D_XCDX_P_A_S extends LYG10DWCMSSort13D_XCDX_P_U_A implements LYG10DWCMSSort13D_XCDX_P_A_S_C {
-
-	public void quick4DChineseStringArray2D(String[][] strings2d, int scale, Map<String, String> map
-			, int range, int deeps, int culumn, Map<String, Integer> bihua) {
-		this.pinyin= map;
-		this.range= range;
-		this.deeps= deeps;
-		this.bihua= bihua;
-		processKernel2D(strings2d, 0, strings2d.length- 1, scale, 0, culumn);
-	}
+public interface LYG10DWCMSSort13D_XCDX_P_A_S_C{
+	void quick4DChineseStringArray2D(String[][] strings2d, int scale, Map<String, String> map
+			, int range, int deeps, int culumn, Map<String, Integer> bihua);
 }

@@ -14,7 +14,7 @@ import java.util.Map;
 //import PEU.S.verbal.VerbalSource;
 //今天将新陈代谢技术应用到 中文拼音笔画分词上.
 //罗瑶光
-public class LYG10DWCMSSort13D_XCDX_S{
+public class LYG10DWCMSSort13D_XCDX_S implements LYG10DWCMSSort13D_XCDX_S_C{
 	Map<String, Boolean> find= new HashMap<>();
 	Map<String, String> pinyin;
 	Map<String, Integer> filter= new HashMap<>();
@@ -23,7 +23,7 @@ public class LYG10DWCMSSort13D_XCDX_S{
 	String numbers= "0123456789.Ee";
 	protected Map<String, Integer> bihua;
 
-	protected boolean findSmallWithTwoChar(String x1, String x2
+	public boolean findSmallWithTwoChar(String x1, String x2
 			, int scale, int point) {
 		if(x1.length()<= point|| x2.length()<= point) {
 			if(x1.length()< x2.length()) {
@@ -66,7 +66,7 @@ public class LYG10DWCMSSort13D_XCDX_S{
 		return false;
 	}
 
-	protected boolean processSortpinyin(String[] kernel, int scale) {
+	public boolean processSortpinyin(String[] kernel, int scale) {
 		for(int k= 0; k< scale; k++) {
 			if(kernel[0].length()<= k|| kernel[1].length()<= k) {
 				if(kernel[0].length()< kernel[1].length()) {

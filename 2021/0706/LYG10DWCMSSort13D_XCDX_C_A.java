@@ -14,8 +14,8 @@ package OEU.LYG4DQS4D;
 //import PEU.S.verbal.VerbalSource;
 //今天将新陈代谢技术应用到 中文拼音笔画分词上.
 //罗瑶光
-public class LYG10DWCMSSort13D_XCDX_C_A extends LYG10DWCMSSort13D_XCDX_S{
-	protected boolean findSmall(String[] kernel, int scale, int point
+public class LYG10DWCMSSort13D_XCDX_C_A extends LYG10DWCMSSort13D_XCDX_S implements LYG10DWCMSSort13D_XCDX_C_A_C{
+	public boolean findSmall(String[] kernel, int scale, int point
 			, int i, int j, int rightPosition) {
 		if(kernel[i].length()<= point|| kernel[j].length()<= point) {
 			if(kernel[i].length()< kernel[j].length()) {

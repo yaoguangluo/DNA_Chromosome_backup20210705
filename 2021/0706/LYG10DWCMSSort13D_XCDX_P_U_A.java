@@ -6,9 +6,9 @@ package OEU.LYG4DQS4D;
 
 //今天将新陈代谢技术应用到 中文拼音笔画分词上.
 //罗瑶光
-public class LYG10DWCMSSort13D_XCDX_P_U_A extends LYG10DWCMSSort13D_XCDX_P_A{
+public class LYG10DWCMSSort13D_XCDX_P_U_A extends LYG10DWCMSSort13D_XCDX_P_A implements LYG10DWCMSSort13D_XCDX_P_U_A_C{
 
-	protected void processKernel2D(String[][] kernel, int leftPosition
+	public void processKernel2D(String[][] kernel, int leftPosition
 			, int rightPosition, int scale, int point, int culumn) {
 		int rightPositionReflection= rightPosition;
 		if(point> scale) {
@@ -32,7 +32,7 @@ public class LYG10DWCMSSort13D_XCDX_P_U_A extends LYG10DWCMSSort13D_XCDX_P_A{
 		}
 	}
 
-	private void processQS4DLYG9D2D(String[][] kernel, int leftPosition
+	public void processQS4DLYG9D2D(String[][] kernel, int leftPosition
 			, int rightPosition, int scale, int point, int deep, int culumn) {
 		if(leftPosition< rightPosition){
 			int c= rightPosition- leftPosition+ 1;
@@ -51,7 +51,7 @@ public class LYG10DWCMSSort13D_XCDX_P_U_A extends LYG10DWCMSSort13D_XCDX_P_A{
 		}
 	}
 
-	private int partition2D(String[][] array, int leftPosition, int rightPosition
+	public int partition2D(String[][] array, int leftPosition, int rightPosition
 			, int scale, int point, int culumn) {
 		String[] x= findSmall2D(array, scale, point, leftPosition, rightPosition, rightPosition, culumn)
 				? array[rightPosition]: array[leftPosition];
@@ -72,7 +72,7 @@ public class LYG10DWCMSSort13D_XCDX_P_U_A extends LYG10DWCMSSort13D_XCDX_P_A{
 		return rightPosition;
 	}
 
-	private void processSort2D(String[][] kernel, int leftPosition
+	public void processSort2D(String[][] kernel, int leftPosition
 			, int rightPosition, int scale, int point, int culumn) {
 		if(point> scale) {
 			return;

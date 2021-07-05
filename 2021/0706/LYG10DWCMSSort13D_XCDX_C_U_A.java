@@ -6,9 +6,9 @@ package OEU.LYG4DQS4D;
 
 //今天将新陈代谢技术应用到 中文拼音笔画分词上.
 //罗瑶光
-public class LYG10DWCMSSort13D_XCDX_C_U_A extends LYG10DWCMSSort13D_XCDX_C_A {
+public class LYG10DWCMSSort13D_XCDX_C_U_A extends LYG10DWCMSSort13D_XCDX_C_A implements LYG10DWCMSSort13D_XCDX_C_U_A_C {
 
-	protected void processKernel(String[] kernel, int leftPosition
+	public void processKernel(String[] kernel, int leftPosition
 			, int rightPosition, int scale, int point) {
 		int rightPositionReflection= rightPosition;
 		if(point> scale) {
@@ -30,7 +30,7 @@ public class LYG10DWCMSSort13D_XCDX_C_U_A extends LYG10DWCMSSort13D_XCDX_C_A {
 		}
 	}
 
-	private void processSort(String[] kernel, int leftPosition
+	public void processSort(String[] kernel, int leftPosition
 			, int rightPosition, int scale, int point) {
 		if(point> scale) {
 			return;
@@ -137,7 +137,7 @@ public class LYG10DWCMSSort13D_XCDX_C_U_A extends LYG10DWCMSSort13D_XCDX_C_A {
 		}
 	}
 
-	private void processQS4DLYG9D(String[] kernel, int leftPosition
+	public void processQS4DLYG9D(String[] kernel, int leftPosition
 			, int rightPosition, int scale, int point, int deep) {
 		if(leftPosition< rightPosition){
 			int c= rightPosition- leftPosition+ 1;
@@ -156,7 +156,7 @@ public class LYG10DWCMSSort13D_XCDX_C_U_A extends LYG10DWCMSSort13D_XCDX_C_A {
 		}
 	}
 
-	private int partition(String[] array, int leftPosition, int rightPosition, int scale, int point) {
+	public int partition(String[] array, int leftPosition, int rightPosition, int scale, int point) {
 		String x= findSmall(array, scale, point, leftPosition, rightPosition, rightPosition)
 				? array[rightPosition]: array[leftPosition];
 		int leftPositionReflection= leftPosition;
