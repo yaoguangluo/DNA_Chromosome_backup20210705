@@ -27,7 +27,7 @@ public class GetStatisticRatio{
 
 	}
 	
-	public double[] getStatisticRatio(double[] rgbIPECount, int sharehold) throws IOException {
+	public double[] getStatisticRatio(double[] rgbIPECount) throws IOException {
 		double countR= rgbIPECount[0];
 		double countB= rgbIPECount[1];
 		double countG= rgbIPECount[2];

@@ -6,6 +6,7 @@ package ISQ.VSU.feature;
 //因为肽展公式和思想GPL2.0开源,本程序源码同样GPL2.0开源.
 public class GetICAStatisticRatio{
 	int corr= 15;	
+	int scale= 5;
 	public int getPinkStatisticCount(int[][] r, int[][] g, int[][] b) {
 		int ri= 255;
 		int gi= 0;
@@ -59,9 +60,9 @@ public class GetICAStatisticRatio{
 		int count= 0;
 		for(int i= 0; i< r.length; i++) {
 			for(int j= 0; j< r[0].length; j++) {
-				if(r[i][j]> ri- corr&& r[i][j]< ri+ corr) {
-					if(g[i][j]> gi- corr&& g[i][j]< gi+ corr) {
-						if(b[i][j]> bi- corr&& b[i][j]< bi+ corr) {
+				if(r[i][j]* scale> ri- corr&& r[i][j]* scale< ri+ corr) {
+					if(g[i][j]* scale> gi- corr&& g[i][j]* scale< gi+ corr) {
+						if(b[i][j]* scale> bi- corr&& b[i][j]* scale< bi+ corr) {
 							count++;
 						}
 					}
