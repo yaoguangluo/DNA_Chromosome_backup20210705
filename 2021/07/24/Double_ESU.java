@@ -13,7 +13,12 @@ public class Double_ESU{
 			}else {
 				maps= new HashMap<>();
 			}
-			maps.put(nameScore[i].toString(), true);
+			//因为合并药材文件有相同名字所以用数字叠加模式。进行书籍分开
+			if(maps.containsKey(nameScore[i].toString())) {//因为合并药材文件有相同名字所以用数字叠加模式。进行书籍分开
+				maps.put(nameScore[i].toString()+ ""+ maps.size()+ 1, true);
+			}else {
+				maps.put(nameScore[i].toString(), true);
+			}
 			map.put(score[i], maps);
 		}
 		return map;
@@ -23,12 +28,37 @@ public class Double_ESU{
 		Map<Integer, Map<String, Boolean>> map= new HashMap<>();
 		for(int i= 0; i< score.length; i++) {
 			Map<String, Boolean> maps;
-			if(map.containsKey(score[i])) {
+			if(map.containsKey(score[i])) {//因为合并药材文件有相同名字所以用数字叠加模式。进行书籍分开
 				maps= map.get(score[i]);
 			}else {
 				maps= new HashMap<>();
 			}
-			maps.put(nameScore[i].toString(), true);
+			//因为合并药材文件有相同名字所以用数字叠加模式。进行书籍分开
+			if(maps.containsKey(nameScore[i].toString())) {//因为合并药材文件有相同名字所以用数字叠加模式。进行书籍分开
+				maps.put(nameScore[i].toString()+ ""+ maps.size()+ 1, true);
+			}else {
+				maps.put(nameScore[i].toString(), true);
+			}
+			map.put(score[i], maps);
+		}
+		return map;
+	}
+	//稍后并到int array 新文件中
+	public static Map<Integer, Map<String, Boolean>> getMapFromIntStringArray_ZhongYao(int[] score, String[] nameScore){
+		Map<Integer, Map<String, Boolean>> map= new HashMap<>();
+		for(int i= 0; i< score.length; i++) {
+			Map<String, Boolean> maps;
+			if(map.containsKey(score[i])) {//因为合并药材文件有相同名字所以用数字叠加模式。进行书籍分开
+				maps= map.get(score[i]);
+			}else {
+				maps= new HashMap<>();
+			}
+			//因为合并药材文件有相同名字所以用数字叠加模式。进行书籍分开
+			if(maps.containsKey(nameScore[i].toString())) {//因为合并药材文件有相同名字所以用数字叠加模式。进行书籍分开
+				maps.put(nameScore[i].toString()+ ""+ maps.size()+ 1, true);
+			}else {
+				maps.put(nameScore[i].toString(), true);
+			}
 			map.put(score[i], maps);
 		}
 		return map;
