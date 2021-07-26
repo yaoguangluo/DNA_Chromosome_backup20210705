@@ -329,7 +329,7 @@ public class YouBiaoSectionPanel extends JPanel implements MouseListener, KeyLis
 		//像素阀值
 		//像素比值
 		//像素精值
-		JLabel 四元碱腐蚀像素阀值= new JLabel("四元酸腐蚀像素阀值"+ ":");  
+		JLabel 四元碱腐蚀像素阀值= new JLabel("四元碱腐蚀像素阀值"+ ":");  
 		四元碱腐蚀像素阀值.setForeground(Color.white);
 		四元碱腐蚀像素阀值.setBounds(10+ 2* 130, 20+ 25* 1, 150, 25);
 		JTextField 四元碱腐蚀像素阀值JTextField= new JTextField();
@@ -381,7 +381,7 @@ public class YouBiaoSectionPanel extends JPanel implements MouseListener, KeyLis
 		this.add(四元碱腐蚀像素比值);
 		this.add(四元碱腐蚀像素比值JTextField);	
 		
-		JLabel 四元碱腐蚀像素精度= new JLabel("四元酸腐蚀像素精度"+ ":");  
+		JLabel 四元碱腐蚀像素精度= new JLabel("四元碱腐蚀像素精度"+ ":");  
 		四元碱腐蚀像素精度.setForeground(Color.white);
 		四元碱腐蚀像素精度.setBounds(10+ 2* 130, 20+ 25* 3, 150, 25);
 		JTextField 四元碱腐蚀像素精度JTextField= new JTextField();
@@ -434,7 +434,7 @@ public class YouBiaoSectionPanel extends JPanel implements MouseListener, KeyLis
 		this.add(四元碱腐蚀像素PCAJTextField);	
 		
 		
-		JLabel 四元碱腐蚀像素ICA= new JLabel("四元酸腐蚀像素ICA"+ ":");  
+		JLabel 四元碱腐蚀像素ICA= new JLabel("四元碱腐蚀像素ICA"+ ":");  
 		四元碱腐蚀像素ICA.setForeground(Color.white);
 		四元碱腐蚀像素ICA.setBounds(10+ 2* 130, 20+ 25* 5, 150, 25);
 		JTextField 四元碱腐蚀像素ICAJTextField= new JTextField();
