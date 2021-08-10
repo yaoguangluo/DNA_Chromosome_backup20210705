@@ -1,0 +1,48 @@
+package MS.VPC.V;
+import java.io.BufferedWriter;
+
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.net.Socket;
+import java.net.URLDecoder;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
+import OCI.AVC.SUQ.SVQ.MPC.fhmm.C.EmotionMap;
+//import OCI.ME.analysis.C.A;
+import OEI.ME.analysis.E.CogsBinaryForest_AE;
+import OSI.AOP.MS.VPC.server.ServerForward_Standard;
+import OSI.AOP.VPC.rest.VPCBackEnd;
+public class RestMap extends ServerForward_Standard{
+	public static void P(String[] type, Socket socket, CogsBinaryForest_AE _A, EmotionMap emotionMap) 
+			throws IOException {
+		String[] column= type[1].split("&");
+		Map<String, String> data= new ConcurrentHashMap<>();
+		for(String cell:column){
+			String[] cells= cell.split("=");
+			data.put(cells[0], URLDecoder.decode(cells[1], "UTF-8"));
+		}
+		String output = "";
+		try {
+			output= VPCBackEnd.forward(emotionMap, _A, type[0], data);
+//			System.out.println(output);
+			PrintWriter pw= new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket
+					.getOutputStream(),"UTF-8")),true);
+			pw.println("HTTP/1.1 200 OK\n\n"); 
+			output= output.charAt(0)== '"'?output.substring(1, output.length()): output;
+			output= output.charAt(output.length()-1)== '"'? output.substring(0
+					, output.length()- 1): output;
+			pw.println(output.replace("\\\"", "\""));
+			pw.flush();
+			pw.close();
+		} catch (Exception e) {
+			PrintWriter pw= new PrintWriter(socket.getOutputStream(), true);
+			pw.format("UTF-8", pw);
+			pw.println("HTTP/1.1 500 OK\n\n"); 
+			pw.println(output);
+			pw.flush();
+			pw.close();
+		}	
+	}
+}
