@@ -14,7 +14,15 @@
 20210714          
 1 最近在设计图片识别.用到非卷积肽展腐蚀, 精度在前15%, 不错,准备进行2次腐蚀. 或者模型匹配, 组合识别,提高精度.                    
 2 jar包 目前也分出个, 既然源码都开源了, 没必要我来打包 成jar.                 
-3 分词排序等 用全局search 搜 sort , test, AE , 什么都能找到, 我就不多解释了, 以后做个完整的接口文档.               
+3 分词排序等 用全局search 搜 sort , test, AE , 什么都能找到, 我就不多解释了, 以后做个完整的接口文档.    
+
+##### 20210822 DNA 24组元基花API 最新备份地址             
+https://yaoguangluo.coding.net/public/to_githubbackup/to_Github_backup_YLJ_initons_chromosome/git/files/codingbackup18801/2021/202108/10/DataChromosome_V18820_2210810.jar         
+https://gitee.com/DetaChina/DNA_Chromosome_backup20210705/blob/codingbackup18801/2021/202108/10/DataChromosome_V18820_2210810.jar          
+https://github.com/yaoguangluo/DNA_Chromosome_backup20210705/blob/codingbackup18801/2021/202108/10/DataChromosome_V18820_2210810.jar          
+
+稍后写使用接口文档
+
 
 ##### 20210822 DNA 元基催化 与 肽计算 第三修订版 0.3.9 数(字/据)生命启蒙 最新备份地址             
 https://github.com/yaoguangluo/DNA_Chromosome_backup20210705/blob/codingbackup18801/2021/202108/22/罗瑶光_DNA元基催化与肽计算_第三修订版_数据生命启蒙V039_003.pdf        
