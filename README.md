@@ -20,7 +20,7 @@
 https://yaoguangluo.coding.net/public/to_githubbackup/to_Github_backup_YLJ_initons_chromosome/git/files/codingbackup18801/2021/202108/10/DataChromosome_V18820_2210810.jar         
 https://gitee.com/DetaChina/DNA_Chromosome_backup20210705/blob/codingbackup18801/2021/202108/10/DataChromosome_V18820_2210810.jar          
 https://github.com/yaoguangluo/DNA_Chromosome_backup20210705/blob/codingbackup18801/2021/202108/10/DataChromosome_V18820_2210810.jar          
-
+https://bitbucket.org/luoyaoguang/yangliaojing/src/18820_Cms_YLJHRJ/doc/DataChromosome_V18820_2210810.jar
 稍后写使用接口文档
 
 
