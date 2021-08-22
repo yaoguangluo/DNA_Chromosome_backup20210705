@@ -21,7 +21,6 @@ https://yaoguangluo.coding.net/public/to_githubbackup/to_Github_backup_YLJ_inito
 https://gitee.com/DetaChina/DNA_Chromosome_backup20210705/blob/codingbackup18801/2021/202108/10/DataChromosome_V18820_2210810.jar          
 https://github.com/yaoguangluo/DNA_Chromosome_backup20210705/blob/codingbackup18801/2021/202108/10/DataChromosome_V18820_2210810.jar          
 https://bitbucket.org/luoyaoguang/yangliaojing/src/18820_Cms_YLJHRJ/doc/DataChromosome_V18820_2210810.jar         
-稍后写使用接口文档
 
 
 ##### 20210822 DNA 元基催化 与 肽计算 第三修订版 0.3.9 数(字/据)生命启蒙 最新备份地址             
@@ -30,6 +29,8 @@ https://yaoguangluo.coding.net/public/YangLiaoJingHuaRuiJi/YangliaojingHuaruiji/
 https://gitee.com/DetaChina/DNA_Chromosome_backup20210705/blob/codingbackup18801/2021/202108/22/罗瑶光_DNA元基催化与肽计算_第三修订版_数据生命启蒙V039_003.pdf          
 https://bitbucket.org/luoyaoguang/yangliaojing/src/18820_Cms_YLJHRJ/doc/罗瑶光_DNA元基催化与肽计算_第三修订版_数据生命启蒙V039_003.pdf                  
 
+
+##### QQ， 微信， 百度等均已同步备份。
 
 ## 作者 罗瑶光             
 ## 时间 20210612                
