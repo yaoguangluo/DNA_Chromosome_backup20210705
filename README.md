@@ -16,7 +16,7 @@
 2 jar包 目前也分出个, 既然源码都开源了, 没必要我来打包 成jar.                 
 3 分词排序等 用全局search 搜 sort , test, AE , 什么都能找到, 我就不多解释了, 以后做个完整的接口文档.    
 
-##### 20210822 DNA 24组元基花API 最新备份地址             
+##### 20210822 DNA 24组元基花 18820 API 最新备份地址             
 https://yaoguangluo.coding.net/public/to_githubbackup/to_Github_backup_YLJ_initons_chromosome/git/files/codingbackup18801/2021/202108/10/DataChromosome_V18820_2210810.jar         
 https://gitee.com/DetaChina/DNA_Chromosome_backup20210705/blob/codingbackup18801/2021/202108/10/DataChromosome_V18820_2210810.jar          
 https://github.com/yaoguangluo/DNA_Chromosome_backup20210705/blob/codingbackup18801/2021/202108/10/DataChromosome_V18820_2210810.jar          
@@ -27,7 +27,13 @@ https://bitbucket.org/luoyaoguang/yangliaojing/src/18820_Cms_YLJHRJ/doc/DataChro
 https://github.com/yaoguangluo/DNA_Chromosome_backup20210705/blob/codingbackup18801/2021/202108/25/罗瑶光_DNA元基催化与肽计算_第三修订版_数据生命启蒙V039_008.pdf              
 https://yaoguangluo.coding.net/public/YangLiaoJingHuaRuiJi/YangliaojingHuaruiji/git/files/18830_Cms_YLJHRJ/doc/罗瑶光_DNA元基催化与肽计算_第三修订版_数据生命启蒙V039_008.pdf       
 https://gitee.com/DetaChina/DNA_Chromosome_backup20210705/blob/codingbackup18801/2021/202108/25/罗瑶光_DNA元基催化与肽计算_第三修订版_数据生命启蒙V039_008.pdf               
-https://bitbucket.org/luoyaoguang/yangliaojing/src/18830_Cms_YLJHRJ/doc/罗瑶光_DNA元基催化与肽计算_第三修订版_数据生命启蒙V039_008.pdf                        
+https://bitbucket.org/luoyaoguang/yangliaojing/src/18830_Cms_YLJHRJ/doc/罗瑶光_DNA元基催化与肽计算_第三修订版_数据生命启蒙V039_008.pdf    
+
+##### 20210826 DNA 24组元基花 18830 API 最新备份地址             
+https://yaoguangluo.coding.net/public/YangLiaoJingHuaRuiJi/YangliaojingHuaruiji/git/files/18830_Cms_YLJHRJ/doc/DataChromosome_V18830_2210810.jar      
+https://gitee.com/DetaChina/DNA_Chromosome_backup20210705/blob/codingbackup18801/2021/202108/26/DataChromosome_V18830_2210810.jar          
+https://github.com/yaoguangluo/DNA_Chromosome_backup20210705/blob/codingbackup18801/2021/202108/26/DataChromosome_V18830_2210810.jar          
+https://bitbucket.org/luoyaoguang/yangliaojing/src/18830_Cms_YLJHRJ/doc/DataChromosome_V18830_2210810.jar 
 
 
 ##### QQ， 微信， 百度等均已同步备份。
