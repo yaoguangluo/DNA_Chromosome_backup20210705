@@ -23,11 +23,11 @@ https://github.com/yaoguangluo/DNA_Chromosome_backup20210705/blob/codingbackup18
 https://bitbucket.org/luoyaoguang/yangliaojing/src/18820_Cms_YLJHRJ/doc/DataChromosome_V18820_2210810.jar         
 
 
-##### 20210825 DNA 元基催化 与 肽计算 第三修订版 0.3.9 数(字/据)生命启蒙 最新备份地址             
-https://github.com/yaoguangluo/DNA_Chromosome_backup20210705/blob/codingbackup18801/2021/202108/25/罗瑶光_DNA元基催化与肽计算_第三修订版_数据生命启蒙V039_008.pdf              
-https://yaoguangluo.coding.net/public/YangLiaoJingHuaRuiJi/YangliaojingHuaruiji/git/files/18830_Cms_YLJHRJ/doc/罗瑶光_DNA元基催化与肽计算_第三修订版_数据生命启蒙V039_008.pdf       
-https://gitee.com/DetaChina/DNA_Chromosome_backup20210705/blob/codingbackup18801/2021/202108/25/罗瑶光_DNA元基催化与肽计算_第三修订版_数据生命启蒙V039_008.pdf               
-https://bitbucket.org/luoyaoguang/yangliaojing/src/18830_Cms_YLJHRJ/doc/罗瑶光_DNA元基催化与肽计算_第三修订版_数据生命启蒙V039_008.pdf    
+##### 20210828 DNA 元基催化 与 肽计算 第三修订版 0.3.9 数(字/据)生命启蒙 最新备份地址             
+https://github.com/yaoguangluo/DNA_Chromosome_backup20210705/blob/codingbackup18801/2021/202108/28/罗瑶光_DNA元基催化与肽计算_第三修订版_数据生命启蒙V039_009.pdf               
+https://yaoguangluo.coding.net/public/YangLiaoJingHuaRuiJi/YangliaojingHuaruiji/git/files/18830_Cms_YLJHRJ/doc/罗瑶光_DNA元基催化与肽计算_第三修订版_数据生命启蒙V039_009.pdf
+https://gitee.com/DetaChina/DNA_Chromosome_backup20210705/blob/codingbackup18801/2021/202108/28/罗瑶光_DNA元基催化与肽计算_第三修订版_数据生命启蒙V039_009.pdf               
+https://bitbucket.org/luoyaoguang/yangliaojing/src/18830_Cms_YLJHRJ/doc/罗瑶光_DNA元基催化与肽计算_第三修订版_数据生命启蒙V039_009.pdf    
 
 ##### 20210826 DNA 24组元基花 18830 API 最新备份地址             
 https://yaoguangluo.coding.net/public/YangLiaoJingHuaRuiJi/YangliaojingHuaruiji/git/files/18830_Cms_YLJHRJ/doc/DataChromosome_V18830_2210810.jar      
