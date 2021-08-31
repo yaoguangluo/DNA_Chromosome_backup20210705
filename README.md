@@ -29,11 +29,11 @@ https://yaoguangluo.coding.net/public/YangLiaoJingHuaRuiJi/YangliaojingHuaruiji/
 https://gitee.com/DetaChina/DNA_Chromosome_backup20210705/blob/codingbackup18801/2021/202108/28/罗瑶光_DNA元基催化与肽计算_第三修订版_数据生命启蒙V039_009.pdf               
 https://bitbucket.org/luoyaoguang/yangliaojing/src/18830_Cms_YLJHRJ/doc/罗瑶光_DNA元基催化与肽计算_第三修订版_数据生命启蒙V039_009.pdf    
 
-##### 20210826 DNA 24组元基花 18830 API 最新备份地址             
-https://yaoguangluo.coding.net/public/YangLiaoJingHuaRuiJi/YangliaojingHuaruiji/git/files/18830_Cms_YLJHRJ/doc/DataChromosome_V18830_2210810.jar      
-https://gitee.com/DetaChina/DNA_Chromosome_backup20210705/blob/codingbackup18801/2021/202108/26/DataChromosome_V18830_2210810.jar          
-https://github.com/yaoguangluo/DNA_Chromosome_backup20210705/blob/codingbackup18801/2021/202108/26/DataChromosome_V18830_2210810.jar          
-https://bitbucket.org/luoyaoguang/yangliaojing/src/18830_Cms_YLJHRJ/doc/DataChromosome_V18830_2210810.jar 
+##### 20210831 DNA 24组元基花 18830 API 最新备份地址             
+https://yaoguangluo.coding.net/public/YangLiaoJingHuaRuiJi/YangliaojingHuaruiji/git/files/18830_Cms_YLJHRJ/doc/DataChromosome_V18830_2210831.jar   
+https://gitee.com/DetaChina/DNA_Chromosome_backup20210705/blob/codingbackup18801/2021/202108/31/DataChromosome_V18830_2210831.jar        
+https://github.com/yaoguangluo/DNA_Chromosome_backup20210705/blob/codingbackup18801/2021/202108/31/DataChromosome_V18830_2210831.jar        
+https://bitbucket.org/luoyaoguang/yangliaojing/src/18830_Cms_YLJHRJ/doc/DataChromosome_V18830_2210831.jar 
 
 
 ##### QQ， 微信， 百度等均已同步备份。
