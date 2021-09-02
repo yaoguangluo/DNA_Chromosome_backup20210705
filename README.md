@@ -16,6 +16,12 @@
 2 jar包 目前也分出个, 既然源码都开源了, 没必要我来打包 成jar.                 
 3 分词排序等 用全局search 搜 sort , test, AE , 什么都能找到, 我就不多解释了, 以后做个完整的接口文档.    
 
+##### javaCV显卡，SOUND,CMU声卡，MMPEG视频，JACOB发音驱动lib集 已经打包好地址
+https://github.com/yaoguangluo/YangLiaoJing_HuaRuiJi/tree/18701/lib
+https://gitee.com/DetaChina/YangLiaoJing/tree/18700/lib
+https://yaoguangluo.coding.net/public/YangLiaoJingHuaRuiJi/YangliaojingHuaruiji/git/files/18801YangliaojingCMS/lib
+https://bitbucket.org/luoyaoguang/yangliaojing/src/18701/lib/
+
 ##### 20210828 DNA 元基催化 与 肽计算 第三修订版 0.3.9 数(字/据)生命启蒙 最新备份地址             
 https://github.com/yaoguangluo/DNA_Chromosome_backup20210705/blob/codingbackup18801/2021/202108/28/罗瑶光_DNA元基催化与肽计算_第三修订版_数据生命启蒙V039_009.pdf               
 https://yaoguangluo.coding.net/public/YangLiaoJingHuaRuiJi/YangliaojingHuaruiji/git/files/18830_Cms_YLJHRJ/doc/罗瑶光_DNA元基催化与肽计算_第三修订版_数据生命启蒙V039_009.pdf
