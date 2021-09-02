@@ -37,22 +37,22 @@ https://gitee.com/DetaChina/DNA_Chromosome_backup20210705/blob/codingbackup18801
 ##### QQ， 微信， 百度等均已同步备份。
 
 #### 如分词的使用方法如下， 其他使用法类似， 
-package testInitons;                         
-import java.util.Iterator;                        
-import java.util.List;                         
-import ME.APM.VSQ.HRJFrame;                                   
-public class TestMain{                                 
-	public static void main(String[] Argv) throws Exception {                                     
-		//启动并把界面配置好                   
-    HRJFrame.main(new String[2]);                                                          
-		//就可以执行分词demo                                      
-		List<String> list= HRJFrame.NE._A.parserMixedString("从容易得知从容的容易");                             
-		Iterator<String> iterator= list.iterator();                                             
-		while(iterator.hasNext()) {                               
-			System.out.println(iterator.next());                                                    
-		}                         
-	}                
-}                                         
+--package testInitons;                         
+--import java.util.Iterator;                        
+--import java.util.List;                         
+--import ME.APM.VSQ.HRJFrame;                                   
+--public class TestMain{                                 
+-------public static void main(String[] Argv) throws Exception {                                     
+-----------//启动并把界面配置好                   
+-----------HRJFrame.main(new String[2]);                                                          
+-----------//就可以执行分词demo                                      
+-----------List<String> list= HRJFrame.NE._A.parserMixedString("从容易得知从容的容易");                             
+-----------Iterator<String> iterator= list.iterator();                                             
+-----------while(iterator.hasNext()) {                               
+----------------System.out.println(iterator.next());                                                    
+-----------}                         
+-------}                
+--}                                         
                                                     
 
 
