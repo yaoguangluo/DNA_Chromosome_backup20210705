@@ -15,6 +15,9 @@
 
 注意加星号数字，是5 和 1， 不是画板中默认的的 10 和0.001 可自行配置，生成的训练集 4个采样文件 如果自行生成，那这些配置都要自行修改。
 
+采样文件例子如下   
+https://github.com/yaoguangluo/DNA_Chromosome_backup20210705/tree/codingbackup18801/2021/09/04
+
 
 
 
