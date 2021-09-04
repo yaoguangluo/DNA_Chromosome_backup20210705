@@ -40,7 +40,9 @@ https://gitee.com/DetaChina/DNA_Chromosome_backup20210705/blob/codingbackup18801
 https://github.com/yaoguangluo/DNA_Chromosome_backup20210705/blob/codingbackup18801/2021/09/04/BloomChromosome_V18830_2210904.jar              
 https://bitbucket.org/luoyaoguang/yangliaojing/src/18830_Cms_YLJHRJ/doc/BloomChromosome_V18830_2210904.jar     
 
-##### 历史版本见日期文件分类。
+##### 历史版本请在日期文件分类中查找。                  
+https://github.com/yaoguangluo/DNA_Chromosome_backup20210705/tree/codingbackup18801/2021         
+     
 ##### QQ， 微信， 百度等均已同步备份。
 
 #### 如分词的使用方法如下， 其他使用法类似， 
