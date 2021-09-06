@@ -4,12 +4,12 @@
 
 花了2年时间写完第三次修订版本的 DNA元基催化与肽计算 一书， 我已经有一定的经验如下
 1 肽展公式 
-s=i, s=q, c=d
-i=!d, d=!i, u=!q, q=!u
-i=++d, u=++i, q=++u, dd=++q
-v=u+q, e=i+u, c=i+d, s=i+q
-a=v+s, o=e+s, p=e+c, m=c+s, e=d+u
-d=dd, u=e, i=u, e=i+e, p=p+d, c=u+d+d
+S= I,       S= Q,       C= D
+I= !D,      D= !I,      U= !Q,        Q= !U
+I= ++D,     U= ++I,     Q= ++U,      DD= ++Q
+V= U+ Q,    E= I+ U,    C= I+ D,      S= I+ Q 
+A= V+ S,    O= E+ S,    P= E+ C,      M= C+ S,     E= D+ U
+D= DD,      U= E,       i= u,         E= I+ E,     P= P+ D,     C= U+ D+ D
 
 2 十六元基
 AOPM TXH VECS IDUQ DD
@@ -102,7 +102,7 @@ X， ONNN
 ？, NNNN
 于是思路便清晰了，DD 补码的结构如  NnOo， 其关联的元基仅有H, O O, 补码的逐步碱化可以转化为 V, N N -> A, NNN -> ?, NNNN
 
-我的到四个答案这个OONN , NNNN,  OO, NN 属于 RNA 的计算过程产物。下一步谜题便揭开了帷幕。
+我的到一个答案这四个OONN , NNNN,  OO, NN 属于 RNA 的计算过程元基产物。下一步谜题便揭开了帷幕。
 上面是20210905的笔记，图片已经开源。今天要做的准备开始笔记研发。
 
 
