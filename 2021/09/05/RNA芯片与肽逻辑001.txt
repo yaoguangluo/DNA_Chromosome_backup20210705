@@ -78,29 +78,32 @@ NNNN
 NONN
 OONN
 于是我开始分组
-I O O
-D N O
-U N O
-Q O O
+I， O O
+D， N O
+U， N O
+Q， O O
 
-V N N
-E O
-C O N
-S N
-H O O
+V， N N
+E， O
+C， O N
+S， N
+H， O O
 
-P OON
-A NNN
-O NO
-  OO
-  NN
-M NON
-T NO N
+P， OON
+A， NNN
+O， NO
+？, OO
+？, NN
+M， NON
+T， NO N
 
-  OONN
-X ONNN
-  NNNN
+？, OONN
+X， ONNN
+？, NNNN
+于是思路便清晰了，DD 补码的结构如  NnOo， 其关联的元基仅有H, O O, 补码的逐步碱化可以转化为 V, N N -> A, NNN -> ?, NNNN
 
+我的到四个答案这个OONN , NNNN,  OO, NN 属于 RNA 的计算过程产物。下一步谜题便揭开了帷幕。
+上面是20210905的笔记，图片已经开源。今天要做的准备开始笔记研发。
 
 
 
