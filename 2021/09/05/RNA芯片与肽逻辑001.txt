@@ -27,9 +27,79 @@ NNN
 NN N
 NNO 
 NN O
+NON
+NO N
+NOO 
+NO O
+OON
+OO N
+OOO
+OO O
+NNNN
+NNNO
+NNON
+NNOO
+NONN
+NONO
+NOON
+NOOO
+ONNN
+ONNO
+ONON
+ONOO
+OONN
+OONO
+OOON
+OOOO
+然后我进行了对称的过滤，把 OONO OOON, ONOO NOOO, NNON NNNO, ONNN NONN 四组对称的过滤一半，
+然后把第3和4位为O的无意义过滤掉得到如下标记集合
+NN
+NO
+OO
+NNN
+NN N
+NON
+NO N
+OON
+OO N
+NNNN
+NONN
+OONN
+再过滤掉对称的 NNN NN N, 得到如下标记
+NN
+NO
+OO
+NNN
+NON
+NO N
+OON
+OO N
+NNNN
+NONN
+OONN
+于是我开始分组
+I O O
+D N O
+U N O
+Q O O
 
+V N N
+E O
+C O N
+S N
+H O O
 
+P OON
+A NNN
+O NO
+  OO
+  NN
+M NON
+T NO N
 
+  OONN
+X ONNN
+  NNNN
 
 
 
