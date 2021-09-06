@@ -94,8 +94,8 @@ A， NNN
 O， NO
 ？, OO
 ？, NN
-M， NON
-T， NO N
+M， NO N
+T， NON
 
 ？, OONN
 X， ONNN
