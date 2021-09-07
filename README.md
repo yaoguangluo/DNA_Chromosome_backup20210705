@@ -43,8 +43,11 @@ https://bitbucket.org/luoyaoguang/yangliaojing/src/18830_Cms_YLJHRJ/doc/BloomChr
 ##### 历史版本请在日期文件分类中查找。                  
 https://github.com/yaoguangluo/DNA_Chromosome_backup20210705/tree/codingbackup18801/2021         
      
-##### QQ， 微信， 百度等均已同步备份。
-
+##### QQ， 微信， 百度等均已同步备份。          
+            
+##### RNA元基础催化芯片与肽逻辑      
+https://github.com/yaoguangluo/DNA_Chromosome_backup20210705/tree/codingbackup18801/2021/09/07                           
+                                    
 #### 如分词的使用方法如下， 其他使用法类似， 
 --package testInitons;                         
 --import java.util.Iterator;                        
