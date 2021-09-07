@@ -45,7 +45,7 @@ https://github.com/yaoguangluo/DNA_Chromosome_backup20210705/tree/codingbackup18
      
 ##### QQ， 微信， 百度等均已同步备份。          
             
-##### RNA元基础催化芯片与肽逻辑      
+##### RNA 元基芯片 与 肽逻辑      
 https://github.com/yaoguangluo/DNA_Chromosome_backup20210705/tree/codingbackup18801/2021/09/07                           
                                     
 #### 如分词的使用方法如下， 其他使用法类似， 
