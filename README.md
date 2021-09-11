@@ -45,9 +45,12 @@ https://github.com/yaoguangluo/DNA_Chromosome_backup20210705/tree/codingbackup18
      
 ##### QQ， 微信， 百度等均已同步备份。          
             
-##### RNA 元基芯片 与 肽逻辑      
-https://github.com/yaoguangluo/DNA_Chromosome_backup20210705/tree/codingbackup18801/2021/09/07                           
-                                    
+##### RNA 元基芯片 与 肽逻辑           
+https://github.com/yaoguangluo/DNA_Chromosome_backup20210705/tree/codingbackup18801/2021/09/07              
+https://yaoguangluo.coding.net/public/YangLiaoJingHuaRuiJi/YangliaojingHuaruiji/git/files/18880_CMS_YLJHRJ/rna      
+https://bitbucket.org/luoyaoguang/yangliaojing/src/18880_CMS_YLJHRJ/rna/                
+https://gitee.com/DetaChina/DNA_Chromosome_backup20210705/tree/codingbackup18801/2021/09/07              
+                                     
 #### 如分词的使用方法如下， 其他使用法类似， 
 --package testInitons;                         
 --import java.util.Iterator;                        
