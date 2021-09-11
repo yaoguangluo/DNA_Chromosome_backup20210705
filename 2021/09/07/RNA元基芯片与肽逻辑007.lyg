@@ -43,7 +43,11 @@ TDD = T{D + D} = T{FF}
 
 TT = T{V + E}
 TX = T{V + C}
-TH = (HE + HC)/2
+
+TH = T{(HE + HC)/4} = T{(E + C)/2} 
+THE = T{H + E}
+THC = T{H + C}
+
 TII = T{I + I} = T{HH}
 .......
 
