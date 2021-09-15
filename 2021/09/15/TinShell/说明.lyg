@@ -1,0 +1,10 @@
+ 这个TinShell工程文件我准备设计4个面
+ 
+ 1 将已有的 PLORM 数据库 操作进行完善，定义为DBShell。 包名 OSU.shell
+ 2 PLORM的 上层映射到养疗经的 医学表格 与筛选 界面操作 组合 进行shell 表达，定义为SearchShell。包名 OSA.shell
+ 3 将 SearchShell 的养疗经多表操作 进行 多样化表达，定义为AdminShell。 包名 OSM.shell 
+ 4 将 AdminShell  并行,时序与节点 NERO 化， 定义为 ETLShell。包名 OS.etl.shell
+ 
+ 整理整理，准备开搞。
+ 
+ 罗瑶光 
