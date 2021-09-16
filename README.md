@@ -22,12 +22,14 @@ https://gitee.com/DetaChina/YangLiaoJing/tree/18700/lib
 https://yaoguangluo.coding.net/public/YangLiaoJingHuaRuiJi/YangliaojingHuaruiji/git/files/18801YangliaojingCMS/lib                             
 https://bitbucket.org/luoyaoguang/yangliaojing/src/18701/lib/                                  
                                       
-##### 20210828 DNA 元基催化 与 肽计算 第三修订版 0.3.9 数(字/据)生命启蒙 最新备份地址             
-https://github.com/yaoguangluo/DNA_Chromosome_backup20210705/blob/codingbackup18801/2021/202108/28/罗瑶光_DNA元基催化与肽计算_第三修订版_数据生命启蒙V039_009.pdf                      
-https://yaoguangluo.coding.net/public/YangLiaoJingHuaRuiJi/YangliaojingHuaruiji/git/files/18830_Cms_YLJHRJ/doc/罗瑶光_DNA元基催化与肽计算_第三修订版_数据生命启蒙V039_009.pdf           
-https://gitee.com/DetaChina/DNA_Chromosome_backup20210705/blob/codingbackup18801/2021/202108/28/罗瑶光_DNA元基催化与肽计算_第三修订版_数据生命启蒙V039_009.pdf                       
-https://bitbucket.org/luoyaoguang/yangliaojing/src/18830_Cms_YLJHRJ/doc/罗瑶光_DNA元基催化与肽计算_第三修订版_数据生命启蒙V039_009.pdf                           
-                                 
+##### 20210913 DNA 元基催化 与 肽计算 第三修订版 0.3.9 数(字/据)生命启蒙 最新备份地址             
+https://github.com/yaoguangluo/DNA_Chromosome_backup20210705/blob/codingbackup18801/2021/09/07/罗瑶光_DNA元基催化与肽计算_第三修订版V039_010912.pdf                
+                           
+https://yaoguangluo.coding.net/public/YangLiaoJingHuaRuiJi/YangliaojingHuaruiji/git/files/18880_CMS_YLJHRJ/rna/罗瑶光_DNA元基催化与肽计算_第三修订版V039_010912.pdf                                    
+https://gitee.com/DetaChina/DNA_Chromosome_backup20210705/blob/codingbackup18801/2021/09/07/罗瑶光_DNA元基催化与肽计算_第三修订版V039_010912.pdf               
+                                      
+https://bitbucket.org/luoyaoguang/yangliaojing/src/18880_CMS_YLJHRJ/rna/罗瑶光_DNA元基催化与肽计算_第三修订版V039_010912.pdf                                                  
+                                                          
 ##### 20210903 养疗经裁剪分支 启动的 华瑞集元基枝 18830 API 最新备份地址               
 https://yaoguangluo.coding.net/public/YangLiaoJingHuaRuiJi/YangliaojingHuaruiji/git/files/18830_Cms_YLJHRJ/doc/RootChromosome_V18830_2210903.jar                  
 https://bitbucket.org/luoyaoguang/yangliaojing/src/18830_Cms_YLJHRJ/doc/RootChromosome_V18830_2210903.jar                   
