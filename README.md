@@ -51,7 +51,14 @@ https://github.com/yaoguangluo/DNA_Chromosome_backup20210705/tree/codingbackup18
 https://github.com/yaoguangluo/DNA_Chromosome_backup20210705/tree/codingbackup18801/2021/09/07              
 https://yaoguangluo.coding.net/public/YangLiaoJingHuaRuiJi/YangliaojingHuaruiji/git/files/18880_CMS_YLJHRJ/rna      
 https://bitbucket.org/luoyaoguang/yangliaojing/src/18880_CMS_YLJHRJ/rna/                
-https://gitee.com/DetaChina/DNA_Chromosome_backup20210705/tree/codingbackup18801/2021/09/07              
+https://gitee.com/DetaChina/DNA_Chromosome_backup20210705/tree/codingbackup18801/2021/09/07                        
+                         
+##### 女娲计算 PPT                    
+https://github.com/yaoguangluo/DNA_Chromosome_backup20210705/blob/codingbackup18801/2021/09/20/DetaOSSFINAL20210920.pdf                       
+https://gitee.com/DetaChina/DNA_Chromosome_backup20210705/tree/codingbackup18801/2021/09/20/DetaOSSFINAL20210920.pdf                     
+https://yaoguangluo.coding.net/public/YangLiaoJingHuaRuiJi/YangliaojingHuaruiji/git/files/18880_CMS_YLJHRJ/doc/DetaOSSFINAL20210920.pdf                                         
+https://bitbucket.org/luoyaoguang/yangliaojing/src/18880_CMS_YLJHRJ/doc/DetaOSSFINAL20210920.pdf                   
+
                                      
 #### 如分词的使用方法如下， 其他使用法类似， 
 --package testInitons;                         
