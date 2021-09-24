@@ -1,1 +1,11 @@
+1 一步步来， 稍后设计个将 jtable的所有表全部转成 到SearchShellTables 内存映射中。
+2 然后分开设计 SearchShellTables 与 plsql的内存tables， 形成双重沙箱，实现权限分离
+2.1 应用权限分离，
+2.2 状态权限分离，
+2.3 操作权限分离，
+2.4 内存沙箱分离，
+2.5 读写沙箱分离。
+2.6 我的plsql编译机语言 根据这些权限分离 分别进行分类设计，统一VPCS管理。
+2.7 jtable 太上层，我准备设计成VPCS 结构，把jtable的 object[][]标记脱离出来
 
+罗瑶光
