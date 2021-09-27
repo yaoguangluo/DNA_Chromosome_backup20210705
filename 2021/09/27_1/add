@@ -1,0 +1,12 @@
+1 select的 plsql 全部替换成 plsearch了。
+2 稍后开始 demo 测试下。
+3 测试完后就把pmap 和pcache 分开，一个本地缓存， 一个cache缓存，
+
+4 写点文字， 在设计plsql的时候，我把读表做成DMA， map， 如果有读到相同的输入参数map， 就本地一级缓存 成cache。
+4.1 现在 我把plsql的select 分出来一个做plsearch用，那么 dma的map 我就改成本地一级缓存cache，那cache我就改成 服务器一级cache。
+
+方便之后养疗经web shell的并发，先把思维梳理的简单点，仅仅因为有什么而跟进什么，避免编码跳跃。
+
+
+
+罗瑶光
