@@ -68,7 +68,7 @@ public class SearchShellQ_Rows_E {
 		int operationRowIndex= direction.contains("next")? rowEndIndex++: --rowBeginIndex;
 		Map<String, Object> culumnMaps = new HashMap<>();
 		Here:
-			for(int i= operationRowIndex; i< 15; i++) {
+			for(int i= operationRowIndex; i< operationRowIndex+ 15; i++) {
 				Map<String, Object> rowMap = new HashMap<>();
 				if(i>= table.huaRuiJiJtableRows.length) {
 					continue Here;
