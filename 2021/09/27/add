@@ -1,1 +1,9 @@
 
+1 保存下， 把DMA的table去掉了
+2 把sql的全部替换成search 未测试
+3 稍后加筛选的 shell语法
+4 核心的计算逻辑 把之前的plsql db 的 update和 delete incert 先去掉 只拓展select
+
+5 测试后 就在aggregate 里面写 筛选shell 语法
+
+罗瑶光
