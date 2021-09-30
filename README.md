@@ -92,10 +92,10 @@ CMS TOOL
 TVM TOOL      
   
 ##### TinShell语  
-###### TinShell PLSQL语   ddl                                      
+###### TinShell PLSQL语   ddl当前世界的主流数据库 教材 表操作语言，  我找了半天没有找到第一个提出select join limit 关键字的作者。                                    
 ddl JOIN             
 ddl SELECT                  
-ddl CONDITION                
+CONDITION                
 ddl LIMIT                           
   
 ###### TinShell PLORM语
