@@ -80,6 +80,39 @@ https://bitbucket.org/luoyaoguang/yangliaojing/src/18880_CMS_YLJHRJ/doc/DetaOSSF
 --}                                         
                                                     
 
+#### 开始TinShell 版本编写任务如下。
+##### Tin语 
+?????????
+  
+  
+##### TVM元基语法
+PDE TOOL      
+PDN TOOL     
+CMS TOOL      
+TVM TOOL      
+  
+##### TinShell语
+###### TinShell PLSQL语
+JOIN
+SELECT
+CONDITION
+LIMIT  
+  
+###### TinShell PLORM语
+RECOGNIZATION
+HOT BACKUP
+VPCS THREAD
+  
+###### TinShell PLSEARCH语 
+AGGREGATION            
+QUERY          
+FILTER           
 
+###### TinShell PLETL语  
+BATCH              
+FLOW         
+CARITERIA           
+NERO INITON ENCODING REFLECTION             
+  
 ## 作者 罗瑶光             
-## 时间 20210612                
+## 时间 20210612~                
