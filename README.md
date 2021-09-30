@@ -110,7 +110,7 @@ FILTER
 EXAMPLE:            
                
 tableName:中药同源:select;                
-condition:or:功效|contains|清热:功效|contains|解毒;             
+condition:or:功效|contains|清热:功效|contains|解毒;                //or and 思想 来自 迪摩根 结合律
 condition:and:性味|!contains|热:脉络|contains|肺;             
 condition:and:风险规避|fliter|毒:风险规避|fliter|孕;              
 getCulumns:功效:风险规避|as|风险:脉络:性味:中药名称|as|药名;            
