@@ -91,12 +91,12 @@ PDN TOOL
 CMS TOOL      
 TVM TOOL      
   
-##### TinShell语
-###### TinShell PLSQL语
-JOIN
-SELECT
-CONDITION
-LIMIT  
+##### TinShell语  
+###### TinShell PLSQL语   ddl                                      
+ddl JOIN             
+ddl SELECT                  
+ddl CONDITION                
+ddl LIMIT                           
   
 ###### TinShell PLORM语
 RECOGNIZATION
@@ -104,11 +104,22 @@ HOT BACKUP
 VPCS THREAD
   
 ###### TinShell PLSEARCH语 
-AGGREGATION            
-QUERY          
-FILTER           
-
-###### TinShell PLETL语  
+AGGREGATION              
+QUERY           
+FILTER             
+EXAMPLE:            
+               
+tableName:中药同源:select;                
+condition:or:功效|contains|清热:功效|contains|解毒;             
+condition:and:性味|!contains|热:脉络|contains|肺;             
+condition:and:风险规避|fliter|毒:风险规避|fliter|孕;              
+getCulumns:功效:风险规避|as|风险:脉络:性味:中药名称|as|药名;            
+aggregation:风险|color|yellow;           
+aggregation:药名|color|red;            
+aggregation:功效|parser|pos;            
+                   
+                   
+###### TinShell PLETL语     
 BATCH              
 FLOW         
 CARITERIA           
