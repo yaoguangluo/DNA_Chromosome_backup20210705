@@ -1,0 +1,24 @@
+1 将拼音笔画文档init函数从jtable 移出来，
+1.1 函数的文档我是购买了豆丁的康熙字典 然后 仅仅格式化 汉字拼音 出来的。
+2 设计了个简单的
+decrement 从后到前
+increment 从前到后
+排序 sortString命令。
+
+如真实例子
+
+tableName:中药同源:select;
+conditionor功效|contains|清热:功效|contains|解毒;
+conditionand性味|!contains|热:脉络|contains|肺;
+conditionand风险规避|fliter|毒:风险规避|fliter|孕;
+getCulumns:功效:风险规避|as|风险:脉络:性味:中药名称|as|药名;
+aggregation:风险|color|yellow;
+aggregation:药名|color|red;
+aggregation:功效|parser|pos;
+aggregation:0|limit|20;
+aggregation:药名|sortString|increment;
+
+
+很多地方可以优化，很多新的命令可以设计。我先把parser 和sort 命令VPCS 化先
+
+罗瑶光
