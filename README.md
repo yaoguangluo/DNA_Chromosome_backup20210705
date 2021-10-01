@@ -108,17 +108,21 @@ AGGREGATION
 QUERY           
 FILTER             
 EXAMPLE:            
-               
-tableName:中药同源:select;                
-condition:or:功效|contains|清热:功效|contains|解毒;                //or and 思想 来自 迪摩根 结合律                         
-condition:and:性味|!contains|热:脉络|contains|肺;             
+     
+            
+我的Tin语法很简单，主谓宾
+             
+tableName:中药同源:select;             
+condition:or:功效|contains|清热:功效|contains|解毒;      //or and 思想 来自 迪摩根 结合律             
+condition:and:性味|!contains|热:脉络|contains|肺;            
 condition:and:风险规避|fliter|毒:风险规避|fliter|孕;              
-getCulumns:功效:风险规避|as|风险:脉络:性味:中药名称|as|药名;            
-aggregation:风险|color|yellow;           
-aggregation:药名|color|red;            
-aggregation:功效|parser|pos;            
-                   
-                   
+getCulumns:功效:风险规避|as|风险:脉络:性味:中药名称|as|药名;              
+aggregation:风险|color|yellow;              
+aggregation:药名|color|red;               
+aggregation:功效|parser|pos;                
+aggregation:0|limit|20;                       
+aggregation:药名|sortString|increment;                       
+                                                     
 ###### TinShell PLETL语     
 BATCH              
 FLOW         
