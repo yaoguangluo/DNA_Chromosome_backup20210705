@@ -60,9 +60,33 @@ https://gitee.com/DetaChina/DNA_Chromosome_backup20210705/tree/codingbackup18801
 https://yaoguangluo.coding.net/public/YangLiaoJingHuaRuiJi/YangliaojingHuaruiji/git/files/18880_CMS_YLJHRJ/doc/DetaOSSFINAL20210920.pdf                                         
 https://bitbucket.org/luoyaoguang/yangliaojing/src/18880_CMS_YLJHRJ/doc/DetaOSSFINAL20210920.pdf                   
 
-                                     
-#### 如分词的使用方法如下， 其他使用法类似， 
---package testInitons;                         
+          
+#### 如拼音笔画排序的使用方法如下，                           
+见 https://github.com/yaoguangluo/DNA_Chromosome_backup20210705/blob/codingbackup18801/2021/10/03/TinShell/OSM/shell/SortStringDemo.java                   
+--public static void main(String[] argv) {                    
+----initMap();                         
+----TableSorterZYNK tableSorterZYNK= new TableSorterZYNK();                   
+----String[] strings= new String[10];                     
+----strings[0]= "luoy罗瑶光uang";                         
+----strings[1]= "罗瑶光";                         
+----strings[2]= "瑶光";                      
+----strings[3]= "罗瑶";                             
+----strings[4]= "yaoguang";                          
+----strings[5]= "y瑶光g";                           
+----strings[6]= "yaog瑶光ng";                      
+----strings[7]= "y瑶光guang";                           
+----strings[8]= "ya罗瑶光ang";                           
+----strings[9]= "yaoguang";                                  
+----int returnInt= new LYG10DWCMSSort13D_XCDX_C_A_S()                                 
+				.quick4DChineseStringArrayWithSmallInTwoChar3bihuaReturns(strings                               
+						, 0, 9, 30, pinYin, biHua, 7, 70);                                                  
+----for(String string:strings){                           
+--------System.out.println(string);                               
+----}                               
+--}                                                     
+          
+#### 如分词的使用方法如下， 其他使用法类似，                            
+--package testInitons;                                                
 --import java.util.Iterator;                        
 --import java.util.List;                         
 --import ME.APM.VSQ.HRJFrame;                                   
@@ -112,16 +136,16 @@ EXAMPLE:
             
 我的Tin语法很简单，主谓宾
              
-tableName:中药同源:select;             
-condition:or:功效|contains|清热:功效|contains|解毒;      //or and 思想 来自 迪摩根 结合律             
-condition:and:性味|!contains|热:脉络|contains|肺;            
-condition:and:风险规避|fliter|毒:风险规避|fliter|孕;              
-getCulumns:功效:风险规避|as|风险:脉络:性味:中药名称|as|药名;              
-aggregation:风险|color|yellow;              
-aggregation:药名|color|red;               
-aggregation:功效|parser|pos;                
-aggregation:0|limit|20;                       
-aggregation:药名|sortString|increment;                       
+获取表名:中药同源:进行选择;
+条件为:或:功效|包含|清热:功效|包含|解毒;
+条件为:和:性味|不包含|热:脉络|包含|肺;
+条件为:和:风险规避|过滤掉|毒:风险规避|过滤掉|孕;
+获取表列名:功效:风险规避|改名为|风险:脉络:性味:中药名称|改名为|药名;
+操作:风险|颜色标记为|黄色;
+操作:药名|颜色标记为|红色;
+操作:功效|进行分词|词性;
+操作:0|行至|20;
+操作:药名|进行字符排序|从小到大;                  
                                                      
 ###### TinShell PLETL语     
 BATCH              
