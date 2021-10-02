@@ -65,7 +65,7 @@ https://bitbucket.org/luoyaoguang/yangliaojing/src/18880_CMS_YLJHRJ/doc/DetaOSSF
 见 https://github.com/yaoguangluo/DNA_Chromosome_backup20210705/blob/codingbackup18801/2021/10/03/TinShell/OSM/shell/SortStringDemo.java                   
 --public static void main(String[] argv) {                    
 ----initMap();                         
-----TableSorterZYNK tableSorterZYNK= new TableSorterZYNK();                   
+----//TableSorterZYNK tableSorterZYNK= new TableSorterZYNK();  //我以前集成在这文件里，                           
 ----String[] strings= new String[10];                     
 ----strings[0]= "luoy罗瑶光uang";                         
 ----strings[1]= "罗瑶光";                         
