@@ -11,6 +11,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+import AVQ.ASQ.OVQ.OSQ.VSQ.obj.WordFrequency;
+import ESU.list.List_ESU;
+import ESU.sort.Quick9DLYGWithString_ESU;
+import ME.APM.VSQ.HRJFrame;
 import MS.OP.SM.AOP.MEC.SIQ.cache.DetaDBBufferCache_M;
 import OP.SM.AOP.MEC.SIQ.SM.reflection.Cell;
 import OP.SM.AOP.MEC.SIQ.SM.reflection.Row;
@@ -82,6 +86,157 @@ public class P_ConditionPLSearch_XCDX_Map extends P_ConditionPLSearch_XCDX {
 		}
 		//修改下把output的逻辑重复利用 满足conditon的and 和or 
 		//只拿前50行 以后改成分页
+		
+		
+		//稍后把这个函数片段移除这个文件，变成一个函数。
+		if(sets[1].equalsIgnoreCase("精度搜索")) {
+			//table to object
+			//稍后我的养疗经界面搜索release函数的 片段 这里也可以优化如下。
+			String key= sets[2];	
+			if(null== key|| key.equals("")) {
+				return;
+			}
+			String[] score= new String[table.huaRuiJiJtableRows.length];
+			int[] score_code= new int[table.huaRuiJiJtableRows.length];
+			int []reg= new int[table.huaRuiJiJtableRows.length];
+			int count= 0;
+			Map<String, String> pos= HRJFrame.NE._A.getPosCnToCn();
+			Map<String, WordFrequency> mapSearchWithoutSort = null;
+			mapSearchWithoutSort = HRJFrame.NE._A.parserMixStringByReturnFrequencyMap(key);
+			
+			//Iterator<String> iteratorForCopy= copy.iterator();	
+			int copyCount = 0;
+			List<String> list= HRJFrame.NE._A.parserMixedString(key);
+			String[] string= List_ESU.listToArray(list);
+			String[] stringReg= new String[key.length()/3];
+			for(int i= 0; i< stringReg.length; i++) {
+				stringReg[i]= key.substring(i*3, (i*3+ 3)<key.length()?(i*3+ 3):key.length()-1);
+			}
+			Map<String, Row> map= new HashMap<>(); 
+			for(int i= 0; i< table.huaRuiJiJtableRows.length; i++) {			
+			//while(iteratorForCopy.hasNext()) {
+				String temps= table.huaRuiJiJtableRows[i].getCell(sets[0]).getCellValue().toString();
+//				if(null== temps) {
+//					temps= "";
+//				}
+				score[copyCount] = "i"+ i;//因为 不再有map key，所以就通用为map 内容。
+				map.put(score[copyCount], table.huaRuiJiJtableRows[i]);
+				//String iteratorForCopyString= iteratorForCopy.next();
+				//score[copyCount]= iteratorForCopyString;
+				//String temps= dic_map.get(iteratorForCopyString).toString();
+				Iterator<String> iteratorWordFrequency = mapSearchWithoutSort.keySet().iterator();
+				Here:
+					while(iteratorWordFrequency.hasNext()) {  
+						String mapSearchaAtII = iteratorWordFrequency.next();
+						WordFrequency wordFrequencySearch = mapSearchWithoutSort.get(mapSearchaAtII);
+						if(temps.contains(mapSearchaAtII)) {
+							if(reg[copyCount] == 0){
+								count += 1;
+							}
+//							score[copyCount] = temps;//因为 不再有map key，所以就通用为map 内容。，还是需要map
+//							if(score[copyCount].contains(key.replace(" ", ""))) {
+//								reg[copyCount]+= 500;
+//							}
+//							if(key.contains(score[copyCount].replace(" ", ""))) {
+//								reg[copyCount]+= 500;
+//							}
+							if(temps.contains(key.replace(" ", ""))) {
+								reg[copyCount]+= 500;
+							}
+							if(key.contains(temps.replace(" ", ""))) {
+								reg[copyCount]+= 500;
+							}
+							if(!pos.containsKey(mapSearchaAtII)) {
+								reg[copyCount] += 1;
+								score_code[copyCount] += 1 << mapSearchaAtII.length() << wordFrequencySearch.getFrequency() ;
+								continue Here;
+							}
+							if(pos.get(mapSearchaAtII).contains("名")||pos.get(mapSearchaAtII).contains("动")
+									||pos.get(mapSearchaAtII).contains("形")||pos.get(mapSearchaAtII).contains("谓")) {
+								reg[copyCount] += 2;
+							}
+							reg[copyCount] += 1;
+							score_code[copyCount] += (temps.contains(mapSearchaAtII) ? 2 : 1) 
+								* (!pos.get(mapSearchaAtII).contains("名") ? pos.get(mapSearchaAtII).contains("动")? 45 : 1 : 50) 
+									<< mapSearchaAtII.length() * wordFrequencySearch.getFrequency();
+							continue Here;
+						}
+						if(mapSearchaAtII.length()>1) {
+							for(int j=0;j<mapSearchaAtII.length();j++) {
+								if(temps.contains(String.valueOf(mapSearchaAtII.charAt(j)))) {
+									if(reg[copyCount] == 0){
+										count += 1;
+									}
+//									score[copyCount] = temps;
+									score_code[copyCount]+=1;
+									if(pos.containsKey(String.valueOf(mapSearchaAtII.charAt(j)))&&(
+											pos.get(String.valueOf(mapSearchaAtII.charAt(j))).contains("名")
+											||pos.get(String.valueOf(mapSearchaAtII.charAt(j))).contains("动")
+											||pos.get(String.valueOf(mapSearchaAtII.charAt(j))).contains("形")
+											||pos.get(String.valueOf(mapSearchaAtII.charAt(j))).contains("谓")
+											)) {
+										reg[copyCount] += 2;
+									}
+									reg[copyCount] += 1;
+									continue Here;
+								}
+							}
+						}
+					}
+				score_code[copyCount] = score_code[copyCount] * reg[copyCount];
+				//词距
+				int code= 100;
+				int tempb= 0;
+				int tempa= score_code[copyCount];		
+				if(key.length()> 4) {
+					//全词
+					for(int j= 0; j< string.length; j++) {
+						if(temps.contains(string[j])) {
+							tempb+= code;
+						}
+					}
+					//断句
+					for(int j= 0; j< stringReg.length; j++) {
+						if(temps.contains(stringReg[j])) {
+							tempb+= code;
+						}
+					}
+					score_code[copyCount] = (int) (tempa/Math.pow(HRJFrame.NE.lookrot+ 1, 4) + tempb*Math.pow(Integer.valueOf(sets[3]), 2));
+				}
+				if(key.replace(" ", "").length()> 1&& key.replace(" ", "").length()< 5) {
+					if(temps.contains(key.replace(" ", ""))) {
+						tempb+= code<< 7;
+					}
+					score_code[copyCount] = (int) (tempa/Math.pow(Integer.valueOf(sets[3])+ 1, 4) + tempb*Math.pow(Integer.valueOf(sets[3]), 2));
+				}
+				copyCount++;
+			}
+			LABEL2:
+				new Quick9DLYGWithString_ESU().sort(score_code, score);
+			int max = score_code[0];
+			Object[][] tableData= new Object[count][18];
+			int new_count= 0;
+			
+//			newTableModel.getDataVector().clear();
+//			if(null== key|| key.equals("")) {
+//				return;
+//			}
+			//recordRows 没有 值
+			//recordRows 有 值
+			Here:
+				for(int i= score.length- 1; i> 0; i--) {
+					if(score_code[i]< 1){
+						continue Here;
+					}
+					outputTemp.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(map.get(score[i])));
+				}	
+			output.clear();
+			output.addAll(outputTemp);
+			return;
+		}
+		
+		
+		
 		int max= 50;
 		//获取table的row
 		Here:
