@@ -12,6 +12,7 @@ import java.util.Map;
 import ME.APM.VSQ.HRJFrame;
 import MSV.OSQ.sets.DetaDouble;
 import OEU.LYG4DQS4D.LYG10DWCMSSort13D_XCDX_C_A_S;
+import OEU.LYG4DQS4D.LYG9DWithDoubleTopSort4D;
 import OEU.LYG4DQS4D.Quick_7D_luoyaoguang_Sort;
 import OSI.AOP.PCS.PP.port_E.RestNLPPortImpl;
 import PEQ.AMV.ECS.test.ANNTest;
@@ -21,7 +22,7 @@ import PEU.P.table.TableSorterZYNK;
 @SuppressWarnings({"unused"})
 //稍后将DMA文件与内存操作替换成 jtable表内存操作 罗瑶光
 public class P_AggregationPLSearch {
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked" })
 	public static void P_AggregationLimitMap(String[] sets
 			, List<Map<String, Object>> output) throws InstantiationException, IllegalAccessException, IOException {
 		List<Map<String, Object>> outputTemp = new ArrayList<>();
@@ -69,6 +70,53 @@ public class P_AggregationPLSearch {
 			}else if(sets[2].equalsIgnoreCase("从大到小")) {
 				for(int i= 0; i< strings.length; i++) {
 					outputTemp.add(maps.get(strings[strings.length- i- 1]));
+				}
+			}
+			output.clear();
+			output.addAll(outputTemp);
+			return;
+		}
+		
+		if(sets[1].equalsIgnoreCase("进行数字排序")) {
+			//outputTemp 是一个 arraylist，已经具备了 排序的 模子。
+			//这里通常会有数字和字符串2种模式，
+			//于是设计sortNumber， sortString两个语法先
+			//outputTemp
+			//先把之前的文字拼音笔画排序接口拿过来，
+			//然后面向该接口进行封装适应这里的功能。
+			//看怎么改
+			outputTemp.addAll(output);
+			//1 list 存map
+			Map<String, Map<String, Object>> maps= new HashMap<>();  
+			Iterator<Map<String, Object>> iterators= outputTemp.iterator();
+			double[] doubles= new double[outputTemp.size()];
+			int index= 0;
+			while(iterators.hasNext()) {
+				Map<String, Object> map= iterators.next();
+				Map<String, Object> rowValue= (Map<String, Object>)map.get("rowValue");
+				Map<String, Object> culumnValue= (Map<String, Object>)rowValue.get(sets[0]);
+				maps.put(culumnValue.get("culumnValue").toString(), map);	
+				doubles[index++]= Double.valueOf(culumnValue.get("culumnValue").toString());
+			}
+
+			//2 list 去map名
+			//3 sort map名
+//			SortStringDemo.initMap();	
+//			int returnInt= new LYG10DWCMSSort13D_XCDX_C_A_S()
+//					.quick4DChineseStringArrayWithSmallInTwoChar3bihuaReturns(strings
+//							, 0, strings.length- 1, 80, SortStringDemo.pinYin
+//							, SortStringDemo.biHua, 7, 70);
+			
+			new LYG9DWithDoubleTopSort4D().sort(doubles, 7, 70);
+			//4 输出
+			outputTemp.clear();
+			if(sets[2].equalsIgnoreCase("从小到大")) {
+				for(int i= 0; i< doubles.length; i++) {
+					outputTemp.add(maps.get(""+ (int)doubles[i]));
+				}
+			}else if(sets[2].equalsIgnoreCase("从大到小")) {
+				for(int i= 0; i< doubles.length; i++) {
+					outputTemp.add(maps.get(""+ (int)doubles[doubles.length- i- 1]));
 				}
 			}
 			output.clear();
@@ -141,7 +189,7 @@ public class P_AggregationPLSearch {
 				int rowid = count++;
 				Map<String, Object> row = iterator.next();
 				Map<String, Object> rowMap = new HashMap<>();
-				if(sets[2].equalsIgnoreCase("词性")) {
+				if(sets[2].equalsIgnoreCase("词性显色")) {
 					Map<String, Object> map= (Map<String, Object>)row.get("rowValue");
 					Map<String, Object> mapCulumn= (Map<String, Object>)map.get(sets[0]);
 					String rowCellFromString= mapCulumn.get("culumnValue").toString();
@@ -169,6 +217,33 @@ public class P_AggregationPLSearch {
 					row.put("rowValue", map);
 					outputTemp.add(row);
 				}
+				
+				if(sets[2].equalsIgnoreCase("词性标注")) {
+					Map<String, Object> map= (Map<String, Object>)row.get("rowValue");
+					Map<String, Object> mapCulumn= (Map<String, Object>)map.get(sets[0]);
+					String rowCellFromString= mapCulumn.get("culumnValue").toString();
+					List<String> list= HRJFrame.NE._A.parserMixedString(rowCellFromString);
+					Map<String, String> nlp= HRJFrame.NE._A.getPosCnToCn();
+					Iterator<String> iterators= list.iterator();
+					rowCellFromString= "";
+					rowCellFromString+= "<div style=\"background:white\">";
+					while(iterators.hasNext()) {
+						String string= iterators.next();
+						if(nlp.containsKey(string)) {
+							rowCellFromString+= string+ "("+ nlp.get(string)+ ") ";
+						}
+					}
+					rowCellFromString+= "</div>";
+					//rowCellFromString= "<div style=\"background:white\"><font color=\""+ sets[2] +"\">"
+					//+ rowCellFromString+ "</font></div>";
+					//更新
+					outputTemp.remove(row);
+					mapCulumn.put("culumnValue", rowCellFromString);
+					map.put(sets[0], mapCulumn);
+					row.put("rowValue", map);
+					outputTemp.add(row);
+				}
+				
 				//之后我会把dataCG函数进行重新封装，去重。
 				if(sets[2].equalsIgnoreCase("DNN")) {
 					Map<String, Object> map= (Map<String, Object>)row.get("rowValue");
