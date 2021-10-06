@@ -1,0 +1,1 @@
+1 可打包成etl 节点，也可以在osgi的register函数里面 注册。
