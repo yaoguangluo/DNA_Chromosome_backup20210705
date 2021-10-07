@@ -5,10 +5,13 @@ import java.util.concurrent.ConcurrentHashMap;
 import OSA.shell.PL_XA_E;
 //稍后将DMA文件与内存操作替换成 jtable表内存操作 罗瑶光
 public class E_PLSearch_E {
-	public static Map<String, Object> E_PLSearch(String plSearch, boolean mod) throws Exception{
+	public static Map<String, Object> E_PLSearch(String plSearch, boolean mod, Map<String, Object> output) throws Exception{
 		//working for here
-		Map<String, Object> output = new ConcurrentHashMap<>();
+		//Map<String, Object> output = new ConcurrentHashMap<>();
 		//1make container
+		if(null== output) {
+			output = new ConcurrentHashMap<>();
+		}
 		output.put("start", "0");
 		output.put("countJoins", "0");
 		//2make line
@@ -63,7 +66,7 @@ public class E_PLSearch_E {
 		return output;
 	}
 
-	public static Map<String, Object> E_PLSearch(PL_XA_E orm, boolean b) throws Exception {
-		return E_PLSearch(orm.getPLSearch(), true);
+	public static Map<String, Object> E_PLSearch(PL_XA_E orm, boolean b, Map<String, Object> output) throws Exception {
+		return E_PLSearch(orm.getPLSearch(), true, output);
 	}
 }

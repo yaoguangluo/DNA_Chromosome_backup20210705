@@ -1,5 +1,6 @@
 package OSA.shell;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import javax.swing.table.DefaultTableModel;
 
@@ -210,7 +211,7 @@ public class PL_XA_E implements PL_XA_C{
 
 	@Override
 	public PL_XA_C finalE(boolean b) throws Exception {
-		map= E_PLSearch_E.E_PLSearch(this, true);
+		map= E_PLSearch_E.E_PLSearch(this, true, new ConcurrentHashMap<>());
 		//这里需要 把数据库的 编译机器也重设计成执行内存操作的模式。
 		return this;
 	}
