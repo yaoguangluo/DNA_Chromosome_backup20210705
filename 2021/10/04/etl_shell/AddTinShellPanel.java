@@ -32,9 +32,9 @@ public class AddTinShellPanel extends OSU_AVQ_ASQ_AOI_AOD_AOU_AOQ_VES{
 		panel.setLayout(null);
 		panel.setBackground(Color.white);
 		
-		ShellJPanel ShellJPanel= new ShellJPanel(HRJFrame.NE);
-		
-		scrollPane.add(ShellJPanel);
+//		ShellJPanel ShellJPanel= new ShellJPanel(HRJFrame.NE);
+//		
+//		scrollPane.add(ShellJPanel);
 		close=false;
 	}
 	public void config(){
