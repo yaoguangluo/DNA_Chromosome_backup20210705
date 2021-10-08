@@ -3,13 +3,14 @@ import java.awt.Panel;
 
 import java.awt.ScrollPane;
 import java.awt.image.BufferedImage;
-import java.util.HashMap;
+//import java.util.HashMap;
 import java.util.Map;
 
 import javax.sound.sampled.AudioInputStream;
 import javax.swing.JFrame;
 import javax.swing.JTable;
 
+import OSI.OSU.SI.ASQ.OSD.AVI.AEI.ACI.ASI.OVI.OEI.OCI.OSI.PVI.PEI.PCI.PSI.tinShell.TinMap;
 import PEU.P.movie.LYGFileIO;
 
 public class OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ extends JFrame implements Cloneable{
@@ -27,7 +28,7 @@ public class OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ extends JFrame implements Cloneable
 	public AudioInputStream aiscurout;
 	public LYGFileIO lygout;
 	public BufferedImage imageout;
-	public HashMap<String, Object> outputOut;//准备做文章流计算的内存 罗瑶光20211008
+	public TinMap outputOut;//准备做文章流计算的内存 罗瑶光20211008
 	public OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ() {
 	}
 	public void view() throws Exception{

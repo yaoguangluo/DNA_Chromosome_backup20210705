@@ -64,7 +64,7 @@ public class OSU_AVQ_ASQ_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI implements Cloneable{
 	}
 	
 	public void OPE_E(JTextPane rightBotJTextPane) throws FileNotFoundException
-	, IOException, UnsupportedAudioFileException, InterruptedException{
+	, IOException, UnsupportedAudioFileException, InterruptedException, CloneNotSupportedException{
 	}
 	
 	public void AVQ_ASQ_OVQ_OSQ_VSQ(JTextPane rightBotJTextPane) throws Exception{
