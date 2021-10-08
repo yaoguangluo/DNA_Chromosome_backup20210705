@@ -1,14 +1,17 @@
 package ME.APM.VSQ.OPE.config;
 import java.awt.Color;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.util.HashMap;
+//import java.beans.Beans;
+//import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import javax.swing.JCheckBox;
 import javax.swing.JPanel;
@@ -18,6 +21,8 @@ import javax.swing.JTextPane;
 import ME.APM.VSQ.App;
 import ME.APM.VSQ.HRJFrame;
 import OSA.shell.SearchShellTables;
+import OSI.OSU.SI.ASQ.OSD.AVI.AEI.ACI.ASI.OVI.OEI.OCI.OSI.PVI.PEI.PCI.PSI.tinShell.AddTinShellView;
+import OSI.OSU.SI.ASQ.OSD.AVI.AEI.ACI.ASI.OVI.OEI.OCI.OSI.PVI.PEI.PCI.PSI.tinShell.TinMap;
 import OSM.shell.E_PLSearch_E;
 public class ShellJPanel extends JPanel implements MouseListener, KeyListener, ActionListener{
 	/**
@@ -38,7 +43,7 @@ public class ShellJPanel extends JPanel implements MouseListener, KeyListener, A
 	private App appInThisClass;
 	@SuppressWarnings("unused")
 	private JCheckBox jlabel_peizhi_di2515;
-	public ShellJPanel(App app, HashMap<String, Object> outputOut){
+	public ShellJPanel(App app, AddTinShellView sQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ, TinMap topOutput){
 		appInThisClass= app;
 		jlabel_box= new JCheckBox[30];
 		this.setLayout(null);
@@ -65,6 +70,32 @@ public class ShellJPanel extends JPanel implements MouseListener, KeyListener, A
 			public void actionPerformed(ActionEvent e) {
 				//				tabNamesHook[0]= true;
 				//				isConfig= false;
+				//清空的时候避免output 重叠计算
+				//sQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.outputOut.remove("TinShellETL");
+				//if(null!= topOutput) {
+				try {
+					if(null!= topOutput) {
+						sQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.outputOut= topOutput.clone();
+					}
+				} catch (CloneNotSupportedException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				//	}
+				//				if(null!= topOutput) {
+				//					Iterator<String> iterator= topOutput.keySet().iterator(); 
+				//					while(iterator.hasNext()) {
+				//						String string= iterator.next();
+				//						ConcurrentHashMap<String, Object> newMap= new ConcurrentHashMap<>();
+				//						ConcurrentHashMap<String, Object> map= (ConcurrentHashMap<String, Object>)topOutput.get(string);
+				//						Iterator<String> iterators= map.keySet().iterator(); 
+				//						while(iterators.hasNext()) {
+				//							String strings= iterators.next();
+				//							newMap.put(strings, map.get(strings));
+				//						}
+				//						outputOut.put(string, newMap);
+				//					}
+				//				}
 				outputjTextPane.setText("\"正在使用 养疗经 1.8.8.8.0 Tin Shell系统(8.8.8.0) . . .\"");
 				outputjTextPane.updateUI();
 				//				app.jTabbedpane.validate();
@@ -122,12 +153,14 @@ public class ShellJPanel extends JPanel implements MouseListener, KeyListener, A
 					//
 					//执行shell
 					String plSearch= jTextPane.getText();
-					try {
-
+					try {                                                                 
+						if(!sQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.outputOut.containsKey("TinShellETL")) {
+							sQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.outputOut.put("TinShellETL", new ConcurrentHashMap<String, Object>());
+						}
 						output= E_PLSearch_E.E_PLSearch(plSearch.replace("\r\n", "")
-								, false, (Map<String, Object>)outputOut.get("TinShellETL"));
+								, false, (Map<String, Object>)sQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.outputOut.get("TinShellETL"));
 						//更新
-						outputOut.put("TinShellETL", output);
+						sQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.outputOut.put("TinShellETL", output);
 					} catch (Exception e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
