@@ -11,9 +11,9 @@ import javax.swing.JFrame;
 import ME.APM.VSQ.HRJFrame;
 import ME.APM.VSQ.OPE.config.ShellJPanel;
 import OSI.OPE.OEQ.MCQ.OVU.PQE.osgi.*;
-
+//midshell downshell, PLETL的时代开始了。稍后增加pletl的mid down 计算命令集合。
 public class AddTinShellRun extends OSU_AVQ_ASQ_OPE_OPC_ECI{
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID= 1L;
 	public int value= 0;
 	public String filepath;
 	public AddTinShellRun() throws IOException{	
@@ -28,8 +28,14 @@ public class AddTinShellRun extends OSU_AVQ_ASQ_OPE_OPC_ECI{
 		//	 SQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.outputOut= new HashMap<String, Object>();
 		//}
 		SQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.outputOut= new TinMap();
-		if(null!= this.topOutput) {
+		if(null!= this.topOutput) {//我先设置成top为mainshell mid和down为附加shell，这样就可以设计 附加shell的命令了。
 			SQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.outputOut= this.topOutput.clone();
+		}
+		if(null!= this.midOutput) {
+			SQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.outputOut.put("midShell", this.midOutput.clone());
+		}
+		if(null!= this.downOutput) {
+			SQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.outputOut.put("downShell", this.downOutput.clone());
 		}
 //		if(null!= this.topOutput) {
 //			Iterator<String> iterator= this.topOutput.keySet().iterator(); 
