@@ -51,7 +51,7 @@ public class AppConfig extends ScrollPane implements MouseListener, KeyListener,
 		jTabbedpane.setMnemonicAt(1, KeyEvent.VK_1); 
 		
 		Container pLShellJPanelContainer= new Container();
-		pLShellJPanel= new ShellJPanel(app, new AddTinShellView(), new TinMap());
+		pLShellJPanel= new ShellJPanel(app, new AddTinShellView(), new TinMap(), new TinMap(), new TinMap());
 		pLShellJPanel.setLayout(null);
 		pLShellJPanel.setBounds(0, 0, 800, 750);
 		pLShellJPanelContainer.add(pLShellJPanel);

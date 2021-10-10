@@ -43,7 +43,8 @@ public class ShellJPanel extends JPanel implements MouseListener, KeyListener, A
 	private App appInThisClass;
 	@SuppressWarnings("unused")
 	private JCheckBox jlabel_peizhi_di2515;
-	public ShellJPanel(App app, AddTinShellView sQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ, TinMap topOutput){
+	public ShellJPanel(App app, AddTinShellView sQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ
+			, TinMap topOutput, TinMap midOutput, TinMap downOutput){
 		appInThisClass= app;
 		jlabel_box= new JCheckBox[30];
 		this.setLayout(null);
@@ -67,15 +68,35 @@ public class ShellJPanel extends JPanel implements MouseListener, KeyListener, A
 		MVQ.button.DetaButton jlabel_button_clear= new MVQ.button.DetaButton("清空输出");
 		jlabel_button_clear.setBounds(10+1*(100+30), 20, 100, 30);
 		jlabel_button_clear.addActionListener(new ActionListener() {
+			@SuppressWarnings("unchecked")
 			public void actionPerformed(ActionEvent e) {
-				//				tabNamesHook[0]= true;
-				//				isConfig= false;
+				//  tabNamesHook[0]= true;
+				//  isConfig= false;
 				//清空的时候避免output 重叠计算
 				//sQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.outputOut.remove("TinShellETL");
 				//if(null!= topOutput) {
+				
+				//  将原来的
+				//outputout
+				//tinsheletl midshell  downshell
+			    //	结构改为
+				//outputout
+				//tinsheletl
+				//midshell  downshell
+				
 				try {
 					if(null!= topOutput) {
 						sQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.outputOut= topOutput.clone();
+					}
+					Map<String, Object> map= (Map<String, Object>)sQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.outputOut.get("TinShellETL");
+					if(null!= midOutput&& null!= map) {
+						map.put("midShell", midOutput.clone());
+					}
+					if(null!= downOutput&& null!= map) {
+						map.put("downShell", downOutput.clone());
+					}
+					if(null!= map) {
+						sQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.outputOut.put("TinShellETL", map);
 					}
 				} catch (CloneNotSupportedException e1) {
 					// TODO Auto-generated catch block
@@ -159,6 +180,7 @@ public class ShellJPanel extends JPanel implements MouseListener, KeyListener, A
 						}
 						output= E_PLSearch_E.E_PLSearch(plSearch.replace("\r\n", "")
 								, false, (Map<String, Object>)sQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.outputOut.get("TinShellETL"));
+						//开始涉及PLETL，于是 上中下都要，就把outputOut 完整代入VPCS函数。
 						//更新
 						sQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.outputOut.put("TinShellETL", output);
 					} catch (Exception e1) {

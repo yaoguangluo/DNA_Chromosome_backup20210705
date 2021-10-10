@@ -7,6 +7,8 @@ public class OSGI_chansfer {
 		first= Sort.sort(first);
 		LinkNode linkNode= new LinkNode();
 		linkNode= first;
+		//节点只有上中下3个input，于是优化成 max=3；
+		int max= 0;
 		while(null!= linkNode){
 			if(node.tBeconnect
 					//&&node.tBeconnectID== linkNode.ID
@@ -18,11 +20,12 @@ public class OSGI_chansfer {
 				= linkNode.thisFace.SQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.gout;
 				node.thisFace.SQ_OSU_MSQ_OSU_AVQ_ASQ_OPE_OPC_ECI.topOutput 
 				= linkNode.thisFace.SQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.outputOut;
-				return;
+				//return; // 涉及多个节点测试
+				max++ ;
 			}
 			if(node.mBeconnect
 					//&&node.mBeconnectID== linkNode.ID
-					&&node.mBeconnetName.equals(linkNode.name)
+					&& node.mBeconnetName.equals(linkNode.name)
 					&& (node.mBeconnectPrimaryKey.equalsIgnoreCase(linkNode.primaryKey))){
 				node.thisFace.SQ_OSU_MSQ_OSU_AVQ_ASQ_OPE_OPC_ECI.midtablein 
 				= linkNode.thisFace.SQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.tableout;
@@ -30,11 +33,12 @@ public class OSGI_chansfer {
 				= linkNode.thisFace.SQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.gout;
 				node.thisFace.SQ_OSU_MSQ_OSU_AVQ_ASQ_OPE_OPC_ECI.midOutput 
 				= linkNode.thisFace.SQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.outputOut;
-				return;
+				//return;
+				max++ ;
 			}	
 			if(node.dBeconnect
 					//&&node.dBeconnectID== linkNode.ID
-					&&node.dBeconnetName.equals(linkNode.name)
+					&& node.dBeconnetName.equals(linkNode.name)
 					&& (node.dBeconnectPrimaryKey.equalsIgnoreCase(linkNode.primaryKey))){
 				node.thisFace.SQ_OSU_MSQ_OSU_AVQ_ASQ_OPE_OPC_ECI.downtablein 
 				= linkNode.thisFace.SQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.tableout;
@@ -42,9 +46,10 @@ public class OSGI_chansfer {
 				= linkNode.thisFace.SQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.gout;
 				node.thisFace.SQ_OSU_MSQ_OSU_AVQ_ASQ_OPE_OPC_ECI.downOutput 
 				= linkNode.thisFace.SQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.outputOut;
-				return;
+				//return;
+				max++ ;
 			}	
-			if(null== linkNode.next){
+			if(null== linkNode.next|| 3== max){//以后节点类型多了就重新设计。20211011 罗瑶光
 				break;
 			}
 			linkNode=linkNode.next;
