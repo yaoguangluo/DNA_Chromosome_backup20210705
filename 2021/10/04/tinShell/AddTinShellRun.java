@@ -5,6 +5,7 @@ import java.io.IOException;
 //import java.util.HashMap;
 //import java.util.Iterator;
 //import java.util.concurrent.ConcurrentHashMap;
+import java.util.Map;
 
 import javax.swing.JFrame;
 
@@ -21,6 +22,7 @@ public class AddTinShellRun extends OSU_AVQ_ASQ_OPE_OPC_ECI{
 	}
 	//把SQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.outputOut的地址位剥离出来，避免计算重叠，
 	//罗瑶光20211009
+	@SuppressWarnings("unchecked")
 	public void run(final AddTinShellView SQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ) throws IOException, CloneNotSupportedException{
 		SQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.tableout= this.toptablein; 	 
 		//SQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.outputOut= this.topOutput; 
@@ -28,15 +30,31 @@ public class AddTinShellRun extends OSU_AVQ_ASQ_OPE_OPC_ECI{
 		//	 SQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.outputOut= new HashMap<String, Object>();
 		//}
 		SQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.outputOut= new TinMap();
-		if(null!= this.topOutput) {//我先设置成top为mainshell mid和down为附加shell，这样就可以设计 附加shell的命令了。
-			SQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.outputOut= this.topOutput.clone();
+//		if(null!= this.topOutput) {//我先设置成top为mainshell mid和down为附加shell，这样就可以设计 附加shell的命令了。
+//			SQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.outputOut= this.topOutput.clone();
+//		}
+//		if(null!= this.midOutput) {
+//			SQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.outputOut.put("midShell", this.midOutput.clone());
+//		}
+//		if(null!= this.downOutput) {
+//			SQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.outputOut.put("downShell", this.downOutput.clone());
+//		}
+		
+		
+		if(null!= topOutput) {
+			SQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.outputOut= topOutput.clone();
 		}
-		if(null!= this.midOutput) {
-			SQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.outputOut.put("midShell", this.midOutput.clone());
+		Map<String, Object> map= (Map<String, Object>)SQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.outputOut.get("TinShellETL");
+		if(null!= midOutput&& null!= map) {
+			map.put("midShell", midOutput.clone());
 		}
-		if(null!= this.downOutput) {
-			SQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.outputOut.put("downShell", this.downOutput.clone());
+		if(null!= downOutput&& null!= map) {
+			map.put("downShell", downOutput.clone());
 		}
+		if(null!= map) {
+			SQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.outputOut.put("TinShellETL", map);
+		}
+		
 //		if(null!= this.topOutput) {
 //			Iterator<String> iterator= this.topOutput.keySet().iterator(); 
 //			while(iterator.hasNext()) {
@@ -55,7 +73,7 @@ public class AddTinShellRun extends OSU_AVQ_ASQ_OPE_OPC_ECI{
 		JFrame jframe= new JFrame();
 		//把SQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.outputOut的地址位剥离出来，避免计算重叠，
 		ShellJPanel ShellJPanel= new ShellJPanel(HRJFrame.NE, SQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ
-				, null== this.topOutput? new TinMap(): this.topOutput);
+				, null== this.topOutput? new TinMap(): this.topOutput, this.midOutput, this.downOutput);
 		//之前统一节点界面是300*300，因为这个改成800*750，不太好就干脆分开来
 		ScrollPane scrollPane= new ScrollPane();
 		scrollPane.setSize(810, 760);

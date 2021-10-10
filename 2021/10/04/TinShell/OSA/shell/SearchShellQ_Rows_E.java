@@ -15,6 +15,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import OP.SM.AOP.MEC.SIQ.SM.reflection.Row;
+import OSM.shell.P_AggregationPLETL;
 import OSM.shell.P_AggregationPLSearch;
 import OSM.shell.P_ConditionPLSearch_XCDX_Cache;
 import OSM.shell.P_ConditionPLSearch_XCDX_Map;
@@ -111,94 +112,6 @@ public class SearchShellQ_Rows_E {
 		}
 		output.put("spec", spec);
 		return output;
-
-		//total pages  懒得管了，		
-		//		Map<String, Object> output = new HashMap<>();
-		//		int totalPages = 0;
-		//		output.put("tablePath", tablePath);
-		//		int rowBeginIndex = Integer.valueOf(pageBegin);
-		//		int rowEndIndex = Integer.valueOf(pageEnd);
-		//		String objectType = "";
-		//		List<Object> rowMapList = new ArrayList<>();
-		//		File fileDBTable = new File(tablePath);
-		//		if (fileDBTable.isDirectory()) {
-		//			String DBTableRowsPath = tablePath + "/rows";	
-		//			File fileDBTableRowsPath = new File(DBTableRowsPath);
-		//			if (fileDBTableRowsPath.isDirectory()) {
-		//				File[] files = fileDBTableRowsPath.listFiles();
-		//				totalPages = files.length;
-		//				int i = 0;
-		//				int index = 0;
-		//				Here:
-		//					while(i<15) {
-		//						String DBTableRowIndexPath = DBTableRowsPath + "/row" + (direction.contains("next")? rowEndIndex++: --rowBeginIndex);	
-		//						File readDBTableRowIndexFile = new File(DBTableRowIndexPath);
-		//						if (!readDBTableRowIndexFile.exists()) {
-		//							break;
-		//						}
-		//						File deleteTest = new File(DBTableRowIndexPath + "/is_delete_1");
-		//						if (deleteTest.exists()) {
-		//							continue Here;
-		//						}
-		//						i++;
-		//						Map<String, Object> rowMap = new HashMap<>();
-		//						String[] readDBTableRowCulumnsIndexFile = readDBTableRowIndexFile.list();
-		//						Map<String, Object> culumnMaps = new HashMap<>();
-		//						NextFile:
-		//							for(String readDBTableRowCulumnIndexFile: readDBTableRowCulumnsIndexFile) {
-		//								if(readDBTableRowCulumnIndexFile.contains("is_delete")) {
-		//									continue NextFile;
-		//								}
-		//								Map<String, Object> culumnMap = new HashMap<>();
-		//								String DBTableRowIndexCulumnPath = DBTableRowIndexPath + "/" + readDBTableRowCulumnIndexFile;	
-		//								File readDBTableRowIndexCulumnFile = new File(DBTableRowIndexCulumnPath);
-		//								if (readDBTableRowIndexCulumnFile.exists()) {
-		//									String temp = "";
-		//									FileInputStream fis = new FileInputStream(new File(DBTableRowIndexCulumnPath + "/value.lyg"));
-		//									BufferedInputStream bis = new BufferedInputStream(fis);
-		//									byte[] buffer = new byte[1024];
-		//									int cnt;
-		//									while((cnt = bis.read(buffer)) != -1) {
-		//										temp += new String(buffer, 0, cnt);
-		//									}
-		//									fis.close();
-		//									bis.close(); 
-		//									culumnMap.put("culumnName", readDBTableRowCulumnIndexFile);
-		//									culumnMap.put("culumnValue", temp);
-		//									culumnMaps.put(readDBTableRowCulumnIndexFile, culumnMap);
-		//								}
-		//							} 
-		//						rowMap.put("rowValue", culumnMaps);
-		//						if(direction.contains("next")) {
-		//							rowMap.put("rowIndex", rowEndIndex-1);
-		//							rowMapList.add(rowMap);
-		//						}else {
-		//							rowMap.put("rowIndex", rowBeginIndex);
-		//							rowMapList.add(0, rowMap);
-		//						}
-		//					}
-		//			}
-		//		}
-		//		if(direction.contains("next")) {
-		//			output.put("pageBegin", Integer.valueOf(pageEnd));
-		//			output.put("pageEnd", rowEndIndex);
-		//			output.put("totalPages", totalPages);
-		//		}else {
-		//			output.put("pageBegin", rowBeginIndex);
-		//			output.put("pageEnd", Integer.valueOf(pageBegin));
-		//			output.put("totalPages", totalPages);
-		//		}
-		//		output.put("obj", rowMapList);
-		//		List<Object> spec= new ArrayList<>();
-		//		Map<String, Object> row = (Map<String, Object>) rowMapList.get(0);
-		//		Map<String, Object> culumns = (Map<String, Object>) row.get("rowValue");
-		//
-		//		Iterator<String> it=culumns.keySet().iterator();
-		//		while(it.hasNext()) {
-		//			spec.add(((Map<String, Object>)culumns.get(it.next())).get("culumnName").toString());
-		//		}
-		//		output.put("spec", spec);
-		//		return output;
 	}
 
 
@@ -253,7 +166,8 @@ public class SearchShellQ_Rows_E {
 
 	//20210927 注释下 稍后替换
 	//先设计成 plsearch 语法和 plsql 语法通用， 方便我之后的plorm 统一一种方式扩展 pladmin
-	public static List<Map<String, Object>> selectRowsByAttributesOfAggregation(Map<String, Object> object) throws InstantiationException, IllegalAccessException, IOException {
+	public static List<Map<String, Object>> selectRowsByAttributesOfAggregation(Map<String, Object> object) 
+			throws InstantiationException, IllegalAccessException, IOException {
 		if(!object.containsKey("obj")) {
 			return new ArrayList<>();
 		}
@@ -282,14 +196,42 @@ public class SearchShellQ_Rows_E {
 		if(!object.containsKey("obj")) {
 			return new ArrayList<>();
 		}
-		List<Map<String, Object>> obj = ((List<Map<String, Object>>)(object.get("obj")));
-		List<String[]> getCulumnsValues = (List<String[]>) object.get("获取表列名");
-		Iterator<String[]> iterator = getCulumnsValues.iterator();
+		List<Map<String, Object>> obj= ((List<Map<String, Object>>)(object.get("obj")));
+		List<String[]> getCulumnsValues= (List<String[]>) object.get("获取表列名");
+		Iterator<String[]> iterator= getCulumnsValues.iterator();
 		while(iterator.hasNext()) {
-			boolean overMap = obj.size() == 0? false: true;
-			String[] getCulumnsValueArray = iterator.next();
+			boolean overMap= obj.size()== 0? false: true;
+			String[] getCulumnsValueArray= iterator.next();
 			if(overMap) {
 				P_GetCulumnsPLSearch.P_GetCulumnsMap(obj, getCulumnsValueArray);
+			}
+		}
+		return obj;
+	}
+
+	//PLETL命令一多，之后准备分出去
+	//罗瑶光 20211010
+	public static Object selectRowsByAttributesOfPLETL(Map<String, Object> object)
+			throws InstantiationException, IllegalAccessException, IOException {
+		if(!object.containsKey("obj")) {
+			return new ArrayList<>();
+		}
+		List<Map<String, Object>> obj = ((List<Map<String, Object>>)(object.get("obj")));
+		List<String[]> aggregationValues = (List<String[]>) object.get("PLETL");
+		Iterator<String[]> iterator = aggregationValues.iterator();
+		while(iterator.hasNext()) {
+			boolean overMap = obj.size() == 0? false: true;
+			String[] aggregationValueArray = iterator.next();
+			String type = aggregationValueArray[1];
+			boolean limitMap = type.equalsIgnoreCase("行至")?true:false;
+			boolean otherMap = type.equalsIgnoreCase("")?true:false;
+			for(int i = 1; i < aggregationValueArray.length; i++) {
+				String[] sets = aggregationValueArray[i].split("\\|");
+				if(limitMap|| !otherMap ) {
+					P_AggregationPLETL.P_PletlLimitMap(sets, obj, object);
+				}
+				//基于sort key 前序treeMap 之后排序功能设计
+				//基于sort key 后序treeMap
 			}
 		}
 		return obj;

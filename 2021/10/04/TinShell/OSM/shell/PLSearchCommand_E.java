@@ -76,11 +76,24 @@ public class PLSearchCommand_E {
 							||object.get("lastCommand").toString().contains("条件为")
 							||object.get("lastCommand").toString().contains("relation")
 							||object.get("lastCommand").toString().contains("操作")
+							||object.get("lastCommand").toString().contains("PLETL")
 							||object.get("lastCommand").toString().contains("获取表列名")
 							||object.get("lastCommand").toString().contains("culumnName")
 							||object.get("lastCommand").toString().contains("relation"))) {
 				P_E_Kernel(object, mod);
 			}
+//			if(!acknowledge[0].equalsIgnoreCase(object.get("lastCommand").toString())
+//					&&(object.get("lastCommand").toString().contains("changeCulumnName")
+//							||object.get("lastCommand").toString().contains("culumnValue")
+//							||object.get("lastCommand").toString().contains("条件为")
+//							||object.get("lastCommand").toString().contains("relation")
+//							||object.get("lastCommand").toString().contains("操作")
+//							||object.get("lastCommand").toString().contains("PLETL")
+//							||object.get("lastCommand").toString().contains("获取表列名")
+//							||object.get("lastCommand").toString().contains("culumnName")
+//							||object.get("lastCommand").toString().contains("relation"))) {
+//				P_E_Kernel(object, mod);
+//			}
 		}
 	}
 //处理机中心, 别急, 准备验证 罗瑶光
@@ -99,6 +112,9 @@ public class PLSearchCommand_E {
 			if(object.containsKey("获取表列名")) {
 				object.put("obj", SearchShellQ_Rows_E.selectRowsByAttributesOfGetCulumns(object));
 			}
+			if(object.containsKey("PLETL")) {
+				object.put("obj", SearchShellQ_Rows_E.selectRowsByAttributesOfPLETL(object));
+			}
 			object.remove("recordRows");
 		}
 		if(object.get("type").toString().equalsIgnoreCase("进行选择") && 
@@ -116,6 +132,9 @@ public class PLSearchCommand_E {
 			}
 			if(object.containsKey("getCulumns")) {
 				object.put("joinObj", SearchShellQ_JoinRows_E.selectRowsByAttributesOfJoinGetCulumns(object));
+			}
+			if(object.containsKey("PLETL")) {
+//				object.put("obj", SearchShellQ_Rows_E.selectRowsByAttributesOfPLETL(object));
 			}
 			object.remove("recordRows");
 		}

@@ -49,6 +49,9 @@ public class E_PLSearch_E {
 			if(acknowledge[0].equals("操作")) {
 				PLSearchCommand_E.P_ListNeedStart(acknowledge, output);
 			}
+			if(acknowledge[0].equals("PLETL")) {
+				PLSearchCommand_E.P_ListNeedStart(acknowledge, output);
+			}
 			if(acknowledge[0].equals("获取表列名")) {
 				PLSearchCommand_E.P_ListNeedStart(acknowledge, output);
 			}

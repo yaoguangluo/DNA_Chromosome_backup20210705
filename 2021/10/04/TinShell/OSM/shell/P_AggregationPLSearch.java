@@ -280,7 +280,7 @@ public class P_AggregationPLSearch {
 						value[valueCount++][1] = iteratorString.split(":")[1];
 					}
 					//value = new Quick_6D_luoyaoguang_Sort().sort(value);
-					value = new Quick_7D_luoyaoguang_Sort().sort(value);
+					value= new Quick_7D_luoyaoguang_Sort().sort(value);
 					String cg= "词名/DNN";
 				    cg+= "\r\n";
 					for(int i = 0; i<value.length; i++) {
@@ -300,6 +300,12 @@ public class P_AggregationPLSearch {
 			output.addAll(outputTemp);
 			return;
 		}	
+//		//操作:进行合并:列名:上中下
+		//
+//		if(sets[1].equalsIgnoreCase("进行合并")) {
+//			
+//		}
+		
 //		//稍后把这里 行遍历 改成 命令遍历。提高计算速度
 //		//罗瑶光20211002
 //		Iterator<Map<String, Object>> iterator = output.iterator();
@@ -372,5 +378,10 @@ public class P_AggregationPLSearch {
 //		}	
 		output.clear();
 		output.addAll(outputTemp);
+	}
+//分出去
+	public static void P_PletlLimitMap(String[] sets, List<Map<String, Object>> obj) {
+		// TODO Auto-generated method stub
+		
 	}
 }
