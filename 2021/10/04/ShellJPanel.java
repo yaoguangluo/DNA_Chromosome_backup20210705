@@ -257,6 +257,7 @@ public class ShellJPanel extends JPanel implements MouseListener, KeyListener, A
 				+ "操作:ID|进行数字排序|从小到大;"
 				+ "操作:ID|颜色标记为|红色;");
 		//	+ "操作:药名|进行字符排序|从小到大;");
+		//  + "PLETL:中节点|进行表格合并|主码为|ID|模式为|新增列;"
 		this.add(jsp_jTextPane);
 
 		outputjTextPane= new JTextPane();
