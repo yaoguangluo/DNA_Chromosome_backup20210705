@@ -29,10 +29,14 @@ public class P_AggregationPLETL {
 	public static void P_PletlLimitMap(String[] sets, List<Map<String, Object>> output, Map<String, Object> object) 
 			throws InstantiationException, IllegalAccessException, IOException {
 		List<Map<String, Object>> outputTemp= new ArrayList<>();
-		//       中节点|表格合并|主码|新增列|ID|。。
+		//中节点|表格合并|主码|新增列|ID|。。
 		//上节点是main节点作为accumulator，模拟rna芯片计算容器，中下节点模拟神经元记忆接口。
 		//设计宾语补足语 今天改为如下 20211011 罗瑶光
-		//"PLETL:中节点|进行表格合并|主码为|ID|模式为|新增列;"
+		//PLETL:中节点|进行表格合并|主码为|ID|模式为|新增列;
+		//PLETL:中节点|进行表格合并|主码为|ID|模式为|叠加列;
+		//PLETL:中节点|进行表格合并|主码为|ID|模式为|有交集叠加列;
+		//PLETL:中节点|进行表格合并|主码为|ID|模式为|有交集新增列;
+		//PLETL:中节点|进行表格合并|主码为|ID|模式为|无交集新增列;
 		if(sets[1].equalsIgnoreCase("进行表格合并")) {
 			TinMap mapShell= null;
 			String 列标识 = null;
@@ -44,51 +48,7 @@ public class P_AggregationPLETL {
 				mapShell= (TinMap)object.get("downShell");
 				列标识= "d_";
 			}
-//			if(sets[2].equalsIgnoreCase("主码为")) {//先单一primary key， 之后再设计 forenge key 和 combination key
-//				//To do。。。 
-//				Map<String, Object> tinShellETL= (Map<String, Object>)mapShell.get("TinShellETL");
-//				List<Map<String, Object>> 主要输入轮训= (List<Map<String, Object>>)object.get("obj");
-//				List<Map<String, Object>> rowList= (List<Map<String, Object>>)tinShellETL.get("obj");
-//				if(0!= rowList.size()) {
-//					Iterator<Map<String, Object>> iterator= rowList.iterator();
-//					Here:
-//						while(iterator.hasNext()) {//非主要输入轮训
-//							Map<String, Object> row= iterator.next();
-//							Map<String, Object> rowValue= (Map<String, Object>)row.get("rowValue");
-//							Map<String, Object> culumnValue= (Map<String, Object>)rowValue.get(sets[3]);
-//							if(0!= 主要输入轮训.size()) {
-//								//准备把 outputTemp 作为计算结果
-//								//把top shell 的数据作为轮循 开始比对
-//								//
-//								Iterator<Map<String, Object>> outputTempIterator= 主要输入轮训.iterator();
-//								while(outputTempIterator.hasNext()) {
-//									Map<String, Object> rowOutputTempIterator= outputTempIterator.next();
-//									Map<String, Object> rowValueRowOutputTempIterator
-//									= (Map<String, Object>)rowOutputTempIterator.get("rowValue");
-//									//outputTemp
-//									if(rowValueRowOutputTempIterator.containsKey(sets[3])) {
-//										Map<String, Object> rowValueRowOutputTempIteratorCulumnValue
-//										= (Map<String, Object>)rowValueRowOutputTempIterator.get(sets[3]);
-//										//合并rowValueRowOutputTempIteratorCulumnValue 与 culumnValue
-//										//合并方式，1 叠加列合并 2 新增列合并
-//										//先实现简单的 新增列合并
-//										if(sets[4].equalsIgnoreCase("模式为")) {
-//											model(sets, culumnValue, 列标识, rowValueRowOutputTempIteratorCulumnValue);
-//										}	
-//										//其他定状补语 函数 
-//										//。。。
-//										//。。。
-//										//。
-//									}
-//								}
-//								
-//							}
-//							//outputTemp 更新
-//							//outputTemp.
-//						}
-//				}
-//			}
-			
+
 			//将上面进行内外循环 颠倒rotation 如下
 			if(sets[2].equalsIgnoreCase("主码为")) {//先单一primary key， 之后再设计 forenge key 和 combination key
 				//To do。。。初始
@@ -139,13 +99,149 @@ public class P_AggregationPLETL {
 			output.clear();
 			output.addAll(outputTemp);
 		}
+
+		//设计点 相交
+		//PLETL:中节点|进行表格相交|主码为|ID|模式为|新增列;
+		//PLETL:中节点|进行表格相交|主码为|ID|模式为|叠加列;
+		//PLETL:中节点|进行表格相交|主码为|ID|模式为|有交集叠加列;
+		//PLETL:中节点|进行表格相交|主码为|ID|模式为|有交集新增列;
+		//PLETL:中节点|进行表格相交|主码为|ID|模式为|无交集新增列;
+		if(sets[1].equalsIgnoreCase("进行表格相交")) {
+			TinMap mapShell= null;
+			String 列标识= null;
+			if(sets[0].equalsIgnoreCase("中节点")) {
+				mapShell= (TinMap)object.get("midShell");
+				列标识= "m_";
+			}
+			if(sets[0].equalsIgnoreCase("下节点")) {
+				mapShell= (TinMap)object.get("downShell");
+				列标识= "d_";
+			}
+
+			//将上面进行内外循环 颠倒rotation 如下
+			if(sets[2].equalsIgnoreCase("主码为")) {//先单一primary key， 之后再设计 forenge key 和 combination key
+				//To do。。。初始
+				Map<String, Object> tinShellETL= (Map<String, Object>)mapShell.get("TinShellETL");
+				List<Map<String, Object>> rowList= (List<Map<String, Object>>)tinShellETL.get("obj");
+				//主循环
+				List<Map<String, Object>> 主要输入轮训= (List<Map<String, Object>>)object.get("obj");
+				Iterator<Map<String, Object>> outputTempIterator= 主要输入轮训.iterator();
+				while(outputTempIterator.hasNext()) {
+					Map<String, Object> rowOutputTempIterator= outputTempIterator.next();
+					Map<String, Object> rowValueRowOutputTempIterator
+					= (Map<String, Object>)rowOutputTempIterator.get("rowValue");
+					boolean findConjunction= false;
+					if(0!= rowList.size()) {
+						//辅循环
+						Iterator<Map<String, Object>> iterator= rowList.iterator();
+						while(iterator.hasNext()) {//非主要输入轮训
+							Map<String, Object> row= iterator.next();
+							Map<String, Object> rowValue= (Map<String, Object>)row.get("rowValue");
+							Map<String, Object> culumnValue= (Map<String, Object>)rowValue.get(sets[3]);
+							//outputTemp
+							if(rowValueRowOutputTempIterator.containsKey(sets[3])) {
+								Map<String, Object> rowValueRowOutputTempIteratorCulumnValue
+								= (Map<String, Object>)rowValueRowOutputTempIterator.get(sets[3]);
+								//合并rowValueRowOutputTempIteratorCulumnValue 与 culumnValue
+								//合并方式，1 叠加列合并 2 新增列合并
+								//先实现简单的 新增列合并
+								//在执行前进行sets[3]相等检查
+								if(rowValueRowOutputTempIteratorCulumnValue.get("culumnValue").equals(culumnValue.get("culumnValue"))) {//以后命令多了优化
+									findConjunction= true;
+									if(sets[4].equalsIgnoreCase("模式为")) {
+										model(sets, rowValue, 列标识, rowValueRowOutputTempIterator);
+									}	
+								}
+								//其他定状补语 函数 
+								//。。。
+								//。。。
+								//。
+							}
+							rowOutputTempIterator.put("rowValue", rowValueRowOutputTempIterator);
+						}
+					}
+					if(true== findConjunction) {//有交集的行才保留
+						outputTemp.add(rowOutputTempIterator);
+					}
+				}
+			}
+			//			if(sets[2].equalsIgnoreCase("自由定义各种命令。。")) {
+			//			//To do。。。 
+			//		}
+			output.clear();
+			output.addAll(outputTemp);
+		}
+
+		//PLETL:中节点|进行表格剔除|主码为|ID|模式为|相交部分剔除;
+		if(sets[1].equalsIgnoreCase("进行表格剔除")) {
+			TinMap mapShell= null;
+			String 列标识 = null;
+			if(sets[0].equalsIgnoreCase("中节点")) {
+				mapShell= (TinMap)object.get("midShell");
+				列标识= "m_";
+			}
+			if(sets[0].equalsIgnoreCase("下节点")) {
+				mapShell= (TinMap)object.get("downShell");
+				列标识= "d_";
+			}
+
+			//将上面进行内外循环 颠倒rotation 如下
+			if(sets[2].equalsIgnoreCase("主码为")) {//先单一primary key， 之后再设计 forenge key 和 combination key
+				//To do。。。初始
+				Map<String, Object> tinShellETL= (Map<String, Object>)mapShell.get("TinShellETL");
+				List<Map<String, Object>> rowList= (List<Map<String, Object>>)tinShellETL.get("obj");
+				//主循环
+				List<Map<String, Object>> 主要输入轮训= (List<Map<String, Object>>)object.get("obj");
+				Iterator<Map<String, Object>> outputTempIterator= 主要输入轮训.iterator();
+				while(outputTempIterator.hasNext()) {
+					Map<String, Object> rowOutputTempIterator= outputTempIterator.next();
+					Map<String, Object> rowValueRowOutputTempIterator
+					= (Map<String, Object>)rowOutputTempIterator.get("rowValue");
+					boolean findConjunction= false;
+					if(0!= rowList.size()) {
+						//辅循环
+						Iterator<Map<String, Object>> iterator= rowList.iterator();
+						while(iterator.hasNext()) {//非主要输入轮训
+							Map<String, Object> row= iterator.next();
+							Map<String, Object> rowValue= (Map<String, Object>)row.get("rowValue");
+							Map<String, Object> culumnValue= (Map<String, Object>)rowValue.get(sets[3]);
+							//outputTemp
+							if(rowValueRowOutputTempIterator.containsKey(sets[3])) {
+								Map<String, Object> rowValueRowOutputTempIteratorCulumnValue
+								= (Map<String, Object>)rowValueRowOutputTempIterator.get(sets[3]);
+								//合并rowValueRowOutputTempIteratorCulumnValue 与 culumnValue
+								//合并方式，1 叠加列合并 2 新增列合并
+								//先实现简单的 新增列合并
+								//在执行前进行sets[3]相等检查
+								if(rowValueRowOutputTempIteratorCulumnValue.get("culumnValue").equals(culumnValue.get("culumnValue"))) {//以后命令多了优化
+									findConjunction= true;
+								}
+								//其他定状补语 函数 
+								//。。。
+								//。。。
+								//。
+							}
+							rowOutputTempIterator.put("rowValue", rowValueRowOutputTempIterator);
+						}
+					}
+					if(false== findConjunction) {//无交集的行才保留
+						outputTemp.add(rowOutputTempIterator);
+					}
+				}
+			}
+			//			if(sets[2].equalsIgnoreCase("自由定义各种命令。。")) {
+			//			//To do。。。 
+			//		}
+			output.clear();
+			output.addAll(outputTemp);
+		}
 	}
 
 	//之后这个定状补的函数我会分出去 结构化 罗瑶光 20211012
 	@SuppressWarnings("unchecked")
 	private static void model(String[] sets, Map<String, Object> rowValue, String 列标识
 			, Map<String, Object> rowValueRowOutputTempIterator) {
-		
+
 		if(sets[5].equalsIgnoreCase("新增列")) {
 			Iterator<String> iteratorCulumnValue= rowValue.keySet().iterator();	
 			while(iteratorCulumnValue.hasNext()) {
@@ -217,5 +313,6 @@ public class P_AggregationPLETL {
 				}	
 			}
 		}
+		//相交部分剔除
 	}
 }

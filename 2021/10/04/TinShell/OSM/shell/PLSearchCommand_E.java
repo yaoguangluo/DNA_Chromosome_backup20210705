@@ -194,6 +194,7 @@ public class PLSearchCommand_E {
 		object.remove("relation");
 		object.remove("操作");
 		object.remove("获取表列名");
+		object.remove("PLETL");
 		object.put("start", "0");
 	}
     
