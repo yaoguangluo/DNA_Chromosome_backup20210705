@@ -182,7 +182,17 @@ public class ShellJPanel extends JPanel implements MouseListener, KeyListener, A
 								, false, (Map<String, Object>)sQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.outputOut.get("TinShellETL"));
 						//开始涉及PLETL，于是 上中下都要，就把outputOut 完整代入VPCS函数。
 						//更新
+						//计算完后去除output的 mid down 部分
+						if(output.containsKey("midShell")) {
+							output.remove("midShell");
+						}
+						if(output.containsKey("downShell")) {
+							output.remove("downShell");
+						}
 						sQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.outputOut.put("TinShellETL", output);
+						 
+						
+						
 					} catch (Exception e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
