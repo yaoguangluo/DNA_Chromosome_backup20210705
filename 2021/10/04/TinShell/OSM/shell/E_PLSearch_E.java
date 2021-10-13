@@ -10,15 +10,15 @@ public class E_PLSearch_E {
 		//Map<String, Object> output = new ConcurrentHashMap<>();
 		//1make container
 		if(null== output) {
-			output = new ConcurrentHashMap<>();
+			output= new ConcurrentHashMap<>();
 		}
 		output.put("start", "0");
 		output.put("countJoins", "0");
 		//2make line
-		String[] commands = plSearch.replace(" ", "").replace("\n", "").split(";");
-		String[] acknowledge = null;
+		String[] commands= plSearch.replace(" ", "").replace("\n", "").split(";");
+		String[] acknowledge= null;
 		for(String command:commands) {
-			acknowledge = command.split(":");
+			acknowledge= command.split(":");
 			if(acknowledge[0].equals("setRoot")) {
 				PLSearchCommand_E.P_SetRoot(acknowledge, output);
 			}
@@ -53,6 +53,9 @@ public class E_PLSearch_E {
 				PLSearchCommand_E.P_ListNeedStart(acknowledge, output);
 			}
 			if(acknowledge[0].equals("获取表列名")) {
+				PLSearchCommand_E.P_ListNeedStart(acknowledge, output);
+			}
+			if(acknowledge[0].equals("PLTCP")) {
 				PLSearchCommand_E.P_ListNeedStart(acknowledge, output);
 			}
 			output.put("newCommand", acknowledge[0]);

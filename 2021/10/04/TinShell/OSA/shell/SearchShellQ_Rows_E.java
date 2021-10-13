@@ -17,6 +17,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import OP.SM.AOP.MEC.SIQ.SM.reflection.Row;
 import OSM.shell.P_AggregationPLETL;
 import OSM.shell.P_AggregationPLSearch;
+import OSM.shell.P_AggregationPLTCP;
 import OSM.shell.P_ConditionPLSearch_XCDX_Cache;
 import OSM.shell.P_ConditionPLSearch_XCDX_Map;
 import OSM.shell.P_GetCulumnsPLSearch;
@@ -229,6 +230,30 @@ public class SearchShellQ_Rows_E {
 				String[] sets = aggregationValueArray[i].split("\\|");
 				if(limitMap|| !otherMap ) {
 					P_AggregationPLETL.P_PletlLimitMap(sets, obj, object);
+				}
+				//基于sort key 前序treeMap 之后排序功能设计
+				//基于sort key 后序treeMap
+			}
+		}
+		return obj;
+	}
+	public static Object selectRowsByAttributesOfPLTCP(Map<String, Object> object) throws IOException {
+		if(!object.containsKey("obj")) {
+			return new ArrayList<>();
+		}
+		List<Map<String, Object>> obj= ((List<Map<String, Object>>)(object.get("obj")));
+		List<String[]> aggregationValues= (List<String[]>) object.get("PLTCP");
+		Iterator<String[]> iterator= aggregationValues.iterator();
+		while(iterator.hasNext()) {
+			boolean overMap= obj.size()== 0? false: true;
+			String[] aggregationValueArray= iterator.next();
+			String type= aggregationValueArray[1];
+			boolean limitMap= type.equalsIgnoreCase("行至")?true:false;
+			boolean otherMap= type.equalsIgnoreCase("")?true:false;
+			for(int i= 1; i< aggregationValueArray.length; i++) {
+				String[] sets= aggregationValueArray[i].split("\\|");
+				if(limitMap|| !otherMap ) {
+					P_AggregationPLTCP.P_PltcpLimitMap(sets, obj, object);
 				}
 				//基于sort key 前序treeMap 之后排序功能设计
 				//基于sort key 后序treeMap

@@ -77,26 +77,15 @@ public class PLSearchCommand_E {
 							||object.get("lastCommand").toString().contains("relation")
 							||object.get("lastCommand").toString().contains("操作")
 							||object.get("lastCommand").toString().contains("PLETL")
+							||object.get("lastCommand").toString().contains("PLTCP")
 							||object.get("lastCommand").toString().contains("获取表列名")
 							||object.get("lastCommand").toString().contains("culumnName")
 							||object.get("lastCommand").toString().contains("relation"))) {
 				P_E_Kernel(object, mod);
 			}
-//			if(!acknowledge[0].equalsIgnoreCase(object.get("lastCommand").toString())
-//					&&(object.get("lastCommand").toString().contains("changeCulumnName")
-//							||object.get("lastCommand").toString().contains("culumnValue")
-//							||object.get("lastCommand").toString().contains("条件为")
-//							||object.get("lastCommand").toString().contains("relation")
-//							||object.get("lastCommand").toString().contains("操作")
-//							||object.get("lastCommand").toString().contains("PLETL")
-//							||object.get("lastCommand").toString().contains("获取表列名")
-//							||object.get("lastCommand").toString().contains("culumnName")
-//							||object.get("lastCommand").toString().contains("relation"))) {
-//				P_E_Kernel(object, mod);
-//			}
 		}
 	}
-//处理机中心, 别急, 准备验证 罗瑶光
+	//处理机中心, 别急, 准备验证 罗瑶光
 	private static void P_E_Kernel(Map<String, Object> object, boolean mod) throws Exception{
 		if(object.get("type").toString().equalsIgnoreCase("进行选择") && 
 				(object.get("countJoins").toString().equalsIgnoreCase("0") ||
@@ -114,6 +103,9 @@ public class PLSearchCommand_E {
 			}
 			if(object.containsKey("PLETL")) {
 				object.put("obj", SearchShellQ_Rows_E.selectRowsByAttributesOfPLETL(object));
+			}
+			if(object.containsKey("PLTCP")) {
+				object.put("obj", SearchShellQ_Rows_E.selectRowsByAttributesOfPLTCP(object));
 			}
 			object.remove("recordRows");
 		}
@@ -134,7 +126,7 @@ public class PLSearchCommand_E {
 				object.put("joinObj", SearchShellQ_JoinRows_E.selectRowsByAttributesOfJoinGetCulumns(object));
 			}
 			if(object.containsKey("PLETL")) {
-//				object.put("obj", SearchShellQ_Rows_E.selectRowsByAttributesOfPLETL(object));
+				//				object.put("obj", SearchShellQ_Rows_E.selectRowsByAttributesOfPLETL(object));
 			}
 			object.remove("recordRows");
 		}
@@ -195,9 +187,10 @@ public class PLSearchCommand_E {
 		object.remove("操作");
 		object.remove("获取表列名");
 		object.remove("PLETL");
+		object.remove("PLTCP");
 		object.put("start", "0");
 	}
-    
+
 	//plsql函数执行指令 正在检查中 罗瑶光 20210405
 	public static void P_Check(String acknowledge, Map<String, Object> object, boolean mod) throws Exception {
 		if(object.get("start").toString().equals("1")) {
@@ -213,24 +206,24 @@ public class PLSearchCommand_E {
 		object.put("pageBegin", rowBeginIndex);
 		object.put("pageEnd", rowEndIndex);
 
-//		String DBPath= Cache_M.getCacheInfo("DBPath").getValue().toString() + "/" + object.get("baseName").toString();
-//		String DBTablePath = DBPath + "/" + object.get("tableName").toString();
-		
+		//		String DBPath= Cache_M.getCacheInfo("DBPath").getValue().toString() + "/" + object.get("baseName").toString();
+		//		String DBTablePath = DBPath + "/" + object.get("tableName").toString();
+
 		object.put("tablePath", object.get("获取表名").toString());
 		object.put("returnResult", "success");
 		object.put("totalPages", totalPages);
 		object.put("loginInfo", "success");
 		List<Object> spec = new ArrayList<>();
-//		Iterator<String> iterator = new ArrayList<String>().iterator();
-//		if(obj== null || obj.size()< 1) {
-//			//Base base= DetaDBBufferCache_M.db.getBase(object.get("baseName").toString());
-//			SearchShellTable table= SearchShellTables.searchShellTables.get(object.get("tableName").toString());
-//			Object[] specs= table.getHuaRuiJiJtableCulumns();
-//		}else {//进行map 验证检测 罗瑶光 20210405
-//			Map<String, Object> map= obj.get(0);
-//			Map<String, Object> objectInMap= (Map<String, Object>)map.get("rowValue");
-//			iterator = null== objectInMap? null:objectInMap.keySet().iterator();
-//		}
+		//		Iterator<String> iterator = new ArrayList<String>().iterator();
+		//		if(obj== null || obj.size()< 1) {
+		//			//Base base= DetaDBBufferCache_M.db.getBase(object.get("baseName").toString());
+		//			SearchShellTable table= SearchShellTables.searchShellTables.get(object.get("tableName").toString());
+		//			Object[] specs= table.getHuaRuiJiJtableCulumns();
+		//		}else {//进行map 验证检测 罗瑶光 20210405
+		//			Map<String, Object> map= obj.get(0);
+		//			Map<String, Object> objectInMap= (Map<String, Object>)map.get("rowValue");
+		//			iterator = null== objectInMap? null:objectInMap.keySet().iterator();
+		//		}
 		SearchShellTable table= SearchShellTables.searchShellTables.get(object.get("获取表名").toString());
 		Object[] specs= table.getHuaRuiJiJtableCulumns();
 		for(Object specS: specs) {
