@@ -268,8 +268,19 @@ public class ShellJPanel extends JPanel implements MouseListener, KeyListener, A
 				+ "操作:ID|颜色标记为|红色;");
 		//	+ "操作:药名|进行字符排序|从小到大;");
 		//  + "PLETL:中节点|进行表格合并|主码为|ID|模式为|新增列;"
+		
+		//  下面这个五个命令 rest命令 首先符号冲突，
+		//  + "定义:变量1|://localhost......;" (正在设计)//稍后。
+		
+		//  + "PLTCP:病症|进行WEB请求|接口为|localhost|端口为|8000|操作为|分词;" (正在设计）
+		//  + "PLTCP:病症|进行WEB请求|接口为|localhost|端口为|8000|操作为|DNN;" (正在设计）
+		//  + "PLTCP:病症|进行WEB请求|接口为|localhost|端口为|8000|操作为|POS;" (正在设计）
+		
+		//  + "PLETL:该节点|进行输出|模式为|打印;" (正在设计)
+		//  + "PLETL:该节点|进行保存|模式为|文件|路径为|F盘|巴拉/巴拉小魔仙/。。。。.lyg;" (正在设计)
+		//  + "PLETL:文档|进行执行|时间为|时间戳|路径为|D盘|巴拉巴拉小魔仙/。。。。.etl;" (正在设计)
+		
 		this.add(jsp_jTextPane);
-
 		outputjTextPane= new JTextPane();
 		JScrollPane jsp_outputjTextPane= new JScrollPane(outputjTextPane);
 		jsp_outputjTextPane.setBounds(10 + 0* 150, 20+ 1* 15+ 30+ 250, 765, 350);
