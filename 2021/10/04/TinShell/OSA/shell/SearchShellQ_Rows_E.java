@@ -146,11 +146,14 @@ public class SearchShellQ_Rows_E {
 				//				or 条件，output 有值
 
 				//1 先检查是否有record row				
-				boolean hasOutputMap = output.size()== 0? false: true;
+				boolean hasOutputMap= output.size()== 0? false: true;
 				ConcurrentHashMap<Integer, Object> map= (ConcurrentHashMap<Integer, Object>) object.get("recordRows");
-				boolean hasRecordMap = map.isEmpty()? false: true;
-				if((hasOutputMap|| hasRecordMap) && andMap) {
-					P_ConditionPLSearch_XCDX_Map.P_Map(sets, output, object.get("获取表名").toString());
+				boolean hasRecordMap= map.isEmpty()? false: true;
+				
+				if((hasOutputMap|| hasRecordMap)&& andMap) {
+					//再增加一个条件 是不是第一次 执行条件为 
+					//罗瑶光 20211015
+					P_ConditionPLSearch_XCDX_Map.P_Map(sets, output, object.get("获取表名").toString(), object);
 				}else {
 					P_ConditionPLSearch_XCDX_Cache.P_Cache(sets, output, object.get("获取表名").toString()
 							, object, type);//1

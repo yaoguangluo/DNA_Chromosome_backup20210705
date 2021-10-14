@@ -50,32 +50,32 @@ public class P_ConditionPLSearch_XCDX_Map extends P_ConditionPLSearch_XCDX {
 		Row row= new Row();
 		ConcurrentHashMap<String, Cell> cells=new ConcurrentHashMap<>();
 		row.I_Cells(cells);
-
 		Iterator<String> iterator= ((Map<String, Object>)map.get("rowValue")).keySet().iterator();
 		while(iterator.hasNext()) {
 			String cellName = iterator.next();
 			if(!cellName.contains("is_delete")) {
 				Cell cell= new Cell();
-				Map<String, Object> culumnMap = (Map<String, Object> )((Map<String, Object>)map.get("rowValue")).get(cellName);
-
+				Map<String, Object> culumnMap 
+				= (Map<String, Object>)((Map<String, Object>)map.get("rowValue")).get(cellName);
 				cell.I_CellValue(culumnMap.get("culumnValue"));
 				row.putCell(cellName, cell);
 			}
 		}
 		return row;
 	}
-	
+
 	//猫腻哥 把我pmap的output 都改了， 今天一查问题全出来了。20210927
 	//懒得管，把P_Map 改成 shellP_Map
-	public static void P_Map(String[] sets, List<Map<String, Object>> output, String tableName) {
+	public static void P_Map(String[] sets, List<Map<String, Object>> output, String tableName
+			, Map<String, Object> object) {
 		//算了统一接口， 以后统一优化改。
 		List<Map<String, Object>> outputTemp= new ArrayList<>();
 		//创建一个table
 		SearchShellTable table;
-		
 		//outputTemp.addAll(output);
-		if(output.isEmpty()||null== output) {
+		if((output.isEmpty()||null== output)&& object.get("firstTime").equals("true")) {
 			table= SearchShellTables.searchShellTables.get(tableName);
+			object.put("firstTime", "others");
 		}else {
 			Row[] huaRuiJiJtableRows= new Row[output.size()];
 			for(int i= 0; i< output.size(); i++) {
@@ -86,8 +86,6 @@ public class P_ConditionPLSearch_XCDX_Map extends P_ConditionPLSearch_XCDX {
 		}
 		//修改下把output的逻辑重复利用 满足conditon的and 和or 
 		//只拿前50行 以后改成分页
-		
-		
 		//稍后把这个函数片段移除这个文件，变成一个函数。
 		if(sets[1].equalsIgnoreCase("精度搜索")) {
 			//table to object
@@ -103,7 +101,7 @@ public class P_ConditionPLSearch_XCDX_Map extends P_ConditionPLSearch_XCDX {
 			Map<String, String> pos= HRJFrame.NE._A.getPosCnToCn();
 			Map<String, WordFrequency> mapSearchWithoutSort = null;
 			mapSearchWithoutSort = HRJFrame.NE._A.parserMixStringByReturnFrequencyMap(key);
-			
+
 			//Iterator<String> iteratorForCopy= copy.iterator();	
 			int copyCount = 0;
 			List<String> list= HRJFrame.NE._A.parserMixedString(key);
@@ -114,11 +112,11 @@ public class P_ConditionPLSearch_XCDX_Map extends P_ConditionPLSearch_XCDX {
 			}
 			Map<String, Row> map= new HashMap<>(); 
 			for(int i= 0; i< table.huaRuiJiJtableRows.length; i++) {			
-			//while(iteratorForCopy.hasNext()) {
+				//while(iteratorForCopy.hasNext()) {
 				String temps= table.huaRuiJiJtableRows[i].getCell(sets[0]).getCellValue().toString();
-//				if(null== temps) {
-//					temps= "";
-//				}
+				//				if(null== temps) {
+				//					temps= "";
+				//				}
 				score[copyCount] = "i"+ i;//因为 不再有map key，所以就通用为map 内容。
 				map.put(score[copyCount], table.huaRuiJiJtableRows[i]);
 				//String iteratorForCopyString= iteratorForCopy.next();
@@ -133,13 +131,13 @@ public class P_ConditionPLSearch_XCDX_Map extends P_ConditionPLSearch_XCDX {
 							if(reg[copyCount] == 0){
 								count += 1;
 							}
-//							score[copyCount] = temps;//因为 不再有map key，所以就通用为map 内容。，还是需要map
-//							if(score[copyCount].contains(key.replace(" ", ""))) {
-//								reg[copyCount]+= 500;
-//							}
-//							if(key.contains(score[copyCount].replace(" ", ""))) {
-//								reg[copyCount]+= 500;
-//							}
+							//							score[copyCount] = temps;//因为 不再有map key，所以就通用为map 内容。，还是需要map
+							//							if(score[copyCount].contains(key.replace(" ", ""))) {
+							//								reg[copyCount]+= 500;
+							//							}
+							//							if(key.contains(score[copyCount].replace(" ", ""))) {
+							//								reg[copyCount]+= 500;
+							//							}
 							if(temps.contains(key.replace(" ", ""))) {
 								reg[copyCount]+= 500;
 							}
@@ -157,7 +155,7 @@ public class P_ConditionPLSearch_XCDX_Map extends P_ConditionPLSearch_XCDX {
 							}
 							reg[copyCount] += 1;
 							score_code[copyCount] += (temps.contains(mapSearchaAtII) ? 2 : 1) 
-								* (!pos.get(mapSearchaAtII).contains("名") ? pos.get(mapSearchaAtII).contains("动")? 45 : 1 : 50) 
+									* (!pos.get(mapSearchaAtII).contains("名") ? pos.get(mapSearchaAtII).contains("动")? 45 : 1 : 50) 
 									<< mapSearchaAtII.length() * wordFrequencySearch.getFrequency();
 							continue Here;
 						}
@@ -167,7 +165,7 @@ public class P_ConditionPLSearch_XCDX_Map extends P_ConditionPLSearch_XCDX {
 									if(reg[copyCount] == 0){
 										count += 1;
 									}
-//									score[copyCount] = temps;
+									//									score[copyCount] = temps;
 									score_code[copyCount]+=1;
 									if(pos.containsKey(String.valueOf(mapSearchaAtII.charAt(j)))&&(
 											pos.get(String.valueOf(mapSearchaAtII.charAt(j))).contains("名")
@@ -201,13 +199,15 @@ public class P_ConditionPLSearch_XCDX_Map extends P_ConditionPLSearch_XCDX {
 							tempb+= code;
 						}
 					}
-					score_code[copyCount] = (int) (tempa/Math.pow(HRJFrame.NE.lookrot+ 1, 4) + tempb*Math.pow(Integer.valueOf(sets[3]), 2));
+					score_code[copyCount] = (int) (tempa/Math.pow(HRJFrame.NE.lookrot+ 1, 4) 
+							+ tempb*Math.pow(Integer.valueOf(sets[3]), 2));
 				}
 				if(key.replace(" ", "").length()> 1&& key.replace(" ", "").length()< 5) {
 					if(temps.contains(key.replace(" ", ""))) {
 						tempb+= code<< 7;
 					}
-					score_code[copyCount] = (int) (tempa/Math.pow(Integer.valueOf(sets[3])+ 1, 4) + tempb*Math.pow(Integer.valueOf(sets[3]), 2));
+					score_code[copyCount] = (int) (tempa/Math.pow(Integer.valueOf(sets[3])+ 1, 4) 
+							+ tempb*Math.pow(Integer.valueOf(sets[3]), 2));
 				}
 				copyCount++;
 			}
@@ -216,11 +216,11 @@ public class P_ConditionPLSearch_XCDX_Map extends P_ConditionPLSearch_XCDX {
 			int max = score_code[0];
 			Object[][] tableData= new Object[count][18];
 			int new_count= 0;
-			
-//			newTableModel.getDataVector().clear();
-//			if(null== key|| key.equals("")) {
-//				return;
-//			}
+
+			//			newTableModel.getDataVector().clear();
+			//			if(null== key|| key.equals("")) {
+			//				return;
+			//			}
 			//recordRows 没有 值
 			//recordRows 有 值
 			Here:
@@ -234,101 +234,107 @@ public class P_ConditionPLSearch_XCDX_Map extends P_ConditionPLSearch_XCDX {
 			output.addAll(outputTemp);
 			return;
 		}
-		
-		
-		
+
+
+
 		int max= 50;
 		//获取table的row
 		Here:
-		for(int i= 0; i< table.huaRuiJiJtableRows.length; i++ ) {
-//			if(i> max) {
-//				continue Here; 
-//			}
-			Row row= table.huaRuiJiJtableRows[i];	
-			if(sets[1].equalsIgnoreCase("<")||sets[1].equalsIgnoreCase("-lt")) {
-				String rowCellFromString = row.getCell(sets[0]).getCellValue().toString();
-				//大家看见没， rowvalue是 db的 Row单例，这里竟然是output的iterator。2019年被动手脚了。
-				if(new BigDecimal(rowCellFromString).doubleValue() < new BigDecimal(sets[2]).doubleValue()) {
-					outputTemp.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
-				}	
+			for(int i= 0; i< table.huaRuiJiJtableRows.length; i++ ) {
+				//			if(i> max) {
+				//				continue Here; 
+				//			}
+				Row row= table.huaRuiJiJtableRows[i];	
+				if(sets[1].equalsIgnoreCase("<")||sets[1].equalsIgnoreCase("-lt")) {
+					String rowCellFromString = row.getCell(sets[0]).getCellValue().toString();
+					//大家看见没， rowvalue是 db的 Row单例，这里竟然是output的iterator。2019年被动手脚了。
+					if(new BigDecimal(rowCellFromString).doubleValue() < new BigDecimal(sets[2]).doubleValue()) {
+						outputTemp.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
+					}	
+				}
+				if(sets[1].equalsIgnoreCase("<=")||sets[1].equalsIgnoreCase("=<")
+						||sets[1].equalsIgnoreCase("-lte")) {
+					String rowCellFromString = row.getCell(sets[0]).getCellValue().toString();
+					if(new BigDecimal(rowCellFromString).doubleValue() <=  new BigDecimal(sets[2]).doubleValue()) {
+						outputTemp.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
+					}	
+				}
+				if(sets[1].equalsIgnoreCase("==")||sets[1].equalsIgnoreCase("=")||sets[1].equalsIgnoreCase("===")) {
+					String rowCellFromString = row.getCell(sets[0]).getCellValue().toString();
+					if(new BigDecimal(rowCellFromString).doubleValue() ==  new BigDecimal(sets[2]).doubleValue()) {
+						outputTemp.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
+					}	
+				}
+				if(sets[1].equalsIgnoreCase(">=")||sets[1].equalsIgnoreCase("=>") 
+						||sets[1].equalsIgnoreCase("-gte")) {
+					String rowCellFromString = row.getCell(sets[0]).getCellValue().toString();
+					if(new BigDecimal(rowCellFromString).doubleValue() >= new BigDecimal(sets[2]).doubleValue()) {
+						outputTemp.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
+					}	
+				}
+				if(sets[1].equalsIgnoreCase(">")||sets[1].equalsIgnoreCase("-gt")) {
+					String rowCellFromString = row.getCell(sets[0]).getCellValue().toString();
+					if(new BigDecimal(rowCellFromString).doubleValue() > new BigDecimal(sets[2]).doubleValue()) {
+						outputTemp.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
+					}	
+				}
+				if(sets[1].equalsIgnoreCase("字符串长度大于")) {
+					String rowCellFromString = row.getCell(sets[0]).getCellValue().toString();
+					if(rowCellFromString.length()> new BigDecimal(sets[2]).doubleValue()) {
+						outputTemp.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
+					}	
+				}
+				if(sets[1].equalsIgnoreCase("字符串长度小于")) {
+					String rowCellFromString = row.getCell(sets[0]).getCellValue().toString();
+					if(rowCellFromString.length()< new BigDecimal(sets[2]).doubleValue()) {
+						outputTemp.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
+					}	
+				}
+				if(sets[1].equalsIgnoreCase("!=")||sets[1].equalsIgnoreCase("=!")) {
+					String rowCellFromString = row.getCell(sets[0]).getCellValue().toString();
+					if(new BigDecimal(rowCellFromString).doubleValue() != new BigDecimal(sets[2]).doubleValue()) {
+						outputTemp.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
+					}	
+				}
+				if(sets[1].equalsIgnoreCase("包含")) {	
+					String rowCellFromString = row.getCell(sets[0]).getCellValue().toString();
+					if(rowCellFromString.contains(sets[2])) {
+						outputTemp.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
+					}	
+				}
+				if(sets[1].equalsIgnoreCase("过滤掉")||sets[1].equalsIgnoreCase("不包含")) {
+					String rowCellFromString = row.getCell(sets[0]).getCellValue().toString();
+					if(!rowCellFromString.contains(sets[2])) {
+						outputTemp.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
+					}	
+				}
+				if(sets[1].equalsIgnoreCase("equal")) {
+					String rowCellFromString = row.getCell(sets[0]).getCellValue().toString();
+					if(rowCellFromString.equalsIgnoreCase(sets[2])) {
+						outputTemp.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
+					}	
+				}
+				if(sets[1].equalsIgnoreCase("!equal")) {
+					String rowCellFromString = row.getCell(sets[0]).getCellValue().toString();
+					if(!rowCellFromString.equalsIgnoreCase(sets[2])) {
+						outputTemp.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
+					}	
+				}
+				if(sets[1].equalsIgnoreCase("in")) {
+					String rowCellFromString = row.getCell(sets[0]).getCellValue().toString();
+					String set = "," + sets[2] + ",";
+					if(set.contains("," + rowCellFromString + ",")){
+						outputTemp.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
+					}	
+				}
+				if(sets[1].equalsIgnoreCase("!in")) {
+					String rowCellFromString = row.getCell(sets[0]).getCellValue().toString();
+					String set = "," + sets[2] + ",";
+					if(!set.contains("," + rowCellFromString + ",")){
+						outputTemp.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
+					}	
+				}
 			}
-			if(sets[1].equalsIgnoreCase("<=")||sets[1].equalsIgnoreCase("=<")
-					||sets[1].equalsIgnoreCase("-lte")) {
-				String rowCellFromString = row.getCell(sets[0]).getCellValue().toString();
-				if(new BigDecimal(rowCellFromString).doubleValue() <=  new BigDecimal(sets[2]).doubleValue()) {
-					outputTemp.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
-				}	
-			}
-			if(sets[1].equalsIgnoreCase("==")||sets[1].equalsIgnoreCase("=")||sets[1].equalsIgnoreCase("===")) {
-				String rowCellFromString = row.getCell(sets[0]).getCellValue().toString();
-				if(new BigDecimal(rowCellFromString).doubleValue() ==  new BigDecimal(sets[2]).doubleValue()) {
-					outputTemp.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
-				}	
-			}
-			if(sets[1].equalsIgnoreCase(">=")||sets[1].equalsIgnoreCase("=>") 
-					||sets[1].equalsIgnoreCase("-gte")) {
-				String rowCellFromString = row.getCell(sets[0]).getCellValue().toString();
-				if(new BigDecimal(rowCellFromString).doubleValue() >= new BigDecimal(sets[2]).doubleValue()) {
-					outputTemp.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
-				}	
-			}
-			if(sets[1].equalsIgnoreCase(">")||sets[1].equalsIgnoreCase("-gt")) {
-				String rowCellFromString = row.getCell(sets[0]).getCellValue().toString();
-				if(new BigDecimal(rowCellFromString).doubleValue() > new BigDecimal(sets[2]).doubleValue()) {
-					outputTemp.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
-				}	
-			}
-			if(sets[1].equalsIgnoreCase("!=")||sets[1].equalsIgnoreCase("=!")) {
-				String rowCellFromString = row.getCell(sets[0]).getCellValue().toString();
-				if(new BigDecimal(rowCellFromString).doubleValue() != new BigDecimal(sets[2]).doubleValue()) {
-					outputTemp.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
-				}	
-			}
-
-			if(sets[1].equalsIgnoreCase("包含")) {	
-				String rowCellFromString = row.getCell(sets[0]).getCellValue().toString();
-				if(rowCellFromString.contains(sets[2])) {
-					outputTemp.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
-				}	
-			}
-			if(sets[1].equalsIgnoreCase("过滤掉")||sets[1].equalsIgnoreCase("不包含")) {
-				String rowCellFromString = row.getCell(sets[0]).getCellValue().toString();
-				if(!rowCellFromString.contains(sets[2])) {
-					outputTemp.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
-				}	
-			}
-			
-			
-			if(sets[1].equalsIgnoreCase("equal")) {
-				String rowCellFromString = row.getCell(sets[0]).getCellValue().toString();
-				if(rowCellFromString.equalsIgnoreCase(sets[2])) {
-					outputTemp.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
-				}	
-			}
-
-			if(sets[1].equalsIgnoreCase("!equal")) {
-				String rowCellFromString = row.getCell(sets[0]).getCellValue().toString();
-				if(!rowCellFromString.equalsIgnoreCase(sets[2])) {
-					outputTemp.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
-				}	
-			}
-
-			if(sets[1].equalsIgnoreCase("in")) {
-				String rowCellFromString = row.getCell(sets[0]).getCellValue().toString();
-				String set = "," + sets[2] + ",";
-				if(set.contains("," + rowCellFromString + ",")){
-					outputTemp.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
-				}	
-			}
-
-			if(sets[1].equalsIgnoreCase("!in")) {
-				String rowCellFromString = row.getCell(sets[0]).getCellValue().toString();
-				String set = "," + sets[2] + ",";
-				if(!set.contains("," + rowCellFromString + ",")){
-					outputTemp.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
-				}	
-			}
-		}
 		output.clear();
 		output.addAll(outputTemp);
 	}

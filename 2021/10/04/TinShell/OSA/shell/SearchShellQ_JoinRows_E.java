@@ -38,7 +38,7 @@ public class SearchShellQ_JoinRows_E {
 			for(int i= 2; i< conditionValueArray.length; i++) {
 				String[] sets= conditionValueArray[i].split("\\|");
 				if(overMap&& andMap) {
-					P_ConditionPLSearch_XCDX_Map.P_Map(sets, output, object.get("joinBaseName").toString());//1
+					P_ConditionPLSearch_XCDX_Map.P_Map(sets, output, object.get("joinBaseName").toString(), object);//1
 				}else {
 					P_ConditionPLSearch_XCDX_Cache.P_Cache(sets, output
 							, object.get("joinTableName").toString()

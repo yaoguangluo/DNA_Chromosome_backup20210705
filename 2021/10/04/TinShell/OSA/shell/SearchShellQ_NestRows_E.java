@@ -37,7 +37,7 @@ public class SearchShellQ_NestRows_E {
 			for(int i= 2; i< conditionValueArray.length; i++) {
 				String[] sets= conditionValueArray[i].split("\\|");
 				if(overMap && andMap) {
-					P_ConditionPLSearch_XCDX_Map.P_Map(sets, output, object.get("nestTableName").toString());
+					P_ConditionPLSearch_XCDX_Map.P_Map(sets, output, object.get("nestTableName").toString(), object);
 				}else{
 					P_ConditionPLSearch_XCDX_Cache.P_Cache(sets, output
 							, object.get("nestTableName").toString()

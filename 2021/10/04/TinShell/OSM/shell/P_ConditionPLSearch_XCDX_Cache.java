@@ -32,8 +32,6 @@ public class P_ConditionPLSearch_XCDX_Cache extends P_ConditionPLSearch_XCDX {
 		//SearchShellTable table= SearchShellTables.searchShellTables.get(tableName);
 		//稍后把下面的 Table 替换成 SearchShellTable 即可。
 		//Table table= DetaDBBufferCache_M.db.getBase(baseName).getTable(tableName);
-
-
 		//算了统一接口， 以后统一优化改。
 		List<Map<String, Object>> outputTemp= new ArrayList<>();
 		//创建一个table
@@ -66,7 +64,7 @@ public class P_ConditionPLSearch_XCDX_Cache extends P_ConditionPLSearch_XCDX {
 			Map<String, String> pos= HRJFrame.NE._A.getPosCnToCn();
 			Map<String, WordFrequency> mapSearchWithoutSort = null;
 			mapSearchWithoutSort = HRJFrame.NE._A.parserMixStringByReturnFrequencyMap(key);
-			
+
 			//Iterator<String> iteratorForCopy= copy.iterator();	
 			int copyCount = 0;
 			List<String> list= HRJFrame.NE._A.parserMixedString(key);
@@ -77,11 +75,11 @@ public class P_ConditionPLSearch_XCDX_Cache extends P_ConditionPLSearch_XCDX {
 			}
 			Map<String, Row> map= new HashMap<>(); 
 			for(int i= 0; i< table.huaRuiJiJtableRows.length; i++) {			
-			//while(iteratorForCopy.hasNext()) {
+				//while(iteratorForCopy.hasNext()) {
 				String temps= table.huaRuiJiJtableRows[i].getCell(sets[0]).getCellValue().toString();
-//				if(null== temps) {
-//					temps= "";
-//				}
+				//				if(null== temps) {
+				//					temps= "";
+				//				}
 				score[copyCount] = "i"+ i;//因为 不再有map key，所以就通用为map 内容。
 				map.put(score[copyCount], table.huaRuiJiJtableRows[i]);
 				//String iteratorForCopyString= iteratorForCopy.next();
@@ -96,13 +94,13 @@ public class P_ConditionPLSearch_XCDX_Cache extends P_ConditionPLSearch_XCDX {
 							if(reg[copyCount] == 0){
 								count += 1;
 							}
-//							score[copyCount] = temps;//因为 不再有map key，所以就通用为map 内容。，还是需要map
-//							if(score[copyCount].contains(key.replace(" ", ""))) {
-//								reg[copyCount]+= 500;
-//							}
-//							if(key.contains(score[copyCount].replace(" ", ""))) {
-//								reg[copyCount]+= 500;
-//							}
+							//score[copyCount] = temps;//因为 不再有map key，所以就通用为map 内容。，还是需要map
+							//	if(score[copyCount].contains(key.replace(" ", ""))) {
+							//		reg[copyCount]+= 500;
+							//	}
+							//  if(key.contains(score[copyCount].replace(" ", ""))) {
+							//	reg[copyCount]+= 500;
+							//}
 							if(temps.contains(key.replace(" ", ""))) {
 								reg[copyCount]+= 500;
 							}
@@ -120,7 +118,8 @@ public class P_ConditionPLSearch_XCDX_Cache extends P_ConditionPLSearch_XCDX {
 							}
 							reg[copyCount] += 1;
 							score_code[copyCount] += (temps.contains(mapSearchaAtII) ? 2 : 1) 
-								* (!pos.get(mapSearchaAtII).contains("名") ? pos.get(mapSearchaAtII).contains("动")? 45 : 1 : 50) 
+									* (!pos.get(mapSearchaAtII).contains("名")
+											? pos.get(mapSearchaAtII).contains("动")? 45 : 1 : 50) 
 									<< mapSearchaAtII.length() * wordFrequencySearch.getFrequency();
 							continue Here;
 						}
@@ -130,7 +129,7 @@ public class P_ConditionPLSearch_XCDX_Cache extends P_ConditionPLSearch_XCDX {
 									if(reg[copyCount] == 0){
 										count += 1;
 									}
-//									score[copyCount] = temps;
+									//									score[copyCount] = temps;
 									score_code[copyCount]+=1;
 									if(pos.containsKey(String.valueOf(mapSearchaAtII.charAt(j)))&&(
 											pos.get(String.valueOf(mapSearchaAtII.charAt(j))).contains("名")
@@ -164,13 +163,15 @@ public class P_ConditionPLSearch_XCDX_Cache extends P_ConditionPLSearch_XCDX {
 							tempb+= code;
 						}
 					}
-					score_code[copyCount] = (int) (tempa/Math.pow(HRJFrame.NE.lookrot+ 1, 4) + tempb*Math.pow(Integer.valueOf(sets[3]), 2));
+					score_code[copyCount] = (int) (tempa/Math.pow(HRJFrame.NE.lookrot+ 1, 4) 
+							+ tempb*Math.pow(Integer.valueOf(sets[3]), 2));
 				}
 				if(key.replace(" ", "").length()> 1&& key.replace(" ", "").length()< 5) {
 					if(temps.contains(key.replace(" ", ""))) {
 						tempb+= code<< 7;
 					}
-					score_code[copyCount] = (int) (tempa/Math.pow(Integer.valueOf(sets[3])+ 1, 4) + tempb*Math.pow(Integer.valueOf(sets[3]), 2));
+					score_code[copyCount] = (int) (tempa/Math.pow(Integer.valueOf(sets[3])+ 1, 4) 
+							+ tempb*Math.pow(Integer.valueOf(sets[3]), 2));
 				}
 				copyCount++;
 			}
@@ -179,11 +180,11 @@ public class P_ConditionPLSearch_XCDX_Cache extends P_ConditionPLSearch_XCDX {
 			int max = score_code[0];
 			Object[][] tableData= new Object[count][18];
 			int new_count= 0;
-			
-//			newTableModel.getDataVector().clear();
-//			if(null== key|| key.equals("")) {
-//				return;
-//			}
+
+			//			newTableModel.getDataVector().clear();
+			//			if(null== key|| key.equals("")) {
+			//				return;
+			//			}
 			Map<Integer, Boolean> recordRows= (Map<Integer, Boolean>) object.get("recordRows");
 			if(null== recordRows) {
 				recordRows= new HashMap<>();
@@ -197,183 +198,206 @@ public class P_ConditionPLSearch_XCDX_Cache extends P_ConditionPLSearch_XCDX {
 					if(score_code[i]< 1){
 						continue Here;
 					}
-					
+
 					output.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(map.get(score[i])));
 					recordRows.put(Integer.valueOf(score[i].replace("i", "")), true);
 				}	
 			object.put("recordRows", recordRows);
 			return;
 		}
-		
+
 		int max= 50;
 		//获取table的row
 		Here:
-		for(int i= 0; i< table.huaRuiJiJtableRows.length; i++ ) {
-//			if(i> max) {
-//				continue Here; 
-//			}
-			//Object[] row= table.huaRuiJiJtable[count];
-			//还是要变成map，不然 命令的 key值查询 只能forloop， 效率减低
-			Row row= table.huaRuiJiJtableRows[i];			
-			Cell cell= new Cell();
-			cell.I_CellValue(i); //加id
-			//出现一个问题，我的table db是非线性map 结构， 自带表头key， 而data 是矩阵， 
-			row.putCell("Index", cell);
-			if(sets[1].equalsIgnoreCase("<")|| sets[1].equalsIgnoreCase("-lt")) {
-				double rowCellFromBigDecimal= new BigDecimal(row.getCell(sets[0])
-						.getCellValue().toString()).doubleValue();
-				if(rowCellFromBigDecimal< new BigDecimal(sets[2]).doubleValue() 
-						&& row.containsCell("is_delete_0")) {
-					if(!((Map<Integer, Boolean>)(object.get("recordRows"))).containsKey(i)) {
-						output.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
-						Map<Integer, Boolean> recordRows= (Map<Integer, Boolean>) object.get("recordRows");
-						recordRows.put(i, true);
-						object.put("recordRows", recordRows);
-					}
-				}	
-			}
-			if(sets[1].equalsIgnoreCase("<=")||sets[1].equalsIgnoreCase("=<")
-					||sets[1].equalsIgnoreCase("-lte")) {
+			for(int i= 0; i< table.huaRuiJiJtableRows.length; i++ ) {
+				//			if(i> max) {
+				//				continue Here; 
+				//			}
+				//Object[] row= table.huaRuiJiJtable[count];
+				//还是要变成map，不然 命令的 key值查询 只能forloop， 效率减低
+				Row row= table.huaRuiJiJtableRows[i];			
+				Cell cell= new Cell();
+				cell.I_CellValue(i); //加id
+				//出现一个问题，我的table db是非线性map 结构， 自带表头key， 而data 是矩阵， 
+				row.putCell("Index", cell);
+				if(sets[1].equalsIgnoreCase("<")|| sets[1].equalsIgnoreCase("-lt")) {
+					double rowCellFromBigDecimal= new BigDecimal(row.getCell(sets[0])
+							.getCellValue().toString()).doubleValue();
+					if(rowCellFromBigDecimal< new BigDecimal(sets[2]).doubleValue() 
+							&& row.containsCell("is_delete_0")) {
+						if(!((Map<Integer, Boolean>)(object.get("recordRows"))).containsKey(i)) {
+							output.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
+							Map<Integer, Boolean> recordRows= (Map<Integer, Boolean>) object.get("recordRows");
+							recordRows.put(i, true);
+							object.put("recordRows", recordRows);
+						}
+					}	
+				}
+				if(sets[1].equalsIgnoreCase("<=")||sets[1].equalsIgnoreCase("=<")
+						||sets[1].equalsIgnoreCase("-lte")) {
 
-				String set= sets[0];
-				Cell setCell= row.getCell(set);
-				String cellString= setCell.getCellValue().toString();
-				cellString=cellString.isEmpty()? "0": cellString;
-				double rowCellFromBigDecimal = new BigDecimal(cellString).doubleValue();
-				if(rowCellFromBigDecimal<=  new BigDecimal(sets[2]).doubleValue() 
-						&& row.containsCell("is_delete_0")) {
-					if(!((Map<Integer, Boolean>)(object.get("recordRows"))).containsKey(i)) {
-						output.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
-						Map<Integer, Boolean> recordRows= (Map<Integer, Boolean>) object.get("recordRows");
-						recordRows.put(i, true);
-						object.put("recordRows", recordRows);
-					}
-				}	
-			}
-			if(sets[1].equalsIgnoreCase("包含")) {	
-				String rowCellFromString = row.getCell(sets[0]).getCellValue().toString();
-				if(rowCellFromString.contains(sets[2])) {
-					if(!((Map<Integer, Boolean>)(object.get("recordRows"))).containsKey(i)) {
-						output.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
-						Map<Integer, Boolean> recordRows= (Map<Integer, Boolean>) object.get("recordRows");
-						recordRows.put(i, true);
-						object.put("recordRows", recordRows);
-					}
-				}	
-			}
-			if(sets[1].equalsIgnoreCase("过滤")||sets[1].equalsIgnoreCase("不包含")) {
-				String rowCellFromString = row.getCell(sets[0]).getCellValue().toString();
-				if(!rowCellFromString.contains(sets[2])) {
-					if(!((Map<Integer, Boolean>)(object.get("recordRows"))).containsKey(i)) {
-						output.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
-						Map<Integer, Boolean> recordRows= (Map<Integer, Boolean>) object.get("recordRows");
-						recordRows.put(i, true);
-						object.put("recordRows", recordRows);
-					}
-				}	
-			}
-			
-			if(sets[1].equalsIgnoreCase("==")||sets[1].equalsIgnoreCase("=")
-					||sets[1].equalsIgnoreCase("===")) {
-				double rowCellFromBigDecimal = new BigDecimal(row.getCell(sets[0])
-						.getCellValue().toString()).doubleValue();
-				if(rowCellFromBigDecimal ==  new BigDecimal(sets[2]).doubleValue() 
-						&& row.containsCell("is_delete_0")) {
-					if(!((Map<Integer, Boolean>)(object.get("recordRows"))).containsKey(i)) {
-						output.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
-						Map<Integer, Boolean> recordRows= (Map<Integer, Boolean>) object.get("recordRows");
-						recordRows.put(i, true);
-						object.put("recordRows", recordRows);
-					}
-				}	
-			}
-			if(sets[1].equalsIgnoreCase(">=")||sets[1].equalsIgnoreCase("=>") 
-					||sets[1].equalsIgnoreCase("-gte")) {
-				double rowCellFromBigDecimal = new BigDecimal(row.getCell(sets[0])
-						.getCellValue().toString()).doubleValue();
-				if(rowCellFromBigDecimal >= new BigDecimal(sets[2]).doubleValue() 
-						&& row.containsCell("is_delete_0")) {
-					if(!((Map<Integer, Boolean>)(object.get("recordRows"))).containsKey(i)) {
-						output.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
-						Map<Integer, Boolean> recordRows= (Map<Integer, Boolean>) object.get("recordRows");
-						recordRows.put(i, true);
-						object.put("recordRows", recordRows);
-					}
-				}	
-			}
-			if(sets[1].equalsIgnoreCase(">")||sets[1].equalsIgnoreCase("-gt")) {
-				double rowCellFromBigDecimal = new BigDecimal(row.getCell(sets[0])
-						.getCellValue().toString()).doubleValue();
-				if(rowCellFromBigDecimal > new BigDecimal(sets[2]).doubleValue() 
-						&& row.containsCell("is_delete_0")) {
-					if(!((Map<Integer, Boolean>)(object.get("recordRows"))).containsKey(i)) {
-						output.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
-						Map<Integer, Boolean> recordRows= (Map<Integer, Boolean>) object.get("recordRows");
-						recordRows.put(i, true);
-						object.put("recordRows", recordRows);
-					}
-				}	
-			}
-			if(sets[1].equalsIgnoreCase("!=")||sets[1].equalsIgnoreCase("=!")) {
-				double rowCellFromBigDecimal = new BigDecimal(row.getCell(sets[0])
-						.getCellValue().toString()).doubleValue();
-				if(rowCellFromBigDecimal != new BigDecimal(sets[2]).doubleValue() 
-						&& row.containsCell("is_delete_0")) {
-					if(!((Map<Integer, Boolean>)(object.get("recordRows"))).containsKey(i)) {
-						output.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
-						Map<Integer, Boolean> recordRows= (Map<Integer, Boolean>) object.get("recordRows");
-						recordRows.put(i, true);
-						object.put("recordRows", recordRows);
-					}
-				}	
-			}
-			if(sets[1].equalsIgnoreCase("equal") && row.containsCell("is_delete_0")) {
-				String rowCellFromString = row.getCell(sets[0]).getCellValue().toString();
-				if(rowCellFromString.equalsIgnoreCase(sets[2])) {
-					if(!((Map<Integer, Boolean>)(object.get("recordRows"))).containsKey(i)) {
-						output.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
-						Map<Integer, Boolean> recordRows= (Map<Integer, Boolean>) object.get("recordRows");
-						recordRows.put(i, true);
-						object.put("recordRows", recordRows);
-					}
-				}	
-			}
-			if(sets[1].equalsIgnoreCase("!equal")) {
-				String rowCellFromString = row.getCell(sets[0]).getCellValue().toString();
-				if(!rowCellFromString.equalsIgnoreCase(sets[2]) && row.containsCell("is_delete_0")) {
-					if(!((Map<Integer, Boolean>)(object.get("recordRows"))).containsKey(i)) {
-						output.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
-						Map<Integer, Boolean> recordRows= (Map<Integer, Boolean>) object.get("recordRows");
-						recordRows.put(i, true);
-						object.put("recordRows", recordRows);
-					}
-				}	
-			}
+					String set= sets[0];
+					Cell setCell= row.getCell(set);
+					String cellString= setCell.getCellValue().toString();
+					cellString=cellString.isEmpty()? "0": cellString;
+					double rowCellFromBigDecimal = new BigDecimal(cellString).doubleValue();
+					if(rowCellFromBigDecimal<=  new BigDecimal(sets[2]).doubleValue() 
+							&& row.containsCell("is_delete_0")) {
+						if(!((Map<Integer, Boolean>)(object.get("recordRows"))).containsKey(i)) {
+							output.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
+							Map<Integer, Boolean> recordRows= (Map<Integer, Boolean>) object.get("recordRows");
+							recordRows.put(i, true);
+							object.put("recordRows", recordRows);
+						}
+					}	
+				}
+				if(sets[1].equalsIgnoreCase("包含")) {	
+					String rowCellFromString = row.getCell(sets[0]).getCellValue().toString();
+					if(rowCellFromString.contains(sets[2])) {
+						if(!((Map<Integer, Boolean>)(object.get("recordRows"))).containsKey(i)) {
+							output.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
+							Map<Integer, Boolean> recordRows= (Map<Integer, Boolean>) object.get("recordRows");
+							recordRows.put(i, true);
+							object.put("recordRows", recordRows);
+						}
+					}	
+				}
+				
+				//字符串长度小于
+				if(sets[1].equalsIgnoreCase("字符串长度大于")) {	
+					String rowCellFromString = row.getCell(sets[0]).getCellValue().toString().trim();
+					if(rowCellFromString.length()> new BigDecimal(sets[2]).doubleValue()) {
+						if(!((Map<Integer, Boolean>)(object.get("recordRows"))).containsKey(i)) {
+							output.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
+							Map<Integer, Boolean> recordRows= (Map<Integer, Boolean>) object.get("recordRows");
+							recordRows.put(i, true);
+							object.put("recordRows", recordRows);
+						}
+					}	
+				}
+				//字符串长度小于
+				if(sets[1].equalsIgnoreCase("字符串长度小于")) {	
+					String rowCellFromString = row.getCell(sets[0]).getCellValue().toString().trim();
+					if(rowCellFromString.length()< new BigDecimal(sets[2]).doubleValue()) {
+						if(!((Map<Integer, Boolean>)(object.get("recordRows"))).containsKey(i)) {
+							output.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
+							Map<Integer, Boolean> recordRows= (Map<Integer, Boolean>) object.get("recordRows");
+							recordRows.put(i, true);
+							object.put("recordRows", recordRows);
+						}
+					}	
+				}
+				
+				if(sets[1].equalsIgnoreCase("过滤")||sets[1].equalsIgnoreCase("不包含")) {
+					String rowCellFromString = row.getCell(sets[0]).getCellValue().toString();
+					if(!rowCellFromString.contains(sets[2])) {
+						if(!((Map<Integer, Boolean>)(object.get("recordRows"))).containsKey(i)) {
+							output.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
+							Map<Integer, Boolean> recordRows= (Map<Integer, Boolean>) object.get("recordRows");
+							recordRows.put(i, true);
+							object.put("recordRows", recordRows);
+						}
+					}	
+				}
+				//PLSEARCH 准备整体去掉plsql db的 is_delete_0 关键字
+				//罗瑶光 20211015
+				if(sets[1].equalsIgnoreCase("==")||sets[1].equalsIgnoreCase("=")
+						||sets[1].equalsIgnoreCase("===")) {
+					double rowCellFromBigDecimal = new BigDecimal(row.getCell(sets[0])
+							.getCellValue().toString()).doubleValue();
+					if(rowCellFromBigDecimal ==  new BigDecimal(sets[2]).doubleValue()) {
+						if(!((Map<Integer, Boolean>)(object.get("recordRows"))).containsKey(i)) {
+							output.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
+							Map<Integer, Boolean> recordRows= (Map<Integer, Boolean>) object.get("recordRows");
+							recordRows.put(i, true);
+							object.put("recordRows", recordRows);
+						}
+					}	
+				}
+				if(sets[1].equalsIgnoreCase(">=")||sets[1].equalsIgnoreCase("=>") 
+						||sets[1].equalsIgnoreCase("-gte")) {
+					double rowCellFromBigDecimal = new BigDecimal(row.getCell(sets[0])
+							.getCellValue().toString()).doubleValue();
+					if(rowCellFromBigDecimal >= new BigDecimal(sets[2]).doubleValue()) {
+						if(!((Map<Integer, Boolean>)(object.get("recordRows"))).containsKey(i)) {
+							output.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
+							Map<Integer, Boolean> recordRows= (Map<Integer, Boolean>) object.get("recordRows");
+							recordRows.put(i, true);
+							object.put("recordRows", recordRows);
+						}
+					}	
+				}
+				if(sets[1].equalsIgnoreCase(">")||sets[1].equalsIgnoreCase("-gt")) {
+					double rowCellFromBigDecimal = new BigDecimal(row.getCell(sets[0])
+							.getCellValue().toString()).doubleValue();
+					if(rowCellFromBigDecimal > new BigDecimal(sets[2]).doubleValue() ) {
+						if(!((Map<Integer, Boolean>)(object.get("recordRows"))).containsKey(i)) {
+							output.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
+							Map<Integer, Boolean> recordRows= (Map<Integer, Boolean>) object.get("recordRows");
+							recordRows.put(i, true);
+							object.put("recordRows", recordRows);
+						}
+					}	
+				}
+				if(sets[1].equalsIgnoreCase("!=")||sets[1].equalsIgnoreCase("=!")) {
+					double rowCellFromBigDecimal = new BigDecimal(row.getCell(sets[0])
+							.getCellValue().toString()).doubleValue();
+					if(rowCellFromBigDecimal != new BigDecimal(sets[2]).doubleValue()) {
+						if(!((Map<Integer, Boolean>)(object.get("recordRows"))).containsKey(i)) {
+							output.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
+							Map<Integer, Boolean> recordRows= (Map<Integer, Boolean>) object.get("recordRows");
+							recordRows.put(i, true);
+							object.put("recordRows", recordRows);
+						}
+					}	
+				}
+				if(sets[1].equalsIgnoreCase("equal")) {
+					String rowCellFromString = row.getCell(sets[0]).getCellValue().toString();
+					if(rowCellFromString.equalsIgnoreCase(sets[2])) {
+						if(!((Map<Integer, Boolean>)(object.get("recordRows"))).containsKey(i)) {
+							output.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
+							Map<Integer, Boolean> recordRows= (Map<Integer, Boolean>) object.get("recordRows");
+							recordRows.put(i, true);
+							object.put("recordRows", recordRows);
+						}
+					}	
+				}
+				if(sets[1].equalsIgnoreCase("!equal")) {
+					String rowCellFromString = row.getCell(sets[0]).getCellValue().toString();
+					if(!rowCellFromString.equalsIgnoreCase(sets[2])) {
+						if(!((Map<Integer, Boolean>)(object.get("recordRows"))).containsKey(i)) {
+							output.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
+							Map<Integer, Boolean> recordRows= (Map<Integer, Boolean>) object.get("recordRows");
+							recordRows.put(i, true);
+							object.put("recordRows", recordRows);
+						}
+					}	
+				}
 
-			if(sets[1].equalsIgnoreCase("in")) {
-				String rowCellFromString = row.getCell(sets[0]).getCellValue().toString();
-				String set = "," + sets[2] + ",";
-				if(set.contains("," + rowCellFromString + ",") && row.containsCell("is_delete_0")){
-					if(!((Map<Integer, Boolean>)(object.get("recordRows"))).containsKey(i)) {
-						output.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
-						Map<Integer, Boolean> recordRows= (Map<Integer, Boolean>) object.get("recordRows");
-						recordRows.put(i, true);
-						object.put("recordRows", recordRows);
-					}
-				}	
-			}
-			if(sets[1].equalsIgnoreCase("!in")) {
-				String rowCellFromString = row.getCell(sets[0]).getCellValue().toString();
-				String set = "," + sets[2] + ",";
-				if(!set.contains("," + rowCellFromString + ",") && row.containsCell("is_delete_0")){
-					if(!((Map<Integer, Boolean>)(object.get("recordRows"))).containsKey(i)) {
-						output.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
-						Map<Integer, Boolean> recordRows= (Map<Integer, Boolean>) object.get("recordRows");
-						recordRows.put(i, true);
-						object.put("recordRows", recordRows);
-					}
-				}	
-			}		
-		}	
+				if(sets[1].equalsIgnoreCase("in")) {
+					String rowCellFromString = row.getCell(sets[0]).getCellValue().toString();
+					String set = "," + sets[2] + ",";
+					if(set.contains("," + rowCellFromString + ",")){
+						if(!((Map<Integer, Boolean>)(object.get("recordRows"))).containsKey(i)) {
+							output.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
+							Map<Integer, Boolean> recordRows= (Map<Integer, Boolean>) object.get("recordRows");
+							recordRows.put(i, true);
+							object.put("recordRows", recordRows);
+						}
+					}	
+				}
+				if(sets[1].equalsIgnoreCase("!in")) {
+					String rowCellFromString = row.getCell(sets[0]).getCellValue().toString();
+					String set = "," + sets[2] + ",";
+					if(!set.contains("," + rowCellFromString + ",")){
+						if(!((Map<Integer, Boolean>)(object.get("recordRows"))).containsKey(i)) {
+							output.add(P_ConditionPLSearch_XCDX_Map.rowToRowMap(row));
+							Map<Integer, Boolean> recordRows= (Map<Integer, Boolean>) object.get("recordRows");
+							recordRows.put(i, true);
+							object.put("recordRows", recordRows);
+						}
+					}	
+				}		
+			}	
 	}
 }

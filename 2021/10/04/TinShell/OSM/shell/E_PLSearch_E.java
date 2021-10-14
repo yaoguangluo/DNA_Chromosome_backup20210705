@@ -12,6 +12,7 @@ public class E_PLSearch_E {
 		if(null== output) {
 			output= new ConcurrentHashMap<>();
 		}
+		output.put("firstTime", "true");
 		output.put("start", "0");
 		output.put("countJoins", "0");
 		//2make line
