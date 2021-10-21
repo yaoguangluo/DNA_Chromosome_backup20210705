@@ -30,10 +30,11 @@ import javax.swing.table.JTableHeader;
 
 import AVQ.ASQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import SVQ.stable.StablePOS;
-import ESU.list.List_ESU;
+//import ESU.list.List_ESU;
 import ESU.sort.Quick9DLYGWithString_ESU;
 import ESU.string.String_ESU;
 import ME.APM.VSQ.App;
+import ME.APM.VSQ.AppSearch;
 import MVQ.tableRender.ColorTableRender;
 import MSU.AMS.VQS.SQV.SI.OSU.SMV.http.RestCall;
 import PEU.P.table.TableSorterZYNK;
@@ -73,7 +74,8 @@ public class ZynkxPage extends Container implements MouseListener, KeyListener{
 	public Map<String, Object> dic_bzm;
 	int row;
 	int col; 
-	public Object[] columnTitle = {"ID", "打分", "病症&药名", "用药参考", "正常成人标准处方", "脉症", "制法", "应用", "使用", "讨论", "附方", "方歌"};
+	public Object[] columnTitle = {"ID", "打分", "病症&药名", "用药参考", "正常成人标准处方", "脉症", "制法"
+			, "应用", "使用", "讨论", "附方", "方歌"};
 	public CogsBinaryForest_AE _A;  
 	public Map<String, String> pos;
 	public DetaButton buttonCTE;
@@ -1002,131 +1004,20 @@ public class ZynkxPage extends Container implements MouseListener, KeyListener{
 	@SuppressWarnings("unused")
 	@Override
 	public void keyReleased(KeyEvent arg0) {
-		 ///////////////
-		if(null== key|| key.equals("")) {//把null key check提前，搜索加快
-			newTableModel.getDataVector().clear();
-			for(int i= 0; i< tableData_old.length; i++) {
-				newTableModel.insertRow(i, tableData_old[i]);
-			}		
-			newTableModel.fireTableDataChanged();	
-			return;
-		}
-		//////////////
 		String[] score = new String[copy.size()];
 		int[] score_code = new int[copy.size()];
 		int[] reg = new int[copy.size()];
-		int count=0;
-		Map<String, WordFrequency> mapSearchWithoutSort = null;
-		mapSearchWithoutSort= _A.parserMixStringByReturnFrequencyMap(key);
-		Iterator<String> iteratorForCopy = copy.iterator();	
-		int copyCount = 0;
-		
-		List<String> list= _A.parserMixedString(key);
-		String[] string= List_ESU.listToArray(list);
-		
-		String[] stringReg= new String[key.length()/3];
-		for(int i= 0; i< stringReg.length; i++) {
-			stringReg[i]= key.substring(i*3, (i*3+ 3)<key.length()?(i*3+ 3):key.length()-1);
+		int count= AppSearch.detaSearch(score_code, score, newTableModel, tableData_old, copy, key
+				, dic_map, pos, this.u, true);//测试了下，OK， 准备整体vpcs替换。之后设计成线程。避免搜索死锁，
+		if(-1== count) {
+			return;
 		}
-		while(iteratorForCopy.hasNext()) {
-			String iteratorForCopyString = iteratorForCopy.next();
-			score[copyCount] = iteratorForCopyString;
-			String temps = dic_map.get(iteratorForCopyString).toString();
-			Iterator<String> iteratorWordFrequency = mapSearchWithoutSort.keySet().iterator();
-			Here:
-				while(iteratorWordFrequency.hasNext()) {  
-					String mapSearchaAtII = iteratorWordFrequency.next();
-					WordFrequency wordFrequencySearch = mapSearchWithoutSort.get(mapSearchaAtII);
-					if(temps.contains(mapSearchaAtII)) {
-						if(reg[copyCount] == 0){
-							count += 1;
-						}
-						score[copyCount] = iteratorForCopyString;
-						if(score[copyCount].contains(key.replace(" ", ""))) {
-							reg[copyCount]+= 500;
-						}
-						if(key.contains(score[copyCount].replace(" ", ""))) {
-							reg[copyCount]+= 500;
-						}
-						if(!pos.containsKey(mapSearchaAtII)) {
-							reg[copyCount] += 1;
-							score_code[copyCount] += 1 << mapSearchaAtII.length() << wordFrequencySearch.getFrequency() ;
-							continue Here;
-						}
-						if(pos.get(mapSearchaAtII).contains("名")||pos.get(mapSearchaAtII).contains("动")
-								||pos.get(mapSearchaAtII).contains("形")||pos.get(mapSearchaAtII).contains("谓")) {
-							reg[copyCount] += 2;
-						}
-						reg[copyCount] += 1;
-						score_code[copyCount] += (iteratorForCopyString.contains(mapSearchaAtII) ? 2 : 1) 
-								* (!pos.get(mapSearchaAtII).contains("名") ? pos.get(mapSearchaAtII).contains("动")? 45 : 1 : 50) 
-								<< mapSearchaAtII.length() * wordFrequencySearch.getFrequency();
-						continue Here;
-					}
-					if(mapSearchaAtII.length()>1) {
-						for(int j=0;j<mapSearchaAtII.length();j++) {
-							if(temps.contains(String.valueOf(mapSearchaAtII.charAt(j)))) {
-								if(reg[copyCount] == 0){
-									count += 1;
-								}
-								score[copyCount] = iteratorForCopyString;
-								score_code[copyCount]+=1;
-								if(pos.containsKey(String.valueOf(mapSearchaAtII.charAt(j)))&&(
-										pos.get(String.valueOf(mapSearchaAtII.charAt(j))).contains("名")
-										||pos.get(String.valueOf(mapSearchaAtII.charAt(j))).contains("动")
-										||pos.get(String.valueOf(mapSearchaAtII.charAt(j))).contains("形")
-										||pos.get(String.valueOf(mapSearchaAtII.charAt(j))).contains("谓")
-										)) {
-									reg[copyCount] += 2;
-								}
-								reg[copyCount] += 1;
-								continue Here;
-							}
-						}
-					}
-				}
-			score_code[copyCount] = score_code[copyCount] * reg[copyCount];	
-			//词距
-			int code= 100;
-			int tempb= 0;
-			int tempa= score_code[copyCount];		
-			if(key.length()> 4) {
-				//全词
-				for(int i= 0; i< string.length; i++) {
-					if(temps.contains(string[i])) {
-						tempb+= code;
-					}
-				}
-				//断句
-				for(int i= 0; i< stringReg.length; i++) {
-					if(temps.contains(stringReg[i])) {
-						tempb+= code;
-					}
-				}
-				score_code[copyCount] = (int) (tempa/Math.pow(this.u.lookrot+ 1, 4) + tempb*Math.pow(this.u.lookrot, 2));
-			}
-			if(key.replace(" ", "").length()> 1&& key.replace(" ", "").length()< 5) {
-				if(temps.contains(key.replace(" ", ""))) {
-					tempb+= code<< 7;
-				}
-				score_code[copyCount] = (int) (tempa/Math.pow(this.u.lookrot+ 1, 4) + tempb*Math.pow(this.u.lookrot, 2));
-			}
-			copyCount++;
-		}
-		LABEL2:
-			new Quick9DLYGWithString_ESU().sort(score_code, score);
+		new Quick9DLYGWithString_ESU().sort(score_code, score);
 		int max= score_code[0];
 		//int max= score_code.length> 0? score_code[0]: 9999;//稍后处理 罗瑶光20210514
 		Object[][] tableData = new Object[count][13];
 		int new_count=0;
 		newTableModel.getDataVector().clear();
-		if(null == key || key.equals("")) {
-			for(int i=0; i<tableData_old.length; i++) {
-				newTableModel.insertRow(i, tableData_old[i]);
-			}		
-			newTableModel.fireTableDataChanged();	
-			return;
-		}
 		Here:
 			for(int i = copy.size()-1; i > -1; i--) {
 				if(score_code[i] < 1){
@@ -1157,32 +1048,6 @@ public class ZynkxPage extends Container implements MouseListener, KeyListener{
 			}	
 		newTableModel.fireTableDataChanged();	
 	}
-
-//	public class colorTableRender extends DefaultTableCellRenderer { 
-//		private static final long serialVersionUID = 1L;
-//		public Component getTableCellRendererComponent(JTable table,Object value, boolean isSelected, boolean hasFocus, int row,
-//				int column) {
-//			if (isSelected && hasFocus && row == table.getSelectedRow() && column == table.getSelectedColumn()) {
-//				//2.设置当前Cell的颜色
-//				Component c = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
-//				c.setBackground(Color.CYAN);//设置背景色
-//				c.setForeground(Color.gray);//设置前景色
-//				return c;
-//			} else {
-//				//3.设置单数行，偶数行的颜色
-//				if (row % 3 == 0) {//偶数行时的颜色
-//					setBackground(new Color(253,233,254));
-//				}else if (row % 3 == 1) {//设置单数行的颜色
-//					setBackground(new Color(233,254,234));
-//				}else if (row % 3 == 2) {//设置单数行的颜色
-//					setBackground(new Color(255,251,232));
-//				}
-//				return super.getTableCellRendererComponent(table, value,
-//						isSelected, hasFocus, row, column);
-//			}
-//		}
-//	}
-
 	@Override
 	public void keyTyped(KeyEvent arg0) {
 	}

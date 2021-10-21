@@ -1,7 +1,4 @@
 package ME.APM.VSQ.xiYiYaoCai;
-import java.awt.Color;
-
-import java.awt.Component;
 import java.awt.Container;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -25,7 +22,6 @@ import javax.swing.JTabbedPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
-import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 
@@ -39,6 +35,7 @@ import MSU.AMS.VQS.SQV.SI.OSU.SMV.http.RestCall;
 import PEU.P.table.TableSorterZYNK;
 import MSV.OSU.string.NullObject;
 import MVQ.button.DetaButton;
+import MVQ.tableRender.ColorTableRender;
 //import OCI.ME.analysis.C.A;
 import OEI.ME.analysis.E.CogsBinaryForest_AE;
 import OSI.AOP.neo.tts.ReadChinese;
@@ -957,7 +954,7 @@ public class XyscPage extends Container implements MouseListener, KeyListener{
 		table.getColumnModel().getColumn(12).setPreferredWidth(80+30);
 		table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 		table.addMouseListener(this);
-		colorTableRender tcr = new colorTableRender();  
+		ColorTableRender tcr = new ColorTableRender();  
 		table.setDefaultRenderer(Object.class, tcr);	
 		return table;
 	}
@@ -1257,31 +1254,6 @@ public class XyscPage extends Container implements MouseListener, KeyListener{
 				new_count+=1;
 			}	
 		newTableModel.fireTableDataChanged();	
-	}
-
-	public class colorTableRender extends DefaultTableCellRenderer { 
-		private static final long serialVersionUID = 1L;
-		public Component getTableCellRendererComponent(JTable table,Object value, boolean isSelected, boolean hasFocus, int row,
-				int column) {
-			if (isSelected && hasFocus && row == table.getSelectedRow() && column == table.getSelectedColumn()) {
-				//2.设置当前Cell的颜色
-				Component c = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
-				c.setBackground(Color.CYAN);//设置背景色
-				c.setForeground(Color.gray);//设置前景色
-				return c;
-			} else {
-				//3.设置单数行，偶数行的颜色
-				if (row % 3 == 0) {//偶数行时的颜色
-					setBackground(new Color(253,233,254));
-				}else if (row % 3 == 1) {//设置单数行的颜色
-					setBackground(new Color(233,254,234));
-				}else if (row % 3 == 2) {//设置单数行的颜色
-					setBackground(new Color(255,251,232));
-				}
-				return super.getTableCellRendererComponent(table, value,
-						isSelected, hasFocus, row, column);
-			}
-		}
 	}
 
 	@Override
