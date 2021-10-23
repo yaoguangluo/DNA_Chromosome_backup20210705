@@ -337,8 +337,8 @@ public class ZyzdxPage extends Container implements MouseListener, KeyListener{
 					return;
 				}
 				StringBuilder page = new StringBuilder().append("");
-				AppButtonUtil.page÷–“©DNN(page, sets, currentPage, u, table, row, pos, key
-						, buttonSum, buttonCrt, data, statistic);
+				AppButtonUtil.pageDNN(page, sets, currentPage, u, table, row, pos, key
+						, buttonSum, buttonCrt, data, statistic, "÷–“©");
 			}
 		});
 

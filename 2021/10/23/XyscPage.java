@@ -29,10 +29,8 @@ import AVQ.ASQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import SVQ.stable.StablePOS;
 import ESU.list.List_ESU;
 import ESU.sort.Quick9DLYGWithString_ESU;
-import ESU.string.String_ESU;
 import ME.APM.VSQ.App;
 import ME.APM.VSQ.AppButtonUtil;
-import MSU.AMS.VQS.SQV.SI.OSU.SMV.http.RestCall;
 import PEU.P.table.TableSorterZYNK;
 import MSV.OSU.string.NullObject;
 import MVQ.button.DetaButton;
@@ -150,19 +148,23 @@ public class XyscPage extends Container implements MouseListener, KeyListener{
 						for (int i = fwa.size()-1; i >= 0; i--) {
 							if (fwa.get(i) != null) {
 								if(pos.get(fwa.get(i).getWord()) == null) {
-									page.append("<div style=\"background:black\"><font color=\"white\">" + fwa.get(i).getWord()+""+fwa.get(i).getFrequency() + "</font></div>");
+									page.append("<div style=\"background:black\"><font color=\"white\">" 
+								+ fwa.get(i).getWord()+""+fwa.get(i).getFrequency() + "</font></div>");
 									continue Here;
 								}
 								if(pos.get(fwa.get(i).getWord()).contains("名")) {
-									page.append( "<div style=\"background:#FF44FF\"><font color=\"white\">" + fwa.get(i).getWord()+""+fwa.get(i).getFrequency() +"</font></div>");
+									page.append( "<div style=\"background:#FF44FF\"><font color=\"white\">" 
+								+ fwa.get(i).getWord()+""+fwa.get(i).getFrequency() +"</font></div>");
 									continue Here;
 								}
 								if(pos.get(fwa.get(i).getWord()).contains("动")) {
-									page.append("<div style=\"background:#8CEA00\"><font color=\"black\" size=\"5\">" + fwa.get(i).getWord()+""+fwa.get(i).getFrequency() +"</font></div>");
+									page.append("<div style=\"background:#8CEA00\"><font color=\"black\" size=\"5\">" 
+								+ fwa.get(i).getWord()+""+fwa.get(i).getFrequency() +"</font></div>");
 									continue Here;
 								}
 								if(pos.get(fwa.get(i).getWord()).contains("形")) {
-									page.append("<div style=\"background:#FF9224\"><font color=\"black\" size=\"5\">" + fwa.get(i).getWord()+""+fwa.get(i).getFrequency() +"</font></div>");
+									page.append("<div style=\"background:#FF9224\"><font color=\"black\" size=\"5\">" 
+								+ fwa.get(i).getWord()+""+fwa.get(i).getFrequency() +"</font></div>");
 								}
 							}
 						}	
@@ -204,19 +206,23 @@ public class XyscPage extends Container implements MouseListener, KeyListener{
 						for (int i = fwa.size()-1; i >= 0; i--) {
 							if (fwa.get(i) != null) {
 								if(pos.get(fwa.get(i).getWord()) == null) {
-									page.append("<div style=\"background:black\"><font color=\"white\">" + fwa.get(i).getWord()+""+fwa.get(i).getFrequency() + "</font></div>");
+									page.append("<div style=\"background:black\"><font color=\"white\">" 
+								+ fwa.get(i).getWord()+""+fwa.get(i).getFrequency() + "</font></div>");
 									continue Here;
 								}
 								if(pos.get(fwa.get(i).getWord()).contains("名")) {
-									page.append( "<div style=\"background:#FF44FF\"><font color=\"white\">" + fwa.get(i).getWord()+""+fwa.get(i).getFrequency() +"</font></div>");
+									page.append( "<div style=\"background:#FF44FF\"><font color=\"white\">" 
+								+ fwa.get(i).getWord()+""+fwa.get(i).getFrequency() +"</font></div>");
 									continue Here;
 								}
 								if(pos.get(fwa.get(i).getWord()).contains("动")) {
-									page.append("<div style=\"background:#8CEA00\"><font color=\"black\" size=\"5\">" + fwa.get(i).getWord()+""+fwa.get(i).getFrequency() +"</font></div>");
+									page.append("<div style=\"background:#8CEA00\"><font color=\"black\" size=\"5\">" 
+								+ fwa.get(i).getWord()+""+fwa.get(i).getFrequency() +"</font></div>");
 									continue Here;
 								}
 								if(pos.get(fwa.get(i).getWord()).contains("形")) {
-									page.append("<div style=\"background:#FF9224\"><font color=\"black\" size=\"5\">" + fwa.get(i).getWord()+""+fwa.get(i).getFrequency() +"</font></div>");
+									page.append("<div style=\"background:#FF9224\"><font color=\"black\" size=\"5\">" 
+								+ fwa.get(i).getWord()+""+fwa.get(i).getFrequency() +"</font></div>");
 								}
 							}
 						}	
@@ -289,7 +295,8 @@ public class XyscPage extends Container implements MouseListener, KeyListener{
 					return;
 				}
 				StringBuilder page = new StringBuilder();
-				List<String> setsForGet = sets.subList(currentPage * 2000, (currentPage + 1)*2000<sets.size()? (currentPage + 1)*2000 : sets.size());
+				List<String> setsForGet = sets.subList(currentPage * 2000, (currentPage + 1)*2000<sets.size()
+						? (currentPage + 1)*2000 : sets.size());
 				Iterator<String> iterator = setsForGet.iterator();
 				while(iterator.hasNext()) {
 					String setOfi = iterator.next();
@@ -314,8 +321,8 @@ public class XyscPage extends Container implements MouseListener, KeyListener{
 					return;
 				}
 				StringBuilder page = new StringBuilder().append("");
-				AppButtonUtil.page中药DNN(page, sets, currentPage, app, table, row, pos, key
-						, buttonSum, buttonCrt, data, statistic);
+				AppButtonUtil.pageDNN(page, sets, currentPage, app, table, row, pos, key
+						, buttonSum, buttonCrt, data, statistic, "中药");
 			}
 		});
 
@@ -330,136 +337,8 @@ public class XyscPage extends Container implements MouseListener, KeyListener{
 					return;
 				}
 				StringBuilder page = new StringBuilder().append("");
-				List<String> setsForGet = sets.subList(currentPage * 2000, (currentPage + 1)*2000<sets.size()? (currentPage + 1)*2000 : sets.size());
-				Iterator<String> iterator = setsForGet.iterator();
-				String setOfi= "";
-				int times= 0;
-				while(times++<1000&& iterator.hasNext()) {
-					setOfi += iterator.next();
-				}
-				String response= "";
-				String keyCache= setOfi.length()> 30? setOfi.substring(0, 30): setOfi.substring(0, setOfi.length()- 1);
-				if(!app.CacheString.containsKey(keyCache)) {
-					try {
-						String string= String_ESU.charsetSwap(setOfi, "GBK", "GBK");
-						String encode= String_ESU.stringToURIencode(string, "UTF8");
-						response= RestCall.backEndRequest(encode);
-						String[] strings= response.split("\"");
-						response= strings.length> 3? strings[3]: "";
-						response= String_ESU.uRIencodeToURIdecode(response, "UTF8");
-					} catch (IOException e1) {
-						e1.printStackTrace();
-					}
-					if(app.CacheStringPiple.size()< 301) {//buman
-						app.CacheString.put(keyCache, response);
-						app.CacheStringPiple.add(0, keyCache);
-					}else {//man
-						app.CacheString.put(keyCache, response);
-						app.CacheStringPiple.add(0, keyCache);
-						app.CacheString.remove(app.CacheStringPiple.get(300));
-						app.CacheStringPiple.remove(300);
-					}
-				}else {
-					response=app.CacheString.get(keyCache);
-				}
-				//dnn森林
-				try {
-					String[] dnn= response.replace("\r\n", "<br/>").split("<br/>");
-					app.coAuthorForWord.bootDetaBingMingDnnFlowerForest(app, table.getValueAt(row, 2).toString(), dnn, true);
-					//(this.u.table.getValueAt(row, 2).toString(), false);
-				}catch(Exception e1) {
-					validate();
-				}
-
-				Map<String, WordFrequency> map = new ConcurrentHashMap<>();
-				iterator = setsForGet.iterator();
-				Here:
-					while(iterator.hasNext()) {
-						setOfi = iterator.next();
-						if(pos.get(setOfi) == null) {
-							page.append("<span style=\"background:#F1F1F1\"><font color=\"black\" size=\"5\">" + setOfi + "</font></span>");
-							continue Here;
-						}
-						if((pos.get(setOfi).contains("名")||pos.get(setOfi).contains("动")||pos.get(setOfi).contains("形"))) {
-							if (map.containsKey(setOfi)) {
-								WordFrequency wordFrequency = map.get(setOfi);
-								wordFrequency.I_Frequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
-								map.put(setOfi, wordFrequency);
-							} else {
-								WordFrequency wordFrequency = new WordFrequency();
-								wordFrequency.I_Frequency(StablePOS.INT_ONE);
-								wordFrequency.I_Word(setOfi);
-								map.put(setOfi, wordFrequency);
-							}
-						}
-						if (!setOfi.equals("")) {
-							if(response.contains(setOfi)&& setOfi.length()> 1) {
-								page.append("<span style=\"background:"+new PEU.P.image.Color_P().P(255, 145, 255)+"\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");
-								continue Here;
-							} 
-							if(key.contains(setOfi)&&(pos.get(setOfi).contains("名")||pos.get(setOfi).contains("动")||pos.get(setOfi).contains("形"))) {
-								page.append("<span style=\"background:red\"><font color=\"white\">"+setOfi+"</font></span>");
-								continue Here;
-							}
-							if(pos.get(setOfi).contains("名")) {
-								page.append("<span style=\"background:"+new PEU.P.image.Color_P().P(255, 245, 255)+"\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");
-								continue Here;
-							}
-							if(pos.get(setOfi).contains("动")) {
-								page.append("<span style=\"background:"+new PEU.P.image.Color_P().P(245, 255, 245)+"\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");
-								continue Here;
-							}
-							if(pos.get(setOfi).contains("形")) {
-								page.append("<span style=\"background:"+new PEU.P.image.Color_P().P(255, 255, 245)+"\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");
-								continue Here;
-							}
-							if(pos.get(setOfi).contains("副")) {
-								page.append("<span style=\"background:#F1FFFF\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");
-								continue Here;
-							} 
-							page.append("<span style=\"background:white\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");			 
-						}
-					}	
-				buttonSum.setText("共有 " + (sets == null ? 0 : (1 + sets.size() / 2001)) + " 页");
-				buttonCrt.setText("当前页面：" + (sets == null? 0 : 1));
-				data.setText(page.toString());
-				data.setSelectionStart(0);
-				data.setSelectionEnd(0);
-				data.validate();			
-				//
-				try {
-					statistic.setSize(500, 800);
-					//Map<Integer, WordFrequency> fwa = _A.sortWordFrequencyMapToSortMap(map);
-					statistic.setContentType("text/html");
-					StringBuilder stringBuilder = new StringBuilder();
-					String[] fwa= response.replace("\r\n", "<br/>").split("<br/>");
-					Here:
-						for (int i = fwa.length-1; i > 0; i--) {
-							if (fwa[i]!= null) {
-								if(pos.get(fwa[i].split(":")[0]) == null) {
-									stringBuilder.append("<div style=\"background:black\"><font color=\"white\">" +fwa[i] + "</font></div>");
-									continue Here;
-								}
-								if(pos.get(fwa[i].split(":")[0]).contains("名")) {
-									stringBuilder.append( "<div style=\"background:#FF44FF\"><font color=\"white\">" + fwa[i] +"</font></div>");
-									continue Here;
-								}
-								if(pos.get(fwa[i].split(":")[0]).contains("动")) {
-									stringBuilder.append("<div style=\"background:#8CEA00\"><font color=\"black\" size=\"5\">" + fwa[i] +"</font></div>");
-									continue Here;
-								}
-								if(pos.get(fwa[i].split(":")[0]).contains("形")) {
-									stringBuilder.append("<div style=\"background:#FF9224\"><font color=\"black\" size=\"5\">" + fwa[i] +"</font></div>");
-								}
-							}
-						}	
-					statistic.setText(stringBuilder.toString());
-					statistic.setSelectionStart(0);
-					statistic.setSelectionEnd(0);
-					statistic.validate();
-				}catch(Exception e1){	
-					statistic.validate();
-				}          
+				AppButtonUtil.pageDNN(page, sets, currentPage, app, table, row, pos, key
+						, buttonSum, buttonCrt, data, statistic, "西药");
 			}
 		});
 
@@ -691,15 +570,18 @@ public class XyscPage extends Container implements MouseListener, KeyListener{
 							continue Here;
 						}
 						if(pos.get(setOfi).contains("名")) {
-							page.append("<span style=\"background:"+new PEU.P.image.Color_P().P(255, 245, 255)+"\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");
+							page.append("<span style=\"background:"+new PEU.P.image.Color_P().P(255, 245, 255)
+									+"\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");
 							continue Here;
 						}
 						if(pos.get(setOfi).contains("动")) {
-							page.append("<span style=\"background:"+new PEU.P.image.Color_P().P(245, 255, 245)+"\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");
+							page.append("<span style=\"background:"+new PEU.P.image.Color_P().P(245, 255, 245)
+									+"\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");
 							continue Here;
 						}
 						if(pos.get(setOfi).contains("形")) {
-							page.append("<span style=\"background:"+new PEU.P.image.Color_P().P(255, 255, 245)+"\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");
+							page.append("<span style=\"background:"+new PEU.P.image.Color_P().P(255, 255, 245)
+									+"\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");
 							continue Here;
 						}
 						if(pos.get(setOfi).contains("副")) {
@@ -731,19 +613,23 @@ public class XyscPage extends Container implements MouseListener, KeyListener{
 					WordFrequency fwaMap = fwa.get(i);
 					if (fwaMap!= null) {
 						if(pos.get(fwaMap.getWord()) == null) {
-							page.append("<div style=\"background:black\"><font color=\"white\">" + fwaMap.getWord()+""+fwaMap.getFrequency() + "</font></div>");
+							page.append("<div style=\"background:black\"><font color=\"white\">" 
+						+ fwaMap.getWord()+""+fwaMap.getFrequency() + "</font></div>");
 							continue Here;
 						}
 						if(pos.get(fwaMap.getWord()).contains("名")) {
-							page.append( "<div style=\"background:#FF44FF\"><font color=\"white\">" + fwaMap.getWord()+""+fwaMap.getFrequency() +"</font></div>");
+							page.append( "<div style=\"background:#FF44FF\"><font color=\"white\">" 
+						+ fwaMap.getWord()+""+fwaMap.getFrequency() +"</font></div>");
 							continue Here;
 						}
 						if(pos.get(fwaMap.getWord()).contains("动")) {
-							page.append("<div style=\"background:#8CEA00\"><font color=\"black\" size=\"5\">" + fwaMap.getWord()+""+fwaMap.getFrequency() +"</font></div>");
+							page.append("<div style=\"background:#8CEA00\"><font color=\"black\" size=\"5\">"
+						+ fwaMap.getWord()+""+fwaMap.getFrequency() +"</font></div>");
 							continue Here;
 						}
 						if(pos.get(fwaMap.getWord()).contains("形")) {
-							page.append("<div style=\"background:#FF9224\"><font color=\"black\" size=\"5\">" + fwaMap.getWord()+""+fwaMap.getFrequency() +"</font></div>");
+							page.append("<div style=\"background:#FF9224\"><font color=\"black\" size=\"5\">" 
+						+ fwaMap.getWord()+""+fwaMap.getFrequency() +"</font></div>");
 						}
 					}
 				}	
