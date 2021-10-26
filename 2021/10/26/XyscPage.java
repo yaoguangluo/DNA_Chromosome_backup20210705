@@ -76,8 +76,8 @@ public class XyscPage extends Container implements MouseListener, KeyListener{
 	public Map<String, String> etc;
 	public Map<String, String> cte;
 	public JTabbedPane jTabbedpanel;
-	public Object[] columnTitle= {"ID", "´ò·Ö", "Î÷Ò©Ãû", "½éÉÜ", "Ò©Àí", "Ö÷Òª³É·İ", "ÓÃ·¨", 
-			"×¢ÒâÊÂÏî", "ÊÊÓ¦Ö¢", "²»Á¼·´Ó¦", "ÓÃÁ¿", "Ò©ÎïÏà»¥×÷ÓÃ", "ÆäËû"};  
+	public Object[] columnTitle= {"ID", "æ‰“åˆ†", "è¥¿è¯å", "ä»‹ç»", "è¯ç†", "ä¸»è¦æˆä»½", "ç”¨æ³•", 
+			"æ³¨æ„äº‹é¡¹", "é€‚åº”ç—‡", "ä¸è‰¯ååº”", "ç”¨é‡", "è¯ç‰©ç›¸äº’ä½œç”¨", "å…¶ä»–"};  
 	public JTextPane text ;
 	private DetaButton buttonCTV;
 	private ReadChinese readChinese;
@@ -101,7 +101,7 @@ public class XyscPage extends Container implements MouseListener, KeyListener{
 
 		jsp_statistic.setBounds(5, 290 + 100 - 80 + 200-260, 1440 - 650 - 645, 500-166+90-44);
 		jsp_data.setBounds(5 + 800-650, 290 + 100 - 80 + 200-260+26, 1440-800+650-130, 500-166+90-70);
-		JLabel jlabel = new JLabel("ĞÅÏ¢ËÑË÷:");  
+		JLabel jlabel = new JLabel("ä¿¡æ¯æœç´¢:");  
 		jlabel.setBounds(5, 15, 100, 50);
 		JScrollPane jsp = new JScrollPane(this.jTable());
 		jsp.setBounds(5, 80-80, 1440-130, 200+100+200-260);
@@ -115,12 +115,12 @@ public class XyscPage extends Container implements MouseListener, KeyListener{
 		data = new JTextPane();  
 		data.setBounds(850, 150, 1440-600, 800-70);
 
-		buttonSum = new DetaButton("¹²ÓĞ " + (sets==null?0:(1 + sets.size() / 2001))+ " Ò³");
+		buttonSum = new DetaButton("å…±æœ‰ " + (sets==null?0:(1 + sets.size() / 2001))+ " é¡µ");
 		buttonSum.setBounds(0, 0, 100, 30);
-		buttonCrt = new DetaButton("µ±Ç°Ò³Ãæ£º" + (currentPage + 1));
+		buttonCrt = new DetaButton("å½“å‰é¡µé¢ï¼š" + (currentPage + 1));
 		buttonCrt.setBounds(120, 0, 150, 30);
 
-		buttonPrev= new DetaButton("<-ÏòÇ°·­Ò³");
+		buttonPrev= new DetaButton("<-å‘å‰ç¿»é¡µ");
 		buttonPrev.setBounds(290, 0, 100, 30);
 		buttonPrev.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -129,8 +129,8 @@ public class XyscPage extends Container implements MouseListener, KeyListener{
 					currentPage-=1;
 					currentPage = (currentPage< 0 ? 0 : currentPage );
 					StringBuilder page = new StringBuilder().append("");
-					AppButtonUtil.page·­Ò³(page, map, key, pos, sets, currentPage);
-					buttonCrt.setText("µ±Ç°Ò³Ãæ£º" + (currentPage + 1));
+					AppButtonUtil.pageç¿»é¡µ(page, map, key, pos, sets, currentPage);
+					buttonCrt.setText("å½“å‰é¡µé¢ï¼š" + (currentPage + 1));
 					data.setText(page.toString());
 					data.setSelectionStart(0);
 					data.setSelectionEnd(0);
@@ -152,17 +152,17 @@ public class XyscPage extends Container implements MouseListener, KeyListener{
 								+ fwa.get(i).getWord()+""+fwa.get(i).getFrequency() + "</font></div>");
 									continue Here;
 								}
-								if(pos.get(fwa.get(i).getWord()).contains("Ãû")) {
+								if(pos.get(fwa.get(i).getWord()).contains("å")) {
 									page.append( "<div style=\"background:#FF44FF\"><font color=\"white\">" 
 								+ fwa.get(i).getWord()+""+fwa.get(i).getFrequency() +"</font></div>");
 									continue Here;
 								}
-								if(pos.get(fwa.get(i).getWord()).contains("¶¯")) {
+								if(pos.get(fwa.get(i).getWord()).contains("åŠ¨")) {
 									page.append("<div style=\"background:#8CEA00\"><font color=\"black\" size=\"5\">" 
 								+ fwa.get(i).getWord()+""+fwa.get(i).getFrequency() +"</font></div>");
 									continue Here;
 								}
-								if(pos.get(fwa.get(i).getWord()).contains("ĞÎ")) {
+								if(pos.get(fwa.get(i).getWord()).contains("å½¢")) {
 									page.append("<div style=\"background:#FF9224\"><font color=\"black\" size=\"5\">" 
 								+ fwa.get(i).getWord()+""+fwa.get(i).getFrequency() +"</font></div>");
 								}
@@ -178,7 +178,7 @@ public class XyscPage extends Container implements MouseListener, KeyListener{
 				}          
 			}
 		});
-		buttonNext= new DetaButton("Ïòºó·­Ò³->");
+		buttonNext= new DetaButton("å‘åç¿»é¡µ->");
 		buttonNext.setBounds(410, 0, 100, 30);
 		buttonNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -187,8 +187,8 @@ public class XyscPage extends Container implements MouseListener, KeyListener{
 					currentPage+=1;
 					currentPage = (currentPage > (sets == null ? 0 : sets.size()) / 2001 ? currentPage - 1 : currentPage );
 					StringBuilder page = new StringBuilder().append("");
-					AppButtonUtil.page·­Ò³(page, map, key, pos, sets, currentPage);
-					buttonCrt.setText("µ±Ç°Ò³Ãæ£º" + (currentPage + 1));
+					AppButtonUtil.pageç¿»é¡µ(page, map, key, pos, sets, currentPage);
+					buttonCrt.setText("å½“å‰é¡µé¢ï¼š" + (currentPage + 1));
 					data.setText(page.toString());
 					data.setSelectionStart(0);
 					data.setSelectionEnd(0);
@@ -210,17 +210,17 @@ public class XyscPage extends Container implements MouseListener, KeyListener{
 								+ fwa.get(i).getWord()+""+fwa.get(i).getFrequency() + "</font></div>");
 									continue Here;
 								}
-								if(pos.get(fwa.get(i).getWord()).contains("Ãû")) {
+								if(pos.get(fwa.get(i).getWord()).contains("å")) {
 									page.append( "<div style=\"background:#FF44FF\"><font color=\"white\">" 
 								+ fwa.get(i).getWord()+""+fwa.get(i).getFrequency() +"</font></div>");
 									continue Here;
 								}
-								if(pos.get(fwa.get(i).getWord()).contains("¶¯")) {
+								if(pos.get(fwa.get(i).getWord()).contains("åŠ¨")) {
 									page.append("<div style=\"background:#8CEA00\"><font color=\"black\" size=\"5\">" 
 								+ fwa.get(i).getWord()+""+fwa.get(i).getFrequency() +"</font></div>");
 									continue Here;
 								}
-								if(pos.get(fwa.get(i).getWord()).contains("ĞÎ")) {
+								if(pos.get(fwa.get(i).getWord()).contains("å½¢")) {
 									page.append("<div style=\"background:#FF9224\"><font color=\"black\" size=\"5\">" 
 								+ fwa.get(i).getWord()+""+fwa.get(i).getFrequency() +"</font></div>");
 								}
@@ -237,15 +237,15 @@ public class XyscPage extends Container implements MouseListener, KeyListener{
 				}  
 			}
 		});
-		buttonCTE = new DetaButton("Ó¢ÎÄ×¢ÊÍ");
+		buttonCTE = new DetaButton("è‹±æ–‡æ³¨é‡Š");
 		buttonCTE.setBounds(630, 0, 100, 30);
 		buttonCTE.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {if(sets==null) {
 				return;
 			}
 			StringBuilder page = new StringBuilder().append("");
-			AppButtonUtil.pageÓ¢ÎÄ×¢ÊÍ(page, cte, key, pos, sets, currentPage);
-			buttonCrt.setText("µ±Ç°Ò³Ãæ£º" + (currentPage + 1));
+			AppButtonUtil.pageè‹±æ–‡æ³¨é‡Š(page, cte, key, pos, sets, currentPage);
+			buttonCrt.setText("å½“å‰é¡µé¢ï¼š" + (currentPage + 1));
 			data.setText(page.toString());
 			data.setSelectionStart(0);
 			data.setSelectionEnd(0);
@@ -253,15 +253,15 @@ public class XyscPage extends Container implements MouseListener, KeyListener{
 			}
 		});
 
-		buttonFRS = new DetaButton("ÖĞÎÄ»¹Ô­");
+		buttonFRS = new DetaButton("ä¸­æ–‡è¿˜åŸ");
 		buttonFRS.setBounds(520, 0, 100, 30);
 		buttonFRS.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {if(sets==null) {
 				return;
 			}
 			StringBuilder page = new StringBuilder().append("");
-			AppButtonUtil.pageÖĞÎÄ»¹Ô­(page, key, pos, sets, currentPage);
-			buttonCrt.setText("µ±Ç°Ò³Ãæ£º" + (currentPage + 1));
+			AppButtonUtil.pageä¸­æ–‡è¿˜åŸ(page, key, pos, sets, currentPage);
+			buttonCrt.setText("å½“å‰é¡µé¢ï¼š" + (currentPage + 1));
 			data.setText(page.toString());
 			data.setSelectionStart(0);
 			data.setSelectionEnd(0);
@@ -269,22 +269,22 @@ public class XyscPage extends Container implements MouseListener, KeyListener{
 			}
 		});
 
-		buttonETC = new DetaButton("Í¬ÒåÃèÊö");
+		buttonETC = new DetaButton("åŒä¹‰æè¿°");
 		buttonETC.setBounds(740, 0, 100, 30);
 		buttonETC.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {if(sets==null) {
 				return;
 			}
 			StringBuilder page = new StringBuilder().append("");
-			AppButtonUtil.pageÍ¬ÒåÃèÊö( page,  cte,  etc, key, pos, sets,currentPage);
-			buttonCrt.setText("µ±Ç°Ò³Ãæ£º" + (currentPage + 1));
+			AppButtonUtil.pageåŒä¹‰æè¿°( page,  cte,  etc, key, pos, sets,currentPage);
+			buttonCrt.setText("å½“å‰é¡µé¢ï¼š" + (currentPage + 1));
 			data.setText(page.toString());
 			data.setSelectionStart(0);
 			data.setSelectionEnd(0);
 			data.validate();
 			}
 		});
-		DetaButton buttonADD = new DetaButton("Ìí¼Óµ½±à¼­Ò³");
+		DetaButton buttonADD = new DetaButton("æ·»åŠ åˆ°ç¼–è¾‘é¡µ");
 		buttonADD.setBounds(868, 0, 115, 30);
 		buttonADD.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -310,7 +310,7 @@ public class XyscPage extends Container implements MouseListener, KeyListener{
 				text.validate();
 			}
 		});
-		DetaButton buttonKSLJ= new DetaButton("ÖĞÒ©DNN");
+		DetaButton buttonKSLJ= new DetaButton("ä¸­è¯DNN");
 		buttonKSLJ.setBounds(990, 0, 115, 30);
 		buttonKSLJ.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -322,11 +322,11 @@ public class XyscPage extends Container implements MouseListener, KeyListener{
 				}
 				StringBuilder page = new StringBuilder().append("");
 				AppButtonUtil.pageDNN(page, sets, currentPage, app, table, row, pos, key
-						, buttonSum, buttonCrt, data, statistic, "ÖĞÒ©");
+						, buttonSum, buttonCrt, data, statistic, "ä¸­è¯");
 			}
 		});
 
-		DetaButton buttonKSLJB= new DetaButton("Î÷Ò©DNN");
+		DetaButton buttonKSLJB= new DetaButton("è¥¿è¯DNN");
 		buttonKSLJB.setBounds(990+ 115+ 7, 0, 115, 30);
 		buttonKSLJB.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -338,34 +338,34 @@ public class XyscPage extends Container implements MouseListener, KeyListener{
 				}
 				StringBuilder page = new StringBuilder().append("");
 				AppButtonUtil.pageDNN(page, sets, currentPage, app, table, row, pos, key
-						, buttonSum, buttonCrt, data, statistic, "Î÷Ò©");
+						, buttonSum, buttonCrt, data, statistic, "è¥¿è¯");
 			}
 		});
 
 
-		DetaButton buttonBCJ= new DetaButton("µ¼³öĞÂÆªÎ÷Ò©È«¼¯");
+		DetaButton buttonBCJ= new DetaButton("å¯¼å‡ºæ–°ç¯‡è¥¿è¯å…¨é›†");
 		//buttonETC.setBounds(200 - 15, 0, 88, 30);
 		buttonBCJ.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//Ò»ĞĞÒ»ĞĞµÄ²åÈë
+				//ä¸€è¡Œä¸€è¡Œçš„æ’å…¥
 				boolean mod= true;
 				for(int i= 0; i< table.getRowCount(); i++){
 					String plsql= "setRoot:C:/DetaDB;";
 					plsql+= "baseName:ZYY;"; 
 					plsql+= "tableName:xybg:insert;" +
 							"culumnValue:ID:"+ table.getValueAt(i, 0).toString().replace(":", "@biky@")+ ";" + 
-							"culumnValue:´ò·Ö:"+ table.getValueAt(i, 1).toString().replace(":", "@biky@")+ ";" + 
-							"culumnValue:Î÷Ò©Ãû:"+ table.getValueAt(i, 2).toString().replace(":", "@biky@")+ ";" + 
-							"culumnValue:½éÉÜ:"+ table.getValueAt(i, 3).toString().replace(":", "@biky@")+ ";" + 
-							"culumnValue:Ò©Àí:"+ table.getValueAt(i, 4).toString().replace(":", "@biky@")+ ";" + 
-							"culumnValue:Ö÷Òª³É·Ö:"+ table.getValueAt(i, 5).toString().replace(":", "@biky@")+ ";" + 
-							"culumnValue:ÓÃ·¨:"+ table.getValueAt(i, 6).toString().replace(":", "@biky@")+ ";" + 
-							"culumnValue:×¢ÒâÊÂÏî:"+ table.getValueAt(i, 7).toString().replace(":", "@biky@")+ ";" + 
-							"culumnValue:ÊÊÓ¦Ö¢:"+ table.getValueAt(i, 8).toString().replace(":", "@biky@")+ ";" + 
-							"culumnValue:²»Á¼·´Ó¦:"+ table.getValueAt(i, 9).toString().replace(":", "@biky@")+ ";" + 
-							"culumnValue:ÓÃÁ¿:"+ table.getValueAt(i, 10).toString().replace(":", "@biky@")+ ";" + 
-							"culumnValue:Ò©ÎïÏà»¥×÷ÓÃ:"+ table.getValueAt(i, 11).toString().replace(":", "@biky@")+ ";" + 
-							"culumnValue:ÆäËû:"+ table.getValueAt(i, 12).toString().replace(":", "@biky@")+ ";";
+							"culumnValue:æ‰“åˆ†:"+ table.getValueAt(i, 1).toString().replace(":", "@biky@")+ ";" + 
+							"culumnValue:è¥¿è¯å:"+ table.getValueAt(i, 2).toString().replace(":", "@biky@")+ ";" + 
+							"culumnValue:ä»‹ç»:"+ table.getValueAt(i, 3).toString().replace(":", "@biky@")+ ";" + 
+							"culumnValue:è¯ç†:"+ table.getValueAt(i, 4).toString().replace(":", "@biky@")+ ";" + 
+							"culumnValue:ä¸»è¦æˆåˆ†:"+ table.getValueAt(i, 5).toString().replace(":", "@biky@")+ ";" + 
+							"culumnValue:ç”¨æ³•:"+ table.getValueAt(i, 6).toString().replace(":", "@biky@")+ ";" + 
+							"culumnValue:æ³¨æ„äº‹é¡¹:"+ table.getValueAt(i, 7).toString().replace(":", "@biky@")+ ";" + 
+							"culumnValue:é€‚åº”ç—‡:"+ table.getValueAt(i, 8).toString().replace(":", "@biky@")+ ";" + 
+							"culumnValue:ä¸è‰¯ååº”:"+ table.getValueAt(i, 9).toString().replace(":", "@biky@")+ ";" + 
+							"culumnValue:ç”¨é‡:"+ table.getValueAt(i, 10).toString().replace(":", "@biky@")+ ";" + 
+							"culumnValue:è¯ç‰©ç›¸äº’ä½œç”¨:"+ table.getValueAt(i, 11).toString().replace(":", "@biky@")+ ";" + 
+							"culumnValue:å…¶ä»–:"+ table.getValueAt(i, 12).toString().replace(":", "@biky@")+ ";";
 
 					try {
 						ME.SM.OP.SM.AOP.MEC.SIQ.E.E_PLSQL_E.E_PLSQL(plsql, mod);
@@ -378,7 +378,7 @@ public class XyscPage extends Container implements MouseListener, KeyListener{
 		});
 
 		readChinese= new ReadChinese(app, _A);
-		buttonCTV= new DetaButton("ÓïÒôÔÄ¶Á¹Ø");
+		buttonCTV= new DetaButton("è¯­éŸ³é˜…è¯»å…³");
 		buttonCTV.setBounds(740, 0, 100, 30);
 		buttonCTV.addActionListener(new ActionListener() {
 			@SuppressWarnings("deprecation")
@@ -389,12 +389,12 @@ public class XyscPage extends Container implements MouseListener, KeyListener{
 				//				List<String> setsForGet = sets.subList(currentPage * 2000, (currentPage + 1)*2000<sets.size()
 				//						? (currentPage + 1)*2000: sets.size());
 				if(!readChinese.isAlive()) {
-					buttonCTV.setLabel("ÓïÒôÔÄ¶Á¿ª");
+					buttonCTV.setLabel("è¯­éŸ³é˜…è¯»å¼€");
 					readChinese= new ReadChinese(app, _A);
 					readChinese.I_PreReadList(sets);
 					readChinese.start();
 				}else {
-					buttonCTV.setLabel("ÓïÒôÔÄ¶Á¹Ø");
+					buttonCTV.setLabel("è¯­éŸ³é˜…è¯»å…³");
 					readChinese.finish= 0;
 					readChinese.I_NullSap();
 					readChinese.stop();
@@ -453,24 +453,24 @@ public class XyscPage extends Container implements MouseListener, KeyListener{
 		//		
 
 
-		//²âÊÔÏÂ¸ÕĞ´µÄ±ê×¼¶Á±íº¯Êı.
+		//æµ‹è¯•ä¸‹åˆšå†™çš„æ ‡å‡†è¯»è¡¨å‡½æ•°.
 		//		DictionaryStandardDB d= new DictionaryStandardDB();
-		//		String primaryKey= "Î÷Ò©Ãû";
+		//		String primaryKey= "è¥¿è¯å";
 		//		String tabKey= "xybg";
-		//		//ÒÔºóÉè¼Æ uniq forenkeyµÈ.
-		//		//¼ÇµÃÔÚÊı¾İ¿âÎÄ¼şrows µÄrow ÏÂ¼Ó is_delete_0 ÎÄ¼ş¼Ğ. ²»È»²»ÏÔÊ¾Å¶ ÂŞÑş¹â20210505
+		//		//ä»¥åè®¾è®¡ uniq forenkeyç­‰.
+		//		//è®°å¾—åœ¨æ•°æ®åº“æ–‡ä»¶rows çš„row ä¸‹åŠ  is_delete_0 æ–‡ä»¶å¤¹. ä¸ç„¶ä¸æ˜¾ç¤ºå“¦ ç½—ç‘¶å…‰20210505
 		//		Map<String, Map<String, Object>> map= d.dbToMap(primaryKey, tabKey);
-		//		dic_yao_ming= map.get("Î÷Ò©Ãû");
-		//		dic_jie_shao= map.get("½éÉÜ");
-		//		dic_yao_li= map.get("Ò©Àí");
-		//		dic_chengfen_danwei= map.get("Ö÷Òª³É·Ö");
-		//		dic_yong_fa= map.get("ÓÃ·¨");
-		//		dic_zhu_yi= map.get("×¢ÒâÊÂÏî");
-		//		dic_shi_ying= map.get("ÊÊÓ¦Ö¢");
-		//		dic_bu_liang_fan_ying= map.get("²»Á¼·´Ó¦");
-		//		dic_yong_liang= map.get("ÓÃÁ¿");
-		//		dic_yao_wu_xiang_hu_zuo_yong= map.get("Ò©ÎïÏà»¥×÷ÓÃ");
-		//		dic_qi_ta= map.get("ÆäËû");
+		//		dic_yao_ming= map.get("è¥¿è¯å");
+		//		dic_jie_shao= map.get("ä»‹ç»");
+		//		dic_yao_li= map.get("è¯ç†");
+		//		dic_chengfen_danwei= map.get("ä¸»è¦æˆåˆ†");
+		//		dic_yong_fa= map.get("ç”¨æ³•");
+		//		dic_zhu_yi= map.get("æ³¨æ„äº‹é¡¹");
+		//		dic_shi_ying= map.get("é€‚åº”ç—‡");
+		//		dic_bu_liang_fan_ying= map.get("ä¸è‰¯ååº”");
+		//		dic_yong_liang= map.get("ç”¨é‡");
+		//		dic_yao_wu_xiang_hu_zuo_yong= map.get("è¯ç‰©ç›¸äº’ä½œç”¨");
+		//		dic_qi_ta= map.get("å…¶ä»–");
 		//		Map<String, Object> dic_map= map.get("dic_map");
 
 		tableData_old = new Object[dic_yao_ming.size()][18];
@@ -504,9 +504,9 @@ public class XyscPage extends Container implements MouseListener, KeyListener{
 		TableSorterZYNK sorter= new TableSorterZYNK(newTableModel); //ADDE
 		sorter.setTableHeader(table.getTableHeader());
 		table.setModel(sorter); 
-		table.setRowHeight(35);                                        //ÉèÖÃ¸ß¶È
+		table.setRowHeight(35);                                        //è®¾ç½®é«˜åº¦
 		JTableHeader header=table.getTableHeader();
-		header.setFont(new Font("¿¬Ìå", Font.PLAIN, 18));// ÉèÖÃ±í¸ñ×ÖÌå
+		header.setFont(new Font("æ¥·ä½“", Font.PLAIN, 18));// è®¾ç½®è¡¨æ ¼å­—ä½“
 		table.getColumnModel().getColumn(0).setPreferredWidth(80+30);
 		table.getColumnModel().getColumn(1).setPreferredWidth(80+30);
 		table.getColumnModel().getColumn(2).setPreferredWidth(80+530);
@@ -539,7 +539,7 @@ public class XyscPage extends Container implements MouseListener, KeyListener{
 			int col = table.getSelectedColumn();
 			String value = (String) table.getValueAt(row, col);
 			data.setSize(500, 800);
-			sets = _A.parserMixedString(value);//´ÊĞÔ·ÖÎö		
+			sets = _A.parserMixedString(value);//è¯æ€§åˆ†æ		
 			data.setContentType("text/html");
 			StringBuilder page = new StringBuilder().append("");
 			currentPage=0;
@@ -552,7 +552,7 @@ public class XyscPage extends Container implements MouseListener, KeyListener{
 						page.append("<span style=\"background:#F1F1F1\"><font color=\"black\" size=\"5\">" + setOfi + "</font></span>");
 						continue Here;
 					}
-					if(pos.get(setOfi).contains("Ãû")||pos.get(setOfi).contains("¶¯")||pos.get(setOfi).contains("ĞÎ")) {
+					if(pos.get(setOfi).contains("å")||pos.get(setOfi).contains("åŠ¨")||pos.get(setOfi).contains("å½¢")) {
 						if (map.containsKey(setOfi)) {
 							WordFrequency wordFrequency = map.get(setOfi);
 							wordFrequency.I_Frequency(wordFrequency.getFrequency() + StablePOS.INT_ONE);
@@ -565,34 +565,34 @@ public class XyscPage extends Container implements MouseListener, KeyListener{
 						}
 					}
 					if (!setOfi.equals("")) {
-						if(key.contains(setOfi)&&(pos.get(setOfi).contains("Ãû")||pos.get(setOfi).contains("¶¯")||pos.get(setOfi).contains("ĞÎ"))) {
+						if(key.contains(setOfi)&&(pos.get(setOfi).contains("å")||pos.get(setOfi).contains("åŠ¨")||pos.get(setOfi).contains("å½¢"))) {
 							page.append("<span style=\"background:red\"><font color=\"white\">"+setOfi+"</font></span>");
 							continue Here;
 						}
-						if(pos.get(setOfi).contains("Ãû")) {
+						if(pos.get(setOfi).contains("å")) {
 							page.append("<span style=\"background:"+new PEU.P.image.Color_P().P(255, 245, 255)
 									+"\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");
 							continue Here;
 						}
-						if(pos.get(setOfi).contains("¶¯")) {
+						if(pos.get(setOfi).contains("åŠ¨")) {
 							page.append("<span style=\"background:"+new PEU.P.image.Color_P().P(245, 255, 245)
 									+"\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");
 							continue Here;
 						}
-						if(pos.get(setOfi).contains("ĞÎ")) {
+						if(pos.get(setOfi).contains("å½¢")) {
 							page.append("<span style=\"background:"+new PEU.P.image.Color_P().P(255, 255, 245)
 									+"\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");
 							continue Here;
 						}
-						if(pos.get(setOfi).contains("¸±")) {
+						if(pos.get(setOfi).contains("å‰¯")) {
 							page.append("<span style=\"background:#F1FFFF\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");
 							continue Here;
 						} 
 						page.append("<span style=\"background:white\"><font color=\"black\" size=\"5\">"+setOfi+"</font></span>");			 
 					}
 				}	
-			buttonSum.setText("¹²ÓĞ " + (sets == null ? 0 : (1 + sets.size() / 2001)) + " Ò³");
-			buttonCrt.setText("µ±Ç°Ò³Ãæ£º" + (sets == null? 0 : 1));
+			buttonSum.setText("å…±æœ‰ " + (sets == null ? 0 : (1 + sets.size() / 2001)) + " é¡µ");
+			buttonCrt.setText("å½“å‰é¡µé¢ï¼š" + (sets == null? 0 : 1));
 			data.setText(page.toString());
 			data.setSelectionStart(0);
 			data.setSelectionEnd(0);
@@ -617,17 +617,17 @@ public class XyscPage extends Container implements MouseListener, KeyListener{
 						+ fwaMap.getWord()+""+fwaMap.getFrequency() + "</font></div>");
 							continue Here;
 						}
-						if(pos.get(fwaMap.getWord()).contains("Ãû")) {
+						if(pos.get(fwaMap.getWord()).contains("å")) {
 							page.append( "<div style=\"background:#FF44FF\"><font color=\"white\">" 
 						+ fwaMap.getWord()+""+fwaMap.getFrequency() +"</font></div>");
 							continue Here;
 						}
-						if(pos.get(fwaMap.getWord()).contains("¶¯")) {
+						if(pos.get(fwaMap.getWord()).contains("åŠ¨")) {
 							page.append("<div style=\"background:#8CEA00\"><font color=\"black\" size=\"5\">"
 						+ fwaMap.getWord()+""+fwaMap.getFrequency() +"</font></div>");
 							continue Here;
 						}
-						if(pos.get(fwaMap.getWord()).contains("ĞÎ")) {
+						if(pos.get(fwaMap.getWord()).contains("å½¢")) {
 							page.append("<div style=\"background:#FF9224\"><font color=\"black\" size=\"5\">" 
 						+ fwaMap.getWord()+""+fwaMap.getFrequency() +"</font></div>");
 						}
@@ -667,7 +667,7 @@ public class XyscPage extends Container implements MouseListener, KeyListener{
 	@Override
 	public void keyReleased(KeyEvent arg0) {
 		///////////////
-		if(null== key|| key.equals("")) {//°Ñnull key checkÌáÇ°£¬ËÑË÷¼Ó¿ì
+		if(null== key|| key.equals("")) {//æŠŠnull key checkæå‰ï¼Œæœç´¢åŠ å¿«
 			newTableModel.getDataVector().clear();
 			for(int i= 0; i< tableData_old.length; i++) {
 				newTableModel.insertRow(i, tableData_old[i]);
@@ -685,7 +685,7 @@ public class XyscPage extends Container implements MouseListener, KeyListener{
 		Iterator<String> iteratorForCopy = copy.iterator();	
 		int copyCount = 0;
 		//List<String> list= u._A.parserMixedString(key);
-		//ÕâÀïÓÃ²»µ½ list¸ü¶à²Ù×÷£¬×¼±¸°ÑfrequencymapµÄkey¸ã³Élist
+		//è¿™é‡Œç”¨ä¸åˆ° listæ›´å¤šæ“ä½œï¼Œå‡†å¤‡æŠŠfrequencymapçš„keyææˆlist
 		List<String> list= new ArrayList<>();
 		Iterator<String> iterator= mapSearchWithoutSort.keySet().iterator();
 		while(iterator.hasNext()) {
@@ -729,7 +729,7 @@ public class XyscPage extends Container implements MouseListener, KeyListener{
 						}
 						if(pos.containsKey(mapSearchaAtII)) {
 							score_code[copyCount] += (iteratorForCopyString.contains(mapSearchaAtII)?2:1) 
-									* (!pos.get(mapSearchaAtII).contains("Ãû")?pos.get(mapSearchaAtII).contains("¶¯")?10:1:50) 
+									* (!pos.get(mapSearchaAtII).contains("å")?pos.get(mapSearchaAtII).contains("åŠ¨")?10:1:50) 
 									<< mapSearchaAtII.length() * wordFrequencySearch.getFrequency();
 							continue Here;
 						} 
@@ -750,19 +750,19 @@ public class XyscPage extends Container implements MouseListener, KeyListener{
 					}
 				}
 			score_code[copyCount] = score_code[copyCount] * reg[copyCount];
-			//´Ê¾à
+			//è¯è·
 			int code= 100;
 			int tempb= 0;
 			int tempa= score_code[copyCount];
 			if(key.length()> 4) {
-				//È«´Ê
+				//å…¨è¯
 				for(int i= 0; i< string.length; i++) {
-					if(temps.contains(string[i])) {//ÒòÎªÓÃFrequencyMap´úÌæ£¬ËùÒÔÒª³ËÒÔÆµÂÊ¡£
+					if(temps.contains(string[i])) {//å› ä¸ºç”¨FrequencyMapä»£æ›¿ï¼Œæ‰€ä»¥è¦ä¹˜ä»¥é¢‘ç‡ã€‚
 						//tempb+= code;
 						tempb+= code* mapSearchWithoutSort.get(string[i]).getFrequency();
 					}
 				}
-				//¶Ï¾ä
+				//æ–­å¥
 				for(int i= 0; i< stringReg.length; i++) {
 					if(temps.contains(stringReg[i])) {
 						tempb+= code;
