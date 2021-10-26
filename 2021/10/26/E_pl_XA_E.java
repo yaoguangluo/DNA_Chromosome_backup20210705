@@ -3,7 +3,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import OSA.shell.PL_XA_E;
-//ÉÔºó½«DMAÎÄ¼şÓëÄÚ´æ²Ù×÷Ìæ»»³É jtable±íÄÚ´æ²Ù×÷ ÂŞÑş¹â
+//ç¨åå°†DMAæ–‡ä»¶ä¸å†…å­˜æ“ä½œæ›¿æ¢æˆ jtableè¡¨å†…å­˜æ“ä½œ ç½—ç‘¶å…‰
 public class E_pl_XA_E {
 	public static Map<String, Object> E_pl_XA(String plSearch, boolean mod
 			, Map<String, Object> output) throws Exception{
@@ -27,7 +27,7 @@ public class E_pl_XA_E {
 			if(acknowledge[0].equals("baseName")) {
 				Pl_XA_Command_E.P_BaseName(acknowledge, output);
 			}
-			if(acknowledge[0].equals("»ñÈ¡±íÃû")) {
+			if(acknowledge[0].equals("è·å–è¡¨å")) {
 				Pl_XA_Command_E.P_TableName(acknowledge, output);
 			}
 			if(acknowledge[0].equals("culumnName")) {
@@ -42,19 +42,19 @@ public class E_pl_XA_E {
 			if(acknowledge[0].equals("join")) {
 				Pl_XA_Command_E.P_Join(acknowledge, output);
 			}
-			if(acknowledge[0].equals("Ìõ¼şÎª")) {
+			if(acknowledge[0].equals("æ¡ä»¶ä¸º")) {
 				Pl_XA_Command_E.P_ListNeedStart(acknowledge, output);
 			}
 			if(acknowledge[0].equals("relation")) {
 				Pl_XA_Command_E.P_ListNeedStart(acknowledge, output);
 			}
-			if(acknowledge[0].equals("²Ù×÷")) {
+			if(acknowledge[0].equals("æ“ä½œ")) {
 				Pl_XA_Command_E.P_ListNeedStart(acknowledge, output);
 			}
 			if(acknowledge[0].equals("PLETL")) {
 				Pl_XA_Command_E.P_ListNeedStart(acknowledge, output);
 			}
-			if(acknowledge[0].equals("»ñÈ¡±íÁĞÃû")) {
+			if(acknowledge[0].equals("è·å–è¡¨åˆ—å")) {
 				Pl_XA_Command_E.P_ListNeedStart(acknowledge, output);
 			}
 			if(acknowledge[0].equals("PLTCP")) {
