@@ -7,11 +7,11 @@ import javax.swing.table.DefaultTableModel;
 import ME.APM.VSQ.App;
 import OSI.AOP.MEC.SIQ.plorm.Const;
 import OSM.shell.E_pl_XA_E;
-//1 ÎÒµÄÂß¼­ºÜ¼òµ¥£¬ ½ö½ö°´ÕÕPLORM ½øĞĞ PLSearch £¬½«detaÊı¾İ¿â²Ù×÷ ÓÃÔÚ
-//ÑøÁÆ¾­µÄ½çÃæ±í²Ù×÷ÉÏ¡£ÏÈ²»Éè¼Æ¸ÄºÍĞ´²Ù×÷¡£
-//2 ÓÃXAÔª»ù À´´úÌæsearch ´Ê»ã¡£
-// ×¼±¸ÓÃDefaultTableModel À´×öÊä³ö¶ÔÏó£¬ ÒòÎªÑøÁÆ¾­µÄÄÚ´æ±íÊÇÕâ¸öÈİÆ÷¡£
-// ÂŞÑş¹â
+//1 æˆ‘çš„é€»è¾‘å¾ˆç®€å•ï¼Œ ä»…ä»…æŒ‰ç…§PLORM è¿›è¡Œ PLSearch ï¼Œå°†detaæ•°æ®åº“æ“ä½œ ç”¨åœ¨
+//å…»ç–—ç»çš„ç•Œé¢è¡¨æ“ä½œä¸Šã€‚å…ˆä¸è®¾è®¡æ”¹å’Œå†™æ“ä½œã€‚
+//2 ç”¨XAå…ƒåŸº æ¥ä»£æ›¿search è¯æ±‡ã€‚
+// å‡†å¤‡ç”¨DefaultTableModel æ¥åšè¾“å‡ºå¯¹è±¡ï¼Œ å› ä¸ºå…»ç–—ç»çš„å†…å­˜è¡¨æ˜¯è¿™ä¸ªå®¹å™¨ã€‚
+// ç½—ç‘¶å…‰
 @SuppressWarnings("unused")
 public class PL_XA_E implements PL_XA_C{
 	private DefaultTableModel defaultTableModel;
@@ -212,7 +212,7 @@ public class PL_XA_E implements PL_XA_C{
 	@Override
 	public PL_XA_C finalE(boolean b) throws Exception {
 		map= E_pl_XA_E.E_pl_XA(this, true, new ConcurrentHashMap<>());
-		//ÕâÀïĞèÒª °ÑÊı¾İ¿âµÄ ±àÒë»úÆ÷Ò²ÖØÉè¼Æ³ÉÖ´ĞĞÄÚ´æ²Ù×÷µÄÄ£Ê½¡£
+		//è¿™é‡Œéœ€è¦ æŠŠæ•°æ®åº“çš„ ç¼–è¯‘æœºå™¨ä¹Ÿé‡è®¾è®¡æˆæ‰§è¡Œå†…å­˜æ“ä½œçš„æ¨¡å¼ã€‚
 		return this;
 	}
 
@@ -225,12 +225,12 @@ public class PL_XA_E implements PL_XA_C{
 	public PL_XA_C checkAndFixPlSearchGrammarErrors() {
 		//string to array
 		this.PLSearchArray= PLSearch.split(Const.SEMICOLON);
-		//Ìõ¼ş¼ì²é 1 ¹ıÂË  2 ĞŞ¸Ä 3 ÓïÒå¼ì²â
+		//æ¡ä»¶æ£€æŸ¥ 1 è¿‡æ»¤  2 ä¿®æ”¹ 3 è¯­ä¹‰æ£€æµ‹
 		//1 
 		for(int i= 1; i< PLSearchArray.length; i++) {
-			//1.1 ¹ıÂËÏàÍ¬¾äĞÍ
-			//1.2 ¹ıÂËÎŞĞ§×Ö·û
-			//1.3 ¹ıÂË¹¥»÷´úÂë
+			//1.1 è¿‡æ»¤ç›¸åŒå¥å‹
+			//1.2 è¿‡æ»¤æ— æ•ˆå­—ç¬¦
+			//1.3 è¿‡æ»¤æ”»å‡»ä»£ç 
 			if(PLSearchArray[i].equalsIgnoreCase(PLSearchArray[i- 1])) {
 				PLSearchArray[i]= "";
 			}
@@ -248,14 +248,14 @@ public class PL_XA_E implements PL_XA_C{
 			PLSearchArray[i]= PLSearchArray[i].replaceAll("\\s+", "");
 		}
 		//2
-		//2.1 ĞŞ¸Ä´íÎó±È½Ï·ûºÅ
-		//2.2 ĞŞ¸Ä´íÎóÓï·¨¹Ø¼ü×Ö
-		//2.3 ĞŞ¸Ä´íÎó±ê×¢·ûºÅ
+		//2.1 ä¿®æ”¹é”™è¯¯æ¯”è¾ƒç¬¦å·
+		//2.2 ä¿®æ”¹é”™è¯¯è¯­æ³•å…³é”®å­—
+		//2.3 ä¿®æ”¹é”™è¯¯æ ‡æ³¨ç¬¦å·
 		
 		//3
-		//3.1 ¼ì²âÊÇ·ñÓĞ¹Ø¼ü×ÖÇ°ºó¾ä¶Î»ìÂÒ
-		//3.2 ¼ì²âÊÇ·ñÓĞ¹Ø¼ü×Ö ¸ñÊ½ µ¹ÖÃ
-		//3.3 ¼ì²âÊÇ·ñÓĞ¹Ø¼ü×Ö ¾äĞÍ µ¹ÖÃ
+		//3.1 æ£€æµ‹æ˜¯å¦æœ‰å…³é”®å­—å‰åå¥æ®µæ··ä¹±
+		//3.2 æ£€æµ‹æ˜¯å¦æœ‰å…³é”®å­— æ ¼å¼ å€’ç½®
+		//3.3 æ£€æµ‹æ˜¯å¦æœ‰å…³é”®å­— å¥å‹ å€’ç½®
 		
 		//rerturn
 		String string= "";
@@ -271,81 +271,81 @@ public class PL_XA_E implements PL_XA_C{
 		return this;
 	}
 
-	//ÖĞÎÄPLORM ÉÔºóÉè¼Æ£¬ÓÅÏÈ¼¶½µµÍ¡£
+	//ä¸­æ–‡PLORM ç¨åè®¾è®¡ï¼Œä¼˜å…ˆçº§é™ä½ã€‚
 	@Override
-	public PL_XA_C ²Ù×÷Îª(String ²Ù×÷ÀàĞÍ) {
+	public PL_XA_C æ“ä½œä¸º(String æ“ä½œç±»å‹) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public PL_XA_C Ìõ¼şÎª(String Ìõ¼şÀàĞÍ) {
+	public PL_XA_C æ¡ä»¶ä¸º(String æ¡ä»¶ç±»å‹) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public PL_XA_C ÑÕÉ«±ê¼ÇÎª(String ÑÕÉ«ÀàĞÍ) {
+	public PL_XA_C é¢œè‰²æ ‡è®°ä¸º(String é¢œè‰²ç±»å‹) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public PL_XA_C ½øĞĞ·Ö´Ê(String Âß¼­ÀàĞÍ) {
+	public PL_XA_C è¿›è¡Œåˆ†è¯(String é€»è¾‘ç±»å‹) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public PL_XA_C ½øĞĞ×Ö·û´®ÅÅĞò(String ÅÅĞòÀàĞÍ) {
+	public PL_XA_C è¿›è¡Œå­—ç¬¦ä¸²æ’åº(String æ’åºç±»å‹) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public PL_XA_C ½øĞĞ¾«¶ÈËÑË÷(String ËÑË÷ÄÚÈİ) {
+	public PL_XA_C è¿›è¡Œç²¾åº¦æœç´¢(String æœç´¢å†…å®¹) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public PL_XA_C Ö´ĞĞPLETL(String ½ÚµãÃû) {
+	public PL_XA_C æ‰§è¡ŒPLETL(String èŠ‚ç‚¹å) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public PL_XA_C Ö´ĞĞPLTCP(String ±íÁĞÃû) {
+	public PL_XA_C æ‰§è¡ŒPLTCP(String è¡¨åˆ—å) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public PL_XA_C ½øĞĞ±í¸ñÏà½»(String Ö´ĞĞÂß¼­) {
+	public PL_XA_C è¿›è¡Œè¡¨æ ¼ç›¸äº¤(String æ‰§è¡Œé€»è¾‘) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public PL_XA_C ½øĞĞ±í¸ñºÏ²¢(String Ö´ĞĞÂß¼­) {
+	public PL_XA_C è¿›è¡Œè¡¨æ ¼åˆå¹¶(String æ‰§è¡Œé€»è¾‘) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public PL_XA_C ½øĞĞ±í¸ñÌŞ³ı(String Ö´ĞĞÂß¼­) {
+	public PL_XA_C è¿›è¡Œè¡¨æ ¼å‰”é™¤(String æ‰§è¡Œé€»è¾‘) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public PL_XA_C ½øĞĞWEBÇëÇó(String ¶Ë¿ÚºÅ) {
+	public PL_XA_C è¿›è¡ŒWEBè¯·æ±‚(String ç«¯å£å·) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public PL_XA_C »ñÈ¡±íÁĞÃû(String ÁĞ±íÃû) {
+	public PL_XA_C è·å–è¡¨åˆ—å(String åˆ—è¡¨å) {
 		// TODO Auto-generated method stub
 		return null;
 	}
