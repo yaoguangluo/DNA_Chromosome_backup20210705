@@ -37,18 +37,18 @@ import ME.APM.VSQ.OPE.search.YangJPanel;
 import SVQ.stable.StableFile;
 public class AppSearch extends ScrollPane implements MouseListener, KeyListener, ActionListener{	
 	private static final long serialVersionUID= 1L;
-	//°ÑµÂËş¾«¶ÈËÑË÷µÄº¯Êı½øĞĞº¯ÊıÆ¬¶Î»¯È¥ÖØ£¬
-	//ÂŞÑş¹â 202110121
-	//µ±ÄêÀë¿ªÓ¢ÌØ¶ûÌìÌì±»ÈË¶¢×Å ´ó¼ÒºÜÏëÖªµÀÎÒÔÚÓ¢ÌØ¶û¼ûÁËÊ²Ã´±¾ÊÂ£¬¾ªÑÈÁËÎÒ
-	//ÎÒÖ»ÏëËµ£¬Ã×¶ûÆäÊµ³ıÁË¸øÎÒÕ¹Ê¾×î¼òµ¥µÄIDEA Ğ´javaÍâ£¬½ö×öÁËÒ»¼şÊÂ¾ÍÊÇÒªÎÒ°Ñtemp¸Ä³É±ğµÄ´ÊÓï¡£
-	//½ĞÎÒµ¥´ÊĞ´³¤µã£¬ºÍ¾ÀÕıÎÒÓ¢Óï¿ÚÓï·¢Òô¡£½ö´Ë¶øÒÑ£¬ºÃ±ÈÉÙÁÖËÂÒ²ÊÇ ´óÆóÒµ£¬
-	//ÀïÃæ40ÄêµÄÉ¨µØÉ®²»Ò²¾ÍÉ¨¸öµØ£¬ÂŞººÌÃÊ×Ï¯Ò²¾ÍÇÃ50ÄêÄ¾Óã£¬ÊÀÈËÇá¿ñ£¬×ÜÒÔÎªÓĞ¾øÑ§¡£¡£²»Ô¸¼á³Ö£¬ËùÒÔÆ½Ó¹¡£
+	//æŠŠå¾·å¡”ç²¾åº¦æœç´¢çš„å‡½æ•°è¿›è¡Œå‡½æ•°ç‰‡æ®µåŒ–å»é‡ï¼Œ
+	//ç½—ç‘¶å…‰ 202110121
+	//å½“å¹´ç¦»å¼€è‹±ç‰¹å°”å¤©å¤©è¢«äººç›¯ç€ å¤§å®¶å¾ˆæƒ³çŸ¥é“æˆ‘åœ¨è‹±ç‰¹å°”è§äº†ä»€ä¹ˆæœ¬äº‹ï¼ŒæƒŠè®¶äº†æˆ‘
+	//æˆ‘åªæƒ³è¯´ï¼Œç±³å°”å…¶å®é™¤äº†ç»™æˆ‘å±•ç¤ºæœ€ç®€å•çš„IDEA å†™javaå¤–ï¼Œä»…åšäº†ä¸€ä»¶äº‹å°±æ˜¯è¦æˆ‘æŠŠtempæ”¹æˆåˆ«çš„è¯è¯­ã€‚
+	//å«æˆ‘å•è¯å†™é•¿ç‚¹ï¼Œå’Œçº æ­£æˆ‘è‹±è¯­å£è¯­å‘éŸ³ã€‚ä»…æ­¤è€Œå·²ï¼Œå¥½æ¯”å°‘æ—å¯ºä¹Ÿæ˜¯ å¤§ä¼ä¸šï¼Œ
+	//é‡Œé¢40å¹´çš„æ‰«åœ°åƒ§ä¸ä¹Ÿå°±æ‰«ä¸ªåœ°ï¼Œç½—æ±‰å ‚é¦–å¸­ä¹Ÿå°±æ•²50å¹´æœ¨é±¼ï¼Œä¸–äººè½»ç‹‚ï¼Œæ€»ä»¥ä¸ºæœ‰ç»å­¦ã€‚ã€‚ä¸æ„¿åšæŒï¼Œæ‰€ä»¥å¹³åº¸ã€‚
 	public static int detaSearch(int[] score_code, String[] score, DefaultTableModel newTableModel
 			, Object[][] tableData_old, List<String> copy, String key, Map<String, Object> dic_map
 			, Map<String, String> pos, App u, boolean keyIsPCA) {
-		boolean nullCheck= false;//½ñÌìÓÅ»¯ÏÂÕâ¸ö¾«¶ÈËÑË÷º¯Êı¡£
-		//nullcheckÒ»±é
-		if(null== key) {//°Ñnull key checkÌáÇ°£¬ËÑË÷¼Ó¿ì
+		boolean nullCheck= false;//ä»Šå¤©ä¼˜åŒ–ä¸‹è¿™ä¸ªç²¾åº¦æœç´¢å‡½æ•°ã€‚
+		//nullcheckä¸€é
+		if(null== key) {//æŠŠnull key checkæå‰ï¼Œæœç´¢åŠ å¿«
 			nullCheck= true;
 		}else if(key.isEmpty()) {
 			nullCheck= true;
@@ -75,7 +75,7 @@ public class AppSearch extends ScrollPane implements MouseListener, KeyListener,
 		Iterator<String> iteratorForCopy= copy.iterator();	
 		int copyCount= 0;
 		//List<String> list= u._A.parserMixedString(key);
-		//ÕâÀïÓÃ²»µ½ list¸ü¶à²Ù×÷£¬×¼±¸°ÑfrequencymapµÄkey¸ã³Élist
+		//è¿™é‡Œç”¨ä¸åˆ° listæ›´å¤šæ“ä½œï¼Œå‡†å¤‡æŠŠfrequencymapçš„keyææˆlist
 		List<String> list= new ArrayList<>();
 		Iterator<String> iterator= mapSearchWithoutSort.keySet().iterator();
 		while(iterator.hasNext()) {
@@ -90,13 +90,13 @@ public class AppSearch extends ScrollPane implements MouseListener, KeyListener,
 		while(iteratorForCopy.hasNext()) {
 			String iteratorForCopyString= iteratorForCopy.next();
 			score[copyCount]= iteratorForCopyString;
-			String ´ıËÑË÷´Êµä= dic_map.get(iteratorForCopyString).toString();
+			String å¾…æœç´¢è¯å…¸= dic_map.get(iteratorForCopyString).toString();
 			Iterator<String> iteratorWordFrequency= mapSearchWithoutSort.keySet().iterator();
 			Here:
 				while(iteratorWordFrequency.hasNext()) { 
 					String mapSearchaAtII= iteratorWordFrequency.next();
 					WordFrequency wordFrequencySearch= mapSearchWithoutSort.get(mapSearchaAtII);
-					if(´ıËÑË÷´Êµä.contains(mapSearchaAtII)) {
+					if(å¾…æœç´¢è¯å…¸.contains(mapSearchaAtII)) {
 						if(reg[copyCount]== 0){
 							count+= 1;
 						}
@@ -114,29 +114,29 @@ public class AppSearch extends ScrollPane implements MouseListener, KeyListener,
 							score_code[copyCount]+= 1 << mapSearchaAtII.length()<< wordFrequencySearch.getFrequency() ;
 							continue Here;
 						}
-						if(pos.get(mapSearchaAtII).contains("Ãû")||pos.get(mapSearchaAtII).contains("¶¯")
-								||pos.get(mapSearchaAtII).contains("ĞÎ")||pos.get(mapSearchaAtII).contains("Î½")) {
+						if(pos.get(mapSearchaAtII).contains("å")||pos.get(mapSearchaAtII).contains("åŠ¨")
+								||pos.get(mapSearchaAtII).contains("å½¢")||pos.get(mapSearchaAtII).contains("è°“")) {
 							reg[copyCount]+= 2;
 						}
 						reg[copyCount]+= 1;
 						score_code[copyCount]+= (iteratorForCopyString.contains(mapSearchaAtII)? 2: 1) 
-								* (!pos.get(mapSearchaAtII).contains("Ãû")? pos.get(mapSearchaAtII).contains("¶¯")? 45: 1: 50) 
+								* (!pos.get(mapSearchaAtII).contains("å")? pos.get(mapSearchaAtII).contains("åŠ¨")? 45: 1: 50) 
 								<< mapSearchaAtII.length()* wordFrequencySearch.getFrequency();
 						continue Here;
 					}
 					if(mapSearchaAtII.length()> 1) {
 						for(int j= 0;j<mapSearchaAtII.length();j++) {
-							if(´ıËÑË÷´Êµä.contains(String.valueOf(mapSearchaAtII.charAt(j)))) {
+							if(å¾…æœç´¢è¯å…¸.contains(String.valueOf(mapSearchaAtII.charAt(j)))) {
 								if(reg[copyCount]== 0){
 									count+= 1;
 								}
 								score[copyCount]= iteratorForCopyString;
 								score_code[copyCount]+= 1;
 								if(pos.containsKey(String.valueOf(mapSearchaAtII.charAt(j)))&&(
-										pos.get(String.valueOf(mapSearchaAtII.charAt(j))).contains("Ãû")
-										||pos.get(String.valueOf(mapSearchaAtII.charAt(j))).contains("¶¯")
-										||pos.get(String.valueOf(mapSearchaAtII.charAt(j))).contains("ĞÎ")
-										||pos.get(String.valueOf(mapSearchaAtII.charAt(j))).contains("Î½")
+										pos.get(String.valueOf(mapSearchaAtII.charAt(j))).contains("å")
+										||pos.get(String.valueOf(mapSearchaAtII.charAt(j))).contains("åŠ¨")
+										||pos.get(String.valueOf(mapSearchaAtII.charAt(j))).contains("å½¢")
+										||pos.get(String.valueOf(mapSearchaAtII.charAt(j))).contains("è°“")
 										)) {
 									reg[copyCount]+= 2;
 								}
@@ -147,34 +147,34 @@ public class AppSearch extends ScrollPane implements MouseListener, KeyListener,
 					}
 				}
 			score_code[copyCount]= score_code[copyCount]* reg[copyCount];
-			//´Ê¾à
+			//è¯è·
 			int code= 100;
-			int ¾«¶ÈËÑË÷Ëã×Ó= 0;
-			int ÖÇ»ÛËÑË÷Ëã×Ó= score_code[copyCount];		
-			boolean ¾«¶ÈËÑË÷= false;
+			int ç²¾åº¦æœç´¢ç®—å­= 0;
+			int æ™ºæ…§æœç´¢ç®—å­= score_code[copyCount];		
+			boolean ç²¾åº¦æœç´¢= false;
 			if(keyLength> 4) {
-				//È«´Ê
+				//å…¨è¯
 				for(int i= 0; i< string.length; i++) {
-					if(´ıËÑË÷´Êµä.contains(string[i])) {//ÒòÎªÓÃFrequencyMap´úÌæ£¬ËùÒÔÒª³ËÒÔÆµÂÊ¡£
-						¾«¶ÈËÑË÷Ëã×Ó+= code*mapSearchWithoutSort.get(string[i]).getFrequency();
+					if(å¾…æœç´¢è¯å…¸.contains(string[i])) {//å› ä¸ºç”¨FrequencyMapä»£æ›¿ï¼Œæ‰€ä»¥è¦ä¹˜ä»¥é¢‘ç‡ã€‚
+						ç²¾åº¦æœç´¢ç®—å­+= code*mapSearchWithoutSort.get(string[i]).getFrequency();
 					}
 				}
-				for(int i= 0; i< stringReg.length; i++) {//¶Ï¾ä
-					if(´ıËÑË÷´Êµä.contains(stringReg[i].toString())) {
-						¾«¶ÈËÑË÷Ëã×Ó+= code;
+				for(int i= 0; i< stringReg.length; i++) {//æ–­å¥
+					if(å¾…æœç´¢è¯å…¸.contains(stringReg[i].toString())) {
+						ç²¾åº¦æœç´¢ç®—å­+= code;
 					}
 				}
-				¾«¶ÈËÑË÷= true;
+				ç²¾åº¦æœç´¢= true;
 			}
 			if(trimKey.length()> 1&& trimKey.length()< 5) {
-				if(´ıËÑË÷´Êµä.contains(trimKey)) {
-					¾«¶ÈËÑË÷Ëã×Ó+= code<< 7;
+				if(å¾…æœç´¢è¯å…¸.contains(trimKey)) {
+					ç²¾åº¦æœç´¢ç®—å­+= code<< 7;
 				}
-				¾«¶ÈËÑË÷= true;
+				ç²¾åº¦æœç´¢= true;
 			}
-			if(¾«¶ÈËÑË÷) {
-				score_code[copyCount]= (int) (ÖÇ»ÛËÑË÷Ëã×Ó/Math.pow(u.lookrot+ 1, 4) 
-						+ ¾«¶ÈËÑË÷Ëã×Ó* Math.pow(u.lookrot, 2));
+			if(ç²¾åº¦æœç´¢) {
+				score_code[copyCount]= (int) (æ™ºæ…§æœç´¢ç®—å­/Math.pow(u.lookrot+ 1, 4) 
+						+ ç²¾åº¦æœç´¢ç®—å­* Math.pow(u.lookrot, 2));
 			}
 			copyCount++;
 		}
@@ -189,7 +189,7 @@ public class AppSearch extends ScrollPane implements MouseListener, KeyListener,
 		HanContainer.setLayout(null);
 		HanContainer.setBounds(0, 0, 1490, 980);
 		HanContainer.add(hanJPanel);
-		jTabbedpane.addTab("·¢Àä", new ImageIcon(), HanContainer, "·¢Àä");
+		jTabbedpane.addTab("å‘å†·", new ImageIcon(), HanContainer, "å‘å†·");
 		jTabbedpane.setMnemonicAt(0, KeyEvent.VK_0); 
 
 		Container reContainer= new Container();
@@ -197,7 +197,7 @@ public class AppSearch extends ScrollPane implements MouseListener, KeyListener,
 		reContainer.setLayout(null);
 		reContainer.setBounds(0, 0, 1490, 980);
 		reContainer.add(reJPanel);
-		jTabbedpane.addTab("·¢ÈÈ", new ImageIcon(), reContainer, "·¢ÈÈ");
+		jTabbedpane.addTab("å‘çƒ­", new ImageIcon(), reContainer, "å‘çƒ­");
 		jTabbedpane.setMnemonicAt(1, KeyEvent.VK_1); 
 
 		Container TongContainer= new Container();
@@ -205,7 +205,7 @@ public class AppSearch extends ScrollPane implements MouseListener, KeyListener,
 		TongContainer.setLayout(null);
 		TongContainer.setBounds(0, 0, 1490, 980);
 		TongContainer.add(tongPanel);
-		jTabbedpane.addTab("ÌÛÍ´", new ImageIcon(), TongContainer, "ÌÛÍ´");
+		jTabbedpane.addTab("ç–¼ç—›", new ImageIcon(), TongContainer, "ç–¼ç—›");
 		jTabbedpane.setMnemonicAt(2, KeyEvent.VK_2); 
 
 		Container chouContainer= new Container();
@@ -213,7 +213,7 @@ public class AppSearch extends ScrollPane implements MouseListener, KeyListener,
 		chouContainer.setLayout(null);
 		chouContainer.setBounds(0, 0, 1490, 980);
 		chouContainer.add(chouJPanel);
-		jTabbedpane.addTab("³é½î", new ImageIcon(), chouContainer, "³é½î");
+		jTabbedpane.addTab("æŠ½ç­‹", new ImageIcon(), chouContainer, "æŠ½ç­‹");
 		jTabbedpane.setMnemonicAt(3, KeyEvent.VK_3); 
 
 		Container duContainer= new Container();
@@ -221,7 +221,7 @@ public class AppSearch extends ScrollPane implements MouseListener, KeyListener,
 		duContainer.setLayout(null);
 		duContainer.setBounds(0, 0, 1490, 980);
 		duContainer.add(duJPanel);
-		jTabbedpane.addTab("ÖĞ¶¾", new ImageIcon(), duContainer, "ÖĞ¶¾");
+		jTabbedpane.addTab("ä¸­æ¯’", new ImageIcon(), duContainer, "ä¸­æ¯’");
 		jTabbedpane.setMnemonicAt(4, KeyEvent.VK_4); 
 
 		Container chuangContainer= new Container();
@@ -229,7 +229,7 @@ public class AppSearch extends ScrollPane implements MouseListener, KeyListener,
 		chuangContainer.setLayout(null);
 		chuangContainer.setBounds(0, 0, 1490, 980);
 		chuangContainer.add(chuangJPanel);
-		jTabbedpane.addTab("Å§´¯", new ImageIcon(), chuangContainer, "Å§´¯");
+		jTabbedpane.addTab("è„“ç–®", new ImageIcon(), chuangContainer, "è„“ç–®");
 		jTabbedpane.setMnemonicAt(5, KeyEvent.VK_5); 
 
 		Container kuangContainer= new Container();
@@ -237,7 +237,7 @@ public class AppSearch extends ScrollPane implements MouseListener, KeyListener,
 		kuangContainer.setLayout(null);
 		kuangContainer.setBounds(0, 0, 1490, 980);
 		kuangContainer.add(kuangJPanel);
-		jTabbedpane.addTab("ñ²¿ñ", new ImageIcon(), kuangContainer, "ñ²¿ñ");
+		jTabbedpane.addTab("ç™«ç‹‚", new ImageIcon(), kuangContainer, "ç™«ç‹‚");
 		jTabbedpane.setMnemonicAt(6, KeyEvent.VK_6); 
 
 		Container paixieContainer= new Container();
@@ -245,7 +245,7 @@ public class AppSearch extends ScrollPane implements MouseListener, KeyListener,
 		paixieContainer.setLayout(null);
 		paixieContainer.setBounds(0, 0, 1490, 980);
 		paixieContainer.add(paixieJPanel);
-		jTabbedpane.addTab("ÅÅĞ¹", new ImageIcon(), paixieContainer, "ÅÅĞ¹");
+		jTabbedpane.addTab("æ’æ³„", new ImageIcon(), paixieContainer, "æ’æ³„");
 		jTabbedpane.setMnemonicAt(7, KeyEvent.VK_7); 
 
 		Container TanContainer= new Container();
@@ -253,7 +253,7 @@ public class AppSearch extends ScrollPane implements MouseListener, KeyListener,
 		TanContainer.setLayout(null);
 		TanContainer.setBounds(0, 0, 1490, 980);
 		TanContainer.add(tanJPanel);
-		jTabbedpane.addTab("Ìµº¹", new ImageIcon(), TanContainer, "Ìµº¹");
+		jTabbedpane.addTab("ç—°æ±—", new ImageIcon(), TanContainer, "ç—°æ±—");
 		jTabbedpane.setMnemonicAt(8, KeyEvent.VK_8); 
 
 		Container xueContainer= new Container();
@@ -261,7 +261,7 @@ public class AppSearch extends ScrollPane implements MouseListener, KeyListener,
 		xueContainer.setLayout(null);
 		xueContainer.setBounds(0, 0, 1490, 980);
 		xueContainer.add(xueJPanel);
-		jTabbedpane.addTab("³öÑª", new ImageIcon(), xueContainer, "³öÑª");
+		jTabbedpane.addTab("å‡ºè¡€", new ImageIcon(), xueContainer, "å‡ºè¡€");
 		jTabbedpane.setMnemonicAt(9, KeyEvent.VK_9); 
 
 		Container yangContainer= new Container();
@@ -269,21 +269,21 @@ public class AppSearch extends ScrollPane implements MouseListener, KeyListener,
 		yangContainer.setLayout(null);
 		yangContainer.setBounds(0, 0, 1490, 980);
 		yangContainer.add(yangJPanel);
-		jTabbedpane.addTab("ğşÑ÷", new ImageIcon(), yangContainer, "ğşÑ÷");
+		jTabbedpane.addTab("ç˜™ç—’", new ImageIcon(), yangContainer, "ç˜™ç—’");
 
 		Container fuchanContainer= new Container();
 		ChanJPanel fuchanJPanel= new ChanJPanel(name);
 		fuchanContainer.setLayout(null);
 		fuchanContainer.setBounds(0, 0, 1490, 980);
 		fuchanContainer.add(fuchanJPanel);
-		jTabbedpane.addTab("¸¾²ú", new ImageIcon(), fuchanContainer, "¸¾²ú");
+		jTabbedpane.addTab("å¦‡äº§", new ImageIcon(), fuchanContainer, "å¦‡äº§");
 
 		Container qitaContainer= new Container();
 		QitaJPanel qitaJPanel= new QitaJPanel(name);
 		qitaContainer.setLayout(null);
 		qitaContainer.setBounds(0, 0, 1490, 980);
 		qitaContainer.add(qitaJPanel);
-		jTabbedpane.addTab("ÆäËû", new ImageIcon(), qitaContainer, "ÆäËû");
+		jTabbedpane.addTab("å…¶ä»–", new ImageIcon(), qitaContainer, "å…¶ä»–");
 
 		this.setPreferredSize(new Dimension(800, 600));
 		this.add(jTabbedpane);
