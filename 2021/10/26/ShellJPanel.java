@@ -26,8 +26,8 @@ import OSI.OSU.SI.ASQ.OSD.AVI.AEI.ACI.ASI.OVI.OEI.OCI.OSI.PVI.PEI.PCI.PSI.tinShe
 import OSM.shell.E_pl_XA_E;
 public class ShellJPanel extends JPanel implements MouseListener, KeyListener, ActionListener{
 	/**
-	 * ÉÔºó½øĞĞÓÅ»¯³É ÉêÇë°æÈ¨µÄ¸ñÊ½¡£
-	 * ÂŞÑş¹â
+	 * ç¨åè¿›è¡Œä¼˜åŒ–æˆ ç”³è¯·ç‰ˆæƒçš„æ ¼å¼ã€‚
+	 * ç½—ç‘¶å…‰
 	 */
 	private static final long serialVersionUID= 1L;
 	public JCheckBox jlabel_box[];
@@ -37,7 +37,7 @@ public class ShellJPanel extends JPanel implements MouseListener, KeyListener, A
 
 	public JTextPane outputjTextPane;
 	public String plsearch;
-	public Map<String, Object> output;//×¼±¸×öÎÄÕÂÁ÷¼ÆËãµÄÄÚ´æ ÂŞÑş¹â20211008
+	public Map<String, Object> output;//å‡†å¤‡åšæ–‡ç« æµè®¡ç®—çš„å†…å­˜ ç½—ç‘¶å…‰20211008
 
 	@SuppressWarnings("unused")
 	private App appInThisClass;
@@ -51,7 +51,7 @@ public class ShellJPanel extends JPanel implements MouseListener, KeyListener, A
 		this.setBounds(0, 0, 800, 600);
 		this.setBackground(Color.BLACK);
 		//copy tab
-		MVQ.button.DetaButton jlabel_button= new MVQ.button.DetaButton("Çå¿ÕÃüÁî");
+		MVQ.button.DetaButton jlabel_button= new MVQ.button.DetaButton("æ¸…ç©ºå‘½ä»¤");
 		jlabel_button.setBounds(10, 20, 100, 30);
 		jlabel_button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -65,21 +65,21 @@ public class ShellJPanel extends JPanel implements MouseListener, KeyListener, A
 		});
 		this.add(jlabel_button);
 
-		MVQ.button.DetaButton jlabel_button_clear= new MVQ.button.DetaButton("Çå¿ÕÊä³ö");
+		MVQ.button.DetaButton jlabel_button_clear= new MVQ.button.DetaButton("æ¸…ç©ºè¾“å‡º");
 		jlabel_button_clear.setBounds(10+1*(100+30), 20, 100, 30);
 		jlabel_button_clear.addActionListener(new ActionListener() {
 			@SuppressWarnings("unchecked")
 			public void actionPerformed(ActionEvent e) {
 				//  tabNamesHook[0]= true;
 				//  isConfig= false;
-				//Çå¿ÕµÄÊ±ºò±ÜÃâoutput ÖØµş¼ÆËã
+				//æ¸…ç©ºçš„æ—¶å€™é¿å…output é‡å è®¡ç®—
 				//sQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.outputOut.remove("TinShellETL");
 				//if(null!= topOutput) {
 
-				//  ½«Ô­À´µÄ
+				//  å°†åŸæ¥çš„
 				//outputout
 				//tinsheletl midshell  downshell
-				//	½á¹¹¸ÄÎª
+				//	ç»“æ„æ”¹ä¸º
 				//outputout
 				//tinsheletl
 				//midshell  downshell
@@ -103,7 +103,7 @@ public class ShellJPanel extends JPanel implements MouseListener, KeyListener, A
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-				outputjTextPane.setText("\"ÕıÔÚÊ¹ÓÃ ÑøÁÆ¾­ 1.8.8.8.0 Tin ShellÏµÍ³(8.8.8.0) . . .\"");
+				outputjTextPane.setText("\"æ­£åœ¨ä½¿ç”¨ å…»ç–—ç» 1.8.8.8.0 Tin Shellç³»ç»Ÿ(8.8.8.0) . . .\"");
 				outputjTextPane.updateUI();
 				//				app.jTabbedpane.validate();
 				app.validate();
@@ -111,20 +111,20 @@ public class ShellJPanel extends JPanel implements MouseListener, KeyListener, A
 		});
 		this.add(jlabel_button_clear);
 
-		MVQ.button.DetaButton jlabel_init_button= new MVQ.button.DetaButton("³õÊ¼½Å±¾");
+		MVQ.button.DetaButton jlabel_init_button= new MVQ.button.DetaButton("åˆå§‹è„šæœ¬");
 		jlabel_init_button.setBounds(10+2*(100+30), 20, 100, 30);
 		jlabel_init_button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(null!= app) {
 					app.jTabbedpane.validate();
 					app.validate();
-					//¼ì²â½Å±¾×ÛºÏ·ÖÀà¡¢
-					//·ÖÀàÖ´ĞĞ½Å±¾±àÒë»ú
+					//æ£€æµ‹è„šæœ¬ç»¼åˆåˆ†ç±»ã€
+					//åˆ†ç±»æ‰§è¡Œè„šæœ¬ç¼–è¯‘æœº
 					//
 					if(null!= HRJFrame.NE) {
 						XA_ShellTables.addInitSearchShellTable(HRJFrame.NE);
 					}
-					outputjTextPane.setText("ÒÑ¾­³õÊ¼½Å±¾Êı¾İ¡£¡£");
+					outputjTextPane.setText("å·²ç»åˆå§‹è„šæœ¬æ•°æ®ã€‚ã€‚");
 					outputjTextPane.updateUI();
 					app.jTabbedpane.validate();
 					app.validate();
@@ -133,21 +133,21 @@ public class ShellJPanel extends JPanel implements MouseListener, KeyListener, A
 		});
 		this.add(jlabel_init_button);
 
-		MVQ.button.DetaButton jlabel_debug_button= new MVQ.button.DetaButton("µ÷ÊÔ½Å±¾");
+		MVQ.button.DetaButton jlabel_debug_button= new MVQ.button.DetaButton("è°ƒè¯•è„šæœ¬");
 		jlabel_debug_button.setBounds(10+3*(100+30), 20, 100, 30);
 		jlabel_debug_button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(null!= app) {
 					app.jTabbedpane.validate();
 					app.validate();
-					//¼ì²â½Å±¾×ÛºÏ·ÖÀà¡¢
-					//·ÖÀàÖ´ĞĞ½Å±¾±àÒë»ú
+					//æ£€æµ‹è„šæœ¬ç»¼åˆåˆ†ç±»ã€
+					//åˆ†ç±»æ‰§è¡Œè„šæœ¬ç¼–è¯‘æœº
 				}
 			}
 		});
 		this.add(jlabel_debug_button);
 
-		MVQ.button.DetaButton jlabel_flush_button= new MVQ.button.DetaButton("Ö´ĞĞ½Å±¾");
+		MVQ.button.DetaButton jlabel_flush_button= new MVQ.button.DetaButton("æ‰§è¡Œè„šæœ¬");
 		jlabel_flush_button.setBounds(10+ 4*(100+ 30), 20, 100, 30);
 		jlabel_flush_button.addActionListener(new ActionListener() {
 			@SuppressWarnings("unchecked")
@@ -155,10 +155,10 @@ public class ShellJPanel extends JPanel implements MouseListener, KeyListener, A
 				if(null!= app) {
 					app.jTabbedpane.validate();
 					app.validate();
-					//¼ì²â½Å±¾×ÛºÏ·ÖÀà¡¢
-					//·ÖÀàÖ´ĞĞ½Å±¾±àÒë»ú
+					//æ£€æµ‹è„šæœ¬ç»¼åˆåˆ†ç±»ã€
+					//åˆ†ç±»æ‰§è¡Œè„šæœ¬ç¼–è¯‘æœº
 					//
-					//Ö´ĞĞshell
+					//æ‰§è¡Œshell
 					String plSearch= jTextPane.getText();
 					try {                                                                 
 						if(!sQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.outputOut.containsKey("TinShellETL")) {
@@ -166,9 +166,9 @@ public class ShellJPanel extends JPanel implements MouseListener, KeyListener, A
 						}
 						output= E_pl_XA_E.E_pl_XA(plSearch.replace("\r\n", "")
 								, false, (Map<String, Object>)sQ_OSU_MSQ_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ.outputOut.get("TinShellETL"));
-						//¿ªÊ¼Éæ¼°PLETL£¬ÓÚÊÇ ÉÏÖĞÏÂ¶¼Òª£¬¾Í°ÑoutputOut ÍêÕû´úÈëVPCSº¯Êı¡£
-						//¸üĞÂ
-						//¼ÆËãÍêºóÈ¥³ıoutputµÄ mid down ²¿·Ö
+						//å¼€å§‹æ¶‰åŠPLETLï¼Œäºæ˜¯ ä¸Šä¸­ä¸‹éƒ½è¦ï¼Œå°±æŠŠoutputOut å®Œæ•´ä»£å…¥VPCSå‡½æ•°ã€‚
+						//æ›´æ–°
+						//è®¡ç®—å®Œåå»é™¤outputçš„ mid down éƒ¨åˆ†
 						if(output.containsKey("midShell")) {
 							output.remove("midShell");
 						}
@@ -180,7 +180,7 @@ public class ShellJPanel extends JPanel implements MouseListener, KeyListener, A
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
-					//Êä³ö ¼ì²â
+					//è¾“å‡º æ£€æµ‹
 					outputjTextPane.setContentType("text/html");
 					System.out.println("end:"+output.size());
 					Iterator<String> iterator= output.keySet().iterator();
@@ -195,7 +195,7 @@ public class ShellJPanel extends JPanel implements MouseListener, KeyListener, A
 						System.out.println(output.get(string));
 						stringBuilder.append("/r/n"+output.get(string).toString());
 					}
-					//ÉÔºóÉæ¼°·ÖÒ³20211001
+					//ç¨åæ¶‰åŠåˆ†é¡µ20211001
 					stringBuilder= stringBuilder.length()>300000? stringBuilder.delete(300000, stringBuilder.length()):stringBuilder;
 					outputjTextPane.setText(stringBuilder.toString());
 					outputjTextPane.validate();
@@ -207,70 +207,70 @@ public class ShellJPanel extends JPanel implements MouseListener, KeyListener, A
 		jTextPane= new JTextPane();
 		JScrollPane jsp_jTextPane= new JScrollPane(jTextPane);
 		jsp_jTextPane.setBounds(10+ 0* 150, 20+ 1* 15+ 30, 765, 220);
-		//		jTextPane.setText("tableName:ÖĞÒ©Í¬Ô´:select;\r\n"
-		//				+ "condition:or:¹¦Ğ§|contains|ÇåÈÈ:¹¦Ğ§|contains|½â¶¾;\r\n"
-		//				+ "condition:and:ĞÔÎ¶|!contains|ÈÈ:ÂöÂç|contains|·Î;\r\n"
-		//				+ "condition:and:·çÏÕ¹æ±Ü|fliter|¶¾:·çÏÕ¹æ±Ü|fliter|ÔĞ;\r\n"
-		//				+ "getCulumns:¹¦Ğ§:·çÏÕ¹æ±Ü|as|·çÏÕ:ÂöÂç:ĞÔÎ¶:ÖĞÒ©Ãû³Æ|as|Ò©Ãû;\r\n"
-		//				+ "aggregation:·çÏÕ|color|yellow;\r\n"
-		//				+ "aggregation:Ò©Ãû|color|red;\r\n"
-		//				+ "aggregation:¹¦Ğ§|parser|pos;\r\n"
+		//		jTextPane.setText("tableName:ä¸­è¯åŒæº:select;\r\n"
+		//				+ "condition:or:åŠŸæ•ˆ|contains|æ¸…çƒ­:åŠŸæ•ˆ|contains|è§£æ¯’;\r\n"
+		//				+ "condition:and:æ€§å‘³|!contains|çƒ­:è„‰ç»œ|contains|è‚º;\r\n"
+		//				+ "condition:and:é£é™©è§„é¿|fliter|æ¯’:é£é™©è§„é¿|fliter|å­•;\r\n"
+		//				+ "getCulumns:åŠŸæ•ˆ:é£é™©è§„é¿|as|é£é™©:è„‰ç»œ:æ€§å‘³:ä¸­è¯åç§°|as|è¯å;\r\n"
+		//				+ "aggregation:é£é™©|color|yellow;\r\n"
+		//				+ "aggregation:è¯å|color|red;\r\n"
+		//				+ "aggregation:åŠŸæ•ˆ|parser|pos;\r\n"
 		//				+ "aggregation:0|limit|20;\r\n"
-		//				+ "aggregation:Ò©Ãû|sortString|increment;");
+		//				+ "aggregation:è¯å|sortString|increment;");
 
-		//		jTextPane.setText("±íÃû:ÖĞÒ©Í¬Ô´:Ñ¡Ôñ;\r\n"
-		//				+ "Ìõ¼ş:»ò:¹¦Ğ§|°üº¬|ÇåÈÈ:¹¦Ğ§|°üº¬|½â¶¾;\r\n"
-		//				+ "Ìõ¼ş:ºÍ:ĞÔÎ¶|²»°üº¬|ÈÈ:ÂöÂç|°üº¬|·Î;\r\n"
-		//				+ "Ìõ¼ş:ºÍ:·çÏÕ¹æ±Ü|¹ıÂË|¶¾:·çÏÕ¹æ±Ü|¹ıÂË|ÔĞ;\r\n"
-		//				+ "»ñÈ¡ÁĞÃû:¹¦Ğ§:·çÏÕ¹æ±Ü|¸ÄÃû|·çÏÕ:ÂöÂç:ĞÔÎ¶:ÖĞÒ©Ãû³Æ|¸ÄÃû|Ò©Ãû;\r\n"
-		//				+ "²Ù×÷:·çÏÕ|ÑÕÉ«|»ÆÉ«;\r\n"
-		//				+ "²Ù×÷:Ò©Ãû|ÑÕÉ«|ºìÉ«;\r\n"
-		//				+ "²Ù×÷:¹¦Ğ§|·Ö´Ê|´ÊĞÔ;\r\n"
-		//				+ "²Ù×÷:0|ĞĞÖÁ|20;\r\n"
-		//				+ "²Ù×÷:Ò©Ãû|×Ö·ûÅÅĞò|´ÓĞ¡µ½´ó;");
-		//ÉÔºó¸ÄÃû		
-		//		jTextPane.setText("»ñÈ¡±íÃû:ÖĞÒ©Í¬Ô´:½øĞĞÑ¡Ôñ;
-		//		Ìõ¼şÎª:ºÍ:¹¦Ğ§|¾«¶ÈËÑË÷|·çÈÈ¿ÈËÔ|0;
-		//		Ìõ¼şÎª:ºÍ:ÖĞÒ©Ãû³Æ|×Ö·û´®³¤¶È´óÓÚ|3;
-		//		Ìõ¼şÎª:»ò:¹¦Ğ§|°üº¬|ÇåÈÈ½â¶¾:¹¦Ğ§|°üº¬|ÀûÄò;
-		//		Ìõ¼şÎª:ºÍ:ĞÔÎ¶|²»°üº¬|ÎÂ:ÂöÂç|°üº¬|·Î;
-		//		Ìõ¼şÎª:ºÍ:·çÏÕ¹æ±Ü|¹ıÂËµô|¶¾:·çÏÕ¹æ±Ü|¹ıÂËµô|ÔĞ;
-		//		»ñÈ¡±íÁĞÃû:¹¦Ğ§:·çÏÕ¹æ±Ü|¸ÄÃûÎª|·çÏÕ:ÂöÂç:ĞÔÎ¶:ÖĞÒ©Ãû³Æ|¸ÄÃûÎª|Ò©Ãû;
-		//		²Ù×÷:0|ĞĞÖÁ|20;
-		//		²Ù×÷:·çÏÕ|ÑÕÉ«±ê¼ÇÎª|»ÆÉ«;
-		//		²Ù×÷:Ò©Ãû|ÑÕÉ«±ê¼ÇÎª|ºìÉ«;
-		//		²Ù×÷:¹¦Ğ§|½øĞĞ·Ö´Ê|DNN;
-		//				+ "²Ù×÷:Ò©Ãû|½øĞĞ×Ö·ûÅÅĞò|´ÓĞ¡µ½´ó;");
-		//½á¹û³öÎ÷¹Ï
+		//		jTextPane.setText("è¡¨å:ä¸­è¯åŒæº:é€‰æ‹©;\r\n"
+		//				+ "æ¡ä»¶:æˆ–:åŠŸæ•ˆ|åŒ…å«|æ¸…çƒ­:åŠŸæ•ˆ|åŒ…å«|è§£æ¯’;\r\n"
+		//				+ "æ¡ä»¶:å’Œ:æ€§å‘³|ä¸åŒ…å«|çƒ­:è„‰ç»œ|åŒ…å«|è‚º;\r\n"
+		//				+ "æ¡ä»¶:å’Œ:é£é™©è§„é¿|è¿‡æ»¤|æ¯’:é£é™©è§„é¿|è¿‡æ»¤|å­•;\r\n"
+		//				+ "è·å–åˆ—å:åŠŸæ•ˆ:é£é™©è§„é¿|æ”¹å|é£é™©:è„‰ç»œ:æ€§å‘³:ä¸­è¯åç§°|æ”¹å|è¯å;\r\n"
+		//				+ "æ“ä½œ:é£é™©|é¢œè‰²|é»„è‰²;\r\n"
+		//				+ "æ“ä½œ:è¯å|é¢œè‰²|çº¢è‰²;\r\n"
+		//				+ "æ“ä½œ:åŠŸæ•ˆ|åˆ†è¯|è¯æ€§;\r\n"
+		//				+ "æ“ä½œ:0|è¡Œè‡³|20;\r\n"
+		//				+ "æ“ä½œ:è¯å|å­—ç¬¦æ’åº|ä»å°åˆ°å¤§;");
+		//ç¨åæ”¹å		
+		//		jTextPane.setText("è·å–è¡¨å:ä¸­è¯åŒæº:è¿›è¡Œé€‰æ‹©;
+		//		æ¡ä»¶ä¸º:å’Œ:åŠŸæ•ˆ|ç²¾åº¦æœç´¢|é£çƒ­å’³å—½|0;
+		//		æ¡ä»¶ä¸º:å’Œ:ä¸­è¯åç§°|å­—ç¬¦ä¸²é•¿åº¦å¤§äº|3;
+		//		æ¡ä»¶ä¸º:æˆ–:åŠŸæ•ˆ|åŒ…å«|æ¸…çƒ­è§£æ¯’:åŠŸæ•ˆ|åŒ…å«|åˆ©å°¿;
+		//		æ¡ä»¶ä¸º:å’Œ:æ€§å‘³|ä¸åŒ…å«|æ¸©:è„‰ç»œ|åŒ…å«|è‚º;
+		//		æ¡ä»¶ä¸º:å’Œ:é£é™©è§„é¿|è¿‡æ»¤æ‰|æ¯’:é£é™©è§„é¿|è¿‡æ»¤æ‰|å­•;
+		//		è·å–è¡¨åˆ—å:åŠŸæ•ˆ:é£é™©è§„é¿|æ”¹åä¸º|é£é™©:è„‰ç»œ:æ€§å‘³:ä¸­è¯åç§°|æ”¹åä¸º|è¯å;
+		//		æ“ä½œ:0|è¡Œè‡³|20;
+		//		æ“ä½œ:é£é™©|é¢œè‰²æ ‡è®°ä¸º|é»„è‰²;
+		//		æ“ä½œ:è¯å|é¢œè‰²æ ‡è®°ä¸º|çº¢è‰²;
+		//		æ“ä½œ:åŠŸæ•ˆ|è¿›è¡Œåˆ†è¯|DNN;
+		//				+ "æ“ä½œ:è¯å|è¿›è¡Œå­—ç¬¦æ’åº|ä»å°åˆ°å¤§;");
+		//ç»“æœå‡ºè¥¿ç“œ
 
-		jTextPane.setText("»ñÈ¡±íÃû:ÖĞÒ½Õï¶Ï:½øĞĞÑ¡Ôñ;\r\n"
-				+ "Ìõ¼şÎª:ºÍ:±Ê¼Ç|°üº¬|·¢ÈÈ:±Ê¼Ç|°üº¬|ÉíÖØ;\r\n"
-				+ "»ñÈ¡±íÁĞÃû:ID:²¡Ö¢;\r\n"
-				+ "²Ù×÷:0|ĞĞÖÁ|30;\r\n"
-				+ "²Ù×÷:²¡Ö¢|½øĞĞ·Ö´Ê|´ÊĞÔÏÔÉ«;\r\n"
-				+ "²Ù×÷:ID|½øĞĞÊı×ÖÅÅĞò|´ÓĞ¡µ½´ó;"
-				+ "²Ù×÷:ID|ÑÕÉ«±ê¼ÇÎª|ºìÉ«;");
-		//	+ "²Ù×÷:Ò©Ãû|½øĞĞ×Ö·ûÅÅĞò|´ÓĞ¡µ½´ó;");
-		//  + "PLETL:ÖĞ½Úµã|½øĞĞ±í¸ñºÏ²¢|Ö÷ÂëÎª|ID|Ä£Ê½Îª|ĞÂÔöÁĞ;"
+		jTextPane.setText("è·å–è¡¨å:ä¸­åŒ»è¯Šæ–­:è¿›è¡Œé€‰æ‹©;\r\n"
+				+ "æ¡ä»¶ä¸º:å’Œ:ç¬”è®°|åŒ…å«|å‘çƒ­:ç¬”è®°|åŒ…å«|èº«é‡;\r\n"
+				+ "è·å–è¡¨åˆ—å:ID:ç—…ç—‡;\r\n"
+				+ "æ“ä½œ:0|è¡Œè‡³|30;\r\n"
+				+ "æ“ä½œ:ç—…ç—‡|è¿›è¡Œåˆ†è¯|è¯æ€§æ˜¾è‰²;\r\n"
+				+ "æ“ä½œ:ID|è¿›è¡Œæ•°å­—æ’åº|ä»å°åˆ°å¤§;"
+				+ "æ“ä½œ:ID|é¢œè‰²æ ‡è®°ä¸º|çº¢è‰²;");
+		//	+ "æ“ä½œ:è¯å|è¿›è¡Œå­—ç¬¦æ’åº|ä»å°åˆ°å¤§;");
+		//  + "PLETL:ä¸­èŠ‚ç‚¹|è¿›è¡Œè¡¨æ ¼åˆå¹¶|ä¸»ç ä¸º|ID|æ¨¡å¼ä¸º|æ–°å¢åˆ—;"
 
-		//  ÏÂÃæÕâ¸öÎå¸öÃüÁî restÃüÁî Ê×ÏÈ·ûºÅ³åÍ»£¬
-		//  + "¶¨Òå:±äÁ¿1|://localhost......;" (ÕıÔÚÉè¼Æ)//ÉÔºó¡£
+		//  ä¸‹é¢è¿™ä¸ªäº”ä¸ªå‘½ä»¤ restå‘½ä»¤ é¦–å…ˆç¬¦å·å†²çªï¼Œ
+		//  + "å®šä¹‰:å˜é‡1|://localhost......;" (æ­£åœ¨è®¾è®¡)//ç¨åã€‚
 
-		//  + "PLTCP:²¡Ö¢|½øĞĞWEBÇëÇó|½Ó¿ÚÎª|localhost|¶Ë¿ÚÎª|8000|²Ù×÷Îª|·Ö´Ê;" 
-		//  + "PLTCP:²¡Ö¢|½øĞĞWEBÇëÇó|½Ó¿ÚÎª|localhost|¶Ë¿ÚÎª|8000|²Ù×÷Îª|DNN;" 
-		//  + "PLTCP:²¡Ö¢|½øĞĞWEBÇëÇó|½Ó¿ÚÎª|localhost|¶Ë¿ÚÎª|8000|²Ù×÷Îª|POS;" 
+		//  + "PLTCP:ç—…ç—‡|è¿›è¡ŒWEBè¯·æ±‚|æ¥å£ä¸º|localhost|ç«¯å£ä¸º|8000|æ“ä½œä¸º|åˆ†è¯;" 
+		//  + "PLTCP:ç—…ç—‡|è¿›è¡ŒWEBè¯·æ±‚|æ¥å£ä¸º|localhost|ç«¯å£ä¸º|8000|æ“ä½œä¸º|DNN;" 
+		//  + "PLTCP:ç—…ç—‡|è¿›è¡ŒWEBè¯·æ±‚|æ¥å£ä¸º|localhost|ç«¯å£ä¸º|8000|æ“ä½œä¸º|POS;" 
 
-		//  + "PLETL:¸Ã½Úµã|½øĞĞÊä³ö|Ä£Ê½Îª|´òÓ¡;" (ÕıÔÚÉè¼Æ)
-		//  + "PLETL:¸Ã½Úµã|½øĞĞ±£´æ|Ä£Ê½Îª|ÎÄ¼ş|Â·¾¶Îª|FÅÌ|°ÍÀ­/°ÍÀ­Ğ¡Ä§ÏÉ/¡£¡£¡£¡£.lyg;" (ÕıÔÚÉè¼Æ)
-		//  + "PLETL:ÎÄµµ|½øĞĞÖ´ĞĞ|Ê±¼äÎª|Ê±¼ä´Á|Â·¾¶Îª|DÅÌ|°ÍÀ­°ÍÀ­Ğ¡Ä§ÏÉ/¡£¡£¡£¡£.etl;" (ÕıÔÚÉè¼Æ)
+		//  + "PLETL:è¯¥èŠ‚ç‚¹|è¿›è¡Œè¾“å‡º|æ¨¡å¼ä¸º|æ‰“å°;" (æ­£åœ¨è®¾è®¡)
+		//  + "PLETL:è¯¥èŠ‚ç‚¹|è¿›è¡Œä¿å­˜|æ¨¡å¼ä¸º|æ–‡ä»¶|è·¯å¾„ä¸º|Fç›˜|å·´æ‹‰/å·´æ‹‰å°é­”ä»™/ã€‚ã€‚ã€‚ã€‚.lyg;" (æ­£åœ¨è®¾è®¡)
+		//  + "PLETL:æ–‡æ¡£|è¿›è¡Œæ‰§è¡Œ|æ—¶é—´ä¸º|æ—¶é—´æˆ³|è·¯å¾„ä¸º|Dç›˜|å·´æ‹‰å·´æ‹‰å°é­”ä»™/ã€‚ã€‚ã€‚ã€‚.etl;" (æ­£åœ¨è®¾è®¡)
 
 		this.add(jsp_jTextPane);
 		outputjTextPane= new JTextPane();
 		JScrollPane jsp_outputjTextPane= new JScrollPane(outputjTextPane);
 		jsp_outputjTextPane.setBounds(10 + 0* 150, 20+ 1* 15+ 30+ 250, 765, 350);
-		outputjTextPane.setText("\"ÕıÔÚÊ¹ÓÃ ÑøÁÆ¾­ 1.8.8.8.0 Tin ShellÏµÍ³(8.8.8.0) . . .\"");
+		outputjTextPane.setText("\"æ­£åœ¨ä½¿ç”¨ å…»ç–—ç» 1.8.8.8.0 Tin Shellç³»ç»Ÿ(8.8.8.0) . . .\"");
 		this.add(jsp_outputjTextPane);
-		//jTextPane.setText("ÕıÔÚÊ¹ÓÃ ÑøÁÆ¾­ 1.8.8.8.0 Tin ShellÏµÍ³(8.8.8.0) . . .");
+		//jTextPane.setText("æ­£åœ¨ä½¿ç”¨ å…»ç–—ç» 1.8.8.8.0 Tin Shellç³»ç»Ÿ(8.8.8.0) . . .");
 	}
 
 	@Override
