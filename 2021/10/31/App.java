@@ -340,6 +340,15 @@ public class App extends JApplet implements MouseListener, KeyListener, ActionLi
 	//搜索
 	@Override
 	public void keyReleased(KeyEvent arg0) {
+		if(null== this.appConfig) {
+			return;
+		}
+		if(null== this.appConfig.SectionJPanel) {
+			return;
+		}
+		if(null== this.appConfig.SectionJPanel.jlabel_peizhi_di2233) {
+			return;
+		}
 		if(10!= arg0.getKeyCode()&& this.appConfig.SectionJPanel.jlabel_peizhi_di2233.isSelected()) {//识别回车 专家操作
 			return;
 		}
@@ -347,11 +356,11 @@ public class App extends JApplet implements MouseListener, KeyListener, ActionLi
 		key= name.getText();
 		String forE= key.toLowerCase().toString();
 		if(key!= null && !key.replace(StableTag.STRING_SPACE, StableTag.STRING_EMPTY)
-				.equals(StableTag.STRING_EMPTY) && key.length()>50) {
+				.equals(StableTag.STRING_EMPTY) && key.length()> 50) {
 			key= key.substring(0, 30);
 		}
 		if(forE!= null&& !forE.replace(StableTag.STRING_SPACE, StableTag.STRING_EMPTY)
-				.equals(StableTag.STRING_EMPTY) && forE.length()>110) {
+				.equals(StableTag.STRING_EMPTY) && forE.length()> 110) {
 			forE= forE.substring(0, 110);
 		}
 		key = key.length()== 0? StableTag.STRING_EMPTY: translator.MixedStringToChineseString(_A, key);
