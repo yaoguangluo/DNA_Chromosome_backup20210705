@@ -8,19 +8,19 @@ import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.ASU.MPE.procedure.pde.TokenPD
 import PEU.P.dna.Token;
 import PEU.P.dna.TokenCerts;
 import PEU.P.dna.TokenUtil;
-//DNA¼ÓÃÜÉè¼Æ ÂŞÑş¹â
-//DNA¼ÓÃÜË¼Ïë ÂŞÑş¹â
-//Refer <DNAÔª»ù±àÂë>, <PDEëÄÕ¹¹«Ê½>:  ÂŞÑş¹â ÂŞÈÙÎä
+//DNAåŠ å¯†è®¾è®¡ ç½—ç‘¶å…‰
+//DNAåŠ å¯†æ€æƒ³ ç½—ç‘¶å…‰
+//Refer <DNAå…ƒåŸºç¼–ç >, <PDEè‚½å±•å…¬å¼>:  ç½—ç‘¶å…‰ ç½—è£æ­¦
 public class SessionValidation{
-	//ĞòÁĞ¼ì²é, ÓÃÓÚ²¢·¢Ìõ¼şÏÂÓÖÃ»ÓĞ»º´æ·şÎñÆ÷¶îÇé¿öÏÂ.
-	//ÓÃ»§×¢Òâ, FullDNATokenPDI ÊÇÎÒÄ¿µÄÓÃÀ´×öDNAËÑË÷µÄ, ÔÚdna¼ÓÃÜÕâÀïÒ²¿ÉÒÔÓÃ, µ«ÊÇ, Èç¹ûÒªÓÃ, Çë½÷É÷ĞŞ¸Ä.
+	//åºåˆ—æ£€æŸ¥, ç”¨äºå¹¶å‘æ¡ä»¶ä¸‹åˆæ²¡æœ‰ç¼“å­˜æœåŠ¡å™¨é¢æƒ…å†µä¸‹.
+	//ç”¨æˆ·æ³¨æ„, FullDNATokenPDI æ˜¯æˆ‘ç›®çš„ç”¨æ¥åšDNAæœç´¢çš„, åœ¨dnaåŠ å¯†è¿™é‡Œä¹Ÿå¯ä»¥ç”¨, ä½†æ˜¯, å¦‚æœè¦ç”¨, è¯·è°¨æ…ä¿®æ”¹.
 	public boolean sessionCheck(Token token, TokenCerts tokenCerts) {
 		boolean infix= this.sessionCheckWithOrderPDSKey(token, tokenCerts);
 		boolean postfix= this.sessionCheckWithPostPDSKey(token, tokenCerts);
 		return infix&& postfix;	
 	}
 
-	//ĞòÁĞÊ¹ÓÃÒ»´Î±ã¸üĞÂÖØÖÃ
+	//åºåˆ—ä½¿ç”¨ä¸€æ¬¡ä¾¿æ›´æ–°é‡ç½®
 	public Token sessionTokenUpdateByDNA(String password) {
 		SessionValidation sessionValidation= new SessionValidation();
 		TokenCerts tokenCerts= sessionValidation.sessionTokenCertsInitWithHumanWordsByDNA(password, false, null);
@@ -28,9 +28,9 @@ public class SessionValidation{
 		return token;
 	}
 
-	//ĞòÁĞ³õÊ¼Éú³É
-	//¿ÉÒÔ½«ÃÜÂëºÍÊ±¼ä¶¼¼ÓÔØÔÚÕâ¸öhumanWordsPasswordÖĞ, ÕâÑùÊ±¼ä¾Í²»ĞèÒª±È¶ÔÁË.
-	//ÎÒ½¨ÒéÊÇÂëÅ©±ğÍµÀÁ.
+	//åºåˆ—åˆå§‹ç”Ÿæˆ
+	//å¯ä»¥å°†å¯†ç å’Œæ—¶é—´éƒ½åŠ è½½åœ¨è¿™ä¸ªhumanWordsPasswordä¸­, è¿™æ ·æ—¶é—´å°±ä¸éœ€è¦æ¯”å¯¹äº†.
+	//æˆ‘å»ºè®®æ˜¯ç å†œåˆ«å·æ‡’.
 	public TokenCerts sessionTokenCertsInitWithHumanWordsByDNA(String humanWordsPassword, boolean bys, String lockBys) {
 		FullDNATokenPDI pDE_RNA_FullFormular= new FullDNATokenPDI();
 		//String a= "luoyaoguang";
@@ -41,8 +41,8 @@ public class SessionValidation{
 		pDE_RNA_FullFormular.key[3]= 0.632;
 		pDE_RNA_FullFormular.text= humanWordsPassword;
 		pDE_RNA_FullFormular.pdw= pDE_RNA_FullFormular.initonSect(pDE_RNA_FullFormular.text);
-		//		System.out.println("Ô­ÎÄ: "+ pDE_RNA_FullFormular.text);
-		//pDE_RNA_FullFormular.pdw= "×Öµä±£ÃÜ£ºMSIOCUOCIPCUPCI";
+		//		System.out.println("åŸæ–‡: "+ pDE_RNA_FullFormular.text);
+		//pDE_RNA_FullFormular.pdw= "å­—å…¸ä¿å¯†ï¼šMSIOCUOCIPCUPCI";
 		if(bys) {
 			pDE_RNA_FullFormular.lock= lockBys;
 		}else {
@@ -62,9 +62,9 @@ public class SessionValidation{
 		for(int i= 0; i< pDE_RNA_FullFormular.pdw.length(); i++) {
 			pDE_RNA_FullFormular.code+= pDE_RNA_FullFormular.lock + pDE_RNA_FullFormular.pdw.charAt(i);
 		}
-		//		System.out.println("ëÄÓï: "+ pDE_RNA_FullFormular.pdw);
-		//		System.out.println("ëÄËø: "+ pDE_RNA_FullFormular.lock);
-		//		System.out.println("É¢ÁĞëÄÓï:"+ pDE_RNA_FullFormular.code);
+		//		System.out.println("è‚½è¯­: "+ pDE_RNA_FullFormular.pdw);
+		//		System.out.println("è‚½é”: "+ pDE_RNA_FullFormular.lock);
+		//		System.out.println("æ•£åˆ—è‚½è¯­:"+ pDE_RNA_FullFormular.code);
 		TokenCerts tokenCerts= new TokenCerts();
 		tokenCerts.I_PdnKey(pDE_RNA_FullFormular.pdw);
 		tokenCerts.I_PdnLock(pDE_RNA_FullFormular.lock);
@@ -72,7 +72,7 @@ public class SessionValidation{
 		tokenCerts.I_PdnPassword(pDE_RNA_FullFormular.code);
 		return tokenCerts;
 	}
-	//Çø±ğÉÏÃæ·Çetl£¬ÉÔºóÈ¥ÖØ ÂŞÑş¹â20211107 ÓÃµ½initonETLSect;
+	//åŒºåˆ«ä¸Šé¢éetlï¼Œç¨åå»é‡ ç½—ç‘¶å…‰20211107 ç”¨åˆ°initonETLSect;
 	public TokenCerts sessionTokenCertsInitWithHumanWordsByDNA_ETL(String humanWordsPassword, boolean bys, String lockBys) {
 		FullDNATokenPDI pDE_RNA_FullFormular= new FullDNATokenPDI();
 		pDE_RNA_FullFormular.key[0]= 0.6;
@@ -108,26 +108,26 @@ public class SessionValidation{
 		return tokenCerts;
 	}
 	
-	//ĞòÁĞPDI³õÊ¼Éú³É×ß·ÇUtilº¯Êı
+	//åºåˆ—PDIåˆå§‹ç”Ÿæˆèµ°éUtilå‡½æ•°
 	public Token sessionInitByTokenPDICertsDNA(TokenCerts tokenCerts) {
 		Token token= new Token();
 		TokenPDI pDE_RNA_Formular= new TokenPDI();
 		pDE_RNA_Formular.doKeyPress(tokenCerts.getPdnPassword(), pDE_RNA_Formular, false);
-		//		System.out.println("¾²Ì¬ëÄÕ¹½µÔª¸ÅÂÊÔ¿³×E: "+ pDE_RNA_Formular.pdedeKey);
-		//		System.out.println("¾²Ì¬ëÄÕ¹½µÔª¸ÅÂÊÔ¿³×S: "+ pDE_RNA_Formular.pdedsKey);
-		//		System.out.println("¾²Ì¬ëÄÕ¹½µÔª: "+ pDE_RNA_Formular.pds);
+		//		System.out.println("é™æ€è‚½å±•é™å…ƒæ¦‚ç‡é’¥åŒ™E: "+ pDE_RNA_Formular.pdedeKey);
+		//		System.out.println("é™æ€è‚½å±•é™å…ƒæ¦‚ç‡é’¥åŒ™S: "+ pDE_RNA_Formular.pdedsKey);
+		//		System.out.println("é™æ€è‚½å±•é™å…ƒ: "+ pDE_RNA_Formular.pds);
 		tokenCerts.I_Pds(pDE_RNA_Formular.pds);
 		token.I_Updsde(pDE_RNA_Formular.pdedeKey);
 		token.I_Updsds(pDE_RNA_Formular.pdedsKey);
 		token.I_Updsie(pDE_RNA_Formular.pdeieKey);
 		token.I_Updsis(pDE_RNA_Formular.pdeisKey);
-		//		System.out.println("¾²Ì¬ëÄÕ¹ÔöÔª¸ÅÂÊÔ¿³×E: "+ pDE_RNA_Formular.pdeieKey);
-		//		System.out.println("¾²Ì¬ëÄÕ¹ÔöÔª¸ÅÂÊÔ¿³×S: "+ pDE_RNA_Formular.pdeisKey);
-		//		System.out.println("¾²Ì¬ëÄÕ¹ÔöÔª: "+ pDE_RNA_Formular.pde);
+		//		System.out.println("é™æ€è‚½å±•å¢å…ƒæ¦‚ç‡é’¥åŒ™E: "+ pDE_RNA_Formular.pdeieKey);
+		//		System.out.println("é™æ€è‚½å±•å¢å…ƒæ¦‚ç‡é’¥åŒ™S: "+ pDE_RNA_Formular.pdeisKey);
+		//		System.out.println("é™æ€è‚½å±•å¢å…ƒ: "+ pDE_RNA_Formular.pde);
 		pDE_RNA_Formular.time= "" + System.currentTimeMillis();
 		pDE_RNA_Formular.cacheId= "ID" + Math.random() + ":" + Math.random();
-		//		System.out.println("Ê±¼ä:  " + pDE_RNA_Formular.time);
-		//		System.out.println("ÕËºÅËæ»ú»º´æ×Ö·û´®:  " + pDE_RNA_Formular.cacheId);
+		//		System.out.println("æ—¶é—´:  " + pDE_RNA_Formular.time);
+		//		System.out.println("è´¦å·éšæœºç¼“å­˜å­—ç¬¦ä¸²:  " + pDE_RNA_Formular.cacheId);
 		pDE_RNA_Formular.session_key= pDE_RNA_Formular.pde;
 		//		System.out.println("Session: " + pDE_RNA_Formular.session_key);
 		token.I_mPassword(pDE_RNA_Formular.pde);
@@ -135,74 +135,74 @@ public class SessionValidation{
 		return token;
 	}
 
-	//ĞòÁĞ³õÊ¼Éú³É
+	//åºåˆ—åˆå§‹ç”Ÿæˆ
 	public Token sessionInitByTokenCertsDNA(TokenCerts tokenCerts) {
 		String key= "";
 		String[] lock= new String[12];
 		lock[0]= "A"; lock[3]= "O"; lock[6]= "P"; lock[9]= "M";
 		lock[1]= "V"; lock[4]= "E"; lock[7]= "C"; lock[10]= "S";
 		lock[2]= "I"; lock[5]= "D"; lock[8]= "U"; lock[11]= "Q";
-		//»¹¿ÉÒÔ¼Ó TXH, °²È«¼¶±ğ¸ü¸ß.
+		//è¿˜å¯ä»¥åŠ  TXH, å®‰å…¨çº§åˆ«æ›´é«˜.
 		for(int loop= 0; loop< 4; loop++) {
 			int i= (int)(Math.random()* 12)% 12;
 			key+= lock[i];
 		}
-		Token sessiontoken= new Token();//´ó¼Ò×¢ÒâÕâ¸öpassword ÊÇÔª»ù, Ã÷ÎÄÒª×ª»¯ÏÂ.
+		Token sessiontoken= new Token();//å¤§å®¶æ³¨æ„è¿™ä¸ªpassword æ˜¯å…ƒåŸº, æ˜æ–‡è¦è½¬åŒ–ä¸‹.
 		String dnaPassword= TokenUtil.getFirstDNAPassword(key, tokenCerts.getPdnPassword(), sessiontoken);
 		sessiontoken.I_uEmail("313699483@qq.com");
 		sessiontoken.I_uKey(key);
-		//ÏÂÃæ×¢ÒâÕâ¸öÊ±¼äÒªºÍETCµÄÊ±Çø½øĞĞÊ±Çø¼ÆËã.½øĞĞÍ³Ò».
-		//ÎÒ×¼±¸½«ÏÂÃæÕâ¸öÊ±¼äÉÔºóÒ²Í¬ÑùëÄ¼ÓÃÜ, ²»È»±ğÈË¸ÄÊ±¼äÒ»ÑùÄÜÓÃ.
-		//Èç¹ûÊÇ·şÎñÆ÷¶ËµÄ»º´æÓĞÊ±¼äÊ§Ğ§ÉèÖÃ, ÄÇ¾Í¿ÉÒÔ²»¿¼ÂÇ.
+		//ä¸‹é¢æ³¨æ„è¿™ä¸ªæ—¶é—´è¦å’ŒETCçš„æ—¶åŒºè¿›è¡Œæ—¶åŒºè®¡ç®—.è¿›è¡Œç»Ÿä¸€.
+		//æˆ‘å‡†å¤‡å°†ä¸‹é¢è¿™ä¸ªæ—¶é—´ç¨åä¹ŸåŒæ ·è‚½åŠ å¯†, ä¸ç„¶åˆ«äººæ”¹æ—¶é—´ä¸€æ ·èƒ½ç”¨.
+		//å¦‚æœæ˜¯æœåŠ¡å™¨ç«¯çš„ç¼“å­˜æœ‰æ—¶é—´å¤±æ•ˆè®¾ç½®, é‚£å°±å¯ä»¥ä¸è€ƒè™‘.
 		sessiontoken.I_uTime(new Date().getTime());
 		//token.setmPassword(mPassword);
 		sessiontoken.I_mPassword(dnaPassword);
 		return sessiontoken;
 	}
 
-	//ĞòÁĞ ÕıĞòÃÜÎÄ¼ì²é
+	//åºåˆ— æ­£åºå¯†æ–‡æ£€æŸ¥
 	public boolean sessionCheckWithOrderPDSKey(Token token, TokenCerts tokenCerts) {
 		TokenPDI pDE_RNA_Formular= new TokenPDI();
 		//		System.out.println("Session: "+ token.getmPassword());
 		//		System.out.println("=========================================================================================");
-		//		System.out.println("¿ªÊ¼Ç°ĞòÑéÖ¤£º");
-		//		System.out.println("¿ªÊ¼Session½âÎö£º"+ token.getmPassword());
-		//		System.out.println("¿ªÊ¼¸ÅÂÊÔ¿³×½âÎö£º"+ token.getUpdsde()+ token.getUpdsds()+ token.getUpdsie()+ token.getUpdsis());
+		//		System.out.println("å¼€å§‹å‰åºéªŒè¯ï¼š");
+		//		System.out.println("å¼€å§‹Sessionè§£æï¼š"+ token.getmPassword());
+		//		System.out.println("å¼€å§‹æ¦‚ç‡é’¥åŒ™è§£æï¼š"+ token.getUpdsde()+ token.getUpdsds()+ token.getUpdsie()+ token.getUpdsis());
 		TokenPDI pDE_RNA_Formular1= new TokenPDI();
 		pDE_RNA_Formular1.pdedeKey= token.getUpdsde().toString();
 		pDE_RNA_Formular1.pdedsKey= token.getUpdsds().toString();
 		pDE_RNA_Formular1.pdeieKey= token.getUpdsie().toString();
 		pDE_RNA_Formular1.pdeisKey= token.getUpdsis().toString();
 		pDE_RNA_Formular.doKeyUnPress(tokenCerts.getPdnPassword(), pDE_RNA_Formular1, true);
-		//		System.out.println("µÃµ½Ô­½µÔªÔª»ùDNAĞòÁĞ£º"+ pDE_RNA_Formular.pds);
-		//		System.out.println("µÃµ½ĞÂ½µÔªÔª»ùDNAĞòÁĞ£º"+ pDE_RNA_Formular1.pds);
-		//		System.out.println("µÃµ½Ô­Ôª»ùDNAĞòÁĞ£º"+ pDE_RNA_Formular.pde);
-		//		System.out.println("µÃµ½ĞÂÔª»ùDNAĞòÁĞ£º"+ pDE_RNA_Formular1.pde);
+		//		System.out.println("å¾—åˆ°åŸé™å…ƒå…ƒåŸºDNAåºåˆ—ï¼š"+ pDE_RNA_Formular.pds);
+		//		System.out.println("å¾—åˆ°æ–°é™å…ƒå…ƒåŸºDNAåºåˆ—ï¼š"+ pDE_RNA_Formular1.pds);
+		//		System.out.println("å¾—åˆ°åŸå…ƒåŸºDNAåºåˆ—ï¼š"+ pDE_RNA_Formular.pde);
+		//		System.out.println("å¾—åˆ°æ–°å…ƒåŸºDNAåºåˆ—ï¼š"+ pDE_RNA_Formular1.pde);
 		return pDE_RNA_Formular1.pde.equalsIgnoreCase(token.getmPassword())? true: false;
 	}
 
-	//ĞòÁĞ ·´ĞòÃÜÎÄ¼ì²é
+	//åºåˆ— ååºå¯†æ–‡æ£€æŸ¥
 	public boolean sessionCheckWithPostPDSKey(Token token, TokenCerts tokenCerts) {
 		//		System.out.println("=========================================================================================");
-		//		System.out.println("¿ªÊ¼ºóĞòÑéÖ¤£º");
+		//		System.out.println("å¼€å§‹ååºéªŒè¯ï¼š");
 		TokenPDI pDE_RNA_Formular2= new TokenPDI();
 		pDE_RNA_Formular2.pdeieKey= token.getUpdsde().toString();
 		pDE_RNA_Formular2.pdeisKey= token.getUpdsds().toString();
 		pDE_RNA_Formular2.pdedeKey= token.getUpdsie().toString();
 		pDE_RNA_Formular2.pdedsKey= token.getUpdsis().toString();
-		//		System.out.println("×¼±¸¼ÆËãÔª»ùDNAĞòÁĞ£º"+ token.getmPassword());
+		//		System.out.println("å‡†å¤‡è®¡ç®—å…ƒåŸºDNAåºåˆ—ï¼š"+ token.getmPassword());
 		pDE_RNA_Formular2.doSessionKeyUnPress(token.getmPassword(), pDE_RNA_Formular2, true);
-		//		System.out.println("µÃµ½Ô­Ğø½µÔªÔª»ùDNAĞòÁĞ£º"+ tokenCerts.getPds());
-		//		System.out.println("µÃµ½ºóĞø½µÔªÔª»ùDNAĞòÁĞ£º"+ pDE_RNA_Formular2.pds);
-		//		System.out.println("ÑéÖ¤ÕıÈ·£¿");
-		System.out.println(tokenCerts.getPds().equals(pDE_RNA_Formular2.pds)? "ÕıÈ·": "Ê§°Ü");
+		//		System.out.println("å¾—åˆ°åŸç»­é™å…ƒå…ƒåŸºDNAåºåˆ—ï¼š"+ tokenCerts.getPds());
+		//		System.out.println("å¾—åˆ°åç»­é™å…ƒå…ƒåŸºDNAåºåˆ—ï¼š"+ pDE_RNA_Formular2.pds);
+		//		System.out.println("éªŒè¯æ­£ç¡®ï¼Ÿ");
+		System.out.println(tokenCerts.getPds().equals(pDE_RNA_Formular2.pds)? "æ­£ç¡®": "å¤±è´¥");
 		return tokenCerts.getPds().equals(pDE_RNA_Formular2.pds)? true: false;	
 	}
 
-	//Ğ´¸ömainº¯Êı²âÊÔÏÂ
+	//å†™ä¸ªmainå‡½æ•°æµ‹è¯•ä¸‹
 	public static void main(String[] argv) {
 		SessionValidation sessionValidation= new SessionValidation();
-		TokenCerts tokenCerts= sessionValidation.sessionTokenCertsInitWithHumanWordsByDNA("¿ØÖÆÎüÊÕ", false, null);
+		TokenCerts tokenCerts= sessionValidation.sessionTokenCertsInitWithHumanWordsByDNA("æ§åˆ¶å¸æ”¶", false, null);
 		Token token= sessionValidation.sessionInitByTokenPDICertsDNA(tokenCerts);
 		sessionValidation.sessionCheck(token, tokenCerts);
 
