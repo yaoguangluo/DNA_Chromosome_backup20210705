@@ -44,19 +44,19 @@ public class LoadFile{
 			Map<String, String> currentNodeMap= new HashMap<>();
 			while ((ctempString= cReader.readLine())!= null&& (ctempStringKey= cReaderKey.readLine())!= null ) {  
 				if(!ctempString.contains("######################")) {
-//					ctempString= new FullDNATokenPDI().initonDeSect(ctempString);//ÎÄ×Ö±äÊı×ÖÔÙ±äÔª»ù£¬½øĞĞĞŞÕı¡£ÂŞÑş¹â20211106	
+//					ctempString= new FullDNATokenPDI().initonDeSect(ctempString);//æ–‡å­—å˜æ•°å­—å†å˜å…ƒåŸºï¼Œè¿›è¡Œä¿®æ­£ã€‚ç½—ç‘¶å…‰20211106	
 //					String lock= "AISD>_<111111111111111>_<11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111"
 //							+ ">_<1111111111111111>_<10111011101101101110110110110110111011011011101110110110"
 //							+ "1101101101101101110110110111011011011011011011011101101101101101101110110111011101";
 					//ctempString
 					if(!ctempString.isEmpty()) {
 						String[] MD5dice_DNA= ctempStringKey.split(">_<");		
-						//¿ªÊ¼½âÃÜ
-						//ÕâÀïÒòÎªdna¼ÓÃÜ£¬¸ÅÂÊÔ¿³×²»¿É¿Ø£¬²»¿ÉÄæ£¬±ä²»»ØÀ´£¬ÓÚÊÇ²ÉÓÃ¼òµ¥µÄËø¼ÓÃÜ¡£
+						//å¼€å§‹è§£å¯†
+						//è¿™é‡Œå› ä¸ºdnaåŠ å¯†ï¼Œæ¦‚ç‡é’¥åŒ™ä¸å¯æ§ï¼Œä¸å¯é€†ï¼Œå˜ä¸å›æ¥ï¼Œäºæ˜¯é‡‡ç”¨ç®€å•çš„é”åŠ å¯†ã€‚
 						ctempString= LoadFile.getOrigianlTextByLock(ctempString, MD5dice_DNA[0]);
 						ctempString= new FullDNATokenPDI().initonDeSect(ctempString);
 						if(ctempString.contains(":")&& ctempString.split(":").length>1) {
-							currentNodeMap.put(ctempString.split(":")[0]//¶Á±í·Ö¸ô·ûºÅÓëtinshellÖ¸Áî·Ö¸î³åÍ»£¬×¼±¸²ÉÓÃÔª»ù´¡¼ÓÃÜ»»Ëã¡£
+							currentNodeMap.put(ctempString.split(":")[0]//è¯»è¡¨åˆ†éš”ç¬¦å·ä¸tinshellæŒ‡ä»¤åˆ†å‰²å†²çªï¼Œå‡†å¤‡é‡‡ç”¨å…ƒåŸºç¡€åŠ å¯†æ¢ç®—ã€‚
 									, ctempString.replace(ctempString.split(":")[0]+ ":", ""));
 						}
 					}
@@ -127,15 +127,15 @@ public class LoadFile{
 							? Integer.parseInt(currentNodeMap.get("NodeCoordinationY")):0;
 					node= thislist.addNodeOnlyWithFace(node, nodeView.first);
 					node.thisFace.nodeConfiguration= currentNodeMap.containsKey
-							("nodeConfiguration")? currentNodeMap.get("nodeConfiguration")//Ôª»ù½âÃÜ»»Ëã£¬ÕÒÁËÏÂ±È½Ï·Ñ¾¢£¬×¼±¸°Ñ½Ó¿ÚÄÃ³öÀ´×ö³Ésample
-									:"null";//ÎÒÔÚË¼¿¼ÊÇÓÃÎïÀí¼ÓÃÜ»¹ÊÇÓÃdna¸ÅÂÊÔ¿³×¼ÓÃÜ£¬Èç¹ûÊÇdna¸ÅÂÊÔ¿³×¼ÓÃÜÎÒ»¹ÓĞĞÂÔö¼¸¸ö±äÁ¿À´´æ´¢Ô¿³×¡£
+							("nodeConfiguration")? currentNodeMap.get("nodeConfiguration")//å…ƒåŸºè§£å¯†æ¢ç®—ï¼Œæ‰¾äº†ä¸‹æ¯”è¾ƒè´¹åŠ²ï¼Œå‡†å¤‡æŠŠæ¥å£æ‹¿å‡ºæ¥åšæˆsample
+									:"null";//æˆ‘åœ¨æ€è€ƒæ˜¯ç”¨ç‰©ç†åŠ å¯†è¿˜æ˜¯ç”¨dnaæ¦‚ç‡é’¥åŒ™åŠ å¯†ï¼Œå¦‚æœæ˜¯dnaæ¦‚ç‡é’¥åŒ™åŠ å¯†æˆ‘è¿˜æœ‰æ–°å¢å‡ ä¸ªå˜é‡æ¥å­˜å‚¨é’¥åŒ™ã€‚
 					node.thisFace.isConfiged= currentNodeMap.containsKey
 							("isConfiged")? currentNodeMap.get("isConfiged")
 									.contains("false")? false: true: false;
 					node.thisFace.isExecuted= currentNodeMap.containsKey
 							("isExecuted")? currentNodeMap.get("isExecuted")
 									.contains("false")? false: true: false;	
-					//Ôö¼ÓÒ»¸önode map ÓÃÓÚ connectÁ´½Ó
+					//å¢åŠ ä¸€ä¸ªnode map ç”¨äº connecté“¾æ¥
 					nodeMap.put(node.primaryKey, node);
 					if(null== first) {
 						first= node;
@@ -151,12 +151,12 @@ public class LoadFile{
 			loadE.printStackTrace();
 		}
 		first= Sort.sort(first);
-		//±ÜÃâ´íĞòÂ¼Èë£¬ÓÚÊÇÔö¼ÓnodeÁ´½Ó
+		//é¿å…é”™åºå½•å…¥ï¼Œäºæ˜¯å¢åŠ nodeé“¾æ¥
 		linkNode(first, nodeMap);
 		first= Sort.sort(first);
 		return first;	
 	}
-    //ËÆºõ±»Ã¨ÄåÁË¡£ÉÔºóµØÌºÊ½ÅÅ²é¡£ÂŞÑş¹â20211102
+    //ä¼¼ä¹è¢«çŒ«è…»äº†ã€‚ç¨ååœ°æ¯¯å¼æ’æŸ¥ã€‚ç½—ç‘¶å…‰20211102
 	private static void linkNode(LinkNode first, Map<String, LinkNode> nodeMap) {
 		// TODO Auto-generated method stub
 		while(first!= null) {
