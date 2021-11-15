@@ -1,0 +1,41 @@
+下面的字符串进行替换了下，准备开始设计一些有用的shell命令，比如 一篇文章中将某些特定的类型进行特定的模式文本替换。
+
+我的动机很简单， eclipse，txt 等 的replace 太简单了，用起来很耗时间麻烦，我需要有一键按我意思来替换的 高级操作
+
+罗瑶光
+
+
++24 -24 M M_PLSQL/ME/SM/OP/SM/AOP/MEC/SIQ/E/P_ConditionPLSQL.java
++6 -6 M M_PLSQL/ME/SM/OP/SM/AOP/MEC/SIQ/E/P_RelationPLSQL.java
++9 -8 M M_VECS/ME/SM/OP/SM/AOP/MEC/SIQ/E/P_ConditionPLSQL_XCDX_Cache.java
++8 -8 M M_VECS/ME/SM/OP/SM/AOP/MEC/SIQ/E/P_ConditionPLSQL_XCDX_Map.java
++9 -8 M M_VECS/ME/SM/OP/SM/AOP/MEC/SIQ/E/P_ConditionPLSQL_XCDX_Table.java
++6 -6 M M_VECS/ME/SM/OP/SM/AOP/MEC/SIQ/E/P_RelationPLSQL.java
++13 -12 M O_VECS/OSM/shell/P_CO_pl_XA_XCDX_Cache.java
++12 -12 M O_VECS/OSM/shell/P_CO_pl_XA_XCDX_Map.java
++6 -6 M O_VECS/OSM/shell/P_RelationPL_XA.java
++4 -4 M S_AOPM/SVQ/stable/StableShellETL.java
++12 -12 M TinShell/OSM/shell/P_CO_pl_XA_XCDX_Cache.java
++12 -12 M TinShell/OSM/shell/P_CO_pl_XA_XCDX_Map.java
++6 -6 M TinShell/OSM/shell/P_RelationPL_XA.java
+
+
++3 -2 M HRJ_YLJ_node/OSI/OSU/SI/OVI/OSI/AVI/AEI/ACI/ASI/OVI/OEI/OCI/OSI/PVI/PEI/PCI/PSI/addPGSearchPage/MakeContainerYXTP.java
++1 -1 M M_EngineSrc/ME/APM/VSQ/App.java
++21 -21 M M_PLSQL/ME/SM/OP/SM/AOP/MEC/SIQ/E/P_ConditionPLSQL.java
++8 -8 M M_PLSQL/ME/SM/OP/SM/AOP/MEC/SIQ/E/P_RelationPLSQL.java
++7 -7 M M_VECS/ME/SM/OP/SM/AOP/MEC/SIQ/E/P_ConditionPLSQL_XCDX_Cache.java
++7 -7 M M_VECS/ME/SM/OP/SM/AOP/MEC/SIQ/E/P_ConditionPLSQL_XCDX_Map.java
++7 -7 M M_VECS/ME/SM/OP/SM/AOP/MEC/SIQ/E/P_ConditionPLSQL_XCDX_Table.java
++8 -8 M M_VECS/ME/SM/OP/SM/AOP/MEC/SIQ/E/P_RelationPLSQL.java
++2 -1 M M_VECS/MS/VPC/V/RestMap.java
++1 -1 M O_Sleepers/PEI/thread/MakeContainerQMDJ.java
++7 -7 M O_VECS/OSM/shell/P_CO_pl_XA_XCDX_Cache.java
++7 -7 M O_VECS/OSM/shell/P_CO_pl_XA_XCDX_Map.java
++8 -8 M O_VECS/OSM/shell/P_RelationPL_XA.java
++2 -1 M P_VECS/PEI/thread/MakeContainerQMDJ.java
++1 -1 M P_VPCSBackend/OSI/AOP/PCS/rest/RestMap.java
++7 -7 M TinShell/OSM/shell/P_CO_pl_XA_XCDX_Cache.java
++7 -7 M TinShell/OSM/shell/P_CO_pl_XA_XCDX_Map.java
++8 -8 M TinShell/OSM/shell/P_RelationPL_XA.java
++2 -1 M YLJ_HRJ/ME/APM/VSQ/App_XCDX.java
