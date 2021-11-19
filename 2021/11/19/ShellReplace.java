@@ -10,40 +10,30 @@ import java.io.InputStreamReader;
 import java.util.Map;
 
 public class ShellReplace {
-	//ÉÔºó¿ªÊ¼
-	//ÎÄ¼şÌæ»»
-	//ÂŞÑş¹â
+	//ç¨åå¼€å§‹
+	//æ–‡ä»¶æ›¿æ¢
+	//ç½—ç‘¶å…‰
 	public String searchString;
 	public String needReplaceString;
 	public String fileType;
 	public String fileName;
 	public String fileDirectroyPath;
-	public long filesize_KB;
+	public long fileSize_KB;
 	public long fileLinesBegin;
 	public long fileLinesEnd;
 
 
 	public void replaceString(String fileDirectroyPath, String searchString, String needReplaceString) throws IOException {
-		//1 È·¶¨ÎÄ¼ş¼Ğ
-		//2 ÎÄ¼ş¼ĞÎÄ¼ş±éÀú£¬
-		//3 È«ÎÄËÑË÷Ìæ»»
+		//1 ç¡®å®šæ–‡ä»¶å¤¹
+		//2 æ–‡ä»¶å¤¹æ–‡ä»¶éå†ï¼Œ
+		//3 å…¨æ–‡æœç´¢æ›¿æ¢
 		this.searchString= searchString;
 		this.needReplaceString= needReplaceString;
 		this.fileDirectroyPath= fileDirectroyPath;
-		File file= new File(fileDirectroyPath);
-		if(file.isFile()) {
-			fileDirectroyPath= file.getPath();
-		}
-		File fileDirectroy= new File(fileDirectroyPath);
-		if(fileDirectroy.isDirectory()) {
-			File[] files= file.listFiles();
-			for(File currentFile:files) {
-				doInerFilesReplace(currentFile, searchString, needReplaceString);
-			}
-		}
+		start();
 	}
 
-	public void doInerFilesReplace(File file, String searchString, String needReplaceString) throws IOException {
+	private void doInerFilesReplace(File file, String searchString, String needReplaceString) throws IOException {
 		if(file.isDirectory()) {
 			File[] files= file.listFiles();
 			for(File currentFile:files) {
@@ -52,27 +42,53 @@ public class ShellReplace {
 		}else {
 			if(file.isFile()) {
 				if(null!= file.getPath()) {
-					//ÉÔºóÉè¼ÆÎÄ¼şÀàĞÍ¹ıÂË
+					//ç¨åè®¾è®¡æ–‡ä»¶ç±»å‹è¿‡æ»¤
 					String filePath= file.getPath();
-					//¿ªÊ¼Ìæ»» µÈ»á¿´ÏÂÊÇ·ñÓĞ /·ûºÅ ¶ªÊ§µÄÎÊÌâ¡£
+					String currentFileName= file.getName();
+					if(null!= this.fileName) {
+						if(currentFileName.contains(this.fileName)) {
+							return;
+						}	
+					}
+					if(null!= this.fileType) {
+						if(currentFileName.contains(this.fileType)) {
+							return;
+						}	
+					}
+					if(0!= this.fileSize_KB) {
+						//...
+						long currentFileSize= file.length()/ 1024;//....
+						if(currentFileSize> this.fileSize_KB) {
+							return;
+						}	
+					}
+					//å¼€å§‹æ›¿æ¢ ç­‰ä¼šçœ‹ä¸‹æ˜¯å¦æœ‰ /ç¬¦å· ä¸¢å¤±çš„é—®é¢˜ã€‚
 					File fileOut= new File(filePath+ "_replaced");
 					FileWriter fileWriter= new FileWriter(fileOut, true);
 					InputStream inputStreamb= new FileInputStream(file);
-					//ÕâÀïÉè¼Æ¶ÁÈ¡ÎÄ¼şµÄ±àÂëÎÊÌâ£¬ÉÔºóÒªÉè¼Æ±àÂëµÄÊ¶±ğ¡£
+					//è¿™é‡Œè®¾è®¡è¯»å–æ–‡ä»¶çš„ç¼–ç é—®é¢˜ï¼Œç¨åè¦è®¾è®¡ç¼–ç çš„è¯†åˆ«ã€‚
 					BufferedReader cReaderb= new BufferedReader(new InputStreamReader(inputStreamb, "GBK"));
-					//index
 					String cInputStringb;
-					while ((cInputStringb= cReaderb.readLine())!= null) {
-						//ÉÔºóÉè¼ÆĞĞ³¤¶ÈÉè¼Æ¡£,ÕâÀï»á³öÏÖÒ»ÖÖÎÊÌâ£¬¾ÍÊÇĞĞµÄ±ß ºÍÏÂÒ»ĞĞÆğÊ¼ÎªÒ»¸ö searchString£¬Ôì³ÉÌæ»»ÌÓÒİ¡£
-						cInputStringb= cInputStringb.replace(searchString, needReplaceString);
-						fileWriter.write(cInputStringb);
-						fileWriter.write("\r\n");
-						fileWriter.flush();
+					//index
+					long beginLines= this.fileLinesBegin;
+					long endLines= this.fileLinesEnd;
+					long count= 0;
+					while ((cInputStringb= cReaderb.readLine())!= null) { 
+						if(count>= beginLines) {
+							if(0== endLines|| count<= endLines ) {
+								//ç¨åè®¾è®¡è¡Œé•¿åº¦è®¾è®¡ã€‚,è¿™é‡Œä¼šå‡ºç°ä¸€ç§é—®é¢˜ï¼Œå°±æ˜¯è¡Œçš„è¾¹ å’Œä¸‹ä¸€è¡Œèµ·å§‹ä¸ºä¸€ä¸ª searchStringï¼Œé€ æˆæ›¿æ¢é€ƒé€¸ã€‚
+								cInputStringb= cInputStringb.replace(searchString, needReplaceString);
+								fileWriter.write(cInputStringb);
+								fileWriter.write("\r\n");
+								fileWriter.flush();	
+							}	
+						}
+						count++; 
 					}
 					fileWriter.close();
 					cReaderb.close();
 					inputStreamb.close();
-					//µÈ»á²âÊÔºó³É¹¦¾ÍÌæ»»µôÖ®Ç°ĞèÒªËÑË÷Ìæ»»µÄÎÄ¼ş
+					//ç­‰ä¼šæµ‹è¯•åæˆåŠŸå°±æ›¿æ¢æ‰ä¹‹å‰éœ€è¦æœç´¢æ›¿æ¢çš„æ–‡ä»¶
 					//...file.delete();
 					file.delete();
 					if(!file.exists()) {
@@ -83,27 +99,32 @@ public class ShellReplace {
 						}	
 					}
 					//...fileOut.changeFileName(filePath+ file.getName());
-					//È»ºó¼ÇÂ¼²Ù×÷¡£³ÉÎªÈÕÖ¾ÎÄ¼ş
+					//ç„¶åè®°å½•æ“ä½œã€‚æˆä¸ºæ—¥å¿—æ–‡ä»¶
 
 					//...replaceLog(...);
-					//ÎÒÔÚË¼¿¼¼ÇÂ¼ÕâĞ©²Ù×÷µÄÈÕÖ¾ÎÄ¼ş´¢´æÔÚÄÄ¡£
+					//æˆ‘åœ¨æ€è€ƒè®°å½•è¿™äº›æ“ä½œçš„æ—¥å¿—æ–‡ä»¶å‚¨å­˜åœ¨å“ªã€‚
 				}
 			}
 		}
 	}
 
-	//ÉÔºóÉè¼Æ³ÉmapÀ´´æ´¢ÕâĞ©StringÌõ¼ş±äÁ¿¡£
+	//ç¨åè®¾è®¡æˆmapæ¥å­˜å‚¨è¿™äº›Stringæ¡ä»¶å˜é‡ã€‚
 	public void replaceStringWithFileName(String fileDirectroyPath, String searchString
 			, Map<String, String> conditions) throws IOException {
 		this.fileType= conditions.get("fileType");
 		this.fileName= conditions.get("fileName");
-		this.filesize_KB= Long.valueOf(conditions.get("filesize_KB"));
+		this.fileSize_KB= Long.valueOf(conditions.get("filesize_KB"));
 		this.fileLinesBegin= Long.valueOf(conditions.get("beginLine"));
 		this.fileLinesEnd= Long.valueOf(conditions.get("endLine"));
 		this.searchString= conditions.get("searchString");
 		this.needReplaceString= conditions.get("needReplaceString");
 		this.fileDirectroyPath= conditions.get("fileDirectroyPath");
-		//ÉÔºó¶ÔÏÂÃæÈ¥ÖØ¡£
+		//ç¨åå¯¹ä¸‹é¢å»é‡ã€‚
+		start();
+	}
+
+	//ç¨åå˜çº¿ç¨‹
+	public void start() throws IOException {
 		File file= new File(fileDirectroyPath);
 		if(file.isFile()) {
 			fileDirectroyPath= file.getPath();
@@ -117,100 +138,60 @@ public class ShellReplace {
 		}
 	}
 
-	//ÎÄ¼şÃû¶ÔÓ¦É¸Ñ¡
+	//æ–‡ä»¶åå¯¹åº”ç­›é€‰
 	public void replaceStringWithFileName(String fileDirectroyPath, String searchString
 			, String needReplaceString, String fileName) throws IOException {
-		//1 È·¶¨ÎÄ¼ş¼Ğ
-		//2 ÎÄ¼ş¼ĞÎÄ¼ş±éÀú£¬Ïà¹ØÎÄ¼şÃû
-		//3 È«ÎÄËÑË÷Ìæ»»
+		//1 ç¡®å®šæ–‡ä»¶å¤¹
+		//2 æ–‡ä»¶å¤¹æ–‡ä»¶éå†ï¼Œç›¸å…³æ–‡ä»¶å
+		//3 å…¨æ–‡æœç´¢æ›¿æ¢
 		this.fileName= fileName;
 		this.searchString= searchString;
 		this.needReplaceString= needReplaceString;
 		this.fileDirectroyPath= fileDirectroyPath;
-		File file= new File(fileDirectroyPath);
-		if(file.isFile()) {
-			fileDirectroyPath= file.getPath();
-		}
-		File fileDirectroy= new File(fileDirectroyPath);
-		if(fileDirectroy.isDirectory()) {
-			File[] files= file.listFiles();
-			for(File currentFile:files) {
-				doInerFilesReplace(currentFile, searchString, needReplaceString);
-			}
-		}
+		start();
 	}
 
-	//ÎÄ¼şºó×ºÉ¸Ñ¡
+	//æ–‡ä»¶åç¼€ç­›é€‰
 	public void replaceStringWithFileType(String fileDirectroyPath, String searchString
 			, String needReplaceString, String fileType) throws IOException {
-		//1 È·¶¨ÎÄ¼ş¼Ğ
-		//2 ÎÄ¼ş¼ĞÎÄ¼ş±éÀú£¬Ïà¹ØÎÄ¼şÀàĞÍºó×º¶ÔÓ¦
-		//3 È«ÎÄËÑË÷Ìæ»»
+		//1 ç¡®å®šæ–‡ä»¶å¤¹
+		//2 æ–‡ä»¶å¤¹æ–‡ä»¶éå†ï¼Œç›¸å…³æ–‡ä»¶ç±»å‹åç¼€å¯¹åº”
+		//3 å…¨æ–‡æœç´¢æ›¿æ¢
 		this.fileType= fileType;
 		this.searchString= searchString;
 		this.needReplaceString= needReplaceString;
 		this.fileDirectroyPath= fileDirectroyPath;
-		File file= new File(fileDirectroyPath);
-		if(file.isFile()) {
-			fileDirectroyPath= file.getPath();
-		}
-		File fileDirectroy= new File(fileDirectroyPath);
-		if(fileDirectroy.isDirectory()) {
-			File[] files= file.listFiles();
-			for(File currentFile:files) {
-				doInerFilesReplace(currentFile, searchString, needReplaceString);
-			}
-		}
+		start();
 	}
 
-	//ÎÄ¼ş´óĞ¡É¸Ñ¡
+	//æ–‡ä»¶å¤§å°ç­›é€‰
 	public void replaceStringWithFileSize(String fileDirectroyPath, String searchString
 			, String needReplaceString, long filesize_KB) throws IOException {
-		//1 È·¶¨ÎÄ¼ş¼Ğ
-		//2 ÎÄ¼ş¼ĞÎÄ¼ş±éÀú£¬Ïà¹ØÎÄ¼ş´óĞ¡
-		//3 È«ÎÄËÑË÷Ìæ»»
-		this.filesize_KB= filesize_KB;
+		//1 ç¡®å®šæ–‡ä»¶å¤¹
+		//2 æ–‡ä»¶å¤¹æ–‡ä»¶éå†ï¼Œç›¸å…³æ–‡ä»¶å¤§å°
+		//3 å…¨æ–‡æœç´¢æ›¿æ¢
+		this.fileSize_KB= filesize_KB;
 		this.searchString= searchString;
 		this.needReplaceString= needReplaceString;
 		this.fileDirectroyPath= fileDirectroyPath;
-		File file= new File(fileDirectroyPath);
-		if(file.isFile()) {
-			fileDirectroyPath= file.getPath();
-		}
-		File fileDirectroy= new File(fileDirectroyPath);
-		if(fileDirectroy.isDirectory()) {
-			File[] files= file.listFiles();
-			for(File currentFile:files) {
-				doInerFilesReplace(currentFile, searchString, needReplaceString);
-			}
-		}
+		start();
 	}
 
-	//ÎÄ¼ş´óĞ¡É¸Ñ¡
+	//æ–‡ä»¶å¤§å°ç­›é€‰
 	public void replaceStringWithFileLines(String fileDirectroyPath, String searchString
 			, String needReplaceString, long beginLine, long endLine) throws IOException {
-		//1 È·¶¨ÎÄ¼ş¼Ğ
-		//2 ÎÄ¼ş¼ĞÎÄ¼ş±éÀú£¬ËÑË÷¶ÔÓ¦µÄĞĞ¼ä
-		//3 È«ÎÄËÑË÷Ìæ»» 
+		//1 ç¡®å®šæ–‡ä»¶å¤¹
+		//2 æ–‡ä»¶å¤¹æ–‡ä»¶éå†ï¼Œæœç´¢å¯¹åº”çš„è¡Œé—´
+		//3 å…¨æ–‡æœç´¢æ›¿æ¢ 
 		this.fileLinesBegin= beginLine;
 		this.fileLinesEnd= endLine;
 		this.searchString= searchString;
 		this.needReplaceString= needReplaceString;
 		this.fileDirectroyPath= fileDirectroyPath;
-		File file= new File(fileDirectroyPath);
-		if(file.isFile()) {
-			fileDirectroyPath= file.getPath();
-		}
-		File fileDirectroy= new File(fileDirectroyPath);
-		if(fileDirectroy.isDirectory()) {
-			File[] files= file.listFiles();
-			for(File currentFile:files) {
-				doInerFilesReplace(currentFile, searchString, needReplaceString);
-			}
-		}
+		start();
 	}
 
 	public static void main(String[] argv) throws IOException {
-		new ShellReplace().replaceString("C:\\Users\\Lenovo\\Desktop\\DNA_RNA\\2021\\repalceSample", "¹ş¹ş¹ş¹ş", "hahahah"); 
+		new ShellReplace().replaceString("C:\\Users\\Lenovo\\Desktop\\DNA_RNA\\2021\\repalceSample", ">_<", "..>_<.."); 
 	}
 }
