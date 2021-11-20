@@ -7,6 +7,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 public class ShellReplace {
@@ -18,10 +20,10 @@ public class ShellReplace {
 	public String fileType;
 	public String fileName;
 	public String fileDirectroyPath;
+	private String replaceLogPath;
 	public long fileSize_KB;
 	public long fileLinesBegin;
 	public long fileLinesEnd;
-
 
 	public void replaceString(String fileDirectroyPath, String searchString, String needReplaceString) throws IOException {
 		//1 确定文件夹
@@ -45,12 +47,12 @@ public class ShellReplace {
 					//稍后设计文件类型过滤
 					String filePath= file.getPath();
 					String currentFileName= file.getName();
-					if(null!= this.fileName) {
+					if(null!= this.fileName&& !this.fileName.isEmpty()) {
 						if(currentFileName.contains(this.fileName)) {
 							return;
 						}	
 					}
-					if(null!= this.fileType) {
+					if(null!= this.fileType&& !this.fileType.isEmpty()) {
 						if(currentFileName.contains(this.fileType)) {
 							return;
 						}	
@@ -192,6 +194,89 @@ public class ShellReplace {
 	}
 
 	public static void main(String[] argv) throws IOException {
-		new ShellReplace().replaceString("C:\\Users\\Lenovo\\Desktop\\DNA_RNA\\2021\\repalceSample", ">_<", "..>_<.."); 
+		//new ShellReplace().replaceString("C:\\Users\\Lenovo\\Desktop\\DNA_RNA\\2021\\repalceSample", ">_<", "..>_<.."); 
+		Map<String, String> conditions= new HashMap<>();
+		conditions.put("fileType", "");
+		conditions.put("fileName", "");
+		conditions.put("filesize_KB", "");
+		conditions.put("beginLine", "");
+		conditions.put("endLine", "");
+		conditions.put("searchString", "yaoguang");
+		conditions.put("needReplaceString", ">_<");
+		conditions.put("fileDirectroyPath", "C:\\Users\\Lenovo\\Desktop\\DNA_RNA\\2021\\repalceSample");
+		conditions.put("replaceLogPath", "C:\\Users\\Lenovo\\Desktop\\DNA_RNA\\2021\\repalceSample\\replace_Log.lyg");
+		ShellReplace shellReplace= new ShellReplace();
+		shellReplace.replaceStringWithLogRecording(conditions); 
+
+		//稍后写rollback
+		//可以有效替换，但是会把本来就是替换的值也替换回原来的值了，所以要增加设计数据的替换坐标
+		//1 记录替换的文件。
+		//2 记录替换的文件中相关替换的数据的坐标。
+		//3 记录文件中替换的前缀和后缀。关联，区分逃逸替换数据。
+		//		shellReplace.rollbackWithRecordingLog(conditions);
 	}
+
+	//	private void rollbackWithRecordingLog(Map<String, String> conditions) throws IOException {
+	//		// TODO Auto-generated method stub
+	//		//...
+	//		InputStream inputStreamb= new FileInputStream(conditions.get("replaceLogPath"));
+	//		//这里设计读取文件的编码问题，稍后要设计编码的识别。
+	//		BufferedReader cReaderb= new BufferedReader(new InputStreamReader(inputStreamb, "GBK"));
+	//		String cInputStringb;
+	//		//index
+	//		while ((cInputStringb= cReaderb.readLine())!= null) { 
+	//			if(!cInputStringb.isEmpty()) {
+	//1 记录替换的文件。
+	//2 记录替换的文件中相关替换的数据的坐标。
+	//3 记录文件中替换的前缀和后缀。关联，区分逃逸替换数据。
+	//				String[] strings= cInputStringb.split("-->");
+	//				if(1< strings.length) {
+	//					System.out.println(cInputStringb);
+	//					conditions.put(strings[0], strings[1]);
+	//				}else {
+	//					System.out.println(strings[0]);
+	//					conditions.put(strings[0], "");
+	//				}
+	//			}
+	//		}
+	//		cReaderb.close();
+	//		inputStreamb.close();
+	//		//
+	//		String string= conditions.get("needReplaceString").toString();
+	//		conditions.put("needReplaceString", conditions.get("searchString"));
+	//		conditions.put("searchString", string);
+	//		//
+	//		start();
+	//	}
+
+	//设计一种简单的log模式先。
+	public void replaceStringWithLogRecording(Map<String, String> conditions) throws IOException {
+		//记录
+		//稍后对下面去重。
+		this.replaceLogPath= conditions.get("replaceLogPath");
+		File fileOut= new File(this.replaceLogPath);
+		FileWriter fileWriter= new FileWriter(fileOut, true);
+		//index
+		Iterator<String> iterator= conditions.keySet().iterator();
+		while(iterator.hasNext()) {
+			String string= iterator.next();
+			String writeString= string+ "-->"+ conditions.get(string);
+			System.out.println(writeString);
+			fileWriter.write(writeString);
+			fileWriter.write("\r\n");
+			fileWriter.flush();	
+		}	
+		fileWriter.close();
+		//替换
+		this.fileType= conditions.get("fileType");
+		this.fileName= conditions.get("fileName");
+		this.fileSize_KB= Long.valueOf(conditions.get("filesize_KB").isEmpty()? "0": conditions.get("filesize_KB"));
+		this.fileLinesBegin= Long.valueOf(conditions.get("beginLine").isEmpty()? "0": conditions.get("beginLine"));
+		this.fileLinesEnd= Long.valueOf(conditions.get("endLine").isEmpty()? "0": conditions.get("endLine"));
+		this.searchString= conditions.get("searchString");
+		this.needReplaceString= conditions.get("needReplaceString");
+		this.fileDirectroyPath= conditions.get("fileDirectroyPath");
+		start();
+	}
+
 }
