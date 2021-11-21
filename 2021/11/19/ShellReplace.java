@@ -64,9 +64,16 @@ public class ShellReplace {
 							return;
 						}	
 					}
+					if(currentFileName.contains("Backup")) {
+						return;
+					}
 					//开始替换 等会看下是否有 /符号 丢失的问题。
 					File fileOut= new File(filePath+ "_replaced");
+					File fileOutBackup= new File(filePath+ "_replaceBackup");
+
 					FileWriter fileWriter= new FileWriter(fileOut, true);
+					FileWriter fileWriterBackup= new FileWriter(fileOutBackup, true);
+
 					InputStream inputStreamb= new FileInputStream(file);
 					//这里设计读取文件的编码问题，稍后要设计编码的识别。
 					BufferedReader cReaderb= new BufferedReader(new InputStreamReader(inputStreamb, "GBK"));
@@ -78,6 +85,10 @@ public class ShellReplace {
 					while ((cInputStringb= cReaderb.readLine())!= null) { 
 						if(count>= beginLines) {
 							if(0== endLines|| count<= endLines ) {
+								//备份。稍后回滚直接替换回去就可以了，没必要搞成数据的logbin 那么麻烦。
+								fileWriterBackup.write(cInputStringb);
+								fileWriterBackup.write("\r\n");
+								fileWriterBackup.flush();	
 								//稍后设计行长度设计。,这里会出现一种问题，就是行的边 和下一行起始为一个 searchString，造成替换逃逸。
 								cInputStringb= cInputStringb.replace(searchString, needReplaceString);
 								fileWriter.write(cInputStringb);
@@ -87,6 +98,7 @@ public class ShellReplace {
 						}
 						count++; 
 					}
+					fileWriterBackup.close();
 					fileWriter.close();
 					cReaderb.close();
 					inputStreamb.close();
@@ -201,53 +213,78 @@ public class ShellReplace {
 		conditions.put("filesize_KB", "");
 		conditions.put("beginLine", "");
 		conditions.put("endLine", "");
-		conditions.put("searchString", "yaoguang");
-		conditions.put("needReplaceString", ">_<");
+		conditions.put("searchString", "socnsocn");
+		conditions.put("needReplaceString", "xixi。");
 		conditions.put("fileDirectroyPath", "C:\\Users\\Lenovo\\Desktop\\DNA_RNA\\2021\\repalceSample");
 		conditions.put("replaceLogPath", "C:\\Users\\Lenovo\\Desktop\\DNA_RNA\\2021\\repalceSample\\replace_Log.lyg");
-		ShellReplace shellReplace= new ShellReplace();
+		ShellReplace shellReplace=	new ShellReplace();
 		shellReplace.replaceStringWithLogRecording(conditions); 
 
 		//稍后写rollback
-		//可以有效替换，但是会把本来就是替换的值也替换回原来的值了，所以要增加设计数据的替换坐标
-		//1 记录替换的文件。
-		//2 记录替换的文件中相关替换的数据的坐标。
-		//3 记录文件中替换的前缀和后缀。关联，区分逃逸替换数据。
-		//		shellReplace.rollbackWithRecordingLog(conditions);
+		//思考了下改成最简单的策略。
+		//替换回来非常轻松了。直接将backup文件替换即可。
+		shellReplace.rollbackWithRecordingLog(conditions);
 	}
 
-	//	private void rollbackWithRecordingLog(Map<String, String> conditions) throws IOException {
-	//		// TODO Auto-generated method stub
-	//		//...
-	//		InputStream inputStreamb= new FileInputStream(conditions.get("replaceLogPath"));
-	//		//这里设计读取文件的编码问题，稍后要设计编码的识别。
-	//		BufferedReader cReaderb= new BufferedReader(new InputStreamReader(inputStreamb, "GBK"));
-	//		String cInputStringb;
-	//		//index
-	//		while ((cInputStringb= cReaderb.readLine())!= null) { 
-	//			if(!cInputStringb.isEmpty()) {
-	//1 记录替换的文件。
-	//2 记录替换的文件中相关替换的数据的坐标。
-	//3 记录文件中替换的前缀和后缀。关联，区分逃逸替换数据。
-	//				String[] strings= cInputStringb.split("-->");
-	//				if(1< strings.length) {
-	//					System.out.println(cInputStringb);
-	//					conditions.put(strings[0], strings[1]);
-	//				}else {
-	//					System.out.println(strings[0]);
-	//					conditions.put(strings[0], "");
-	//				}
-	//			}
-	//		}
-	//		cReaderb.close();
-	//		inputStreamb.close();
-	//		//
-	//		String string= conditions.get("needReplaceString").toString();
-	//		conditions.put("needReplaceString", conditions.get("searchString"));
-	//		conditions.put("searchString", string);
-	//		//
-	//		start();
-	//	}
+	private void rollbackWithRecordingLog(Map<String, String> conditions) throws IOException {
+		File file= new File(fileDirectroyPath);
+		if(file.isFile()) {
+			fileDirectroyPath= file.getPath();
+		}
+		File fileDirectroy= new File(fileDirectroyPath);
+		if(fileDirectroy.isDirectory()) {
+			File[] files= file.listFiles();
+			for(File currentFile:files) {
+				doInerFilesReplaceBackup(currentFile, searchString, needReplaceString);
+			}
+		}
+	}
+
+	private void doInerFilesReplaceBackup(File file, String searchString, String needReplaceString) {
+		if(file.isDirectory()) {
+			File[] files= file.listFiles();
+			for(File currentFile:files) {
+				doInerFilesReplaceBackup(currentFile, searchString, needReplaceString);
+			}
+		}else {
+			if(file.isFile()) {
+				if(null!= file.getPath()) {
+					//稍后设计文件类型过滤
+					String filePath= file.getPath();
+					String currentFileName= file.getName();
+					if(null!= this.fileName&& !this.fileName.isEmpty()) {
+						if(currentFileName.contains(this.fileName)) {
+							return;
+						}	
+					}
+					if(null!= this.fileType&& !this.fileType.isEmpty()) {
+						if(currentFileName.contains(this.fileType)) {
+							return;
+						}	
+					}
+					if(0!= this.fileSize_KB) {
+						long currentFileSize= file.length()/ 1024;//....
+						if(currentFileSize> this.fileSize_KB) {
+							return;
+						}	
+					}
+					if(currentFileName.contains("Backup")) {//文件原备份不参与回滚
+						return;
+					}
+					//开始替换 等会看下是否有 /符号 丢失的问题。
+					File fileOutBackup= new File(filePath+ "_replaceBackup");
+					file.delete();
+					if(!file.exists()) {
+						if(fileOutBackup.renameTo(new File(filePath))) {
+							System.out.println("succcess");
+						}else {
+							System.out.println("unsucccess");
+						}	
+					}
+				}
+			}
+		}
+	}
 
 	//设计一种简单的log模式先。
 	public void replaceStringWithLogRecording(Map<String, String> conditions) throws IOException {
@@ -267,6 +304,7 @@ public class ShellReplace {
 			fileWriter.flush();	
 		}	
 		fileWriter.close();
+		//fileWriter.write("################记录################");//没必要这么复杂，不然还不如做个数据替换binlog。
 		//替换
 		this.fileType= conditions.get("fileType");
 		this.fileName= conditions.get("fileName");
@@ -276,7 +314,6 @@ public class ShellReplace {
 		this.searchString= conditions.get("searchString");
 		this.needReplaceString= conditions.get("needReplaceString");
 		this.fileDirectroyPath= conditions.get("fileDirectroyPath");
-		start();
+		start();	
 	}
-
 }
