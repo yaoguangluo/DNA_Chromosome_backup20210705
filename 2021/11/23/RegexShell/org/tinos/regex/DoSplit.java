@@ -57,11 +57,11 @@ public class DoSplit{
 		String connect= "DetaConnect";
 		input= input.replace(unSplit+ split, "DetaConnect");
 		String[] stringsU= input.split(connect);//这里是PCRE linux 通配正则，所以会将\定义为 关键字语法。
-
-
 		String temp= "";
+	    int postFix= 0;
 		for(int i= 0; i< stringsU.length; i++) {
 			String[] strings= stringsU[i].split(split);
+			postFix= strings.length;
 			int begin= 0;
 			int end= 0;
 			if(temp.isEmpty()) {
@@ -71,23 +71,24 @@ public class DoSplit{
 			}else {
 				temp+= unSplit+ split+ strings[0];
 				list.add(temp.toString());
-				temp= "";
+				temp= strings[strings.length- 1]; //用来计算末尾的参数，
 				begin= 1;
-				end= strings.length;
+				end= strings.length- 1;
 			}
 			for(int j= begin; j< end; j++) {
 				list.add(strings[j]);	
 			}
 		}
-		if(!temp.isEmpty()) {
+		if(!temp.isEmpty()&& 1!= postFix) {
 			list.add(temp);	
 		}
-
 		return list;
 	}
 
 	public static void main(String[] args) {
-		String string= "ds, ds, ada \\,sd, ada \\\\,sd";
+		//String string= "ds, ds, ada \\,sd, ada \\\\,sd";
+		String string= "d\\, d,s, ada \\,sd, ada \\\\,sd";
+		//String string= "ds, ds, ada \\,sd, ada \\\\,s,d";
 		List<String> output= new DoSplit().splitRegex(string, ",", "\\");
 		Iterator<String> iterator= output.iterator();
 		while(iterator.hasNext()) {
