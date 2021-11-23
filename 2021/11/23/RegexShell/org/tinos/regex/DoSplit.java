@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-//ÂŞÑş¹â
+//ç½—ç‘¶å…‰
 //2021/11/23
 public class DoSplit{
 
@@ -12,7 +12,7 @@ public class DoSplit{
 
 		/*
 		 * 
-		 *  input ds, ds, ada \\£¬sd
+		 *  input ds, ds, ada \\ï¼Œsd
 		 * 
 		 *  split= ,
 		 *  unSplit= \
@@ -20,25 +20,25 @@ public class DoSplit{
 		 *  output 
 		 *  0  ds
 		 *  1  ds
-		 *  2  ada \£¬sd
+		 *  2  ada \ï¼Œsd
 		 * 
 		 * 
 		 * */
 		//1
-		//String string= input.replace(unSplit+ split,"");//ÕâÖÖ·½·¨»áËÙ¶È±äÂı¡£
+		//String string= input.replace(unSplit+ split,"");//è¿™ç§æ–¹æ³•ä¼šé€Ÿåº¦å˜æ…¢ã€‚
 		//.....
 
 		List<String> list= new ArrayList<>();
 		//2
-		//for(int i= 0; i< input.length(); i++) {//ÕâÖÖ·½·¨¸´ÔÓ¡£
+		//for(int i= 0; i< input.length(); i++) {//è¿™ç§æ–¹æ³•å¤æ‚ã€‚
 		//	...
 		//}
 
 		//3
 		//String[] strings= input.split(split);
-		//for(int i= 0; i< strings.length; i++) {//ÕâÖÖ·½·¨¿ìÒ»µãµã»¹ÊÇ¸´ÔÓ¡£
-		//	if(strings[i].contains(unSplit)) {//Âú×ã°üº¬
-		//		String string= strings[i].replace(unSplit,"");//Âú×ãÄ©Î²Æ¥Åä
+		//for(int i= 0; i< strings.length; i++) {//è¿™ç§æ–¹æ³•å¿«ä¸€ç‚¹ç‚¹è¿˜æ˜¯å¤æ‚ã€‚
+		//	if(strings[i].contains(unSplit)) {//æ»¡è¶³åŒ…å«
+		//		String string= strings[i].replace(unSplit,"");//æ»¡è¶³æœ«å°¾åŒ¹é…
 		//       ......
 		//	}
 		//	list.add();
@@ -46,17 +46,17 @@ public class DoSplit{
 
 
 
-		//ds, ds, ada \\£¬sd
+		//ds, ds, ada \\ï¼Œsd
 		//ds, ds, ada 
 		//sd
 
-		//ÉÔºóÉè¼ÆÎªStringBuilder
-		//ÏÖÔÚ¼Ò¶ÔÃæÃÀÁÖ»¨Ô·Ğ¡ÇøÓĞÒ»ÖÖ³¬ÉùµçÁ÷ ÇıÊóµÄÔëÒô¡£³ÖĞøÁË1¸öĞ¡Ê±¡£ÈÃÈËĞÄ·³ ÓÇÓô¡£ÌıÁËºó£¬ÈËÓÒÑÛÆ¤ÄªÃûµÄÆµ·±Ìø¶¯¡£
+		//ç¨åè®¾è®¡ä¸ºStringBuilder
+		//ç°åœ¨å®¶å¯¹é¢ç¾æ—èŠ±è‹‘å°åŒºæœ‰ä¸€ç§è¶…å£°ç”µæµ é©±é¼ çš„å™ªéŸ³ã€‚æŒç»­äº†1ä¸ªå°æ—¶ã€‚è®©äººå¿ƒçƒ¦ å¿§éƒã€‚å¬äº†åï¼Œäººå³çœ¼çš®è«åçš„é¢‘ç¹è·³åŠ¨ã€‚
 		//String connect= unSplit+ split;
-		//String[] stringsU= input.split(connect);//ÕâÀïÊÇPCRE linux Í¨ÅäÕıÔò£¬ËùÒÔ»á½«\¶¨ÒåÎª ¹Ø¼ü×ÖÓï·¨¡£
+		//String[] stringsU= input.split(connect);//è¿™é‡Œæ˜¯PCRE linux é€šé…æ­£åˆ™ï¼Œæ‰€ä»¥ä¼šå°†\å®šä¹‰ä¸º å…³é”®å­—è¯­æ³•ã€‚
 		String connect= "DetaConnect";
 		input= input.replace(unSplit+ split, "DetaConnect");
-		String[] stringsU= input.split(connect);//ÕâÀïÊÇPCRE linux Í¨ÅäÕıÔò£¬ËùÒÔ»á½«\¶¨ÒåÎª ¹Ø¼ü×ÖÓï·¨¡£
+		String[] stringsU= input.split(connect);//è¿™é‡Œæ˜¯PCRE linux é€šé…æ­£åˆ™ï¼Œæ‰€ä»¥ä¼šå°†\å®šä¹‰ä¸º å…³é”®å­—è¯­æ³•ã€‚
 
 
 		String temp= "";
@@ -79,13 +79,15 @@ public class DoSplit{
 				list.add(strings[j]);	
 			}
 		}
-
+		if(!temp.isEmpty()) {
+			list.add(temp);	
+		}
 
 		return list;
 	}
 
 	public static void main(String[] args) {
-		String string= "ds, ds, ada \\,sd";
+		String string= "ds, ds, ada \\,sd, ada \\\\,sd";
 		List<String> output= new DoSplit().splitRegex(string, ",", "\\");
 		Iterator<String> iterator= output.iterator();
 		while(iterator.hasNext()) {
