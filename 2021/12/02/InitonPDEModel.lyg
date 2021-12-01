@@ -1,54 +1,54 @@
-����ѿ����¶���������ȥ��� �����ɼ���ģ���ż���ҳֽ û�в���DNAԪ���߻����ļ�������޶����С�����׼���������¡�
+今天把看了下抖音，发现去年的 费洛蒙计算模型门槛两页纸 没有并到DNA元基催化与肽计算第三修订版中。于是准备整理如下。
 
-��ģ�����ѧϰ�ͳԷ��ķ����ɼ���ģ��Ϊ ...PEI.PSI...
+我模拟的是学习和吃饭的费洛蒙计算模型为 ...PEI.PSI...
 
-1 ���ȼ���������Ԫ�� ���� ���ǲ���һ�� �ѿ�����������
+1 首先假设两个三元组 正交 于是产生一个 笛卡尔矩阵如下
 
 P      P           PP   PS   PI
 E (.)  S   ==      EP   ES   EI
 I      I           IP   IS   II 
 
-2 ���ѿ�����Ͼ������ DNN ��ͼƬ��д���˲������Դ�����DNN�� �ľ����� ѭ���ϲ����� ����
+2 将笛卡尔组合矩阵进行 DNN （图片我写错了不是线性代数是DNN） 的卷积列 循环合并排列 则有
 
 PPPSPI   EPESEI   IPISII
 PPEPIP   PSESIS   PIEIII
 PPESII   PSEIIP   PIEPIS
 
-3 ��ʼ��չ�۲� ��PDE�ĸ�ʴ���� ����
+3 开始肽展观测 非PDE的腐蚀排列 如下
 
 ...PPP.SPI.EPE.SEI.IPI.SII...
 ...PPE.PIP.PSE.SIS.PIE.III...
 ...PPE.SII.PSE.IIP.PIE.PIS...
 
-4 Ѱ�ҹ�ͬ�� ��ΪƵ����ͬ��������������
+4 寻找共同基 因为频率相同进行吸附。如下
 
          ...PPP.SPI.EPE.SEI.IPI.SII...
          ...PPE.PIP.PSE.SIS.PIE.III...
          ...   .SII.   .IIP.....PIS...
 
-5 ���������õ�
+5 进行整理得到
 
                  ...PPE.PIP.PSE.SIS.PIE.III...
                  ...   .SII.   .IIP.....PIS...
  ...PPP.SPI.EPE.SEI.IPI.SII...  
  
-6 Ѱ�ҹ�ͬ�� ��ΪƵ����ͬ��������������
+6 寻找共同基 因为频率相同进行吸附。如下
  
                  ...PPE.PIP.PSE.SIS.PIE.III...
                  .......SII.....IIP.....PIS...
  ...PPP.SPI.EPE.SEI.IPI......      
  
-7 �ٴν��������õ� 
+7 再次进行整理得到 
 
- 				 .......PIP.....SIS.....III...
+ 	        .......PIP.....SIS.....III...
                  ...PPE.....PSE.....PIE.......
                  .......SII.....IIP.....PIS...
  ...PPP.SPI.EPE.SEI.IPI...... 
          
      
-8 ģ���Ƶ�һ�ּ򵥵ĳԷ������ɽ���ָ��ģʽ ��      
+8 模拟推导一种简单的吃饭费洛蒙解码指令模式 。      
    
    
-9 �¹���һͼģ���߼�������ļ򵥣��� detaOSS.ppt�ļ���   
+9 新冠苷一图模拟逻辑比上面的简单，见 detaOSS.ppt文件。   
 
-������         
+罗瑶光         
