@@ -37,10 +37,11 @@ https://bitbucket.org/luoyaoguang/yangliaojing/src/18830_Cms_YLJHRJ/doc/RootChro
 https://github.com/yaoguangluo/DNA_Chromosome_backup20210705/blob/codingbackup18801/2021/09/03/RootChromosome_V18830_2210903.jar                    
 https://gitee.com/DetaChina/DNA_Chromosome_backup20210705/blob/codingbackup18801/2021/09/03/RootChromosome_V18830_2210903.jar     
          
-##### 20210904_20211101 华瑞集 DNA 24组元基花 18830_18888 API 最新备份地址             
+##### 20210904_20211204 华瑞集 DNA 24组元基花 18830_18888 API 最新备份地址                   
+
+https://github.com/yaoguangluo/DNA_Chromosome_backup20210705/blob/codingbackup18801/2021/12/04/BloomChromosome_V18888_20211204.jar           
 https://yaoguangluo.coding.net/public/YangLiaoJingHuaRuiJi/YangliaojingHuaruiji/git/files/18880_CMS_YLJHRJ/doc/BloomChromosome_V18888_20211101.jar                               
-https://gitee.com/DetaChina/DNA_Chromosome_backup20210705/blob/codingbackup18801/2021/09/04/BloomChromosome_V18830_2210904.jar  gitee最大为10兆，这里不发布谢谢。                
-https://github.com/yaoguangluo/DNA_Chromosome_backup20210705/blob/codingbackup18801/2021/11/01/BloomChromosome_V18888_20211101.jar                                     
+https://gitee.com/DetaChina/DNA_Chromosome_backup20210705/blob/codingbackup18801/2021/09/04/BloomChromosome_V18830_2210904.jar  gitee最大为10兆，这里不发布谢谢。                 
 https://bitbucket.org/luoyaoguang/yangliaojing/src/18880_CMS_YLJHRJ/doc/BloomChromosome_V18888_20211101.jar                  
 
 ##### 历史版本请在日期文件分类中查找。                  
