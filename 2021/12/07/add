@@ -12,6 +12,37 @@
 
 关于古老函数 _A.init(); 已经被  _A.IV_() 取代， 同样要替换成最新的 _A.IV_Mixed();
 
+涉及函数
+
++1 -1 M A_OPE_VQI_Behavior/AEU/OPM/VEC/ica/EducationRatio.java
++1 -1 M A_OPE_VQI_Emotion/AEU/AVC/SUQ/engine/EmotionInit.java
++1 -1 M A_OPE_VQI_Emotion/AEU/AVC/SUQ/engine/EnvironmentInit.java
++1 -1 M A_OPE_VQI_Nero/PEQ/test/DemoTSLT.java
++1 -1 M O_OPE_VQI_WordSegment/ASQ/PSU/test/DemoEX.java
++1 -1 M O_OPE_VQI_WordSegment/ASQ/PSU/test/DemoPOSMedcine.java
+
+
++1 -1 M A_OPE_VQI_Behavior/AEU/OPM/VEC/ica/EducationRatio.java
++2 -2 M A_OPE_VQI_Emotion/AEU/AVC/SUQ/engine/EmotionInit.java
++1 -1 M A_OPE_VQI_Emotion/AEU/AVC/SUQ/engine/EnvironmentInit.java
++2 -2 M A_OPE_VQI_Nero/MSU/OEI/ME/SMS/SEU/OSD/OSI/E/Translator_E.java
++2 -2 M A_OPE_VQI_Sensing/PEQ/AMV/ECS/test/SensingTest.java
++3 -3 M A_VECS/AEU/AVC/SUQ/engine/EmotionInit.java
++2 -2 M A_VECS/AEU/AVC/SUQ/engine/EnvironmentInit.java
++2 -2 M A_VECS/AEU/OPM/VEC/ica/EducationRatio.java
++1 -1 M A_VECS/ASQ/PSU/test/DemoCogs.java
++1 -1 M A_VECS/ASQ/PSU/test/DemoEX.java
++1 -1 M A_VECS/ASQ/PSU/test/DemoPOS.java
++1 -1 M A_VECS/ASQ/PSU/test/DemoPOSMedcine.java
++1 -1 M E_AOPM/OSI/AOP/PCS/PP/port_E/RestNLPPortImpl.java
++2 -2 M M_VECS/MSU/OEI/ME/SMS/SEU/OSD/OSI/E/Translator_E.java
++1 -1 M O_OPE_VQI_WordSegment/ASQ/PSU/test/DemoCogs.java
++1 -1 M O_OPE_VQI_WordSegment/ASQ/PSU/test/DemoPOS.java
++2 -2 M P_VECS/PEQ/AMV/ECS/test/SensingTest.java
++1 -1 M P_VECS/PEQ/test/DemoTSLT.java
++3 -3 M P_VPCSBackend/OSI/AOP/PCS/PP/port_E/RestNLPPortImpl.java
+
+
 
 
 罗瑶光
