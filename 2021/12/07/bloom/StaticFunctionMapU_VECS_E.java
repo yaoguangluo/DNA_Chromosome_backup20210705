@@ -24,46 +24,46 @@ import com.google.gson.Gson;
 //著作权人 +作者= 罗瑶光
 public class StaticFunctionMapU_VECS_E implements StaticFunctionMapU_VECS_C{
 	public static void main(String[] argv) throws IOException {
-		String[] strings1D= new String[16];
-		strings1D[0]= "dh쭈31冬쪼";
-		strings1D[1]= "dh쭈11拉주";
-		strings1D[2]= "dh쭈2拉밟";
-		strings1D[3]= "dh쭈4冬쪼";
-		strings1D[2]= "dh쭈2臘밟";
-		strings1D[3]= "dh쭈4頓쪼";
-		strings1D[4]= "dh쭈6拉d주";
-		strings1D[5]= "dh쭈拉0.6밟";
-		strings1D[6]= "dh쭈拉0.3f밟";
-		strings1D[7]= "dh쭈拉0.61e7밟";
-		strings1D[8]= "dh쭈拉0.3e61밟";
-		strings1D[9]= "dh쭈拉0.3e6밟";
-		strings1D[10]= "dh쭈拉0.6e2밟";
-		strings1D[11]= "dh쭈拉0.3e1밟";
-		strings1D[12]= "dh쭈冬111.21쪼";
-		strings1D[13]= "dh쭈冬15.21쪼";
-		strings1D[14]= "dh쭈拉g주";
-		strings1D[15]= "dhv쭈1.09拉밟";
-		StaticFunctionMapU_VECS_C.궝뺌틈稜탤埼빈쏵契겉눈꽝셕苟(strings1D);
+				String[] strings1D= new String[16];
+		strings1D[0]= "dh罗31韵律";
+		strings1D[1]= "dh罗11瑶林";
+		strings1D[2]= "dh罗2瑶光";
+		strings1D[3]= "dh罗4韵律";
+		strings1D[2]= "dh罗2尧光";
+		strings1D[3]= "dh罗4运律";
+		strings1D[4]= "dh罗6瑶d林";
+		strings1D[5]= "dh罗瑶0.6光";
+		strings1D[6]= "dh罗瑶0.3f光";
+		strings1D[7]= "dh罗瑶0.61e7光";
+		strings1D[8]= "dh罗瑶0.3e61光";
+		strings1D[9]= "dh罗瑶0.3e6光";
+		strings1D[10]= "dh罗瑶0.6e2光";
+		strings1D[11]= "dh罗瑶0.3e1光";
+		strings1D[12]= "dh罗韵111.21律";
+		strings1D[13]= "dh罗韵15.21律";
+		strings1D[14]= "dh罗瑶g林";
+		strings1D[15]= "dhv罗1.09瑶光";
+		StaticFunctionMapU_VECS_C.笔画拼音排序稍后进行把传参设计下(strings1D);
 
-		/*渴놔써벎
+		/*输出结果
 		 * 
 		 *
-dh쭈拉0.3e1밟
-dh쭈拉0.3e6밟
-dh쭈拉0.3e61밟
-dh쭈拉0.3f밟
-dh쭈拉0.6밟
-dh쭈拉0.61e7밟
-dh쭈拉0.6e2밟
-dh쭈拉g주
-dh쭈冬111.21쪼
-dh쭈冬15.21쪼
-dh쭈11拉주
-dh쭈2臘밟
-dh쭈31冬쪼
-dh쭈4頓쪼
-dh쭈6拉d주
-dhv쭈1.09拉밟
+dh罗瑶0.3e1光
+dh罗瑶0.3e6光
+dh罗瑶0.3e61光
+dh罗瑶0.3f光
+dh罗瑶0.6光
+dh罗瑶0.61e7光
+dh罗瑶0.6e2光
+dh罗瑶g林
+dh罗韵111.21律
+dh罗韵15.21律
+dh罗11瑶林
+dh罗2尧光
+dh罗31韵律
+dh罗4运律
+dh罗6瑶d林
+dhv罗1.09瑶光
 
 		 * 
 		 * */
