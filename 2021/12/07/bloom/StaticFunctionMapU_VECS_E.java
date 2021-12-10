@@ -21,49 +21,49 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import com.google.gson.Gson;
-
+//è‘—ä½œæƒäºº +ä½œè€…= ç½—ç‘¶å…‰
 public class StaticFunctionMapU_VECS_E implements StaticFunctionMapU_VECS_C{
 	public static void main(String[] argv) throws IOException {
 		String[] strings1D= new String[16];
-		strings1D[0]= "dhÂŞ31ÔÏÂÉ";
-		strings1D[1]= "dhÂŞ11ÑşÁÖ";
-		strings1D[2]= "dhÂŞ2Ñş¹â";
-		strings1D[3]= "dhÂŞ4ÔÏÂÉ";
-		strings1D[2]= "dhÂŞ2Ò¢¹â";
-		strings1D[3]= "dhÂŞ4ÔËÂÉ";
-		strings1D[4]= "dhÂŞ6ÑşdÁÖ";
-		strings1D[5]= "dhÂŞÑş0.6¹â";
-		strings1D[6]= "dhÂŞÑş0.3f¹â";
-		strings1D[7]= "dhÂŞÑş0.61e7¹â";
-		strings1D[8]= "dhÂŞÑş0.3e61¹â";
-		strings1D[9]= "dhÂŞÑş0.3e6¹â";
-		strings1D[10]= "dhÂŞÑş0.6e2¹â";
-		strings1D[11]= "dhÂŞÑş0.3e1¹â";
-		strings1D[12]= "dhÂŞÔÏ111.21ÂÉ";
-		strings1D[13]= "dhÂŞÔÏ15.21ÂÉ";
-		strings1D[14]= "dhÂŞÑşgÁÖ";
-		strings1D[15]= "dhvÂŞ1.09Ñş¹â";
-		StaticFunctionMapU_VECS_C.±Ê»­Æ´ÒôÅÅĞòÉÔºó½øĞĞ°Ñ´«²ÎÉè¼ÆÏÂ(strings1D);
+		strings1D[0]= "dhì­ˆ31å†¬ìª¼";
+		strings1D[1]= "dhì­ˆ11ï¤¥ì£¼";
+		strings1D[2]= "dhì­ˆ2ï¤¥ë°Ÿ";
+		strings1D[3]= "dhì­ˆ4å†¬ìª¼";
+		strings1D[2]= "dhì­ˆ2ï¤¦ë°Ÿ";
+		strings1D[3]= "dhì­ˆ4é “ìª¼";
+		strings1D[4]= "dhì­ˆ6ï¤¥dì£¼";
+		strings1D[5]= "dhì­ˆï¤¥0.6ë°Ÿ";
+		strings1D[6]= "dhì­ˆï¤¥0.3fë°Ÿ";
+		strings1D[7]= "dhì­ˆï¤¥0.61e7ë°Ÿ";
+		strings1D[8]= "dhì­ˆï¤¥0.3e61ë°Ÿ";
+		strings1D[9]= "dhì­ˆï¤¥0.3e6ë°Ÿ";
+		strings1D[10]= "dhì­ˆï¤¥0.6e2ë°Ÿ";
+		strings1D[11]= "dhì­ˆï¤¥0.3e1ë°Ÿ";
+		strings1D[12]= "dhì­ˆå†¬111.21ìª¼";
+		strings1D[13]= "dhì­ˆå†¬15.21ìª¼";
+		strings1D[14]= "dhì­ˆï¤¥gì£¼";
+		strings1D[15]= "dhvì­ˆ1.09ï¤¥ë°Ÿ";
+		StaticFunctionMapU_VECS_C.ê¶ëºŒí‹ˆï¥–íƒ¤åŸ¼î€³ë¹ˆìµï¤‰ê²‰ëˆˆê½î‡ì…•è‹Ÿ(strings1D);
 
-		/*Êä³ö½á¹û
+		/*æ¸´ë†”ì¨ë²
 		 * 
 		 *
-dhÂŞÑş0.3e1¹â
-dhÂŞÑş0.3e6¹â
-dhÂŞÑş0.3e61¹â
-dhÂŞÑş0.3f¹â
-dhÂŞÑş0.6¹â
-dhÂŞÑş0.61e7¹â
-dhÂŞÑş0.6e2¹â
-dhÂŞÑşgÁÖ
-dhÂŞÔÏ111.21ÂÉ
-dhÂŞÔÏ15.21ÂÉ
-dhÂŞ11ÑşÁÖ
-dhÂŞ2Ò¢¹â
-dhÂŞ31ÔÏÂÉ
-dhÂŞ4ÔËÂÉ
-dhÂŞ6ÑşdÁÖ
-dhvÂŞ1.09Ñş¹â
+dhì­ˆï¤¥0.3e1ë°Ÿ
+dhì­ˆï¤¥0.3e6ë°Ÿ
+dhì­ˆï¤¥0.3e61ë°Ÿ
+dhì­ˆï¤¥0.3fë°Ÿ
+dhì­ˆï¤¥0.6ë°Ÿ
+dhì­ˆï¤¥0.61e7ë°Ÿ
+dhì­ˆï¤¥0.6e2ë°Ÿ
+dhì­ˆï¤¥gì£¼
+dhì­ˆå†¬111.21ìª¼
+dhì­ˆå†¬15.21ìª¼
+dhì­ˆ11ï¤¥ì£¼
+dhì­ˆ2ï¤¦ë°Ÿ
+dhì­ˆ31å†¬ìª¼
+dhì­ˆ4é “ìª¼
+dhì­ˆ6ï¤¥dì£¼
+dhvì­ˆ1.09ï¤¥ë°Ÿ
 
 		 * 
 		 * */
