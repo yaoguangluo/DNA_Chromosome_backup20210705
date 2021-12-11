@@ -294,4 +294,29 @@ public interface StaticFunctionMapP_VECS_C {
 	public double getClusterPercentByDeterPixGroup(Map<Double, List<AMV_MVS_VSQ_2D>> imagePix, int scaleSUM);
 	//这个函数用于Fissile函数执行切裂后的相同像素团 精度筛选部分 在 相关团中的像素占比。
 	public double getPixPercentByDeterPixGroup(Map<Double, List<AMV_MVS_VSQ_2D>> imagePix, int scaleSUM);
+	
+
+	//FusionPCAFilter{
+	public Map<Double, List<AMV_MVS_VSQ_2D>> filterFusion2DSetsWithCountScale
+	(Map<Double, List<AMV_MVS_VSQ_2D>> groups, double countScale);
+	public Map<Double, List<AMV_MVS_VSQ_3D>> filterFusion3DSetsWithCountScale
+	(Map<Double, List<AMV_MVS_VSQ_3D>> groups, double countScale);
+
+	//PCA_AMV_MVS_VSQ_Filter
+	public List<AMV_MVS_VSQ_2D> filterPosition2DsWithScaledDistance(List<AMV_MVS_VSQ_2D> input
+			, AMV_MVS_VSQ_2D heart, double scaleDistacne);
+	public List<AMV_MVS_VSQ_3D> filterPosition3DsWithScaledDistance(List<AMV_MVS_VSQ_3D> input
+			, AMV_MVS_VSQ_3D heart, double scaleDistacne);
+	public Map<Double, List<AMV_MVS_VSQ_2D>> filterPosition2DsWithScaledDistance(Map<Double
+			, List<AMV_MVS_VSQ_2D>> input, AMV_MVS_VSQ_2D heart, double scaleDistacne);
+	public Map<Double, List<AMV_MVS_VSQ_3D>> filterPosition3DsWithScaledDistance(Map<Double
+			, List<AMV_MVS_VSQ_3D>> input, AMV_MVS_VSQ_3D heart, double scaleDistacne);
+
+	//Percentage{
+	public List<Double> getPercentListByOuterKey(List<Double> list, double key);
+	public double[] getPercentArrayByOuterKey(double[] array, double key);
+	public double[] getEachPercentSetOfArray(double[] array);
+	public double[][] getPercentArrayByOuterKey(double[][] array, double key);
+	public double[][] getEachPercentSetOfArray(double[][] array);
+
 }

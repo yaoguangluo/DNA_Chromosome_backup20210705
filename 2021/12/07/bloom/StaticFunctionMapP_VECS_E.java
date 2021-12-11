@@ -38,8 +38,11 @@ import PCI.ASQ.isolation.Isolation;
 import PCI.ASQ.nlp.NLPTopicMatch;
 import PCI.ASQ.pca.FindPCAMeanDistance;
 import PCI.ASQ.pca.Find_AMV_MVS_VSQ_GroupPascalHearts;
+import PCI.ASQ.pca.FusionPCAFilter;
 import PCI.ASQ.pca.PCAMeanOfFuzzPC;
+import PCI.ASQ.pca.PCA_AMV_MVS_VSQ_Filter;
 import PCI.ASQ.probability.GetListOfArrayRatio;
+import PCI.ASQ.probability.Percentage;
 import PCI.ASQ.ratio.DistanceRatio;
 import PCI.ASQ.ratio.IncrementRatio;
 import PCI.ASQ.score.ProbabilityScore;
@@ -786,5 +789,80 @@ public class StaticFunctionMapP_VECS_E implements StaticFunctionMapP_VECS_C {
 	@Override
 	public double getPixPercentByDeterPixGroup(Map<Double, List<AMV_MVS_VSQ_2D>> imagePix, int scaleSUM) {
 		return ImagePixGroupPercentage.getPixPercentByDeterPixGroup(imagePix, scaleSUM);
+	}
+		
+	//FusionPCAFilter
+	@Override
+	public Map<Double, List<AMV_MVS_VSQ_2D>> filterFusion2DSetsWithCountScale(Map<Double, List<AMV_MVS_VSQ_2D>> groups,
+			double countScale) {
+		// TODO Auto-generated method stub
+		return FusionPCAFilter.filterFusion2DSetsWithCountScale(groups, countScale);
+	}
+
+	@Override
+	public Map<Double, List<AMV_MVS_VSQ_3D>> filterFusion3DSetsWithCountScale(Map<Double, List<AMV_MVS_VSQ_3D>> groups,
+			double countScale) {
+		// TODO Auto-generated method stub
+		return FusionPCAFilter.filterFusion3DSetsWithCountScale(groups, countScale);
+	}
+	//PCA_AMV_MVS_VSQ_Filter
+	@Override
+	public List<AMV_MVS_VSQ_2D> filterPosition2DsWithScaledDistance(List<AMV_MVS_VSQ_2D> input, AMV_MVS_VSQ_2D heart,
+			double scaleDistacne) {
+		// TODO Auto-generated method stub
+		return PCA_AMV_MVS_VSQ_Filter.filterPosition2DsWithScaledDistance(input, heart, scaleDistacne);
+	}
+
+	@Override
+	public List<AMV_MVS_VSQ_3D> filterPosition3DsWithScaledDistance(List<AMV_MVS_VSQ_3D> input, AMV_MVS_VSQ_3D heart,
+			double scaleDistacne) {
+		// TODO Auto-generated method stub
+		return PCA_AMV_MVS_VSQ_Filter.filterPosition3DsWithScaledDistance(input, heart, scaleDistacne);
+	}
+
+	@Override
+	public Map<Double, List<AMV_MVS_VSQ_2D>> filterPosition2DsWithScaledDistance(
+			Map<Double, List<AMV_MVS_VSQ_2D>> input, AMV_MVS_VSQ_2D heart, double scaleDistacne) {
+		// TODO Auto-generated method stub
+		return PCA_AMV_MVS_VSQ_Filter.filterPosition2DsWithScaledDistance(input, heart, scaleDistacne) ;
+	}
+
+	@Override
+	public Map<Double, List<AMV_MVS_VSQ_3D>> filterPosition3DsWithScaledDistance(
+			Map<Double, List<AMV_MVS_VSQ_3D>> input, AMV_MVS_VSQ_3D heart, double scaleDistacne) {
+		// TODO Auto-generated method stub
+		return PCA_AMV_MVS_VSQ_Filter.filterPosition3DsWithScaledDistance(input, heart, scaleDistacne);
+	}
+
+	
+	//Percentage{
+	@Override
+	public List<Double> getPercentListByOuterKey(List<Double> list, double key) {
+		// TODO Auto-generated method stub
+		return Percentage.getPercentListByOuterKey(list, key);
+	}
+
+	@Override
+	public double[] getPercentArrayByOuterKey(double[] array, double key) {
+		// TODO Auto-generated method stub
+		return Percentage.getPercentArrayByOuterKey(array, key);
+	}
+
+	@Override
+	public double[] getEachPercentSetOfArray(double[] array) {
+		// TODO Auto-generated method stub
+		return Percentage.getEachPercentSetOfArray(array);
+	}
+
+	@Override
+	public double[][] getPercentArrayByOuterKey(double[][] array, double key) {
+		// TODO Auto-generated method stub
+		return Percentage.getPercentArrayByOuterKey(array, key) ;
+	}
+
+	@Override
+	public double[][] getEachPercentSetOfArray(double[][] array) {
+		// TODO Auto-generated method stub
+		return Percentage.getEachPercentSetOfArray(array) ;
 	}
 }
