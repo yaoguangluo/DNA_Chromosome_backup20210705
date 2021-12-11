@@ -46,7 +46,7 @@ import ESU.xml.XML_ESU;
 import OEU.LYG4DQS4D.LYG9DWithDoubleTopSort5D;
 //著作权人+作者= 罗瑶光
 //第一次完善了下， 因为改动了3个static 字符， 稍后养疗经运行下，看不会出bug不。毕竟不是static value ，只是static 函数而已， 
-//纠正一处 S大小函数开头 小写s， 相关的元基花 华瑞集 几个相关文件 也要改成 s
+//纠正一处 S大写函数开头 小写s， 相关的元基花 华瑞集 几个相关文件 也要改成 s
 public class StaticFunctionMapU_VECS_E implements StaticFunctionMapU_VECS_C{
 	public static void main(String[] argv) throws IOException {
 		String[] strings1D= new String[16];
