@@ -2,28 +2,21 @@ package SEM.bloom;
 
 import java.awt.image.BufferedImage;
 import java.io.IOException;
-import java.io.RandomAccessFile;
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
 import java.util.Map;
 import java.util.Vector;
-import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
-
 import ME.APM.VSQ.App;
-import PEI.thread.MakeContainerZNSZ;
 import PEU.P.dna.Token;
 import PEU.P.image.ConvexHull.Vertex;
 import PEU.P.md5.Usr;
 import PEU.P.md5.UsrToken;
-import PEU.P.movie.LYGFileIO;
 import PEU.P.table.TableSorterZYNK;
 import PEU.P.time.TimeCheck;
-
+//著作权人+ 作者= 罗瑶光
 public interface StaticFunctionMapU_AOPM_C {
 	public static void load() {
 		// TODO Auto-generated method stub
@@ -97,8 +90,8 @@ public interface StaticFunctionMapU_AOPM_C {
 	public double print_Mean(int[][] outDIR);
 	public double print_Mean(double[][] outDIR);
 
-	//Group_O { 稍后把 非个人著作权的几十行踢出去。
-	public double[][] GO(int[][] kener,int[][] refG,int[] size );
+	////Group_O { 稍后把 非个人著作权的几十行踢出去。
+	//public double[][] GO(int[][] kener,int[][] refG,int[] size);
 
 	//Guassian {
 	public int[][] Guassian_P_2D(int[][] g,int d,int e,double sig) throws IOException;
@@ -161,34 +154,34 @@ public interface StaticFunctionMapU_AOPM_C {
 	public int[][] Threshold_P(int[][] g, int Td);
 	public int[][] Threshold_P_Section(int[][] g, int Ts, int Td);
 
-	//VtoV{ 移除著作权的 和 u vecs 已经出现的稍后剔除出去。 
-	public JSONObject XmlToJsonObject(String response );
-	public Map<String, Object> JsonObjectToMap(JSONObject response );
-	public String MapToJsonString(Map<String, Object> response );
-	public String ListToJsonString(List<Object> response );
-	public String ObjectToJsonString(Object response );
-	public Map<String, Object> XmlToMap(String response);
-	public String MapToXml(Map<String, Object> response);
-	public List<Object> JsonArrayToList(JSONArray jobj);
+	////VtoV{ 移除著作权的 和 u vecs 已经出现的稍后剔除出去。先注释掉
+	//public JSONObject XmlToJsonObject(String response);
+	//public Map<String, Object> JsonObjectToMap(JSONObject response);
+	//public String MapToJsonString(Map<String, Object> response);
+	//public String ListToJsonString(List<Object> response);
+	//public String ObjectToJsonString(Object response);
+	//public Map<String, Object> XmlToMap(String response);
+	//public String MapToXml(Map<String, Object> response);
+	//public List<Object> JsonArrayToList(JSONArray jobj);
 
 	//CnnMeasure{
 	public double[][] getCnnMeansure(double inputs[][]);
 
 	//StringUtil { 见我git的 备份描述refer 和 著作申请版本备份refer 都有详细说明
 	//md5 官方 注释下，以后用 dna MD5的作为纪念。 奇怪 还让我eclipse卡死一下刚。
-	//	public String encode(String input) throws Exception ;
-	//	public String decode(String str) throws UnsupportedEncodingException;
-	//	public String EncoderByMd5(String salt, String pwd, int enctimes) throws NoSuchAlgorithmException, UnsupportedEncodingException ;
-	//	public String EncoderByMd5(String salt, String pwd) throws NoSuchAlgorithmException, UnsupportedEncodingException ;
+	//public String encode(String input) throws Exception ;
+	//public String decode(String str) throws UnsupportedEncodingException;
+	//public String EncoderByMd5(String salt, String pwd, int enctimes) throws NoSuchAlgorithmException, UnsupportedEncodingException ;
+	//public String EncoderByMd5(String salt, String pwd) throws NoSuchAlgorithmException, UnsupportedEncodingException ;
 
 	//WAVtoLYG{ 以前设计视频的加密很少用。
 	public void WAVtoLYG(String WAVf, String LYGf) throws IOException, UnsupportedAudioFileException;
 	//LYGFileIO
-	public LYGFileIO initWithFFT(double fft[], MakeContainerZNSZ makeContainerZNSZ);
-	public void lygRead(String filepath) throws IOException ;
-	public void lygWrite(String string) throws IOException ;
-	public void IQ_header(RandomAccessFile raf) throws IOException ;
-	public void IV_ByAudioBytes(AudioFormat af) ;
+	//public LYGFileIO initWithFFT(double fft[], MakeContainerZNSZ makeContainerZNSZ);
+	//public void lygRead(String filepath) throws IOException ;
+	//public void lygWrite(String string) throws IOException ;
+	//public void IQ_header(RandomAccessFile raf) throws IOException ;
+	//public void IV_ByAudioBytes(AudioFormat af) ;
 
 	//DETA_ANN_HMM {
 	public String[][] summing_P(String[][] inputNLP) throws IOException, InstantiationException, IllegalAccessException;
@@ -218,10 +211,10 @@ public interface StaticFunctionMapU_AOPM_C {
 	public void initAFFT();
 
 	//Guassian{
-	public double[] guassian1d(double[] input, double scale );
+	public double[] guassian1d(double[] input, double scale);
 
 	//Laplasian{
-	public double[] laplasian1d(double[] input, double scale );
+	public double[] laplasian1d(double[] input, double scale);
 
 	//MaxAndMin{
 	public double max_v(double[] input) ;
