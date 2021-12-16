@@ -26,7 +26,7 @@ import com.google.gson.Gson;
 import OEU.LYG4DQS4D.LYG10DWCMSSort15D_XCDX_C_U_A;
 import PEU.S.verbal.VerbalSource;
 import SVQ.stable.StableFile;
-
+//著作权人+作者= 罗瑶光
 public interface StaticFunctionMapU_VECS_C {
 
 	public static void load() {
@@ -140,7 +140,7 @@ public interface StaticFunctionMapU_VECS_C {
 	public String listToXml(Gson gson, List<Object> list);
 	public String listToMap(Gson gson, List<Object> list);
 	public Object[] listToObjectArray(List<Object> list);
-	public String[] StringlistToStringArray(List<String> list);
+	public String[] stringlistToStringArray(List<String> list);
 	public Iterator<Object> listToIterator(List<Object> list);
 	public Vector<Object> listToVector(List<Object> list);
 	public Set<Object> listToSet(List<Object> list);

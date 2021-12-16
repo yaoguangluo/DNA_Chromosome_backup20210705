@@ -5,6 +5,9 @@ import java.util.HashMap;
 import java.util.Map;
 //用来索引24组花
 //罗瑶光
+//1 稍后细化 元基花接口
+//2 稍后将接口统一用 function， class，元基组 3层map
+//3 function 统一走 interface接口。
 public class StaticRootMap{
 	
 	public static Map<String, StaticClassMap>  staticRootMap;

@@ -86,10 +86,12 @@ public class StaticFunctionMapM_VECS_E implements StaticFunctionMapM_VECS_C {
 	}
 
 	//IU_Rows_E {
-	public Map<String, Object> insertRowByTablePathAndIndex(String tablePath, String pageIndex, JSONObject culumnOfNewRow) throws FileNotFoundException, IOException{
+	public Map<String, Object> insertRowByTablePathAndIndex(String tablePath, String pageIndex, JSONObject culumnOfNewRow)
+			throws FileNotFoundException, IOException{
 		return IU_Rows_E. insertRowByTablePathAndIndex(tablePath, pageIndex, culumnOfNewRow);
 	}
-	public Map<String, Object> insertRowByBaseName(String baseName, String tableName, JSONObject jsobj, boolean mod) throws Exception{
+	public Map<String, Object> insertRowByBaseName(String baseName, String tableName, JSONObject jsobj, boolean mod) 
+			throws Exception{
 		return IU_Rows_E. insertRowByBaseName(baseName, tableName, jsobj, mod);
 	}
 	public void IU_RowByAttributes(Map<String, Object> object, boolean mod) throws Exception{
@@ -103,7 +105,8 @@ public class StaticFunctionMapM_VECS_E implements StaticFunctionMapM_VECS_C {
 	}
 
 	//D_Rows_E {
-	public Map<String, Object> deleteRowByTablePathAndIndex(String tablePath, String pageIndex, boolean mod)throws FileNotFoundException, IOException{
+	public Map<String, Object> deleteRowByTablePathAndIndex(String tablePath, String pageIndex, boolean mod)
+			throws FileNotFoundException, IOException{
 		return D_Rows_E. deleteRowByTablePathAndIndex(tablePath, pageIndex, mod);
 	}
 	public void D_RowByAttributesOfCondition(Map<String, Object> object, boolean mod) throws IOException{
@@ -112,10 +115,12 @@ public class StaticFunctionMapM_VECS_E implements StaticFunctionMapM_VECS_C {
 
 
 	//U_Rows_E {
-	public Map<String, Object> updateRowByTablePathAndIndex(String tablePath, String pageIndex,JSONObject jaculumnOfUpdateRow) throws FileNotFoundException, IOException{
+	public Map<String, Object> updateRowByTablePathAndIndex(String tablePath, String pageIndex,JSONObject jaculumnOfUpdateRow) 
+			throws FileNotFoundException, IOException{
 		return U_Rows_E. updateRowByTablePathAndIndex(tablePath, pageIndex, jaculumnOfUpdateRow);
 	}
-	public Map<String, Object> updateRowByTablePathAndAttribute(String tablePath, String culumnName, String culumnValue, JSONObject jobj) throws IOException{
+	public Map<String, Object> updateRowByTablePathAndAttribute(String tablePath, String culumnName, String culumnValue
+			, JSONObject jobj) throws IOException{
 		return U_Rows_E. updateRowByTablePathAndAttribute(tablePath, culumnName, culumnValue, jobj);
 	}
 	public Object updateRowsByRecordConditions(Map<String, Object> object, boolean mod) throws IOException{
@@ -145,7 +150,8 @@ public class StaticFunctionMapM_VECS_E implements StaticFunctionMapM_VECS_C {
 	}
 
 	//P_ConditionPLSQL_XCDX_Cache extends P_ConditionPLSQL_XCDX {
-	public void P_Cache(String[] sets, List<Map<String, Object>> output, String tableName, String baseName, Map<String, Object> object){
+	public void P_Cache(String[] sets, List<Map<String, Object>> output, String tableName, String baseName
+			, Map<String, Object> object){
 		P_ConditionPLSQL_XCDX_Cache.P_Cache(sets, output, tableName, baseName, object);
 	}
 
@@ -154,7 +160,8 @@ public class StaticFunctionMapM_VECS_E implements StaticFunctionMapM_VECS_C {
 	//这个走硬盘查询函数来标识下, 在我设计了数据缓存查询启动函数 后就没用过了, 时间点大概在2019年1月后, 我先调通下, 之后朔源.
 	//准备验算下20210406 罗瑶光
 	public void P_kernel(String temp, File readDBTableRowIndexCulumnFile, File readDBTableRowIndexFile, BufferedReader reader
-			, String DBTableRowIndexPath, List<Map<String, Object>> output, Row bufferRow, Map<String, Object> rowMap) throws IOException{
+			, String DBTableRowIndexPath, List<Map<String, Object>> output, Row bufferRow, Map<String, Object> rowMap) 
+					throws IOException{
 		P_ConditionPLSQL_XCDX_Kernel.P_kernel(temp, readDBTableRowIndexCulumnFile, readDBTableRowIndexFile, reader
 				, DBTableRowIndexPath, output, bufferRow, rowMap)  ;
 	}
@@ -172,7 +179,8 @@ public class StaticFunctionMapM_VECS_E implements StaticFunctionMapM_VECS_C {
 	//plsql引擎函数获取表开始检查 罗瑶光 20210405  //奇怪了 这是一个没有读 缓存的plsql引擎,我准备对比下history
 	//object 指令堆栈
 	//output 数据行
-	public void P_Table(String[] sets, List<Map<String, Object>> output, String DBTablePath, Map<String, Object> object) throws IOException{
+	public void P_Table(String[] sets, List<Map<String, Object>> output, String DBTablePath, Map<String, Object> object) 
+			throws IOException{
 		P_ConditionPLSQL_XCDX_Table.P_Table(sets, output, DBTablePath, object);
 	}
 

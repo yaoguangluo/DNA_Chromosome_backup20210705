@@ -80,7 +80,8 @@ public interface StaticFunctionMapO_VECS_C {
 	public Object selectRowsByAttributesOfGetCulumns(Map<String, Object> object);
 	//PLETL命令一多，之后准备分出去
 	//罗瑶光 20211010
-	public Object selectRowsByAttributesOfPLETL(Map<String, Object> object) throws InstantiationException, IllegalAccessException, IOException;
+	public Object selectRowsByAttributesOfPLETL(Map<String, Object> object) throws InstantiationException, IllegalAccessException
+	, IOException;
 	public Object selectRowsByAttributesOfPLTCP(Map<String, Object> object) throws IOException;
 
 	//XA_ShellTables{
@@ -183,7 +184,8 @@ public interface StaticFunctionMapO_VECS_C {
 	//P_AO_PLTCP {
 	public void P_PltcpLimitMap(String[] sets, List<Map<String, Object>> output, Map<String, Object> object) throws IOException;
 	//P_CO_pl_XA_XCDX_Cache extends P_CO_pl_XA_XCDX {
-	public void P_Cache(String[] sets, List<Map<String, Object>> output, String tableName, Map<String, Object> object, String condition);
+	public void P_Cache(String[] sets, List<Map<String, Object>> output, String tableName, Map<String, Object> object
+			, String condition);
 
 	//P_CO_pl_XA_XCDX_Kernel extends P_CO_pl_XA_XCDX {
 	//比较是否有数据取出列表到输出 检验中 罗瑶光 20210405
@@ -201,7 +203,8 @@ public interface StaticFunctionMapO_VECS_C {
 	//罗瑶光 20210924
 	//出现一个问题，我的table db是非线性map 结构， 自带表头key， 而data 是矩阵，下面逻辑要全部改掉
 	public void P_kernel_search(String temp, File readDBTableRowIndexFile, int rowId, Object[] huaRuiJiJtableCulumns
-			, Object[][] huaRuiJiJtable, List<Map<String, Object>> output, Row bufferRow, Map<String, Object> rowMap) throws IOException;
+			, Object[][] huaRuiJiJtable, List<Map<String, Object>> output, Row bufferRow, Map<String, Object> rowMap) 
+					throws IOException;
 
 	//P_CO_pl_XA_XCDX_Map extends P_CO_pl_XA_XCDX {
 	//以后优化成统一对象输出，不需要再转换。2019-1-15 tin

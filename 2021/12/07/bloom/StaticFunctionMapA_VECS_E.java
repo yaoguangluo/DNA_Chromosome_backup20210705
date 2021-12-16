@@ -15,8 +15,8 @@ import AVQ.ASQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import OEI.ME.analysis.E.CogsBinaryForest_AE;
 //import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.ASU.MPE.procedure.pde.FullDNATokenPDI_XCDX;
 import SVQ.stable.StableCommon;
-//ç”¨æ¥ç´¢å¼•å‡½æ•° æ³¨å†Œç±»
-//ç½—ç‘¶å…‰
+//ÓÃÀ´Ë÷Òıº¯Êı ×¢²áÀà
+//ÂŞÑş¹â
 public class StaticFunctionMapA_VECS_E implements StaticFunctionMapA_VECS_C{
 	@Override
 	public List<String> parserMixedStringToList(String inputString) throws IOException {
@@ -24,7 +24,7 @@ public class StaticFunctionMapA_VECS_E implements StaticFunctionMapA_VECS_C{
 		_A.IV_Mixed();
 		List<String> sets = new ArrayList<>();
 		sets= _A.parserMixedString(inputString);
-		//ç½—ç‘¶å…‰
+		//ÂŞÑş¹â
 		return sets;
 	}
 
@@ -42,7 +42,7 @@ public class StaticFunctionMapA_VECS_E implements StaticFunctionMapA_VECS_C{
 			if (!string.replaceAll("\\s+", "").equals("")) {
 				list.add(string+ "/"+ pos.get(string));
 			}else {
-				list.add(string+ "/"+ "æœªçŸ¥");
+				list.add(string+ "/"+ "Î´Öª");
 			}
 		}
 		return list;
@@ -51,7 +51,7 @@ public class StaticFunctionMapA_VECS_E implements StaticFunctionMapA_VECS_C{
 	@Override
 	public List<String> dnnReader(String inputString) throws IOException {
 		// TODO Auto-generated method stub
-		//dnnä¸å±äºè¿™ä¸ªå…ƒåŸºç»„ï¼Œ ç¨åå¹¶å‡ºå»ã€‚
+		//dnn²»ÊôÓÚÕâ¸öÔª»ù×é£¬ ÉÔºó²¢³öÈ¥¡£
 		return null;
 	}
 
@@ -60,7 +60,7 @@ public class StaticFunctionMapA_VECS_E implements StaticFunctionMapA_VECS_C{
 		// TODO Auto-generated method stub
 		return null;
 	}
-	//å…ˆæŠŠmain test åŠ è¿›æ¥ï¼Œ ç¨åæ•´æ”¹ è¾“å‡ºã€‚
+	//ÏÈ°Ñmain test ¼Ó½øÀ´£¬ ÉÔºóÕû¸Ä Êä³ö¡£
 	@Override
 	public List<String> emotionReader(String inputString) throws IOException {
 		EmotionInit emotionInit = new EmotionInit();
@@ -82,7 +82,7 @@ public class StaticFunctionMapA_VECS_E implements StaticFunctionMapA_VECS_C{
 		return environmentSampleMap;
 	}
 
-	// è¯åº“è®¡ç®—åœ¨C aopm ä¸­ï¼Œç¨åå¹¶å‡ºå»ã€‚
+	// ´Ê¿â¼ÆËãÔÚC aopm ÖĞ£¬ÉÔºó²¢³öÈ¥¡£
 	@Override
 	public Map<String, Object> lenovoReader(String inputString) throws IOException {
 		LenovoInit lenovoInit= new LenovoInit();
@@ -102,40 +102,40 @@ public class StaticFunctionMapA_VECS_E implements StaticFunctionMapA_VECS_C{
 		List<String> list= new ArrayList<>();
 		Iterator<Integer> iterator= fwa.keySet().iterator();
 		while(iterator.hasNext()) {
-			int intValue= iterator.next();//32bit ä¸Šé™ 65535 
+			int intValue= iterator.next();//32bit ÉÏÏŞ 65535 
 			list.add(fwa.get(intValue).getWord() + StableCommon.STRING_SYMBOL_PER + fwa.get(intValue).getFrequency());
 		}
-		return list;//æ˜¯å‰åºéå†ï¼Œåº”ç”¨è®°å¾—ä»å¤§åˆ°å°ã€‚
+		return list;//ÊÇÇ°Ğò±éÀú£¬Ó¦ÓÃ¼ÇµÃ´Ó´óµ½Ğ¡¡£
 	}
 	
 	public static void main(String[] argv) throws IOException {
 		
-		List<String> list= new StaticFunctionMapA_VECS_E().frequencyReader("å›ä¸è§é»„æ²³ä¹‹æ°´å¤©ä¸Šæ¥ï¼Œå¥”æµåˆ°æµ·ä¸å¤è¿˜");
+		List<String> list= new StaticFunctionMapA_VECS_E().frequencyReader("¾ı²»¼û»ÆºÓÖ®Ë®ÌìÉÏÀ´£¬±¼Á÷µ½º£²»¸´»¹");
 		Iterator<String> iteraor= list.iterator();
 		while(iteraor.hasNext()) {
 			System.out.println(iteraor.next());
 		}
 	
 		
-		list= new StaticFunctionMapA_VECS_E().posReader("å›ä¸è§é»„æ²³ä¹‹æ°´å¤©ä¸Šæ¥ï¼Œå¥”æµåˆ°æµ·ä¸å¤è¿˜");
+		list= new StaticFunctionMapA_VECS_E().posReader("¾ı²»¼û»ÆºÓÖ®Ë®ÌìÉÏÀ´£¬±¼Á÷µ½º£²»¸´»¹");
 		iteraor= list.iterator();
 		while(iteraor.hasNext()) {
 			System.out.println(iteraor.next());
 		}
 		
-		list= new StaticFunctionMapA_VECS_E().frequencyReader("å›ä¸è§é»„æ²³ä¹‹æ°´å¤©ä¸Šæ¥ï¼Œå¥”æµåˆ°æµ·ä¸å¤è¿˜");
+		list= new StaticFunctionMapA_VECS_E().frequencyReader("¾ı²»¼û»ÆºÓÖ®Ë®ÌìÉÏÀ´£¬±¼Á÷µ½º£²»¸´»¹");
 		iteraor= list.iterator();
 		while(iteraor.hasNext()) {
 			System.out.println(iteraor.next());
 		}
-//		Map<String, Object> map= new StaticFunctionMapA_VECS_E().lenovoReader("C AOPMç»„ï¼Œä»¥åå¹¶å‡ºå» ");
+//		Map<String, Object> map= new StaticFunctionMapA_VECS_E().lenovoReader("C AOPM×é£¬ÒÔºó²¢³öÈ¥ ");
 //		iteraor= map.keySet().iterator();
 //		while(iteraor.hasNext()) {
 //			//HashMap<String, Object> hash= (HashMap<String, Object>)iteraor.next();
 //			System.out.println(iteraor.next());
 //		}
 		
-//		Map<String, EmotionSample> map= new StaticFunctionMapA_VECS_E().environmentReader("SensingTest å‡½æ•° åœ¨P VECSç»„ï¼Œç¨åå¹¶å‡ºå»");
+//		Map<String, EmotionSample> map= new StaticFunctionMapA_VECS_E().environmentReader("SensingTest º¯Êı ÔÚP VECS×é£¬ÉÔºó²¢³öÈ¥");
 //		iteraor= map.keySet().iterator();
 //		while(iteraor.hasNext()) {
 //			EmotionSample hash= map.get(iteraor.next());

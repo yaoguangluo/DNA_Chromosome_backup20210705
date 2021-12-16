@@ -44,57 +44,56 @@ import ESU.tinos.vector.Vector_ESU;
 import ESU.txt.TXT_ESU;
 import ESU.xml.XML_ESU;
 import OEU.LYG4DQS4D.LYG9DWithDoubleTopSort5D;
-//è‘—ä½œæƒäºº+ä½œè€…= ç½—ç‘¶å…‰
-//ç¬¬ä¸€æ¬¡å®Œå–„äº†ä¸‹ï¼Œ å› ä¸ºæ”¹åŠ¨äº†3ä¸ªstatic å­—ç¬¦ï¼Œ ç¨åå…»ç–—ç»è¿è¡Œä¸‹ï¼Œçœ‹ä¸ä¼šå‡ºbugä¸ã€‚æ¯•ç«Ÿä¸æ˜¯static value ï¼Œåªæ˜¯static å‡½æ•°è€Œå·²ï¼Œ 
-//çº æ­£ä¸€å¤„ Så¤§å†™å‡½æ•°å¼€å¤´ å°å†™sï¼Œ ç›¸å…³çš„å…ƒåŸºèŠ± åç‘é›† å‡ ä¸ªç›¸å…³æ–‡ä»¶ ä¹Ÿè¦æ”¹æˆ s
+//Öø×÷È¨ÈË+×÷Õß= ÂŞÑş¹â
+//µÚÒ»´ÎÍêÉÆÁËÏÂ£¬ ÒòÎª¸Ä¶¯ÁË3¸östatic ×Ö·û£¬ ÉÔºóÑøÁÆ¾­ÔËĞĞÏÂ£¬¿´²»»á³öbug²»¡£±Ï¾¹²»ÊÇstatic value £¬Ö»ÊÇstatic º¯Êı¶øÒÑ£¬ 
 public class StaticFunctionMapU_VECS_E implements StaticFunctionMapU_VECS_C{
 	public static void main(String[] argv) throws IOException {
 		String[] strings1D= new String[16];
-		strings1D[0]= "dhç½—31éŸµå¾‹";
-		strings1D[1]= "dhç½—11ç‘¶æ—";
-		strings1D[2]= "dhç½—2ç‘¶å…‰";
-		strings1D[3]= "dhç½—4éŸµå¾‹";
-		strings1D[2]= "dhç½—2å°§å…‰";
-		strings1D[3]= "dhç½—4è¿å¾‹";
-		strings1D[4]= "dhç½—6ç‘¶dæ—";
-		strings1D[5]= "dhç½—ç‘¶0.6å…‰";
-		strings1D[6]= "dhç½—ç‘¶0.3få…‰";
-		strings1D[7]= "dhç½—ç‘¶0.61e7å…‰";
-		strings1D[8]= "dhç½—ç‘¶0.3e61å…‰";
-		strings1D[9]= "dhç½—ç‘¶0.3e6å…‰";
-		strings1D[10]= "dhç½—ç‘¶0.6e2å…‰";
-		strings1D[11]= "dhç½—ç‘¶0.3e1å…‰";
-		strings1D[12]= "dhç½—éŸµ111.21å¾‹";
-		strings1D[13]= "dhç½—éŸµ15.21å¾‹";
-		strings1D[14]= "dhç½—ç‘¶gæ—";
-		strings1D[15]= "dhvç½—1.09ç‘¶å…‰";
-		StaticFunctionMapU_VECS_C.ç¬”ç”»æ‹¼éŸ³æ’åºç¨åè¿›è¡ŒæŠŠä¼ å‚è®¾è®¡ä¸‹(strings1D);
+		strings1D[0]= "dhÂŞ31ÔÏÂÉ";
+		strings1D[1]= "dhÂŞ11ÑşÁÖ";
+		strings1D[2]= "dhÂŞ2Ñş¹â";
+		strings1D[3]= "dhÂŞ4ÔÏÂÉ";
+		strings1D[2]= "dhÂŞ2Ò¢¹â";
+		strings1D[3]= "dhÂŞ4ÔËÂÉ";
+		strings1D[4]= "dhÂŞ6ÑşdÁÖ";
+		strings1D[5]= "dhÂŞÑş0.6¹â";
+		strings1D[6]= "dhÂŞÑş0.3f¹â";
+		strings1D[7]= "dhÂŞÑş0.61e7¹â";
+		strings1D[8]= "dhÂŞÑş0.3e61¹â";
+		strings1D[9]= "dhÂŞÑş0.3e6¹â";
+		strings1D[10]= "dhÂŞÑş0.6e2¹â";
+		strings1D[11]= "dhÂŞÑş0.3e1¹â";
+		strings1D[12]= "dhÂŞÔÏ111.21ÂÉ";
+		strings1D[13]= "dhÂŞÔÏ15.21ÂÉ";
+		strings1D[14]= "dhÂŞÑşgÁÖ";
+		strings1D[15]= "dhvÂŞ1.09Ñş¹â";
+		StaticFunctionMapU_VECS_C.±Ê»­Æ´ÒôÅÅĞòÉÔºó½øĞĞ°Ñ´«²ÎÉè¼ÆÏÂ(strings1D);
 
-		/*è¾“å‡ºç»“æœ
+		/*Êä³ö½á¹û
 		 * 
 		 *
-dhç½—ç‘¶0.3e1å…‰
-dhç½—ç‘¶0.3e6å…‰
-dhç½—ç‘¶0.3e61å…‰
-dhç½—ç‘¶0.3få…‰
-dhç½—ç‘¶0.6å…‰
-dhç½—ç‘¶0.61e7å…‰
-dhç½—ç‘¶0.6e2å…‰
-dhç½—ç‘¶gæ—
-dhç½—éŸµ111.21å¾‹
-dhç½—éŸµ15.21å¾‹
-dhç½—11ç‘¶æ—
-dhç½—2å°§å…‰
-dhç½—31éŸµå¾‹
-dhç½—4è¿å¾‹
-dhç½—6ç‘¶dæ—
-dhvç½—1.09ç‘¶å…‰
+dhÂŞÑş0.3e1¹â
+dhÂŞÑş0.3e6¹â
+dhÂŞÑş0.3e61¹â
+dhÂŞÑş0.3f¹â
+dhÂŞÑş0.6¹â
+dhÂŞÑş0.61e7¹â
+dhÂŞÑş0.6e2¹â
+dhÂŞÑşgÁÖ
+dhÂŞÔÏ111.21ÂÉ
+dhÂŞÔÏ15.21ÂÉ
+dhÂŞ11ÑşÁÖ
+dhÂŞ2Ò¢¹â
+dhÂŞ31ÔÏÂÉ
+dhÂŞ4ÔËÂÉ
+dhÂŞ6ÑşdÁÖ
+dhvÂŞ1.09Ñş¹â
 
 		 * 
 		 * */
 	}
 
-	//ç¨ååŠ å‰ç¼€
+	//ÉÔºó¼ÓÇ°×º
 	@Override
 	public Map<Double, Map<String, Boolean>> getMapFromDoubleStringArray(Double[] score, String[] nameScore) {
 		return Double_ESU.getMapFromDoubleStringArray(score, nameScore);
@@ -250,8 +249,8 @@ dhvç½—1.09ç‘¶å…‰
 	@Override
 	public String postXML(String urlString, String XMLString) throws IOException {
 		return new HttpUnicode().postXML(urlString, XMLString);
-		//è¿™ä¸ªå‡½æ•° refer java.net ç™½çš®ä¹¦æ•™æã€‚æˆ‘çš„å†™æ³•æ˜¯æŒ‰ç…§å°åº¦ä¹°çš„ java how to program è“çš®ä¹¦å†™çš„
-		//è®°å¾—ç« èŠ‚æ˜¯ http sever client socketé€šä¿¡ ä¸¤æœ¬ä¹¦éƒ½åœ¨ç¾å›½ 4å¹´å‰æ²¡å¸¦å›æ¥ã€‚
+		//Õâ¸öº¯Êı refer java.net °×Æ¤Êé½Ì²Ä¡£ÎÒµÄĞ´·¨ÊÇ°´ÕÕÓ¡¶ÈÂòµÄ java how to program À¶Æ¤ÊéĞ´µÄ
+		//¼ÇµÃÕÂ½ÚÊÇ http sever client socketÍ¨ĞÅ Á½±¾Êé¶¼ÔÚÃÀ¹ú 4ÄêÇ°Ã»´ø»ØÀ´¡£
 	}
 
 	@Override
