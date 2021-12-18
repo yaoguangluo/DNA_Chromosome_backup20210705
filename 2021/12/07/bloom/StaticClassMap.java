@@ -1,5 +1,6 @@
 package SEM.bloom;
 import java.io.IOException;
+import java.util.HashMap;
 //import java.util.ArrayList;
 //import java.util.List;
 import java.util.Map;
@@ -7,7 +8,7 @@ import java.util.Map;
 //罗瑶光
 //流程，1先工程归纳，然后2分类，最后3统计执行接口的相关java文件，4进行map索引。
 public class StaticClassMap{
-	public static Map<String, Object>  staticClassMap;
+	public static Map<String, Object>  staticClassMap= new HashMap<>();
 	public StaticClassMap(String string) throws IOException {
 		if("A_VECS".equals(string)) {
 			//..遍历工程文件。。。导入注册函数。

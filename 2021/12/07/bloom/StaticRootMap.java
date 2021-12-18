@@ -9,12 +9,12 @@ import java.util.Map;
 //2 稍后将接口统一用 function， class，元基组 3层map
 //3 function 统一走 interface接口。
 public class StaticRootMap{
-	
+
 	public static Map<String, StaticClassMap>  staticRootMap;
 
 	public void initMap() throws IOException {
 		staticRootMap= new HashMap<>();
-		
+
 		StaticClassMap map_A_VECS= new StaticClassMap("A_VECS");
 		StaticClassMap map_A_IDUQ= new StaticClassMap("A_IDUQ");
 		StaticClassMap map_O_VECS= new StaticClassMap("O_VECS");
@@ -76,6 +76,20 @@ public class StaticRootMap{
 		//Q
 		staticRootMap.put("Q_VECS", map_Q_VECS);
 		staticRootMap.put("Q_AOPM", map_Q_AOPM);
-		
+
+	}
+
+	@SuppressWarnings("static-access")
+	public static void main(String[] argv) throws IOException {	
+		//写法 1
+		StaticRootMap staticRootMap= new StaticRootMap();
+		staticRootMap.initMap();
+		StaticClassMap staticClassMap= staticRootMap.staticRootMap.get("U_VECS");
+		StaticFunctionMapU_VECS_E staticFunctionMapU_VECS_C
+		= (StaticFunctionMapU_VECS_E) staticClassMap.staticClassMap.get("U_VECS");
+		staticFunctionMapU_VECS_C.main(null);
+		//写法 2
+
+		//写法 3
 	}
 }
