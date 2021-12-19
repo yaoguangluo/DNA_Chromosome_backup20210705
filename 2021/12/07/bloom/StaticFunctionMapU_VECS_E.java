@@ -47,6 +47,7 @@ import OEU.LYG4DQS4D.LYG9DWithDoubleTopSort5D;
 //著作权人+作者= 罗瑶光
 //第一次完善了下， 因为改动了3个static 字符， 稍后养疗经运行下，看不会出bug不。毕竟不是static value ，只是static 函数而已， 
 public class StaticFunctionMapU_VECS_E implements StaticFunctionMapU_VECS_C{
+	public Map<String, String> annotationMap= new HashMap<>();
 	public static void main(String[] argv) throws IOException {
 		String[] strings1D= new String[16];
 		strings1D[0]= "dh罗31韵律";

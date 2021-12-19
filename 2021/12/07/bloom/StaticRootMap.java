@@ -2,6 +2,7 @@ package SEM.bloom;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 //用来索引24组花
 //罗瑶光
@@ -79,17 +80,49 @@ public class StaticRootMap{
 
 	}
 
-	@SuppressWarnings("static-access")
+	@SuppressWarnings({ "static-access", "unused" })
 	public static void main(String[] argv) throws IOException {	
 		//写法 1
+//		StaticRootMap staticRootMap= new StaticRootMap();
+//		staticRootMap.initMap();
+//		StaticClassMap staticClassMap= staticRootMap.staticRootMap.get("U_VECS");
+//		StaticFunctionMapU_VECS_E staticFunctionMapU_VECS_C
+//		= (StaticFunctionMapU_VECS_E) staticClassMap.staticClassMap.get("U_VECS");
+//		staticFunctionMapU_VECS_C.main(null);
+		//写法 2
+		String string= "执行 U_VECS 下 main 接口, 参数是null";
 		StaticRootMap staticRootMap= new StaticRootMap();
 		staticRootMap.initMap();
-		StaticClassMap staticClassMap= staticRootMap.staticRootMap.get("U_VECS");
-		StaticFunctionMapU_VECS_E staticFunctionMapU_VECS_C
-		= (StaticFunctionMapU_VECS_E) staticClassMap.staticClassMap.get("U_VECS");
-		staticFunctionMapU_VECS_C.main(null);
-		//写法 2
-
+		Iterator<String> iterator= staticRootMap.staticRootMap.keySet().iterator();
+		while(iterator.hasNext()) {
+			String callMapKey= iterator.next();
+			//case 染色体接口
+			if(string.contains(callMapKey)) {
+				if(callMapKey.equalsIgnoreCase("U_VECS")) {
+					StaticClassMap staticClassMap= staticRootMap.staticRootMap.get("U_VECS");
+					StaticFunctionMapU_VECS_E staticFunctionMapU_VECS_C
+					= (StaticFunctionMapU_VECS_E) staticClassMap.staticClassMap.get("U_VECS");
+					//case 函数名接口
+					Iterator<String> callFunction= staticFunctionMapU_VECS_C.annotationMap.keySet().iterator();
+					while(callFunction.hasNext()) {
+						String callFunctionKey= callFunction.next();
+						if(string.contains(callFunctionKey)) {
+							if(callFunctionKey.equalsIgnoreCase("main")) {
+								//写法1
+								//case 参数
+								if(string.contains("null")) {
+									//其他参数可用object， json 都可以
+									staticFunctionMapU_VECS_C.main(null);
+								}
+								//写法2
+								//可以插件遍历，可以 接口遍历，可以web的outowire 遍历，
+								//无数种方法遍历
+							}
+						}
+					}
+				}
+			}
+		}
 		//写法 3
 	}
 }
