@@ -130,10 +130,9 @@ public class StaticClassMap{
 		}
 		if("U_VECS".equals(string)) {
 			//..数据变换处理
-			StaticFunctionMapU_VECS_C.load();//static 检查
 			StaticFunctionMapU_VECS_E staticFunctionMapU_VECS_E= new StaticFunctionMapU_VECS_E();
 			staticClassMap.put("U_VECS", staticFunctionMapU_VECS_E);//CE接口热化
-			staticFunctionMapU_VECS_E.annotationMap.put("main", "main");//注册一个main接口
+			StaticFunctionMapU_VECS_C.load(staticFunctionMapU_VECS_E);//static 检查
 			//。。..继续注册。。
 			//。。
 		}
