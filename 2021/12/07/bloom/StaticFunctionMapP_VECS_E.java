@@ -2,6 +2,7 @@ package SEM.bloom;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -71,7 +72,7 @@ import SVQ.stable.StableString;
 //著作权人 + 作者 = 罗瑶光
 //稍后加pvecs组的static class前缀。
 public class StaticFunctionMapP_VECS_E implements StaticFunctionMapP_VECS_C {
-
+	public Map<String, String> annotationMap= new HashMap<>();
 	@SuppressWarnings("unused")
 	public void translateChineseToEnglish(String v)throws IOException {
 		A _A = new CogsBinaryForest_AE();

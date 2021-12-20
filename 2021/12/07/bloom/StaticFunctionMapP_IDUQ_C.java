@@ -9,9 +9,22 @@ import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.dna.P.RST;
 //终于开始快要派上用场了。我的初衷。
 public interface StaticFunctionMapP_IDUQ_C {
 
-	public static void load() {
+	public static void load(StaticFunctionMapP_IDUQ_E staticFunctionMapP_IDUQ_E) {
 		// TODO Auto-generated method stub
-
+		//稍后封装
+		
+		staticFunctionMapP_IDUQ_E.annotationMap.put("copy", "copy");
+		staticFunctionMapP_IDUQ_E.annotationMap.put("copyMap", "copyMap");
+		staticFunctionMapP_IDUQ_E.annotationMap.put("mask", "mask");
+		staticFunctionMapP_IDUQ_E.annotationMap.put("copy", "copy");
+		
+		staticFunctionMapP_IDUQ_E.annotationMap.put("mutationCopy", "mutationCopy");	
+		staticFunctionMapP_IDUQ_E.annotationMap.put("dating", "dating");	
+		staticFunctionMapP_IDUQ_E.annotationMap.put("inheritance", "inheritance");	
+		staticFunctionMapP_IDUQ_E.annotationMap.put("born", "born");	
+		staticFunctionMapP_IDUQ_E.annotationMap.put("mutation", "mutation");	
+		staticFunctionMapP_IDUQ_E.annotationMap.put("separater", "separater");	
+		staticFunctionMapP_IDUQ_E.annotationMap.put("swap", "swap");	
 	}
 
 	// CopyLaw{

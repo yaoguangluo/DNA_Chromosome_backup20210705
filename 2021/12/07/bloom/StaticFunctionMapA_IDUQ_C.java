@@ -7,9 +7,15 @@ import SVQ.stable.StableCommon;
 //著作权人+ 作者= 罗瑶光
 public class StaticFunctionMapA_IDUQ_C {
 
-	public static void load() {
-		// TODO Auto-generated method stub
-
+	public static void load(StaticFunctionMapA_IDUQ_E staticFunctionMapA_IDUQ_E) {
+		//稍后封装
+		staticFunctionMapA_IDUQ_E.annotationMap.put("getPDW", "getPDW");
+		staticFunctionMapA_IDUQ_E.annotationMap.put("getLock", "getLock");
+		staticFunctionMapA_IDUQ_E.annotationMap.put("getCode", "getCode");
+		staticFunctionMapA_IDUQ_E.annotationMap.put("doPDE", "doPDE");
+		staticFunctionMapA_IDUQ_E.annotationMap.put("doPrefixPDE", "doPrefixPDE");
+		staticFunctionMapA_IDUQ_E.annotationMap.put("doPostfixPDE", "doPostfixPDE");
+		staticFunctionMapA_IDUQ_E.annotationMap.put("doSurffixPDE", "doSurffixPDE");
 	}
 
 	//肽语

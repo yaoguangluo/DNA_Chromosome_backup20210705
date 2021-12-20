@@ -1,6 +1,7 @@
 package SEM.bloom;
 
 import java.awt.HeadlessException;
+import java.util.HashMap;
 import java.util.Map;
 
 import IMO.EVU.bi_P.BigWord;
@@ -19,6 +20,7 @@ import OCI.ME.analysis.C.A;
 import OEI.ME.analysis.E.CogsBinaryForest_AE;
 //著作权人+ 作者= 罗瑶光
 public class StaticFunctionMapI_AOPM_E implements StaticFunctionMapI_AOPM_C {
+	public Map<String, String> annotationMap= new HashMap<>();
 	public BigWord getBigWord() {
 		return new BigWord();
 	}

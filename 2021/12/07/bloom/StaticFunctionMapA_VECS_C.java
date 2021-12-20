@@ -10,10 +10,21 @@ import OEI.ME.analysis.E.CogsBinaryForest_AE;
 //用来索引函数 注册类
 //罗瑶光
 public interface StaticFunctionMapA_VECS_C {
-	public static void load() {
+	public static void load(StaticFunctionMapA_VECS_E staticFunctionMapA_VECS_E) {
 		//扫描插件
 		//扫描接口
 		//扫描继承
+		//稍后封装
+		staticFunctionMapA_VECS_E.annotationMap.put("parserMixedString", "parserMixedString");
+		staticFunctionMapA_VECS_E.annotationMap.put("parserMixedStringToList", "parserMixedStringToList");
+		staticFunctionMapA_VECS_E.annotationMap.put("posReader", "posReader");
+		staticFunctionMapA_VECS_E.annotationMap.put("dnnReader", "dnnReader");
+		staticFunctionMapA_VECS_E.annotationMap.put("mindReader", "mindReader");
+		staticFunctionMapA_VECS_E.annotationMap.put("emotionReader", "emotionReader");
+		staticFunctionMapA_VECS_E.annotationMap.put("educationReader", "educationReader");
+		staticFunctionMapA_VECS_E.annotationMap.put("environmentReader", "environmentReader");
+		staticFunctionMapA_VECS_E.annotationMap.put("lenovoReader", "lenovoReader");
+		staticFunctionMapA_VECS_E.annotationMap.put("frequencyReader", "frequencyReader");
 	}
 	//分词
 	public static List<String> parserMixedString(String inputString) throws IOException {

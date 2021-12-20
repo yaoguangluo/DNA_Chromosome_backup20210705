@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.Socket;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -54,7 +55,7 @@ import PEU.P.dna.TokenCerts;
 //包含tinshell 002 的pletl源码，准备包含shell 正则，和shell 读档执行
 //24组元基花的 dna编码记忆配对遗传 正式 并入《DNA 元基催化与肽计算 第四修订版》本 稍后申请著作权。
 public class StaticFunctionMapM_VECS_E implements StaticFunctionMapM_VECS_C {
-
+	public Map<String, String> annotationMap= new HashMap<>();
 	//database
 	//static
 	//U_JoinRows_E {

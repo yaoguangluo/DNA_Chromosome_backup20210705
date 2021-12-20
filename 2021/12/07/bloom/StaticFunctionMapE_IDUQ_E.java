@@ -2,6 +2,7 @@ package SEM.bloom;
 
 import java.awt.PopupMenu;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.swing.JTextPane;
@@ -45,7 +46,7 @@ import OSI.OPE.SI.MCI.OEI.OVU.PQE.extOSGI.OSI_OSU_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MS
 //Refer的源码来自 《DNA 元基催化与肽计算 第三修订版本 V039010912》
 //证书编号：国作登字-2021-L-00268255 (中华人民共和国 国家版权登记中心)
 public class StaticFunctionMapE_IDUQ_E implements StaticFunctionMapE_IDUQ_C{
-
+	public Map<String, String> annotationMap= new HashMap<>();
 	@Override
 	public NodeInfo getNodeInfo() {
 		// TODO Auto-generated method stub

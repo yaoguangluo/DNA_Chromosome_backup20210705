@@ -10,9 +10,23 @@ import ME.APM.VSQ.App;
 //著作权人 + 作者 = 罗瑶光
 public interface StaticFunctionMapI_VECS_C {
 
-	public static void load() {
+	public static void load(StaticFunctionMapI_VECS_E staticFunctionMapI_VECS_E) {
 		// TODO Auto-generated method stub
-
+		//稍后封装
+		staticFunctionMapI_VECS_E.annotationMap.put("doTestWithImageAPP", "doTestWithImageAPP");
+		staticFunctionMapI_VECS_E.annotationMap.put("doFourJianPDErosion", "doFourJianPDErosion");
+		staticFunctionMapI_VECS_E.annotationMap.put("doFourSuanPDErosion", "doFourSuanPDErosion");
+		staticFunctionMapI_VECS_E.annotationMap.put("doEightSuanPDErosion", "doEightSuanPDErosion");
+		staticFunctionMapI_VECS_E.annotationMap.put("doEightJianPDErosion", "doEightJianPDErosion");
+		staticFunctionMapI_VECS_E.annotationMap.put("doFirstPDErosionWithTop", "doFirstPDErosionWithTop");
+		staticFunctionMapI_VECS_E.annotationMap.put("doSecondPDErosionWithTop", "doSecondPDErosionWithTop");
+		staticFunctionMapI_VECS_E.annotationMap.put("doThirdPDErosionWithTop", "doThirdPDErosionWithTop");
+		staticFunctionMapI_VECS_E.annotationMap.put("initDeciphring", "initDeciphring");
+		staticFunctionMapI_VECS_E.annotationMap.put("doTestWithFilePath", "doTestWithFilePath");
+		staticFunctionMapI_VECS_E.annotationMap.put("doTestWithImage", "doTestWithImage");
+		staticFunctionMapI_VECS_E.annotationMap.put("doTestWithBufferedImage", "doTestWithBufferedImage");
+		staticFunctionMapI_VECS_E.annotationMap.put("staticMain", "staticMain");
+		staticFunctionMapI_VECS_E.annotationMap.put("doPDERangePDI16", "doPDERangePDI16");
 	}
 	//SkinPathDoubleDetectTripFix2D_E{
 	public List<String> doTestWithImageAPP(App u) throws IOException; 

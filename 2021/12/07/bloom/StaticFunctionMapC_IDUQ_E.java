@@ -1,5 +1,8 @@
 package SEM.bloom;
 
-public class StaticFunctionMapC_IDUQ_E {
+import java.util.HashMap;
+import java.util.Map;
 
+public class StaticFunctionMapC_IDUQ_E {
+	public Map<String, String> annotationMap= new HashMap<>();
 }

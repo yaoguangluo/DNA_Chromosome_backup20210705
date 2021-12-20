@@ -46,7 +46,7 @@ import OSM.shell.ShellReplace;
 //Refer的源码来自 《DNA 元基催化与肽计算 第三修订版本 V039010912》
 //证书编号：国作登字-2021-L-00268255 (中华人民共和国 国家版权登记中心)
 public class StaticFunctionMapO_VECS_E implements StaticFunctionMapO_VECS_C  {
-
+	public Map<String, String> annotationMap= new HashMap<>();
 	@Override
 	public void SortStringDemo() {
 		OSM.shell.SortStringDemo.main(null);

@@ -13,9 +13,35 @@ import OSI.AOP.MS.VPC.server.VPCSResponse;
 //著作权人+ 作者= 罗瑶光
 public interface StaticFunctionMapC_AOPM_C {
 
-	public static void load() {
+	public static void load(StaticFunctionMapC_AOPM_E staticFunctionMapC_AOPM_E) {
 		// TODO Auto-generated method stub
-
+		//稍后封装
+		staticFunctionMapC_AOPM_E.annotationMap.put("BootVPCSBackEnd", "BootVPCSBackEnd");
+		staticFunctionMapC_AOPM_E.annotationMap.put("requestIpFilter", "requestIpFilter");
+		staticFunctionMapC_AOPM_E.annotationMap.put("requestLinkFilter", "requestLinkFilter");
+		staticFunctionMapC_AOPM_E.annotationMap.put("IV_BlockList", "IV_BlockList");
+		staticFunctionMapC_AOPM_E.annotationMap.put("requestIpFix", "requestIpFix");
+		staticFunctionMapC_AOPM_E.annotationMap.put("requestLinkFix", "requestLinkFix");
+		staticFunctionMapC_AOPM_E.annotationMap.put("requestIpRecoder", "requestIpRecoder");
+		staticFunctionMapC_AOPM_E.annotationMap.put("requestLinkRecoder", "requestLinkRecoder");
+		staticFunctionMapC_AOPM_E.annotationMap.put("IQ_ForwardType", "IQ_ForwardType");
+		staticFunctionMapC_AOPM_E.annotationMap.put("forwardToRestMap", "forwardToRestMap");
+		staticFunctionMapC_AOPM_E.annotationMap.put("IV_ServerInit_C_VPCSFrontEnd", "IV_ServerInit_C_VPCSFrontEnd");
+		staticFunctionMapC_AOPM_E.annotationMap.put("IV_Server", "IV_Server");
+		staticFunctionMapC_AOPM_E.annotationMap.put("IV_Service", "IV_Service");
+		staticFunctionMapC_AOPM_E.annotationMap.put("IV_ServerServerInit_C", "IV_ServerServerInit_C");
+		staticFunctionMapC_AOPM_E.annotationMap.put("IQ_Response", "IQ_Response");
+		staticFunctionMapC_AOPM_E.annotationMap.put("returnResponse", "returnResponse");
+		staticFunctionMapC_AOPM_E.annotationMap.put("P_Rest", "P_Rest");
+		staticFunctionMapC_AOPM_E.annotationMap.put("P_View", "P_View");
+		staticFunctionMapC_AOPM_E.annotationMap.put("P_Bytes", "P_Bytes");
+		staticFunctionMapC_AOPM_E.annotationMap.put("P_Buffer", "P_Buffer");
+		staticFunctionMapC_AOPM_E.annotationMap.put("P_BufferBytes", "P_BufferBytes");
+		staticFunctionMapC_AOPM_E.annotationMap.put("P_BytesWithoutZip", "P_BytesWithoutZip");
+		staticFunctionMapC_AOPM_E.annotationMap.put("hugPillow", "hugPillow");
+		staticFunctionMapC_AOPM_E.annotationMap.put("forward", "forward");
+		staticFunctionMapC_AOPM_E.annotationMap.put("getFilePath", "getFilePath");
+		staticFunctionMapC_AOPM_E.annotationMap.put("getCode", "getCode");
 	}
 	//BootVPCSBackEnd extends Thread
 	public void BootVPCSBackEnd(App app) throws IOException ;

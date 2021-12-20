@@ -19,8 +19,16 @@ import OSI.OPE.PSQ.OEU.SOI.SMQ.neroCell.BootNeroDoc;
 //证书编号：国作登字-2021-L-00268255 (中华人民共和国 国家版权登记中心)
 public interface StaticFunctionMapO_IDUQ_C {
 
-	public static void load() {
+	public static void load(StaticFunctionMapO_IDUQ_E staticFunctionMapO_IDUQ_E) {
 		// TODO Auto-generated method stub
+		//稍后封装
+		staticFunctionMapO_IDUQ_E.annotationMap.put("U_", "U_");
+		staticFunctionMapO_IDUQ_E.annotationMap.put("getRandomDNAkey", "getRandomDNAkey");
+		staticFunctionMapO_IDUQ_E.annotationMap.put("Save", "Save");
+		staticFunctionMapO_IDUQ_E.annotationMap.put("bootCell", "bootCell");
+		staticFunctionMapO_IDUQ_E.annotationMap.put("BootNeroDoc", "BootNeroDoc");
+		staticFunctionMapO_IDUQ_E.annotationMap.put("vpcsRegister", "vpcsRegister");
+		staticFunctionMapO_IDUQ_E.annotationMap.put("register", "register");
 	}
 	//SaveAnd_U_File{
 	public void U_(String fileCurrentpath, LinkNode first);

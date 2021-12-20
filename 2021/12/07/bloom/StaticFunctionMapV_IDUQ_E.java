@@ -3,6 +3,7 @@ package SEM.bloom;
 import java.awt.Container;
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Map;
 
 import OSI.OPE.AOPM.VECS.IDUQ.OVU.PQE.flash.GUISample;
@@ -21,7 +22,7 @@ import OEI.ME.analysis.E.CogsBinaryForest_AE;
 
 //著作权人+ 作者= 罗瑶光
 public class StaticFunctionMapV_IDUQ_E implements StaticFunctionMapV_IDUQ_C {
-
+	public Map<String, String> annotationMap= new HashMap<>();
 	@Override
 	public MakeContainerSJFX 初始ETL(App app, Container jpanelSecond) {
 		MakeContainerSJFX makeContainerSJFX= new MakeContainerSJFX(app.tableData_old, app.text, app._A

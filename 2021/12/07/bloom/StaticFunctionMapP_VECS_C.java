@@ -18,17 +18,138 @@ import PCI.ASQ.demension.Line3D;
 //著作权人 + 作者 = 罗瑶光
 public interface StaticFunctionMapP_VECS_C {
 
-	public static void load() {
+	public static void load(StaticFunctionMapP_VECS_E staticFunctionMapP_VECS_E) {
 		// TODO Auto-generated method stub
+		//稍后封装
+		staticFunctionMapP_VECS_E.annotationMap.put("aNNTest", "aNNTest");
+		staticFunctionMapP_VECS_E.annotationMap.put("dNNTest", "dNNTest");
+		staticFunctionMapP_VECS_E.annotationMap.put("rNNTest", "rNNTest");
+		staticFunctionMapP_VECS_E.annotationMap.put("sensingTest", "sensingTest");
+		staticFunctionMapP_VECS_E.annotationMap.put("educationLevelTest", "educationLevelTest");
+		staticFunctionMapP_VECS_E.annotationMap.put("literarinessLevelTest", "literarinessLevelTest");
+		staticFunctionMapP_VECS_E.annotationMap.put("successICATest", "successICATest");
+		staticFunctionMapP_VECS_E.annotationMap.put("getSideEnd2D", "getSideEnd2D");
+		staticFunctionMapP_VECS_E.annotationMap.put("getSideEnd3D", "getSideEnd3D");
+		staticFunctionMapP_VECS_E.annotationMap.put("addNewPositionWithoutHeart", "addNewPositionWithoutHeart");
+		staticFunctionMapP_VECS_E.annotationMap.put("addNewPositionWithHeart", "addNewPositionWithHeart");
+		staticFunctionMapP_VECS_E.annotationMap.put("getShortestSamplePosition2DGroup", "getShortestSamplePosition2DGroup");
+		staticFunctionMapP_VECS_E.annotationMap.put("getShorterSamplePosition2DGroupsWithScale", "getShorterSamplePosition2DGroupsWithScale");
+		staticFunctionMapP_VECS_E.annotationMap.put("getShortestSamplePosition3DGroup", "getShortestSamplePosition3DGroup");
+		staticFunctionMapP_VECS_E.annotationMap.put("getShortestSamplePosition3DGroupsWithScale", "getShortestSamplePosition3DGroupsWithScale");
+		staticFunctionMapP_VECS_E.annotationMap.put("fissilePosition2D", "fissilePosition2D");
+		staticFunctionMapP_VECS_E.annotationMap.put("fissilePosition3D", "fissilePosition3D");
+		staticFunctionMapP_VECS_E.annotationMap.put("fusionPosition2DwithHeart", "fusionPosition2DwithHeart");
+		staticFunctionMapP_VECS_E.annotationMap.put("fusionPosition3DwithHeart", "fusionPosition3DwithHeart");
+		staticFunctionMapP_VECS_E.annotationMap.put("getTSPIsolationGroups2D", "getTSPIsolationGroups2D");
+		staticFunctionMapP_VECS_E.annotationMap.put("getTSPIsolationGroups3D", "getTSPIsolationGroups3D");
+		staticFunctionMapP_VECS_E.annotationMap.put("getTSPForestIsolationGroups2D", "getTSPForestIsolationGroups2D");
+		staticFunctionMapP_VECS_E.annotationMap.put("getTSPForestIsolationGroups3D", "getTSPForestIsolationGroups3D");
+		staticFunctionMapP_VECS_E.annotationMap.put("trackTracePosition2DHeartsWithSingerGroup", "trackTracePosition2DHeartsWithSingerGroup");
+		staticFunctionMapP_VECS_E.annotationMap.put("trackTracePosition3DHeartsWithSingerGroup", "trackTracePosition3DHeartsWithSingerGroup");
+		staticFunctionMapP_VECS_E.annotationMap.put("trackTracePosition2DByHearts", "trackTracePosition2DByHearts");
+		staticFunctionMapP_VECS_E.annotationMap.put("trackTracePosition3DByHearts", "trackTracePosition3DByHearts");
+		staticFunctionMapP_VECS_E.annotationMap.put("trackTracePosition2DHeartsWithFissileGroups", "trackTracePosition2DHeartsWithFissileGroups");
+		staticFunctionMapP_VECS_E.annotationMap.put("trackTracePosition3DHeartsWithFissileGroups", "trackTracePosition3DHeartsWithFissileGroups");
+		staticFunctionMapP_VECS_E.annotationMap.put("findMeanDistanceFromPositions2D", "findMeanDistanceFromPositions2D");
+		staticFunctionMapP_VECS_E.annotationMap.put("findMeanDistanceFromPositions3D", "findMeanDistanceFromPositions3D");
+		staticFunctionMapP_VECS_E.annotationMap.put("findPascalMeanDistanceByEachPositions2D", "findPascalMeanDistanceByEachPositions2D");
+		staticFunctionMapP_VECS_E.annotationMap.put("findPascalMeanDistanceByEachPositions3D", "findPascalMeanDistanceByEachPositions3D");
+		staticFunctionMapP_VECS_E.annotationMap.put("getPosition2DsGroupPascalHearts", "getPosition2DsGroupPascalHearts");
+		staticFunctionMapP_VECS_E.annotationMap.put("getPosition3DsGroupPascalHearts", "getPosition3DsGroupPascalHearts");
+		staticFunctionMapP_VECS_E.annotationMap.put("getPosition2DsGroupPascalMids", "getPosition2DsGroupPascalMids");
+	
+		staticFunctionMapP_VECS_E.annotationMap.put("getPosition3DsGroupPascalMids", "getPosition3DsGroupPascalMids");
+		staticFunctionMapP_VECS_E.annotationMap.put("getPosition2DsGroupPascalDirection", "getPosition2DsGroupPascalDirection");
+		staticFunctionMapP_VECS_E.annotationMap.put("getPosition3DsGroupPascalDirection", "getPosition3DsGroupPascalDirection");
+		staticFunctionMapP_VECS_E.annotationMap.put("getPosition3DsGroupPascalDirection", "getPosition3DsGroupPascalDirection");
+		staticFunctionMapP_VECS_E.annotationMap.put("getPosition2DsGroupPascalDirection", "getPosition2DsGroupPascalDirection");
+		staticFunctionMapP_VECS_E.annotationMap.put("getYaoguangLuo2DEulerRingTSP", "getYaoguangLuo2DEulerRingTSP");
+		staticFunctionMapP_VECS_E.annotationMap.put("getYaoguangLuo3DEulerRingTSP", "getYaoguangLuo3DEulerRingTSP");
+		staticFunctionMapP_VECS_E.annotationMap.put("getYaoguangLuo2DEulerRingTSP2D", "getYaoguangLuo2DEulerRingTSP2D");
+		staticFunctionMapP_VECS_E.annotationMap.put("getYaoguangLuo3DEulerRingTSP2D", "getYaoguangLuo3DEulerRingTSP2D");
+		staticFunctionMapP_VECS_E.annotationMap.put("getYaoguangLuo2DEulerRingTSP3D", "getYaoguangLuo2DEulerRingTSP3D");
+		staticFunctionMapP_VECS_E.annotationMap.put("getYaoguangLuo3DEulerRingTSP3D", "getYaoguangLuo3DEulerRingTSP3D");
+		
+		staticFunctionMapP_VECS_E.annotationMap.put("getImagePix2DGroupFilter", "getImagePix2DGroupFilter");
+		staticFunctionMapP_VECS_E.annotationMap.put("getImagePix3DGroupFilter", "getImagePix3DGroupFilter");
+		staticFunctionMapP_VECS_E.annotationMap.put("NLPBestSentenceMatch", "NLPBestSentenceMatch");
+		staticFunctionMapP_VECS_E.annotationMap.put("NLPBestSentencesMatch", "NLPBestSentencesMatch");
+		staticFunctionMapP_VECS_E.annotationMap.put("getNLPBestSentencesMatchScore", "getNLPBestSentencesMatchScore");
+		staticFunctionMapP_VECS_E.annotationMap.put("getNLPBestSentencesMatchScoreRights", "getNLPBestSentencesMatchScoreRights");
+		staticFunctionMapP_VECS_E.annotationMap.put("getErrorAsserts", "getErrorAsserts");
+		staticFunctionMapP_VECS_E.annotationMap.put("getBinaryErrorAsserts", "getBinaryErrorAsserts");
+		staticFunctionMapP_VECS_E.annotationMap.put("findTotalIncrementWithScale", "findTotalIncrementWithScale");
+		staticFunctionMapP_VECS_E.annotationMap.put("findMeanIncrementWithScale", "findMeanIncrementWithScale");
+		staticFunctionMapP_VECS_E.annotationMap.put("findMeanOfFilterDoubleArrayWithScale", "findMeanOfFilterDoubleArrayWithScale");
+		staticFunctionMapP_VECS_E.annotationMap.put("findMeanOfDoubleArray", "findMeanOfDoubleArray");
+		staticFunctionMapP_VECS_E.annotationMap.put("findMeanOfTwoDoubleArray", "findMeanOfTwoDoubleArray");
+		staticFunctionMapP_VECS_E.annotationMap.put("findMeanOfTwoDoubleArray2D", "findMeanOfTwoDoubleArray2D");
+		staticFunctionMapP_VECS_E.annotationMap.put("findMeanOfDoubleMatrix2D", "findMeanOfDoubleMatrix2D");
+		staticFunctionMapP_VECS_E.annotationMap.put("findRowMeanOfDoubleMatrix2D", "findRowMeanOfDoubleMatrix2D");
+		staticFunctionMapP_VECS_E.annotationMap.put("findCulumnMeanOfDoubleMatrix2D", "findCulumnMeanOfDoubleMatrix2D");
+		staticFunctionMapP_VECS_E.annotationMap.put("findMeanOfDoubleMatrix3D", "findMeanOfDoubleMatrix3D");
+		staticFunctionMapP_VECS_E.annotationMap.put("findMeanOfDoubleList", "findMeanOfDoubleList");
+		staticFunctionMapP_VECS_E.annotationMap.put("findMeanOfMartrix1DList", "findMeanOfMartrix1DList");
+		staticFunctionMapP_VECS_E.annotationMap.put("findMeanOfMartrix2DList", "findMeanOfMartrix2DList");
+		staticFunctionMapP_VECS_E.annotationMap.put("findSumOfDoubleArray", "findSumOfDoubleArray");	
+		staticFunctionMapP_VECS_E.annotationMap.put("findSumOfTwoDoubleArray", "findSumOfTwoDoubleArray");
+		staticFunctionMapP_VECS_E.annotationMap.put("findSumOfTwoDoubleArray2D", "findSumOfTwoDoubleArray2D");
+		
+	 
+		staticFunctionMapP_VECS_E.annotationMap.put("findSumOfDoubleMatrix2D", "findSumOfDoubleMatrix2D");
+		staticFunctionMapP_VECS_E.annotationMap.put("findRowSumOfDoubleMatrix2D", "findRowSumOfDoubleMatrix2D");
+		staticFunctionMapP_VECS_E.annotationMap.put("findCulumnSumOfDoubleMatrix2D", "findCulumnSumOfDoubleMatrix2D");
+		staticFunctionMapP_VECS_E.annotationMap.put("findSumOfDoubleMatrix3D", "findSumOfDoubleMatrix3D");
+		staticFunctionMapP_VECS_E.annotationMap.put("findSumOfDoubleList", "findSumOfDoubleList");
+		staticFunctionMapP_VECS_E.annotationMap.put("findSumOfMartrix1DList", "findSumOfMartrix1DList");
+		staticFunctionMapP_VECS_E.annotationMap.put("findSumOfMartrix2DList", "findSumOfMartrix2DList");
+		staticFunctionMapP_VECS_E.annotationMap.put("getShareholdCount", "getShareholdCount");
+		staticFunctionMapP_VECS_E.annotationMap.put("encodeEstimateSumOfScoresList", "encodeEstimateSumOfScoresList");
+		staticFunctionMapP_VECS_E.annotationMap.put("encodeEstimateSumOfScoresArray", "encodeEstimateSumOfScoresArray");
+		staticFunctionMapP_VECS_E.annotationMap.put("getEstimateCartesianSumOfScoresArray", "getEstimateCartesianSumOfScoresArray");
+		staticFunctionMapP_VECS_E.annotationMap.put("getEstimateCartesian1DSumOfScoresArray", "getEstimateCartesian1DSumOfScoresArray");
+		staticFunctionMapP_VECS_E.annotationMap.put("encodeEstimateInitonsScore", "encodeEstimateInitonsScore");
+		
+		staticFunctionMapP_VECS_E.annotationMap.put("decodeEstimateInitonsScore", "decodeEstimateInitonsScore");
+		staticFunctionMapP_VECS_E.annotationMap.put("getRightsEstimateScore", "getRightsEstimateScore");
+		staticFunctionMapP_VECS_E.annotationMap.put("getSimilarFuzzSetWithScale", "getSimilarFuzzSetWithScale");
+		staticFunctionMapP_VECS_E.annotationMap.put("getDistanceRatio2D", "getDistanceRatio2D");
+		staticFunctionMapP_VECS_E.annotationMap.put("getARCDistanceRatio2D", "getARCDistanceRatio2D");
+		staticFunctionMapP_VECS_E.annotationMap.put("getTrueARCDistanceRatio2D", "getTrueARCDistanceRatio2D");
+		staticFunctionMapP_VECS_E.annotationMap.put("getDistanceRatio3D", "getDistanceRatio3D");
+		staticFunctionMapP_VECS_E.annotationMap.put("getTrueARCDistanceRatio3D", "getTrueARCDistanceRatio3D");
+		staticFunctionMapP_VECS_E.annotationMap.put("getPercentListByOuterKey", "getPercentListByOuterKey");
+		staticFunctionMapP_VECS_E.annotationMap.put("kernel", "kernel");
+		staticFunctionMapP_VECS_E.annotationMap.put("kernelFix", "kernelFix");
+		staticFunctionMapP_VECS_E.annotationMap.put("findTotalIncrementRatioWithScale", "findTotalIncrementRatioWithScale");
+		staticFunctionMapP_VECS_E.annotationMap.put("findMeanIncrementRatioWithScale", "findMeanIncrementRatioWithScale");
+		staticFunctionMapP_VECS_E.annotationMap.put("frequencyUpSplit", "frequencyUpSplit");
+		staticFunctionMapP_VECS_E.annotationMap.put("frequencyDownSplit", "frequencyDownSplit");
+		staticFunctionMapP_VECS_E.annotationMap.put("frequencyUpSplitWithScale", "frequencyUpSplitWithScale");
+		staticFunctionMapP_VECS_E.annotationMap.put("frequencyDownSplitWithScale", "frequencyDownSplitWithScale");
 
+	
+
+		staticFunctionMapP_VECS_E.annotationMap.put("predictionResult", "predictionResult");
+		staticFunctionMapP_VECS_E.annotationMap.put("predictionMatrixResult", "predictionMatrixResult");
+		staticFunctionMapP_VECS_E.annotationMap.put("getImagePixClassificationMap", "getImagePixClassificationMap");
+		staticFunctionMapP_VECS_E.annotationMap.put("getVWaveFromImagePix", "getVWaveFromImagePix");
+		staticFunctionMapP_VECS_E.annotationMap.put("getHWaveFromImagePix", "getHWaveFromImagePix");
+		staticFunctionMapP_VECS_E.annotationMap.put("getPixPercentByDeterPix", "getPixPercentByDeterPix");
+		staticFunctionMapP_VECS_E.annotationMap.put("getClusterPercentByDeterPixGroup", "getClusterPercentByDeterPixGroup");
+		staticFunctionMapP_VECS_E.annotationMap.put("getPixPercentByDeterPixGroup", "getPixPercentByDeterPixGroup");
+		staticFunctionMapP_VECS_E.annotationMap.put("filterFusion2DSetsWithCountScale", "filterFusion2DSetsWithCountScale");
+		staticFunctionMapP_VECS_E.annotationMap.put("filterFusion3DSetsWithCountScale", "filterFusion3DSetsWithCountScale");
+		staticFunctionMapP_VECS_E.annotationMap.put("filterPosition2DsWithScaledDistance", "filterPosition2DsWithScaledDistance");
+		staticFunctionMapP_VECS_E.annotationMap.put("filterPosition3DsWithScaledDistance", "filterPosition3DsWithScaledDistance");
+		staticFunctionMapP_VECS_E.annotationMap.put("filterPosition2DsWithScaledDistance", "filterPosition2DsWithScaledDistance");
+		staticFunctionMapP_VECS_E.annotationMap.put("filterPosition3DsWithScaledDistance", "filterPosition3DsWithScaledDistance");
+		staticFunctionMapP_VECS_E.annotationMap.put("getPercentListByOuterKey", "getPercentListByOuterKey");
+		staticFunctionMapP_VECS_E.annotationMap.put("getPercentArrayByOuterKey", "getPercentArrayByOuterKey");
+		staticFunctionMapP_VECS_E.annotationMap.put("getEachPercentSetOfArray", "getEachPercentSetOfArray");
+		staticFunctionMapP_VECS_E.annotationMap.put("getPercentArrayByOuterKey", "getPercentArrayByOuterKey");
 	}	
-	public String[][] aNNTest(String string) throws IOException, InstantiationException, IllegalAccessException;
-	public String[][] dNNTest(String string) throws IOException, InstantiationException, IllegalAccessException;
-	public String[][] rNNTest(String string) throws IOException, InstantiationException, IllegalAccessException;
-	public String[][] sensingTest(String string) throws IOException;
-	public void educationLevelTest(String[] strings) throws IOException;
-	public void literarinessLevelTest(String[] strings) throws IOException;
-	public void successICATest(String[] strings) throws IOException;
+
 
 	//public static  数据预测static 全部统计下
 

@@ -20,9 +20,20 @@ import OEI.ME.analysis.E.CogsBinaryForest_AE;
 //著作权人+ 作者= 罗瑶光
 public interface StaticFunctionMapI_AOPM_C {
 
-	public static void load() {
+	public static void load(StaticFunctionMapI_AOPM_E staticFunctionMapI_AOPM_E) {
 		// TODO Auto-generated method stub
-
+		//稍后封装
+		staticFunctionMapI_AOPM_E.annotationMap.put("getBigWord", "getBigWord");
+		staticFunctionMapI_AOPM_E.annotationMap.put("getClassify", "getClassify");
+		staticFunctionMapI_AOPM_E.annotationMap.put("getCoAuthor", "getCoAuthor");
+		staticFunctionMapI_AOPM_E.annotationMap.put("getCoAuthorForWord", "getCoAuthorForWord");
+		staticFunctionMapI_AOPM_E.annotationMap.put("getCoDNAAuthorForWord", "getCoDNAAuthorForWord");
+		staticFunctionMapI_AOPM_E.annotationMap.put("getHistogram", "getHistogram");
+		staticFunctionMapI_AOPM_E.annotationMap.put("getLineMed", "getLineMed");
+		staticFunctionMapI_AOPM_E.annotationMap.put("getJpv", "getJpv");
+		staticFunctionMapI_AOPM_E.annotationMap.put("getRecoder", "getRecoder");
+		staticFunctionMapI_AOPM_E.annotationMap.put("getVoicejPanel", "getVoicejPanel");
+		staticFunctionMapI_AOPM_E.annotationMap.put("getLYGFileIO", "getLYGFileIO");
 	}
 	//重名稍后
 	public BigWord getBigWord() ;

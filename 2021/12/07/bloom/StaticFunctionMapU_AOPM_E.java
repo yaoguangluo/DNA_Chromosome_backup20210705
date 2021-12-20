@@ -4,6 +4,7 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Vector;
@@ -67,6 +68,7 @@ import PVU.P.image.Filter;
 // 稍后一一把接口函数主体 实例化。
 public class StaticFunctionMapU_AOPM_E implements StaticFunctionMapU_AOPM_C{
 	//Cache_M 入选jdk， 略
+	public Map<String, String> annotationMap= new HashMap<>();
 	//ObjectClassification
 	public Map<String, Map<String, Object>>mapClassification(Map<String, Object> input, String[] keywords){
 		return ObjectClassification.mapClassification(input, keywords);

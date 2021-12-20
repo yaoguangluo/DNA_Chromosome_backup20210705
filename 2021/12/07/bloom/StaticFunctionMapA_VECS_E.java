@@ -2,6 +2,7 @@ package SEM.bloom;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 //import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -18,6 +19,7 @@ import SVQ.stable.StableCommon;
 //用来索引函数 注册类
 //罗瑶光
 public class StaticFunctionMapA_VECS_E implements StaticFunctionMapA_VECS_C{
+	public Map<String, String> annotationMap= new HashMap<>();
 	@Override
 	public List<String> parserMixedStringToList(String inputString) throws IOException {
 		CogsBinaryForest_AE _A = new CogsBinaryForest_AE();

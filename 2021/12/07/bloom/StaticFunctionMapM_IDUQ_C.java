@@ -10,8 +10,15 @@ import OSI.SSI.ASU.OSU.PSU.MSU.pds.PDE_PDS_DL16;
 //著作权人+ 作者= 罗瑶光
 public interface StaticFunctionMapM_IDUQ_C {
 
-	public static void load() {
+	public static void load(StaticFunctionMapM_IDUQ_E staticFunctionMapM_IDUQ_E) {
 		// TODO Auto-generated method stub
+		//稍后封装
+		staticFunctionMapM_IDUQ_E.annotationMap.put("getQ_OulerRing", "getQ_OulerRing");
+		staticFunctionMapM_IDUQ_E.annotationMap.put("getQ_OulerRing16", "getQ_OulerRing16");
+		staticFunctionMapM_IDUQ_E.annotationMap.put("getDecadeToPDS", "getDecadeToPDS");
+		staticFunctionMapM_IDUQ_E.annotationMap.put("getDecadeToPDS16", "getDecadeToPDS16");
+		staticFunctionMapM_IDUQ_E.annotationMap.put("getPDE_PDS_DL", "getPDE_PDS_DL");
+		staticFunctionMapM_IDUQ_E.annotationMap.put("getPDE_PDS_DL16", "getPDE_PDS_DL16");
 
 	}
 	public Q_OulerRing getQ_OulerRing();
@@ -20,4 +27,5 @@ public interface StaticFunctionMapM_IDUQ_C {
 	public DecadeToPDS16 getDecadeToPDS16();
 	public PDE_PDS_DL getPDE_PDS_DL();
 	public PDE_PDS_DL16 getPDE_PDS_DL16();
+	
 }

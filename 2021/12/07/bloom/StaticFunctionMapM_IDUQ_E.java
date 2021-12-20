@@ -1,5 +1,8 @@
 package SEM.bloom;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import OSI.SSI.ASU.OSU.PSU.MSU.ouler.Q_OulerRing;
 import OSI.SSI.ASU.OSU.PSU.MSU.ouler.Q_OulerRing16;
 import OSI.SSI.ASU.OSU.PSU.MSU.pde.DecadeToPDS;
@@ -9,7 +12,7 @@ import OSI.SSI.ASU.OSU.PSU.MSU.pds.PDE_PDS_DL16;
 
 //著作权人+ 作者= 罗瑶光
 public class StaticFunctionMapM_IDUQ_E implements StaticFunctionMapM_IDUQ_C{
-
+	public Map<String, String> annotationMap= new HashMap<>();
 	@Override
 	public Q_OulerRing getQ_OulerRing() {
 		return new Q_OulerRing();

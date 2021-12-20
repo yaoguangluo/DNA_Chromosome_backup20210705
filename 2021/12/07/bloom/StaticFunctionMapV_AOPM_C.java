@@ -9,8 +9,34 @@ import VPC.transaction.PdeSwapFix;
 //证书编号：国作登字-2021-L-00268255 (中华人民共和国 国家版权登记中心)
 public interface StaticFunctionMapV_AOPM_C {
 
-	public static void load() {
+	public static void load(StaticFunctionMapV_AOPM_E staticFunctionMapV_AOPM_E) {
 		// TODO Auto-generated method stub
+		//稍后封装
+		staticFunctionMapV_AOPM_E.annotationMap.put("PdeSwapPdcToPde", "PdeSwapPdcToPde"); 
+		staticFunctionMapV_AOPM_E.annotationMap.put("PdeSwapPdcToPds", "PdeSwapPdcToPds"); 
+		staticFunctionMapV_AOPM_E.annotationMap.put("PdeSwapPdeToPds", "PdeSwapPdeToPds"); 
+		staticFunctionMapV_AOPM_E.annotationMap.put("PdeSwapPdsToPde", "PdeSwapPdsToPde"); 
+		staticFunctionMapV_AOPM_E.annotationMap.put("PdeSwapFixpdcToPde", "PdeSwapFixpdcToPde"); 
+		
+		staticFunctionMapV_AOPM_E.annotationMap.put("PdeSwapFixpdcToPds", "PdeSwapFixpdcToPds"); 
+		staticFunctionMapV_AOPM_E.annotationMap.put("PdeSwapFixpdeToPds", "PdeSwapFixpdeToPds"); 
+		staticFunctionMapV_AOPM_E.annotationMap.put("PdeSwapFixpdsToPde", "PdeSwapFixpdsToPde"); 
+		staticFunctionMapV_AOPM_E.annotationMap.put("PdeSwapFixtextToPdw", "PdeSwapFixtextToPdw"); 
+		staticFunctionMapV_AOPM_E.annotationMap.put("PdeSwapFixpdwToPdc", "PdeSwapFixpdwToPdc"); 
+		staticFunctionMapV_AOPM_E.annotationMap.put("DetaDBUtilDBRequest", "DetaDBUtilDBRequest"); 
+		staticFunctionMapV_AOPM_E.annotationMap.put("DetaDBUtilbackEndRequest", "DetaDBUtilbackEndRequest"); 
+		staticFunctionMapV_AOPM_E.annotationMap.put("DetaDBUtilcacheRequest", "DetaDBUtilcacheRequest"); 
+		
+		staticFunctionMapV_AOPM_E.annotationMap.put("IV_CulumnNameType", "IV_CulumnNameType"); 
+		staticFunctionMapV_AOPM_E.annotationMap.put("withoutCulumnNameType", "withoutCulumnNameType"); 	
+		staticFunctionMapV_AOPM_E.annotationMap.put("DetaFrontEndUtilbackEndRequest", "DetaFrontEndUtilbackEndRequest"); 
+		
+		staticFunctionMapV_AOPM_E.annotationMap.put("DetaFrontEndUtilbackEndRequest", "DetaFrontEndUtilbackEndRequest"); 
+		staticFunctionMapV_AOPM_E.annotationMap.put("DetaFrontEndUtilhuaRuiJiRequest", "DetaFrontEndUtilhuaRuiJiRequest"); 
+		staticFunctionMapV_AOPM_E.annotationMap.put("DetaFrontEndUtilcacheRequest", "DetaFrontEndUtilcacheRequest"); 
+		staticFunctionMapV_AOPM_E.annotationMap.put("IV_DB", "IV_DB"); 
+		staticFunctionMapV_AOPM_E.annotationMap.put("compress", "compress"); 
+		staticFunctionMapV_AOPM_E.annotationMap.put("uncompress", "uncompress"); 
 	}
 
 	//PdeSwap{

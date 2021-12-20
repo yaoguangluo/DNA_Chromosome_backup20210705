@@ -1,5 +1,7 @@
 package SEM.bloom;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedDeque;
 
@@ -16,6 +18,7 @@ import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.dna.P.SwapLaw;
 //著作权人+作者=罗瑶光
 //我的世界就要来了。
 public class StaticFunctionMapP_IDUQ_E implements StaticFunctionMapP_IDUQ_C{
+	public Map<String, String> annotationMap= new HashMap<>();
 	// CopyLaw{
 	public DNA copy(DNA dna) {
 		return new CopyLaw().copy(dna);

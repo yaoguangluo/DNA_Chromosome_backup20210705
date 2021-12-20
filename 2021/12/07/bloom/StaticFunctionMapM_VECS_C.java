@@ -30,9 +30,93 @@ import PEU.P.dna.TokenCerts;
 //证书编号：国作登字-2021-L-00268255 (中华人民共和国 国家版权登记中心)
 public interface StaticFunctionMapM_VECS_C {
 
-	public static void load() {
+	public static void load(StaticFunctionMapM_VECS_E staticFunctionMapM_VECS_E) {
 		// TODO Auto-generated method stub
-
+		//稍后封装
+		staticFunctionMapM_VECS_E.annotationMap.put("updateRowsByAttributesOfJoinCondition", "updateRowsByAttributesOfJoinCondition");
+		staticFunctionMapM_VECS_E.annotationMap.put("updateRowsByAttributesOfJoinAggregation", "updateRowsByAttributesOfJoinAggregation");
+		staticFunctionMapM_VECS_E.annotationMap.put("updateRowsByAttributesOfJoinGetCulumns", "updateRowsByAttributesOfJoinGetCulumns");
+		staticFunctionMapM_VECS_E.annotationMap.put("updateRowsByAttributesOfJoinRelation", "updateRowsByAttributesOfJoinRelation");
+		staticFunctionMapM_VECS_E.annotationMap.put("selectRowsByAttributesOfJoinCondition", "selectRowsByAttributesOfJoinCondition");
+		staticFunctionMapM_VECS_E.annotationMap.put("selectRowsByAttributesOfJoinAggregation", "selectRowsByAttributesOfJoinAggregation");
+		staticFunctionMapM_VECS_E.annotationMap.put("selectRowsByAttributesOfJoinGetCulumns", "selectRowsByAttributesOfJoinGetCulumns");
+		staticFunctionMapM_VECS_E.annotationMap.put("selectRowsByAttributesOfJoinRelation", "selectRowsByAttributesOfJoinRelation");
+		staticFunctionMapM_VECS_E.annotationMap.put("insertRowByTablePathAndIndex", "insertRowByTablePathAndIndex");
+		staticFunctionMapM_VECS_E.annotationMap.put("insertRowByBaseName", "insertRowByBaseName");
+		staticFunctionMapM_VECS_E.annotationMap.put("IU_RowByAttributes", "IU_RowByAttributes");
+		staticFunctionMapM_VECS_E.annotationMap.put("I_Table", "I_Table");
+		staticFunctionMapM_VECS_E.annotationMap.put("deleteRowByTablePathAndIndex", "deleteRowByTablePathAndIndex");
+		staticFunctionMapM_VECS_E.annotationMap.put("D_RowByAttributesOfCondition", "D_RowByAttributesOfCondition");
+		staticFunctionMapM_VECS_E.annotationMap.put("updateRowByTablePathAndIndex", "updateRowByTablePathAndIndex");
+		staticFunctionMapM_VECS_E.annotationMap.put("updateRowByTablePathAndAttribute", "updateRowByTablePathAndAttribute");
+		staticFunctionMapM_VECS_E.annotationMap.put("updateRowsByRecordConditions", "updateRowsByRecordConditions");
+		staticFunctionMapM_VECS_E.annotationMap.put("updateRowsByAttributesOfCondition", "updateRowsByAttributesOfCondition");
+		staticFunctionMapM_VECS_E.annotationMap.put("updateRowsByAttributesOfAggregation", "updateRowsByAttributesOfAggregation");
+		staticFunctionMapM_VECS_E.annotationMap.put("updateRowsByAttributesOfGetCulumns", "updateRowsByAttributesOfGetCulumns");
+		staticFunctionMapM_VECS_E.annotationMap.put("E_PLSQL", "E_PLSQL");
+		staticFunctionMapM_VECS_E.annotationMap.put("E_PLORM", "E_PLORM");
+		staticFunctionMapM_VECS_E.annotationMap.put("P_AggregationLimitMap", "P_AggregationLimitMap");
+		staticFunctionMapM_VECS_E.annotationMap.put("P_Cache", "P_Cache");
+		staticFunctionMapM_VECS_E.annotationMap.put("P_kernel", "P_kernel");
+		staticFunctionMapM_VECS_E.annotationMap.put("rowToRowMap", "rowToRowMap");
+		staticFunctionMapM_VECS_E.annotationMap.put("P_Map", "P_Map");
+		staticFunctionMapM_VECS_E.annotationMap.put("P_Table", "P_Table");
+		staticFunctionMapM_VECS_E.annotationMap.put("getCulumnsMapWithAs", "getCulumnsMapWithAs");
+		staticFunctionMapM_VECS_E.annotationMap.put("getCulumnsMap", "getCulumnsMap");
+		staticFunctionMapM_VECS_E.annotationMap.put("P_GetCulumnsMap", "P_GetCulumnsMap");
+		staticFunctionMapM_VECS_E.annotationMap.put("P_AndMap", "P_AndMap");
+		staticFunctionMapM_VECS_E.annotationMap.put("P_OrMap", "P_OrMap");
+		staticFunctionMapM_VECS_E.annotationMap.put("P_SetRoot", "P_SetRoot");
+		staticFunctionMapM_VECS_E.annotationMap.put("P_BaseName", "P_BaseName");
+		staticFunctionMapM_VECS_E.annotationMap.put("P_TableName", "P_TableName");
+		staticFunctionMapM_VECS_E.annotationMap.put("P_ListNeedStart", "P_ListNeedStart");
+		staticFunctionMapM_VECS_E.annotationMap.put("P_Join", "P_Join");
+		staticFunctionMapM_VECS_E.annotationMap.put("P_E", "P_E");
+		staticFunctionMapM_VECS_E.annotationMap.put("P_Check", "P_Check");
+		staticFunctionMapM_VECS_E.annotationMap.put("wordsForestNotContainsKey", "wordsForestNotContainsKey");
+		staticFunctionMapM_VECS_E.annotationMap.put("prefixWordEqualZero", "prefixWordEqualZero");
+		staticFunctionMapM_VECS_E.annotationMap.put("wordsForestContainsKey", "wordsForestContainsKey");
+		staticFunctionMapM_VECS_E.annotationMap.put("WordFrequencyFindCheck", "WordFrequencyFindCheck");
+		staticFunctionMapM_VECS_E.annotationMap.put("WordFrequencyCompareCheck", "WordFrequencyCompareCheck");
+		staticFunctionMapM_VECS_E.annotationMap.put("sessionCheck", "sessionCheck");
+		staticFunctionMapM_VECS_E.annotationMap.put("sessionTokenUpdateByDNA", "sessionTokenUpdateByDNA");
+		staticFunctionMapM_VECS_E.annotationMap.put("sessionTokenCertsInitWithHumanWordsByDNA", "sessionTokenCertsInitWithHumanWordsByDNA");
+		staticFunctionMapM_VECS_E.annotationMap.put("sessionTokenCertsInitWithHumanWordsByDNA_ETL", "sessionTokenCertsInitWithHumanWordsByDNA_ETL");
+		staticFunctionMapM_VECS_E.annotationMap.put("sessionInitByTokenPDICertsDNA", "sessionInitByTokenPDICertsDNA");
+		staticFunctionMapM_VECS_E.annotationMap.put("sessionInitByTokenCertsDNA", "sessionInitByTokenCertsDNA");
+		staticFunctionMapM_VECS_E.annotationMap.put("sessionCheckWithOrderPDSKey", "sessionCheckWithOrderPDSKey");
+		staticFunctionMapM_VECS_E.annotationMap.put("sessionCheckWithPostPDSKey", "sessionCheckWithPostPDSKey");
+		staticFunctionMapM_VECS_E.annotationMap.put("arrayIntCheck", "arrayIntCheck");
+		staticFunctionMapM_VECS_E.annotationMap.put("arrayIntFix", "arrayIntFix");
+		staticFunctionMapM_VECS_E.annotationMap.put("arrayLongCheck", "arrayLongCheck");
+		staticFunctionMapM_VECS_E.annotationMap.put("arrayLongFix", "arrayLongFix");
+		staticFunctionMapM_VECS_E.annotationMap.put("arrayDoubleCheck", "arrayDoubleCheck");
+		staticFunctionMapM_VECS_E.annotationMap.put("arrayDoubleFix", "arrayDoubleFix");
+		staticFunctionMapM_VECS_E.annotationMap.put("arrayFloatCheck", "arrayFloatCheck");
+		staticFunctionMapM_VECS_E.annotationMap.put("arrayFloatFix", "arrayFloatFix");
+		staticFunctionMapM_VECS_E.annotationMap.put("currentSystemTimeCheck", "currentSystemTimeCheck");
+		staticFunctionMapM_VECS_E.annotationMap.put("currentSystemTimeToUTC", "currentSystemTimeToUTC");
+		staticFunctionMapM_VECS_E.annotationMap.put("getTranslator", "getTranslator");
+		staticFunctionMapM_VECS_E.annotationMap.put("ListSetsCheck", "ListSetsCheck");
+		staticFunctionMapM_VECS_E.annotationMap.put("ListSetsFix", "ListSetsFix");
+		staticFunctionMapM_VECS_E.annotationMap.put("matrixCheck", "matrixCheck");
+		staticFunctionMapM_VECS_E.annotationMap.put("matrixFix", "matrixFix");
+		staticFunctionMapM_VECS_E.annotationMap.put("checkNULL", "checkNULL");
+		staticFunctionMapM_VECS_E.annotationMap.put("getCfxButton", "getCfxButton");
+		staticFunctionMapM_VECS_E.annotationMap.put("DetaButton", "DetaButton");
+		staticFunctionMapM_VECS_E.annotationMap.put("YLJShowButton", "YLJShowButton");
+		staticFunctionMapM_VECS_E.annotationMap.put("DetaIndexLabel", "DetaIndexLabel");
+		staticFunctionMapM_VECS_E.annotationMap.put("DetaLabel", "DetaLabel");
+		staticFunctionMapM_VECS_E.annotationMap.put("DetaSlider", "DetaSlider");
+		staticFunctionMapM_VECS_E.annotationMap.put("DetabbedPane", "DetabbedPane");
+		staticFunctionMapM_VECS_E.annotationMap.put("getColorTableRender", "getColorTableRender");
+		staticFunctionMapM_VECS_E.annotationMap.put("CfxTextArea", "CfxTextArea");
+		staticFunctionMapM_VECS_E.annotationMap.put("CfxTextField", "CfxTextField");
+		staticFunctionMapM_VECS_E.annotationMap.put("CfxTextPane", "CfxTextPane");
+		staticFunctionMapM_VECS_E.annotationMap.put("forwardToRestMap", "forwardToRestMap");
+		staticFunctionMapM_VECS_E.annotationMap.put("P_Rest", "P_Rest");
+		staticFunctionMapM_VECS_E.annotationMap.put("P_RestDB", "P_RestDB");
+		staticFunctionMapM_VECS_E.annotationMap.put("P", "P");
 	}
 	//database
 	//static

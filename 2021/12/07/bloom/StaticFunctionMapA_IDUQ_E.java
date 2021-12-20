@@ -1,8 +1,12 @@
 package SEM.bloom;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.ASU.MPE.procedure.pde.FullDNATokenPDI_XCDX;
 
 public class StaticFunctionMapA_IDUQ_E {
+	public Map<String, String> annotationMap= new HashMap<>();
 	@SuppressWarnings("unused")
 	public static void main(String[] argv) {
 		String string= "ยÞัþนโ";
@@ -17,5 +21,5 @@ public class StaticFunctionMapA_IDUQ_E {
 		FullDNATokenPDI_XCDX pDE_RNA_FullFormular1= StaticFunctionMapA_IDUQ_C.doPrefixPDE(pDE_RNA_FullFormular);
 		FullDNATokenPDI_XCDX pDE_RNA_FullFormular2= StaticFunctionMapA_IDUQ_C.doPostfixPDE(pDE_RNA_FullFormular, pDE_RNA_FullFormular1);
 		FullDNATokenPDI_XCDX pDE_RNA_FullFormular3= StaticFunctionMapA_IDUQ_C.doSurffixPDE(pDE_RNA_FullFormular, pDE_RNA_FullFormular1);
-	} 
+	}
 }

@@ -1,5 +1,8 @@
 package SEM.bloom;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import OCI.AMV.ECS.SVQ.MPC.fhmm.C.SensingMap;
 import OCI.AVC.SUQ.SVQ.MPC.fhmm.C.EmotionMap;
 import OCI.ME.analysis.C.A;
@@ -40,7 +43,7 @@ import OEI.SVQ.MPC.fhmm.E.FMHMMList_E;
 //Refer的源码来自 《DNA 元基催化与肽计算 第三修订版本 V039010912》
 //证书编号：国作登字-2021-L-00268255 (中华人民共和国 国家版权登记中心)
 public class StaticFunctionMapE_AOPM_E implements StaticFunctionMapE_AOPM_C {
-
+	public Map<String, String> annotationMap= new HashMap<>();
 	@Override
 	public SensingMap getSensingMap() {
 		return new SensingMap_E();

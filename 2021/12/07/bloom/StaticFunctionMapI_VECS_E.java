@@ -5,6 +5,7 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import ISQ.VSU.feature.SkinPathDetectTrip_E;
 import ISQ.VSU.feature.SkinPathDoubleDetectTripFix2D;
@@ -14,6 +15,7 @@ import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.ASU.MPE.procedure.pde.RangePD
 
 //著作权人 + 作者 = 罗瑶光
 public class StaticFunctionMapI_VECS_E implements StaticFunctionMapI_VECS_C{
+	public Map<String, String> annotationMap= new HashMap<>();
 	//SkinPathDoubleDetectTripFix2D_E{
 	@Override
 	public List<String> doTestWithImageAPP(App u) throws IOException {

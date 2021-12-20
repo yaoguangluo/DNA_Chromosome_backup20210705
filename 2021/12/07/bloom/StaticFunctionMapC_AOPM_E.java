@@ -3,6 +3,7 @@ package SEM.bloom;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.Socket;
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.swing.JTextPane;
@@ -25,6 +26,7 @@ import OSI.AOP.MS.VPC.server.VPCSResponse;
 //著作权人+ 作者= 罗瑶光
 //vpcs 服务器的 STANDARD 标准示例
 public class StaticFunctionMapC_AOPM_E implements StaticFunctionMapC_AOPM_C{
+	public Map<String, String> annotationMap= new HashMap<>();
 	//BootVPCSBackEnd extends Thread
 	public void BootVPCSBackEnd(App app) throws IOException{
 		new OSI.AOP.MS.VPC.server.BootVPCSBackEnd(app);

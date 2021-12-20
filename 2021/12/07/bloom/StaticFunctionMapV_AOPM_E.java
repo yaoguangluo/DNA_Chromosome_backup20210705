@@ -1,6 +1,8 @@
 package SEM.bloom;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.ASU.MPE.procedure.pde.FullDNATokenPDI;
 import VPC.VQS.DSU.utils.DetaDBUtil;
@@ -14,7 +16,7 @@ import VPC.transaction.PdeSwapFix;
 //Refer的源码来自 《DNA 元基催化与肽计算 第三修订版本 V039010912》
 //证书编号：国作登字-2021-L-00268255 (中华人民共和国 国家版权登记中心)
 public class StaticFunctionMapV_AOPM_E implements StaticFunctionMapV_AOPM_C {
-
+	public Map<String, String> annotationMap= new HashMap<>();
 	public static void load() {
 		// TODO Auto-generated method stub
 

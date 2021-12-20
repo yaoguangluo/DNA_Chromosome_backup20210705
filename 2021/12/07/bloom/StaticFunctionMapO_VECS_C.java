@@ -25,7 +25,95 @@ import OSI.OPE.OVU.MVU.OVU.PQE.nodeEdit.LinkList;
 //证书编号：国作登字-2021-L-00268255 (中华人民共和国 国家版权登记中心)
 public interface StaticFunctionMapO_VECS_C {
 
-	public static void load() {	
+	public static void load(StaticFunctionMapO_VECS_E staticFunctionMapO_VECS_E) {	
+		//稍后封装
+		staticFunctionMapO_VECS_E.annotationMap.put("SortStringDemo", "SortStringDemo");
+		staticFunctionMapO_VECS_E.annotationMap.put("transactionLogin", "transactionLogin");
+		staticFunctionMapO_VECS_E.annotationMap.put("transactionRegister", "transactionRegister");
+		staticFunctionMapO_VECS_E.annotationMap.put("aCommonReadWay", "aCommonReadWay");
+		staticFunctionMapO_VECS_E.annotationMap.put("readDBInTXTWay", "readDBInTXTWay");
+		staticFunctionMapO_VECS_E.annotationMap.put("readDBInBaseWay", "readDBInBaseWay");
+		staticFunctionMapO_VECS_E.annotationMap.put("readDBInWebWay", "readDBInWebWay");
+		staticFunctionMapO_VECS_E.annotationMap.put("PLSQLSectionPanel", "PLSQLSectionPanel");
+		staticFunctionMapO_VECS_E.annotationMap.put("VPCSRestPanel", "VPCSRestPanel");
+		staticFunctionMapO_VECS_E.annotationMap.put("YouBiaoSectionPanel", "YouBiaoSectionPanel");
+		staticFunctionMapO_VECS_E.annotationMap.put("PL_XA_C", "PL_XA_C");
+		staticFunctionMapO_VECS_E.annotationMap.put("selectRowsByAttributesOfJoinCondition", "selectRowsByAttributesOfJoinCondition");
+		staticFunctionMapO_VECS_E.annotationMap.put("selectRowsByAttributesOfJoinAggregation", "selectRowsByAttributesOfJoinAggregation");
+		staticFunctionMapO_VECS_E.annotationMap.put("selectRowsByAttributesOfJoinGetCulumns", "selectRowsByAttributesOfJoinGetCulumns");
+		staticFunctionMapO_VECS_E.annotationMap.put("selectRowsByAttributesOfJoinRelation", "selectRowsByAttributesOfJoinRelation");
+		staticFunctionMapO_VECS_E.annotationMap.put("selectRowsByAttributesOfNestCondition", "selectRowsByAttributesOfNestCondition");
+		staticFunctionMapO_VECS_E.annotationMap.put("selectRowsByAttributesOfNestAggregation", "selectRowsByAttributesOfNestAggregation");
+		staticFunctionMapO_VECS_E.annotationMap.put("selectRowsByAttributesOfNestGetCulumns", "selectRowsByAttributesOfNestGetCulumns");
+		staticFunctionMapO_VECS_E.annotationMap.put("selectRowsByAttributesOfNestRelation", "selectRowsByAttributesOfNestRelation");
+		staticFunctionMapO_VECS_E.annotationMap.put("selectRowsByAttribute", "selectRowsByAttribute");
+		staticFunctionMapO_VECS_E.annotationMap.put("XA_ShellQ_Rows_E_main", "XA_ShellQ_Rows_E_main");
+		staticFunctionMapO_VECS_E.annotationMap.put("selectRowsByTablePath", "selectRowsByTablePath");
+		staticFunctionMapO_VECS_E.annotationMap.put("selectRowsByAttributesOfCondition", "selectRowsByAttributesOfCondition");
+		staticFunctionMapO_VECS_E.annotationMap.put("selectRowsByAttributesOfAggregation", "selectRowsByAttributesOfAggregation");
+		staticFunctionMapO_VECS_E.annotationMap.put("selectRowsByAttributesOfGetCulumns", "selectRowsByAttributesOfGetCulumns");
+		staticFunctionMapO_VECS_E.annotationMap.put("selectRowsByAttributesOfPLETL", "selectRowsByAttributesOfPLETL");
+		staticFunctionMapO_VECS_E.annotationMap.put("selectRowsByAttributesOfPLTCP", "selectRowsByAttributesOfPLTCP");
+		staticFunctionMapO_VECS_E.annotationMap.put("addNewSearchShellTable", "addNewSearchShellTable");
+		staticFunctionMapO_VECS_E.annotationMap.put("getNewSearchShellTableSpecFromDefaultTableModel", "getNewSearchShellTableSpecFromDefaultTableModel");
+		staticFunctionMapO_VECS_E.annotationMap.put("getNewSearchShellTableDataFromDefaultTableModel", "getNewSearchShellTableDataFromDefaultTableModel");
+		staticFunctionMapO_VECS_E.annotationMap.put("getNewSearchShellTableRowsFromDefaultTableModel", "getNewSearchShellTableRowsFromDefaultTableModel");
+		staticFunctionMapO_VECS_E.annotationMap.put("addNewSearchShellTable", "addNewSearchShellTable");
+		staticFunctionMapO_VECS_E.annotationMap.put("addNewSearchShellTableWithObjectData", "addNewSearchShellTableWithObjectData");
+		staticFunctionMapO_VECS_E.annotationMap.put("addNewSearchShellTable", "addNewSearchShellTable");
+		staticFunctionMapO_VECS_E.annotationMap.put("addNewSearchShellTableWithObjectDataReflectionDBRows", "addNewSearchShellTableWithObjectDataReflectionDBRows");
+		staticFunctionMapO_VECS_E.annotationMap.put("addNewSearchShellTableReflectionDBRows", "addNewSearchShellTableReflectionDBRows");
+		staticFunctionMapO_VECS_E.annotationMap.put("addInitSearchShellTable", "addInitSearchShellTable");
+		staticFunctionMapO_VECS_E.annotationMap.put("doNeroFlow", "doNeroFlow");
+		staticFunctionMapO_VECS_E.annotationMap.put("ReadChinese", "ReadChinese");
+		staticFunctionMapO_VECS_E.annotationMap.put("kernel", "kernel");
+		staticFunctionMapO_VECS_E.annotationMap.put("getMedicineBookFeedbackZY", "getMedicineBookFeedbackZY");
+		staticFunctionMapO_VECS_E.annotationMap.put("getMedicineBookFeedbackXY", "getMedicineBookFeedbackXY");
+		
+		staticFunctionMapO_VECS_E.annotationMap.put("getMedicineBookFeedbackZT", "getMedicineBookFeedbackZT");
+		staticFunctionMapO_VECS_E.annotationMap.put("getMedicineBookFeedbackXT", "getMedicineBookFeedbackXT");
+		staticFunctionMapO_VECS_E.annotationMap.put("getMedicineBookFeedbackYT", "getMedicineBookFeedbackYT");
+		staticFunctionMapO_VECS_E.annotationMap.put("getMedicineBookFeedback", "getMedicineBookFeedback");
+		staticFunctionMapO_VECS_E.annotationMap.put("doSearch", "doSearch");
+		staticFunctionMapO_VECS_E.annotationMap.put("forwardDB", "forwardDB");
+		staticFunctionMapO_VECS_E.annotationMap.put("forwardVPC", "forwardVPC");
+		staticFunctionMapO_VECS_E.annotationMap.put("forwardVPCBackEnd", "forwardVPCBackEnd");
+		staticFunctionMapO_VECS_E.annotationMap.put("forwardVPCYangliaojing", "forwardVPCYangliaojing");
+		staticFunctionMapO_VECS_E.annotationMap.put("getCode", "getCode");
+		staticFunctionMapO_VECS_E.annotationMap.put("getFilePath", "getFilePath");
+		staticFunctionMapO_VECS_E.annotationMap.put("E_pl_XA", "E_pl_XA");
+		staticFunctionMapO_VECS_E.annotationMap.put("E_pl_XA", "E_pl_XA");
+		staticFunctionMapO_VECS_E.annotationMap.put("P_AggregationLimitMap", "P_AggregationLimitMap");
+		staticFunctionMapO_VECS_E.annotationMap.put("P_PletlLimitMap", "P_PletlLimitMap");
+		staticFunctionMapO_VECS_E.annotationMap.put("P_PltcpLimitMap", "P_PltcpLimitMap");
+		staticFunctionMapO_VECS_E.annotationMap.put("P_Cache", "P_Cache");
+		staticFunctionMapO_VECS_E.annotationMap.put("P_kernel", "P_kernel");
+		staticFunctionMapO_VECS_E.annotationMap.put("P_kernel_search", "P_kernel_search");
+		staticFunctionMapO_VECS_E.annotationMap.put("rowToRowMap", "rowToRowMap");
+		staticFunctionMapO_VECS_E.annotationMap.put("rowMapToRow", "rowMapToRow");
+		staticFunctionMapO_VECS_E.annotationMap.put("P_Map", "P_Map");
+		staticFunctionMapO_VECS_E.annotationMap.put("getCulumnsMapWithAs", "getCulumnsMapWithAs");
+		staticFunctionMapO_VECS_E.annotationMap.put("getCulumnsMap", "getCulumnsMap");
+		staticFunctionMapO_VECS_E.annotationMap.put("P_AndMap", "P_AndMap");
+		staticFunctionMapO_VECS_E.annotationMap.put("P_OrMap", "P_OrMap");
+		staticFunctionMapO_VECS_E.annotationMap.put("P_SetRoot", "P_SetRoot");
+		staticFunctionMapO_VECS_E.annotationMap.put("P_BaseName", "P_BaseName");
+		staticFunctionMapO_VECS_E.annotationMap.put("P_TableName", "P_TableName");
+		staticFunctionMapO_VECS_E.annotationMap.put("P_ListNeedStart", "P_ListNeedStart");
+		staticFunctionMapO_VECS_E.annotationMap.put("P_Join", "P_Join");
+		staticFunctionMapO_VECS_E.annotationMap.put("P_E", "P_E");
+		staticFunctionMapO_VECS_E.annotationMap.put("P_Check", "P_Check");
+		staticFunctionMapO_VECS_E.annotationMap.put("P_StoreValues", "P_StoreValues");
+		staticFunctionMapO_VECS_E.annotationMap.put("P_fileOperations", "P_fileOperations");
+		staticFunctionMapO_VECS_E.annotationMap.put("replaceString", "replaceString");
+		staticFunctionMapO_VECS_E.annotationMap.put("replaceStringWithFileName", "replaceStringWithFileName");
+		staticFunctionMapO_VECS_E.annotationMap.put("start", "start");
+		staticFunctionMapO_VECS_E.annotationMap.put("replaceStringWithFileName", "replaceStringWithFileName");
+		staticFunctionMapO_VECS_E.annotationMap.put("replaceStringWithFileType", "replaceStringWithFileType");
+		staticFunctionMapO_VECS_E.annotationMap.put("replaceStringWithFileSize", "replaceStringWithFileSize");
+		staticFunctionMapO_VECS_E.annotationMap.put("replaceStringWithFileLines", "replaceStringWithFileLines");
+		staticFunctionMapO_VECS_E.annotationMap.put("mainShellReplace", "mainShellReplace");
+		staticFunctionMapO_VECS_E.annotationMap.put("replaceStringWithLogRecording", "replaceStringWithLogRecording");
 	}
 
 	public void SortStringDemo(); //稍后重命名

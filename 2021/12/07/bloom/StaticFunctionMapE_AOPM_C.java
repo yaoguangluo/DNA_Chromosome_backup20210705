@@ -24,9 +24,27 @@ import OCI.SVQ.MPC.fhmm.C.FMHMMList;
 //证书编号：国作登字-2021-L-00268255 (中华人民共和国 国家版权登记中心)
 public interface StaticFunctionMapE_AOPM_C {
 
-	public static void load() {
+	public static void load(StaticFunctionMapE_AOPM_E staticFunctionMapE_AOPM_E) {
 		// TODO Auto-generated method stub
-		
+		//稍后封装
+		staticFunctionMapE_AOPM_E.annotationMap.put("getSensingMap", "getSensingMap");
+		staticFunctionMapE_AOPM_E.annotationMap.put("getEmotionMap", "getEmotionMap");
+		staticFunctionMapE_AOPM_E.annotationMap.put("getCogsBinaryForest_A", "getCogsBinaryForest_A");
+		staticFunctionMapE_AOPM_E.annotationMap.put("getEuclid_C", "getEuclid_C");
+		staticFunctionMapE_AOPM_E.annotationMap.put("getQuick6DLuoYaoguangSort", "getQuick6DLuoYaoguangSort");
+		staticFunctionMapE_AOPM_E.annotationMap.put("getNERO_C_OneTime", "getNERO_C_OneTime");
+		staticFunctionMapE_AOPM_E.annotationMap.put("getNERO_C", "getNERO_C");
+		staticFunctionMapE_AOPM_E.annotationMap.put("getNLP_C", "getNLP_C");
+		staticFunctionMapE_AOPM_E.annotationMap.put("getBehaviorMap", "getBehaviorMap");
+		staticFunctionMapE_AOPM_E.annotationMap.put("getFMHMMList", "getFMHMMList");
+		staticFunctionMapE_AOPM_E.annotationMap.put("getPos_C_XCDX_P", "getPos_C_XCDX_P");
+		staticFunctionMapE_AOPM_E.annotationMap.put("getPos_C_XCDX_E", "getPos_C_XCDX_E");
+		staticFunctionMapE_AOPM_E.annotationMap.put("getPos_C_XCDX_O", "getPos_C_XCDX_O");
+		staticFunctionMapE_AOPM_E.annotationMap.put("getNlp_C_XCDX_S", "getNlp_C_XCDX_S");
+		staticFunctionMapE_AOPM_E.annotationMap.put("getNlp_C_XCDX_A", "getNlp_C_XCDX_A");
+		staticFunctionMapE_AOPM_E.annotationMap.put("getA_XCDX_Map", "getA_XCDX_Map");
+		staticFunctionMapE_AOPM_E.annotationMap.put("getA", "getA");
+		staticFunctionMapE_AOPM_E.annotationMap.put("getBinaryForest_A", "getBinaryForest_A");	
 	}
 
 	//SensingMap, 

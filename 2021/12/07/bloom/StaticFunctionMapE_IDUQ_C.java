@@ -46,9 +46,40 @@ import OSI.OPE.SI.MCI.OEI.OVU.PQE.extOSGI.OSI_OSU_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MS
 //证书编号：国作登字-2021-L-00268255 (中华人民共和国 国家版权登记中心)
 public interface StaticFunctionMapE_IDUQ_C {
 
-	public static void load() {
+	public static void load(StaticFunctionMapE_IDUQ_E staticFunctionMapE_IDUQ_E) {
 		// TODO Auto-generated method stub
-
+		//稍后封装
+		staticFunctionMapE_IDUQ_E.annotationMap.put("getNodeInfo", "getNodeInfo");
+		staticFunctionMapE_IDUQ_E.annotationMap.put("getNodeProject", "getNodeProject");
+		staticFunctionMapE_IDUQ_E.annotationMap.put("getCheckRange", "getCheckRange");
+		staticFunctionMapE_IDUQ_E.annotationMap.put("getChooseCheck", "getChooseCheck");
+		staticFunctionMapE_IDUQ_E.annotationMap.put("getDrawArrow", "getDrawArrow");
+		staticFunctionMapE_IDUQ_E.annotationMap.put("getDynamicLine_U", "getDynamicLine_U");
+		staticFunctionMapE_IDUQ_E.annotationMap.put("getU_RelatedLine", "getU_RelatedLine");
+		staticFunctionMapE_IDUQ_E.annotationMap.put("getLinkOSGI", "getLinkOSGI");
+		staticFunctionMapE_IDUQ_E.annotationMap.put("getNodeOSGI", "getNodeOSGI");
+		staticFunctionMapE_IDUQ_E.annotationMap.put("_OSU_AVQ_ASQ_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI", "_OSU_AVQ_ASQ_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI");
+		staticFunctionMapE_IDUQ_E.annotationMap.put("_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ", "_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ");
+		staticFunctionMapE_IDUQ_E.annotationMap.put("_OSU_AVQ_ASQ_OPE_OPC_ECI", "_OSU_AVQ_ASQ_OPE_OPC_ECI");
+		staticFunctionMapE_IDUQ_E.annotationMap.put("getUnicornJSplitPane", "getUnicornJSplitPane");
+		staticFunctionMapE_IDUQ_E.annotationMap.put("getUnicornScrollBarUI", "getUnicornScrollBarUI");
+		staticFunctionMapE_IDUQ_E.annotationMap.put("getUnicornSplitPaneUI", "getUnicornSplitPaneUI");
+		staticFunctionMapE_IDUQ_E.annotationMap.put("getUnicornTreeCellRenderer", "getUnicornTreeCellRenderer");
+		staticFunctionMapE_IDUQ_E.annotationMap.put("getUnicornTreeUI", "getUnicornTreeUI");
+		staticFunctionMapE_IDUQ_E.annotationMap.put("getCacuString", "getCacuString");
+		staticFunctionMapE_IDUQ_E.annotationMap.put("getNodeShow", "getNodeShow");
+		staticFunctionMapE_IDUQ_E.annotationMap.put("getCheckRangeVPS", "getCheckRangeVPS");
+		staticFunctionMapE_IDUQ_E.annotationMap.put("getChooseQ_VPS", "getChooseQ_VPS");
+		staticFunctionMapE_IDUQ_E.annotationMap.put("getDrawArrowVPS", "getDrawArrowVPS");
+		staticFunctionMapE_IDUQ_E.annotationMap.put("getDrawFlashSide", "getDrawFlashSide");
+		staticFunctionMapE_IDUQ_E.annotationMap.put("getDrawSinLineVPS", "getDrawSinLineVPS");
+		staticFunctionMapE_IDUQ_E.annotationMap.put("getDynamicLineU_VPS", "getDynamicLineU_VPS");
+		staticFunctionMapE_IDUQ_E.annotationMap.put("getLinkList", "getLinkList");
+		staticFunctionMapE_IDUQ_E.annotationMap.put("getLinkNode", "getLinkNode");
+		staticFunctionMapE_IDUQ_E.annotationMap.put("getSort", "getSort");
+		staticFunctionMapE_IDUQ_E.annotationMap.put("getU_RelatedLineVPS", "getU_RelatedLineVPS");
+		staticFunctionMapE_IDUQ_E.annotationMap.put("getOSGI_chansfer", "getOSGI_chansfer");
+		staticFunctionMapE_IDUQ_E.annotationMap.put("_OSI_OSU_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI_register", "_OSI_OSU_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI_register");
 	}
 	//etl engine
 	public NodeInfo getNodeInfo();

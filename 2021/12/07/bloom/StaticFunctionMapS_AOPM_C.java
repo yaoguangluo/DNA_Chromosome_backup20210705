@@ -3,14 +3,26 @@ package SEM.bloom;
 import java.io.IOException;
 import java.util.Map;
 
-//è‘—ä½œæƒäºº+ ä½œè€…= ç½—ç‘¶å…‰
+//Öø×÷È¨ÈË+×÷Õß=ÂŞÑş¹â
 public interface StaticFunctionMapS_AOPM_C {
 
-	public static void load() {
+	public static void load(StaticFunctionMapS_AOPM_E staticFunctionMapS_AOPM_E) {
 		// TODO Auto-generated method stub
-
+		//ÉÔºó·â×°
+		staticFunctionMapS_AOPM_E.annotationMap.put("DeleteCellORM", "DeleteCellORM");
+		staticFunctionMapS_AOPM_E.annotationMap.put("DeleteCellPLSQL", "DeleteCellPLSQL");
+		staticFunctionMapS_AOPM_E.annotationMap.put("DropCellORM", "DropCellORM");
+		staticFunctionMapS_AOPM_E.annotationMap.put("DropCellPLSQL", "DropCellPLSQL");
+		staticFunctionMapS_AOPM_E.annotationMap.put("InsertCellORM", "InsertCellORM");
+		staticFunctionMapS_AOPM_E.annotationMap.put("InsertCellPLSQL", "InsertCellPLSQL");
+		staticFunctionMapS_AOPM_E.annotationMap.put("UpdateCellORM", "UpdateCellORM");
+		staticFunctionMapS_AOPM_E.annotationMap.put("UpdateCellORMByRowId", "UpdateCellORMByRowId");
+		staticFunctionMapS_AOPM_E.annotationMap.put("UpdateCellORMByEquals", "UpdateCellORMByEquals");
+		staticFunctionMapS_AOPM_E.annotationMap.put("UpdateCellPLSQL", "UpdateCellPLSQL");
+		staticFunctionMapS_AOPM_E.annotationMap.put("creatMap", "creatMap");
+		
 	}
-	//s ç»„çš„è®°å½•
+	//s ×éµÄ¼ÇÂ¼
 	// D_CellStandard{	
 
 	//	delete samples
@@ -46,10 +58,10 @@ public interface StaticFunctionMapS_AOPM_C {
 	// U_CellStandard{	
 
 
-	//  ç¨åæˆ‘ä¼šæŠŠä¸‹é¢è¿™ä¸ª2ä¸ªæ¨¡å¼å˜æˆORM UNSQL, å‡½æ•°æ˜¯å¾ˆå¥½å†™, ä½†æ˜¯æˆ‘åœ¨æ€è€ƒ 
-	//or and å¤ªå¤š æ€ä¹ˆè¿›è¡Œè§„èŒƒä¼ å‚..
-	//  æˆ‘çš„åŠ¨æœºå¾ˆç®€å•, å°±æ˜¯å…»ç–—ç»æ•°æ®è¡¨å¯ä»¥ç›´æ¥æ•°æ®åº“æ“ä½œä¿®æ”¹.
-	//  è§DNAç¼–ç ä¸è®¡ç®—ç¬¬ä¸€å· 308é¡µ
+	//  ÉÔºóÎÒ»á°ÑÏÂÃæÕâ¸ö2¸öÄ£Ê½±ä³ÉORM UNSQL, º¯ÊıÊÇºÜºÃĞ´, µ«ÊÇÎÒÔÚË¼¿¼ 
+	//or and Ì«¶à ÔõÃ´½øĞĞ¹æ·¶´«²Î..
+	//  ÎÒµÄ¶¯»úºÜ¼òµ¥, ¾ÍÊÇÑøÁÆ¾­Êı¾İ±í¿ÉÒÔÖ±½ÓÊı¾İ¿â²Ù×÷ĞŞ¸Ä.
+	//  ¼ûDNA±àÂëÓë¼ÆËãµÚÒ»¾í 308Ò³
 	//	update samples 
 	//	tableName:test:update; 
 	//	condition:or:testCulumn1|<|20:testCulumn2|==|fire; 
@@ -92,14 +104,14 @@ public interface StaticFunctionMapS_AOPM_C {
 	//	"condition:or:ID|==|rowId;" +
 	//	"culumnValue:cellName:cellValue;";
 	//
-	//  condition:"æˆ‘ä¼¼ä¹æ²¡æœ‰è®¾è®¡rowid culumnidçš„æ•°å­—é€‰é¡¹ å‡½æ•°,ç¨åè¡¥å……ä¸‹":19850526;
-	//  condition å¯ä»¥ç”¨uid in æˆ–è€… uid== æ¥å®ç°.è¿™æ ·ä¼šå¯¼è‡´è®¡ç®—å˜æ…¢,æ‰€ä»¥ è®¾è®¡rowid culumnidçš„æ•°å­—æ¯”è¾ƒé€‰é¡¹æ˜¯æœ‰å¿…è¦çš„.
+	//  condition:"ÎÒËÆºõÃ»ÓĞÉè¼Ærowid culumnidµÄÊı×ÖÑ¡Ïî º¯Êı,ÉÔºó²¹³äÏÂ":19850526;
+	//  condition ¿ÉÒÔÓÃuid in »òÕß uid== À´ÊµÏÖ.ÕâÑù»áµ¼ÖÂ¼ÆËã±äÂı,ËùÒÔ Éè¼Ærowid culumnidµÄÊı×Ö±È½ÏÑ¡ÏîÊÇÓĞ±ØÒªµÄ.
 
 	public Map<String, Object> UpdateCellPLSQL(String tabKey, String rowId
 			, String cellName, String cellValue) throws IOException;
 
 
-	//S æ¥å£çš„åº”ç”¨
+	//S ½Ó¿ÚµÄÓ¦ÓÃ
 
 	public StaticRootMap creatMap() throws IOException;
 }
