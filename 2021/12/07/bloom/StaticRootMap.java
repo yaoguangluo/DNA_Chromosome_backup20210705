@@ -91,6 +91,8 @@ public class StaticRootMap{
 //		staticFunctionMapU_VECS_C.main(null);
 		//写法 2
 		String string= "执行 U_VECS 下 main 接口, 参数是null";
+		Map<String, Object> output= new HashMap<>();
+		//开始设计传参。
 		StaticRootMap staticRootMap= new StaticRootMap();
 		staticRootMap.initMap();
 		Iterator<String> iterator= staticRootMap.staticRootMap.keySet().iterator();
@@ -99,84 +101,84 @@ public class StaticRootMap{
 			//case 染色体接口
 			if(string.contains(callMapKey)) {
 				if(callMapKey.equalsIgnoreCase("U_VECS")) {
-					doU_VECS_Case(staticRootMap.staticRootMap, string);
+					doU_VECS_Case(staticRootMap.staticRootMap, string, output);
 				}
 				if(callMapKey.equalsIgnoreCase("U_AOPM")) {
-					doU_AOPM_Case(staticRootMap.staticRootMap, string);//稍后分出去
+					doU_AOPM_Case(staticRootMap.staticRootMap, string, output);//稍后分出去
 				}
 				if(callMapKey.equalsIgnoreCase("A_VECS")) {
-					doA_VECS_Case(staticRootMap.staticRootMap, string);
+					doA_VECS_Case(staticRootMap.staticRootMap, string, output);
 				}
 				if(callMapKey.equalsIgnoreCase("A_IDUQ")) {
-					doA_IDUQ_Case(staticRootMap.staticRootMap, string);
+					doA_IDUQ_Case(staticRootMap.staticRootMap, string, output);
 				}
 				if(callMapKey.equalsIgnoreCase("O_VECS")) {
-					doO_VECS_Case(staticRootMap.staticRootMap, string);
+					doO_VECS_Case(staticRootMap.staticRootMap, string, output);
 				}
 				if(callMapKey.equalsIgnoreCase("O_IDUQ")) {
-					doO_IDUQ_Case(staticRootMap.staticRootMap, string);
+					doO_IDUQ_Case(staticRootMap.staticRootMap, string, output);
 				}
 				if(callMapKey.equalsIgnoreCase("P_VECS")) {
-					doP_VECS_Case(staticRootMap.staticRootMap, string);
+					doP_VECS_Case(staticRootMap.staticRootMap, string, output);
 				}
 				if(callMapKey.equalsIgnoreCase("P_IDUQ")) {
-					doP_IDUQ_Case(staticRootMap.staticRootMap, string);
+					doP_IDUQ_Case(staticRootMap.staticRootMap, string, output);
 				}
 				if(callMapKey.equalsIgnoreCase("M_VECS")) {
-					doM_VECS_Case(staticRootMap.staticRootMap, string);
+					doM_VECS_Case(staticRootMap.staticRootMap, string, output);
 				}
 				if(callMapKey.equalsIgnoreCase("M_IDUQ")) {
-					doM_IDUQ_Case(staticRootMap.staticRootMap, string);
+					doM_IDUQ_Case(staticRootMap.staticRootMap, string, output);
 				}
 				if(callMapKey.equalsIgnoreCase("V_AOPM")) {
-					doV_AOPM_Case(staticRootMap.staticRootMap, string);
+					doV_AOPM_Case(staticRootMap.staticRootMap, string, output);
 				}
 				if(callMapKey.equalsIgnoreCase("V_IDUQ")) {
-					doV_IDUQ_Case(staticRootMap.staticRootMap, string);
+					doV_IDUQ_Case(staticRootMap.staticRootMap, string, output);
 				}
 				if(callMapKey.equalsIgnoreCase("E_AOPM")) {
-					doE_AOPM_Case(staticRootMap.staticRootMap, string);
+					doE_AOPM_Case(staticRootMap.staticRootMap, string, output);
 				}
 				if(callMapKey.equalsIgnoreCase("E_IDUQ")) {
-					doE_IDUQ_Case(staticRootMap.staticRootMap, string);
+					doE_IDUQ_Case(staticRootMap.staticRootMap, string, output);
 				}
 				if(callMapKey.equalsIgnoreCase("C_AOPM")) {
-					doC_AOPM_Case(staticRootMap.staticRootMap, string);
+					doC_AOPM_Case(staticRootMap.staticRootMap, string, output);
 				}
 				if(callMapKey.equalsIgnoreCase("C_IDUQ")) {
-					doC_IDUQ_Case(staticRootMap.staticRootMap, string);
+					doC_IDUQ_Case(staticRootMap.staticRootMap, string, output);
 				}
 				if(callMapKey.equalsIgnoreCase("S_AOPM")) {
-					doS_AOPM_Case(staticRootMap.staticRootMap, string);
+					doS_AOPM_Case(staticRootMap.staticRootMap, string, output);
 				}
 				if(callMapKey.equalsIgnoreCase("S_IDUQ")) {
-					doS_IDUQ_Case(staticRootMap.staticRootMap, string);
+					doS_IDUQ_Case(staticRootMap.staticRootMap, string, output);
 				}
 				if(callMapKey.equalsIgnoreCase("I_AOPM")) {
-					doI_AOPM_Case(staticRootMap.staticRootMap, string);
+					doI_AOPM_Case(staticRootMap.staticRootMap, string, output);
 				}
 				if(callMapKey.equalsIgnoreCase("I_VECS")) {
-					doI_VECS_Case(staticRootMap.staticRootMap, string);
+					doI_VECS_Case(staticRootMap.staticRootMap, string, output);
 				}
 				if(callMapKey.equalsIgnoreCase("D_AOPM")) {
-					doD_AOPM_Case(staticRootMap.staticRootMap, string);
+					doD_AOPM_Case(staticRootMap.staticRootMap, string, output);
 				}
 				if(callMapKey.equalsIgnoreCase("D_VECS")) {
-					doD_VECS_Case(staticRootMap.staticRootMap, string);
+					doD_VECS_Case(staticRootMap.staticRootMap, string, output);
 				}
 				if(callMapKey.equalsIgnoreCase("Q_AOPM")) {
-					doQ_AOPM_Case(staticRootMap.staticRootMap, string);
+					doQ_AOPM_Case(staticRootMap.staticRootMap, string, output);
 				}
 				if(callMapKey.equalsIgnoreCase("Q_VECS")) {
-					doQ_VECS_Case(staticRootMap.staticRootMap, string);
+					doQ_VECS_Case(staticRootMap.staticRootMap, string, output);
 				}
 			}
 		}
 		//写法 3
 	}
+	
 	@SuppressWarnings("static-access")
-	private static void doA_VECS_Case(Map<String, StaticClassMap> staticRootMap, String string) throws IOException {
-		// TODO Auto-generated method stub
+	private static void doA_VECS_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws IOException {
 		StaticClassMap staticClassMap= staticRootMap.get("A_VECS");
 		StaticFunctionMapA_VECS_E staticFunctionMapA_VECS_C
 		= (StaticFunctionMapA_VECS_E) staticClassMap.staticClassMap.get("A_VECS");
@@ -185,15 +187,13 @@ public class StaticRootMap{
 		while(callFunction.hasNext()) {
 			String callFunctionKey= callFunction.next();
 			if(string.contains(callFunctionKey)) {
-				StaticFunctionMap.doA_VECS_CaseFunction(callFunctionKey, string, staticFunctionMapA_VECS_C);
+				StaticFunctionMap.doA_VECS_CaseFunction(callFunctionKey, string, staticFunctionMapA_VECS_C, output);
 			}
 		}
 	}
 
-
 	@SuppressWarnings("static-access")
-	private static void doP_VECS_Case(Map<String, StaticClassMap> staticRootMap, String string) throws IOException {
-		// TODO Auto-generated method stub
+	private static void doP_VECS_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws IOException {
 		StaticClassMap staticClassMap= staticRootMap.get("P_VECS");
 		StaticFunctionMapP_VECS_E staticFunctionMapP_VECS_C
 		= (StaticFunctionMapP_VECS_E) staticClassMap.staticClassMap.get("P_VECS");
@@ -202,14 +202,13 @@ public class StaticRootMap{
 		while(callFunction.hasNext()) {
 			String callFunctionKey= callFunction.next();
 			if(string.contains(callFunctionKey)) {
-				StaticFunctionMap.doP_VECS_CaseFunction(callFunctionKey, string, staticFunctionMapP_VECS_C);
+				StaticFunctionMap.doP_VECS_CaseFunction(callFunctionKey, string, staticFunctionMapP_VECS_C, output);
 			}
 		}
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doO_IDUQ_Case(Map<String, StaticClassMap> staticRootMap, String string) throws IOException {
-		// TODO Auto-generated method stub
+	private static void doO_IDUQ_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws IOException {
 		StaticClassMap staticClassMap= staticRootMap.get("O_IDUQ");
 		StaticFunctionMapO_IDUQ_E staticFunctionMapO_IDUQ_C
 		= (StaticFunctionMapO_IDUQ_E) staticClassMap.staticClassMap.get("O_IDUQ");
@@ -218,14 +217,13 @@ public class StaticRootMap{
 		while(callFunction.hasNext()) {
 			String callFunctionKey= callFunction.next();
 			if(string.contains(callFunctionKey)) {
-				StaticFunctionMap.doO_IDUQ_CaseFunction(callFunctionKey, string, staticFunctionMapO_IDUQ_C);
+				StaticFunctionMap.doO_IDUQ_CaseFunction(callFunctionKey, string, staticFunctionMapO_IDUQ_C, output);
 			}
 		}
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doO_VECS_Case(Map<String, StaticClassMap> staticRootMap, String string) throws IOException {
-		// TODO Auto-generated method stub
+	private static void doO_VECS_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws IOException {
 		StaticClassMap staticClassMap= staticRootMap.get("O_VECS");
 		StaticFunctionMapO_VECS_E staticFunctionMapO_VECS_C
 		= (StaticFunctionMapO_VECS_E) staticClassMap.staticClassMap.get("O_VECS");
@@ -234,16 +232,13 @@ public class StaticRootMap{
 		while(callFunction.hasNext()) {
 			String callFunctionKey= callFunction.next();
 			if(string.contains(callFunctionKey)) {
-				StaticFunctionMap.doO_VECS_CaseFunction(callFunctionKey, string, staticFunctionMapO_VECS_C);
+				StaticFunctionMap.doO_VECS_CaseFunction(callFunctionKey, string, staticFunctionMapO_VECS_C, output);
 			}
 		}
 	}
 
-
-
 	@SuppressWarnings("static-access")
-	private static void doA_IDUQ_Case(Map<String, StaticClassMap> staticRootMap, String string) throws IOException {
-		// TODO Auto-generated method stub
+	private static void doA_IDUQ_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws IOException {
 		StaticClassMap staticClassMap= staticRootMap.get("A_IDUQ");
 		StaticFunctionMapA_IDUQ_E staticFunctionMapA_IDUQ_C
 		= (StaticFunctionMapA_IDUQ_E) staticClassMap.staticClassMap.get("A_IDUQ");
@@ -252,16 +247,13 @@ public class StaticRootMap{
 		while(callFunction.hasNext()) {
 			String callFunctionKey= callFunction.next();
 			if(string.contains(callFunctionKey)) {
-				StaticFunctionMap.doA_IDUQ_CaseFunction(callFunctionKey, string, staticFunctionMapA_IDUQ_C);
+				StaticFunctionMap.doA_IDUQ_CaseFunction(callFunctionKey, string, staticFunctionMapA_IDUQ_C, output);
 			}
-		}
+		}	
 	}
 
-
-
 	@SuppressWarnings("static-access")
-	private static void doU_VECS_Case(Map<String, StaticClassMap> staticRootMap, String string) throws IOException {
-		// TODO Auto-generated method stub
+	private static void doU_VECS_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws IOException {
 		StaticClassMap staticClassMap= staticRootMap.get("U_VECS");
 		StaticFunctionMapU_VECS_E staticFunctionMapU_VECS_C
 		= (StaticFunctionMapU_VECS_E) staticClassMap.staticClassMap.get("U_VECS");
@@ -270,13 +262,13 @@ public class StaticRootMap{
 		while(callFunction.hasNext()) {
 			String callFunctionKey= callFunction.next();
 			if(string.contains(callFunctionKey)) {
-				StaticFunctionMap.doU_VECS_CaseFunction(callFunctionKey, string, staticFunctionMapU_VECS_C);
+				StaticFunctionMap.doU_VECS_CaseFunction(callFunctionKey, string, staticFunctionMapU_VECS_C, output);
 			}
 		}
 	}
+
 	@SuppressWarnings("static-access")
-	private static void doP_IDUQ_Case(Map<String, StaticClassMap> staticRootMap, String string) throws IOException {
-		// TODO Auto-generated method stub
+	private static void doP_IDUQ_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws IOException {
 		StaticClassMap staticClassMap= staticRootMap.get("P_IDUQ");
 		StaticFunctionMapP_IDUQ_E staticFunctionMapP_IDUQ_C
 		= (StaticFunctionMapP_IDUQ_E) staticClassMap.staticClassMap.get("P_IDUQ");
@@ -285,15 +277,13 @@ public class StaticRootMap{
 		while(callFunction.hasNext()) {
 			String callFunctionKey= callFunction.next();
 			if(string.contains(callFunctionKey)) {
-				StaticFunctionMap.doP_IDUQ_CaseFunction(callFunctionKey, string, staticFunctionMapP_IDUQ_C);
+				StaticFunctionMap.doP_IDUQ_CaseFunction(callFunctionKey, string, staticFunctionMapP_IDUQ_C, output);
 			}
 		}
 	}
 
-
 	@SuppressWarnings("static-access")
-	private static void doM_VECS_Case(Map<String, StaticClassMap> staticRootMap, String string) throws IOException {
-		// TODO Auto-generated method stub
+	private static void doM_VECS_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws IOException {
 		StaticClassMap staticClassMap= staticRootMap.get("M_VECS");
 		StaticFunctionMapM_VECS_E staticFunctionMapM_VECS_C
 		= (StaticFunctionMapM_VECS_E) staticClassMap.staticClassMap.get("M_VECS");
@@ -302,15 +292,14 @@ public class StaticRootMap{
 		while(callFunction.hasNext()) {
 			String callFunctionKey= callFunction.next();
 			if(string.contains(callFunctionKey)) {
-				StaticFunctionMap.doM_VECS_CaseFunction(callFunctionKey, string, staticFunctionMapM_VECS_C);
+				StaticFunctionMap.doM_VECS_CaseFunction(callFunctionKey, string, staticFunctionMapM_VECS_C, output);
 			}
-		}
+		}		
 	}
 
 
 	@SuppressWarnings("static-access")
-	private static void doM_IDUQ_Case(Map<String, StaticClassMap> staticRootMap, String string) throws IOException {
-		// TODO Auto-generated method stub
+	private static void doM_IDUQ_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws IOException {
 		StaticClassMap staticClassMap= staticRootMap.get("M_IDUQ");
 		StaticFunctionMapM_IDUQ_E staticFunctionMapM_IDUQ_C
 		= (StaticFunctionMapM_IDUQ_E) staticClassMap.staticClassMap.get("M_IDUQ");
@@ -319,15 +308,14 @@ public class StaticRootMap{
 		while(callFunction.hasNext()) {
 			String callFunctionKey= callFunction.next();
 			if(string.contains(callFunctionKey)) {
-				StaticFunctionMap.doM_IDUQ_CaseFunction(callFunctionKey, string, staticFunctionMapM_IDUQ_C);
+				StaticFunctionMap.doM_IDUQ_CaseFunction(callFunctionKey, string, staticFunctionMapM_IDUQ_C, output);
 			}
 		}
 	}
 
 
 	@SuppressWarnings("static-access")
-	private static void doV_AOPM_Case(Map<String, StaticClassMap> staticRootMap, String string) throws IOException {
-		// TODO Auto-generated method stub
+	private static void doV_AOPM_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws IOException {
 		StaticClassMap staticClassMap= staticRootMap.get("V_AOPM");
 		StaticFunctionMapV_AOPM_E staticFunctionMapV_AOPM_C
 		= (StaticFunctionMapV_AOPM_E) staticClassMap.staticClassMap.get("V_AOPM");
@@ -336,14 +324,13 @@ public class StaticRootMap{
 		while(callFunction.hasNext()) {
 			String callFunctionKey= callFunction.next();
 			if(string.contains(callFunctionKey)) {
-				StaticFunctionMap.doV_AOPM_CaseFunction(callFunctionKey, string, staticFunctionMapV_AOPM_C);
+				StaticFunctionMap.doV_AOPM_CaseFunction(callFunctionKey, string, staticFunctionMapV_AOPM_C, output);
 			}
 		}
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doV_IDUQ_Case(Map<String, StaticClassMap> staticRootMap, String string) throws IOException {
-		// TODO Auto-generated method stub
+	private static void doV_IDUQ_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws IOException {
 		StaticClassMap staticClassMap= staticRootMap.get("V_IDUQ");
 		StaticFunctionMapV_IDUQ_E staticFunctionMapV_IDUQ_C
 		= (StaticFunctionMapV_IDUQ_E) staticClassMap.staticClassMap.get("V_IDUQ");
@@ -352,14 +339,13 @@ public class StaticRootMap{
 		while(callFunction.hasNext()) {
 			String callFunctionKey= callFunction.next();
 			if(string.contains(callFunctionKey)) {
-				StaticFunctionMap.doV_IDUQ_CaseFunction(callFunctionKey, string, staticFunctionMapV_IDUQ_C);
+				StaticFunctionMap.doV_IDUQ_CaseFunction(callFunctionKey, string, staticFunctionMapV_IDUQ_C, output);
 			}
-		}
+		}	
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doE_AOPM_Case(Map<String, StaticClassMap> staticRootMap, String string) throws IOException {
-		// TODO Auto-generated method stub
+	private static void doE_AOPM_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws IOException {
 		StaticClassMap staticClassMap= staticRootMap.get("E_AOPM");
 		StaticFunctionMapE_AOPM_E staticFunctionMapE_AOPM_C
 		= (StaticFunctionMapE_AOPM_E) staticClassMap.staticClassMap.get("E_AOPM");
@@ -368,14 +354,13 @@ public class StaticRootMap{
 		while(callFunction.hasNext()) {
 			String callFunctionKey= callFunction.next();
 			if(string.contains(callFunctionKey)) {
-				StaticFunctionMap.doE_AOPM_CaseFunction(callFunctionKey, string, staticFunctionMapE_AOPM_C);
+				StaticFunctionMap.doE_AOPM_CaseFunction(callFunctionKey, string, staticFunctionMapE_AOPM_C, output);
 			}
 		}
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doE_IDUQ_Case(Map<String, StaticClassMap> staticRootMap, String string) throws IOException {
-		// TODO Auto-generated method stub
+	private static void doE_IDUQ_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws IOException {
 		StaticClassMap staticClassMap= staticRootMap.get("E_IDUQ");
 		StaticFunctionMapE_IDUQ_E staticFunctionMapE_IDUQ_C
 		= (StaticFunctionMapE_IDUQ_E) staticClassMap.staticClassMap.get("E_IDUQ");
@@ -384,15 +369,13 @@ public class StaticRootMap{
 		while(callFunction.hasNext()) {
 			String callFunctionKey= callFunction.next();
 			if(string.contains(callFunctionKey)) {
-				StaticFunctionMap.doE_IDUQ_CaseFunction(callFunctionKey, string, staticFunctionMapE_IDUQ_C);
+				StaticFunctionMap.doE_IDUQ_CaseFunction(callFunctionKey, string, staticFunctionMapE_IDUQ_C, output);
 			}
 		}
 	}
 
-
 	@SuppressWarnings("static-access")
-	private static void doC_AOPM_Case(Map<String, StaticClassMap> staticRootMap, String string) throws IOException {
-		// TODO Auto-generated method stub
+	private static void doC_AOPM_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws IOException {
 		StaticClassMap staticClassMap= staticRootMap.get("C_AOPM");
 		StaticFunctionMapC_AOPM_E staticFunctionMapC_AOPM_C
 		= (StaticFunctionMapC_AOPM_E) staticClassMap.staticClassMap.get("C_AOPM");
@@ -401,15 +384,13 @@ public class StaticRootMap{
 		while(callFunction.hasNext()) {
 			String callFunctionKey= callFunction.next();
 			if(string.contains(callFunctionKey)) {
-				StaticFunctionMap.doC_AOPM_CaseFunction(callFunctionKey, string, staticFunctionMapC_AOPM_C);
+				StaticFunctionMap.doC_AOPM_CaseFunction(callFunctionKey, string, staticFunctionMapC_AOPM_C, output);
 			}
-		}
+		}		
 	}
 
-
 	@SuppressWarnings("static-access")
-	private static void doC_IDUQ_Case(Map<String, StaticClassMap> staticRootMap, String string) throws IOException {
-		// TODO Auto-generated method stub
+	private static void doC_IDUQ_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws IOException {
 		StaticClassMap staticClassMap= staticRootMap.get("C_IDUQ");
 		StaticFunctionMapC_IDUQ_E staticFunctionMapC_IDUQ_C
 		= (StaticFunctionMapC_IDUQ_E) staticClassMap.staticClassMap.get("C_IDUQ");
@@ -418,14 +399,13 @@ public class StaticRootMap{
 		while(callFunction.hasNext()) {
 			String callFunctionKey= callFunction.next();
 			if(string.contains(callFunctionKey)) {
-				StaticFunctionMap.doC_IDUQ_CaseFunction(callFunctionKey, string, staticFunctionMapC_IDUQ_C);
+				StaticFunctionMap.doC_IDUQ_CaseFunction(callFunctionKey, string, staticFunctionMapC_IDUQ_C, output);
 			}
-		}
+		}		
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doS_AOPM_Case(Map<String, StaticClassMap> staticRootMap, String string) throws IOException {
-		// TODO Auto-generated method stub
+	private static void doS_AOPM_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws IOException {
 		StaticClassMap staticClassMap= staticRootMap.get("S_AOPM");
 		StaticFunctionMapS_AOPM_E staticFunctionMapS_AOPM_C
 		= (StaticFunctionMapS_AOPM_E) staticClassMap.staticClassMap.get("S_AOPM");
@@ -434,14 +414,13 @@ public class StaticRootMap{
 		while(callFunction.hasNext()) {
 			String callFunctionKey= callFunction.next();
 			if(string.contains(callFunctionKey)) {
-				StaticFunctionMap.doS_AOPM_CaseFunction(callFunctionKey, string, staticFunctionMapS_AOPM_C);
+				StaticFunctionMap.doS_AOPM_CaseFunction(callFunctionKey, string, staticFunctionMapS_AOPM_C, output);
 			}
 		}
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doS_IDUQ_Case(Map<String, StaticClassMap> staticRootMap, String string) throws IOException {
-		// TODO Auto-generated method stub
+	private static void doS_IDUQ_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws IOException {
 		StaticClassMap staticClassMap= staticRootMap.get("S_IDUQ");
 		StaticFunctionMapS_IDUQ_E staticFunctionMapS_IDUQ_C
 		= (StaticFunctionMapS_IDUQ_E) staticClassMap.staticClassMap.get("S_IDUQ");
@@ -450,14 +429,13 @@ public class StaticRootMap{
 		while(callFunction.hasNext()) {
 			String callFunctionKey= callFunction.next();
 			if(string.contains(callFunctionKey)) {
-				StaticFunctionMap.doS_IDUQ_CaseFunction(callFunctionKey, string, staticFunctionMapS_IDUQ_C);
+				StaticFunctionMap.doS_IDUQ_CaseFunction(callFunctionKey, string, staticFunctionMapS_IDUQ_C, output);
 			}
-		}
+		}		
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doI_AOPM_Case(Map<String, StaticClassMap> staticRootMap, String string) throws IOException {
-		// TODO Auto-generated method stub
+	private static void doI_AOPM_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws IOException {
 		StaticClassMap staticClassMap= staticRootMap.get("I_AOPM");
 		StaticFunctionMapI_AOPM_E staticFunctionMapI_AOPM_C
 		= (StaticFunctionMapI_AOPM_E) staticClassMap.staticClassMap.get("I_AOPM");
@@ -466,15 +444,13 @@ public class StaticRootMap{
 		while(callFunction.hasNext()) {
 			String callFunctionKey= callFunction.next();
 			if(string.contains(callFunctionKey)) {
-				StaticFunctionMap.doI_AOPM_CaseFunction(callFunctionKey, string, staticFunctionMapI_AOPM_C);
+				StaticFunctionMap.doI_AOPM_CaseFunction(callFunctionKey, string, staticFunctionMapI_AOPM_C, output);
 			}
-		}
+		}		
 	}
 
-
 	@SuppressWarnings("static-access")
-	private static void doI_VECS_Case(Map<String, StaticClassMap> staticRootMap, String string) throws IOException {
-		// TODO Auto-generated method stub
+	private static void doI_VECS_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws IOException {
 		StaticClassMap staticClassMap= staticRootMap.get("I_VECS");
 		StaticFunctionMapI_VECS_E staticFunctionMapI_VECS_C
 		= (StaticFunctionMapI_VECS_E) staticClassMap.staticClassMap.get("I_VECS");
@@ -483,15 +459,13 @@ public class StaticRootMap{
 		while(callFunction.hasNext()) {
 			String callFunctionKey= callFunction.next();
 			if(string.contains(callFunctionKey)) {
-				StaticFunctionMap.doI_VECS_CaseFunction(callFunctionKey, string, staticFunctionMapI_VECS_C);
+				StaticFunctionMap.doI_VECS_CaseFunction(callFunctionKey, string, staticFunctionMapI_VECS_C, output);
 			}
 		}
 	}
 
-
 	@SuppressWarnings("static-access")
-	private static void doD_AOPM_Case(Map<String, StaticClassMap> staticRootMap, String string) throws IOException {
-		// TODO Auto-generated method stub
+	private static void doD_AOPM_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws IOException {
 		StaticClassMap staticClassMap= staticRootMap.get("D_AOPM");
 		StaticFunctionMapD_AOPM_E staticFunctionMapD_AOPM_C
 		= (StaticFunctionMapD_AOPM_E) staticClassMap.staticClassMap.get("D_AOPM");
@@ -500,14 +474,13 @@ public class StaticRootMap{
 		while(callFunction.hasNext()) {
 			String callFunctionKey= callFunction.next();
 			if(string.contains(callFunctionKey)) {
-				StaticFunctionMap.doD_AOPM_CaseFunction(callFunctionKey, string, staticFunctionMapD_AOPM_C);
+				StaticFunctionMap.doD_AOPM_CaseFunction(callFunctionKey, string, staticFunctionMapD_AOPM_C, output);
 			}
-		}
+		}	
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doD_VECS_Case(Map<String, StaticClassMap> staticRootMap, String string) throws IOException {
-		// TODO Auto-generated method stub
+	private static void doD_VECS_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws IOException {
 		StaticClassMap staticClassMap= staticRootMap.get("D_VECS");
 		StaticFunctionMapD_VECS_E staticFunctionMapD_VECS_C
 		= (StaticFunctionMapD_VECS_E) staticClassMap.staticClassMap.get("D_VECS");
@@ -516,15 +489,13 @@ public class StaticRootMap{
 		while(callFunction.hasNext()) {
 			String callFunctionKey= callFunction.next();
 			if(string.contains(callFunctionKey)) {
-				StaticFunctionMap.doD_VECS_CaseFunction(callFunctionKey, string, staticFunctionMapD_VECS_C);
+				StaticFunctionMap.doD_VECS_CaseFunction(callFunctionKey, string, staticFunctionMapD_VECS_C, output);
 			}
-		}
+		}	
 	}
 
-
 	@SuppressWarnings("static-access")
-	private static void doQ_AOPM_Case(Map<String, StaticClassMap> staticRootMap, String string) throws IOException {
-		// TODO Auto-generated method stub
+	private static void doQ_AOPM_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws IOException {
 		StaticClassMap staticClassMap= staticRootMap.get("Q_AOPM");
 		StaticFunctionMapQ_AOPM_E staticFunctionMapQ_AOPM_C
 		= (StaticFunctionMapQ_AOPM_E) staticClassMap.staticClassMap.get("Q_AOPM");
@@ -533,15 +504,13 @@ public class StaticRootMap{
 		while(callFunction.hasNext()) {
 			String callFunctionKey= callFunction.next();
 			if(string.contains(callFunctionKey)) {
-				StaticFunctionMap.doQ_AOPM_CaseFunction(callFunctionKey, string, staticFunctionMapQ_AOPM_C);
+				StaticFunctionMap.doQ_AOPM_CaseFunction(callFunctionKey, string, staticFunctionMapQ_AOPM_C, output);
 			}
-		}
+		}		
 	}
 
-
 	@SuppressWarnings("static-access")
-	private static void doQ_VECS_Case(Map<String, StaticClassMap> staticRootMap, String string) throws IOException {
-		// TODO Auto-generated method stub
+	private static void doQ_VECS_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws IOException {
 		StaticClassMap staticClassMap= staticRootMap.get("Q_VECS");
 		StaticFunctionMapQ_VECS_E staticFunctionMapQ_VECS_C
 		= (StaticFunctionMapQ_VECS_E) staticClassMap.staticClassMap.get("Q_VECS");
@@ -550,15 +519,13 @@ public class StaticRootMap{
 		while(callFunction.hasNext()) {
 			String callFunctionKey= callFunction.next();
 			if(string.contains(callFunctionKey)) {
-				StaticFunctionMap.doQ_VECS_CaseFunction(callFunctionKey, string, staticFunctionMapQ_VECS_C);
+				StaticFunctionMap.doQ_VECS_CaseFunction(callFunctionKey, string, staticFunctionMapQ_VECS_C, output);
 			}
-		}
+		}	
 	}
 
-
 	@SuppressWarnings("static-access")
-	private static void doU_AOPM_Case(Map<String, StaticClassMap> staticRootMap, String string) throws IOException {
-		// TODO Auto-generated method stub
+	private static void doU_AOPM_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws IOException {
 		StaticClassMap staticClassMap= staticRootMap.get("U_AOPM");
 		StaticFunctionMapU_AOPM_E staticFunctionMapU_AOPM_C
 		= (StaticFunctionMapU_AOPM_E) staticClassMap.staticClassMap.get("U_AOPM");
@@ -567,9 +534,8 @@ public class StaticRootMap{
 		while(callFunction.hasNext()) {
 			String callFunctionKey= callFunction.next();
 			if(string.contains(callFunctionKey)) {
-				StaticFunctionMap.doU_AOPM_CaseFunction(callFunctionKey, string, staticFunctionMapU_AOPM_C);
+				StaticFunctionMap.doU_AOPM_CaseFunction(callFunctionKey, string, staticFunctionMapU_AOPM_C, output);
 			}
 		}
 	}
-
 }
