@@ -29,6 +29,412 @@ import SVQ.stable.StableFile;
 //著作权人+作者= 罗瑶光
 public interface StaticFunctionMapU_VECS_C {
 
+	@SuppressWarnings({"static-access", "unchecked"})
+	public static void callFunction(String callFunctionKey, StaticFunctionMapU_VECS_E staticFunctionMapU_VECS_C, Map<String, Object> output) throws IOException {
+		// TODO Auto-generated method stub
+		if(callFunctionKey.equalsIgnoreCase("main")) {
+			staticFunctionMapU_VECS_C.main(null);//稍后分出去
+			output.put("U_VECS_main", "void");//非void接口就直接put进去即可。
+		}
+		if(callFunctionKey.equalsIgnoreCase("getMapFromDoubleStringArray")){
+			boolean find= false;
+			Map<String, Object> inputValues = null;
+			//取值方法, 先检查上一个接口
+			if(null!= output.get("lastInterfaceBackfeed")) {
+				if(output.get("lastInterfaceBackfeed").toString().equalsIgnoreCase("success")) {
+					String lastInterfaceReturn= (String) output.get("lastInterfaceName");//取 上一次运行接口名
+					if(null!= lastInterfaceReturn) {
+						Map<String, Object> lastReturns= (Map<String, Object>) output.get(lastInterfaceReturn);//取上一次运行接口的返回结果。
+						inputValues= (Map<String, Object>) lastReturns.get("interfaceReturn");//
+						find= true;
+					}	
+				}
+			}
+			//检查上一个接口是否匹配;
+			if(find) {
+				if(inputValues.containsKey("score")&& inputValues.containsKey("nameScore")) {
+					find= true;
+				}else {
+					find= false;
+				}
+			}
+			//////////////////////////////////////////////////////////////////////////////////////	
+
+			//操作方法,就检查全局传参
+			if(!find) {//当上一个接口没有返回这个接口需要的数据时，就检查全局传参
+				inputValues= (Map<String, Object>) output.get("inputValues");//取存储值
+			}
+			//检查特定输入参数是否匹配
+			if(null!= inputValues) {
+				if(inputValues.containsKey("score")&& inputValues.containsKey("nameScore")) {
+					find= true;
+				}	
+			}//本来想设计成插件模式，但是速度降低100倍不止，先不考虑，
+			/////////////////////////////////////////////////////////////////////////////////////////////////	
+
+			//检查是否能运行
+			if(find) {
+				Double[] score= (Double[])inputValues.get("score"); 
+				String[] nameScore= (String[])inputValues.get("nameScore");	
+				//开始操作
+				Object map= staticFunctionMapU_VECS_C.getMapFromDoubleStringArray(score, nameScore);
+				//存储方法
+				Map<String, Object> returnValue= new HashMap<>();
+				returnValue.put("interfaceReturn", map);
+				//输出
+				output.put("getMapFromDoubleStringArray", returnValue);
+				output.put("lastInterfaceName", "getMapFromDoubleStringArray");//稍后设计成可 理论完美并行的模式。
+				output.put("lastInterfaceBackfeed", "success");
+			}else {
+				output.put("lastInterfaceName", "getMapFromDoubleStringArray");
+				output.put("lastInterfaceBackfeed", "faild");
+			}
+
+		};//下面类推同理
+		if(callFunctionKey.equalsIgnoreCase("getMapFromIntStringArray")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("getMapFromIntStringArray_ZhongYao")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("arrayToJson")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("arrayToXml")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("arrayToMap")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("arrayToVector")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("arrayToList")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("arrayToIterator")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("arrayToSet")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("arrayToMatrix")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("arrayToMatrix3D")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("xlsOrCsvFileToObjectMartix")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("xlsOrCsvFileToListObject")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("xlsOrCsvFileToRangedListObject")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("xlsOrCsvFileToRangedObjectMartix")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("dateToGMTString")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("dateToYYYYMMDD")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("dateToHHMMSS")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("dateToMiliSeconds")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("getCurrentMiliSeconds")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("dateToTimeStamp")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("timeStampToMiliSeconds")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("timeStampToMiliSecondsWithSize")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("dateStringToMiliSeconds")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("hashTableToJson")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("hashTableToXml")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("hashTableToList")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("hashTableToObjectArray")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("getJson")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("postXML")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("postJsonWithSercurity")){  
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("postXMLWithSercurity")){  
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("getHTML")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("pixTableToFile")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("pixRGBTableToFile")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("bufferedImageToFile")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("imageToFile")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("bufferedImageToScaleImageFile")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("waveImageFileToArrayWithBlack")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("waveImageToArrayWithBlack")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("waveImageToArrayWithColor")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("waveImageFileToArrayWithColor")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("waveImageFileToArrayMapWithBlack")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("waveImageToArrayMapWithBlack")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("toolkitImageIconToBufferImage")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("toolkitImageToBufferImage")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("toolkitImageToBufferImageAboutIconConfig")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("iteratorToJsonString")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("stringIteratorToJsonString")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("iteratorToXml")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("iteratorToMap")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("iteratorToObjectArray")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("iteratorToList")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("jsonArrayToList")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("jsonObjectToString")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("jsonObjectToHashtable")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("jsonObjectToXml")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("listToJsonString")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("stringListToJsonString")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("listToXml")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("listToMap")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("listToObjectArray")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("stringlistToStringArray")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("listToIterator")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("listToVector")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("listToSet")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("listToArray")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("mapToList")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("mapToHash")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("sort")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("xmlToList")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("xmlToVector")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("xmlToSets")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("xmlToHashtable")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("txtFileToObjectMatrix")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("txtFileToObjectMatrixWithRange")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("txtFileToListStringWithRange")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("txtFileToListString")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("txtFileToListStringArray")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("vectorToMap")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("vectorToList")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("vectorToArray")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("vectorToIterator")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("vectorToJsonString")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("vectorToSet")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("stringBuilderToCharArray")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("stringBuilderToString")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("stringBuilderToJson")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("stringBuilderToXml")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("stringBuilderToSplitArray")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("stringBuilderToMap")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("stringToArray")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("stringArrayToString")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("stringToURIencode")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("stringToURIencode")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("uRIencodeToURIdecode")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("uRIencodeToURIdecode")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("stringToCharASCII")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("charsetSwap")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("objectToJsonString")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("matrixShiftSwapXYZ")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("matrixInclineSwapXY")){ 
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("matrixInclineSwapXZ")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("matrixInclineSwapYZ")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("matrixReverseSwap")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("matrixReverseSwapXY")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("matrixReverseSwapXZ")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("matrixReverseSwapYZ")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("matrixToArray")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("matrixInclineSwap")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("matrixPostSwap")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("matrixInSwap")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("matrixReverseSwap")){
+
+		};
+		if(callFunctionKey.equalsIgnoreCase("matrixToArray")){
+
+		};	
+	}
+
 	public static void load(StaticFunctionMapU_VECS_E staticFunctionMapU_VECS_E) {
 		// TODO Auto-generated method stub
 		staticFunctionMapU_VECS_E.annotationMap.put("main", "main");//注册一个main接口
@@ -160,8 +566,8 @@ public interface StaticFunctionMapU_VECS_C {
 	public Map<String, Object> arrayToMap(Gson gson, Object[] objects);
 	public Vector<Object> arrayToVector(Gson gson, Object[] objects);
 	public List<Object> arrayToList(Object[] objects);
-	public Iterator<Object> arrayToIterator(Object[] objects) ;
-	public Set<Object> arrayToSet(Object[] objects) ;
+	public Iterator<Object> arrayToIterator(Object[] objects);
+	public Set<Object> arrayToSet(Object[] objects);
 	public Object[][] arrayToMatrix(Object[] objects, int widthRange);
 	public Object[][][] arrayToMatrix3D(Object[] objects, int widthRange, int heightRange);
 
@@ -174,15 +580,15 @@ public interface StaticFunctionMapU_VECS_C {
 			, Map<Integer, Boolean> culumns) throws IOException;
 
 	//Date_ESU
-	public String dateToGMTString(Date date) ;
-	public String dateToYYYYMMDD(Date date) ;
-	public String dateToHHMMSS(Date date) ;
-	public String dateToMiliSeconds(Date date) ;
-	public String getCurrentMiliSeconds(Date date) ;
-	public Timestamp dateToTimeStamp(Date date) ;
-	public long timeStampToMiliSeconds(Timestamp timestamp) ;
+	public String dateToGMTString(Date date);
+	public String dateToYYYYMMDD(Date date);
+	public String dateToHHMMSS(Date date);
+	public String dateToMiliSeconds(Date date);
+	public String getCurrentMiliSeconds(Date date);
+	public Timestamp dateToTimeStamp(Date date);
+	public long timeStampToMiliSeconds(Timestamp timestamp);
 	public String timeStampToMiliSecondsWithSize(Timestamp timestamp, int size);	
-	public String dateStringToMiliSeconds(String string) ;
+	public String dateStringToMiliSeconds(String string);
 
 	//Hash_ESU
 	public String hashTableToJson(Gson gson, Hashtable<String, Object> hashtable);
@@ -197,7 +603,7 @@ public interface StaticFunctionMapU_VECS_C {
 	public String postXML(String urlString,String XMLString) throws IOException;
 	public String postJsonWithSercurity(String urlString, String jsonString) throws IOException;
 	public String postXMLWithSercurity(String urlString, String XMLString)throws IOException;
-	public String getHTML(String urlString, Object object) throws IOException ;
+	public String getHTML(String urlString, Object object) throws IOException;
 
 	//Image_ESU
 	public void pixTableToFile(String pngOutputPath, int[][] pix, String fileType) throws IOException;
@@ -214,23 +620,23 @@ public interface StaticFunctionMapU_VECS_C {
 	//该函数用于股市等波形缓存转换成数组。
 	public List<Integer> waveImageToArrayWithBlack(BufferedImage bufferedImage);
 	//该函数用于股市等波形缓存转换成数组。根据特征颜色处理。
-	public List<Integer> waveImageToArrayWithColor(BufferedImage bufferedImage, int colorRange) ;
+	public List<Integer> waveImageToArrayWithColor(BufferedImage bufferedImage, int colorRange);
 	//该函数用于股市等波形图片文件转换成数组。根据特征颜色处理。
 	public List<Integer> waveImageFileToArrayWithColor(String FilePath, int colorRange) throws IOException;
 	//该函数用于股市等波形图片文件转换成相同颜色数组分类集合。
 	public HashMap<Integer, List<Integer>> waveImageFileToArrayMapWithBlack(String FilePath) throws IOException;
 	//该函数用于股市等波形缓存转换成数组。
-	public HashMap<Integer, List<Integer>> waveImageToArrayMapWithBlack(BufferedImage bufferedImage) ;
+	public HashMap<Integer, List<Integer>> waveImageToArrayMapWithBlack(BufferedImage bufferedImage);
 
 	//ToolkitImageToBufferImage
-	public BufferedImage toolkitImageIconToBufferImage(int positionX, int positionY, ImageIcon imageIcon) ;
+	public BufferedImage toolkitImageIconToBufferImage(int positionX, int positionY, ImageIcon imageIcon);
 	public BufferedImage toolkitImageToBufferImage(Image image, int positionX, int positionY, int width
 			, int height, ImageObserver imageObserver) ;
-	public BufferedImage toolkitImageToBufferImageAboutIconConfig(Image image, int positionX, int positionY) ;
+	public BufferedImage toolkitImageToBufferImageAboutIconConfig(Image image, int positionX, int positionY);
 
 	//Iterator_ESU
 	public String iteratorToJsonString(Gson gson, Iterator<Object> iterator);
-	public Object stringIteratorToJsonString(Gson gson, Iterator<String> iterator) ;
+	public Object stringIteratorToJsonString(Gson gson, Iterator<String> iterator);
 	public String iteratorToXml(Gson gson, Iterator<Object> iterator);
 	public String iteratorToMap(Gson gson, Iterator<Object> iterator);
 	public Object[] iteratorToObjectArray(Gson gson, Iterator<Object> iterator);
@@ -241,7 +647,7 @@ public interface StaticFunctionMapU_VECS_C {
 	//	public Map<String, Object> jsonObjectToMap(Gson gson
 	//			, JSONObject jSONObject){
 	//		return gson.fromJson(jSONObject.toString()
-	//				, new TypeToken<Map<String, Object>>(){}.getType());
+	//				, new TypeToken<Map<String, Object>>(){}.getType()){  };
 	//	}
 
 	public List<Object> jsonArrayToList(JSONArray jSONArray);
@@ -268,7 +674,7 @@ public interface StaticFunctionMapU_VECS_C {
 	//	}
 	//
 	//	public String mapToXml(Gson gson, Map<String, Object> map){
-	//		JSONObject jSONObject= new JSONObject(gson.toJson(map));
+	//		JSONObject jSONObject= new JSONObject(gson.toJson(map)){  };
 	//		return XML.toString(jSONObject);	
 	//	}
 
@@ -314,7 +720,7 @@ public interface StaticFunctionMapU_VECS_C {
 		cReaderb.close();
 		cReaderp.close();
 	}
-	
+
 	// XML_ESU
 	//  剔除个人著作权 申请范围
 	//	public JSONObject xmlToJsonObject(String string){
@@ -329,8 +735,8 @@ public interface StaticFunctionMapU_VECS_C {
 	//				, new TypeToken<Map<String, Object>>(){}.getType());
 	//	}
 
-	public Vector<Object> xmlToVector(String string, String key) ;
-	public Set<Object> xmlToSets(String string, String key) ;
+	public Vector<Object> xmlToVector(String string, String key);
+	public Set<Object> xmlToSets(String string, String key);
 	public Hashtable<String, Object> xmlToHashtable(String xmlString, Gson gson);
 
 	//TXT_ESU{
@@ -348,9 +754,9 @@ public interface StaticFunctionMapU_VECS_C {
 	public Iterator<Object> vectorToIterator(Vector<Object> vector);
 	public String vectorToJsonString(Gson gson,Vector<Object> vector);
 	public Set<Object> vectorToSet(Vector<Object> vector);
-	
+
 	//StringBuilder_ESU{
-	public char[] stringBuilderToCharArray(StringBuilder stringBuilder) ;
+	public char[] stringBuilderToCharArray(StringBuilder stringBuilder);
 	public String stringBuilderToString(StringBuilder stringBuilder);
 	public String stringBuilderToJson(Gson gson, StringBuilder stringBuilder);
 	public String stringBuilderToXml(Gson gson, StringBuilder stringBuilder);

@@ -1,6 +1,6 @@
 package SEM.bloom;
 
-import java.io.IOException;
+import java.io.IOException; 
 import java.util.Map;
 
 //用来索引函数 注册类
@@ -67,6 +67,10 @@ public class StaticFunctionMap{
 			//可以插件遍历，可以 接口遍历，可以web的outowire 遍历，
 			//无数种方法遍历
 		}
+		
+		//写法2
+		//我准备设计一种callFunctionKey对应的接口call模式
+		StaticFunctionMapU_VECS_C.callFunction(callFunctionKey, staticFunctionMapU_VECS_C, output);
 	}
 	public static void doQ_AOPM_CaseFunction(String callFunctionKey, String string, StaticFunctionMapQ_AOPM_E staticFunctionMapQ_AOPM_C, Map<String, Object> output) throws IOException {
 	}
