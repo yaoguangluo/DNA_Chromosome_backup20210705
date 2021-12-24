@@ -19,17 +19,19 @@ public interface StaticFunctionMapQ_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("searchFromTable")){ 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				staticFunctionMapQ_VECS_C.searchFromTable((String) inputValues.get(传参因子[因子++]),( DefaultTableModel) inputValues.get(传参因子[因子++])
-						, (Object[][]) inputValues.get(传参因子[因子++]), (ArrayList<String>) inputValues.get(传参因子[因子++])
-						, (Map<String, String>) inputValues.get(传参因子[因子++]), (App) inputValues.get(传参因子[因子++]));
+				staticFunctionMapQ_VECS_C.searchFromTable((String) inputValues.get(传参因子[因子++])
+						, (DefaultTableModel) inputValues.get(传参因子[因子++]), (Object[][]) inputValues.get(传参因子[因子++])
+						, (ArrayList<String>) inputValues.get(传参因子[因子++]), (Map<String, String>) inputValues.get(传参因子[因子++])
+						, (App) inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		};
 		if(callFunctionKey.equalsIgnoreCase("searchFromTablewithScale")){ 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapQ_VECS_C.searchFromTablewithScale((String) inputValues.get(传参因子[因子++]), (ArrayList<String>) inputValues.get(传参因子[因子++])
-						, (Map<String, String>) inputValues.get(传参因子[因子++]), (double) inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapQ_VECS_C.searchFromTablewithScale((String) inputValues.get(传参因子[因子++])
+						, (ArrayList<String>) inputValues.get(传参因子[因子++]), (Map<String, String>) inputValues.get(传参因子[因子++])
+						, (double) inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		};

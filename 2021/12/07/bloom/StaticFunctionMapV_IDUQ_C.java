@@ -18,7 +18,8 @@ import PEI.thread.MakeContainerSJFX;
 //著作权人+ 作者= 罗瑶光
 public interface StaticFunctionMapV_IDUQ_C {
 	@SuppressWarnings("unchecked")
-	public static void callFunction(String callFunctionKey, StaticFunctionMapV_IDUQ_E staticFunctionMapV_IDUQ_C, Map<String, Object> output) throws IOException {
+	public static void callFunction(String callFunctionKey, StaticFunctionMapV_IDUQ_E staticFunctionMapV_IDUQ_C
+			, Map<String, Object> output) throws IOException {
 		String[] 传参因子= (String[]) output.get("传参因子");
 		int 因子= 0;
 		Object map = null;
@@ -69,14 +70,16 @@ public interface StaticFunctionMapV_IDUQ_C {
 		if(callFunctionKey.equalsIgnoreCase("getOrigianlTextByLock")){ 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapV_IDUQ_C.getOrigianlTextByLock((String)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapV_IDUQ_C.getOrigianlTextByLock((String)inputValues.get(传参因子[因子++])
+						,(String)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		};
 		if(callFunctionKey.equalsIgnoreCase("Load")){ 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapV_IDUQ_C.Load((LinkNode) inputValues.get(传参因子[因子++]), (NodeShow) inputValues.get(传参因子[因子++])
+				map= staticFunctionMapV_IDUQ_C.Load((LinkNode) inputValues.get(传参因子[因子++])
+						, (NodeShow) inputValues.get(传参因子[因子++])
 						, (File) inputValues.get(传参因子[因子++]), (LinkList) inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);

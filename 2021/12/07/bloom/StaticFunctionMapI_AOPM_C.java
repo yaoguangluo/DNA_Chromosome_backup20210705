@@ -21,7 +21,8 @@ import OEI.ME.analysis.E.CogsBinaryForest_AE;
 //著作权人+ 作者= 罗瑶光
 public interface StaticFunctionMapI_AOPM_C {
 	@SuppressWarnings("unchecked")
-	public static void callFunction(String callFunctionKey, StaticFunctionMapI_AOPM_E staticFunctionMapI_AOPM_C, Map<String, Object> output) throws IOException, HeadlessException, InterruptedException {
+	public static void callFunction(String callFunctionKey, StaticFunctionMapI_AOPM_E staticFunctionMapI_AOPM_C
+			, Map<String, Object> output) throws IOException, HeadlessException, InterruptedException {
 		String[] 传参因子= (String[]) output.get("传参因子");
 		int 因子= 0;
 		Object map = null;
