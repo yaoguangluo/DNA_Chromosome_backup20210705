@@ -17,7 +17,18 @@ import PCI.ASQ.demension.Line3D;
 //可以用的 一些老接口见 http://tinos.qicp.vip/data.html
 //著作权人 + 作者 = 罗瑶光
 public interface StaticFunctionMapP_VECS_C {
-
+//	public static void callFunction(String callFunctionKey, StaticFunctionMapP_VECS_E staticFunctionMapP_VECS_E, Map<String, Object> output) throws IOException {
+//		String[] 传参因子= (String[]) output.get("传参因子");
+//		int 因子= 0;
+//		Object map = null;
+//		if(callFunctionKey.equalsIgnoreCase("parserMixedString")){ 
+//			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
+//			if((boolean) inputValues.get("find")) {
+//				map= StaticFunctionMapA_VECS_C.parserMixedString((String)inputValues.get(传参因子[因子++]));
+//			}
+//			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
+//		};
+//	}
 	public static void load(StaticFunctionMapP_VECS_E staticFunctionMapP_VECS_E) {
 		// TODO Auto-generated method stub
 		//稍后封装

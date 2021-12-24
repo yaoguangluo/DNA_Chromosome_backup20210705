@@ -18,6 +18,18 @@ import PEU.P.table.TableSorterZYNK;
 import PEU.P.time.TimeCheck;
 //著作权人+ 作者= 罗瑶光
 public interface StaticFunctionMapU_AOPM_C {
+//	public static void callFunction(String callFunctionKey, StaticFunctionMapA_VECS_E staticFunctionMapA_VECS_E, Map<String, Object> output) throws IOException {
+//		String[] 传参因子= (String[]) output.get("传参因子");
+//		int 因子= 0;
+//		Object map = null;
+//		if(callFunctionKey.equalsIgnoreCase("parserMixedString")){ 
+//			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
+//			if((boolean) inputValues.get("find")) {
+//				map= StaticFunctionMapA_VECS_C.parserMixedString((String)inputValues.get(传参因子[因子++]));
+//			}
+//			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
+//		};
+//	}
 	public static void load(StaticFunctionMapU_AOPM_E staticFunctionMapU_AOPM_E) {
 		// TODO Auto-generated method stub
 		//稍后封装

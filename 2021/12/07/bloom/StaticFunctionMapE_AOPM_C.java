@@ -1,5 +1,8 @@
 package SEM.bloom;
 
+import java.io.IOException;
+import java.util.Map;
+
 import OCI.AMV.ECS.SVQ.MPC.fhmm.C.SensingMap;
 import OCI.AVC.SUQ.SVQ.MPC.fhmm.C.EmotionMap;
 import OCI.ME.analysis.C.A;
@@ -23,7 +26,125 @@ import OCI.SVQ.MPC.fhmm.C.FMHMMList;
 //Refer的源码来自 《DNA 元基催化与肽计算 第三修订版本 V039010912》
 //证书编号：国作登字-2021-L-00268255 (中华人民共和国 国家版权登记中心)
 public interface StaticFunctionMapE_AOPM_C {
-
+	public static void callFunction(String callFunctionKey, StaticFunctionMapE_AOPM_E staticFunctionMapE_AOPM_C, Map<String, Object> output) throws IOException {
+		String[] 传参因子= (String[]) output.get("传参因子");
+		Object map = null;
+		if(callFunctionKey.equalsIgnoreCase("getSensingMap")){ 
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
+			if((boolean) inputValues.get("find")) {
+				map= staticFunctionMapE_AOPM_C.getSensingMap();
+			}
+			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
+		};
+		if(callFunctionKey.equalsIgnoreCase("getEmotionMap")){ 
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
+			if((boolean) inputValues.get("find")) {
+				map= staticFunctionMapE_AOPM_C.getEmotionMap();
+			}
+			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
+		};
+		if(callFunctionKey.equalsIgnoreCase("getCogsBinaryForest_A")){ 
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
+			if((boolean) inputValues.get("find")) {
+				map= staticFunctionMapE_AOPM_C.getCogsBinaryForest_A();
+			}
+			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
+		};
+		if(callFunctionKey.equalsIgnoreCase("getEuclid_C")){ 
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
+			if((boolean) inputValues.get("find")) {
+				map= staticFunctionMapE_AOPM_C.getEuclid_C();
+			}
+			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
+		};
+		
+		if(callFunctionKey.equalsIgnoreCase("getQuick6DLuoYaoguangSort")){ 
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
+			if((boolean) inputValues.get("find")) {
+				map= staticFunctionMapE_AOPM_C.getQuick6DLuoYaoguangSort();
+			}
+			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
+		};if(callFunctionKey.equalsIgnoreCase("getNERO_C_OneTime")){ 
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
+			if((boolean) inputValues.get("find")) {
+				map= staticFunctionMapE_AOPM_C.getNERO_C_OneTime();
+			}
+			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
+		};
+		if(callFunctionKey.equalsIgnoreCase("getNERO_C")){ 
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
+			if((boolean) inputValues.get("find")) {
+				map= staticFunctionMapE_AOPM_C.getNERO_C();
+			}
+			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
+		};if(callFunctionKey.equalsIgnoreCase("getNLP_C")){ 
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
+			if((boolean) inputValues.get("find")) {
+				map= staticFunctionMapE_AOPM_C.getNLP_C();
+			}
+			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
+		};if(callFunctionKey.equalsIgnoreCase("getBehaviorMap")){ 
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
+			if((boolean) inputValues.get("find")) {
+				map= staticFunctionMapE_AOPM_C.getBehaviorMap();
+			}
+			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
+		};if(callFunctionKey.equalsIgnoreCase("getFMHMMList")){ 
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
+			if((boolean) inputValues.get("find")) {
+				map= staticFunctionMapE_AOPM_C.getFMHMMList();
+			}
+			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
+		};if(callFunctionKey.equalsIgnoreCase("getPos_C_XCDX_P")){ 
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
+			if((boolean) inputValues.get("find")) {
+				map= staticFunctionMapE_AOPM_C.getPos_C_XCDX_P();
+			}
+			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
+		};if(callFunctionKey.equalsIgnoreCase("getPos_C_XCDX_E")){ 
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
+			if((boolean) inputValues.get("find")) {
+				map= staticFunctionMapE_AOPM_C.getPos_C_XCDX_E();
+			}
+			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
+		};if(callFunctionKey.equalsIgnoreCase("getPos_C_XCDX_O")){ 
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
+			if((boolean) inputValues.get("find")) {
+				map= staticFunctionMapE_AOPM_C.getPos_C_XCDX_O();
+			}
+			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
+		};if(callFunctionKey.equalsIgnoreCase("getNlp_C_XCDX_S")){ 
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
+			if((boolean) inputValues.get("find")) {
+				map= staticFunctionMapE_AOPM_C.getNlp_C_XCDX_S();
+			}
+			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
+		};if(callFunctionKey.equalsIgnoreCase("getNlp_C_XCDX_A")){ 
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
+			if((boolean) inputValues.get("find")) {
+				map= staticFunctionMapE_AOPM_C.getNlp_C_XCDX_A();
+			}
+			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
+		};if(callFunctionKey.equalsIgnoreCase("getA_XCDX_Map")){ 
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
+			if((boolean) inputValues.get("find")) {
+				map= staticFunctionMapE_AOPM_C.getA_XCDX_Map();
+			}
+			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
+		};if(callFunctionKey.equalsIgnoreCase("getA")){ 
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
+			if((boolean) inputValues.get("find")) {
+				map= staticFunctionMapE_AOPM_C.getA();
+			}
+			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
+		};if(callFunctionKey.equalsIgnoreCase("getBinaryForest_A")){ 
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
+			if((boolean) inputValues.get("find")) {
+				map= staticFunctionMapE_AOPM_C.getBinaryForest_A();
+			}
+			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
+		};
+	}
 	public static void load(StaticFunctionMapE_AOPM_E staticFunctionMapE_AOPM_E) {
 		// TODO Auto-generated method stub
 		//稍后封装

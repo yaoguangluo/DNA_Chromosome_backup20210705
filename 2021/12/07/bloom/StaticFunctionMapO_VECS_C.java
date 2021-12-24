@@ -24,7 +24,18 @@ import OSI.OPE.OVU.MVU.OVU.PQE.nodeEdit.LinkList;
 //Refer的源码来自 《DNA 元基催化与肽计算 第三修订版本 V039010912》
 //证书编号：国作登字-2021-L-00268255 (中华人民共和国 国家版权登记中心)
 public interface StaticFunctionMapO_VECS_C {
-
+//	public static void callFunction(String callFunctionKey, StaticFunctionMapA_VECS_E staticFunctionMapA_VECS_E, Map<String, Object> output) throws IOException {
+//		String[] 传参因子= (String[]) output.get("传参因子");
+//		int 因子= 0;
+//		Object map = null;
+//		if(callFunctionKey.equalsIgnoreCase("parserMixedString")){ 
+//			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
+//			if((boolean) inputValues.get("find")) {
+//				map= StaticFunctionMapA_VECS_C.parserMixedString((String)inputValues.get(传参因子[因子++]));
+//			}
+//			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
+//		};
+//	}
 	public static void load(StaticFunctionMapO_VECS_E staticFunctionMapO_VECS_E) {	
 		//稍后封装
 		staticFunctionMapO_VECS_E.annotationMap.put("SortStringDemo", "SortStringDemo");

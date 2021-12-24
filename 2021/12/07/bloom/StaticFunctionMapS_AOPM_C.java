@@ -5,6 +5,102 @@ import java.util.Map;
 
 //著作权人+作者=罗瑶光
 public interface StaticFunctionMapS_AOPM_C {
+	@SuppressWarnings("unchecked")
+	public static void callFunction(String callFunctionKey, StaticFunctionMapS_AOPM_E staticFunctionMapS_AOPM_C, Map<String, Object> output) throws Exception {
+		String[] 传参因子= (String[]) output.get("传参因子");
+		int 因子= 0;
+		Object map = null;
+		if(callFunctionKey.equalsIgnoreCase("DropCellPLSQL")){ 
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
+			if((boolean) inputValues.get("find")) {
+				map= staticFunctionMapS_AOPM_C.DropCellPLSQL((String)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++])
+						,(String)inputValues.get(传参因子[因子++]));
+			}
+			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
+		};
+		if(callFunctionKey.equalsIgnoreCase("DropCellORM")){ 
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
+			if((boolean) inputValues.get("find")) {
+				map= staticFunctionMapS_AOPM_C.DropCellORM((String)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++])
+						,(String)inputValues.get(传参因子[因子++]));
+			}
+			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
+		};
+		if(callFunctionKey.equalsIgnoreCase("DeleteCellORM")){ 
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
+			if((boolean) inputValues.get("find")) {
+				map= staticFunctionMapS_AOPM_C.DeleteCellORM((String)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++])
+						,(String)inputValues.get(传参因子[因子++]), (Map<String, String>)inputValues.get(传参因子[因子++]), (boolean)inputValues.get(传参因子[因子++]));
+			}
+			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
+		};
+		if(callFunctionKey.equalsIgnoreCase("DeleteCellPLSQL")){ 
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
+			if((boolean) inputValues.get("find")) {
+				map= staticFunctionMapS_AOPM_C.DeleteCellPLSQL((String)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++])
+						,(String)inputValues.get(传参因子[因子++]), (Map<String, String>)inputValues.get(传参因子[因子++]), (boolean)inputValues.get(传参因子[因子++]));
+			}
+			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
+		};
+		if(callFunctionKey.equalsIgnoreCase("InsertCellORM")){ 
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
+			if((boolean) inputValues.get("find")) {
+				map= staticFunctionMapS_AOPM_C.InsertCellORM((String)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++])
+						,(String)inputValues.get(传参因子[因子++]), (Map<String, String>)inputValues.get(传参因子[因子++]), (boolean)inputValues.get(传参因子[因子++]));
+			}
+			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
+		};
+		if(callFunctionKey.equalsIgnoreCase("InsertCellPLSQL")){ 
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
+			if((boolean) inputValues.get("find")) {
+				map= staticFunctionMapS_AOPM_C.InsertCellPLSQL((String)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++])
+						,(String)inputValues.get(传参因子[因子++]), (Map<String, String>)inputValues.get(传参因子[因子++]), (boolean)inputValues.get(传参因子[因子++]));
+			}
+			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
+		};
+		if(callFunctionKey.equalsIgnoreCase("UpdateCellORM")){ 
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
+			if((boolean) inputValues.get("find")) {
+				map= staticFunctionMapS_AOPM_C.UpdateCellORM((String)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++])
+						,(String)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++]));
+			}
+			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
+		};
+		if(callFunctionKey.equalsIgnoreCase("UpdateCellORMByRowId")){ 
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
+			if((boolean) inputValues.get("find")) {
+				map= staticFunctionMapS_AOPM_C.UpdateCellORMByRowId((String)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++])
+						,(boolean)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++])
+						,(String)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++]));
+			}
+			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
+		};
+		if(callFunctionKey.equalsIgnoreCase("UpdateCellORMByEquals")){ 
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
+			if((boolean) inputValues.get("find")) {
+				map= staticFunctionMapS_AOPM_C.UpdateCellORMByEquals((String)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++])
+						,(boolean)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++])
+						,(String)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++])
+						,(String)inputValues.get(传参因子[因子++]));
+			}
+			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
+		};
+		if(callFunctionKey.equalsIgnoreCase("UpdateCellPLSQL")){ 
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
+			if((boolean) inputValues.get("find")) {
+				map= staticFunctionMapS_AOPM_C.UpdateCellPLSQL((String)inputValues.get(传参因子[因子++]), (String)inputValues.get(传参因子[因子++])
+						, (String)inputValues.get(传参因子[因子++]), (String)inputValues.get(传参因子[因子++]));
+			}
+			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
+		};
+		if(callFunctionKey.equalsIgnoreCase("creatMap")){ 
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
+			if((boolean) inputValues.get("find")) {
+				map= staticFunctionMapS_AOPM_C.creatMap();
+			}
+			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
+		};
+	}
 
 	public static void load(StaticFunctionMapS_AOPM_E staticFunctionMapS_AOPM_E) {
 		// TODO Auto-generated method stub

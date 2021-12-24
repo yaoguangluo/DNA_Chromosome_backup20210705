@@ -1,11 +1,70 @@
 package SEM.bloom;
 
+import java.io.IOException;
+import java.util.Map;
+
 import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.ASU.MPE.procedure.pde.FullDNATokenPDI_XCDX;
 import SVQ.stable.StableCommon;
 
 //将dna加密的 main test 进行封装成函数。准备优化下。
 //著作权人+ 作者= 罗瑶光
 public class StaticFunctionMapA_IDUQ_C {
+	public static void callFunction(String callFunctionKey, StaticFunctionMapA_IDUQ_E staticFunctionMapA_IDUQ_E, Map<String, Object> output) throws IOException {
+		String[] 传参因子= (String[]) output.get("传参因子");
+		int 因子= 0;
+		Object map = null;
+		if(callFunctionKey.equalsIgnoreCase("getPDW")){ 
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
+			if((boolean) inputValues.get("find")) {
+				map= StaticFunctionMapA_IDUQ_C.getPDW((String)inputValues.get(传参因子[因子++]));
+			}
+			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
+		};
+		if(callFunctionKey.equalsIgnoreCase("getLock")){ 
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
+			if((boolean) inputValues.get("find")) {
+				map= StaticFunctionMapA_IDUQ_C.getLock();
+			}
+			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
+		};
+		if(callFunctionKey.equalsIgnoreCase("getCode")){ 
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
+			if((boolean) inputValues.get("find")) {
+				map= StaticFunctionMapA_IDUQ_C.getCode((String)inputValues.get(传参因子[因子++]), (String)inputValues.get(传参因子[因子++]));
+			}
+			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
+		};
+		if(callFunctionKey.equalsIgnoreCase("doPDE")){ 
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
+			if((boolean) inputValues.get("find")) {
+				map= StaticFunctionMapA_IDUQ_C.doPDE((FullDNATokenPDI_XCDX)inputValues.get(传参因子[因子++]));
+			}
+			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
+		};
+		if(callFunctionKey.equalsIgnoreCase("doPrefixPDE")){ 
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
+			if((boolean) inputValues.get("find")) {
+				map= StaticFunctionMapA_IDUQ_C.doPrefixPDE((FullDNATokenPDI_XCDX)inputValues.get(传参因子[因子++]));
+			}
+			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
+		};
+		if(callFunctionKey.equalsIgnoreCase("doPostfixPDE")){ 
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
+			if((boolean) inputValues.get("find")) {
+				map= StaticFunctionMapA_IDUQ_C.doPostfixPDE((FullDNATokenPDI_XCDX)inputValues.get(传参因子[因子++])
+						, (FullDNATokenPDI_XCDX)inputValues.get(传参因子[因子++]));
+			}
+			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
+		};
+		if(callFunctionKey.equalsIgnoreCase("doSurffixPDE")){ 
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
+			if((boolean) inputValues.get("find")) {
+				map= StaticFunctionMapA_IDUQ_C.doSurffixPDE((FullDNATokenPDI_XCDX)inputValues.get(传参因子[因子++])
+						, (FullDNATokenPDI_XCDX)inputValues.get(传参因子[因子++]));
+			}
+			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
+		};
+	}
 
 	public static void load(StaticFunctionMapA_IDUQ_E staticFunctionMapA_IDUQ_E) {
 		//稍后封装
@@ -55,18 +114,18 @@ public class StaticFunctionMapA_IDUQ_C {
 
 	//pde计算 确定pDE_RNA_FullFormular 变量中要有 肽语 肽锁 散列 的输入值。
 	public static FullDNATokenPDI_XCDX doPDE(FullDNATokenPDI_XCDX pDE_RNA_FullFormular) {
-				System.out.println("肽语: "+ pDE_RNA_FullFormular.pdw);
-				System.out.println("肽锁: "+ pDE_RNA_FullFormular.lock);
-				System.out.println("散列肽语:"+ pDE_RNA_FullFormular.code);
-				//pDE_RNA_FullFormular.bys= "0.6/0.3/0.5/0.632";
-				System.out.println("静态密钥: "+ pDE_RNA_FullFormular.bys);
+		System.out.println("肽语: "+ pDE_RNA_FullFormular.pdw);
+		System.out.println("肽锁: "+ pDE_RNA_FullFormular.lock);
+		System.out.println("散列肽语:"+ pDE_RNA_FullFormular.code);
+		//pDE_RNA_FullFormular.bys= "0.6/0.3/0.5/0.632";
+		System.out.println("静态密钥: "+ pDE_RNA_FullFormular.bys);
 		pDE_RNA_FullFormular.doKeyPress(pDE_RNA_FullFormular.code, pDE_RNA_FullFormular, false);
-				System.out.println("静态肽展降元概率钥匙E: "+ pDE_RNA_FullFormular.pdedeKey);
-				System.out.println("静态肽展降元概率钥匙S: "+ pDE_RNA_FullFormular.pdedsKey);
-				System.out.println("静态肽展降元: "+ pDE_RNA_FullFormular.pds);
-				System.out.println("静态肽展增元概率钥匙E: "+ pDE_RNA_FullFormular.pdeieKey);
-				System.out.println("静态肽展增元概率钥匙S: "+ pDE_RNA_FullFormular.pdeisKey);
-				System.out.println("静态肽展增元: "+ pDE_RNA_FullFormular.pde);
+		System.out.println("静态肽展降元概率钥匙E: "+ pDE_RNA_FullFormular.pdedeKey);
+		System.out.println("静态肽展降元概率钥匙S: "+ pDE_RNA_FullFormular.pdedsKey);
+		System.out.println("静态肽展降元: "+ pDE_RNA_FullFormular.pds);
+		System.out.println("静态肽展增元概率钥匙E: "+ pDE_RNA_FullFormular.pdeieKey);
+		System.out.println("静态肽展增元概率钥匙S: "+ pDE_RNA_FullFormular.pdeisKey);
+		System.out.println("静态肽展增元: "+ pDE_RNA_FullFormular.pde);
 		return pDE_RNA_FullFormular;
 	}
 

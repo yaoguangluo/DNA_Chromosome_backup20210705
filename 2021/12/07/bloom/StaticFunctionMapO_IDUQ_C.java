@@ -18,7 +18,66 @@ import OSI.OPE.PSQ.OEU.SOI.SMQ.neroCell.BootNeroDoc;
 //Refer的源码来自 《DNA 元基催化与肽计算 第三修订版本 V039010912》
 //证书编号：国作登字-2021-L-00268255 (中华人民共和国 国家版权登记中心)
 public interface StaticFunctionMapO_IDUQ_C {
-
+	public static void callFunction(String callFunctionKey, StaticFunctionMapO_IDUQ_E staticFunctionMapO_IDUQ_C, Map<String, Object> output) throws IOException
+	, UnsupportedAudioFileException, InterruptedException, CloneNotSupportedException {
+		String[] 传参因子= (String[]) output.get("传参因子");
+		int 因子= 0;
+		Object map = null;
+		if(callFunctionKey.equalsIgnoreCase("U_")){ 
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
+			if((boolean) inputValues.get("find")) {//java 虚拟机完全可以在 代入的时候将object 自动去匹配成传参类型的， 不能转就null ，高斯林故意的 不写一个exception 处理模块。所以我就累。
+				staticFunctionMapO_IDUQ_C.U_((String)inputValues.get(传参因子[因子++]), (LinkNode)inputValues.get(传参因子[因子++]));
+			}
+			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
+		};
+		if(callFunctionKey.equalsIgnoreCase("getRandomDNAkey")){ 
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
+			if((boolean) inputValues.get("find")) {
+				map= staticFunctionMapO_IDUQ_C.getRandomDNAkey((SessionValidation)inputValues.get(传参因子[因子++]), (String)inputValues.get(传参因子[因子++]));
+			}
+			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
+		};
+		if(callFunctionKey.equalsIgnoreCase("Save")){ 
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
+			if((boolean) inputValues.get("find")) {
+				staticFunctionMapO_IDUQ_C.Save((LinkNode)inputValues.get(传参因子[因子++]));
+			}
+			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
+		};
+		if(callFunctionKey.equalsIgnoreCase("bootCell")){ 
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
+			if((boolean) inputValues.get("find")) {
+				staticFunctionMapO_IDUQ_C.bootCell((LinkNode)inputValues.get(传参因子[因子++]),(JTextPane)inputValues.get(传参因子[因子++])
+						,(ThisCanvas)inputValues.get(传参因子[因子++]));
+			}
+			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
+		};
+		if(callFunctionKey.equalsIgnoreCase("BootNeroDoc")){ 
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
+			if((boolean) inputValues.get("find")) {
+				map= staticFunctionMapO_IDUQ_C.BootNeroDoc((LinkList)inputValues.get(传参因子[因子++]), (String) inputValues.get(传参因子[因子++])
+						, (NodeShow) inputValues.get(传参因子[因子++])
+						, (JTextPane) inputValues.get(传参因子[因子++]), (ThisCanvas) inputValues.get(传参因子[因子++]));
+			}
+			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
+		};
+		if(callFunctionKey.equalsIgnoreCase("vpcsRegister")){ 
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
+			if((boolean) inputValues.get("find")) {
+				staticFunctionMapO_IDUQ_C.vpcsRegister((LinkList)inputValues.get(传参因子[因子++]), (String) inputValues.get(传参因子[因子++])
+						, (NodeShow) inputValues.get(传参因子[因子++])
+						, (JTextPane) inputValues.get(传参因子[因子++]), (ThisCanvas) inputValues.get(传参因子[因子++]));
+			}
+			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
+		};
+		if(callFunctionKey.equalsIgnoreCase("register")){ 
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
+			if((boolean) inputValues.get("find")) {
+				staticFunctionMapO_IDUQ_C.register((BootNeroDoc)inputValues.get(传参因子[因子++]));
+			}
+			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
+		};
+	}
 	public static void load(StaticFunctionMapO_IDUQ_E staticFunctionMapO_IDUQ_E) {
 		// TODO Auto-generated method stub
 		//稍后封装
