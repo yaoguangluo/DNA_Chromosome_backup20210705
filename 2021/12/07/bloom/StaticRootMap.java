@@ -80,12 +80,12 @@ public class StaticRootMap{
 	}
 	
 	@SuppressWarnings("static-access")
-	public static void tinShellV003(String[] shellCommands) throws Exception{
+	public static void tinShellV003(String[] shellCommands, Map<String, Object> shellOutput) throws Exception{
 		//稍后准备把 下面main的测试代码 进行封装 调通 一句执行命令， 多句执行命令，多句并发执行命令。
 		//然后并入tinshell。像shell replace命令那样。
 		//罗瑶光
 		String[] strings= shellCommands;
-		Map<String, Object> output= new HashMap<>();
+		Map<String, Object> output= shellOutput;
 		//开始设计传参。
 		StaticRootMap staticRootMap= new StaticRootMap();
 		staticRootMap.initMap();
@@ -182,12 +182,34 @@ public class StaticRootMap{
 		//= (StaticFunctionMapU_VECS_E) staticClassMap.staticClassMap.get("U_VECS");
 		//staticFunctionMapU_VECS_C.main(null);
 		//写法 2
-		String[] strings=new String[3];
+		String[] strings= new String[3];
 		strings[0]= "执行 U_VECS 下 main 接口, 参数是null";
 		strings[1]= "执行 I_VECS 下 main 接口, 参数是null";
 		strings[2]= "执行 U_VECS 下 main 接口, 参数是null";
+		//
+		Map<String, Object> output= new HashMap<>();
+		String[] 传参因子= new String[2];
+		Map<String, Object> inputValue= new HashMap<>(); 
+		
+		double[] doubles= new double[5];
+		doubles[0]= 2.2222262;
+		doubles[1]= 3.2226222;
+		doubles[2]= 6.2622222;
+		doubles[3]= 4.6226222;
+		doubles[4]= 1.2222226;
+		
+		double dou= 2.22;
+		
+		传参因子[0]= "input";//像神一样的tin god
+		传参因子[1]= "rank";
+		inputValue.put(传参因子[0], doubles);
+		inputValue.put(传参因子[1], dou);
+		output.put("传参因子", 传参因子);
+		output.put("inputValues", inputValue);
+		
+		strings[2]= "执行 U_AOPM 下 min_v 接口, 参数是 传参因子";
 		//...
-		StaticRootMap.tinShellV003(strings);
+		StaticRootMap.tinShellV003(strings, output);
 		//写法 3
 	}
 

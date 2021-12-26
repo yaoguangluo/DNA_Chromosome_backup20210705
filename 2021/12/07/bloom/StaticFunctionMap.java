@@ -152,6 +152,7 @@ public class StaticFunctionMap{
 			}
 		}//本来想设计成插件模式，但是速度降低100倍不止，先不考虑，
 		/////////////////////////////////////////////////////////////////////////////////////////////////	
+		inputValues.put("find", find);
 		return inputValues;
 	}
 	public static void postValues(Map<String, Object> output, boolean find, Object map, String callFunctionKey) {
