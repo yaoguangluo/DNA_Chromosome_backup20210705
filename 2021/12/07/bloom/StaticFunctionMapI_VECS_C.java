@@ -15,6 +15,10 @@ public interface StaticFunctionMapI_VECS_C {
 		String[] 传参因子= (String[]) output.get("传参因子");
 		int 因子= 0;
 		Object map = null;
+		if(callFunctionKey.equalsIgnoreCase("main")){ 
+			StaticFunctionMapI_VECS_E.main(null);//稍后分出去
+			output.put("I_VECS_main", "void");//非void接口就直接put进去即可。
+		};
 		if(callFunctionKey.equalsIgnoreCase("doTestWithImageAPP")){ 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
@@ -130,6 +134,7 @@ public interface StaticFunctionMapI_VECS_C {
 	public static void load(StaticFunctionMapI_VECS_E staticFunctionMapI_VECS_E) {
 		// TODO Auto-generated method stub
 		//稍后封装
+		staticFunctionMapI_VECS_E.annotationMap.put("main", "main");
 		staticFunctionMapI_VECS_E.annotationMap.put("doTestWithImageAPP", "doTestWithImageAPP");
 		staticFunctionMapI_VECS_E.annotationMap.put("doFourJianPDErosion", "doFourJianPDErosion");
 		staticFunctionMapI_VECS_E.annotationMap.put("doFourSuanPDErosion", "doFourSuanPDErosion");

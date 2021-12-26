@@ -1,19 +1,18 @@
 package SEM.bloom;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-//ç”¨æ¥ç´¢å¼•24ç»„èŠ±
-//ç½—ç‘¶å…‰
-//1 ç¨åç»†åŒ– å…ƒåŸºèŠ±æ¥å£
-//2 ç¨åå°†æ¥å£ç»Ÿä¸€ç”¨ functionï¼Œ classï¼Œå…ƒåŸºç»„ 3å±‚map
-//3 function ç»Ÿä¸€èµ° interfaceæ¥å£ã€‚
+//ÓÃÀ´Ë÷Òı24×é»¨
+//ÂŞÑş¹â
+//1 ÉÔºóÏ¸»¯ Ôª»ù»¨½Ó¿Ú
+//2 ÉÔºó½«½Ó¿ÚÍ³Ò»ÓÃ function£¬ class£¬Ôª»ù×é 3²ãmap
+//3 function Í³Ò»×ß interface½Ó¿Ú¡£
 public class StaticRootMap{
 
 	public static Map<String, StaticClassMap>  staticRootMap;
 
-	public void initMap() throws IOException {
+	public void initMap() throws Exception {
 		staticRootMap= new HashMap<>();
 
 		StaticClassMap map_A_VECS= new StaticClassMap("A_VECS");
@@ -79,115 +78,125 @@ public class StaticRootMap{
 		staticRootMap.put("Q_AOPM", map_Q_AOPM);
 
 	}
-        public static void tinShellV003(String shellCommands){
-		//ç¨åå‡†å¤‡æŠŠ ä¸‹é¢mainçš„æµ‹è¯•ä»£ç  è¿›è¡Œå°è£… è°ƒé€š ä¸€å¥æ‰§è¡Œå‘½ä»¤ï¼Œ å¤šå¥æ‰§è¡Œå‘½ä»¤ï¼Œå¤šå¥å¹¶å‘æ‰§è¡Œå‘½ä»¤ã€‚
-		//ç„¶åå¹¶å…¥tinshellã€‚åƒshell replaceå‘½ä»¤é‚£æ ·ã€‚
-		//ç½—ç‘¶å…‰
-	}
-	
-	@SuppressWarnings({ "static-access", "unused" })
-	public static void main(String[] argv) throws IOException {	
-		//å†™æ³• 1
-//		StaticRootMap staticRootMap= new StaticRootMap();
-//		staticRootMap.initMap();
-//		StaticClassMap staticClassMap= staticRootMap.staticRootMap.get("U_VECS");
-//		StaticFunctionMapU_VECS_E staticFunctionMapU_VECS_C
-//		= (StaticFunctionMapU_VECS_E) staticClassMap.staticClassMap.get("U_VECS");
-//		staticFunctionMapU_VECS_C.main(null);
-		//å†™æ³• 2
-		String string= "æ‰§è¡Œ U_VECS ä¸‹ main æ¥å£, å‚æ•°æ˜¯null";
-		Map<String, Object> output= new HashMap<>();
-		//å¼€å§‹è®¾è®¡ä¼ å‚ã€‚
-		StaticRootMap staticRootMap= new StaticRootMap();
-		staticRootMap.initMap();
-		Iterator<String> iterator= staticRootMap.staticRootMap.keySet().iterator();
-		while(iterator.hasNext()) {
-			String callMapKey= iterator.next();
-			//case æŸ“è‰²ä½“æ¥å£
-			if(string.contains(callMapKey)) {
-				if(callMapKey.equalsIgnoreCase("U_VECS")) {
-					doU_VECS_Case(staticRootMap.staticRootMap, string, output);
-				}
-				if(callMapKey.equalsIgnoreCase("U_AOPM")) {
-					doU_AOPM_Case(staticRootMap.staticRootMap, string, output);//ç¨ååˆ†å‡ºå»
-				}
-				if(callMapKey.equalsIgnoreCase("A_VECS")) {
-					doA_VECS_Case(staticRootMap.staticRootMap, string, output);
-				}
-				if(callMapKey.equalsIgnoreCase("A_IDUQ")) {
-					doA_IDUQ_Case(staticRootMap.staticRootMap, string, output);
-				}
-				if(callMapKey.equalsIgnoreCase("O_VECS")) {
-					doO_VECS_Case(staticRootMap.staticRootMap, string, output);
-				}
-				if(callMapKey.equalsIgnoreCase("O_IDUQ")) {
-					doO_IDUQ_Case(staticRootMap.staticRootMap, string, output);
-				}
-				if(callMapKey.equalsIgnoreCase("P_VECS")) {
-					doP_VECS_Case(staticRootMap.staticRootMap, string, output);
-				}
-				if(callMapKey.equalsIgnoreCase("P_IDUQ")) {
-					doP_IDUQ_Case(staticRootMap.staticRootMap, string, output);
-				}
-				if(callMapKey.equalsIgnoreCase("M_VECS")) {
-					doM_VECS_Case(staticRootMap.staticRootMap, string, output);
-				}
-				if(callMapKey.equalsIgnoreCase("M_IDUQ")) {
-					doM_IDUQ_Case(staticRootMap.staticRootMap, string, output);
-				}
-				if(callMapKey.equalsIgnoreCase("V_AOPM")) {
-					doV_AOPM_Case(staticRootMap.staticRootMap, string, output);
-				}
-				if(callMapKey.equalsIgnoreCase("V_IDUQ")) {
-					doV_IDUQ_Case(staticRootMap.staticRootMap, string, output);
-				}
-				if(callMapKey.equalsIgnoreCase("E_AOPM")) {
-					doE_AOPM_Case(staticRootMap.staticRootMap, string, output);
-				}
-				if(callMapKey.equalsIgnoreCase("E_IDUQ")) {
-					doE_IDUQ_Case(staticRootMap.staticRootMap, string, output);
-				}
-				if(callMapKey.equalsIgnoreCase("C_AOPM")) {
-					doC_AOPM_Case(staticRootMap.staticRootMap, string, output);
-				}
-				if(callMapKey.equalsIgnoreCase("C_IDUQ")) {
-					doC_IDUQ_Case(staticRootMap.staticRootMap, string, output);
-				}
-				if(callMapKey.equalsIgnoreCase("S_AOPM")) {
-					doS_AOPM_Case(staticRootMap.staticRootMap, string, output);
-				}
-				if(callMapKey.equalsIgnoreCase("S_IDUQ")) {
-					doS_IDUQ_Case(staticRootMap.staticRootMap, string, output);
-				}
-				if(callMapKey.equalsIgnoreCase("I_AOPM")) {
-					doI_AOPM_Case(staticRootMap.staticRootMap, string, output);
-				}
-				if(callMapKey.equalsIgnoreCase("I_VECS")) {
-					doI_VECS_Case(staticRootMap.staticRootMap, string, output);
-				}
-				if(callMapKey.equalsIgnoreCase("D_AOPM")) {
-					doD_AOPM_Case(staticRootMap.staticRootMap, string, output);
-				}
-				if(callMapKey.equalsIgnoreCase("D_VECS")) {
-					doD_VECS_Case(staticRootMap.staticRootMap, string, output);
-				}
-				if(callMapKey.equalsIgnoreCase("Q_AOPM")) {
-					doQ_AOPM_Case(staticRootMap.staticRootMap, string, output);
-				}
-				if(callMapKey.equalsIgnoreCase("Q_VECS")) {
-					doQ_VECS_Case(staticRootMap.staticRootMap, string, output);
-				}
-			}
-		}
-		//å†™æ³• 3
-	}
 	
 	@SuppressWarnings("static-access")
-	private static void doA_VECS_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws IOException {
+	public static void tinShellV003(String[] shellCommands) throws Exception{
+		//ÉÔºó×¼±¸°Ñ ÏÂÃæmainµÄ²âÊÔ´úÂë ½øĞĞ·â×° µ÷Í¨ Ò»¾äÖ´ĞĞÃüÁî£¬ ¶à¾äÖ´ĞĞÃüÁî£¬¶à¾ä²¢·¢Ö´ĞĞÃüÁî¡£
+		//È»ºó²¢Èëtinshell¡£Ïñshell replaceÃüÁîÄÇÑù¡£
+		//ÂŞÑş¹â
+		String[] strings= shellCommands;
+		Map<String, Object> output= new HashMap<>();
+		//¿ªÊ¼Éè¼Æ´«²Î¡£
+		StaticRootMap staticRootMap= new StaticRootMap();
+		staticRootMap.initMap();
+		for(String string:strings) {
+			Iterator<String> iterator= staticRootMap.staticRootMap.keySet().iterator();
+			while(iterator.hasNext()) {
+				String callMapKey= iterator.next();
+				//case È¾É«Ìå½Ó¿Ú
+				if(string.contains(callMapKey)) {
+					if(callMapKey.equalsIgnoreCase("U_VECS")) {
+						doU_VECS_Case(staticRootMap.staticRootMap, string, output);
+					}
+					if(callMapKey.equalsIgnoreCase("U_AOPM")) {
+						doU_AOPM_Case(staticRootMap.staticRootMap, string, output);//ÉÔºó·Ö³öÈ¥
+					}
+					if(callMapKey.equalsIgnoreCase("A_VECS")) {
+						doA_VECS_Case(staticRootMap.staticRootMap, string, output);
+					}
+					if(callMapKey.equalsIgnoreCase("A_IDUQ")) {
+						doA_IDUQ_Case(staticRootMap.staticRootMap, string, output);
+					}
+					if(callMapKey.equalsIgnoreCase("O_VECS")) {
+						doO_VECS_Case(staticRootMap.staticRootMap, string, output);
+					}
+					if(callMapKey.equalsIgnoreCase("O_IDUQ")) {
+						doO_IDUQ_Case(staticRootMap.staticRootMap, string, output);
+					}
+					if(callMapKey.equalsIgnoreCase("P_VECS")) {
+						doP_VECS_Case(staticRootMap.staticRootMap, string, output);
+					}
+					if(callMapKey.equalsIgnoreCase("P_IDUQ")) {
+						doP_IDUQ_Case(staticRootMap.staticRootMap, string, output);
+					}
+					if(callMapKey.equalsIgnoreCase("M_VECS")) {
+						doM_VECS_Case(staticRootMap.staticRootMap, string, output);
+					}
+					if(callMapKey.equalsIgnoreCase("M_IDUQ")) {
+						doM_IDUQ_Case(staticRootMap.staticRootMap, string, output);
+					}
+					if(callMapKey.equalsIgnoreCase("V_AOPM")) {
+						doV_AOPM_Case(staticRootMap.staticRootMap, string, output);
+					}
+					if(callMapKey.equalsIgnoreCase("V_IDUQ")) {
+						doV_IDUQ_Case(staticRootMap.staticRootMap, string, output);
+					}
+					if(callMapKey.equalsIgnoreCase("E_AOPM")) {
+						doE_AOPM_Case(staticRootMap.staticRootMap, string, output);
+					}
+					if(callMapKey.equalsIgnoreCase("E_IDUQ")) {
+						doE_IDUQ_Case(staticRootMap.staticRootMap, string, output);
+					}
+					if(callMapKey.equalsIgnoreCase("C_AOPM")) {
+						doC_AOPM_Case(staticRootMap.staticRootMap, string, output);
+					}
+					if(callMapKey.equalsIgnoreCase("C_IDUQ")) {
+						doC_IDUQ_Case(staticRootMap.staticRootMap, string, output);
+					}
+					if(callMapKey.equalsIgnoreCase("S_AOPM")) {
+						doS_AOPM_Case(staticRootMap.staticRootMap, string, output);
+					}
+					if(callMapKey.equalsIgnoreCase("S_IDUQ")) {
+						doS_IDUQ_Case(staticRootMap.staticRootMap, string, output);
+					}
+					if(callMapKey.equalsIgnoreCase("I_AOPM")) {
+						doI_AOPM_Case(staticRootMap.staticRootMap, string, output);
+					}
+					if(callMapKey.equalsIgnoreCase("I_VECS")) {
+						doI_VECS_Case(staticRootMap.staticRootMap, string, output);
+					}
+					if(callMapKey.equalsIgnoreCase("D_AOPM")) {
+						doD_AOPM_Case(staticRootMap.staticRootMap, string, output);
+					}
+					if(callMapKey.equalsIgnoreCase("D_VECS")) {
+						doD_VECS_Case(staticRootMap.staticRootMap, string, output);
+					}
+					if(callMapKey.equalsIgnoreCase("Q_AOPM")) {
+						doQ_AOPM_Case(staticRootMap.staticRootMap, string, output);
+					}
+					if(callMapKey.equalsIgnoreCase("Q_VECS")) {
+						doQ_VECS_Case(staticRootMap.staticRootMap, string, output);
+					}
+				}
+			}
+			//Ğ´·¨ 3	
+		}
+	}
+	
+	public static void main(String[] argv) throws Exception {	
+		//Ğ´·¨ 1
+		//StaticRootMap staticRootMap= new StaticRootMap();
+		//staticRootMap.initMap();
+		//StaticClassMap staticClassMap= staticRootMap.staticRootMap.get("U_VECS");
+		//StaticFunctionMapU_VECS_E staticFunctionMapU_VECS_C
+		//= (StaticFunctionMapU_VECS_E) staticClassMap.staticClassMap.get("U_VECS");
+		//staticFunctionMapU_VECS_C.main(null);
+		//Ğ´·¨ 2
+		String[] strings=new String[3];
+		strings[0]= "Ö´ĞĞ U_VECS ÏÂ main ½Ó¿Ú, ²ÎÊıÊÇnull";
+		strings[1]= "Ö´ĞĞ I_VECS ÏÂ main ½Ó¿Ú, ²ÎÊıÊÇnull";
+		strings[2]= "Ö´ĞĞ U_VECS ÏÂ main ½Ó¿Ú, ²ÎÊıÊÇnull";
+		//...
+		StaticRootMap.tinShellV003(strings);
+		//Ğ´·¨ 3
+	}
+
+	@SuppressWarnings("static-access")
+	private static void doA_VECS_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws Exception {
 		StaticClassMap staticClassMap= staticRootMap.get("A_VECS");
 		StaticFunctionMapA_VECS_E staticFunctionMapA_VECS_C
 		= (StaticFunctionMapA_VECS_E) staticClassMap.staticClassMap.get("A_VECS");
-		//case å‡½æ•°åæ¥å£
+		//case º¯ÊıÃû½Ó¿Ú
 		Iterator<String> callFunction= staticFunctionMapA_VECS_C.annotationMap.keySet().iterator();
 		while(callFunction.hasNext()) {
 			String callFunctionKey= callFunction.next();
@@ -198,11 +207,11 @@ public class StaticRootMap{
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doP_VECS_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws IOException {
+	private static void doP_VECS_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws Exception {
 		StaticClassMap staticClassMap= staticRootMap.get("P_VECS");
 		StaticFunctionMapP_VECS_E staticFunctionMapP_VECS_C
 		= (StaticFunctionMapP_VECS_E) staticClassMap.staticClassMap.get("P_VECS");
-		//case å‡½æ•°åæ¥å£
+		//case º¯ÊıÃû½Ó¿Ú
 		Iterator<String> callFunction= staticFunctionMapP_VECS_C.annotationMap.keySet().iterator();
 		while(callFunction.hasNext()) {
 			String callFunctionKey= callFunction.next();
@@ -213,11 +222,11 @@ public class StaticRootMap{
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doO_IDUQ_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws IOException {
+	private static void doO_IDUQ_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws Exception {
 		StaticClassMap staticClassMap= staticRootMap.get("O_IDUQ");
 		StaticFunctionMapO_IDUQ_E staticFunctionMapO_IDUQ_C
 		= (StaticFunctionMapO_IDUQ_E) staticClassMap.staticClassMap.get("O_IDUQ");
-		//case å‡½æ•°åæ¥å£
+		//case º¯ÊıÃû½Ó¿Ú
 		Iterator<String> callFunction= staticFunctionMapO_IDUQ_C.annotationMap.keySet().iterator();
 		while(callFunction.hasNext()) {
 			String callFunctionKey= callFunction.next();
@@ -228,11 +237,11 @@ public class StaticRootMap{
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doO_VECS_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws IOException {
+	private static void doO_VECS_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws Exception {
 		StaticClassMap staticClassMap= staticRootMap.get("O_VECS");
 		StaticFunctionMapO_VECS_E staticFunctionMapO_VECS_C
 		= (StaticFunctionMapO_VECS_E) staticClassMap.staticClassMap.get("O_VECS");
-		//case å‡½æ•°åæ¥å£
+		//case º¯ÊıÃû½Ó¿Ú
 		Iterator<String> callFunction= staticFunctionMapO_VECS_C.annotationMap.keySet().iterator();
 		while(callFunction.hasNext()) {
 			String callFunctionKey= callFunction.next();
@@ -243,11 +252,11 @@ public class StaticRootMap{
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doA_IDUQ_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws IOException {
+	private static void doA_IDUQ_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws Exception {
 		StaticClassMap staticClassMap= staticRootMap.get("A_IDUQ");
 		StaticFunctionMapA_IDUQ_E staticFunctionMapA_IDUQ_C
 		= (StaticFunctionMapA_IDUQ_E) staticClassMap.staticClassMap.get("A_IDUQ");
-		//case å‡½æ•°åæ¥å£
+		//case º¯ÊıÃû½Ó¿Ú
 		Iterator<String> callFunction= staticFunctionMapA_IDUQ_C.annotationMap.keySet().iterator();
 		while(callFunction.hasNext()) {
 			String callFunctionKey= callFunction.next();
@@ -258,11 +267,11 @@ public class StaticRootMap{
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doU_VECS_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws IOException {
+	private static void doU_VECS_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws Exception {
 		StaticClassMap staticClassMap= staticRootMap.get("U_VECS");
 		StaticFunctionMapU_VECS_E staticFunctionMapU_VECS_C
 		= (StaticFunctionMapU_VECS_E) staticClassMap.staticClassMap.get("U_VECS");
-		//case å‡½æ•°åæ¥å£
+		//case º¯ÊıÃû½Ó¿Ú
 		Iterator<String> callFunction= staticFunctionMapU_VECS_C.annotationMap.keySet().iterator();
 		while(callFunction.hasNext()) {
 			String callFunctionKey= callFunction.next();
@@ -273,11 +282,11 @@ public class StaticRootMap{
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doP_IDUQ_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws IOException {
+	private static void doP_IDUQ_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws Exception {
 		StaticClassMap staticClassMap= staticRootMap.get("P_IDUQ");
 		StaticFunctionMapP_IDUQ_E staticFunctionMapP_IDUQ_C
 		= (StaticFunctionMapP_IDUQ_E) staticClassMap.staticClassMap.get("P_IDUQ");
-		//case å‡½æ•°åæ¥å£
+		//case º¯ÊıÃû½Ó¿Ú
 		Iterator<String> callFunction= staticFunctionMapP_IDUQ_C.annotationMap.keySet().iterator();
 		while(callFunction.hasNext()) {
 			String callFunctionKey= callFunction.next();
@@ -288,11 +297,11 @@ public class StaticRootMap{
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doM_VECS_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws IOException {
+	private static void doM_VECS_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws Exception {
 		StaticClassMap staticClassMap= staticRootMap.get("M_VECS");
 		StaticFunctionMapM_VECS_E staticFunctionMapM_VECS_C
 		= (StaticFunctionMapM_VECS_E) staticClassMap.staticClassMap.get("M_VECS");
-		//case å‡½æ•°åæ¥å£
+		//case º¯ÊıÃû½Ó¿Ú
 		Iterator<String> callFunction= staticFunctionMapM_VECS_C.annotationMap.keySet().iterator();
 		while(callFunction.hasNext()) {
 			String callFunctionKey= callFunction.next();
@@ -304,11 +313,11 @@ public class StaticRootMap{
 
 
 	@SuppressWarnings("static-access")
-	private static void doM_IDUQ_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws IOException {
+	private static void doM_IDUQ_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws Exception {
 		StaticClassMap staticClassMap= staticRootMap.get("M_IDUQ");
 		StaticFunctionMapM_IDUQ_E staticFunctionMapM_IDUQ_C
 		= (StaticFunctionMapM_IDUQ_E) staticClassMap.staticClassMap.get("M_IDUQ");
-		//case å‡½æ•°åæ¥å£
+		//case º¯ÊıÃû½Ó¿Ú
 		Iterator<String> callFunction= staticFunctionMapM_IDUQ_C.annotationMap.keySet().iterator();
 		while(callFunction.hasNext()) {
 			String callFunctionKey= callFunction.next();
@@ -320,11 +329,11 @@ public class StaticRootMap{
 
 
 	@SuppressWarnings("static-access")
-	private static void doV_AOPM_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws IOException {
+	private static void doV_AOPM_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws Exception {
 		StaticClassMap staticClassMap= staticRootMap.get("V_AOPM");
 		StaticFunctionMapV_AOPM_E staticFunctionMapV_AOPM_C
 		= (StaticFunctionMapV_AOPM_E) staticClassMap.staticClassMap.get("V_AOPM");
-		//case å‡½æ•°åæ¥å£
+		//case º¯ÊıÃû½Ó¿Ú
 		Iterator<String> callFunction= staticFunctionMapV_AOPM_C.annotationMap.keySet().iterator();
 		while(callFunction.hasNext()) {
 			String callFunctionKey= callFunction.next();
@@ -335,11 +344,11 @@ public class StaticRootMap{
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doV_IDUQ_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws IOException {
+	private static void doV_IDUQ_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws Exception {
 		StaticClassMap staticClassMap= staticRootMap.get("V_IDUQ");
 		StaticFunctionMapV_IDUQ_E staticFunctionMapV_IDUQ_C
 		= (StaticFunctionMapV_IDUQ_E) staticClassMap.staticClassMap.get("V_IDUQ");
-		//case å‡½æ•°åæ¥å£
+		//case º¯ÊıÃû½Ó¿Ú
 		Iterator<String> callFunction= staticFunctionMapV_IDUQ_C.annotationMap.keySet().iterator();
 		while(callFunction.hasNext()) {
 			String callFunctionKey= callFunction.next();
@@ -350,11 +359,11 @@ public class StaticRootMap{
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doE_AOPM_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws IOException {
+	private static void doE_AOPM_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws Exception {
 		StaticClassMap staticClassMap= staticRootMap.get("E_AOPM");
 		StaticFunctionMapE_AOPM_E staticFunctionMapE_AOPM_C
 		= (StaticFunctionMapE_AOPM_E) staticClassMap.staticClassMap.get("E_AOPM");
-		//case å‡½æ•°åæ¥å£
+		//case º¯ÊıÃû½Ó¿Ú
 		Iterator<String> callFunction= staticFunctionMapE_AOPM_C.annotationMap.keySet().iterator();
 		while(callFunction.hasNext()) {
 			String callFunctionKey= callFunction.next();
@@ -365,11 +374,11 @@ public class StaticRootMap{
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doE_IDUQ_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws IOException {
+	private static void doE_IDUQ_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws Exception {
 		StaticClassMap staticClassMap= staticRootMap.get("E_IDUQ");
 		StaticFunctionMapE_IDUQ_E staticFunctionMapE_IDUQ_C
 		= (StaticFunctionMapE_IDUQ_E) staticClassMap.staticClassMap.get("E_IDUQ");
-		//case å‡½æ•°åæ¥å£
+		//case º¯ÊıÃû½Ó¿Ú
 		Iterator<String> callFunction= staticFunctionMapE_IDUQ_C.annotationMap.keySet().iterator();
 		while(callFunction.hasNext()) {
 			String callFunctionKey= callFunction.next();
@@ -380,11 +389,11 @@ public class StaticRootMap{
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doC_AOPM_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws IOException {
+	private static void doC_AOPM_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws Exception {
 		StaticClassMap staticClassMap= staticRootMap.get("C_AOPM");
 		StaticFunctionMapC_AOPM_E staticFunctionMapC_AOPM_C
 		= (StaticFunctionMapC_AOPM_E) staticClassMap.staticClassMap.get("C_AOPM");
-		//case å‡½æ•°åæ¥å£
+		//case º¯ÊıÃû½Ó¿Ú
 		Iterator<String> callFunction= staticFunctionMapC_AOPM_C.annotationMap.keySet().iterator();
 		while(callFunction.hasNext()) {
 			String callFunctionKey= callFunction.next();
@@ -395,11 +404,11 @@ public class StaticRootMap{
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doC_IDUQ_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws IOException {
+	private static void doC_IDUQ_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws Exception {
 		StaticClassMap staticClassMap= staticRootMap.get("C_IDUQ");
 		StaticFunctionMapC_IDUQ_E staticFunctionMapC_IDUQ_C
 		= (StaticFunctionMapC_IDUQ_E) staticClassMap.staticClassMap.get("C_IDUQ");
-		//case å‡½æ•°åæ¥å£
+		//case º¯ÊıÃû½Ó¿Ú
 		Iterator<String> callFunction= staticFunctionMapC_IDUQ_C.annotationMap.keySet().iterator();
 		while(callFunction.hasNext()) {
 			String callFunctionKey= callFunction.next();
@@ -410,11 +419,11 @@ public class StaticRootMap{
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doS_AOPM_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws IOException {
+	private static void doS_AOPM_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws Exception {
 		StaticClassMap staticClassMap= staticRootMap.get("S_AOPM");
 		StaticFunctionMapS_AOPM_E staticFunctionMapS_AOPM_C
 		= (StaticFunctionMapS_AOPM_E) staticClassMap.staticClassMap.get("S_AOPM");
-		//case å‡½æ•°åæ¥å£
+		//case º¯ÊıÃû½Ó¿Ú
 		Iterator<String> callFunction= staticFunctionMapS_AOPM_C.annotationMap.keySet().iterator();
 		while(callFunction.hasNext()) {
 			String callFunctionKey= callFunction.next();
@@ -425,11 +434,11 @@ public class StaticRootMap{
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doS_IDUQ_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws IOException {
+	private static void doS_IDUQ_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws Exception {
 		StaticClassMap staticClassMap= staticRootMap.get("S_IDUQ");
 		StaticFunctionMapS_IDUQ_E staticFunctionMapS_IDUQ_C
 		= (StaticFunctionMapS_IDUQ_E) staticClassMap.staticClassMap.get("S_IDUQ");
-		//case å‡½æ•°åæ¥å£
+		//case º¯ÊıÃû½Ó¿Ú
 		Iterator<String> callFunction= staticFunctionMapS_IDUQ_C.annotationMap.keySet().iterator();
 		while(callFunction.hasNext()) {
 			String callFunctionKey= callFunction.next();
@@ -440,11 +449,11 @@ public class StaticRootMap{
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doI_AOPM_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws IOException {
+	private static void doI_AOPM_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws Exception {
 		StaticClassMap staticClassMap= staticRootMap.get("I_AOPM");
 		StaticFunctionMapI_AOPM_E staticFunctionMapI_AOPM_C
 		= (StaticFunctionMapI_AOPM_E) staticClassMap.staticClassMap.get("I_AOPM");
-		//case å‡½æ•°åæ¥å£
+		//case º¯ÊıÃû½Ó¿Ú
 		Iterator<String> callFunction= staticFunctionMapI_AOPM_C.annotationMap.keySet().iterator();
 		while(callFunction.hasNext()) {
 			String callFunctionKey= callFunction.next();
@@ -455,11 +464,11 @@ public class StaticRootMap{
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doI_VECS_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws IOException {
+	private static void doI_VECS_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws Exception {
 		StaticClassMap staticClassMap= staticRootMap.get("I_VECS");
 		StaticFunctionMapI_VECS_E staticFunctionMapI_VECS_C
 		= (StaticFunctionMapI_VECS_E) staticClassMap.staticClassMap.get("I_VECS");
-		//case å‡½æ•°åæ¥å£
+		//case º¯ÊıÃû½Ó¿Ú
 		Iterator<String> callFunction= staticFunctionMapI_VECS_C.annotationMap.keySet().iterator();
 		while(callFunction.hasNext()) {
 			String callFunctionKey= callFunction.next();
@@ -470,11 +479,11 @@ public class StaticRootMap{
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doD_AOPM_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws IOException {
+	private static void doD_AOPM_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws Exception {
 		StaticClassMap staticClassMap= staticRootMap.get("D_AOPM");
 		StaticFunctionMapD_AOPM_E staticFunctionMapD_AOPM_C
 		= (StaticFunctionMapD_AOPM_E) staticClassMap.staticClassMap.get("D_AOPM");
-		//case å‡½æ•°åæ¥å£
+		//case º¯ÊıÃû½Ó¿Ú
 		Iterator<String> callFunction= staticFunctionMapD_AOPM_C.annotationMap.keySet().iterator();
 		while(callFunction.hasNext()) {
 			String callFunctionKey= callFunction.next();
@@ -485,11 +494,11 @@ public class StaticRootMap{
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doD_VECS_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws IOException {
+	private static void doD_VECS_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws Exception {
 		StaticClassMap staticClassMap= staticRootMap.get("D_VECS");
 		StaticFunctionMapD_VECS_E staticFunctionMapD_VECS_C
 		= (StaticFunctionMapD_VECS_E) staticClassMap.staticClassMap.get("D_VECS");
-		//case å‡½æ•°åæ¥å£
+		//case º¯ÊıÃû½Ó¿Ú
 		Iterator<String> callFunction= staticFunctionMapD_VECS_C.annotationMap.keySet().iterator();
 		while(callFunction.hasNext()) {
 			String callFunctionKey= callFunction.next();
@@ -500,11 +509,11 @@ public class StaticRootMap{
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doQ_AOPM_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws IOException {
+	private static void doQ_AOPM_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws Exception {
 		StaticClassMap staticClassMap= staticRootMap.get("Q_AOPM");
 		StaticFunctionMapQ_AOPM_E staticFunctionMapQ_AOPM_C
 		= (StaticFunctionMapQ_AOPM_E) staticClassMap.staticClassMap.get("Q_AOPM");
-		//case å‡½æ•°åæ¥å£
+		//case º¯ÊıÃû½Ó¿Ú
 		Iterator<String> callFunction= staticFunctionMapQ_AOPM_C.annotationMap.keySet().iterator();
 		while(callFunction.hasNext()) {
 			String callFunctionKey= callFunction.next();
@@ -515,11 +524,11 @@ public class StaticRootMap{
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doQ_VECS_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws IOException {
+	private static void doQ_VECS_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws Exception {
 		StaticClassMap staticClassMap= staticRootMap.get("Q_VECS");
 		StaticFunctionMapQ_VECS_E staticFunctionMapQ_VECS_C
 		= (StaticFunctionMapQ_VECS_E) staticClassMap.staticClassMap.get("Q_VECS");
-		//case å‡½æ•°åæ¥å£
+		//case º¯ÊıÃû½Ó¿Ú
 		Iterator<String> callFunction= staticFunctionMapQ_VECS_C.annotationMap.keySet().iterator();
 		while(callFunction.hasNext()) {
 			String callFunctionKey= callFunction.next();
@@ -530,11 +539,11 @@ public class StaticRootMap{
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doU_AOPM_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws IOException {
+	private static void doU_AOPM_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws Exception {
 		StaticClassMap staticClassMap= staticRootMap.get("U_AOPM");
 		StaticFunctionMapU_AOPM_E staticFunctionMapU_AOPM_C
 		= (StaticFunctionMapU_AOPM_E) staticClassMap.staticClassMap.get("U_AOPM");
-		//case å‡½æ•°åæ¥å£
+		//case º¯ÊıÃû½Ó¿Ú
 		Iterator<String> callFunction= staticFunctionMapU_AOPM_C.annotationMap.keySet().iterator();
 		while(callFunction.hasNext()) {
 			String callFunctionKey= callFunction.next();

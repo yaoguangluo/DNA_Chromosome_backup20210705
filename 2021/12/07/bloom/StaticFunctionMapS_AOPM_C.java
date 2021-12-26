@@ -209,5 +209,5 @@ public interface StaticFunctionMapS_AOPM_C {
 
 	//S 接口的应用
 
-	public StaticRootMap creatMap() throws IOException;
+	public StaticRootMap creatMap() throws Exception;
 }
