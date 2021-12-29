@@ -182,10 +182,10 @@ public class StaticRootMap{
 		//= (StaticFunctionMapU_VECS_E) staticClassMap.staticClassMap.get("U_VECS");
 		//staticFunctionMapU_VECS_C.main(null);
 		//写法 2
-		String[] strings= new String[3];
+		String[] strings= new String[4];
 		strings[0]= "执行 U_VECS 下 main 接口, 参数是null";
-		strings[1]= "执行 I_VECS 下 main 接口, 参数是null";
-		strings[2]= "执行 U_VECS 下 main 接口, 参数是null";
+		//strings[1]= "执行 I_VECS 下 main 接口, 参数是null";
+		strings[1]= "执行 U_VECS 下 main 接口, 参数是null";
 		//
 		Map<String, Object> output= new HashMap<>();
 		String[] 传参因子= new String[2];
@@ -201,20 +201,24 @@ public class StaticRootMap{
 		double dou= 2.22;
 		
 		传参因子[0]= "input";//像神一样的tin god
-		传参因子[1]= "rank";
+		传参因子[1]= "scale";
 		inputValue.put(传参因子[0], doubles);
 		inputValue.put(传参因子[1], dou);
 		output.put("传参因子", 传参因子);
 		output.put("inputValues", inputValue);
 		
-		strings[2]= "执行 U_AOPM 下 min_v 接口, 参数是 传参因子";
+		strings[2]= "执行 U_AOPM 下 median1d 接口, 参数是 传参因子";
+		//strings[3]= "执行 U_AOPM 下 min_v 接口, 参数是 过程因子";
+		strings[3]= "执行 U_AOPM 下 fengTong1 接口, 参数是 过程因子";
+		
 		//...
 		StaticRootMap.tinShellV003(strings, output);
 		//写法 3
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doA_VECS_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws Exception {
+	private static void doA_VECS_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output)
+			throws Exception {
 		StaticClassMap staticClassMap= staticRootMap.get("A_VECS");
 		StaticFunctionMapA_VECS_E staticFunctionMapA_VECS_C
 		= (StaticFunctionMapA_VECS_E) staticClassMap.staticClassMap.get("A_VECS");
@@ -229,7 +233,8 @@ public class StaticRootMap{
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doP_VECS_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws Exception {
+	private static void doP_VECS_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) 
+			throws Exception {
 		StaticClassMap staticClassMap= staticRootMap.get("P_VECS");
 		StaticFunctionMapP_VECS_E staticFunctionMapP_VECS_C
 		= (StaticFunctionMapP_VECS_E) staticClassMap.staticClassMap.get("P_VECS");
@@ -244,7 +249,8 @@ public class StaticRootMap{
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doO_IDUQ_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws Exception {
+	private static void doO_IDUQ_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output)
+			throws Exception {
 		StaticClassMap staticClassMap= staticRootMap.get("O_IDUQ");
 		StaticFunctionMapO_IDUQ_E staticFunctionMapO_IDUQ_C
 		= (StaticFunctionMapO_IDUQ_E) staticClassMap.staticClassMap.get("O_IDUQ");
@@ -259,7 +265,8 @@ public class StaticRootMap{
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doO_VECS_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws Exception {
+	private static void doO_VECS_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) 
+			throws Exception {
 		StaticClassMap staticClassMap= staticRootMap.get("O_VECS");
 		StaticFunctionMapO_VECS_E staticFunctionMapO_VECS_C
 		= (StaticFunctionMapO_VECS_E) staticClassMap.staticClassMap.get("O_VECS");
@@ -274,7 +281,8 @@ public class StaticRootMap{
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doA_IDUQ_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws Exception {
+	private static void doA_IDUQ_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output)
+			throws Exception {
 		StaticClassMap staticClassMap= staticRootMap.get("A_IDUQ");
 		StaticFunctionMapA_IDUQ_E staticFunctionMapA_IDUQ_C
 		= (StaticFunctionMapA_IDUQ_E) staticClassMap.staticClassMap.get("A_IDUQ");
@@ -289,7 +297,8 @@ public class StaticRootMap{
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doU_VECS_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws Exception {
+	private static void doU_VECS_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output)
+			throws Exception {
 		StaticClassMap staticClassMap= staticRootMap.get("U_VECS");
 		StaticFunctionMapU_VECS_E staticFunctionMapU_VECS_C
 		= (StaticFunctionMapU_VECS_E) staticClassMap.staticClassMap.get("U_VECS");
@@ -304,7 +313,8 @@ public class StaticRootMap{
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doP_IDUQ_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws Exception {
+	private static void doP_IDUQ_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) 
+			throws Exception {
 		StaticClassMap staticClassMap= staticRootMap.get("P_IDUQ");
 		StaticFunctionMapP_IDUQ_E staticFunctionMapP_IDUQ_C
 		= (StaticFunctionMapP_IDUQ_E) staticClassMap.staticClassMap.get("P_IDUQ");
@@ -319,7 +329,8 @@ public class StaticRootMap{
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doM_VECS_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws Exception {
+	private static void doM_VECS_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output)
+			throws Exception {
 		StaticClassMap staticClassMap= staticRootMap.get("M_VECS");
 		StaticFunctionMapM_VECS_E staticFunctionMapM_VECS_C
 		= (StaticFunctionMapM_VECS_E) staticClassMap.staticClassMap.get("M_VECS");
@@ -335,7 +346,8 @@ public class StaticRootMap{
 
 
 	@SuppressWarnings("static-access")
-	private static void doM_IDUQ_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws Exception {
+	private static void doM_IDUQ_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output)
+			throws Exception {
 		StaticClassMap staticClassMap= staticRootMap.get("M_IDUQ");
 		StaticFunctionMapM_IDUQ_E staticFunctionMapM_IDUQ_C
 		= (StaticFunctionMapM_IDUQ_E) staticClassMap.staticClassMap.get("M_IDUQ");
@@ -351,7 +363,8 @@ public class StaticRootMap{
 
 
 	@SuppressWarnings("static-access")
-	private static void doV_AOPM_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws Exception {
+	private static void doV_AOPM_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) 
+			throws Exception {
 		StaticClassMap staticClassMap= staticRootMap.get("V_AOPM");
 		StaticFunctionMapV_AOPM_E staticFunctionMapV_AOPM_C
 		= (StaticFunctionMapV_AOPM_E) staticClassMap.staticClassMap.get("V_AOPM");
@@ -366,7 +379,8 @@ public class StaticRootMap{
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doV_IDUQ_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws Exception {
+	private static void doV_IDUQ_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output)
+			throws Exception {
 		StaticClassMap staticClassMap= staticRootMap.get("V_IDUQ");
 		StaticFunctionMapV_IDUQ_E staticFunctionMapV_IDUQ_C
 		= (StaticFunctionMapV_IDUQ_E) staticClassMap.staticClassMap.get("V_IDUQ");
@@ -381,7 +395,8 @@ public class StaticRootMap{
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doE_AOPM_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws Exception {
+	private static void doE_AOPM_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output)
+			throws Exception {
 		StaticClassMap staticClassMap= staticRootMap.get("E_AOPM");
 		StaticFunctionMapE_AOPM_E staticFunctionMapE_AOPM_C
 		= (StaticFunctionMapE_AOPM_E) staticClassMap.staticClassMap.get("E_AOPM");
@@ -396,7 +411,8 @@ public class StaticRootMap{
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doE_IDUQ_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws Exception {
+	private static void doE_IDUQ_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output)
+			throws Exception {
 		StaticClassMap staticClassMap= staticRootMap.get("E_IDUQ");
 		StaticFunctionMapE_IDUQ_E staticFunctionMapE_IDUQ_C
 		= (StaticFunctionMapE_IDUQ_E) staticClassMap.staticClassMap.get("E_IDUQ");
@@ -411,7 +427,8 @@ public class StaticRootMap{
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doC_AOPM_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws Exception {
+	private static void doC_AOPM_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output)
+			throws Exception {
 		StaticClassMap staticClassMap= staticRootMap.get("C_AOPM");
 		StaticFunctionMapC_AOPM_E staticFunctionMapC_AOPM_C
 		= (StaticFunctionMapC_AOPM_E) staticClassMap.staticClassMap.get("C_AOPM");
@@ -426,7 +443,8 @@ public class StaticRootMap{
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doC_IDUQ_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws Exception {
+	private static void doC_IDUQ_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output)
+			throws Exception {
 		StaticClassMap staticClassMap= staticRootMap.get("C_IDUQ");
 		StaticFunctionMapC_IDUQ_E staticFunctionMapC_IDUQ_C
 		= (StaticFunctionMapC_IDUQ_E) staticClassMap.staticClassMap.get("C_IDUQ");
@@ -441,7 +459,8 @@ public class StaticRootMap{
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doS_AOPM_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws Exception {
+	private static void doS_AOPM_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) 
+			throws Exception {
 		StaticClassMap staticClassMap= staticRootMap.get("S_AOPM");
 		StaticFunctionMapS_AOPM_E staticFunctionMapS_AOPM_C
 		= (StaticFunctionMapS_AOPM_E) staticClassMap.staticClassMap.get("S_AOPM");
@@ -456,7 +475,8 @@ public class StaticRootMap{
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doS_IDUQ_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws Exception {
+	private static void doS_IDUQ_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) 
+			throws Exception {
 		StaticClassMap staticClassMap= staticRootMap.get("S_IDUQ");
 		StaticFunctionMapS_IDUQ_E staticFunctionMapS_IDUQ_C
 		= (StaticFunctionMapS_IDUQ_E) staticClassMap.staticClassMap.get("S_IDUQ");
@@ -471,7 +491,8 @@ public class StaticRootMap{
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doI_AOPM_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws Exception {
+	private static void doI_AOPM_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output)
+			throws Exception {
 		StaticClassMap staticClassMap= staticRootMap.get("I_AOPM");
 		StaticFunctionMapI_AOPM_E staticFunctionMapI_AOPM_C
 		= (StaticFunctionMapI_AOPM_E) staticClassMap.staticClassMap.get("I_AOPM");
@@ -486,7 +507,8 @@ public class StaticRootMap{
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doI_VECS_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws Exception {
+	private static void doI_VECS_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output)
+			throws Exception {
 		StaticClassMap staticClassMap= staticRootMap.get("I_VECS");
 		StaticFunctionMapI_VECS_E staticFunctionMapI_VECS_C
 		= (StaticFunctionMapI_VECS_E) staticClassMap.staticClassMap.get("I_VECS");
@@ -501,7 +523,8 @@ public class StaticRootMap{
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doD_AOPM_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws Exception {
+	private static void doD_AOPM_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output)
+			throws Exception {
 		StaticClassMap staticClassMap= staticRootMap.get("D_AOPM");
 		StaticFunctionMapD_AOPM_E staticFunctionMapD_AOPM_C
 		= (StaticFunctionMapD_AOPM_E) staticClassMap.staticClassMap.get("D_AOPM");
@@ -516,7 +539,8 @@ public class StaticRootMap{
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doD_VECS_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws Exception {
+	private static void doD_VECS_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output)
+			throws Exception {
 		StaticClassMap staticClassMap= staticRootMap.get("D_VECS");
 		StaticFunctionMapD_VECS_E staticFunctionMapD_VECS_C
 		= (StaticFunctionMapD_VECS_E) staticClassMap.staticClassMap.get("D_VECS");
@@ -531,7 +555,8 @@ public class StaticRootMap{
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doQ_AOPM_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws Exception {
+	private static void doQ_AOPM_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output)
+			throws Exception {
 		StaticClassMap staticClassMap= staticRootMap.get("Q_AOPM");
 		StaticFunctionMapQ_AOPM_E staticFunctionMapQ_AOPM_C
 		= (StaticFunctionMapQ_AOPM_E) staticClassMap.staticClassMap.get("Q_AOPM");
@@ -546,7 +571,8 @@ public class StaticRootMap{
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doQ_VECS_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws Exception {
+	private static void doQ_VECS_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) 
+			throws Exception {
 		StaticClassMap staticClassMap= staticRootMap.get("Q_VECS");
 		StaticFunctionMapQ_VECS_E staticFunctionMapQ_VECS_C
 		= (StaticFunctionMapQ_VECS_E) staticClassMap.staticClassMap.get("Q_VECS");
@@ -561,7 +587,8 @@ public class StaticRootMap{
 	}
 
 	@SuppressWarnings("static-access")
-	private static void doU_AOPM_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output) throws Exception {
+	private static void doU_AOPM_Case(Map<String, StaticClassMap> staticRootMap, String string, Map<String, Object> output)
+			throws Exception {
 		StaticClassMap staticClassMap= staticRootMap.get("U_AOPM");
 		StaticFunctionMapU_AOPM_E staticFunctionMapU_AOPM_C
 		= (StaticFunctionMapU_AOPM_E) staticClassMap.staticClassMap.get("U_AOPM");
