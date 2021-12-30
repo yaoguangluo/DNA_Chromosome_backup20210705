@@ -26,7 +26,8 @@ public interface StaticFunctionMapV_IDUQ_C {
 		if(callFunctionKey.equalsIgnoreCase("初始ETL")){ 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapV_IDUQ_C.初始ETL((App) inputValues.get(传参因子[因子++]), (Container) inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapV_IDUQ_C.初始ETL((App) inputValues.get(传参因子[因子++])
+						, (Container) inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		};
@@ -35,7 +36,8 @@ public interface StaticFunctionMapV_IDUQ_C {
 			if((boolean) inputValues.get("find")) {
 				map= staticFunctionMapV_IDUQ_C.仅仅初始ETL((Object[][]) inputValues.get(传参因子[因子++])
 						, (JTextPane) inputValues.get(传参因子[因子++]), (App) inputValues.get(传参因子[因子++])
-						, (CogsBinaryForest_AE) inputValues.get(传参因子[因子++]), (Map<String, String>) inputValues.get(传参因子[因子++]));
+						, (CogsBinaryForest_AE) inputValues.get(传参因子[因子++])
+						, (Map<String, String>) inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		};
@@ -87,14 +89,14 @@ public interface StaticFunctionMapV_IDUQ_C {
 	}
 	public static void load(StaticFunctionMapV_IDUQ_E staticFunctionMapV_IDUQ_E) {
 		//稍后封装
-		staticFunctionMapV_IDUQ_E.annotationMap.put("初始ETL", "初始ETL"); 
-		staticFunctionMapV_IDUQ_E.annotationMap.put("仅仅初始ETL", "仅仅初始ETL"); 
-		staticFunctionMapV_IDUQ_E.annotationMap.put("展示ETL", "展示ETL"); 
-		staticFunctionMapV_IDUQ_E.annotationMap.put("ETL文档读取", "ETL文档读取"); 
-		staticFunctionMapV_IDUQ_E.annotationMap.put("ETL文档执行", "ETL文档执行"); 
-		staticFunctionMapV_IDUQ_E.annotationMap.put("ETL文档保存", "ETL文档保存"); 
-		staticFunctionMapV_IDUQ_E.annotationMap.put("getOrigianlTextByLock", "getOrigianlTextByLock"); 
-		staticFunctionMapV_IDUQ_E.annotationMap.put("Load", "Load"); 
+		staticFunctionMapV_IDUQ_E.annotationMap.put("初始ETL", "app:jpanelSecond"); 
+		staticFunctionMapV_IDUQ_E.annotationMap.put("仅仅初始ETL", "tableData_old:text:u:_A:pos"); 
+		staticFunctionMapV_IDUQ_E.annotationMap.put("展示ETL", "void"); 
+		staticFunctionMapV_IDUQ_E.annotationMap.put("ETL文档读取", "void"); 
+		staticFunctionMapV_IDUQ_E.annotationMap.put("ETL文档执行", "void"); 
+		staticFunctionMapV_IDUQ_E.annotationMap.put("ETL文档保存", "void"); 
+		staticFunctionMapV_IDUQ_E.annotationMap.put("getOrigianlTextByLock", "inputString:lockString"); 
+		staticFunctionMapV_IDUQ_E.annotationMap.put("Load", "first:nodeView:file:thislist"); 
 	}
 
 	public MakeContainerSJFX 初始ETL(App app, Container jpanelSecond);
