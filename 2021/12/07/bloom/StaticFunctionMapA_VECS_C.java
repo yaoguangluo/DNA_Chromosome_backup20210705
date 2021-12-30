@@ -10,7 +10,8 @@ import OEI.ME.analysis.E.CogsBinaryForest_AE;
 //用来索引函数 注册类
 //罗瑶光
 public interface StaticFunctionMapA_VECS_C {
-	public static void callFunction(String callFunctionKey, StaticFunctionMapA_VECS_E staticFunctionMapA_VECS_C, Map<String, Object> output) throws IOException {
+	public static void callFunction(String callFunctionKey
+			, StaticFunctionMapA_VECS_E staticFunctionMapA_VECS_C, Map<String, Object> output) throws IOException {
 		String[] 传参因子= (String[]) output.get("传参因子");
 		int 因子= 0;
 		Object map = null;
@@ -91,16 +92,16 @@ public interface StaticFunctionMapA_VECS_C {
 		//扫描接口
 		//扫描继承
 		//稍后封装
-		staticFunctionMapA_VECS_E.annotationMap.put("parserMixedString", "parserMixedString");
-		staticFunctionMapA_VECS_E.annotationMap.put("parserMixedStringToList", "parserMixedStringToList");
-		staticFunctionMapA_VECS_E.annotationMap.put("posReader", "posReader");
-		staticFunctionMapA_VECS_E.annotationMap.put("dnnReader", "dnnReader");
-		staticFunctionMapA_VECS_E.annotationMap.put("mindReader", "mindReader");
-		staticFunctionMapA_VECS_E.annotationMap.put("emotionReader", "emotionReader");
-		staticFunctionMapA_VECS_E.annotationMap.put("educationReader", "educationReader");
-		staticFunctionMapA_VECS_E.annotationMap.put("environmentReader", "environmentReader");
-		staticFunctionMapA_VECS_E.annotationMap.put("lenovoReader", "lenovoReader");
-		staticFunctionMapA_VECS_E.annotationMap.put("frequencyReader", "frequencyReader");
+		staticFunctionMapA_VECS_E.annotationMap.put("parserMixedString", "inputString");
+		staticFunctionMapA_VECS_E.annotationMap.put("parserMixedStringToList", "inputString");
+		staticFunctionMapA_VECS_E.annotationMap.put("posReader", "inputString");
+		staticFunctionMapA_VECS_E.annotationMap.put("dnnReader", "inputString");
+		staticFunctionMapA_VECS_E.annotationMap.put("mindReader", "inputString");
+		staticFunctionMapA_VECS_E.annotationMap.put("emotionReader", "inputString");
+		staticFunctionMapA_VECS_E.annotationMap.put("educationReader", "inputString");
+		staticFunctionMapA_VECS_E.annotationMap.put("environmentReader", "inputString");
+		staticFunctionMapA_VECS_E.annotationMap.put("lenovoReader", "inputString");
+		staticFunctionMapA_VECS_E.annotationMap.put("frequencyReader", "inputString");
 	}
 	//分词
 	public static List<String> parserMixedString(String inputString) throws IOException {

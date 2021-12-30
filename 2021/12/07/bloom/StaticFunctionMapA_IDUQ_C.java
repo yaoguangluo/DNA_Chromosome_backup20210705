@@ -9,7 +9,8 @@ import SVQ.stable.StableCommon;
 //将dna加密的 main test 进行封装成函数。准备优化下。
 //著作权人+ 作者= 罗瑶光
 public class StaticFunctionMapA_IDUQ_C {
-	public static void callFunction(String callFunctionKey, StaticFunctionMapA_IDUQ_E staticFunctionMapA_IDUQ_E, Map<String, Object> output) throws IOException {
+	public static void callFunction(String callFunctionKey
+			, StaticFunctionMapA_IDUQ_E staticFunctionMapA_IDUQ_E, Map<String, Object> output) throws IOException {
 		String[] 传参因子= (String[]) output.get("传参因子");
 		int 因子= 0;
 		Object map = null;
@@ -30,7 +31,8 @@ public class StaticFunctionMapA_IDUQ_C {
 		if(callFunctionKey.equalsIgnoreCase("getCode")){ 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= StaticFunctionMapA_IDUQ_C.getCode((String)inputValues.get(传参因子[因子++]), (String)inputValues.get(传参因子[因子++]));
+				map= StaticFunctionMapA_IDUQ_C.getCode((String)inputValues.get(传参因子[因子++])
+						, (String)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		};
@@ -68,13 +70,13 @@ public class StaticFunctionMapA_IDUQ_C {
 
 	public static void load(StaticFunctionMapA_IDUQ_E staticFunctionMapA_IDUQ_E) {
 		//稍后封装
-		staticFunctionMapA_IDUQ_E.annotationMap.put("getPDW", "getPDW");
-		staticFunctionMapA_IDUQ_E.annotationMap.put("getLock", "getLock");
-		staticFunctionMapA_IDUQ_E.annotationMap.put("getCode", "getCode");
-		staticFunctionMapA_IDUQ_E.annotationMap.put("doPDE", "doPDE");
-		staticFunctionMapA_IDUQ_E.annotationMap.put("doPrefixPDE", "doPrefixPDE");
-		staticFunctionMapA_IDUQ_E.annotationMap.put("doPostfixPDE", "doPostfixPDE");
-		staticFunctionMapA_IDUQ_E.annotationMap.put("doSurffixPDE", "doSurffixPDE");
+		staticFunctionMapA_IDUQ_E.annotationMap.put("getPDW", "string");
+		staticFunctionMapA_IDUQ_E.annotationMap.put("getLock", "void");
+		staticFunctionMapA_IDUQ_E.annotationMap.put("getCode", "lock:pdw");
+		staticFunctionMapA_IDUQ_E.annotationMap.put("doPDE", "pDE_RNA_FullFormular");
+		staticFunctionMapA_IDUQ_E.annotationMap.put("doPrefixPDE", "pDE_RNA_FullFormular:pDE_RNA_FullFormular1");
+		staticFunctionMapA_IDUQ_E.annotationMap.put("doPostfixPDE", "pDE_RNA_FullFormular:pDE_RNA_FullFormular1");
+		staticFunctionMapA_IDUQ_E.annotationMap.put("doSurffixPDE", "pDE_RNA_FullFormular:pDE_RNA_FullFormular1"); //之后这些123 我都会重新命名。
 	}
 
 	//肽语
@@ -161,7 +163,8 @@ public class StaticFunctionMapA_IDUQ_C {
 	}
 
 	//后序计算  确定pDE_RNA_FullFormular 和 pDE_RNA_FullFormular1 变量中要有 肽语 肽锁 散列 概率钥匙 等相关输入值。
-	public static FullDNATokenPDI_XCDX doPostfixPDE(FullDNATokenPDI_XCDX pDE_RNA_FullFormular, FullDNATokenPDI_XCDX pDE_RNA_FullFormular1) {
+	public static FullDNATokenPDI_XCDX doPostfixPDE(FullDNATokenPDI_XCDX pDE_RNA_FullFormular
+			, FullDNATokenPDI_XCDX pDE_RNA_FullFormular1) {
 		System.out.println("=======================================================================");
 		System.out.println("开始后序验证：");
 		FullDNATokenPDI_XCDX pDE_RNA_FullFormular2= new FullDNATokenPDI_XCDX();
@@ -181,7 +184,8 @@ public class StaticFunctionMapA_IDUQ_C {
 	}
 
 	//整序计算 确定pDE_RNA_FullFormular， pDE_RNA_FullFormular1 变量中要有 肽语 肽锁 散列 概率钥匙 等相关输入值。
-	public static FullDNATokenPDI_XCDX doSurffixPDE(FullDNATokenPDI_XCDX pDE_RNA_FullFormular, FullDNATokenPDI_XCDX pDE_RNA_FullFormular1) {
+	public static FullDNATokenPDI_XCDX doSurffixPDE(FullDNATokenPDI_XCDX pDE_RNA_FullFormular
+			, FullDNATokenPDI_XCDX pDE_RNA_FullFormular1) {
 		System.out.println("=========================================================================");
 		System.out.println("开始整序验证：");
 		FullDNATokenPDI_XCDX pDE_RNA_FullFormular3= new FullDNATokenPDI_XCDX();

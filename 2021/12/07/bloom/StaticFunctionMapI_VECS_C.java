@@ -11,7 +11,8 @@ import ME.APM.VSQ.App;
 //著作权人 + 作者 = 罗瑶光
 public interface StaticFunctionMapI_VECS_C {
 	@SuppressWarnings("unchecked")
-	public static void callFunction(String callFunctionKey, StaticFunctionMapI_VECS_E staticFunctionMapI_VECS_C, Map<String, Object> output) throws IOException {
+	public static void callFunction(String callFunctionKey
+			, StaticFunctionMapI_VECS_E staticFunctionMapI_VECS_C, Map<String, Object> output) throws IOException {
 		String[] 传参因子= (String[]) output.get("传参因子");
 		int 因子= 0;
 		Object map = null;
@@ -28,9 +29,12 @@ public interface StaticFunctionMapI_VECS_C {
 		};
 		if(callFunctionKey.equalsIgnoreCase("doFourJianPDErosion")){ 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
-			if((boolean) inputValues.get("find")) {//24组设计完后统一用 linked map 以后接口写法传参只有linked map 一个变量
-				map= staticFunctionMapI_VECS_C.doFourJianPDErosion((int)inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++]),
-						(int)inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++]),
+			if((boolean) inputValues.get("find")) {
+				//24组设计完后统一用 linked map 以后接口写法传参只有linked map 一个变量
+				map= staticFunctionMapI_VECS_C.doFourJianPDErosion((int)inputValues.get(传参因子[因子++])
+						,(int)inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++])
+						,(int)inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++])
+						,(int)inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++]),
 						(int)inputValues.get(传参因子[因子++]),(BufferedImage)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -38,8 +42,10 @@ public interface StaticFunctionMapI_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("doFourSuanPDErosion")){ 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapI_VECS_C.doFourSuanPDErosion((int)inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++]),
-						(int)inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++]),
+				map= staticFunctionMapI_VECS_C.doFourSuanPDErosion((int)inputValues.get(传参因子[因子++])
+						,(int)inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++])
+						,(int)inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++])
+						,(int)inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++]),
 						(int)inputValues.get(传参因子[因子++]),(BufferedImage)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -47,16 +53,21 @@ public interface StaticFunctionMapI_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("doEightSuanPDErosion")){ 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapI_VECS_C.doEightSuanPDErosion((int)inputValues.get(传参因子[因子++]), (int)inputValues.get(传参因子[因子++]), (int)inputValues.get(传参因子[因子++]),
-						(int)inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++]),
+				map= staticFunctionMapI_VECS_C.doEightSuanPDErosion((int)inputValues.get(传参因子[因子++])
+						, (int)inputValues.get(传参因子[因子++]), (int)inputValues.get(传参因子[因子++])
+						,(int)inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++])
+						,(int)inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++]),
 						(int)inputValues.get(传参因子[因子++]),(BufferedImage)inputValues.get(传参因子[因子++]));
-			}			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
+			}			
+			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		};
 		if(callFunctionKey.equalsIgnoreCase("doEightJianPDErosion")){ 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapI_VECS_C.doEightJianPDErosion((int)inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++]),
-						(int)inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++]),
+				map= staticFunctionMapI_VECS_C.doEightJianPDErosion((int)inputValues.get(传参因子[因子++])
+						,(int)inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++])
+						,(int)inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++])
+						,(int)inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++]),
 						(int)inputValues.get(传参因子[因子++]),(BufferedImage)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -64,16 +75,20 @@ public interface StaticFunctionMapI_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("doFirstPDErosionWithTop")){ 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				staticFunctionMapI_VECS_C.doFirstPDErosionWithTop((double)inputValues.get(传参因子[因子++]),(double)inputValues.get(传参因子[因子++]),(double)inputValues.get(传参因子[因子++]),
-						(double)inputValues.get(传参因子[因子++]),(int[][])inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++]),(BufferedImage)inputValues.get(传参因子[因子++]));
+				staticFunctionMapI_VECS_C.doFirstPDErosionWithTop((double)inputValues.get(传参因子[因子++])
+						,(double)inputValues.get(传参因子[因子++]),(double)inputValues.get(传参因子[因子++])
+						,(double)inputValues.get(传参因子[因子++]),(int[][])inputValues.get(传参因子[因子++])
+						,(int)inputValues.get(传参因子[因子++]),(BufferedImage)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		};
 		if(callFunctionKey.equalsIgnoreCase("doSecondPDErosionWithTop")){ 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				staticFunctionMapI_VECS_C.doSecondPDErosionWithTop((double)inputValues.get(传参因子[因子++]),(double)inputValues.get(传参因子[因子++]),(double)inputValues.get(传参因子[因子++]),
-						(double)inputValues.get(传参因子[因子++]),(int[][])inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++])
+				staticFunctionMapI_VECS_C.doSecondPDErosionWithTop((double)inputValues.get(传参因子[因子++])
+						,(double)inputValues.get(传参因子[因子++]),(double)inputValues.get(传参因子[因子++])
+						,(double)inputValues.get(传参因子[因子++]),(int[][])inputValues.get(传参因子[因子++])
+						,(int)inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++])
 						,(BufferedImage)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -81,8 +96,10 @@ public interface StaticFunctionMapI_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("doThirdPDErosionWithTop")){ 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				staticFunctionMapI_VECS_C.doThirdPDErosionWithTop((double)inputValues.get(传参因子[因子++]),(double)inputValues.get(传参因子[因子++]),(double)inputValues.get(传参因子[因子++]),
-						(double)inputValues.get(传参因子[因子++]),(int[][])inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++])
+				staticFunctionMapI_VECS_C.doThirdPDErosionWithTop((double)inputValues.get(传参因子[因子++])
+						,(double)inputValues.get(传参因子[因子++]),(double)inputValues.get(传参因子[因子++])
+						,(double)inputValues.get(传参因子[因子++]),(int[][])inputValues.get(传参因子[因子++])
+						,(int)inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++])
 						,(List<String>)inputValues.get(传参因子[因子++]), (BufferedImage)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -90,7 +107,8 @@ public interface StaticFunctionMapI_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("initDeciphring")){ 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				staticFunctionMapI_VECS_C.initDeciphring((String)inputValues.get(传参因子[因子++]), (int)inputValues.get(传参因子[因子++]));
+				staticFunctionMapI_VECS_C.initDeciphring((String)inputValues.get(传参因子[因子++])
+						, (int)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		};
@@ -125,30 +143,31 @@ public interface StaticFunctionMapI_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("doPDERangePDI16")){ 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapI_VECS_C.doPDERangePDI16((int[][])inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapI_VECS_C.doPDERangePDI16((int[][])inputValues.get(传参因子[因子++])
+						,(int)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		};
 	}
-	
+
 	public static void load(StaticFunctionMapI_VECS_E staticFunctionMapI_VECS_E) {
 		// TODO Auto-generated method stub
 		//稍后封装
 		staticFunctionMapI_VECS_E.annotationMap.put("main", "main");
-		staticFunctionMapI_VECS_E.annotationMap.put("doTestWithImageAPP", "doTestWithImageAPP");
-		staticFunctionMapI_VECS_E.annotationMap.put("doFourJianPDErosion", "doFourJianPDErosion");
-		staticFunctionMapI_VECS_E.annotationMap.put("doFourSuanPDErosion", "doFourSuanPDErosion");
-		staticFunctionMapI_VECS_E.annotationMap.put("doEightSuanPDErosion", "doEightSuanPDErosion");
-		staticFunctionMapI_VECS_E.annotationMap.put("doEightJianPDErosion", "doEightJianPDErosion");
-		staticFunctionMapI_VECS_E.annotationMap.put("doFirstPDErosionWithTop", "doFirstPDErosionWithTop");
-		staticFunctionMapI_VECS_E.annotationMap.put("doSecondPDErosionWithTop", "doSecondPDErosionWithTop");
-		staticFunctionMapI_VECS_E.annotationMap.put("doThirdPDErosionWithTop", "doThirdPDErosionWithTop");
-		staticFunctionMapI_VECS_E.annotationMap.put("initDeciphring", "initDeciphring");
-		staticFunctionMapI_VECS_E.annotationMap.put("doTestWithFilePath", "doTestWithFilePath");
-		staticFunctionMapI_VECS_E.annotationMap.put("doTestWithImage", "doTestWithImage");
-		staticFunctionMapI_VECS_E.annotationMap.put("doTestWithBufferedImage", "doTestWithBufferedImage");
-		staticFunctionMapI_VECS_E.annotationMap.put("staticMain", "staticMain");
-		staticFunctionMapI_VECS_E.annotationMap.put("doPDERangePDI16", "doPDERangePDI16");
+		staticFunctionMapI_VECS_E.annotationMap.put("doTestWithImageAPP", "u");
+		staticFunctionMapI_VECS_E.annotationMap.put("doFourJianPDErosion", "腐蚀浓度:像素阀值:像素比精度:像素差精度:pcaScale:upcaScale:icaScale:ecaScale:bufferedImage");
+		staticFunctionMapI_VECS_E.annotationMap.put("doFourSuanPDErosion", "腐蚀浓度:像素阀值:像素比精度:像素差精度:pcaScale:upcaScale:icaScale:ecaScale:bufferedImage");
+		staticFunctionMapI_VECS_E.annotationMap.put("doEightSuanPDErosion", "腐蚀浓度:像素阀值:像素比精度:像素差精度:pcaScale:upcaScale:icaScale:ecaScale:bufferedImage");
+		staticFunctionMapI_VECS_E.annotationMap.put("doEightJianPDErosion", "腐蚀浓度:像素阀值:像素比精度:像素差精度:pcaScale:upcaScale:icaScale:ecaScale:bufferedImage");
+		staticFunctionMapI_VECS_E.annotationMap.put("doFirstPDErosionWithTop", "fourJian:fourSuan:eightJian:eightSuan:scoreMatrix:top:bufferedImage");
+		staticFunctionMapI_VECS_E.annotationMap.put("doSecondPDErosionWithTop", "fourJian:fourSuan:eightJian:eightSuan:scoreMatrix:top:times:bufferedImage");
+		staticFunctionMapI_VECS_E.annotationMap.put("doThirdPDErosionWithTop", "fourJian:fourSuan:eightJian:eightSuan:scoreMatrix:top:times:output:bufferedImage");
+		staticFunctionMapI_VECS_E.annotationMap.put("initDeciphring", "string,type");
+		staticFunctionMapI_VECS_E.annotationMap.put("doTestWithFilePath", "testImagePath");
+		staticFunctionMapI_VECS_E.annotationMap.put("doTestWithImage", "testImagePath");
+		staticFunctionMapI_VECS_E.annotationMap.put("doTestWithBufferedImage", "testImagePath");
+		staticFunctionMapI_VECS_E.annotationMap.put("staticMain", "string");
+		staticFunctionMapI_VECS_E.annotationMap.put("doPDERangePDI16", "input:酸碱scale");
 	}
 	//SkinPathDoubleDetectTripFix2D_E{
 	public List<String> doTestWithImageAPP(App u) throws IOException; 
@@ -162,9 +181,11 @@ public interface StaticFunctionMapI_VECS_C {
 			int pcaScale, int upcaScale, int icaScale, int ecaScale, BufferedImage bufferedImage) throws IOException;
 	public void doFirstPDErosionWithTop(double fourJian, double fourSuan, double eightJian, double eightSuan
 			, int[][] scoreMatrix, int top, BufferedImage bufferedImage)throws IOException;
-	public void doSecondPDErosionWithTop(double fourJian, double fourSuan, double eightJian, double eightSuan, int[][] scoreMatrix
+	public void doSecondPDErosionWithTop(double fourJian, double fourSuan
+			, double eightJian, double eightSuan, int[][] scoreMatrix
 			, int top, int times, BufferedImage bufferedImage)throws IOException;
-	public void doThirdPDErosionWithTop(double fourJian, double fourSuan, double eightJian, double eightSuan, int[][] scoreMatrix
+	public void doThirdPDErosionWithTop(double fourJian, double fourSuan
+			, double eightJian, double eightSuan, int[][] scoreMatrix
 			, int top, int times, List<String> output, BufferedImage bufferedImage)throws IOException;
 	public void initDeciphring(String string, int type) throws NumberFormatException, IOException;
 

@@ -13,7 +13,8 @@ import OSI.AOP.MS.VPC.server.VPCSResponse;
 //著作权人+ 作者= 罗瑶光
 public interface StaticFunctionMapC_AOPM_C {
 	@SuppressWarnings("unchecked")
-	public static void callFunction(String callFunctionKey, StaticFunctionMapC_AOPM_E staticFunctionMapC_AOPM_C, Map<String, Object> output) throws Exception {
+	public static void callFunction(String callFunctionKey
+			, StaticFunctionMapC_AOPM_E staticFunctionMapC_AOPM_C, Map<String, Object> output) throws Exception {
 		String[] 传参因子= (String[]) output.get("传参因子");
 		int 因子= 0;
 		Object map = null;
@@ -99,7 +100,8 @@ public interface StaticFunctionMapC_AOPM_C {
 		if(callFunctionKey.equalsIgnoreCase("IV_Service")){ 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				staticFunctionMapC_AOPM_C.IV_Service((JTextPane)inputValues.get(传参因子[因子++]), (String)inputValues.get(传参因子[因子++]));
+				staticFunctionMapC_AOPM_C.IV_Service((JTextPane)inputValues.get(传参因子[因子++])
+						, (String)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		};
@@ -129,14 +131,16 @@ public interface StaticFunctionMapC_AOPM_C {
 		if(callFunctionKey.equalsIgnoreCase("P_Rest")){ 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				staticFunctionMapC_AOPM_C.P_Rest((VPCSRequest)inputValues.get(传参因子[因子++]), (VPCSResponse)inputValues.get(传参因子[因子++]));
+				staticFunctionMapC_AOPM_C.P_Rest((VPCSRequest)inputValues.get(传参因子[因子++])
+						, (VPCSResponse)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		};
 		if(callFunctionKey.equalsIgnoreCase("P_View")){ 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				staticFunctionMapC_AOPM_C.P_View((VPCSRequest)inputValues.get(传参因子[因子++]), (VPCSResponse)inputValues.get(传参因子[因子++]));
+				staticFunctionMapC_AOPM_C.P_View((VPCSRequest)inputValues.get(传参因子[因子++])
+						, (VPCSResponse)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		};
@@ -144,7 +148,8 @@ public interface StaticFunctionMapC_AOPM_C {
 		if(callFunctionKey.equalsIgnoreCase("P_Bytes")){ 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				staticFunctionMapC_AOPM_C.P_Bytes((VPCSRequest)inputValues.get(传参因子[因子++]), (VPCSResponse)inputValues.get(传参因子[因子++]));
+				staticFunctionMapC_AOPM_C.P_Bytes((VPCSRequest)inputValues.get(传参因子[因子++])
+						, (VPCSResponse)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		};
@@ -152,14 +157,16 @@ public interface StaticFunctionMapC_AOPM_C {
 		if(callFunctionKey.equalsIgnoreCase("P_Buffer")){ 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				staticFunctionMapC_AOPM_C.P_Buffer((VPCSRequest)inputValues.get(传参因子[因子++]), (VPCSResponse)inputValues.get(传参因子[因子++]));
+				staticFunctionMapC_AOPM_C.P_Buffer((VPCSRequest)inputValues.get(传参因子[因子++])
+						, (VPCSResponse)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		};
 		if(callFunctionKey.equalsIgnoreCase("P_BufferBytes")){ 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				staticFunctionMapC_AOPM_C.P_BufferBytes((VPCSRequest)inputValues.get(传参因子[因子++]), (VPCSResponse)inputValues.get(传参因子[因子++]));
+				staticFunctionMapC_AOPM_C.P_BufferBytes((VPCSRequest)inputValues.get(传参因子[因子++])
+						, (VPCSResponse)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		};
@@ -167,14 +174,16 @@ public interface StaticFunctionMapC_AOPM_C {
 		if(callFunctionKey.equalsIgnoreCase("P_BytesWithoutZip")){ 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				staticFunctionMapC_AOPM_C.P_BytesWithoutZip((VPCSRequest)inputValues.get(传参因子[因子++]), (VPCSResponse)inputValues.get(传参因子[因子++]));
+				staticFunctionMapC_AOPM_C.P_BytesWithoutZip((VPCSRequest)inputValues.get(传参因子[因子++])
+						, (VPCSResponse)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		};
 		if(callFunctionKey.equalsIgnoreCase("hugPillow")){ 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				staticFunctionMapC_AOPM_C.hugPillow((Sleeper_H)inputValues.get(传参因子[因子++]), (Socket)inputValues.get(传参因子[因子++]), (int)inputValues.get(传参因子[因子++]));
+				staticFunctionMapC_AOPM_C.hugPillow((Sleeper_H)inputValues.get(传参因子[因子++])
+						, (Socket)inputValues.get(传参因子[因子++]), (int)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		};
@@ -182,7 +191,8 @@ public interface StaticFunctionMapC_AOPM_C {
 		if(callFunctionKey.equalsIgnoreCase("forward")){ 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapC_AOPM_C.forward((String)inputValues.get(传参因子[因子++]), (Map<String, String>)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapC_AOPM_C.forward((String)inputValues.get(传参因子[因子++])
+						, (Map<String, String>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		};
@@ -205,32 +215,32 @@ public interface StaticFunctionMapC_AOPM_C {
 	public static void load(StaticFunctionMapC_AOPM_E staticFunctionMapC_AOPM_E) {
 		// TODO Auto-generated method stub
 		//稍后封装
-		staticFunctionMapC_AOPM_E.annotationMap.put("BootVPCSBackEnd", "BootVPCSBackEnd");
-		staticFunctionMapC_AOPM_E.annotationMap.put("requestIpFilter", "requestIpFilter");
-		staticFunctionMapC_AOPM_E.annotationMap.put("requestLinkFilter", "requestLinkFilter");
-		staticFunctionMapC_AOPM_E.annotationMap.put("IV_BlockList", "IV_BlockList");
-		staticFunctionMapC_AOPM_E.annotationMap.put("requestIpFix", "requestIpFix");
-		staticFunctionMapC_AOPM_E.annotationMap.put("requestLinkFix", "requestLinkFix");
-		staticFunctionMapC_AOPM_E.annotationMap.put("requestIpRecoder", "requestIpRecoder");
-		staticFunctionMapC_AOPM_E.annotationMap.put("requestLinkRecoder", "requestLinkRecoder");
-		staticFunctionMapC_AOPM_E.annotationMap.put("IQ_ForwardType", "IQ_ForwardType");
-		staticFunctionMapC_AOPM_E.annotationMap.put("forwardToRestMap", "forwardToRestMap");
-		staticFunctionMapC_AOPM_E.annotationMap.put("IV_ServerInit_C_VPCSFrontEnd", "IV_ServerInit_C_VPCSFrontEnd");
-		staticFunctionMapC_AOPM_E.annotationMap.put("IV_Server", "IV_Server");
-		staticFunctionMapC_AOPM_E.annotationMap.put("IV_Service", "IV_Service");
-		staticFunctionMapC_AOPM_E.annotationMap.put("IV_ServerServerInit_C", "IV_ServerServerInit_C");
-		staticFunctionMapC_AOPM_E.annotationMap.put("IQ_Response", "IQ_Response");
-		staticFunctionMapC_AOPM_E.annotationMap.put("returnResponse", "returnResponse");
-		staticFunctionMapC_AOPM_E.annotationMap.put("P_Rest", "P_Rest");
-		staticFunctionMapC_AOPM_E.annotationMap.put("P_View", "P_View");
-		staticFunctionMapC_AOPM_E.annotationMap.put("P_Bytes", "P_Bytes");
-		staticFunctionMapC_AOPM_E.annotationMap.put("P_Buffer", "P_Buffer");
-		staticFunctionMapC_AOPM_E.annotationMap.put("P_BufferBytes", "P_BufferBytes");
-		staticFunctionMapC_AOPM_E.annotationMap.put("P_BytesWithoutZip", "P_BytesWithoutZip");
-		staticFunctionMapC_AOPM_E.annotationMap.put("hugPillow", "hugPillow");
-		staticFunctionMapC_AOPM_E.annotationMap.put("forward", "forward");
-		staticFunctionMapC_AOPM_E.annotationMap.put("getFilePath", "getFilePath");
-		staticFunctionMapC_AOPM_E.annotationMap.put("getCode", "getCode");
+		staticFunctionMapC_AOPM_E.annotationMap.put("BootVPCSBackEnd", "app");
+		staticFunctionMapC_AOPM_E.annotationMap.put("requestIpFilter", "socket");
+		staticFunctionMapC_AOPM_E.annotationMap.put("requestLinkFilter", "socket");
+		staticFunctionMapC_AOPM_E.annotationMap.put("IV_BlockList", "void");
+		staticFunctionMapC_AOPM_E.annotationMap.put("requestIpFix", "vPCSRequest:vPCSResponse");//到时候这些传参名要唯一化，方便tinshell查询缓存，不能这样单一。
+		staticFunctionMapC_AOPM_E.annotationMap.put("requestLinkFix", "vPCSRequest:vPCSResponse");
+		staticFunctionMapC_AOPM_E.annotationMap.put("requestIpRecoder", "vPCSRequest:vPCSResponse");
+		staticFunctionMapC_AOPM_E.annotationMap.put("requestLinkRecoder", "vPCSRequest:vPCSResponse");
+		staticFunctionMapC_AOPM_E.annotationMap.put("IQ_ForwardType", "socket");
+		staticFunctionMapC_AOPM_E.annotationMap.put("forwardToRestMap", "socket");
+		staticFunctionMapC_AOPM_E.annotationMap.put("IV_ServerInit_C_VPCSFrontEnd", "void");
+		staticFunctionMapC_AOPM_E.annotationMap.put("IV_Server", "app");
+		staticFunctionMapC_AOPM_E.annotationMap.put("IV_Service", "jTextPane:前端接口Txt");
+		staticFunctionMapC_AOPM_E.annotationMap.put("IV_ServerServerInit_C", "app");
+		staticFunctionMapC_AOPM_E.annotationMap.put("IQ_Response", "socket");
+		staticFunctionMapC_AOPM_E.annotationMap.put("returnResponse", "socket");
+		staticFunctionMapC_AOPM_E.annotationMap.put("P_Rest", "vPCSRequest:vPCSResponse");
+		staticFunctionMapC_AOPM_E.annotationMap.put("P_View", "vPCSRequest:vPCSResponse");
+		staticFunctionMapC_AOPM_E.annotationMap.put("P_Bytes", "vPCSRequest:vPCSResponse");
+		staticFunctionMapC_AOPM_E.annotationMap.put("P_Buffer", "vPCSRequest:vPCSResponse");
+		staticFunctionMapC_AOPM_E.annotationMap.put("P_BufferBytes", "vPCSRequest:vPCSResponse");
+		staticFunctionMapC_AOPM_E.annotationMap.put("P_BytesWithoutZip", "vPCSRequest:vPCSResponse");
+		staticFunctionMapC_AOPM_E.annotationMap.put("hugPillow", " sleeper_H:accept:hashCode");
+		staticFunctionMapC_AOPM_E.annotationMap.put("forward", "string:data");
+		staticFunctionMapC_AOPM_E.annotationMap.put("getFilePath", "string");
+		staticFunctionMapC_AOPM_E.annotationMap.put("getCode", "filePath");
 	}
 	//BootVPCSBackEnd extends Thread
 	public void BootVPCSBackEnd(App app) throws IOException ;
