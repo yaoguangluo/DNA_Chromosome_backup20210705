@@ -10,48 +10,50 @@ import OSI.SSI.ASU.OSU.PSU.MSU.pde.DecadeToPDS16;
 import OSI.SSI.ASU.OSU.PSU.MSU.pds.PDE_PDS_DL;
 import OSI.SSI.ASU.OSU.PSU.MSU.pds.PDE_PDS_DL16;
 
-//è‘—ä½œæƒäºº+ ä½œè€…= ç½—ç‘¶å…‰
+//Öø×÷È¨ÈË+ ×÷Õß= ÂŞÑş¹â
 public interface StaticFunctionMapM_IDUQ_C {
-	public static void callFunction(String callFunctionKey, StaticFunctionMapM_IDUQ_E staticFunctionMapM_IDUQ_C, Map<String, Object> output) throws IOException {
-		String[] ä¼ å‚å› å­= (String[]) output.get("ä¼ å‚å› å­");
+	public static void callFunction(String callFunctionKey
+			, StaticFunctionMapM_IDUQ_E staticFunctionMapM_IDUQ_C
+			, Map<String, Object> output) throws IOException {
+		String[] ´«²ÎÒò×Ó= (String[]) output.get("´«²ÎÒò×Ó");
 		Object map = null;
 		if(callFunctionKey.equalsIgnoreCase("getQ_OulerRing")){ 
-			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, ä¼ å‚å› å­);
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, ´«²ÎÒò×Ó);
 			if((boolean) inputValues.get("find")) {
 				map= staticFunctionMapM_IDUQ_C.getQ_OulerRing();
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		};
 		if(callFunctionKey.equalsIgnoreCase("getQ_OulerRing16")){ 
-			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, ä¼ å‚å› å­);
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, ´«²ÎÒò×Ó);
 			if((boolean) inputValues.get("find")) {
 				map= staticFunctionMapM_IDUQ_C.getQ_OulerRing16();
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		};
 		if(callFunctionKey.equalsIgnoreCase("getDecadeToPDS")){ 
-			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, ä¼ å‚å› å­);
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, ´«²ÎÒò×Ó);
 			if((boolean) inputValues.get("find")) {
 				map= staticFunctionMapM_IDUQ_C.getDecadeToPDS();
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		};
 		if(callFunctionKey.equalsIgnoreCase("getDecadeToPDS16")){ 
-			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, ä¼ å‚å› å­);
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, ´«²ÎÒò×Ó);
 			if((boolean) inputValues.get("find")) {
 				map= staticFunctionMapM_IDUQ_C.getDecadeToPDS16();
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		};
 		if(callFunctionKey.equalsIgnoreCase("getPDE_PDS_DL")){ 
-			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, ä¼ å‚å› å­);
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, ´«²ÎÒò×Ó);
 			if((boolean) inputValues.get("find")) {
 				map= staticFunctionMapM_IDUQ_C.getPDE_PDS_DL();
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		};
 		if(callFunctionKey.equalsIgnoreCase("getPDE_PDS_DL16")){ 
-			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, ä¼ å‚å› å­);
+			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, ´«²ÎÒò×Ó);
 			if((boolean) inputValues.get("find")) {
 				map= staticFunctionMapM_IDUQ_C.getPDE_PDS_DL16();
 			}
@@ -60,13 +62,13 @@ public interface StaticFunctionMapM_IDUQ_C {
 	}
 	public static void load(StaticFunctionMapM_IDUQ_E staticFunctionMapM_IDUQ_E) {
 		// TODO Auto-generated method stub
-		//ç¨åå°è£…
-		staticFunctionMapM_IDUQ_E.annotationMap.put("getQ_OulerRing", "getQ_OulerRing");
-		staticFunctionMapM_IDUQ_E.annotationMap.put("getQ_OulerRing16", "getQ_OulerRing16");
-		staticFunctionMapM_IDUQ_E.annotationMap.put("getDecadeToPDS", "getDecadeToPDS");
-		staticFunctionMapM_IDUQ_E.annotationMap.put("getDecadeToPDS16", "getDecadeToPDS16");
-		staticFunctionMapM_IDUQ_E.annotationMap.put("getPDE_PDS_DL", "getPDE_PDS_DL");
-		staticFunctionMapM_IDUQ_E.annotationMap.put("getPDE_PDS_DL16", "getPDE_PDS_DL16");
+		//ÉÔºó·â×°
+		staticFunctionMapM_IDUQ_E.annotationMap.put("getQ_OulerRing", "void");
+		staticFunctionMapM_IDUQ_E.annotationMap.put("getQ_OulerRing16", "void");
+		staticFunctionMapM_IDUQ_E.annotationMap.put("getDecadeToPDS", "void");
+		staticFunctionMapM_IDUQ_E.annotationMap.put("getDecadeToPDS16", "void");
+		staticFunctionMapM_IDUQ_E.annotationMap.put("getPDE_PDS_DL", "void");
+		staticFunctionMapM_IDUQ_E.annotationMap.put("getPDE_PDS_DL16", "void");
 
 	}
 	public Q_OulerRing getQ_OulerRing();

@@ -25,7 +25,8 @@ import OSI.OPE.OVU.MVU.OVU.PQE.nodeEdit.LinkList;
 //证书编号：国作登字-2021-L-00268255 (中华人民共和国 国家版权登记中心)
 public interface StaticFunctionMapO_VECS_C {
 	@SuppressWarnings("unchecked")
-	public static void callFunction(String callFunctionKey, StaticFunctionMapO_VECS_E staticFunctionMapO_VECS_C, Map<String, Object> output) throws Exception {
+	public static void callFunction(String callFunctionKey, StaticFunctionMapO_VECS_E staticFunctionMapO_VECS_C
+			, Map<String, Object> output) throws Exception {
 		String[] 传参因子= (String[]) output.get("传参因子");
 		int 因子= 0;
 		Object map = null;
@@ -39,17 +40,22 @@ public interface StaticFunctionMapO_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("transactionLogin")) { 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapO_VECS_C.transactionLogin((String)inputValues.get(传参因子[因子++]), (String)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapO_VECS_C.transactionLogin((String)inputValues.get(传参因子[因子++])
+						, (String)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
 		if(callFunctionKey.equalsIgnoreCase("transactionRegister")) {   
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapO_VECS_C.transactionRegister((String)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++])
-						,(String)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++])
-						,(String)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++])
-						,(String)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapO_VECS_C.transactionRegister((String)inputValues.get(传参因子[因子++])
+						,(String)inputValues.get(传参因子[因子++])
+						,(String)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++])
+						,(String)inputValues.get(传参因子[因子++])
+						,(String)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++])
+						,(String)inputValues.get(传参因子[因子++])
+						,(String)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++])
+						,(String)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
@@ -112,63 +118,72 @@ public interface StaticFunctionMapO_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("selectRowsByAttributesOfJoinCondition")) {  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapO_VECS_C.selectRowsByAttributesOfJoinCondition((Map<String, Object>)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapO_VECS_C.selectRowsByAttributesOfJoinCondition(
+						(Map<String, Object>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
 		if(callFunctionKey.equalsIgnoreCase("selectRowsByAttributesOfJoinAggregation")) {  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapO_VECS_C.selectRowsByAttributesOfJoinAggregation((Map<String, Object>)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapO_VECS_C.selectRowsByAttributesOfJoinAggregation(
+						(Map<String, Object>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
 		if(callFunctionKey.equalsIgnoreCase("selectRowsByAttributesOfJoinGetCulumns")) { 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapO_VECS_C.selectRowsByAttributesOfJoinGetCulumns((Map<String, Object>)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapO_VECS_C.selectRowsByAttributesOfJoinGetCulumns(
+						(Map<String, Object>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
 		if(callFunctionKey.equalsIgnoreCase("selectRowsByAttributesOfJoinRelation")) {  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapO_VECS_C.selectRowsByAttributesOfJoinRelation((Map<String, Object>)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapO_VECS_C.selectRowsByAttributesOfJoinRelation(
+						(Map<String, Object>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
 		if(callFunctionKey.equalsIgnoreCase("selectRowsByAttributesOfNestCondition")) {   
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapO_VECS_C.selectRowsByAttributesOfNestCondition((Map<String, Object>)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapO_VECS_C.selectRowsByAttributesOfNestCondition(
+						(Map<String, Object>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
 		if(callFunctionKey.equalsIgnoreCase("selectRowsByAttributesOfNestAggregation")) {  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapO_VECS_C.selectRowsByAttributesOfNestAggregation((Map<String, Object>)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapO_VECS_C.selectRowsByAttributesOfNestAggregation(
+						(Map<String, Object>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
 		if(callFunctionKey.equalsIgnoreCase("selectRowsByAttributesOfNestGetCulumns")) {  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapO_VECS_C.selectRowsByAttributesOfNestGetCulumns((Map<String, Object>)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapO_VECS_C.selectRowsByAttributesOfNestGetCulumns(
+						(Map<String, Object>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
 		if(callFunctionKey.equalsIgnoreCase("selectRowsByAttributesOfNestRelation")) {  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapO_VECS_C.selectRowsByAttributesOfNestRelation((Map<String, Object>)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapO_VECS_C.selectRowsByAttributesOfNestRelation(
+						(Map<String, Object>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
 		if(callFunctionKey.equalsIgnoreCase("selectRowsByAttribute")) {  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapO_VECS_C.selectRowsByAttribute((String)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++])
+				map= staticFunctionMapO_VECS_C.selectRowsByAttribute(
+						(String)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++])
 						,(String)inputValues.get(传参因子[因子++]),(Object)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -183,7 +198,8 @@ public interface StaticFunctionMapO_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("selectRowsByTablePath")) {   
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapO_VECS_C.selectRowsByTablePath((String)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++])
+				map= staticFunctionMapO_VECS_C.selectRowsByTablePath(
+						(String)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++])
 						,(String)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -191,63 +207,72 @@ public interface StaticFunctionMapO_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("selectRowsByAttributesOfCondition")) {  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapO_VECS_C.selectRowsByAttributesOfCondition((Map<String, Object>)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapO_VECS_C.selectRowsByAttributesOfCondition(
+						(Map<String, Object>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
 		if(callFunctionKey.equalsIgnoreCase("selectRowsByAttributesOfAggregation")) {   
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapO_VECS_C.selectRowsByAttributesOfAggregation((Map<String, Object>)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapO_VECS_C.selectRowsByAttributesOfAggregation(
+						(Map<String, Object>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
 		if(callFunctionKey.equalsIgnoreCase("selectRowsByAttributesOfGetCulumns")) {  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapO_VECS_C.selectRowsByAttributesOfGetCulumns((Map<String, Object>)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapO_VECS_C.selectRowsByAttributesOfGetCulumns(
+						(Map<String, Object>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
 		if(callFunctionKey.equalsIgnoreCase("selectRowsByAttributesOfPLETL")) {  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapO_VECS_C.selectRowsByAttributesOfPLETL((Map<String, Object>)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapO_VECS_C.selectRowsByAttributesOfPLETL(
+						(Map<String, Object>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
 		if(callFunctionKey.equalsIgnoreCase("selectRowsByAttributesOfPLTCP")) {  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapO_VECS_C.selectRowsByAttributesOfPLTCP((Map<String, Object>)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapO_VECS_C.selectRowsByAttributesOfPLTCP(
+						(Map<String, Object>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
 		if(callFunctionKey.equalsIgnoreCase("addNewSearchShellTable")) {  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapO_VECS_C.addNewSearchShellTable((String)inputValues.get(传参因子[因子++]),(JTable)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapO_VECS_C.addNewSearchShellTable(
+						(String)inputValues.get(传参因子[因子++]),(JTable)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
 		if(callFunctionKey.equalsIgnoreCase("getNewSearchShellTableSpecFromDefaultTableModel")) { 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapO_VECS_C.getNewSearchShellTableSpecFromDefaultTableModel((DefaultTableModel)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapO_VECS_C.getNewSearchShellTableSpecFromDefaultTableModel(
+						(DefaultTableModel)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
 		if(callFunctionKey.equalsIgnoreCase("getNewSearchShellTableDataFromDefaultTableModel")) {  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapO_VECS_C.getNewSearchShellTableDataFromDefaultTableModel((DefaultTableModel)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapO_VECS_C.getNewSearchShellTableDataFromDefaultTableModel(
+						(DefaultTableModel)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
 		if(callFunctionKey.equalsIgnoreCase("getNewSearchShellTableRowsFromDefaultTableModel")) {  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapO_VECS_C.getNewSearchShellTableRowsFromDefaultTableModel((Object[])inputValues.get(传参因子[因子++])
+				map= staticFunctionMapO_VECS_C.getNewSearchShellTableRowsFromDefaultTableModel(
+						(Object[])inputValues.get(传参因子[因子++])
 						,(DefaultTableModel)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -255,38 +280,46 @@ public interface StaticFunctionMapO_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("addNewSearchShellTable")) { 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapO_VECS_C.addNewSearchShellTable((String)inputValues.get(传参因子[因子++]), (JTable)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapO_VECS_C.addNewSearchShellTable(
+						(String)inputValues.get(传参因子[因子++]), (JTable)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
 		if(callFunctionKey.equalsIgnoreCase("addNewSearchShellTableWithObjectData")) { 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapO_VECS_C.addNewSearchShellTableWithObjectData((String)inputValues.get(传参因子[因子++])
-						, (DefaultTableModel)inputValues.get(传参因子[因子++]), (Object[][])inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapO_VECS_C.addNewSearchShellTableWithObjectData(
+						(String)inputValues.get(传参因子[因子++])
+						, (DefaultTableModel)inputValues.get(传参因子[因子++])
+						, (Object[][])inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
 		if(callFunctionKey.equalsIgnoreCase("addNewSearchShellTable")) {  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapO_VECS_C.addNewSearchShellTable((String)inputValues.get(传参因子[因子++]), (JTable)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapO_VECS_C.addNewSearchShellTable(
+						(String)inputValues.get(传参因子[因子++]), (JTable)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
 		if(callFunctionKey.equalsIgnoreCase("addNewSearchShellTableWithObjectDataReflectionDBRows")) { 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapO_VECS_C.addNewSearchShellTableWithObjectDataReflectionDBRows((String)inputValues.get(传参因子[因子++])
-						, (DefaultTableModel)inputValues.get(传参因子[因子++]), (Object[][])inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapO_VECS_C.addNewSearchShellTableWithObjectDataReflectionDBRows(
+						(String)inputValues.get(传参因子[因子++])
+						, (DefaultTableModel)inputValues.get(传参因子[因子++])
+						, (Object[][])inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
 		if(callFunctionKey.equalsIgnoreCase("addNewSearchShellTableReflectionDBRows")) { 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapO_VECS_C.addNewSearchShellTableReflectionDBRows((String)inputValues.get(传参因子[因子++])
-						, (Row[])inputValues.get(传参因子[因子++]), (Object[][])inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapO_VECS_C.addNewSearchShellTableReflectionDBRows(
+						(String)inputValues.get(传参因子[因子++])
+						, (Row[])inputValues.get(传参因子[因子++])
+						, (Object[][])inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
@@ -300,37 +333,43 @@ public interface StaticFunctionMapO_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("doNeroFlow")) {   
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapO_VECS_C.doNeroFlow((JTextPane) inputValues.get(传参因子[因子++]), (NodeShow) inputValues.get(传参因子[因子++])
+				map= staticFunctionMapO_VECS_C.doNeroFlow((JTextPane) inputValues.get(传参因子[因子++])
+						, (NodeShow) inputValues.get(传参因子[因子++])
 						, (LinkList) inputValues.get(传参因子[因子++])
-						, (String) inputValues.get(传参因子[因子++]), (HashMap<String, Object>) inputValues.get(传参因子[因子++]));
+						, (String) inputValues.get(传参因子[因子++])
+						, (HashMap<String, Object>) inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
 		if(callFunctionKey.equalsIgnoreCase("ReadChinese")) {  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapO_VECS_C.ReadChinese((App)inputValues.get(传参因子[因子++]),(A)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapO_VECS_C.ReadChinese((App)inputValues.get(传参因子[因子++])
+						,(A)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
 		if(callFunctionKey.equalsIgnoreCase("kernel")) { 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapO_VECS_C.kernel((App)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapO_VECS_C.kernel((App)inputValues.get(传参因子[因子++])
+						,(String)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
 		if(callFunctionKey.equalsIgnoreCase("getMedicineBookFeedbackZY")) { 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapO_VECS_C.getMedicineBookFeedbackZY((App)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapO_VECS_C.getMedicineBookFeedbackZY(
+						(App)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
 		if(callFunctionKey.equalsIgnoreCase("getMedicineBookFeedbackXY")) { 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapO_VECS_C.getMedicineBookFeedbackXY((App)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapO_VECS_C.getMedicineBookFeedbackXY(
+						(App)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
@@ -338,42 +377,48 @@ public interface StaticFunctionMapO_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("getMedicineBookFeedbackZT")) {  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapO_VECS_C.getMedicineBookFeedbackZT((App)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapO_VECS_C.getMedicineBookFeedbackZT(
+						(App)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
 		if(callFunctionKey.equalsIgnoreCase("getMedicineBookFeedbackXT")) {  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapO_VECS_C.getMedicineBookFeedbackXT((App)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapO_VECS_C.getMedicineBookFeedbackXT(
+						(App)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
 		if(callFunctionKey.equalsIgnoreCase("getMedicineBookFeedbackYT")) {  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapO_VECS_C.getMedicineBookFeedbackYT((App)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapO_VECS_C.getMedicineBookFeedbackYT(
+						(App)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
 		if(callFunctionKey.equalsIgnoreCase("getMedicineBookFeedback")) {  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapO_VECS_C.getMedicineBookFeedback((App)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapO_VECS_C.getMedicineBookFeedback(
+						(App)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
 		if(callFunctionKey.equalsIgnoreCase("doSearch")) { 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapO_VECS_C.doSearch((App)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapO_VECS_C.doSearch((App)inputValues.get(传参因子[因子++])
+						,(String)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
 		if(callFunctionKey.equalsIgnoreCase("forwardDB")) {  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapO_VECS_C.forwardDB((App)inputValues.get(传参因子[因子++]), (String)inputValues.get(传参因子[因子++])
+				map= staticFunctionMapO_VECS_C.forwardDB((App)inputValues.get(传参因子[因子++])
+						, (String)inputValues.get(传参因子[因子++])
 						, (Map<String, String>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -381,7 +426,8 @@ public interface StaticFunctionMapO_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("forwardVPC")) { 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapO_VECS_C.forwardVPC((App)inputValues.get(传参因子[因子++]), (String)inputValues.get(传参因子[因子++])
+				map= staticFunctionMapO_VECS_C.forwardVPC((App)inputValues.get(传参因子[因子++])
+						, (String)inputValues.get(传参因子[因子++])
 						, (Map<String, String>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -389,8 +435,10 @@ public interface StaticFunctionMapO_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("forwardVPCBackEnd")) { 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapO_VECS_C.forwardVPCBackEnd((EmotionMap)inputValues.get(传参因子[因子++]), (CogsBinaryForest_AE)inputValues.get(传参因子[因子++])
-						, (String) inputValues.get(传参因子[因子++]), (Map<String, String>)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapO_VECS_C.forwardVPCBackEnd((EmotionMap)inputValues.get(传参因子[因子++])
+						, (CogsBinaryForest_AE)inputValues.get(传参因子[因子++])
+						, (String) inputValues.get(传参因子[因子++])
+						, (Map<String, String>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
@@ -398,7 +446,8 @@ public interface StaticFunctionMapO_VECS_C {
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
 				map= staticFunctionMapO_VECS_C.forwardVPCYangliaojing((App)inputValues.get(传参因子[因子++])
-						, (String) inputValues.get(传参因子[因子++]), (Map<String, String>)inputValues.get(传参因子[因子++]));
+						, (String) inputValues.get(传参因子[因子++])
+						, (Map<String, String>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
@@ -419,7 +468,8 @@ public interface StaticFunctionMapO_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("E_pl_XA")) {  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapO_VECS_C.E_pl_XA((String)inputValues.get(传参因子[因子++]), (boolean)inputValues.get(传参因子[因子++])
+				map= staticFunctionMapO_VECS_C.E_pl_XA((String)inputValues.get(传参因子[因子++])
+						, (boolean)inputValues.get(传参因子[因子++])
 						, (Map<String, Object>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -427,7 +477,8 @@ public interface StaticFunctionMapO_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("E_pl_XA")) { 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapO_VECS_C.E_pl_XA((String)inputValues.get(传参因子[因子++]), (boolean)inputValues.get(传参因子[因子++])
+				map= staticFunctionMapO_VECS_C.E_pl_XA((String)inputValues.get(传参因子[因子++])
+						, (boolean)inputValues.get(传参因子[因子++])
 						, (Map<String, Object>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -435,21 +486,24 @@ public interface StaticFunctionMapO_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("P_AggregationLimitMap")) { 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				staticFunctionMapO_VECS_C.P_AggregationLimitMap((String[])inputValues.get(传参因子[因子++]), (List<Map<String, Object>>)inputValues.get(传参因子[因子++]));
+				staticFunctionMapO_VECS_C.P_AggregationLimitMap((String[])inputValues.get(传参因子[因子++])
+						, (List<Map<String, Object>>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
 		if(callFunctionKey.equalsIgnoreCase("P_PletlLimitMap")) { 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				staticFunctionMapO_VECS_C.P_PletlLimitMap((String[])inputValues.get(传参因子[因子++]), (List<Map<String, Object>>)inputValues.get(传参因子[因子++]));
+				staticFunctionMapO_VECS_C.P_PletlLimitMap((String[])inputValues.get(传参因子[因子++])
+						, (List<Map<String, Object>>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
 		if(callFunctionKey.equalsIgnoreCase("P_PltcpLimitMap")) {   
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				staticFunctionMapO_VECS_C.P_PltcpLimitMap((String[])inputValues.get(传参因子[因子++]), (List<Map<String, Object>>)inputValues.get(传参因子[因子++])
+				staticFunctionMapO_VECS_C.P_PltcpLimitMap((String[])inputValues.get(传参因子[因子++])
+						, (List<Map<String, Object>>)inputValues.get(传参因子[因子++])
 						, (Map<String, Object>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -457,26 +511,39 @@ public interface StaticFunctionMapO_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("P_Cache")) { 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				staticFunctionMapO_VECS_C.P_Cache((String[])inputValues.get(传参因子[因子++]), (List<Map<String, Object>>)inputValues.get(传参因子[因子++])
-						, (String)inputValues.get(传参因子[因子++]), (Map<String, Object>)inputValues.get(传参因子[因子++]), (String)inputValues.get(传参因子[因子++]));
+				staticFunctionMapO_VECS_C.P_Cache((String[])inputValues.get(传参因子[因子++])
+						, (List<Map<String, Object>>)inputValues.get(传参因子[因子++])
+						, (String)inputValues.get(传参因子[因子++])
+						, (Map<String, Object>)inputValues.get(传参因子[因子++])
+						, (String)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
 		if(callFunctionKey.equalsIgnoreCase("P_kernel")) {  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				staticFunctionMapO_VECS_C.P_kernel((String) inputValues.get(传参因子[因子++]), (File) inputValues.get(传参因子[因子++])
-						, (File) inputValues.get(传参因子[因子++]), (BufferedReader) inputValues.get(传参因子[因子++]), (String) inputValues.get(传参因子[因子++])
-						, (List<Map<String, Object>>) inputValues.get(传参因子[因子++]), (Row) inputValues.get(传参因子[因子++]), (Map<String, Object>) inputValues.get(传参因子[因子++]));
+				staticFunctionMapO_VECS_C.P_kernel((String) inputValues.get(传参因子[因子++])
+						, (File) inputValues.get(传参因子[因子++])
+						, (File) inputValues.get(传参因子[因子++])
+						, (BufferedReader) inputValues.get(传参因子[因子++])
+						, (String) inputValues.get(传参因子[因子++])
+						, (List<Map<String, Object>>) inputValues.get(传参因子[因子++])
+						, (Row) inputValues.get(传参因子[因子++])
+						, (Map<String, Object>) inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
 		if(callFunctionKey.equalsIgnoreCase("P_kernel_search")) {  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				staticFunctionMapO_VECS_C.P_kernel_search((String) inputValues.get(传参因子[因子++]), (File) inputValues.get(传参因子[因子++])
-						, (int) inputValues.get(传参因子[因子++]), (Object[]) inputValues.get(传参因子[因子++]), (Object[][]) inputValues.get(传参因子[因子++])
-						, (List<Map<String, Object>>) inputValues.get(传参因子[因子++]), (Row) inputValues.get(传参因子[因子++]), (Map<String, Object>) inputValues.get(传参因子[因子++]));
+				staticFunctionMapO_VECS_C.P_kernel_search((String) inputValues.get(传参因子[因子++])
+						, (File) inputValues.get(传参因子[因子++])
+						, (int) inputValues.get(传参因子[因子++])
+						, (Object[]) inputValues.get(传参因子[因子++])
+						, (Object[][]) inputValues.get(传参因子[因子++])
+						, (List<Map<String, Object>>) inputValues.get(传参因子[因子++])
+						, (Row) inputValues.get(传参因子[因子++])
+						, (Map<String, Object>) inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
@@ -497,7 +564,8 @@ public interface StaticFunctionMapO_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("P_Map")) {  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				staticFunctionMapO_VECS_C.P_Map((String[]) inputValues.get(传参因子[因子++]), (List<Map<String, Object>>) inputValues.get(传参因子[因子++])
+				staticFunctionMapO_VECS_C.P_Map((String[]) inputValues.get(传参因子[因子++])
+						, (List<Map<String, Object>>) inputValues.get(传参因子[因子++])
 						, (String) inputValues.get(传参因子[因子++])
 						, (Map<String, Object>) inputValues.get(传参因子[因子++]));
 			}
@@ -506,22 +574,26 @@ public interface StaticFunctionMapO_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("getCulumnsMapWithAs")) {  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapO_VECS_C.getCulumnsMapWithAs((String[])inputValues.get(传参因子[因子++]),(Map<String, Object>)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapO_VECS_C.getCulumnsMapWithAs((String[])inputValues.get(传参因子[因子++])
+						,(Map<String, Object>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
 		if(callFunctionKey.equalsIgnoreCase("getCulumnsMap")) {   
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapO_VECS_C.getCulumnsMap((String[])inputValues.get(传参因子[因子++]),(Map<String, Object>)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapO_VECS_C.getCulumnsMap((String[])inputValues.get(传参因子[因子++])
+						,(Map<String, Object>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
 		if(callFunctionKey.equalsIgnoreCase("P_AndMap")) {  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				staticFunctionMapO_VECS_C.P_AndMap((String[])inputValues.get(传参因子[因子++]),(List<Map<String, Object>>)inputValues.get(传参因子[因子++])
-						,(List<Map<String, Object>>)inputValues.get(传参因子[因子++]),(Map<String, Object>)inputValues.get(传参因子[因子++])
+				staticFunctionMapO_VECS_C.P_AndMap((String[])inputValues.get(传参因子[因子++])
+						,(List<Map<String, Object>>)inputValues.get(传参因子[因子++])
+						,(List<Map<String, Object>>)inputValues.get(传参因子[因子++])
+						,(Map<String, Object>)inputValues.get(传参因子[因子++])
 						,(List<Map<String, Object>>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -529,9 +601,11 @@ public interface StaticFunctionMapO_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("P_OrMap")) { 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				staticFunctionMapO_VECS_C.P_OrMap((String[])inputValues.get(传参因子[因子++]),(List<Map<String, Object>>)inputValues.get(传参因子[因子++])
+				staticFunctionMapO_VECS_C.P_OrMap((String[])inputValues.get(传参因子[因子++])
 						,(List<Map<String, Object>>)inputValues.get(传参因子[因子++])
-						,(Map<String, Object>)inputValues.get(传参因子[因子++]),(List<Map<String, Object>>)inputValues.get(传参因子[因子++])
+						,(List<Map<String, Object>>)inputValues.get(传参因子[因子++])
+						,(Map<String, Object>)inputValues.get(传参因子[因子++])
+						,(List<Map<String, Object>>)inputValues.get(传参因子[因子++])
 						,(Map<String, Boolean>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -539,42 +613,48 @@ public interface StaticFunctionMapO_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("P_SetRoot")) { 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				staticFunctionMapO_VECS_C.P_SetRoot((String[])inputValues.get(传参因子[因子++]),(Map<String, Object>)inputValues.get(传参因子[因子++]));
+				staticFunctionMapO_VECS_C.P_SetRoot((String[])inputValues.get(传参因子[因子++])
+						,(Map<String, Object>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
 		if(callFunctionKey.equalsIgnoreCase("P_BaseName")) {  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				staticFunctionMapO_VECS_C.P_BaseName((String[])inputValues.get(传参因子[因子++]),(Map<String, Object>)inputValues.get(传参因子[因子++]));
+				staticFunctionMapO_VECS_C.P_BaseName((String[])inputValues.get(传参因子[因子++])
+						,(Map<String, Object>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
 		if(callFunctionKey.equalsIgnoreCase("P_TableName")) { 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				staticFunctionMapO_VECS_C.P_TableName((String[])inputValues.get(传参因子[因子++]),(Map<String, Object>)inputValues.get(传参因子[因子++]));
+				staticFunctionMapO_VECS_C.P_TableName((String[])inputValues.get(传参因子[因子++])
+						,(Map<String, Object>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
 		if(callFunctionKey.equalsIgnoreCase("P_ListNeedStart")) { 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				staticFunctionMapO_VECS_C.P_ListNeedStart((String[])inputValues.get(传参因子[因子++]),(Map<String, Object>)inputValues.get(传参因子[因子++]));
+				staticFunctionMapO_VECS_C.P_ListNeedStart((String[])inputValues.get(传参因子[因子++])
+						,(Map<String, Object>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
 		if(callFunctionKey.equalsIgnoreCase("P_Join")) {  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				staticFunctionMapO_VECS_C.P_Join((String[])inputValues.get(传参因子[因子++]),(Map<String, Object>)inputValues.get(传参因子[因子++]));
+				staticFunctionMapO_VECS_C.P_Join((String[])inputValues.get(传参因子[因子++])
+						,(Map<String, Object>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
 		if(callFunctionKey.equalsIgnoreCase("P_E")) { 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				staticFunctionMapO_VECS_C.P_E((String[])inputValues.get(传参因子[因子++]),(Map<String, Object>)inputValues.get(传参因子[因子++])
+				staticFunctionMapO_VECS_C.P_E((String[])inputValues.get(传参因子[因子++])
+						,(Map<String, Object>)inputValues.get(传参因子[因子++])
 						,(boolean)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -582,7 +662,8 @@ public interface StaticFunctionMapO_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("P_Check")) { 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				staticFunctionMapO_VECS_C.P_Check((String)inputValues.get(传参因子[因子++]),(Map<String, Object>)inputValues.get(传参因子[因子++])
+				staticFunctionMapO_VECS_C.P_Check((String)inputValues.get(传参因子[因子++])
+						,(Map<String, Object>)inputValues.get(传参因子[因子++])
 						,(boolean)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -590,28 +671,32 @@ public interface StaticFunctionMapO_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("P_StoreValues")) {  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				staticFunctionMapO_VECS_C.P_StoreValues((String[])inputValues.get(传参因子[因子++]),(Map<String, Object>)inputValues.get(传参因子[因子++]));
+				staticFunctionMapO_VECS_C.P_StoreValues((String[])inputValues.get(传参因子[因子++])
+						,(Map<String, Object>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
 		if(callFunctionKey.equalsIgnoreCase("P_fileOperations")) {  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				staticFunctionMapO_VECS_C.P_fileOperations((String[])inputValues.get(传参因子[因子++]),(Map<String, Object>)inputValues.get(传参因子[因子++]));
+				staticFunctionMapO_VECS_C.P_fileOperations((String[])inputValues.get(传参因子[因子++])
+						,(Map<String, Object>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
 		if(callFunctionKey.equalsIgnoreCase("replaceString")) { 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				staticFunctionMapO_VECS_C.replaceString((String)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++]));
+				staticFunctionMapO_VECS_C.replaceString((String)inputValues.get(传参因子[因子++])
+						,(String)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
 		if(callFunctionKey.equalsIgnoreCase("replaceStringWithFileName")) {  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				staticFunctionMapO_VECS_C.replaceStringWithFileName((String)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++])
+				staticFunctionMapO_VECS_C.replaceStringWithFileName((String)inputValues.get(传参因子[因子++])
+						,(String)inputValues.get(传参因子[因子++])
 						,(Map<String, String>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -626,7 +711,8 @@ public interface StaticFunctionMapO_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("replaceStringWithFileName")) { 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				staticFunctionMapO_VECS_C.replaceStringWithFileName((String)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++])
+				staticFunctionMapO_VECS_C.replaceStringWithFileName((String)inputValues.get(传参因子[因子++])
+						,(String)inputValues.get(传参因子[因子++])
 						,(Map<String, String>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -634,7 +720,8 @@ public interface StaticFunctionMapO_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("replaceStringWithFileType")) {  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				staticFunctionMapO_VECS_C.replaceStringWithFileType((String)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++])
+				staticFunctionMapO_VECS_C.replaceStringWithFileType((String)inputValues.get(传参因子[因子++])
+						,(String)inputValues.get(传参因子[因子++])
 						,(String)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -642,7 +729,8 @@ public interface StaticFunctionMapO_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("replaceStringWithFileSize")) {  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				staticFunctionMapO_VECS_C.replaceStringWithFileSize((String)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++])
+				staticFunctionMapO_VECS_C.replaceStringWithFileSize((String)inputValues.get(传参因子[因子++])
+						,(String)inputValues.get(传参因子[因子++])
 						,(String)inputValues.get(传参因子[因子++]),(long)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -650,8 +738,10 @@ public interface StaticFunctionMapO_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("replaceStringWithFileLines")) { 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				staticFunctionMapO_VECS_C.replaceStringWithFileLines((String)inputValues.get(传参因子[因子++]),(String)inputValues.get(传参因子[因子++])
-						,(String)inputValues.get(传参因子[因子++]),(long)inputValues.get(传参因子[因子++]),(long)inputValues.get(传参因子[因子++]));
+				staticFunctionMapO_VECS_C.replaceStringWithFileLines((String)inputValues.get(传参因子[因子++])
+						,(String)inputValues.get(传参因子[因子++])
+						,(String)inputValues.get(传参因子[因子++]),(long)inputValues.get(传参因子[因子++])
+						,(long)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
@@ -665,7 +755,8 @@ public interface StaticFunctionMapO_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("replaceStringWithLogRecording")) { 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				staticFunctionMapO_VECS_C.replaceStringWithLogRecording((Map<String, String>)inputValues.get(传参因子[因子++]));
+				staticFunctionMapO_VECS_C.replaceStringWithLogRecording(
+						(Map<String, String>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}
@@ -673,93 +764,98 @@ public interface StaticFunctionMapO_VECS_C {
 
 	public static void load(StaticFunctionMapO_VECS_E staticFunctionMapO_VECS_E) {	
 		//稍后封装
-		staticFunctionMapO_VECS_E.annotationMap.put("SortStringDemo", "SortStringDemo");
-		staticFunctionMapO_VECS_E.annotationMap.put("transactionLogin", "transactionLogin");
-		staticFunctionMapO_VECS_E.annotationMap.put("transactionRegister", "transactionRegister");
-		staticFunctionMapO_VECS_E.annotationMap.put("aCommonReadWay", "aCommonReadWay");
-		staticFunctionMapO_VECS_E.annotationMap.put("readDBInTXTWay", "readDBInTXTWay");
-		staticFunctionMapO_VECS_E.annotationMap.put("readDBInBaseWay", "readDBInBaseWay");
-		staticFunctionMapO_VECS_E.annotationMap.put("readDBInWebWay", "readDBInWebWay");
-		staticFunctionMapO_VECS_E.annotationMap.put("PLSQLSectionPanel", "PLSQLSectionPanel");
-		staticFunctionMapO_VECS_E.annotationMap.put("VPCSRestPanel", "VPCSRestPanel");
-		staticFunctionMapO_VECS_E.annotationMap.put("YouBiaoSectionPanel", "YouBiaoSectionPanel");
-		staticFunctionMapO_VECS_E.annotationMap.put("PL_XA_C", "PL_XA_C");
-		staticFunctionMapO_VECS_E.annotationMap.put("selectRowsByAttributesOfJoinCondition", "selectRowsByAttributesOfJoinCondition");
-		staticFunctionMapO_VECS_E.annotationMap.put("selectRowsByAttributesOfJoinAggregation", "selectRowsByAttributesOfJoinAggregation");
-		staticFunctionMapO_VECS_E.annotationMap.put("selectRowsByAttributesOfJoinGetCulumns", "selectRowsByAttributesOfJoinGetCulumns");
-		staticFunctionMapO_VECS_E.annotationMap.put("selectRowsByAttributesOfJoinRelation", "selectRowsByAttributesOfJoinRelation");
-		staticFunctionMapO_VECS_E.annotationMap.put("selectRowsByAttributesOfNestCondition", "selectRowsByAttributesOfNestCondition");
-		staticFunctionMapO_VECS_E.annotationMap.put("selectRowsByAttributesOfNestAggregation", "selectRowsByAttributesOfNestAggregation");
-		staticFunctionMapO_VECS_E.annotationMap.put("selectRowsByAttributesOfNestGetCulumns", "selectRowsByAttributesOfNestGetCulumns");
-		staticFunctionMapO_VECS_E.annotationMap.put("selectRowsByAttributesOfNestRelation", "selectRowsByAttributesOfNestRelation");
-		staticFunctionMapO_VECS_E.annotationMap.put("selectRowsByAttribute", "selectRowsByAttribute");
-		staticFunctionMapO_VECS_E.annotationMap.put("XA_ShellQ_Rows_E_main", "XA_ShellQ_Rows_E_main");
-		staticFunctionMapO_VECS_E.annotationMap.put("selectRowsByTablePath", "selectRowsByTablePath");
-		staticFunctionMapO_VECS_E.annotationMap.put("selectRowsByAttributesOfCondition", "selectRowsByAttributesOfCondition");
-		staticFunctionMapO_VECS_E.annotationMap.put("selectRowsByAttributesOfAggregation", "selectRowsByAttributesOfAggregation");
-		staticFunctionMapO_VECS_E.annotationMap.put("selectRowsByAttributesOfGetCulumns", "selectRowsByAttributesOfGetCulumns");
-		staticFunctionMapO_VECS_E.annotationMap.put("selectRowsByAttributesOfPLETL", "selectRowsByAttributesOfPLETL");
-		staticFunctionMapO_VECS_E.annotationMap.put("selectRowsByAttributesOfPLTCP", "selectRowsByAttributesOfPLTCP");
-		staticFunctionMapO_VECS_E.annotationMap.put("addNewSearchShellTable", "addNewSearchShellTable");
-		staticFunctionMapO_VECS_E.annotationMap.put("getNewSearchShellTableSpecFromDefaultTableModel", "getNewSearchShellTableSpecFromDefaultTableModel");
-		staticFunctionMapO_VECS_E.annotationMap.put("getNewSearchShellTableDataFromDefaultTableModel", "getNewSearchShellTableDataFromDefaultTableModel");
-		staticFunctionMapO_VECS_E.annotationMap.put("getNewSearchShellTableRowsFromDefaultTableModel", "getNewSearchShellTableRowsFromDefaultTableModel");
-		staticFunctionMapO_VECS_E.annotationMap.put("addNewSearchShellTable", "addNewSearchShellTable");
-		staticFunctionMapO_VECS_E.annotationMap.put("addNewSearchShellTableWithObjectData", "addNewSearchShellTableWithObjectData");
-		staticFunctionMapO_VECS_E.annotationMap.put("addNewSearchShellTable", "addNewSearchShellTable");
-		staticFunctionMapO_VECS_E.annotationMap.put("addNewSearchShellTableWithObjectDataReflectionDBRows", "addNewSearchShellTableWithObjectDataReflectionDBRows");
-		staticFunctionMapO_VECS_E.annotationMap.put("addNewSearchShellTableReflectionDBRows", "addNewSearchShellTableReflectionDBRows");
-		staticFunctionMapO_VECS_E.annotationMap.put("addInitSearchShellTable", "addInitSearchShellTable");
-		staticFunctionMapO_VECS_E.annotationMap.put("doNeroFlow", "doNeroFlow");
-		staticFunctionMapO_VECS_E.annotationMap.put("ReadChinese", "ReadChinese");
-		staticFunctionMapO_VECS_E.annotationMap.put("kernel", "kernel");
-		staticFunctionMapO_VECS_E.annotationMap.put("getMedicineBookFeedbackZY", "getMedicineBookFeedbackZY");
-		staticFunctionMapO_VECS_E.annotationMap.put("getMedicineBookFeedbackXY", "getMedicineBookFeedbackXY");
+		staticFunctionMapO_VECS_E.annotationMap.put("SortStringDemo", "void");
+		staticFunctionMapO_VECS_E.annotationMap.put("transactionLogin", "uEmail:uPassword");
+		staticFunctionMapO_VECS_E.annotationMap.put("transactionRegister", "uEmail:uEmailEnsure:uName:uPassword:uPassWDEnsure:uAddress:uPhone:uWeChat:uQq:uAge:uSex");
+		staticFunctionMapO_VECS_E.annotationMap.put("aCommonReadWay", "app");
+		staticFunctionMapO_VECS_E.annotationMap.put("readDBInTXTWay", "app");
+		staticFunctionMapO_VECS_E.annotationMap.put("readDBInBaseWay", "app");
+		staticFunctionMapO_VECS_E.annotationMap.put("readDBInWebWay", "app");
+		staticFunctionMapO_VECS_E.annotationMap.put("PLSQLSectionPanel", "app");
+		staticFunctionMapO_VECS_E.annotationMap.put("VPCSRestPanel", "app");
+		staticFunctionMapO_VECS_E.annotationMap.put("YouBiaoSectionPanel", "app");
+		staticFunctionMapO_VECS_E.annotationMap.put("PL_XA_C", "void");
+		staticFunctionMapO_VECS_E.annotationMap.put("selectRowsByAttributesOfJoinCondition", "object");
+		staticFunctionMapO_VECS_E.annotationMap.put("selectRowsByAttributesOfJoinAggregation", "object");
+		staticFunctionMapO_VECS_E.annotationMap.put("selectRowsByAttributesOfJoinGetCulumns", "object");
+		staticFunctionMapO_VECS_E.annotationMap.put("selectRowsByAttributesOfJoinRelation", "object");
+		staticFunctionMapO_VECS_E.annotationMap.put("selectRowsByAttributesOfNestCondition", "object");
+		staticFunctionMapO_VECS_E.annotationMap.put("selectRowsByAttributesOfNestAggregation", "object");
+		staticFunctionMapO_VECS_E.annotationMap.put("selectRowsByAttributesOfNestGetCulumns", "object");
+		staticFunctionMapO_VECS_E.annotationMap.put("selectRowsByAttributesOfNestRelation", "object");
+		staticFunctionMapO_VECS_E.annotationMap.put("selectRowsByAttribute", "currentDB:tableName:culmnName:value");
+		staticFunctionMapO_VECS_E.annotationMap.put("XA_ShellQ_Rows_E_main", "args");
+		staticFunctionMapO_VECS_E.annotationMap.put("selectRowsByTablePath", "tablePath:pageBegin:pageEnd:direction");
+		staticFunctionMapO_VECS_E.annotationMap.put("selectRowsByAttributesOfCondition", "object");
+		staticFunctionMapO_VECS_E.annotationMap.put("selectRowsByAttributesOfAggregation", "object");
+		staticFunctionMapO_VECS_E.annotationMap.put("selectRowsByAttributesOfGetCulumns", "object");
+		staticFunctionMapO_VECS_E.annotationMap.put("selectRowsByAttributesOfPLETL", "object");
+		staticFunctionMapO_VECS_E.annotationMap.put("selectRowsByAttributesOfPLTCP", "object");
+		staticFunctionMapO_VECS_E.annotationMap.put("addNewSearchShellTable", "tableName:jtable");
+		staticFunctionMapO_VECS_E.annotationMap.put("getNewSearchShellTableSpecFromDefaultTableModel", "defaultTableModel");
+		staticFunctionMapO_VECS_E.annotationMap.put("getNewSearchShellTableDataFromDefaultTableModel", "defaultTableModel");
+		staticFunctionMapO_VECS_E.annotationMap.put("getNewSearchShellTableRowsFromDefaultTableModel", "spec:defaultTableModel");
 		
-		staticFunctionMapO_VECS_E.annotationMap.put("getMedicineBookFeedbackZT", "getMedicineBookFeedbackZT");
-		staticFunctionMapO_VECS_E.annotationMap.put("getMedicineBookFeedbackXT", "getMedicineBookFeedbackXT");
-		staticFunctionMapO_VECS_E.annotationMap.put("getMedicineBookFeedbackYT", "getMedicineBookFeedbackYT");
-		staticFunctionMapO_VECS_E.annotationMap.put("getMedicineBookFeedback", "getMedicineBookFeedback");
-		staticFunctionMapO_VECS_E.annotationMap.put("doSearch", "doSearch");
-		staticFunctionMapO_VECS_E.annotationMap.put("forwardDB", "forwardDB");
-		staticFunctionMapO_VECS_E.annotationMap.put("forwardVPC", "forwardVPC");
-		staticFunctionMapO_VECS_E.annotationMap.put("forwardVPCBackEnd", "forwardVPCBackEnd");
-		staticFunctionMapO_VECS_E.annotationMap.put("forwardVPCYangliaojing", "forwardVPCYangliaojing");
-		staticFunctionMapO_VECS_E.annotationMap.put("getCode", "getCode");
-		staticFunctionMapO_VECS_E.annotationMap.put("getFilePath", "getFilePath");
-		staticFunctionMapO_VECS_E.annotationMap.put("E_pl_XA", "E_pl_XA");
-		staticFunctionMapO_VECS_E.annotationMap.put("E_pl_XA", "E_pl_XA");
-		staticFunctionMapO_VECS_E.annotationMap.put("P_AggregationLimitMap", "P_AggregationLimitMap");
-		staticFunctionMapO_VECS_E.annotationMap.put("P_PletlLimitMap", "P_PletlLimitMap");
-		staticFunctionMapO_VECS_E.annotationMap.put("P_PltcpLimitMap", "P_PltcpLimitMap");
-		staticFunctionMapO_VECS_E.annotationMap.put("P_Cache", "P_Cache");
-		staticFunctionMapO_VECS_E.annotationMap.put("P_kernel", "P_kernel");
-		staticFunctionMapO_VECS_E.annotationMap.put("P_kernel_search", "P_kernel_search");
-		staticFunctionMapO_VECS_E.annotationMap.put("rowToRowMap", "rowToRowMap");
-		staticFunctionMapO_VECS_E.annotationMap.put("rowMapToRow", "rowMapToRow");
-		staticFunctionMapO_VECS_E.annotationMap.put("P_Map", "P_Map");
-		staticFunctionMapO_VECS_E.annotationMap.put("getCulumnsMapWithAs", "getCulumnsMapWithAs");
-		staticFunctionMapO_VECS_E.annotationMap.put("getCulumnsMap", "getCulumnsMap");
-		staticFunctionMapO_VECS_E.annotationMap.put("P_AndMap", "P_AndMap");
-		staticFunctionMapO_VECS_E.annotationMap.put("P_OrMap", "P_OrMap");
-		staticFunctionMapO_VECS_E.annotationMap.put("P_SetRoot", "P_SetRoot");
-		staticFunctionMapO_VECS_E.annotationMap.put("P_BaseName", "P_BaseName");
-		staticFunctionMapO_VECS_E.annotationMap.put("P_TableName", "P_TableName");
-		staticFunctionMapO_VECS_E.annotationMap.put("P_ListNeedStart", "P_ListNeedStart");
-		staticFunctionMapO_VECS_E.annotationMap.put("P_Join", "P_Join");
-		staticFunctionMapO_VECS_E.annotationMap.put("P_E", "P_E");
-		staticFunctionMapO_VECS_E.annotationMap.put("P_Check", "P_Check");
-		staticFunctionMapO_VECS_E.annotationMap.put("P_StoreValues", "P_StoreValues");
+		staticFunctionMapO_VECS_E.annotationMap.put("addNewSearchShellTable", "tableName:defaultTableModel");
+		staticFunctionMapO_VECS_E.annotationMap.put("addNewSearchShellTableWithObjectData", "tableName:defaultTableModel:defaultTableData");
+		staticFunctionMapO_VECS_E.annotationMap.put("addNewSearchShellTable", "tableName:defaultTableData:defaultTableDataSpec");
+		staticFunctionMapO_VECS_E.annotationMap.put("addNewSearchShellTableWithObjectDataReflectionDBRows", "tableName:defaultTableModel:defaultTableData");
+		staticFunctionMapO_VECS_E.annotationMap.put("addNewSearchShellTableReflectionDBRows", "tableName:rows:defaultTableDataSpec");
+		staticFunctionMapO_VECS_E.annotationMap.put("addInitSearchShellTable", "app");
+		staticFunctionMapO_VECS_E.annotationMap.put("doNeroFlow", "rightBotJTextPane:nodeView:first:documentFlowAddress:inputMap");
+		staticFunctionMapO_VECS_E.annotationMap.put("ReadChinese", "app:_A");
+		staticFunctionMapO_VECS_E.annotationMap.put("kernel", "app:string");
+		staticFunctionMapO_VECS_E.annotationMap.put("getMedicineBookFeedbackZY", "app:string");
+		staticFunctionMapO_VECS_E.annotationMap.put("getMedicineBookFeedbackXY", "app:string");
+
+		staticFunctionMapO_VECS_E.annotationMap.put("getMedicineBookFeedbackZT", "app:string");
+		staticFunctionMapO_VECS_E.annotationMap.put("getMedicineBookFeedbackXT", "app:string");
+		staticFunctionMapO_VECS_E.annotationMap.put("getMedicineBookFeedbackYT", "app:string");
+		staticFunctionMapO_VECS_E.annotationMap.put("getMedicineBookFeedback", "app:string");
+		staticFunctionMapO_VECS_E.annotationMap.put("doSearch", "app:string");
+		staticFunctionMapO_VECS_E.annotationMap.put("forwardDB", "app:string:data");
+		staticFunctionMapO_VECS_E.annotationMap.put("forwardVPC", "app:string:data");
+		staticFunctionMapO_VECS_E.annotationMap.put("forwardVPCBackEnd", "emotionMap:_A:string:data");
+		staticFunctionMapO_VECS_E.annotationMap.put("forwardVPCYangliaojing", "app:string:data");
+		staticFunctionMapO_VECS_E.annotationMap.put("getCode", "filePath");
+		staticFunctionMapO_VECS_E.annotationMap.put("getFilePath", "string");
+		staticFunctionMapO_VECS_E.annotationMap.put("E_pl_XA", "plSearch:mod:output");
+		staticFunctionMapO_VECS_E.annotationMap.put("E_pl_XA", "orm:b:output");
+		staticFunctionMapO_VECS_E.annotationMap.put("P_AggregationLimitMap", "sets:output");
+		staticFunctionMapO_VECS_E.annotationMap.put("P_PletlLimitMap", "sets:obj");
+		staticFunctionMapO_VECS_E.annotationMap.put("P_PltcpLimitMap", "sets:output:object");
+		staticFunctionMapO_VECS_E.annotationMap.put("P_Cache", "sets:output:tableName:object:condition");
+		staticFunctionMapO_VECS_E.annotationMap.put("P_kernel"
+				, "temp:readDBTableRowIndexCulumnFile:readDBTableRowIndexFile:reader:DBTableRowIndexPath:output:bufferRow:rowMap");
+		staticFunctionMapO_VECS_E.annotationMap.put("P_kernel_search"
+				, "temp:readDBTableRowIndexFile:rowId:huaRuiJiJtableCulumns:huaRuiJiJtable:output;bufferRow;rowMap");
+		staticFunctionMapO_VECS_E.annotationMap.put("rowToRowMap", "row");
+		staticFunctionMapO_VECS_E.annotationMap.put("rowMapToRow", "map");
+		staticFunctionMapO_VECS_E.annotationMap.put("P_Map", "sets:output:tableName:object");
+		staticFunctionMapO_VECS_E.annotationMap.put("getCulumnsMapWithAs", "sets:row");
+		staticFunctionMapO_VECS_E.annotationMap.put("getCulumnsMap", "sets:row");
+		staticFunctionMapO_VECS_E.annotationMap.put("P_getCulumnsMap", "obj:getCulumnsValueArray");
+		
+		staticFunctionMapO_VECS_E.annotationMap.put("P_AndMap", "sets:obj:joinObj:object:newObj");
+		staticFunctionMapO_VECS_E.annotationMap.put("P_OrMap", "sets:obj:joinObj:object:newObj:findinNewObj");
+		staticFunctionMapO_VECS_E.annotationMap.put("P_SetRoot", "acknowledge:output");
+		staticFunctionMapO_VECS_E.annotationMap.put("P_BaseName", "acknowledge:output");
+		staticFunctionMapO_VECS_E.annotationMap.put("P_TableName", "acknowledge:output");
+		staticFunctionMapO_VECS_E.annotationMap.put("P_ListNeedStart", "acknowledge:output");
+		staticFunctionMapO_VECS_E.annotationMap.put("P_Join", "acknowledge:output");
+		staticFunctionMapO_VECS_E.annotationMap.put("P_E", "acknowledge:output:mod");
+		staticFunctionMapO_VECS_E.annotationMap.put("P_Check", "acknowledge:output:mod");
+		staticFunctionMapO_VECS_E.annotationMap.put("P_StoreValues", "acknowledge:output");
 		staticFunctionMapO_VECS_E.annotationMap.put("P_fileOperations", "P_fileOperations");
-		staticFunctionMapO_VECS_E.annotationMap.put("replaceString", "replaceString");
-		staticFunctionMapO_VECS_E.annotationMap.put("replaceStringWithFileName", "replaceStringWithFileName");
-		staticFunctionMapO_VECS_E.annotationMap.put("start", "start");
-		staticFunctionMapO_VECS_E.annotationMap.put("replaceStringWithFileName", "replaceStringWithFileName");
-		staticFunctionMapO_VECS_E.annotationMap.put("replaceStringWithFileType", "replaceStringWithFileType");
-		staticFunctionMapO_VECS_E.annotationMap.put("replaceStringWithFileSize", "replaceStringWithFileSize");
-		staticFunctionMapO_VECS_E.annotationMap.put("replaceStringWithFileLines", "replaceStringWithFileLines");
-		staticFunctionMapO_VECS_E.annotationMap.put("mainShellReplace", "mainShellReplace");
-		staticFunctionMapO_VECS_E.annotationMap.put("replaceStringWithLogRecording", "replaceStringWithLogRecording");
+		staticFunctionMapO_VECS_E.annotationMap.put("replaceString", "fileDirectroyPath:searchString:needReplaceString");
+		staticFunctionMapO_VECS_E.annotationMap.put("replaceStringWithFileName", "fileDirectroyPath:searchString:conditions");
+		staticFunctionMapO_VECS_E.annotationMap.put("start", "void");
+		staticFunctionMapO_VECS_E.annotationMap.put("replaceStringWithFileName", "fileDirectroyPath:searchString:needReplaceString:fileName");
+		staticFunctionMapO_VECS_E.annotationMap.put("replaceStringWithFileType", "fileDirectroyPath:searchString:needReplaceString:fileName");
+		staticFunctionMapO_VECS_E.annotationMap.put("replaceStringWithFileSize", "fileDirectroyPath:searchString:needReplaceString:fileName");
+		staticFunctionMapO_VECS_E.annotationMap.put("replaceStringWithFileLines", "fileDirectroyPath:searchString:needReplaceString:beginLine:endLine");
+		staticFunctionMapO_VECS_E.annotationMap.put("mainShellReplace", "argv");
+		staticFunctionMapO_VECS_E.annotationMap.put("replaceStringWithLogRecording", "conditions");
 	}
 
 	public void SortStringDemo(); //稍后重命名
@@ -784,15 +880,17 @@ public interface StaticFunctionMapO_VECS_C {
 	public OSA.shell.PL_XA_C PL_XA_C();
 	// XA_ShellQ_JoinRows_E {
 	public Object selectRowsByAttributesOfJoinCondition(Map<String, Object> object) throws IOException;
-	public Object selectRowsByAttributesOfJoinAggregation(Map<String, Object> object) throws InstantiationException
-	, IllegalAccessException, IOException;
+	public Object selectRowsByAttributesOfJoinAggregation(Map<String, Object> object) 
+			throws InstantiationException
+			, IllegalAccessException, IOException;
 	public Object selectRowsByAttributesOfJoinGetCulumns(Map<String, Object> object);
 	public Object selectRowsByAttributesOfJoinRelation(Map<String, Object> object);
 
 	//XA_ShellQ_NestRows_E {
 	public Object selectRowsByAttributesOfNestCondition(Map<String, Object> object) throws IOException;
-	public Object selectRowsByAttributesOfNestAggregation(Map<String, Object> object) throws InstantiationException
-	, IllegalAccessException, IOException;
+	public Object selectRowsByAttributesOfNestAggregation(Map<String, Object> object)
+			throws InstantiationException
+			, IllegalAccessException, IOException;
 	public Object selectRowsByAttributesOfNestGetCulumns(Map<String, Object> object);
 	public Object selectRowsByAttributesOfNestRelation(Map<String, Object> object);
 
@@ -809,12 +907,14 @@ public interface StaticFunctionMapO_VECS_C {
 	public Object selectRowsByAttributesOfCondition(Map<String, Object> object) throws IOException;
 	//20210927 注释下 稍后替换
 	//先设计成 plsearch 语法和 plsql 语法通用， 方便我之后的plorm 统一一种方式扩展 pladmin
-	public List<Map<String, Object>> selectRowsByAttributesOfAggregation(Map<String, Object> object) throws InstantiationException
-	, IllegalAccessException, IOException;
+	public List<Map<String, Object>> selectRowsByAttributesOfAggregation(Map<String, Object> object)
+			throws InstantiationException
+			, IllegalAccessException, IOException;
 	public Object selectRowsByAttributesOfGetCulumns(Map<String, Object> object);
 	//PLETL命令一多，之后准备分出去
 	//罗瑶光 20211010
-	public Object selectRowsByAttributesOfPLETL(Map<String, Object> object) throws InstantiationException, IllegalAccessException
+	public Object selectRowsByAttributesOfPLETL(Map<String, Object> object) throws InstantiationException
+	, IllegalAccessException
 	, IOException;
 	public Object selectRowsByAttributesOfPLTCP(Map<String, Object> object) throws IOException;
 
@@ -831,7 +931,8 @@ public interface StaticFunctionMapO_VECS_C {
 	public Object[][] getNewSearchShellTableDataFromDefaultTableModel(DefaultTableModel defaultTableModel) ;
 
 	//设计个row的结合表map内存结构 用于shell的表头搜索。
-	public Row[] getNewSearchShellTableRowsFromDefaultTableModel(Object[] spec, DefaultTableModel defaultTableModel) ;
+	public Row[] getNewSearchShellTableRowsFromDefaultTableModel(Object[] spec
+			, DefaultTableModel defaultTableModel) ;
 
 	//设计个row的结合表map内存结构 用于shell的表头搜索。
 	public Row[] getNewSearchShellTableRowsFromDefaultTableModel(Object[] spec, Object[][] tableData) ;
@@ -849,7 +950,8 @@ public interface StaticFunctionMapO_VECS_C {
 
 	//Reflection map 表头方式存储
 	//将表映射变成shell映射,接口VPCS 多样化，稍后做新陈代谢用。 object data 稍后准备 用 _S_ 元基替换。
-	public boolean addNewSearchShellTableWithObjectDataReflectionDBRows(String tableName, DefaultTableModel defaultTableModel
+	public boolean addNewSearchShellTableWithObjectDataReflectionDBRows(String tableName
+			, DefaultTableModel defaultTableModel
 			, Object[][] defaultTableData) ;
 
 	//Reflection map 表头方式存储
@@ -890,8 +992,9 @@ public interface StaticFunctionMapO_VECS_C {
 
 	//VPCBackEnd {
 	//public static RestLoginPort restLoginPort;
-	public String forwardVPCBackEnd(EmotionMap emotionMap, CogsBinaryForest_AE _A, String string, Map<String, String> data) 
-			throws Exception;
+	public String forwardVPCBackEnd(EmotionMap emotionMap, CogsBinaryForest_AE _A
+			, String string, Map<String, String> data) 
+					throws Exception;
 
 	//VPCYangliaojing {
 	public String forwardVPCYangliaojing(App app, String string, Map<String, String> data)throws Exception;
@@ -916,7 +1019,8 @@ public interface StaticFunctionMapO_VECS_C {
 			throws InstantiationException, IllegalAccessException, IOException;
 
 	//P_AO_PLTCP {
-	public void P_PltcpLimitMap(String[] sets, List<Map<String, Object>> output, Map<String, Object> object) throws IOException;
+	public void P_PltcpLimitMap(String[] sets, List<Map<String, Object>> output
+			, Map<String, Object> object) throws IOException;
 	//P_CO_pl_XA_XCDX_Cache extends P_CO_pl_XA_XCDX {
 	public void P_Cache(String[] sets, List<Map<String, Object>> output, String tableName, Map<String, Object> object
 			, String condition);
@@ -989,7 +1093,8 @@ public interface StaticFunctionMapO_VECS_C {
 	public void P_fileOperations(String[] acknowledge, Map<String, Object> output);
 
 	//ShellReplace {
-	public void replaceString(String fileDirectroyPath, String searchString, String needReplaceString) throws IOException ;
+	public void replaceString(String fileDirectroyPath, String searchString, String needReplaceString) 
+			throws IOException ;
 
 	//稍后设计成map来存储这些String条件变量。
 	public void replaceStringWithFileName(String fileDirectroyPath, String searchString

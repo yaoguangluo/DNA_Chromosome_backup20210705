@@ -30,8 +30,8 @@ public interface StaticFunctionMapS_IDUQ_C {
 	}
 	public static void load(StaticFunctionMapS_IDUQ_E staticFunctionMapS_IDUQ_E) {
 		//ÉÔºó·â×°
-		staticFunctionMapS_IDUQ_E.annotationMap.put("clone", "clone");
-		staticFunctionMapS_IDUQ_E.annotationMap.put("splitRegex", "splitRegex");
+		staticFunctionMapS_IDUQ_E.annotationMap.put("clone", "tinMap");
+		staticFunctionMapS_IDUQ_E.annotationMap.put("splitRegex", "input:split:unSplit");
 	}
 	//TinMap extends ConcurrentHashMap<String, Object> implements Cloneable{	
 	public TinMap clone(TinMap tinMap) throws CloneNotSupportedException; 

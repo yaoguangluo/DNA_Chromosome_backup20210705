@@ -92,16 +92,20 @@ public interface StaticFunctionMapP_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("addNewPositionWithoutHeart")){  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.addNewPositionWithoutHeart((Map<Double,List<AMV_MVS_VSQ_2D>>) inputValues.get(传参因子[因子++])
-						, (AMV_MVS_VSQ_2D) inputValues.get(传参因子[因子++]), (double) inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.addNewPositionWithoutHeart(
+						(Map<Double,List<AMV_MVS_VSQ_2D>>) inputValues.get(传参因子[因子++])
+						, (AMV_MVS_VSQ_2D) inputValues.get(传参因子[因子++])
+						, (double) inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "addNewPositionWithoutHeart");
 		if(callFunctionKey.equalsIgnoreCase("addNewPositionWithHeart")){   
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.addNewPositionWithHeart((Map<Double, List<AMV_MVS_VSQ_2D>>) inputValues.get(传参因子[因子++]),
-						(AMV_MVS_VSQ_2D) inputValues.get(传参因子[因子++]), (Map<Double, AMV_MVS_VSQ_2D>) inputValues.get(传参因子[因子++])
+				map= staticFunctionMapP_VECS_C.addNewPositionWithHeart(
+						(Map<Double, List<AMV_MVS_VSQ_2D>>) inputValues.get(传参因子[因子++]),
+						(AMV_MVS_VSQ_2D) inputValues.get(传参因子[因子++])
+						, (Map<Double, AMV_MVS_VSQ_2D>) inputValues.get(传参因子[因子++])
 						, (double) inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -109,7 +113,8 @@ public interface StaticFunctionMapP_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("getShortestSamplePosition2DGroup")){   
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.getShortestSamplePosition2DGroup((AMV_MVS_VSQ_2D) inputValues.get(传参因子[因子++])
+				map= staticFunctionMapP_VECS_C.getShortestSamplePosition2DGroup(
+						(AMV_MVS_VSQ_2D) inputValues.get(传参因子[因子++])
 						, (Map<Double, List<AMV_MVS_VSQ_2D>>) inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -117,15 +122,18 @@ public interface StaticFunctionMapP_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("getShorterSamplePosition2DGroupsWithScale")){    
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.getShorterSamplePosition2DGroupsWithScale((AMV_MVS_VSQ_2D) inputValues.get(传参因子[因子++])
-						, (Map<Double, List<AMV_MVS_VSQ_2D>>) inputValues.get(传参因子[因子++]), (double) inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.getShorterSamplePosition2DGroupsWithScale(
+						(AMV_MVS_VSQ_2D) inputValues.get(传参因子[因子++])
+						, (Map<Double, List<AMV_MVS_VSQ_2D>>) inputValues.get(传参因子[因子++])
+						, (double) inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "getShorterSamplePosition2DGroupsWithScale");
 		if(callFunctionKey.equalsIgnoreCase("getShortestSamplePosition3DGroup")){   
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.getShortestSamplePosition3DGroup((AMV_MVS_VSQ_3D) inputValues.get(传参因子[因子++])
+				map= staticFunctionMapP_VECS_C.getShortestSamplePosition3DGroup(
+						(AMV_MVS_VSQ_3D) inputValues.get(传参因子[因子++])
 						, (Map<Double, List<AMV_MVS_VSQ_3D>>) inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -133,45 +141,56 @@ public interface StaticFunctionMapP_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("getShortestSamplePosition3DGroupsWithScale")){ 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.getShortestSamplePosition3DGroupsWithScale((AMV_MVS_VSQ_3D) inputValues.get(传参因子[因子++])
-						, (Map<Double, List<AMV_MVS_VSQ_3D>>) inputValues.get(传参因子[因子++]), (double) inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.getShortestSamplePosition3DGroupsWithScale(
+						(AMV_MVS_VSQ_3D) inputValues.get(传参因子[因子++])
+						, (Map<Double, List<AMV_MVS_VSQ_3D>>) inputValues.get(传参因子[因子++])
+						, (double) inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "getShortestSamplePosition3DGroupsWithScale");
 		if(callFunctionKey.equalsIgnoreCase("fissilePosition2D")){   
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.fissilePosition2D((List<AMV_MVS_VSQ_2D>) inputValues.get(传参因子[因子++]), (double) inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.fissilePosition2D(
+						(List<AMV_MVS_VSQ_2D>) inputValues.get(传参因子[因子++])
+						, (double) inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "fissilePosition2D");
 		if(callFunctionKey.equalsIgnoreCase("fissilePosition3D")){    
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.fissilePosition3D((List<AMV_MVS_VSQ_3D>) inputValues.get(传参因子[因子++]), (double) inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.fissilePosition3D(
+						(List<AMV_MVS_VSQ_3D>) inputValues.get(传参因子[因子++])
+						, (double) inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "fissilePosition3D");
 		if(callFunctionKey.equalsIgnoreCase("fusionPosition2DwithHeart")){  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.fusionPosition2DwithHeart((Map<Double, List<AMV_MVS_VSQ_2D>>) inputValues.get(传参因子[因子++]),
-						(Map<Double, AMV_MVS_VSQ_2D>) inputValues.get(传参因子[因子++]), (double) inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.fusionPosition2DwithHeart(
+						(Map<Double, List<AMV_MVS_VSQ_2D>>) inputValues.get(传参因子[因子++]),
+						(Map<Double, AMV_MVS_VSQ_2D>) inputValues.get(传参因子[因子++])
+						, (double) inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "fusionPosition2DwithHeart");
 		if(callFunctionKey.equalsIgnoreCase("fusionPosition3DwithHeart")){  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.fusionPosition3DwithHeart((Map<Double, List<AMV_MVS_VSQ_3D>>) inputValues.get(传参因子[因子++]),
-						(Map<Double, AMV_MVS_VSQ_3D>) inputValues.get(传参因子[因子++]), (double) inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.fusionPosition3DwithHeart(
+						(Map<Double, List<AMV_MVS_VSQ_3D>>) inputValues.get(传参因子[因子++]),
+						(Map<Double, AMV_MVS_VSQ_3D>) inputValues.get(传参因子[因子++])
+						, (double) inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "fusionPosition3DwithHeart");
 		if(callFunctionKey.equalsIgnoreCase("getTSPIsolationGroups2D")){  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.getTSPIsolationGroups2D((List<AMV_MVS_VSQ_2D>) inputValues.get(传参因子[因子++])
+				map= staticFunctionMapP_VECS_C.getTSPIsolationGroups2D(
+						(List<AMV_MVS_VSQ_2D>) inputValues.get(传参因子[因子++])
 						, (double) inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -179,7 +198,8 @@ public interface StaticFunctionMapP_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("getTSPIsolationGroups3D")){  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.getTSPIsolationGroups3D((List<AMV_MVS_VSQ_3D>) inputValues.get(传参因子[因子++])
+				map= staticFunctionMapP_VECS_C.getTSPIsolationGroups3D(
+						(List<AMV_MVS_VSQ_3D>) inputValues.get(传参因子[因子++])
 						, (double) inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -187,7 +207,8 @@ public interface StaticFunctionMapP_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("getTSPForestIsolationGroups2D")){ 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.getTSPForestIsolationGroups2D((List<AMV_MVS_VSQ_2D>) inputValues.get(传参因子[因子++])
+				map= staticFunctionMapP_VECS_C.getTSPForestIsolationGroups2D(
+						(List<AMV_MVS_VSQ_2D>) inputValues.get(传参因子[因子++])
 						, (double) inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -195,7 +216,8 @@ public interface StaticFunctionMapP_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("getTSPForestIsolationGroups3D")){    
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.getTSPForestIsolationGroups3D((List<AMV_MVS_VSQ_3D>) inputValues.get(传参因子[因子++])
+				map= staticFunctionMapP_VECS_C.getTSPForestIsolationGroups3D(
+						(List<AMV_MVS_VSQ_3D>) inputValues.get(传参因子[因子++])
 						, (double) inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -203,35 +225,40 @@ public interface StaticFunctionMapP_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("trackTracePosition2DHeartsWithSingerGroup")){ 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.trackTracePosition2DHeartsWithSingerGroup((List<AMV_MVS_VSQ_2D>) inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.trackTracePosition2DHeartsWithSingerGroup(
+						(List<AMV_MVS_VSQ_2D>) inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "trackTracePosition2DHeartsWithSingerGroup");
 		if(callFunctionKey.equalsIgnoreCase("trackTracePosition3DHeartsWithSingerGroup")){   
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.trackTracePosition3DHeartsWithSingerGroup((List<AMV_MVS_VSQ_3D>) inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.trackTracePosition3DHeartsWithSingerGroup(
+						(List<AMV_MVS_VSQ_3D>) inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "trackTracePosition3DHeartsWithSingerGroup");
 		if(callFunctionKey.equalsIgnoreCase("trackTracePosition2DByHearts")){   
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.trackTracePosition2DByHearts((List<AMV_MVS_VSQ_2D>) inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.trackTracePosition2DByHearts(
+						(List<AMV_MVS_VSQ_2D>) inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "trackTracePosition2DByHearts");
 		if(callFunctionKey.equalsIgnoreCase("trackTracePosition3DByHearts")){     
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.trackTracePosition3DByHearts((List<AMV_MVS_VSQ_3D>) inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.trackTracePosition3DByHearts(
+						(List<AMV_MVS_VSQ_3D>) inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "trackTracePosition3DByHearts");
 		if(callFunctionKey.equalsIgnoreCase("trackTracePosition2DHeartsWithFissileGroups")){ 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.trackTracePosition2DHeartsWithFissileGroups((List<AMV_MVS_VSQ_2D>) inputValues.get(传参因子[因子++])
+				map= staticFunctionMapP_VECS_C.trackTracePosition2DHeartsWithFissileGroups(
+						(List<AMV_MVS_VSQ_2D>) inputValues.get(传参因子[因子++])
 						,(double)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -239,7 +266,8 @@ public interface StaticFunctionMapP_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("trackTracePosition3DHeartsWithFissileGroups")){   
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.trackTracePosition3DHeartsWithFissileGroups((List<AMV_MVS_VSQ_3D>) inputValues.get(传参因子[因子++])
+				map= staticFunctionMapP_VECS_C.trackTracePosition3DHeartsWithFissileGroups(
+						(List<AMV_MVS_VSQ_3D>) inputValues.get(传参因子[因子++])
 						, (double)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -247,7 +275,8 @@ public interface StaticFunctionMapP_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("findMeanDistanceFromPositions2D")){  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.findMeanDistanceFromPositions2D((List<AMV_MVS_VSQ_2D>) inputValues.get(传参因子[因子++])
+				map= staticFunctionMapP_VECS_C.findMeanDistanceFromPositions2D(
+						(List<AMV_MVS_VSQ_2D>) inputValues.get(传参因子[因子++])
 						, (double)inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -255,7 +284,8 @@ public interface StaticFunctionMapP_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("findMeanDistanceFromPositions3D")){     
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.findMeanDistanceFromPositions3D((List<AMV_MVS_VSQ_3D>) inputValues.get(传参因子[因子++])
+				map= staticFunctionMapP_VECS_C.findMeanDistanceFromPositions3D(
+						(List<AMV_MVS_VSQ_3D>) inputValues.get(传参因子[因子++])
 						, (double)inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -263,7 +293,8 @@ public interface StaticFunctionMapP_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("findPascalMeanDistanceByEachPositions2D")){  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.findPascalMeanDistanceByEachPositions2D((List<AMV_MVS_VSQ_2D>) inputValues.get(传参因子[因子++])
+				map= staticFunctionMapP_VECS_C.findPascalMeanDistanceByEachPositions2D(
+						(List<AMV_MVS_VSQ_2D>) inputValues.get(传参因子[因子++])
 						, (double)inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -271,7 +302,8 @@ public interface StaticFunctionMapP_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("findPascalMeanDistanceByEachPositions3D")){   
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.findPascalMeanDistanceByEachPositions3D((List<AMV_MVS_VSQ_3D>) inputValues.get(传参因子[因子++])
+				map= staticFunctionMapP_VECS_C.findPascalMeanDistanceByEachPositions3D(
+						(List<AMV_MVS_VSQ_3D>) inputValues.get(传参因子[因子++])
 						, (double)inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -279,7 +311,8 @@ public interface StaticFunctionMapP_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("getPosition2DsGroupPascalHearts")){   
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.getPosition2DsGroupPascalHearts((ArrayList<AMV_MVS_VSQ_2D>)inputValues.get(传参因子[因子++])
+				map= staticFunctionMapP_VECS_C.getPosition2DsGroupPascalHearts(
+						(ArrayList<AMV_MVS_VSQ_2D>)inputValues.get(传参因子[因子++])
 						,(double)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -287,7 +320,8 @@ public interface StaticFunctionMapP_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("getPosition3DsGroupPascalHearts")){   
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.getPosition3DsGroupPascalHearts((ArrayList<AMV_MVS_VSQ_3D>)inputValues.get(传参因子[因子++])
+				map= staticFunctionMapP_VECS_C.getPosition3DsGroupPascalHearts(
+						(ArrayList<AMV_MVS_VSQ_3D>)inputValues.get(传参因子[因子++])
 						,(double)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -295,7 +329,8 @@ public interface StaticFunctionMapP_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("getPosition2DsGroupPascalMids")){    
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.getPosition2DsGroupPascalMids((ArrayList<AMV_MVS_VSQ_2D>)inputValues.get(传参因子[因子++])
+				map= staticFunctionMapP_VECS_C.getPosition2DsGroupPascalMids(
+						(ArrayList<AMV_MVS_VSQ_2D>)inputValues.get(传参因子[因子++])
 						,(double)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -304,7 +339,8 @@ public interface StaticFunctionMapP_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("getPosition3DsGroupPascalMids")){     
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.getPosition3DsGroupPascalMids((ArrayList<AMV_MVS_VSQ_3D>)inputValues.get(传参因子[因子++])
+				map= staticFunctionMapP_VECS_C.getPosition3DsGroupPascalMids(
+						(ArrayList<AMV_MVS_VSQ_3D>)inputValues.get(传参因子[因子++])
 						,(double)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -312,7 +348,8 @@ public interface StaticFunctionMapP_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("getPosition2DsGroupPascalDirection")){
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.getPosition2DsGroupPascalDirection((Map<Double,AMV_MVS_VSQ_2D>)inputValues.get(传参因子[因子++])
+				map= staticFunctionMapP_VECS_C.getPosition2DsGroupPascalDirection(
+						(Map<Double,AMV_MVS_VSQ_2D>)inputValues.get(传参因子[因子++])
 						,(Map<Double,AMV_MVS_VSQ_2D>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -320,7 +357,8 @@ public interface StaticFunctionMapP_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("getPosition3DsGroupPascalDirection")){  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.getPosition3DsGroupPascalDirection((Map<Double,AMV_MVS_VSQ_3D>)inputValues.get(传参因子[因子++])
+				map= staticFunctionMapP_VECS_C.getPosition3DsGroupPascalDirection(
+						(Map<Double,AMV_MVS_VSQ_3D>)inputValues.get(传参因子[因子++])
 						,(Map<Double,AMV_MVS_VSQ_3D>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -328,7 +366,8 @@ public interface StaticFunctionMapP_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("getPosition3DsGroupPascalDirection")){   
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.getPosition3DsGroupPascalDirection((Map<Double,AMV_MVS_VSQ_3D>)inputValues.get(传参因子[因子++])
+				map= staticFunctionMapP_VECS_C.getPosition3DsGroupPascalDirection(
+						(Map<Double,AMV_MVS_VSQ_3D>)inputValues.get(传参因子[因子++])
 						,(Map<Double,AMV_MVS_VSQ_3D>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -336,7 +375,8 @@ public interface StaticFunctionMapP_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("getPosition2DsGroupPascalDirection")){   
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.getPosition2DsGroupPascalDirection((Map<Double,AMV_MVS_VSQ_2D>)inputValues.get(传参因子[因子++])
+				map= staticFunctionMapP_VECS_C.getPosition2DsGroupPascalDirection(
+						(Map<Double,AMV_MVS_VSQ_2D>)inputValues.get(传参因子[因子++])
 						,(Map<Double,AMV_MVS_VSQ_2D>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -344,35 +384,40 @@ public interface StaticFunctionMapP_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("getYaoguangLuo2DEulerRingTSP")){  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.getYaoguangLuo2DEulerRingTSP((List<AMV_MVS_VSQ_2D>)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.getYaoguangLuo2DEulerRingTSP(
+						(List<AMV_MVS_VSQ_2D>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "getYaoguangLuo2DEulerRingTSP");
 		if(callFunctionKey.equalsIgnoreCase("getYaoguangLuo3DEulerRingTSP")){  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.getYaoguangLuo3DEulerRingTSP((List<AMV_MVS_VSQ_3D>)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.getYaoguangLuo3DEulerRingTSP(
+						(List<AMV_MVS_VSQ_3D>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "getYaoguangLuo3DEulerRingTSP");
 		if(callFunctionKey.equalsIgnoreCase("getYaoguangLuo2DEulerRingTSP2D")){ 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.getYaoguangLuo2DEulerRingTSP2D((List<AMV_MVS_VSQ_2D>)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.getYaoguangLuo2DEulerRingTSP2D(
+						(List<AMV_MVS_VSQ_2D>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "getYaoguangLuo2DEulerRingTSP2D");
 		if(callFunctionKey.equalsIgnoreCase("getYaoguangLuo3DEulerRingTSP2D")){ 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.getYaoguangLuo3DEulerRingTSP2D((List<AMV_MVS_VSQ_3D>)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.getYaoguangLuo3DEulerRingTSP2D(
+						(List<AMV_MVS_VSQ_3D>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "getYaoguangLuo3DEulerRingTSP2D");
 		if(callFunctionKey.equalsIgnoreCase("getYaoguangLuo2DEulerRingTSP3D")){  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.getYaoguangLuo2DEulerRingTSP3D((List<AMV_MVS_VSQ_2D>)inputValues.get(传参因子[因子++])
+				map= staticFunctionMapP_VECS_C.getYaoguangLuo2DEulerRingTSP3D(
+						(List<AMV_MVS_VSQ_2D>)inputValues.get(传参因子[因子++])
 						,(int)inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -380,7 +425,8 @@ public interface StaticFunctionMapP_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("getYaoguangLuo3DEulerRingTSP3D")){   
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.getYaoguangLuo3DEulerRingTSP3D((List<AMV_MVS_VSQ_3D>)inputValues.get(传参因子[因子++])
+				map= staticFunctionMapP_VECS_C.getYaoguangLuo3DEulerRingTSP3D(
+						(List<AMV_MVS_VSQ_3D>)inputValues.get(传参因子[因子++])
 						,(int)inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -389,30 +435,36 @@ public interface StaticFunctionMapP_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("getImagePix2DGroupFilter")){ 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.getImagePix2DGroupFilter((int[][])inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++])
-						,(int)inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.getImagePix2DGroupFilter(
+						(int[][])inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++])
+						,(int)inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++])
+						,(int)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "getImagePix2DGroupFilter");
 		if(callFunctionKey.equalsIgnoreCase("getImagePix3DGroupFilter")){  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.getImagePix3DGroupFilter((int[][][])inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++])
-						,(int)inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.getImagePix3DGroupFilter(
+						(int[][][])inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++])
+						,(int)inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++])
+						,(int)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "getImagePix3DGroupFilter");
 		if(callFunctionKey.equalsIgnoreCase("NLPBestSentenceMatch")){   
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.NLPBestSentenceMatch((String)inputValues.get(传参因子[因子++]),(String[])inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.NLPBestSentenceMatch(
+						(String)inputValues.get(传参因子[因子++]),(String[])inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "NLPBestSentenceMatch");
 		if(callFunctionKey.equalsIgnoreCase("NLPBestSentencesMatch")){    
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.NLPBestSentencesMatch((String)inputValues.get(传参因子[因子++]),(String[])inputValues.get(传参因子[因子++])
+				map= staticFunctionMapP_VECS_C.NLPBestSentencesMatch(
+						(String)inputValues.get(传参因子[因子++]),(String[])inputValues.get(传参因子[因子++])
 						,(int)inputValues.get(传参因子[因子++]),(double)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -420,16 +472,19 @@ public interface StaticFunctionMapP_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("getNLPBestSentencesMatchScore")){  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.getNLPBestSentencesMatchScore((String)inputValues.get(传参因子[因子++]),(String[])inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.getNLPBestSentencesMatchScore(
+						(String)inputValues.get(传参因子[因子++]),(String[])inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "getNLPBestSentencesMatchScore");
 		if(callFunctionKey.equalsIgnoreCase("getNLPBestSentencesMatchScoreRights")){  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.getNLPBestSentencesMatchScoreRights((String) inputValues.get(传参因子[因子++])
+				map= staticFunctionMapP_VECS_C.getNLPBestSentencesMatchScoreRights(
+						(String) inputValues.get(传参因子[因子++])
 						, (String[]) inputValues.get(传参因子[因子++]), (A) inputValues.get(传参因子[因子++]),
-						(Map<String, String>) inputValues.get(传参因子[因子++]), (Map<String, WordFrequency>) inputValues.get(传参因子[因子++]));
+						(Map<String, String>) inputValues.get(传参因子[因子++])
+						, (Map<String, WordFrequency>) inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "getNLPBestSentencesMatchScoreRights");
@@ -444,8 +499,10 @@ public interface StaticFunctionMapP_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("getBinaryErrorAsserts")){  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.getBinaryErrorAsserts((double)inputValues.get(传参因子[因子++]),(double[])inputValues.get(传参因子[因子++])
-						,(int)inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++]),(boolean)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.getBinaryErrorAsserts(
+						(double)inputValues.get(传参因子[因子++]),(double[])inputValues.get(传参因子[因子++])
+						,(int)inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++])
+						,(boolean)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "getBinaryErrorAsserts");
@@ -468,7 +525,8 @@ public interface StaticFunctionMapP_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("findMeanOfFilterDoubleArrayWithScale")){  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.findMeanOfFilterDoubleArrayWithScale((double[])inputValues.get(传参因子[因子++])
+				map= staticFunctionMapP_VECS_C.findMeanOfFilterDoubleArrayWithScale(
+						(double[])inputValues.get(传参因子[因子++])
 						,(double)inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -483,84 +541,96 @@ public interface StaticFunctionMapP_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("findMeanOfTwoDoubleArray")){   
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.findMeanOfTwoDoubleArray((Double[])inputValues.get(传参因子[因子++]),(Double[])inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.findMeanOfTwoDoubleArray(
+						(Double[])inputValues.get(传参因子[因子++]),(Double[])inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "findMeanOfTwoDoubleArray");
 		if(callFunctionKey.equalsIgnoreCase("findMeanOfTwoDoubleArray2D")){   
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.findMeanOfTwoDoubleArray2D((Double[][])inputValues.get(传参因子[因子++]),(Double[][])inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.findMeanOfTwoDoubleArray2D(
+						(Double[][])inputValues.get(传参因子[因子++]),(Double[][])inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "findMeanOfTwoDoubleArray2D");
 		if(callFunctionKey.equalsIgnoreCase("findMeanOfDoubleMatrix2D")){   
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.findMeanOfDoubleMatrix2D((double[][])inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.findMeanOfDoubleMatrix2D(
+						(double[][])inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "findMeanOfDoubleMatrix2D");
 		if(callFunctionKey.equalsIgnoreCase("findRowMeanOfDoubleMatrix2D")){  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.findRowMeanOfDoubleMatrix2D((double[][])inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.findRowMeanOfDoubleMatrix2D(
+						(double[][])inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "findRowMeanOfDoubleMatrix2D");
 		if(callFunctionKey.equalsIgnoreCase("findCulumnMeanOfDoubleMatrix2D")){  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.findCulumnMeanOfDoubleMatrix2D((double[][])inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.findCulumnMeanOfDoubleMatrix2D(
+						(double[][])inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "findCulumnMeanOfDoubleMatrix2D");
 		if(callFunctionKey.equalsIgnoreCase("findMeanOfDoubleMatrix3D")){   
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.findMeanOfDoubleMatrix3D((double[][][])inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.findMeanOfDoubleMatrix3D(
+						(double[][][])inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "findMeanOfDoubleMatrix3D");
 		if(callFunctionKey.equalsIgnoreCase("findMeanOfDoubleList")){    
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.findMeanOfDoubleList((List<Double>)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.findMeanOfDoubleList(
+						(List<Double>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "findMeanOfDoubleList");
 		if(callFunctionKey.equalsIgnoreCase("findMeanOfMartrix1DList")){  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.findMeanOfMartrix1DList((List<Double[]>)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.findMeanOfMartrix1DList(
+						(List<Double[]>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "findMeanOfMartrix1DList");
 		if(callFunctionKey.equalsIgnoreCase("findMeanOfMartrix2DList")){  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.findMeanOfMartrix2DList((List<Double[][]>)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.findMeanOfMartrix2DList(
+						(List<Double[][]>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "findMeanOfMartrix2DList");
 		if(callFunctionKey.equalsIgnoreCase("findSumOfDoubleArray")){   
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.findSumOfDoubleArray((double[])inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.findSumOfDoubleArray(
+						(double[])inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "findSumOfDoubleArray");	
 		if(callFunctionKey.equalsIgnoreCase("findSumOfTwoDoubleArray")){   
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.findSumOfTwoDoubleArray((Double[])inputValues.get(传参因子[因子++]),(Double[])inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.findSumOfTwoDoubleArray(
+						(Double[])inputValues.get(传参因子[因子++]),(Double[])inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "findSumOfTwoDoubleArray");
 		if(callFunctionKey.equalsIgnoreCase("findSumOfTwoDoubleArray2D")){  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.findSumOfTwoDoubleArray2D((Double[][])inputValues.get(传参因子[因子++]),(Double[][])inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.findSumOfTwoDoubleArray2D(
+						(Double[][])inputValues.get(传参因子[因子++]),(Double[][])inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "findSumOfTwoDoubleArray2D");
@@ -569,77 +639,88 @@ public interface StaticFunctionMapP_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("findSumOfDoubleMatrix2D")){    
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.findSumOfDoubleMatrix2D((double[][])inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.findSumOfDoubleMatrix2D(
+						(double[][])inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "findSumOfDoubleMatrix2D");
 		if(callFunctionKey.equalsIgnoreCase("findRowSumOfDoubleMatrix2D")){   
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.findRowSumOfDoubleMatrix2D((double[][])inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.findRowSumOfDoubleMatrix2D(
+						(double[][])inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "findRowSumOfDoubleMatrix2D");
 		if(callFunctionKey.equalsIgnoreCase("findCulumnSumOfDoubleMatrix2D")){  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.findCulumnSumOfDoubleMatrix2D((double[][])inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.findCulumnSumOfDoubleMatrix2D(
+						(double[][])inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "findCulumnSumOfDoubleMatrix2D");
 		if(callFunctionKey.equalsIgnoreCase("findSumOfDoubleMatrix3D")){   
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.findSumOfDoubleMatrix3D((double[][][])inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.findSumOfDoubleMatrix3D(
+						(double[][][])inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "findSumOfDoubleMatrix3D");
 		if(callFunctionKey.equalsIgnoreCase("findSumOfDoubleList")){   
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.findSumOfDoubleList((List<Double>)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.findSumOfDoubleList(
+						(List<Double>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "findSumOfDoubleList");
 		if(callFunctionKey.equalsIgnoreCase("findSumOfMartrix1DList")){  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.findSumOfMartrix1DList((List<Double[]>)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.findSumOfMartrix1DList(
+						(List<Double[]>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "findSumOfMartrix1DList");
 		if(callFunctionKey.equalsIgnoreCase("findSumOfMartrix2DList")){   
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.findSumOfMartrix2DList((List<Double[][]>)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.findSumOfMartrix2DList(
+						(List<Double[][]>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "findSumOfMartrix2DList");
 		if(callFunctionKey.equalsIgnoreCase("getShareholdCount")){   
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.getShareholdCount((int[][])inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.getShareholdCount(
+						(int[][])inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "getShareholdCount");
 		if(callFunctionKey.equalsIgnoreCase("encodeEstimateSumOfScoresList")){    
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.encodeEstimateSumOfScoresList((List<Double>)inputValues.get(传参因子[因子++]),(double)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.encodeEstimateSumOfScoresList(
+						(List<Double>)inputValues.get(传参因子[因子++]),(double)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "encodeEstimateSumOfScoresList");
 		if(callFunctionKey.equalsIgnoreCase("encodeEstimateSumOfScoresArray")){    
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.encodeEstimateSumOfScoresArray((double[])inputValues.get(传参因子[因子++]),(double)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.encodeEstimateSumOfScoresArray(
+						(double[])inputValues.get(传参因子[因子++]),(double)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "encodeEstimateSumOfScoresArray");
 		if(callFunctionKey.equalsIgnoreCase("getEstimateCartesianSumOfScoresArray")){   
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.getEstimateCartesianSumOfScoresArray((double)inputValues.get(传参因子[因子++])
+				map= staticFunctionMapP_VECS_C.getEstimateCartesianSumOfScoresArray(
+						(double)inputValues.get(传参因子[因子++])
 						,(double[])inputValues.get(传参因子[因子++]),(double)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -647,7 +728,8 @@ public interface StaticFunctionMapP_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("getEstimateCartesian1DSumOfScoresArray")){   
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.getEstimateCartesian1DSumOfScoresArray((double[])inputValues.get(传参因子[因子++])
+				map= staticFunctionMapP_VECS_C.getEstimateCartesian1DSumOfScoresArray(
+						(double[])inputValues.get(传参因子[因子++])
 						,(double[])inputValues.get(传参因子[因子++]),(double)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -688,42 +770,53 @@ public interface StaticFunctionMapP_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("getDistanceRatio2D")){   
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.getDistanceRatio2D((AMV_MVS_VSQ_2D)inputValues.get(传参因子[因子++]),(AMV_MVS_VSQ_2D)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.getDistanceRatio2D(
+						(AMV_MVS_VSQ_2D)inputValues.get(传参因子[因子++])
+						,(AMV_MVS_VSQ_2D)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "getDistanceRatio2D");
 		if(callFunctionKey.equalsIgnoreCase("getARCDistanceRatio2D")){   
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.getARCDistanceRatio2D((AMV_MVS_VSQ_2D)inputValues.get(传参因子[因子++]),(AMV_MVS_VSQ_2D)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.getARCDistanceRatio2D(
+						(AMV_MVS_VSQ_2D)inputValues.get(传参因子[因子++])
+						,(AMV_MVS_VSQ_2D)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "getARCDistanceRatio2D");
 		if(callFunctionKey.equalsIgnoreCase("getTrueARCDistanceRatio2D")){   
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.getTrueARCDistanceRatio2D((AMV_MVS_VSQ_2D)inputValues.get(传参因子[因子++]),(AMV_MVS_VSQ_2D)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.getTrueARCDistanceRatio2D(
+						(AMV_MVS_VSQ_2D)inputValues.get(传参因子[因子++])
+						,(AMV_MVS_VSQ_2D)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "getTrueARCDistanceRatio2D");
 		if(callFunctionKey.equalsIgnoreCase("getDistanceRatio3D")){   
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.getDistanceRatio3D((AMV_MVS_VSQ_3D)inputValues.get(传参因子[因子++]),(AMV_MVS_VSQ_3D)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.getDistanceRatio3D(
+						(AMV_MVS_VSQ_3D)inputValues.get(传参因子[因子++])
+						,(AMV_MVS_VSQ_3D)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "getDistanceRatio3D");
 		if(callFunctionKey.equalsIgnoreCase("getTrueARCDistanceRatio3D")){  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.getTrueARCDistanceRatio3D((AMV_MVS_VSQ_3D)inputValues.get(传参因子[因子++]),(AMV_MVS_VSQ_3D)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.getTrueARCDistanceRatio3D(
+						(AMV_MVS_VSQ_3D)inputValues.get(传参因子[因子++])
+						,(AMV_MVS_VSQ_3D)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "getTrueARCDistanceRatio3D");
 		if(callFunctionKey.equalsIgnoreCase("getPercentListByOuterKey")){    
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.getPercentListByOuterKey((Double[])inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.getPercentListByOuterKey(
+						(Double[])inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "getPercentListByOuterKey");
@@ -746,7 +839,8 @@ public interface StaticFunctionMapP_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("findTotalIncrementRatioWithScale")){   
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.findTotalIncrementRatioWithScale((double)inputValues.get(传参因子[因子++])
+				map= staticFunctionMapP_VECS_C.findTotalIncrementRatioWithScale(
+						(double)inputValues.get(传参因子[因子++])
 						,(double)inputValues.get(传参因子[因子++]),(double)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -754,7 +848,8 @@ public interface StaticFunctionMapP_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("findMeanIncrementRatioWithScale")){   
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.findMeanIncrementRatioWithScale((double)inputValues.get(传参因子[因子++])
+				map= staticFunctionMapP_VECS_C.findMeanIncrementRatioWithScale(
+						(double)inputValues.get(传参因子[因子++])
 						,(double)inputValues.get(传参因子[因子++]),(double)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -762,21 +857,24 @@ public interface StaticFunctionMapP_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("frequencyUpSplit")){   
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.frequencyUpSplit((double[])inputValues.get(传参因子[因子++]),(double[])inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.frequencyUpSplit(
+						(double[])inputValues.get(传参因子[因子++]),(double[])inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "frequencyUpSplit");
 		if(callFunctionKey.equalsIgnoreCase("frequencyDownSplit")){   
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.frequencyDownSplit((double[])inputValues.get(传参因子[因子++]),(double[])inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.frequencyDownSplit(
+						(double[])inputValues.get(传参因子[因子++]),(double[])inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "frequencyDownSplit");
 		if(callFunctionKey.equalsIgnoreCase("frequencyUpSplitWithScale")){  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.frequencyUpSplitWithScale((double[])inputValues.get(传参因子[因子++])
+				map= staticFunctionMapP_VECS_C.frequencyUpSplitWithScale(
+						(double[])inputValues.get(传参因子[因子++])
 						,(double[])inputValues.get(传参因子[因子++]),(double)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -784,7 +882,8 @@ public interface StaticFunctionMapP_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("frequencyDownSplitWithScale")){  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.frequencyDownSplitWithScale((double[])inputValues.get(传参因子[因子++])
+				map= staticFunctionMapP_VECS_C.frequencyDownSplitWithScale(
+						(double[])inputValues.get(传参因子[因子++])
 						,(double[])inputValues.get(传参因子[因子++]),(double)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -796,50 +895,58 @@ public interface StaticFunctionMapP_VECS_C {
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
 				map= staticFunctionMapP_VECS_C.predictionResult((RatioMatrix)inputValues.get(传参因子[因子++])
-						,(List<RatioMatrix>)inputValues.get(传参因子[因子++]),(double)inputValues.get(传参因子[因子++]));
+						,(List<RatioMatrix>)inputValues.get(传参因子[因子++])
+						,(double)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "predictionResult");
 		if(callFunctionKey.equalsIgnoreCase("predictionMatrixResult")){   
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.predictionMatrixResult((RatioMatrix)inputValues.get(传参因子[因子++])
-						,(Map<String, RatioMatrix>)inputValues.get(传参因子[因子++]),(double)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.predictionMatrixResult(
+						(RatioMatrix)inputValues.get(传参因子[因子++])
+						,(Map<String, RatioMatrix>)inputValues.get(传参因子[因子++])
+						,(double)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "predictionMatrixResult");
 		if(callFunctionKey.equalsIgnoreCase("getImagePixClassificationMap")){    
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.getImagePixClassificationMap((int[][])inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.getImagePixClassificationMap(
+						(int[][])inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "getImagePixClassificationMap");
 		if(callFunctionKey.equalsIgnoreCase("getVWaveFromImagePix")){   
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.getVWaveFromImagePix((int[][])inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.getVWaveFromImagePix(
+						(int[][])inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "getVWaveFromImagePix");
 		if(callFunctionKey.equalsIgnoreCase("getHWaveFromImagePix")){    
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.getHWaveFromImagePix((int[][])inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.getHWaveFromImagePix(
+						(int[][])inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "getHWaveFromImagePix");
 		if(callFunctionKey.equalsIgnoreCase("getPixPercentByDeterPix")){   
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.getPixPercentByDeterPix((int[][])inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.getPixPercentByDeterPix(
+						(int[][])inputValues.get(传参因子[因子++]),(int)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "getPixPercentByDeterPix");
 		if(callFunctionKey.equalsIgnoreCase("getClusterPercentByDeterPixGroup")){  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.getClusterPercentByDeterPixGroup((Map<Double,List<AMV_MVS_VSQ_2D>>)inputValues.get(传参因子[因子++])
+				map= staticFunctionMapP_VECS_C.getClusterPercentByDeterPixGroup(
+						(Map<Double,List<AMV_MVS_VSQ_2D>>)inputValues.get(传参因子[因子++])
 						,(int)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -847,7 +954,8 @@ public interface StaticFunctionMapP_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("getPixPercentByDeterPixGroup")){     
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.getPixPercentByDeterPixGroup((Map<Double,List<AMV_MVS_VSQ_2D>>)inputValues.get(传参因子[因子++])
+				map= staticFunctionMapP_VECS_C.getPixPercentByDeterPixGroup(
+						(Map<Double,List<AMV_MVS_VSQ_2D>>)inputValues.get(传参因子[因子++])
 						,(int)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -855,7 +963,8 @@ public interface StaticFunctionMapP_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("filterFusion2DSetsWithCountScale")){  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.filterFusion2DSetsWithCountScale((Map<Double,List<AMV_MVS_VSQ_2D>>)inputValues.get(传参因子[因子++])
+				map= staticFunctionMapP_VECS_C.filterFusion2DSetsWithCountScale(
+						(Map<Double,List<AMV_MVS_VSQ_2D>>)inputValues.get(传参因子[因子++])
 						,(double)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -863,7 +972,8 @@ public interface StaticFunctionMapP_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("filterFusion3DSetsWithCountScale")){   
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.filterFusion3DSetsWithCountScale((Map<Double,List<AMV_MVS_VSQ_3D>>)inputValues.get(传参因子[因子++])
+				map= staticFunctionMapP_VECS_C.filterFusion3DSetsWithCountScale(
+						(Map<Double,List<AMV_MVS_VSQ_3D>>)inputValues.get(传参因子[因子++])
 						,(double)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
@@ -871,7 +981,8 @@ public interface StaticFunctionMapP_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("filterPosition2DsWithScaledDistance")){  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.filterPosition2DsWithScaledDistance((List<AMV_MVS_VSQ_2D>)inputValues.get(传参因子[因子++])
+				map= staticFunctionMapP_VECS_C.filterPosition2DsWithScaledDistance(
+						(List<AMV_MVS_VSQ_2D>)inputValues.get(传参因子[因子++])
 						,(AMV_MVS_VSQ_2D)inputValues.get(传参因子[因子++])
 						,(double)inputValues.get(传参因子[因子++]));
 			}
@@ -880,7 +991,8 @@ public interface StaticFunctionMapP_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("filterPosition3DsWithScaledDistance")){  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.filterPosition3DsWithScaledDistance((List<AMV_MVS_VSQ_3D>)inputValues.get(传参因子[因子++])
+				map= staticFunctionMapP_VECS_C.filterPosition3DsWithScaledDistance(
+						(List<AMV_MVS_VSQ_3D>)inputValues.get(传参因子[因子++])
 						,(AMV_MVS_VSQ_3D)inputValues.get(传参因子[因子++])
 						,(double)inputValues.get(传参因子[因子++]));
 			}
@@ -889,7 +1001,8 @@ public interface StaticFunctionMapP_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("filterPosition2DsWithScaledDistance")){
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.filterPosition2DsWithScaledDistance((List<AMV_MVS_VSQ_2D>)inputValues.get(传参因子[因子++])
+				map= staticFunctionMapP_VECS_C.filterPosition2DsWithScaledDistance(
+						(List<AMV_MVS_VSQ_2D>)inputValues.get(传参因子[因子++])
 						,(AMV_MVS_VSQ_2D)inputValues.get(传参因子[因子++])
 						,(double)inputValues.get(传参因子[因子++]));
 			}
@@ -898,7 +1011,8 @@ public interface StaticFunctionMapP_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("filterPosition3DsWithScaledDistance")){     
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.filterPosition3DsWithScaledDistance((List<AMV_MVS_VSQ_3D>)inputValues.get(传参因子[因子++])
+				map= staticFunctionMapP_VECS_C.filterPosition3DsWithScaledDistance(
+						(List<AMV_MVS_VSQ_3D>)inputValues.get(传参因子[因子++])
 						,(AMV_MVS_VSQ_3D)inputValues.get(传参因子[因子++])
 						,(double)inputValues.get(传参因子[因子++]));
 			}
@@ -907,28 +1021,32 @@ public interface StaticFunctionMapP_VECS_C {
 		if(callFunctionKey.equalsIgnoreCase("getPercentListByOuterKey")){   
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.getPercentListByOuterKey((Double[])inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.getPercentListByOuterKey(
+						(Double[])inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "getPercentListByOuterKey");
 		if(callFunctionKey.equalsIgnoreCase("getPercentArrayByOuterKey")){   
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.getPercentArrayByOuterKey((double[])inputValues.get(传参因子[因子++]),(double)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.getPercentArrayByOuterKey(
+						(double[])inputValues.get(传参因子[因子++]),(double)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "getPercentArrayByOuterKey");
 		if(callFunctionKey.equalsIgnoreCase("getEachPercentSetOfArray")){     
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.getEachPercentSetOfArray((double[])inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.getEachPercentSetOfArray(
+						(double[])inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "getEachPercentSetOfArray");
 		if(callFunctionKey.equalsIgnoreCase("getPercentArrayByOuterKey")){  
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapP_VECS_C.getPercentArrayByOuterKey((double[])inputValues.get(传参因子[因子++]),(double)inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapP_VECS_C.getPercentArrayByOuterKey(
+						(double[])inputValues.get(传参因子[因子++]),(double)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "getPercentArrayByOuterKey");
@@ -937,133 +1055,154 @@ public interface StaticFunctionMapP_VECS_C {
 	public static void load(StaticFunctionMapP_VECS_E staticFunctionMapP_VECS_E) {
 		// TODO Auto-generated method stub
 		//稍后封装
-		staticFunctionMapP_VECS_E.annotationMap.put("aNNTest", "aNNTest");
-		staticFunctionMapP_VECS_E.annotationMap.put("dNNTest", "dNNTest");
-		staticFunctionMapP_VECS_E.annotationMap.put("rNNTest", "rNNTest");
-		staticFunctionMapP_VECS_E.annotationMap.put("sensingTest", "sensingTest");
-		staticFunctionMapP_VECS_E.annotationMap.put("educationLevelTest", "educationLevelTest");
-		staticFunctionMapP_VECS_E.annotationMap.put("literarinessLevelTest", "literarinessLevelTest");
-		staticFunctionMapP_VECS_E.annotationMap.put("successICATest", "successICATest");
-		staticFunctionMapP_VECS_E.annotationMap.put("getSideEnd2D", "getSideEnd2D");
-		staticFunctionMapP_VECS_E.annotationMap.put("getSideEnd3D", "getSideEnd3D");
-		staticFunctionMapP_VECS_E.annotationMap.put("addNewPositionWithoutHeart", "addNewPositionWithoutHeart");
-		staticFunctionMapP_VECS_E.annotationMap.put("addNewPositionWithHeart", "addNewPositionWithHeart");
-		staticFunctionMapP_VECS_E.annotationMap.put("getShortestSamplePosition2DGroup", "getShortestSamplePosition2DGroup");
-		staticFunctionMapP_VECS_E.annotationMap.put("getShorterSamplePosition2DGroupsWithScale", "getShorterSamplePosition2DGroupsWithScale");
-		staticFunctionMapP_VECS_E.annotationMap.put("getShortestSamplePosition3DGroup", "getShortestSamplePosition3DGroup");
-		staticFunctionMapP_VECS_E.annotationMap.put("getShortestSamplePosition3DGroupsWithScale", "getShortestSamplePosition3DGroupsWithScale");
-		staticFunctionMapP_VECS_E.annotationMap.put("fissilePosition2D", "fissilePosition2D");
-		staticFunctionMapP_VECS_E.annotationMap.put("fissilePosition3D", "fissilePosition3D");
-		staticFunctionMapP_VECS_E.annotationMap.put("fusionPosition2DwithHeart", "fusionPosition2DwithHeart");
-		staticFunctionMapP_VECS_E.annotationMap.put("fusionPosition3DwithHeart", "fusionPosition3DwithHeart");
-		staticFunctionMapP_VECS_E.annotationMap.put("getTSPIsolationGroups2D", "getTSPIsolationGroups2D");
-		staticFunctionMapP_VECS_E.annotationMap.put("getTSPIsolationGroups3D", "getTSPIsolationGroups3D");
-		staticFunctionMapP_VECS_E.annotationMap.put("getTSPForestIsolationGroups2D", "getTSPForestIsolationGroups2D");
-		staticFunctionMapP_VECS_E.annotationMap.put("getTSPForestIsolationGroups3D", "getTSPForestIsolationGroups3D");
-		staticFunctionMapP_VECS_E.annotationMap.put("trackTracePosition2DHeartsWithSingerGroup", "trackTracePosition2DHeartsWithSingerGroup");
-		staticFunctionMapP_VECS_E.annotationMap.put("trackTracePosition3DHeartsWithSingerGroup", "trackTracePosition3DHeartsWithSingerGroup");
-		staticFunctionMapP_VECS_E.annotationMap.put("trackTracePosition2DByHearts", "trackTracePosition2DByHearts");
-		staticFunctionMapP_VECS_E.annotationMap.put("trackTracePosition3DByHearts", "trackTracePosition3DByHearts");
-		staticFunctionMapP_VECS_E.annotationMap.put("trackTracePosition2DHeartsWithFissileGroups", "trackTracePosition2DHeartsWithFissileGroups");
-		staticFunctionMapP_VECS_E.annotationMap.put("trackTracePosition3DHeartsWithFissileGroups", "trackTracePosition3DHeartsWithFissileGroups");
-		staticFunctionMapP_VECS_E.annotationMap.put("findMeanDistanceFromPositions2D", "findMeanDistanceFromPositions2D");
-		staticFunctionMapP_VECS_E.annotationMap.put("findMeanDistanceFromPositions3D", "findMeanDistanceFromPositions3D");
-		staticFunctionMapP_VECS_E.annotationMap.put("findPascalMeanDistanceByEachPositions2D", "findPascalMeanDistanceByEachPositions2D");
-		staticFunctionMapP_VECS_E.annotationMap.put("findPascalMeanDistanceByEachPositions3D", "findPascalMeanDistanceByEachPositions3D");
-		staticFunctionMapP_VECS_E.annotationMap.put("getPosition2DsGroupPascalHearts", "getPosition2DsGroupPascalHearts");
-		staticFunctionMapP_VECS_E.annotationMap.put("getPosition3DsGroupPascalHearts", "getPosition3DsGroupPascalHearts");
-		staticFunctionMapP_VECS_E.annotationMap.put("getPosition2DsGroupPascalMids", "getPosition2DsGroupPascalMids");
+		staticFunctionMapP_VECS_E.annotationMap.put("aNNTest", "string");
+		staticFunctionMapP_VECS_E.annotationMap.put("dNNTest", "string");
+		staticFunctionMapP_VECS_E.annotationMap.put("rNNTest", "string");
+		staticFunctionMapP_VECS_E.annotationMap.put("sensingTest", "string");
+		staticFunctionMapP_VECS_E.annotationMap.put("educationLevelTest", "input");
+		staticFunctionMapP_VECS_E.annotationMap.put("literarinessLevelTest", "input");
+		staticFunctionMapP_VECS_E.annotationMap.put("successICATest", "input");
+		staticFunctionMapP_VECS_E.annotationMap.put("getSideEnd2D", "list:scale");
+		staticFunctionMapP_VECS_E.annotationMap.put("getSideEnd3D", "list:scale");
+		staticFunctionMapP_VECS_E.annotationMap.put("addNewPositionWithoutHeart", "groups:position2D:scaleDistance");
+		staticFunctionMapP_VECS_E.annotationMap.put("addNewPositionWithHeart", "groups:position2D:hearts:scaleDistance");
+		staticFunctionMapP_VECS_E.annotationMap.put("getShortestSamplePosition2DGroup", "inputHeart:groups");
+		staticFunctionMapP_VECS_E.annotationMap.put("getShorterSamplePosition2DGroupsWithScale", "inputHeart:groups:scale");
+		staticFunctionMapP_VECS_E.annotationMap.put("getShortestSamplePosition3DGroup", "inputHeart:groups");
+		staticFunctionMapP_VECS_E.annotationMap.put("getShortestSamplePosition3DGroupsWithScale", "inputHeart:groups:scale");
+		staticFunctionMapP_VECS_E.annotationMap.put("fissilePosition2D", "groups:scale");
+		staticFunctionMapP_VECS_E.annotationMap.put("fissilePosition3D", "groups:scale");
+		staticFunctionMapP_VECS_E.annotationMap.put("fusionPosition2DwithHeart", "groups:groupsHeart：scale");
+		staticFunctionMapP_VECS_E.annotationMap.put("fusionPosition3DwithHeart", "groups:groupsHeart:scale");
+		staticFunctionMapP_VECS_E.annotationMap.put("getTSPIsolationGroups2D", "groups:scale");
+		staticFunctionMapP_VECS_E.annotationMap.put("getTSPIsolationGroups3D", "groups:scale");
+		staticFunctionMapP_VECS_E.annotationMap.put("getTSPForestIsolationGroups2D", "groups:scale");
+		staticFunctionMapP_VECS_E.annotationMap.put("getTSPForestIsolationGroups3D", "groups:scale");
+		staticFunctionMapP_VECS_E.annotationMap.put("trackTracePosition2DHeartsWithSingerGroup", "coods");
+		staticFunctionMapP_VECS_E.annotationMap.put("trackTracePosition3DHeartsWithSingerGroup", "coods");
+		staticFunctionMapP_VECS_E.annotationMap.put("trackTracePosition2DByHearts", "hearts");
+		staticFunctionMapP_VECS_E.annotationMap.put("trackTracePosition3DByHearts", "hearts");
+		staticFunctionMapP_VECS_E.annotationMap.put("trackTracePosition2DHeartsWithFissileGroups", "coods:distanceScale");
+		staticFunctionMapP_VECS_E.annotationMap.put("trackTracePosition3DHeartsWithFissileGroups", "coods:distanceScale");
+		staticFunctionMapP_VECS_E.annotationMap.put("findMeanDistanceFromPositions2D", "position2Ds:oberserverPCAScale:sortRangeScale");
+		staticFunctionMapP_VECS_E.annotationMap.put("findMeanDistanceFromPositions3D", "position3Ds:oberserverPCAScale:sortRangeScale");
+		staticFunctionMapP_VECS_E.annotationMap.put("findPascalMeanDistanceByEachPositions2D", "position2Ds:oberserverPCAScale:sortRangeScale");
+		staticFunctionMapP_VECS_E.annotationMap.put("findPascalMeanDistanceByEachPositions3D", "position3Ds:oberserverPCAScale:sortRangeScale");
+		staticFunctionMapP_VECS_E.annotationMap.put("getPosition2DsGroupPascalHearts", "groups:scale");
+		staticFunctionMapP_VECS_E.annotationMap.put("getPosition3DsGroupPascalHearts", "groups:scale");
+		staticFunctionMapP_VECS_E.annotationMap.put("getPosition2DsGroupPascalMids", "groups:scale");
 	
-		staticFunctionMapP_VECS_E.annotationMap.put("getPosition3DsGroupPascalMids", "getPosition3DsGroupPascalMids");
-		staticFunctionMapP_VECS_E.annotationMap.put("getPosition2DsGroupPascalDirection", "getPosition2DsGroupPascalDirection");
-		staticFunctionMapP_VECS_E.annotationMap.put("getPosition3DsGroupPascalDirection", "getPosition3DsGroupPascalDirection");
-		staticFunctionMapP_VECS_E.annotationMap.put("getPosition3DsGroupPascalDirection", "getPosition3DsGroupPascalDirection");
-		staticFunctionMapP_VECS_E.annotationMap.put("getPosition2DsGroupPascalDirection", "getPosition2DsGroupPascalDirection");
-		staticFunctionMapP_VECS_E.annotationMap.put("getYaoguangLuo2DEulerRingTSP", "getYaoguangLuo2DEulerRingTSP");
-		staticFunctionMapP_VECS_E.annotationMap.put("getYaoguangLuo3DEulerRingTSP", "getYaoguangLuo3DEulerRingTSP");
-		staticFunctionMapP_VECS_E.annotationMap.put("getYaoguangLuo2DEulerRingTSP2D", "getYaoguangLuo2DEulerRingTSP2D");
-		staticFunctionMapP_VECS_E.annotationMap.put("getYaoguangLuo3DEulerRingTSP2D", "getYaoguangLuo3DEulerRingTSP2D");
-		staticFunctionMapP_VECS_E.annotationMap.put("getYaoguangLuo2DEulerRingTSP3D", "getYaoguangLuo2DEulerRingTSP3D");
-		staticFunctionMapP_VECS_E.annotationMap.put("getYaoguangLuo3DEulerRingTSP3D", "getYaoguangLuo3DEulerRingTSP3D");
+		staticFunctionMapP_VECS_E.annotationMap.put("getPosition3DsGroupPascalMids", "groups:scale");
+		staticFunctionMapP_VECS_E.annotationMap.put("getPosition2DsGroupPascalDirection", "pascalHearts:pascalMids");
+		staticFunctionMapP_VECS_E.annotationMap.put("getPosition3DsGroupPascalDirection", "pascalHearts:pascalMids");
+		staticFunctionMapP_VECS_E.annotationMap.put("getPosition3DsGroupPascalDirection", "groups:scale");
+		staticFunctionMapP_VECS_E.annotationMap.put("getPosition2DsGroupPascalDirection", "groups:scale");
+		staticFunctionMapP_VECS_E.annotationMap.put("getYaoguangLuo2DEulerRingTSP", "AMV_MVS_VSQs");
+		staticFunctionMapP_VECS_E.annotationMap.put("getYaoguangLuo3DEulerRingTSP", "AMV_MVS_VSQs");
+		staticFunctionMapP_VECS_E.annotationMap.put("getYaoguangLuo2DEulerRingTSP2D", "AMV_MVS_VSQs");
+		staticFunctionMapP_VECS_E.annotationMap.put("getYaoguangLuo3DEulerRingTSP2D", "AMV_MVS_VSQs");
+		staticFunctionMapP_VECS_E.annotationMap.put("getYaoguangLuo2DEulerRingTSP3D", "positions:sortRangeScale:sortDeepsScale");
+		staticFunctionMapP_VECS_E.annotationMap.put("getYaoguangLuo3DEulerRingTSP3D", "positions:sortRangeScale:sortDeepsScale");
 		
-		staticFunctionMapP_VECS_E.annotationMap.put("getImagePix2DGroupFilter", "getImagePix2DGroupFilter");
-		staticFunctionMapP_VECS_E.annotationMap.put("getImagePix3DGroupFilter", "getImagePix3DGroupFilter");
-		staticFunctionMapP_VECS_E.annotationMap.put("NLPBestSentenceMatch", "NLPBestSentenceMatch");
-		staticFunctionMapP_VECS_E.annotationMap.put("NLPBestSentencesMatch", "NLPBestSentencesMatch");
-		staticFunctionMapP_VECS_E.annotationMap.put("getNLPBestSentencesMatchScore", "getNLPBestSentencesMatchScore");
-		staticFunctionMapP_VECS_E.annotationMap.put("getNLPBestSentencesMatchScoreRights", "getNLPBestSentencesMatchScoreRights");
-		staticFunctionMapP_VECS_E.annotationMap.put("getErrorAsserts", "getErrorAsserts");
-		staticFunctionMapP_VECS_E.annotationMap.put("getBinaryErrorAsserts", "getBinaryErrorAsserts");
-		staticFunctionMapP_VECS_E.annotationMap.put("findTotalIncrementWithScale", "findTotalIncrementWithScale");
-		staticFunctionMapP_VECS_E.annotationMap.put("findMeanIncrementWithScale", "findMeanIncrementWithScale");
-		staticFunctionMapP_VECS_E.annotationMap.put("findMeanOfFilterDoubleArrayWithScale", "findMeanOfFilterDoubleArrayWithScale");
-		staticFunctionMapP_VECS_E.annotationMap.put("findMeanOfDoubleArray", "findMeanOfDoubleArray");
-		staticFunctionMapP_VECS_E.annotationMap.put("findMeanOfTwoDoubleArray", "findMeanOfTwoDoubleArray");
-		staticFunctionMapP_VECS_E.annotationMap.put("findMeanOfTwoDoubleArray2D", "findMeanOfTwoDoubleArray2D");
-		staticFunctionMapP_VECS_E.annotationMap.put("findMeanOfDoubleMatrix2D", "findMeanOfDoubleMatrix2D");
-		staticFunctionMapP_VECS_E.annotationMap.put("findRowMeanOfDoubleMatrix2D", "findRowMeanOfDoubleMatrix2D");
-		staticFunctionMapP_VECS_E.annotationMap.put("findCulumnMeanOfDoubleMatrix2D", "findCulumnMeanOfDoubleMatrix2D");
-		staticFunctionMapP_VECS_E.annotationMap.put("findMeanOfDoubleMatrix3D", "findMeanOfDoubleMatrix3D");
-		staticFunctionMapP_VECS_E.annotationMap.put("findMeanOfDoubleList", "findMeanOfDoubleList");
-		staticFunctionMapP_VECS_E.annotationMap.put("findMeanOfMartrix1DList", "findMeanOfMartrix1DList");
-		staticFunctionMapP_VECS_E.annotationMap.put("findMeanOfMartrix2DList", "findMeanOfMartrix2DList");
-		staticFunctionMapP_VECS_E.annotationMap.put("findSumOfDoubleArray", "findSumOfDoubleArray");	
-		staticFunctionMapP_VECS_E.annotationMap.put("findSumOfTwoDoubleArray", "findSumOfTwoDoubleArray");
-		staticFunctionMapP_VECS_E.annotationMap.put("findSumOfTwoDoubleArray2D", "findSumOfTwoDoubleArray2D");
+		staticFunctionMapP_VECS_E.annotationMap.put("getImagePix2DGroupFilter", "inputPixMatrix:RBG:distanceScale:max:min");
+		staticFunctionMapP_VECS_E.annotationMap.put("getImagePix3DGroupFilter", "inputPixMatrix:RBG:distanceScale:max:min");
+		staticFunctionMapP_VECS_E.annotationMap.put("NLPBestSentenceMatch", "searchString:sampleSentences");
+		staticFunctionMapP_VECS_E.annotationMap.put("NLPBestSentencesMatch", "searchString:sampleSentences:sortStackRange:filterRate");
+		staticFunctionMapP_VECS_E.annotationMap.put("getNLPBestSentencesMatchScore", "searchString:sampleSentences");
+		staticFunctionMapP_VECS_E.annotationMap.put("getNLPBestSentencesMatchScoreRights", "searchString:sampleSentences:_A:nlp:keyMap");
+		staticFunctionMapP_VECS_E.annotationMap.put("getErrorAsserts", "inputValue:matchValues:scale");
+		staticFunctionMapP_VECS_E.annotationMap.put("getBinaryErrorAsserts", "inputValue:matchValues:scale:sortStackRange:isSort");
+		staticFunctionMapP_VECS_E.annotationMap.put("findTotalIncrementWithScale", "value:times:scale");
+		staticFunctionMapP_VECS_E.annotationMap.put("findMeanIncrementWithScale", "value:times:scale");
+		staticFunctionMapP_VECS_E.annotationMap.put("findMeanOfFilterDoubleArrayWithScale", "input:filterScale:sortRangeScale");
+		staticFunctionMapP_VECS_E.annotationMap.put("findMeanOfDoubleArray", "input");
+		staticFunctionMapP_VECS_E.annotationMap.put("findMeanOfTwoDoubleArray", "origin:input");
+		staticFunctionMapP_VECS_E.annotationMap.put("findMeanOfTwoDoubleArray2D", "origin:input");
+		staticFunctionMapP_VECS_E.annotationMap.put("findMeanOfDoubleMatrix2D", "input");
+		staticFunctionMapP_VECS_E.annotationMap.put("findRowMeanOfDoubleMatrix2D", "input");
+		staticFunctionMapP_VECS_E.annotationMap.put("findCulumnMeanOfDoubleMatrix2D", "input");
+		staticFunctionMapP_VECS_E.annotationMap.put("findMeanOfDoubleMatrix3D", "input");
+		staticFunctionMapP_VECS_E.annotationMap.put("findMeanOfDoubleList", "input");
+		staticFunctionMapP_VECS_E.annotationMap.put("findMeanOfMartrix1DList", "input");
+		staticFunctionMapP_VECS_E.annotationMap.put("findMeanOfMartrix2DList", "input");
+		staticFunctionMapP_VECS_E.annotationMap.put("findSumOfDoubleArray", "input");	
+		staticFunctionMapP_VECS_E.annotationMap.put("findSumOfTwoDoubleArray", "origin,input");
+		staticFunctionMapP_VECS_E.annotationMap.put("findSumOfTwoDoubleArray2D", "origin,input");
 		
 	 
-		staticFunctionMapP_VECS_E.annotationMap.put("findSumOfDoubleMatrix2D", "findSumOfDoubleMatrix2D");
-		staticFunctionMapP_VECS_E.annotationMap.put("findRowSumOfDoubleMatrix2D", "findRowSumOfDoubleMatrix2D");
-		staticFunctionMapP_VECS_E.annotationMap.put("findCulumnSumOfDoubleMatrix2D", "findCulumnSumOfDoubleMatrix2D");
-		staticFunctionMapP_VECS_E.annotationMap.put("findSumOfDoubleMatrix3D", "findSumOfDoubleMatrix3D");
-		staticFunctionMapP_VECS_E.annotationMap.put("findSumOfDoubleList", "findSumOfDoubleList");
-		staticFunctionMapP_VECS_E.annotationMap.put("findSumOfMartrix1DList", "findSumOfMartrix1DList");
-		staticFunctionMapP_VECS_E.annotationMap.put("findSumOfMartrix2DList", "findSumOfMartrix2DList");
-		staticFunctionMapP_VECS_E.annotationMap.put("getShareholdCount", "getShareholdCount");
-		staticFunctionMapP_VECS_E.annotationMap.put("encodeEstimateSumOfScoresList", "encodeEstimateSumOfScoresList");
-		staticFunctionMapP_VECS_E.annotationMap.put("encodeEstimateSumOfScoresArray", "encodeEstimateSumOfScoresArray");
-		staticFunctionMapP_VECS_E.annotationMap.put("getEstimateCartesianSumOfScoresArray", "getEstimateCartesianSumOfScoresArray");
-		staticFunctionMapP_VECS_E.annotationMap.put("getEstimateCartesian1DSumOfScoresArray", "getEstimateCartesian1DSumOfScoresArray");
-		staticFunctionMapP_VECS_E.annotationMap.put("encodeEstimateInitonsScore", "encodeEstimateInitonsScore");
+		staticFunctionMapP_VECS_E.annotationMap.put("findSumOfDoubleMatrix2D", "input");
+		staticFunctionMapP_VECS_E.annotationMap.put("findRowSumOfDoubleMatrix2D", "input");
+		staticFunctionMapP_VECS_E.annotationMap.put("findCulumnSumOfDoubleMatrix2D", "input");
+		staticFunctionMapP_VECS_E.annotationMap.put("findSumOfDoubleMatrix3D", "input");
+		staticFunctionMapP_VECS_E.annotationMap.put("findSumOfDoubleList", "input");
+		staticFunctionMapP_VECS_E.annotationMap.put("findSumOfMartrix1DList", "input");
+		staticFunctionMapP_VECS_E.annotationMap.put("findSumOfMartrix2DList", "input");
+		staticFunctionMapP_VECS_E.annotationMap.put("getShareholdCount", "input:sharehold");
 		
-		staticFunctionMapP_VECS_E.annotationMap.put("decodeEstimateInitonsScore", "decodeEstimateInitonsScore");
-		staticFunctionMapP_VECS_E.annotationMap.put("getRightsEstimateScore", "getRightsEstimateScore");
-		staticFunctionMapP_VECS_E.annotationMap.put("getSimilarFuzzSetWithScale", "getSimilarFuzzSetWithScale");
-		staticFunctionMapP_VECS_E.annotationMap.put("getDistanceRatio2D", "getDistanceRatio2D");
-		staticFunctionMapP_VECS_E.annotationMap.put("getARCDistanceRatio2D", "getARCDistanceRatio2D");
-		staticFunctionMapP_VECS_E.annotationMap.put("getTrueARCDistanceRatio2D", "getTrueARCDistanceRatio2D");
-		staticFunctionMapP_VECS_E.annotationMap.put("getDistanceRatio3D", "getDistanceRatio3D");
-		staticFunctionMapP_VECS_E.annotationMap.put("getTrueARCDistanceRatio3D", "getTrueARCDistanceRatio3D");
-		staticFunctionMapP_VECS_E.annotationMap.put("getPercentListByOuterKey", "getPercentListByOuterKey");
-		staticFunctionMapP_VECS_E.annotationMap.put("kernel", "kernel");
-		staticFunctionMapP_VECS_E.annotationMap.put("kernelFix", "kernelFix");
-		staticFunctionMapP_VECS_E.annotationMap.put("findTotalIncrementRatioWithScale", "findTotalIncrementRatioWithScale");
-		staticFunctionMapP_VECS_E.annotationMap.put("findMeanIncrementRatioWithScale", "findMeanIncrementRatioWithScale");
-		staticFunctionMapP_VECS_E.annotationMap.put("frequencyUpSplit", "frequencyUpSplit");
-		staticFunctionMapP_VECS_E.annotationMap.put("frequencyDownSplit", "frequencyDownSplit");
-		staticFunctionMapP_VECS_E.annotationMap.put("frequencyUpSplitWithScale", "frequencyUpSplitWithScale");
-		staticFunctionMapP_VECS_E.annotationMap.put("frequencyDownSplitWithScale", "frequencyDownSplitWithScale");
+		staticFunctionMapP_VECS_E.annotationMap.put("encodeEstimateSumOfScoresList", "scores:estimateValue");
+		staticFunctionMapP_VECS_E.annotationMap.put("encodeEstimateSumOfScoresArray", "scores:estimateValue");
+		staticFunctionMapP_VECS_E.annotationMap.put("getEstimateCartesianSumOfScoresArray", "input:EstimateRatios:estimateValue");
+		staticFunctionMapP_VECS_E.annotationMap.put("getEstimateCartesian1DSumOfScoresArray", "inputs:EstimateRatios:estimateValue");
+		staticFunctionMapP_VECS_E.annotationMap.put("encodeEstimateInitonsScore", "input:EstimateRatios:estimateValue");
+		
+		staticFunctionMapP_VECS_E.annotationMap.put("decodeEstimateInitonsScore", "input:EstimateRatios:estimateValue");
+		staticFunctionMapP_VECS_E.annotationMap.put("getRightsEstimateScore", "inputs:rights");
+		staticFunctionMapP_VECS_E.annotationMap.put("getSimilarFuzzSetWithScale", "input:groups:scale");
+		staticFunctionMapP_VECS_E.annotationMap.put("getDistanceRatio2D", "begin:end");
+		staticFunctionMapP_VECS_E.annotationMap.put("getARCDistanceRatio2D", "begin:end");
+		staticFunctionMapP_VECS_E.annotationMap.put("getTrueARCDistanceRatio2D", "begin:end");
+		staticFunctionMapP_VECS_E.annotationMap.put("getDistanceRatio3D", "begin:end");
+		staticFunctionMapP_VECS_E.annotationMap.put("getTrueARCDistanceRatio3D", "begin:end");
+		staticFunctionMapP_VECS_E.annotationMap.put("getPercentListByOuterKey", "array");
+		staticFunctionMapP_VECS_E.annotationMap.put("kernel", "output:array:j");
+		staticFunctionMapP_VECS_E.annotationMap.put("kernelFix", "output:array:j");
+		staticFunctionMapP_VECS_E.annotationMap.put("findTotalIncrementRatioWithScale"
+				, "value:times:scale");
+		staticFunctionMapP_VECS_E.annotationMap.put("findMeanIncrementRatioWithScale"
+				, "value:times:scale");
+		staticFunctionMapP_VECS_E.annotationMap.put("frequencyUpSplit"
+				, "originFrequency:compareFrequency");
+		staticFunctionMapP_VECS_E.annotationMap.put("frequencyDownSplit"
+				, "originFrequency:compareFrequency");
+		staticFunctionMapP_VECS_E.annotationMap.put("frequencyUpSplitWithScale"
+				, "originFrequency:compareFrequency:scale");
+		staticFunctionMapP_VECS_E.annotationMap.put("frequencyDownSplitWithScale"
+				, "originFrequency:compareFrequency:scale");
 
 	
 
-		staticFunctionMapP_VECS_E.annotationMap.put("predictionResult", "predictionResult");
-		staticFunctionMapP_VECS_E.annotationMap.put("predictionMatrixResult", "predictionMatrixResult");
-		staticFunctionMapP_VECS_E.annotationMap.put("getImagePixClassificationMap", "getImagePixClassificationMap");
-		staticFunctionMapP_VECS_E.annotationMap.put("getVWaveFromImagePix", "getVWaveFromImagePix");
-		staticFunctionMapP_VECS_E.annotationMap.put("getHWaveFromImagePix", "getHWaveFromImagePix");
-		staticFunctionMapP_VECS_E.annotationMap.put("getPixPercentByDeterPix", "getPixPercentByDeterPix");
-		staticFunctionMapP_VECS_E.annotationMap.put("getClusterPercentByDeterPixGroup", "getClusterPercentByDeterPixGroup");
-		staticFunctionMapP_VECS_E.annotationMap.put("getPixPercentByDeterPixGroup", "getPixPercentByDeterPixGroup");
-		staticFunctionMapP_VECS_E.annotationMap.put("filterFusion2DSetsWithCountScale", "filterFusion2DSetsWithCountScale");
-		staticFunctionMapP_VECS_E.annotationMap.put("filterFusion3DSetsWithCountScale", "filterFusion3DSetsWithCountScale");
-		staticFunctionMapP_VECS_E.annotationMap.put("filterPosition2DsWithScaledDistance", "filterPosition2DsWithScaledDistance");
-		staticFunctionMapP_VECS_E.annotationMap.put("filterPosition3DsWithScaledDistance", "filterPosition3DsWithScaledDistance");
-		staticFunctionMapP_VECS_E.annotationMap.put("filterPosition2DsWithScaledDistance", "filterPosition2DsWithScaledDistance");
-		staticFunctionMapP_VECS_E.annotationMap.put("filterPosition3DsWithScaledDistance", "filterPosition3DsWithScaledDistance");
-		staticFunctionMapP_VECS_E.annotationMap.put("getPercentListByOuterKey", "getPercentListByOuterKey");
-		staticFunctionMapP_VECS_E.annotationMap.put("getPercentArrayByOuterKey", "getPercentArrayByOuterKey");
-		staticFunctionMapP_VECS_E.annotationMap.put("getEachPercentSetOfArray", "getEachPercentSetOfArray");
-		staticFunctionMapP_VECS_E.annotationMap.put("getPercentArrayByOuterKey", "getPercentArrayByOuterKey");
+		staticFunctionMapP_VECS_E.annotationMap.put("predictionResult"
+				, "input:groups:scale");
+		staticFunctionMapP_VECS_E.annotationMap.put("predictionMatrixResult"
+				, "input:groups:scale");
+		staticFunctionMapP_VECS_E.annotationMap.put("getImagePixClassificationMap"
+				, "pixMap");
+		staticFunctionMapP_VECS_E.annotationMap.put("getVWaveFromImagePix"
+				, "pixMap:RGB");
+		staticFunctionMapP_VECS_E.annotationMap.put("getHWaveFromImagePix"
+				, "pixMap:RGB");
+		staticFunctionMapP_VECS_E.annotationMap.put("getPixPercentByDeterPix"
+				, "imagePix:scaleRBG");
+		staticFunctionMapP_VECS_E.annotationMap.put("getClusterPercentByDeterPixGroup"
+				, "imagePix:scaleSUM");
+		staticFunctionMapP_VECS_E.annotationMap.put("getPixPercentByDeterPixGroup"
+				, "imagePix:scaleSUM");
+		staticFunctionMapP_VECS_E.annotationMap.put("filterFusion2DSetsWithCountScale"
+				, "groups:countScale");
+		staticFunctionMapP_VECS_E.annotationMap.put("filterFusion3DSetsWithCountScale"
+				, "groups:countScale");
+		staticFunctionMapP_VECS_E.annotationMap.put("filterPosition2DsWithScaledDistance"
+				, "input:heart:scaleDistacne");
+		staticFunctionMapP_VECS_E.annotationMap.put("filterPosition3DsWithScaledDistance"
+				, "input:heart:scaleDistacne");
+		staticFunctionMapP_VECS_E.annotationMap.put("filterPosition2DsWithScaledDistance"
+				, "input:heart:scaleDistacne");
+		staticFunctionMapP_VECS_E.annotationMap.put("filterPosition3DsWithScaledDistance"
+				, "input:heart:scaleDistacne");
+		staticFunctionMapP_VECS_E.annotationMap.put("getPercentListByOuterKey", "list:key");
+		staticFunctionMapP_VECS_E.annotationMap.put("getPercentArrayByOuterKey", "array:key");
+		staticFunctionMapP_VECS_E.annotationMap.put("getEachPercentSetOfArray", "array");
+		staticFunctionMapP_VECS_E.annotationMap.put("getPercentArrayByOuterKey", "array:key");
 	}	
 
 
