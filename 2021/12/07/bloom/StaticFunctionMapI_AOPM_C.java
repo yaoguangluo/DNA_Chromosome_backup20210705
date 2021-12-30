@@ -44,7 +44,8 @@ public interface StaticFunctionMapI_AOPM_C {
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
 				map= staticFunctionMapI_AOPM_C.getCoAuthor((Map<String, Object>)inputValues.get(传参因子[因子++])
-						, (CogsBinaryForest_AE)inputValues.get(传参因子[因子++]), (Map<String, String>)inputValues.get(传参因子[因子++]));
+						, (CogsBinaryForest_AE)inputValues.get(传参因子[因子++])
+						, (Map<String, String>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		};
@@ -52,7 +53,8 @@ public interface StaticFunctionMapI_AOPM_C {
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
 				map= staticFunctionMapI_AOPM_C.getCoAuthorForWord((App)inputValues.get(传参因子[因子++])
-						, (CogsBinaryForest_AE)inputValues.get(传参因子[因子++]), (Map<String, String>)inputValues.get(传参因子[因子++]));
+						, (CogsBinaryForest_AE)inputValues.get(传参因子[因子++])
+						, (Map<String, String>)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		};
@@ -114,17 +116,17 @@ public interface StaticFunctionMapI_AOPM_C {
 	public static void load(StaticFunctionMapI_AOPM_E staticFunctionMapI_AOPM_E) {
 		// TODO Auto-generated method stub
 		//稍后封装
-		staticFunctionMapI_AOPM_E.annotationMap.put("getBigWord", "getBigWord");
-		staticFunctionMapI_AOPM_E.annotationMap.put("getClassify", "getClassify");
-		staticFunctionMapI_AOPM_E.annotationMap.put("getCoAuthor", "getCoAuthor");
-		staticFunctionMapI_AOPM_E.annotationMap.put("getCoAuthorForWord", "getCoAuthorForWord");
-		staticFunctionMapI_AOPM_E.annotationMap.put("getCoDNAAuthorForWord", "getCoDNAAuthorForWord");
-		staticFunctionMapI_AOPM_E.annotationMap.put("getHistogram", "getHistogram");
-		staticFunctionMapI_AOPM_E.annotationMap.put("getLineMed", "getLineMed");
-		staticFunctionMapI_AOPM_E.annotationMap.put("getJpv", "getJpv");
-		staticFunctionMapI_AOPM_E.annotationMap.put("getRecoder", "getRecoder");
-		staticFunctionMapI_AOPM_E.annotationMap.put("getVoicejPanel", "getVoicejPanel");
-		staticFunctionMapI_AOPM_E.annotationMap.put("getLYGFileIO", "getLYGFileIO");
+		staticFunctionMapI_AOPM_E.annotationMap.put("getBigWord", "void");
+		staticFunctionMapI_AOPM_E.annotationMap.put("getClassify", "void");
+		staticFunctionMapI_AOPM_E.annotationMap.put("getCoAuthor", "dic_li:_A:pos");
+		staticFunctionMapI_AOPM_E.annotationMap.put("getCoAuthorForWord", "u:_A:pos");//稍后优化传参变量名的 传参因子格式。
+		staticFunctionMapI_AOPM_E.annotationMap.put("getCoDNAAuthorForWord", "u:_A:pos");
+		staticFunctionMapI_AOPM_E.annotationMap.put("getHistogram", "void");
+		staticFunctionMapI_AOPM_E.annotationMap.put("getLineMed", "void");
+		staticFunctionMapI_AOPM_E.annotationMap.put("getJpv", "void");
+		staticFunctionMapI_AOPM_E.annotationMap.put("getRecoder", "void");
+		staticFunctionMapI_AOPM_E.annotationMap.put("getVoicejPanel", "void");
+		staticFunctionMapI_AOPM_E.annotationMap.put("getLYGFileIO", "void");
 	}
 	//重名稍后
 	public BigWord getBigWord() ;
