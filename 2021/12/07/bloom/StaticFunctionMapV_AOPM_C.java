@@ -1,6 +1,7 @@
 package SEM.bloom;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Map;
 
 import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.ASU.MPE.procedure.pde.FullDNATokenPDI;
@@ -10,6 +11,7 @@ import VPC.transaction.PdeSwapFix;
 //Refer的源码来自 《DNA 元基催化与肽计算 第三修订版本 V039010912》
 //证书编号：国作登字-2021-L-00268255 (中华人民共和国 国家版权登记中心)
 public interface StaticFunctionMapV_AOPM_C {
+	public static Map<String, String> annotationMap= new HashMap<>();
 	public static void callFunction(String callFunctionKey, StaticFunctionMapV_AOPM_E staticFunctionMapV_AOPM_C
 			, Map<String, Object> output) throws IOException {
 		String[] 传参因子= (String[]) output.get("传参因子");
@@ -211,31 +213,31 @@ public interface StaticFunctionMapV_AOPM_C {
 	public static void load(StaticFunctionMapV_AOPM_E staticFunctionMapV_AOPM_E) {
 		// TODO Auto-generated method stub
 		//稍后封装
-		staticFunctionMapV_AOPM_E.annotationMap.put("PdeSwapPdcToPde", "pdc:lock:de:ds:ie:is"); 
-		staticFunctionMapV_AOPM_E.annotationMap.put("PdeSwapPdcToPds", "pdc:lock:de:ds:ie:is"); 
-		staticFunctionMapV_AOPM_E.annotationMap.put("PdeSwapPdeToPds", "pds:lock:de:ds:ie:is"); 
-		staticFunctionMapV_AOPM_E.annotationMap.put("PdeSwapPdsToPde", "pds:lock:de:ds:ie:is"); 
-		staticFunctionMapV_AOPM_E.annotationMap.put("PdeSwapFixpdcToPde", "pdc:lock:de:ds:ie:is"); 
+		StaticFunctionMapV_AOPM_C.annotationMap.put("PdeSwapPdcToPde", "pdc:lock:de:ds:ie:is"); 
+		StaticFunctionMapV_AOPM_C.annotationMap.put("PdeSwapPdcToPds", "pdc:lock:de:ds:ie:is"); 
+		StaticFunctionMapV_AOPM_C.annotationMap.put("PdeSwapPdeToPds", "pds:lock:de:ds:ie:is"); 
+		StaticFunctionMapV_AOPM_C.annotationMap.put("PdeSwapPdsToPde", "pds:lock:de:ds:ie:is"); 
+		StaticFunctionMapV_AOPM_C.annotationMap.put("PdeSwapFixpdcToPde", "pdc:lock:de:ds:ie:is"); 
 
-		staticFunctionMapV_AOPM_E.annotationMap.put("PdeSwapFixpdcToPds", "pdc:lock:de:ds:ie:is"); 
-		staticFunctionMapV_AOPM_E.annotationMap.put("PdeSwapFixpdeToPds", "pds:lock:de:ds:ie:is"); 
-		staticFunctionMapV_AOPM_E.annotationMap.put("PdeSwapFixpdsToPde", "pds:lock:de:ds:ie:is"); 
-		staticFunctionMapV_AOPM_E.annotationMap.put("PdeSwapFixtextToPdw", "pDE_RNA_FullFormular:password"); 
-		staticFunctionMapV_AOPM_E.annotationMap.put("PdeSwapFixpdwToPdc", "pDE_RNA_FullFormular"); 
+		StaticFunctionMapV_AOPM_C.annotationMap.put("PdeSwapFixpdcToPds", "pdc:lock:de:ds:ie:is"); 
+		StaticFunctionMapV_AOPM_C.annotationMap.put("PdeSwapFixpdeToPds", "pds:lock:de:ds:ie:is"); 
+		StaticFunctionMapV_AOPM_C.annotationMap.put("PdeSwapFixpdsToPde", "pds:lock:de:ds:ie:is"); 
+		StaticFunctionMapV_AOPM_C.annotationMap.put("PdeSwapFixtextToPdw", "pDE_RNA_FullFormular:password"); 
+		StaticFunctionMapV_AOPM_C.annotationMap.put("PdeSwapFixpdwToPdc", "pDE_RNA_FullFormular"); 
 		
-		staticFunctionMapV_AOPM_E.annotationMap.put("DetaDBUtilDBRequest", "request"); 
-		staticFunctionMapV_AOPM_E.annotationMap.put("DetaDBUtilbackEndRequest", "request"); 
-		staticFunctionMapV_AOPM_E.annotationMap.put("DetaDBUtilcacheRequest", "request"); 
+		StaticFunctionMapV_AOPM_C.annotationMap.put("DetaDBUtilDBRequest", "request"); 
+		StaticFunctionMapV_AOPM_C.annotationMap.put("DetaDBUtilbackEndRequest", "request"); 
+		StaticFunctionMapV_AOPM_C.annotationMap.put("DetaDBUtilcacheRequest", "request"); 
 
-		staticFunctionMapV_AOPM_E.annotationMap.put("IV_CulumnNameType", "void"); 
-		staticFunctionMapV_AOPM_E.annotationMap.put("withoutCulumnNameType", "culumnTypeString"); 	
+		StaticFunctionMapV_AOPM_C.annotationMap.put("IV_CulumnNameType", "void"); 
+		StaticFunctionMapV_AOPM_C.annotationMap.put("withoutCulumnNameType", "culumnTypeString"); 	
 
-		staticFunctionMapV_AOPM_E.annotationMap.put("DetaFrontEndUtilbackEndRequest", "request"); 
-		staticFunctionMapV_AOPM_E.annotationMap.put("DetaFrontEndUtilhuaRuiJiRequest", "request"); 
-		staticFunctionMapV_AOPM_E.annotationMap.put("DetaFrontEndUtilcacheRequest", "request"); 
-		staticFunctionMapV_AOPM_E.annotationMap.put("IV_DB", "request"); 
-		staticFunctionMapV_AOPM_E.annotationMap.put("compress", "data"); 
-		staticFunctionMapV_AOPM_E.annotationMap.put("uncompress", "data"); 
+		StaticFunctionMapV_AOPM_C.annotationMap.put("DetaFrontEndUtilbackEndRequest", "request"); 
+		StaticFunctionMapV_AOPM_C.annotationMap.put("DetaFrontEndUtilhuaRuiJiRequest", "request"); 
+		StaticFunctionMapV_AOPM_C.annotationMap.put("DetaFrontEndUtilcacheRequest", "request"); 
+		StaticFunctionMapV_AOPM_C.annotationMap.put("IV_DB", "request"); 
+		StaticFunctionMapV_AOPM_C.annotationMap.put("compress", "data"); 
+		StaticFunctionMapV_AOPM_C.annotationMap.put("uncompress", "data"); 
 	}
 
 	//PdeSwap{

@@ -2,6 +2,7 @@ package SEM.bloom;
 
 import java.awt.HeadlessException;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Map;
 
 import IMO.EVU.bi_P.BigWord;
@@ -20,6 +21,7 @@ import OCI.ME.analysis.C.A;
 import OEI.ME.analysis.E.CogsBinaryForest_AE;
 //著作权人+ 作者= 罗瑶光
 public interface StaticFunctionMapI_AOPM_C {
+	public static Map<String, String> annotationMap= new HashMap<>();
 	@SuppressWarnings("unchecked")
 	public static void callFunction(String callFunctionKey, StaticFunctionMapI_AOPM_E staticFunctionMapI_AOPM_C
 			, Map<String, Object> output) throws IOException, HeadlessException, InterruptedException {
@@ -116,17 +118,17 @@ public interface StaticFunctionMapI_AOPM_C {
 	public static void load(StaticFunctionMapI_AOPM_E staticFunctionMapI_AOPM_E) {
 		// TODO Auto-generated method stub
 		//稍后封装
-		staticFunctionMapI_AOPM_E.annotationMap.put("getBigWord", "void");
-		staticFunctionMapI_AOPM_E.annotationMap.put("getClassify", "void");
-		staticFunctionMapI_AOPM_E.annotationMap.put("getCoAuthor", "dic_li:_A:pos");
-		staticFunctionMapI_AOPM_E.annotationMap.put("getCoAuthorForWord", "u:_A:pos");//稍后优化传参变量名的 传参因子格式。
-		staticFunctionMapI_AOPM_E.annotationMap.put("getCoDNAAuthorForWord", "u:_A:pos");
-		staticFunctionMapI_AOPM_E.annotationMap.put("getHistogram", "void");
-		staticFunctionMapI_AOPM_E.annotationMap.put("getLineMed", "void");
-		staticFunctionMapI_AOPM_E.annotationMap.put("getJpv", "void");
-		staticFunctionMapI_AOPM_E.annotationMap.put("getRecoder", "void");
-		staticFunctionMapI_AOPM_E.annotationMap.put("getVoicejPanel", "void");
-		staticFunctionMapI_AOPM_E.annotationMap.put("getLYGFileIO", "void");
+		StaticFunctionMapI_AOPM_C.annotationMap.put("getBigWord", "void");
+		StaticFunctionMapI_AOPM_C.annotationMap.put("getClassify", "void");
+		StaticFunctionMapI_AOPM_C.annotationMap.put("getCoAuthor", "dic_li:_A:pos");
+		StaticFunctionMapI_AOPM_C.annotationMap.put("getCoAuthorForWord", "u:_A:pos");//稍后优化传参变量名的 传参因子格式。
+		StaticFunctionMapI_AOPM_C.annotationMap.put("getCoDNAAuthorForWord", "u:_A:pos");
+		StaticFunctionMapI_AOPM_C.annotationMap.put("getHistogram", "void");
+		StaticFunctionMapI_AOPM_C.annotationMap.put("getLineMed", "void");
+		StaticFunctionMapI_AOPM_C.annotationMap.put("getJpv", "void");
+		StaticFunctionMapI_AOPM_C.annotationMap.put("getRecoder", "void");
+		StaticFunctionMapI_AOPM_C.annotationMap.put("getVoicejPanel", "void");
+		StaticFunctionMapI_AOPM_C.annotationMap.put("getLYGFileIO", "void");
 	}
 	//重名稍后
 	public BigWord getBigWord() ;

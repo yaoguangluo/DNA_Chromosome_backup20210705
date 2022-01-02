@@ -119,9 +119,7 @@ public class StaticFunctionMapS_AOPM_E implements StaticFunctionMapS_AOPM_C {
 
 	//S 接口的应用
 
-	public StaticRootMap creatMap() throws Exception {
-		StaticRootMap staticRootMap = new StaticRootMap();
-		staticRootMap.initMap();
-		return staticRootMap;
+	public void creatMap() throws Exception {
+		StaticRootMap.initMap();
 	}
 }

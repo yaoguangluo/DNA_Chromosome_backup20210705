@@ -2,6 +2,7 @@ package SEM.bloom;
 
 import java.awt.PopupMenu;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.swing.JTextPane;
@@ -45,6 +46,7 @@ import OSI.OPE.SI.MCI.OEI.OVU.PQE.extOSGI.OSI_OSU_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MS
 //Refer的源码来自 《DNA 元基催化与肽计算 第三修订版本 V039010912》
 //证书编号：国作登字-2021-L-00268255 (中华人民共和国 国家版权登记中心)
 public interface StaticFunctionMapE_IDUQ_C {
+	public static Map<String, String> annotationMap= new HashMap<>();
 	@SuppressWarnings("unchecked")
 	public static void callFunction(String callFunctionKey
 			, StaticFunctionMapE_IDUQ_E staticFunctionMapE_IDUQ_C, Map<String, Object> output) throws IOException {
@@ -284,37 +286,37 @@ public interface StaticFunctionMapE_IDUQ_C {
 	public static void load(StaticFunctionMapE_IDUQ_E staticFunctionMapE_IDUQ_E) {
 		// TODO Auto-generated method stub
 		//稍后封装
-		staticFunctionMapE_IDUQ_E.annotationMap.put("getNodeInfo", "void");
-		staticFunctionMapE_IDUQ_E.annotationMap.put("getNodeProject", "void");
-		staticFunctionMapE_IDUQ_E.annotationMap.put("getCheckRange", "void");
-		staticFunctionMapE_IDUQ_E.annotationMap.put("getChooseCheck", "void");
-		staticFunctionMapE_IDUQ_E.annotationMap.put("getDrawArrow", "void");
-		staticFunctionMapE_IDUQ_E.annotationMap.put("getDynamicLine_U", "void");
-		staticFunctionMapE_IDUQ_E.annotationMap.put("getU_RelatedLine", "void");
-		staticFunctionMapE_IDUQ_E.annotationMap.put("getLinkOSGI", "void");
-		staticFunctionMapE_IDUQ_E.annotationMap.put("getNodeOSGI", "void");
-		staticFunctionMapE_IDUQ_E.annotationMap.put("_OSU_AVQ_ASQ_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI", "void");
-		staticFunctionMapE_IDUQ_E.annotationMap.put("_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ", "void");
-		staticFunctionMapE_IDUQ_E.annotationMap.put("_OSU_AVQ_ASQ_OPE_OPC_ECI", "void");
-		staticFunctionMapE_IDUQ_E.annotationMap.put("getUnicornJSplitPane", "void");
-		staticFunctionMapE_IDUQ_E.annotationMap.put("getUnicornScrollBarUI", "void");
-		staticFunctionMapE_IDUQ_E.annotationMap.put("getUnicornSplitPaneUI", "void");
-		staticFunctionMapE_IDUQ_E.annotationMap.put("getUnicornTreeCellRenderer", "void");
-		staticFunctionMapE_IDUQ_E.annotationMap.put("getUnicornTreeUI", "void");
-		staticFunctionMapE_IDUQ_E.annotationMap.put("getCacuString", "void");
-		staticFunctionMapE_IDUQ_E.annotationMap.put("getNodeShow", "gUISample:tableData_old:text:popupMenu:u:_A:pos");
-		staticFunctionMapE_IDUQ_E.annotationMap.put("getCheckRangeVPS", "void");
-		staticFunctionMapE_IDUQ_E.annotationMap.put("getChooseQ_VPS", "void");
-		staticFunctionMapE_IDUQ_E.annotationMap.put("getDrawArrowVPS", "void");
-		staticFunctionMapE_IDUQ_E.annotationMap.put("getDrawFlashSide", "void");
-		staticFunctionMapE_IDUQ_E.annotationMap.put("getDrawSinLineVPS", "void");
-		staticFunctionMapE_IDUQ_E.annotationMap.put("getDynamicLineU_VPS", "void");
-		staticFunctionMapE_IDUQ_E.annotationMap.put("getLinkList", "void");
-		staticFunctionMapE_IDUQ_E.annotationMap.put("getLinkNode", "void");
-		staticFunctionMapE_IDUQ_E.annotationMap.put("getSort", "void");
-		staticFunctionMapE_IDUQ_E.annotationMap.put("getU_RelatedLineVPS", "void");
-		staticFunctionMapE_IDUQ_E.annotationMap.put("getOSGI_chansfer", "node:first");
-		staticFunctionMapE_IDUQ_E.annotationMap.put("_OSI_OSU_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI_register", "tableData_old:text:u:_A:pos");
+		StaticFunctionMapE_IDUQ_C.annotationMap.put("getNodeInfo", "void");
+		StaticFunctionMapE_IDUQ_C.annotationMap.put("getNodeProject", "void");
+		StaticFunctionMapE_IDUQ_C.annotationMap.put("getCheckRange", "void");
+		StaticFunctionMapE_IDUQ_C.annotationMap.put("getChooseCheck", "void");
+		StaticFunctionMapE_IDUQ_C.annotationMap.put("getDrawArrow", "void");
+		StaticFunctionMapE_IDUQ_C.annotationMap.put("getDynamicLine_U", "void");
+		StaticFunctionMapE_IDUQ_C.annotationMap.put("getU_RelatedLine", "void");
+		StaticFunctionMapE_IDUQ_C.annotationMap.put("getLinkOSGI", "void");
+		StaticFunctionMapE_IDUQ_C.annotationMap.put("getNodeOSGI", "void");
+		StaticFunctionMapE_IDUQ_C.annotationMap.put("_OSU_AVQ_ASQ_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI", "void");
+		StaticFunctionMapE_IDUQ_C.annotationMap.put("_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ", "void");
+		StaticFunctionMapE_IDUQ_C.annotationMap.put("_OSU_AVQ_ASQ_OPE_OPC_ECI", "void");
+		StaticFunctionMapE_IDUQ_C.annotationMap.put("getUnicornJSplitPane", "void");
+		StaticFunctionMapE_IDUQ_C.annotationMap.put("getUnicornScrollBarUI", "void");
+		StaticFunctionMapE_IDUQ_C.annotationMap.put("getUnicornSplitPaneUI", "void");
+		StaticFunctionMapE_IDUQ_C.annotationMap.put("getUnicornTreeCellRenderer", "void");
+		StaticFunctionMapE_IDUQ_C.annotationMap.put("getUnicornTreeUI", "void");
+		StaticFunctionMapE_IDUQ_C.annotationMap.put("getCacuString", "void");
+		StaticFunctionMapE_IDUQ_C.annotationMap.put("getNodeShow", "gUISample:tableData_old:text:popupMenu:u:_A:pos");
+		StaticFunctionMapE_IDUQ_C.annotationMap.put("getCheckRangeVPS", "void");
+		StaticFunctionMapE_IDUQ_C.annotationMap.put("getChooseQ_VPS", "void");
+		StaticFunctionMapE_IDUQ_C.annotationMap.put("getDrawArrowVPS", "void");
+		StaticFunctionMapE_IDUQ_C.annotationMap.put("getDrawFlashSide", "void");
+		StaticFunctionMapE_IDUQ_C.annotationMap.put("getDrawSinLineVPS", "void");
+		StaticFunctionMapE_IDUQ_C.annotationMap.put("getDynamicLineU_VPS", "void");
+		StaticFunctionMapE_IDUQ_C.annotationMap.put("getLinkList", "void");
+		StaticFunctionMapE_IDUQ_C.annotationMap.put("getLinkNode", "void");
+		StaticFunctionMapE_IDUQ_C.annotationMap.put("getSort", "void");
+		StaticFunctionMapE_IDUQ_C.annotationMap.put("getU_RelatedLineVPS", "void");
+		StaticFunctionMapE_IDUQ_C.annotationMap.put("getOSGI_chansfer", "node:first");
+		StaticFunctionMapE_IDUQ_C.annotationMap.put("_OSI_OSU_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI_register", "tableData_old:text:u:_A:pos");
 	}
 	//etl engine
 	public NodeInfo getNodeInfo();

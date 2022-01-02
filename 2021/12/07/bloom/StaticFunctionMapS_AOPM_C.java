@@ -1,10 +1,12 @@
 package SEM.bloom;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Map;
 
 //著作权人+作者=罗瑶光
 public interface StaticFunctionMapS_AOPM_C {
+	public static Map<String, String> annotationMap= new HashMap<>();
 	@SuppressWarnings("unchecked")
 	public static void callFunction(String callFunctionKey, StaticFunctionMapS_AOPM_E staticFunctionMapS_AOPM_C
 			, Map<String, Object> output) throws Exception {
@@ -117,7 +119,7 @@ public interface StaticFunctionMapS_AOPM_C {
 		if(callFunctionKey.equalsIgnoreCase("creatMap")){ 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapS_AOPM_C.creatMap();
+				staticFunctionMapS_AOPM_C.creatMap();
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		};
@@ -126,18 +128,18 @@ public interface StaticFunctionMapS_AOPM_C {
 	public static void load(StaticFunctionMapS_AOPM_E staticFunctionMapS_AOPM_E) {
 		// TODO Auto-generated method stub
 		//稍后封装
-		staticFunctionMapS_AOPM_E.annotationMap.put("DeleteCellORM", "rootPath:baseName:tabKey:rowCells:initonEncrypt");
-		staticFunctionMapS_AOPM_E.annotationMap.put("DeleteCellPLSQL", "rootPath:baseName:tabKey:rowCells:initonEncrypt");
-		staticFunctionMapS_AOPM_E.annotationMap.put("DropCellORM", "rootPath:baseName:tabKey");
-		staticFunctionMapS_AOPM_E.annotationMap.put("DropCellPLSQL", "rootPath:baseName:tabKey");
-		staticFunctionMapS_AOPM_E.annotationMap.put("InsertCellORM", "rootPath:baseName:tabKey:rowCells:initonEncrypt");
-		staticFunctionMapS_AOPM_E.annotationMap.put("InsertCellPLSQL", "rootPath:baseName:tabKey:rowCells:initonEncrypt");
-		staticFunctionMapS_AOPM_E.annotationMap.put("UpdateCellORM", "tabKey:rowId:cellName:cellValue");
-		staticFunctionMapS_AOPM_E.annotationMap.put("UpdateCellORMByRowId", "rootPath:baseName:unTest:tabKey:rowId:cellName:cellValue");
-		staticFunctionMapS_AOPM_E.annotationMap.put("UpdateCellORMByEquals"
+		StaticFunctionMapS_AOPM_C.annotationMap.put("DeleteCellORM", "rootPath:baseName:tabKey:rowCells:initonEncrypt");
+		StaticFunctionMapS_AOPM_C.annotationMap.put("DeleteCellPLSQL", "rootPath:baseName:tabKey:rowCells:initonEncrypt");
+		StaticFunctionMapS_AOPM_C.annotationMap.put("DropCellORM", "rootPath:baseName:tabKey");
+		StaticFunctionMapS_AOPM_C.annotationMap.put("DropCellPLSQL", "rootPath:baseName:tabKey");
+		StaticFunctionMapS_AOPM_C.annotationMap.put("InsertCellORM", "rootPath:baseName:tabKey:rowCells:initonEncrypt");
+		StaticFunctionMapS_AOPM_C.annotationMap.put("InsertCellPLSQL", "rootPath:baseName:tabKey:rowCells:initonEncrypt");
+		StaticFunctionMapS_AOPM_C.annotationMap.put("UpdateCellORM", "tabKey:rowId:cellName:cellValue");
+		StaticFunctionMapS_AOPM_C.annotationMap.put("UpdateCellORMByRowId", "rootPath:baseName:unTest:tabKey:rowId:cellName:cellValue");
+		StaticFunctionMapS_AOPM_C.annotationMap.put("UpdateCellORMByEquals"
 				, "rootPath:baseName:unTest:tabKey:conditionSubject:conditionObject:cellName:cellValue");
-		staticFunctionMapS_AOPM_E.annotationMap.put("UpdateCellPLSQL", "tabKey:rowId:cellName:cellValue");
-		staticFunctionMapS_AOPM_E.annotationMap.put("creatMap", "void");
+		StaticFunctionMapS_AOPM_C.annotationMap.put("UpdateCellPLSQL", "tabKey:rowId:cellName:cellValue");
+		StaticFunctionMapS_AOPM_C.annotationMap.put("creatMap", "void");
 
 	}
 	//s 组的记录
@@ -230,5 +232,5 @@ public interface StaticFunctionMapS_AOPM_C {
 
 
 	//S 接口的应用
-	public StaticRootMap creatMap() throws Exception;
+	public void creatMap() throws Exception;
 }

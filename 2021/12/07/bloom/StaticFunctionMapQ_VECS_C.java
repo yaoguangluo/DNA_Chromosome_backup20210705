@@ -2,6 +2,7 @@ package SEM.bloom;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -11,6 +12,7 @@ import ME.APM.VSQ.App;
 //Refer的源码来自 《DNA 元基催化与肽计算 第三修订版本 V039010912》
 //证书编号：国作登字-2021-L-00268255 (中华人民共和国 国家版权登记中心)
 public interface StaticFunctionMapQ_VECS_C {
+	public static Map<String, String> annotationMap= new HashMap<>();
 	@SuppressWarnings("unchecked")
 	public static void callFunction(String callFunctionKey, StaticFunctionMapQ_VECS_E staticFunctionMapQ_VECS_C
 			, Map<String, Object> output) throws IOException {
@@ -43,8 +45,8 @@ public interface StaticFunctionMapQ_VECS_C {
 	public static void load(StaticFunctionMapQ_VECS_E staticFunctionMapQ_VECS_E) {
 		// TODO Auto-generated method stub
 		//稍后封装
-		staticFunctionMapQ_VECS_E.annotationMap.put("searchFromTable", "newTableModel:tableData_old:copy_xj:dic_xj:u");
-		staticFunctionMapQ_VECS_E.annotationMap.put("searchFromTablewithScale", "key:标题:内容:lookrot");
+		StaticFunctionMapQ_VECS_C.annotationMap.put("searchFromTable", "newTableModel:tableData_old:copy_xj:dic_xj:u");
+		StaticFunctionMapQ_VECS_C.annotationMap.put("searchFromTablewithScale", "key:标题:内容:lookrot");
 	}
 
 	public void searchFromTable(String key, DefaultTableModel newTableModel, Object[][] tableData_old

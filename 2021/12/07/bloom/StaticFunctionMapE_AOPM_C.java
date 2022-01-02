@@ -1,6 +1,7 @@
 package SEM.bloom;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Map;
 
 import OCI.AMV.ECS.SVQ.MPC.fhmm.C.SensingMap;
@@ -26,6 +27,7 @@ import OCI.SVQ.MPC.fhmm.C.FMHMMList;
 //Refer的源码来自 《DNA 元基催化与肽计算 第三修订版本 V039010912》
 //证书编号：国作登字-2021-L-00268255 (中华人民共和国 国家版权登记中心)
 public interface StaticFunctionMapE_AOPM_C {
+	public static Map<String, String> annotationMap= new HashMap<>();
 	public static void callFunction(String callFunctionKey
 			, StaticFunctionMapE_AOPM_E staticFunctionMapE_AOPM_C, Map<String, Object> output) throws IOException {
 		String[] 传参因子= (String[]) output.get("传参因子");
@@ -149,24 +151,24 @@ public interface StaticFunctionMapE_AOPM_C {
 	public static void load(StaticFunctionMapE_AOPM_E staticFunctionMapE_AOPM_E) {
 		// TODO Auto-generated method stub
 		//稍后封装
-		staticFunctionMapE_AOPM_E.annotationMap.put("getSensingMap", "void");
-		staticFunctionMapE_AOPM_E.annotationMap.put("getEmotionMap", "void");
-		staticFunctionMapE_AOPM_E.annotationMap.put("getCogsBinaryForest_A", "void");
-		staticFunctionMapE_AOPM_E.annotationMap.put("getEuclid_C", "void");
-		staticFunctionMapE_AOPM_E.annotationMap.put("getQuick6DLuoYaoguangSort", "void");
-		staticFunctionMapE_AOPM_E.annotationMap.put("getNERO_C_OneTime", "void");
-		staticFunctionMapE_AOPM_E.annotationMap.put("getNERO_C", "void");
-		staticFunctionMapE_AOPM_E.annotationMap.put("getNLP_C", "void");
-		staticFunctionMapE_AOPM_E.annotationMap.put("getBehaviorMap", "void");
-		staticFunctionMapE_AOPM_E.annotationMap.put("getFMHMMList", "void");
-		staticFunctionMapE_AOPM_E.annotationMap.put("getPos_C_XCDX_P", "void");
-		staticFunctionMapE_AOPM_E.annotationMap.put("getPos_C_XCDX_E", "void");
-		staticFunctionMapE_AOPM_E.annotationMap.put("getPos_C_XCDX_O", "void");
-		staticFunctionMapE_AOPM_E.annotationMap.put("getNlp_C_XCDX_S", "void");
-		staticFunctionMapE_AOPM_E.annotationMap.put("getNlp_C_XCDX_A", "void");
-		staticFunctionMapE_AOPM_E.annotationMap.put("getA_XCDX_Map", "void");
-		staticFunctionMapE_AOPM_E.annotationMap.put("getA", "void");
-		staticFunctionMapE_AOPM_E.annotationMap.put("getBinaryForest_A", "void");	
+		StaticFunctionMapE_AOPM_C.annotationMap.put("getSensingMap", "void");
+		StaticFunctionMapE_AOPM_C.annotationMap.put("getEmotionMap", "void");
+		StaticFunctionMapE_AOPM_C.annotationMap.put("getCogsBinaryForest_A", "void");
+		StaticFunctionMapE_AOPM_C.annotationMap.put("getEuclid_C", "void");
+		StaticFunctionMapE_AOPM_C.annotationMap.put("getQuick6DLuoYaoguangSort", "void");
+		StaticFunctionMapE_AOPM_C.annotationMap.put("getNERO_C_OneTime", "void");
+		StaticFunctionMapE_AOPM_C.annotationMap.put("getNERO_C", "void");
+		StaticFunctionMapE_AOPM_C.annotationMap.put("getNLP_C", "void");
+		StaticFunctionMapE_AOPM_C.annotationMap.put("getBehaviorMap", "void");
+		StaticFunctionMapE_AOPM_C.annotationMap.put("getFMHMMList", "void");
+		StaticFunctionMapE_AOPM_C.annotationMap.put("getPos_C_XCDX_P", "void");
+		StaticFunctionMapE_AOPM_C.annotationMap.put("getPos_C_XCDX_E", "void");
+		StaticFunctionMapE_AOPM_C.annotationMap.put("getPos_C_XCDX_O", "void");
+		StaticFunctionMapE_AOPM_C.annotationMap.put("getNlp_C_XCDX_S", "void");
+		StaticFunctionMapE_AOPM_C.annotationMap.put("getNlp_C_XCDX_A", "void");
+		StaticFunctionMapE_AOPM_C.annotationMap.put("getA_XCDX_Map", "void");
+		StaticFunctionMapE_AOPM_C.annotationMap.put("getA", "void");
+		StaticFunctionMapE_AOPM_C.annotationMap.put("getBinaryForest_A", "void");	
 	}
 
 	//SensingMap, 

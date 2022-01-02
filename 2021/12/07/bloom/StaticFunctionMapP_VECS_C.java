@@ -2,6 +2,7 @@ package SEM.bloom;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -17,6 +18,7 @@ import PCI.ASQ.demension.Line3D;
 //可以用的 一些老接口见 http://tinos.qicp.vip/data.html
 //著作权人 + 作者 = 罗瑶光
 public interface StaticFunctionMapP_VECS_C {
+	public static Map<String, String> annotationMap= new HashMap<>();
 	@SuppressWarnings("unchecked")
 	public static void callFunction(String callFunctionKey, StaticFunctionMapP_VECS_E staticFunctionMapP_VECS_C
 			, Map<String, Object> output) throws IOException
@@ -1055,154 +1057,154 @@ public interface StaticFunctionMapP_VECS_C {
 	public static void load(StaticFunctionMapP_VECS_E staticFunctionMapP_VECS_E) {
 		// TODO Auto-generated method stub
 		//稍后封装
-		staticFunctionMapP_VECS_E.annotationMap.put("aNNTest", "string");
-		staticFunctionMapP_VECS_E.annotationMap.put("dNNTest", "string");
-		staticFunctionMapP_VECS_E.annotationMap.put("rNNTest", "string");
-		staticFunctionMapP_VECS_E.annotationMap.put("sensingTest", "string");
-		staticFunctionMapP_VECS_E.annotationMap.put("educationLevelTest", "input");
-		staticFunctionMapP_VECS_E.annotationMap.put("literarinessLevelTest", "input");
-		staticFunctionMapP_VECS_E.annotationMap.put("successICATest", "input");
-		staticFunctionMapP_VECS_E.annotationMap.put("getSideEnd2D", "list:scale");
-		staticFunctionMapP_VECS_E.annotationMap.put("getSideEnd3D", "list:scale");
-		staticFunctionMapP_VECS_E.annotationMap.put("addNewPositionWithoutHeart", "groups:position2D:scaleDistance");
-		staticFunctionMapP_VECS_E.annotationMap.put("addNewPositionWithHeart", "groups:position2D:hearts:scaleDistance");
-		staticFunctionMapP_VECS_E.annotationMap.put("getShortestSamplePosition2DGroup", "inputHeart:groups");
-		staticFunctionMapP_VECS_E.annotationMap.put("getShorterSamplePosition2DGroupsWithScale", "inputHeart:groups:scale");
-		staticFunctionMapP_VECS_E.annotationMap.put("getShortestSamplePosition3DGroup", "inputHeart:groups");
-		staticFunctionMapP_VECS_E.annotationMap.put("getShortestSamplePosition3DGroupsWithScale", "inputHeart:groups:scale");
-		staticFunctionMapP_VECS_E.annotationMap.put("fissilePosition2D", "groups:scale");
-		staticFunctionMapP_VECS_E.annotationMap.put("fissilePosition3D", "groups:scale");
-		staticFunctionMapP_VECS_E.annotationMap.put("fusionPosition2DwithHeart", "groups:groupsHeart：scale");
-		staticFunctionMapP_VECS_E.annotationMap.put("fusionPosition3DwithHeart", "groups:groupsHeart:scale");
-		staticFunctionMapP_VECS_E.annotationMap.put("getTSPIsolationGroups2D", "groups:scale");
-		staticFunctionMapP_VECS_E.annotationMap.put("getTSPIsolationGroups3D", "groups:scale");
-		staticFunctionMapP_VECS_E.annotationMap.put("getTSPForestIsolationGroups2D", "groups:scale");
-		staticFunctionMapP_VECS_E.annotationMap.put("getTSPForestIsolationGroups3D", "groups:scale");
-		staticFunctionMapP_VECS_E.annotationMap.put("trackTracePosition2DHeartsWithSingerGroup", "coods");
-		staticFunctionMapP_VECS_E.annotationMap.put("trackTracePosition3DHeartsWithSingerGroup", "coods");
-		staticFunctionMapP_VECS_E.annotationMap.put("trackTracePosition2DByHearts", "hearts");
-		staticFunctionMapP_VECS_E.annotationMap.put("trackTracePosition3DByHearts", "hearts");
-		staticFunctionMapP_VECS_E.annotationMap.put("trackTracePosition2DHeartsWithFissileGroups", "coods:distanceScale");
-		staticFunctionMapP_VECS_E.annotationMap.put("trackTracePosition3DHeartsWithFissileGroups", "coods:distanceScale");
-		staticFunctionMapP_VECS_E.annotationMap.put("findMeanDistanceFromPositions2D", "position2Ds:oberserverPCAScale:sortRangeScale");
-		staticFunctionMapP_VECS_E.annotationMap.put("findMeanDistanceFromPositions3D", "position3Ds:oberserverPCAScale:sortRangeScale");
-		staticFunctionMapP_VECS_E.annotationMap.put("findPascalMeanDistanceByEachPositions2D", "position2Ds:oberserverPCAScale:sortRangeScale");
-		staticFunctionMapP_VECS_E.annotationMap.put("findPascalMeanDistanceByEachPositions3D", "position3Ds:oberserverPCAScale:sortRangeScale");
-		staticFunctionMapP_VECS_E.annotationMap.put("getPosition2DsGroupPascalHearts", "groups:scale");
-		staticFunctionMapP_VECS_E.annotationMap.put("getPosition3DsGroupPascalHearts", "groups:scale");
-		staticFunctionMapP_VECS_E.annotationMap.put("getPosition2DsGroupPascalMids", "groups:scale");
+		StaticFunctionMapP_VECS_C.annotationMap.put("aNNTest", "string");
+		StaticFunctionMapP_VECS_C.annotationMap.put("dNNTest", "string");
+		StaticFunctionMapP_VECS_C.annotationMap.put("rNNTest", "string");
+		StaticFunctionMapP_VECS_C.annotationMap.put("sensingTest", "string");
+		StaticFunctionMapP_VECS_C.annotationMap.put("educationLevelTest", "input");
+		StaticFunctionMapP_VECS_C.annotationMap.put("literarinessLevelTest", "input");
+		StaticFunctionMapP_VECS_C.annotationMap.put("successICATest", "input");
+		StaticFunctionMapP_VECS_C.annotationMap.put("getSideEnd2D", "list:scale");
+		StaticFunctionMapP_VECS_C.annotationMap.put("getSideEnd3D", "list:scale");
+		StaticFunctionMapP_VECS_C.annotationMap.put("addNewPositionWithoutHeart", "groups:position2D:scaleDistance");
+		StaticFunctionMapP_VECS_C.annotationMap.put("addNewPositionWithHeart", "groups:position2D:hearts:scaleDistance");
+		StaticFunctionMapP_VECS_C.annotationMap.put("getShortestSamplePosition2DGroup", "inputHeart:groups");
+		StaticFunctionMapP_VECS_C.annotationMap.put("getShorterSamplePosition2DGroupsWithScale", "inputHeart:groups:scale");
+		StaticFunctionMapP_VECS_C.annotationMap.put("getShortestSamplePosition3DGroup", "inputHeart:groups");
+		StaticFunctionMapP_VECS_C.annotationMap.put("getShortestSamplePosition3DGroupsWithScale", "inputHeart:groups:scale");
+		StaticFunctionMapP_VECS_C.annotationMap.put("fissilePosition2D", "groups:scale");
+		StaticFunctionMapP_VECS_C.annotationMap.put("fissilePosition3D", "groups:scale");
+		StaticFunctionMapP_VECS_C.annotationMap.put("fusionPosition2DwithHeart", "groups:groupsHeart：scale");
+		StaticFunctionMapP_VECS_C.annotationMap.put("fusionPosition3DwithHeart", "groups:groupsHeart:scale");
+		StaticFunctionMapP_VECS_C.annotationMap.put("getTSPIsolationGroups2D", "groups:scale");
+		StaticFunctionMapP_VECS_C.annotationMap.put("getTSPIsolationGroups3D", "groups:scale");
+		StaticFunctionMapP_VECS_C.annotationMap.put("getTSPForestIsolationGroups2D", "groups:scale");
+		StaticFunctionMapP_VECS_C.annotationMap.put("getTSPForestIsolationGroups3D", "groups:scale");
+		StaticFunctionMapP_VECS_C.annotationMap.put("trackTracePosition2DHeartsWithSingerGroup", "coods");
+		StaticFunctionMapP_VECS_C.annotationMap.put("trackTracePosition3DHeartsWithSingerGroup", "coods");
+		StaticFunctionMapP_VECS_C.annotationMap.put("trackTracePosition2DByHearts", "hearts");
+		StaticFunctionMapP_VECS_C.annotationMap.put("trackTracePosition3DByHearts", "hearts");
+		StaticFunctionMapP_VECS_C.annotationMap.put("trackTracePosition2DHeartsWithFissileGroups", "coods:distanceScale");
+		StaticFunctionMapP_VECS_C.annotationMap.put("trackTracePosition3DHeartsWithFissileGroups", "coods:distanceScale");
+		StaticFunctionMapP_VECS_C.annotationMap.put("findMeanDistanceFromPositions2D", "position2Ds:oberserverPCAScale:sortRangeScale");
+		StaticFunctionMapP_VECS_C.annotationMap.put("findMeanDistanceFromPositions3D", "position3Ds:oberserverPCAScale:sortRangeScale");
+		StaticFunctionMapP_VECS_C.annotationMap.put("findPascalMeanDistanceByEachPositions2D", "position2Ds:oberserverPCAScale:sortRangeScale");
+		StaticFunctionMapP_VECS_C.annotationMap.put("findPascalMeanDistanceByEachPositions3D", "position3Ds:oberserverPCAScale:sortRangeScale");
+		StaticFunctionMapP_VECS_C.annotationMap.put("getPosition2DsGroupPascalHearts", "groups:scale");
+		StaticFunctionMapP_VECS_C.annotationMap.put("getPosition3DsGroupPascalHearts", "groups:scale");
+		StaticFunctionMapP_VECS_C.annotationMap.put("getPosition2DsGroupPascalMids", "groups:scale");
 	
-		staticFunctionMapP_VECS_E.annotationMap.put("getPosition3DsGroupPascalMids", "groups:scale");
-		staticFunctionMapP_VECS_E.annotationMap.put("getPosition2DsGroupPascalDirection", "pascalHearts:pascalMids");
-		staticFunctionMapP_VECS_E.annotationMap.put("getPosition3DsGroupPascalDirection", "pascalHearts:pascalMids");
-		staticFunctionMapP_VECS_E.annotationMap.put("getPosition3DsGroupPascalDirection", "groups:scale");
-		staticFunctionMapP_VECS_E.annotationMap.put("getPosition2DsGroupPascalDirection", "groups:scale");
-		staticFunctionMapP_VECS_E.annotationMap.put("getYaoguangLuo2DEulerRingTSP", "AMV_MVS_VSQs");
-		staticFunctionMapP_VECS_E.annotationMap.put("getYaoguangLuo3DEulerRingTSP", "AMV_MVS_VSQs");
-		staticFunctionMapP_VECS_E.annotationMap.put("getYaoguangLuo2DEulerRingTSP2D", "AMV_MVS_VSQs");
-		staticFunctionMapP_VECS_E.annotationMap.put("getYaoguangLuo3DEulerRingTSP2D", "AMV_MVS_VSQs");
-		staticFunctionMapP_VECS_E.annotationMap.put("getYaoguangLuo2DEulerRingTSP3D", "positions:sortRangeScale:sortDeepsScale");
-		staticFunctionMapP_VECS_E.annotationMap.put("getYaoguangLuo3DEulerRingTSP3D", "positions:sortRangeScale:sortDeepsScale");
+		StaticFunctionMapP_VECS_C.annotationMap.put("getPosition3DsGroupPascalMids", "groups:scale");
+		StaticFunctionMapP_VECS_C.annotationMap.put("getPosition2DsGroupPascalDirection", "pascalHearts:pascalMids");
+		StaticFunctionMapP_VECS_C.annotationMap.put("getPosition3DsGroupPascalDirection", "pascalHearts:pascalMids");
+		StaticFunctionMapP_VECS_C.annotationMap.put("getPosition3DsGroupPascalDirection", "groups:scale");
+		StaticFunctionMapP_VECS_C.annotationMap.put("getPosition2DsGroupPascalDirection", "groups:scale");
+		StaticFunctionMapP_VECS_C.annotationMap.put("getYaoguangLuo2DEulerRingTSP", "AMV_MVS_VSQs");
+		StaticFunctionMapP_VECS_C.annotationMap.put("getYaoguangLuo3DEulerRingTSP", "AMV_MVS_VSQs");
+		StaticFunctionMapP_VECS_C.annotationMap.put("getYaoguangLuo2DEulerRingTSP2D", "AMV_MVS_VSQs");
+		StaticFunctionMapP_VECS_C.annotationMap.put("getYaoguangLuo3DEulerRingTSP2D", "AMV_MVS_VSQs");
+		StaticFunctionMapP_VECS_C.annotationMap.put("getYaoguangLuo2DEulerRingTSP3D", "positions:sortRangeScale:sortDeepsScale");
+		StaticFunctionMapP_VECS_C.annotationMap.put("getYaoguangLuo3DEulerRingTSP3D", "positions:sortRangeScale:sortDeepsScale");
 		
-		staticFunctionMapP_VECS_E.annotationMap.put("getImagePix2DGroupFilter", "inputPixMatrix:RBG:distanceScale:max:min");
-		staticFunctionMapP_VECS_E.annotationMap.put("getImagePix3DGroupFilter", "inputPixMatrix:RBG:distanceScale:max:min");
-		staticFunctionMapP_VECS_E.annotationMap.put("NLPBestSentenceMatch", "searchString:sampleSentences");
-		staticFunctionMapP_VECS_E.annotationMap.put("NLPBestSentencesMatch", "searchString:sampleSentences:sortStackRange:filterRate");
-		staticFunctionMapP_VECS_E.annotationMap.put("getNLPBestSentencesMatchScore", "searchString:sampleSentences");
-		staticFunctionMapP_VECS_E.annotationMap.put("getNLPBestSentencesMatchScoreRights", "searchString:sampleSentences:_A:nlp:keyMap");
-		staticFunctionMapP_VECS_E.annotationMap.put("getErrorAsserts", "inputValue:matchValues:scale");
-		staticFunctionMapP_VECS_E.annotationMap.put("getBinaryErrorAsserts", "inputValue:matchValues:scale:sortStackRange:isSort");
-		staticFunctionMapP_VECS_E.annotationMap.put("findTotalIncrementWithScale", "value:times:scale");
-		staticFunctionMapP_VECS_E.annotationMap.put("findMeanIncrementWithScale", "value:times:scale");
-		staticFunctionMapP_VECS_E.annotationMap.put("findMeanOfFilterDoubleArrayWithScale", "input:filterScale:sortRangeScale");
-		staticFunctionMapP_VECS_E.annotationMap.put("findMeanOfDoubleArray", "input");
-		staticFunctionMapP_VECS_E.annotationMap.put("findMeanOfTwoDoubleArray", "origin:input");
-		staticFunctionMapP_VECS_E.annotationMap.put("findMeanOfTwoDoubleArray2D", "origin:input");
-		staticFunctionMapP_VECS_E.annotationMap.put("findMeanOfDoubleMatrix2D", "input");
-		staticFunctionMapP_VECS_E.annotationMap.put("findRowMeanOfDoubleMatrix2D", "input");
-		staticFunctionMapP_VECS_E.annotationMap.put("findCulumnMeanOfDoubleMatrix2D", "input");
-		staticFunctionMapP_VECS_E.annotationMap.put("findMeanOfDoubleMatrix3D", "input");
-		staticFunctionMapP_VECS_E.annotationMap.put("findMeanOfDoubleList", "input");
-		staticFunctionMapP_VECS_E.annotationMap.put("findMeanOfMartrix1DList", "input");
-		staticFunctionMapP_VECS_E.annotationMap.put("findMeanOfMartrix2DList", "input");
-		staticFunctionMapP_VECS_E.annotationMap.put("findSumOfDoubleArray", "input");	
-		staticFunctionMapP_VECS_E.annotationMap.put("findSumOfTwoDoubleArray", "origin,input");
-		staticFunctionMapP_VECS_E.annotationMap.put("findSumOfTwoDoubleArray2D", "origin,input");
+		StaticFunctionMapP_VECS_C.annotationMap.put("getImagePix2DGroupFilter", "inputPixMatrix:RBG:distanceScale:max:min");
+		StaticFunctionMapP_VECS_C.annotationMap.put("getImagePix3DGroupFilter", "inputPixMatrix:RBG:distanceScale:max:min");
+		StaticFunctionMapP_VECS_C.annotationMap.put("NLPBestSentenceMatch", "searchString:sampleSentences");
+		StaticFunctionMapP_VECS_C.annotationMap.put("NLPBestSentencesMatch", "searchString:sampleSentences:sortStackRange:filterRate");
+		StaticFunctionMapP_VECS_C.annotationMap.put("getNLPBestSentencesMatchScore", "searchString:sampleSentences");
+		StaticFunctionMapP_VECS_C.annotationMap.put("getNLPBestSentencesMatchScoreRights", "searchString:sampleSentences:_A:nlp:keyMap");
+		StaticFunctionMapP_VECS_C.annotationMap.put("getErrorAsserts", "inputValue:matchValues:scale");
+		StaticFunctionMapP_VECS_C.annotationMap.put("getBinaryErrorAsserts", "inputValue:matchValues:scale:sortStackRange:isSort");
+		StaticFunctionMapP_VECS_C.annotationMap.put("findTotalIncrementWithScale", "value:times:scale");
+		StaticFunctionMapP_VECS_C.annotationMap.put("findMeanIncrementWithScale", "value:times:scale");
+		StaticFunctionMapP_VECS_C.annotationMap.put("findMeanOfFilterDoubleArrayWithScale", "input:filterScale:sortRangeScale");
+		StaticFunctionMapP_VECS_C.annotationMap.put("findMeanOfDoubleArray", "input");
+		StaticFunctionMapP_VECS_C.annotationMap.put("findMeanOfTwoDoubleArray", "origin:input");
+		StaticFunctionMapP_VECS_C.annotationMap.put("findMeanOfTwoDoubleArray2D", "origin:input");
+		StaticFunctionMapP_VECS_C.annotationMap.put("findMeanOfDoubleMatrix2D", "input");
+		StaticFunctionMapP_VECS_C.annotationMap.put("findRowMeanOfDoubleMatrix2D", "input");
+		StaticFunctionMapP_VECS_C.annotationMap.put("findCulumnMeanOfDoubleMatrix2D", "input");
+		StaticFunctionMapP_VECS_C.annotationMap.put("findMeanOfDoubleMatrix3D", "input");
+		StaticFunctionMapP_VECS_C.annotationMap.put("findMeanOfDoubleList", "input");
+		StaticFunctionMapP_VECS_C.annotationMap.put("findMeanOfMartrix1DList", "input");
+		StaticFunctionMapP_VECS_C.annotationMap.put("findMeanOfMartrix2DList", "input");
+		StaticFunctionMapP_VECS_C.annotationMap.put("findSumOfDoubleArray", "input");	
+		StaticFunctionMapP_VECS_C.annotationMap.put("findSumOfTwoDoubleArray", "origin,input");
+		StaticFunctionMapP_VECS_C.annotationMap.put("findSumOfTwoDoubleArray2D", "origin,input");
 		
 	 
-		staticFunctionMapP_VECS_E.annotationMap.put("findSumOfDoubleMatrix2D", "input");
-		staticFunctionMapP_VECS_E.annotationMap.put("findRowSumOfDoubleMatrix2D", "input");
-		staticFunctionMapP_VECS_E.annotationMap.put("findCulumnSumOfDoubleMatrix2D", "input");
-		staticFunctionMapP_VECS_E.annotationMap.put("findSumOfDoubleMatrix3D", "input");
-		staticFunctionMapP_VECS_E.annotationMap.put("findSumOfDoubleList", "input");
-		staticFunctionMapP_VECS_E.annotationMap.put("findSumOfMartrix1DList", "input");
-		staticFunctionMapP_VECS_E.annotationMap.put("findSumOfMartrix2DList", "input");
-		staticFunctionMapP_VECS_E.annotationMap.put("getShareholdCount", "input:sharehold");
+		StaticFunctionMapP_VECS_C.annotationMap.put("findSumOfDoubleMatrix2D", "input");
+		StaticFunctionMapP_VECS_C.annotationMap.put("findRowSumOfDoubleMatrix2D", "input");
+		StaticFunctionMapP_VECS_C.annotationMap.put("findCulumnSumOfDoubleMatrix2D", "input");
+		StaticFunctionMapP_VECS_C.annotationMap.put("findSumOfDoubleMatrix3D", "input");
+		StaticFunctionMapP_VECS_C.annotationMap.put("findSumOfDoubleList", "input");
+		StaticFunctionMapP_VECS_C.annotationMap.put("findSumOfMartrix1DList", "input");
+		StaticFunctionMapP_VECS_C.annotationMap.put("findSumOfMartrix2DList", "input");
+		StaticFunctionMapP_VECS_C.annotationMap.put("getShareholdCount", "input:sharehold");
 		
-		staticFunctionMapP_VECS_E.annotationMap.put("encodeEstimateSumOfScoresList", "scores:estimateValue");
-		staticFunctionMapP_VECS_E.annotationMap.put("encodeEstimateSumOfScoresArray", "scores:estimateValue");
-		staticFunctionMapP_VECS_E.annotationMap.put("getEstimateCartesianSumOfScoresArray", "input:EstimateRatios:estimateValue");
-		staticFunctionMapP_VECS_E.annotationMap.put("getEstimateCartesian1DSumOfScoresArray", "inputs:EstimateRatios:estimateValue");
-		staticFunctionMapP_VECS_E.annotationMap.put("encodeEstimateInitonsScore", "input:EstimateRatios:estimateValue");
+		StaticFunctionMapP_VECS_C.annotationMap.put("encodeEstimateSumOfScoresList", "scores:estimateValue");
+		StaticFunctionMapP_VECS_C.annotationMap.put("encodeEstimateSumOfScoresArray", "scores:estimateValue");
+		StaticFunctionMapP_VECS_C.annotationMap.put("getEstimateCartesianSumOfScoresArray", "input:EstimateRatios:estimateValue");
+		StaticFunctionMapP_VECS_C.annotationMap.put("getEstimateCartesian1DSumOfScoresArray", "inputs:EstimateRatios:estimateValue");
+		StaticFunctionMapP_VECS_C.annotationMap.put("encodeEstimateInitonsScore", "input:EstimateRatios:estimateValue");
 		
-		staticFunctionMapP_VECS_E.annotationMap.put("decodeEstimateInitonsScore", "input:EstimateRatios:estimateValue");
-		staticFunctionMapP_VECS_E.annotationMap.put("getRightsEstimateScore", "inputs:rights");
-		staticFunctionMapP_VECS_E.annotationMap.put("getSimilarFuzzSetWithScale", "input:groups:scale");
-		staticFunctionMapP_VECS_E.annotationMap.put("getDistanceRatio2D", "begin:end");
-		staticFunctionMapP_VECS_E.annotationMap.put("getARCDistanceRatio2D", "begin:end");
-		staticFunctionMapP_VECS_E.annotationMap.put("getTrueARCDistanceRatio2D", "begin:end");
-		staticFunctionMapP_VECS_E.annotationMap.put("getDistanceRatio3D", "begin:end");
-		staticFunctionMapP_VECS_E.annotationMap.put("getTrueARCDistanceRatio3D", "begin:end");
-		staticFunctionMapP_VECS_E.annotationMap.put("getPercentListByOuterKey", "array");
-		staticFunctionMapP_VECS_E.annotationMap.put("kernel", "output:array:j");
-		staticFunctionMapP_VECS_E.annotationMap.put("kernelFix", "output:array:j");
-		staticFunctionMapP_VECS_E.annotationMap.put("findTotalIncrementRatioWithScale"
+		StaticFunctionMapP_VECS_C.annotationMap.put("decodeEstimateInitonsScore", "input:EstimateRatios:estimateValue");
+		StaticFunctionMapP_VECS_C.annotationMap.put("getRightsEstimateScore", "inputs:rights");
+		StaticFunctionMapP_VECS_C.annotationMap.put("getSimilarFuzzSetWithScale", "input:groups:scale");
+		StaticFunctionMapP_VECS_C.annotationMap.put("getDistanceRatio2D", "begin:end");
+		StaticFunctionMapP_VECS_C.annotationMap.put("getARCDistanceRatio2D", "begin:end");
+		StaticFunctionMapP_VECS_C.annotationMap.put("getTrueARCDistanceRatio2D", "begin:end");
+		StaticFunctionMapP_VECS_C.annotationMap.put("getDistanceRatio3D", "begin:end");
+		StaticFunctionMapP_VECS_C.annotationMap.put("getTrueARCDistanceRatio3D", "begin:end");
+		StaticFunctionMapP_VECS_C.annotationMap.put("getPercentListByOuterKey", "array");
+		StaticFunctionMapP_VECS_C.annotationMap.put("kernel", "output:array:j");
+		StaticFunctionMapP_VECS_C.annotationMap.put("kernelFix", "output:array:j");
+		StaticFunctionMapP_VECS_C.annotationMap.put("findTotalIncrementRatioWithScale"
 				, "value:times:scale");
-		staticFunctionMapP_VECS_E.annotationMap.put("findMeanIncrementRatioWithScale"
+		StaticFunctionMapP_VECS_C.annotationMap.put("findMeanIncrementRatioWithScale"
 				, "value:times:scale");
-		staticFunctionMapP_VECS_E.annotationMap.put("frequencyUpSplit"
+		StaticFunctionMapP_VECS_C.annotationMap.put("frequencyUpSplit"
 				, "originFrequency:compareFrequency");
-		staticFunctionMapP_VECS_E.annotationMap.put("frequencyDownSplit"
+		StaticFunctionMapP_VECS_C.annotationMap.put("frequencyDownSplit"
 				, "originFrequency:compareFrequency");
-		staticFunctionMapP_VECS_E.annotationMap.put("frequencyUpSplitWithScale"
+		StaticFunctionMapP_VECS_C.annotationMap.put("frequencyUpSplitWithScale"
 				, "originFrequency:compareFrequency:scale");
-		staticFunctionMapP_VECS_E.annotationMap.put("frequencyDownSplitWithScale"
+		StaticFunctionMapP_VECS_C.annotationMap.put("frequencyDownSplitWithScale"
 				, "originFrequency:compareFrequency:scale");
 
 	
 
-		staticFunctionMapP_VECS_E.annotationMap.put("predictionResult"
+		StaticFunctionMapP_VECS_C.annotationMap.put("predictionResult"
 				, "input:groups:scale");
-		staticFunctionMapP_VECS_E.annotationMap.put("predictionMatrixResult"
+		StaticFunctionMapP_VECS_C.annotationMap.put("predictionMatrixResult"
 				, "input:groups:scale");
-		staticFunctionMapP_VECS_E.annotationMap.put("getImagePixClassificationMap"
+		StaticFunctionMapP_VECS_C.annotationMap.put("getImagePixClassificationMap"
 				, "pixMap");
-		staticFunctionMapP_VECS_E.annotationMap.put("getVWaveFromImagePix"
+		StaticFunctionMapP_VECS_C.annotationMap.put("getVWaveFromImagePix"
 				, "pixMap:RGB");
-		staticFunctionMapP_VECS_E.annotationMap.put("getHWaveFromImagePix"
+		StaticFunctionMapP_VECS_C.annotationMap.put("getHWaveFromImagePix"
 				, "pixMap:RGB");
-		staticFunctionMapP_VECS_E.annotationMap.put("getPixPercentByDeterPix"
+		StaticFunctionMapP_VECS_C.annotationMap.put("getPixPercentByDeterPix"
 				, "imagePix:scaleRBG");
-		staticFunctionMapP_VECS_E.annotationMap.put("getClusterPercentByDeterPixGroup"
+		StaticFunctionMapP_VECS_C.annotationMap.put("getClusterPercentByDeterPixGroup"
 				, "imagePix:scaleSUM");
-		staticFunctionMapP_VECS_E.annotationMap.put("getPixPercentByDeterPixGroup"
+		StaticFunctionMapP_VECS_C.annotationMap.put("getPixPercentByDeterPixGroup"
 				, "imagePix:scaleSUM");
-		staticFunctionMapP_VECS_E.annotationMap.put("filterFusion2DSetsWithCountScale"
+		StaticFunctionMapP_VECS_C.annotationMap.put("filterFusion2DSetsWithCountScale"
 				, "groups:countScale");
-		staticFunctionMapP_VECS_E.annotationMap.put("filterFusion3DSetsWithCountScale"
+		StaticFunctionMapP_VECS_C.annotationMap.put("filterFusion3DSetsWithCountScale"
 				, "groups:countScale");
-		staticFunctionMapP_VECS_E.annotationMap.put("filterPosition2DsWithScaledDistance"
+		StaticFunctionMapP_VECS_C.annotationMap.put("filterPosition2DsWithScaledDistance"
 				, "input:heart:scaleDistacne");
-		staticFunctionMapP_VECS_E.annotationMap.put("filterPosition3DsWithScaledDistance"
+		StaticFunctionMapP_VECS_C.annotationMap.put("filterPosition3DsWithScaledDistance"
 				, "input:heart:scaleDistacne");
-		staticFunctionMapP_VECS_E.annotationMap.put("filterPosition2DsWithScaledDistance"
+		StaticFunctionMapP_VECS_C.annotationMap.put("filterPosition2DsWithScaledDistance"
 				, "input:heart:scaleDistacne");
-		staticFunctionMapP_VECS_E.annotationMap.put("filterPosition3DsWithScaledDistance"
+		StaticFunctionMapP_VECS_C.annotationMap.put("filterPosition3DsWithScaledDistance"
 				, "input:heart:scaleDistacne");
-		staticFunctionMapP_VECS_E.annotationMap.put("getPercentListByOuterKey", "list:key");
-		staticFunctionMapP_VECS_E.annotationMap.put("getPercentArrayByOuterKey", "array:key");
-		staticFunctionMapP_VECS_E.annotationMap.put("getEachPercentSetOfArray", "array");
-		staticFunctionMapP_VECS_E.annotationMap.put("getPercentArrayByOuterKey", "array:key");
+		StaticFunctionMapP_VECS_C.annotationMap.put("getPercentListByOuterKey", "list:key");
+		StaticFunctionMapP_VECS_C.annotationMap.put("getPercentArrayByOuterKey", "array:key");
+		StaticFunctionMapP_VECS_C.annotationMap.put("getEachPercentSetOfArray", "array");
+		StaticFunctionMapP_VECS_C.annotationMap.put("getPercentArrayByOuterKey", "array:key");
 	}	
 
 

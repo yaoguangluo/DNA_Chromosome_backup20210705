@@ -3,6 +3,7 @@ package SEM.bloom;
 import java.awt.Container;
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.swing.JTextPane;
@@ -17,6 +18,7 @@ import PEI.thread.MakeContainerSJFX;
 
 //著作权人+ 作者= 罗瑶光
 public interface StaticFunctionMapV_IDUQ_C {
+	public static Map<String, String> annotationMap= new HashMap<>();
 	@SuppressWarnings("unchecked")
 	public static void callFunction(String callFunctionKey, StaticFunctionMapV_IDUQ_E staticFunctionMapV_IDUQ_C
 			, Map<String, Object> output) throws IOException {
@@ -89,14 +91,14 @@ public interface StaticFunctionMapV_IDUQ_C {
 	}
 	public static void load(StaticFunctionMapV_IDUQ_E staticFunctionMapV_IDUQ_E) {
 		//稍后封装
-		staticFunctionMapV_IDUQ_E.annotationMap.put("初始ETL", "app:jpanelSecond"); 
-		staticFunctionMapV_IDUQ_E.annotationMap.put("仅仅初始ETL", "tableData_old:text:u:_A:pos"); 
-		staticFunctionMapV_IDUQ_E.annotationMap.put("展示ETL", "void"); 
-		staticFunctionMapV_IDUQ_E.annotationMap.put("ETL文档读取", "void"); 
-		staticFunctionMapV_IDUQ_E.annotationMap.put("ETL文档执行", "void"); 
-		staticFunctionMapV_IDUQ_E.annotationMap.put("ETL文档保存", "void"); 
-		staticFunctionMapV_IDUQ_E.annotationMap.put("getOrigianlTextByLock", "inputString:lockString"); 
-		staticFunctionMapV_IDUQ_E.annotationMap.put("Load", "first:nodeView:file:thislist"); 
+		StaticFunctionMapV_IDUQ_C.annotationMap.put("初始ETL", "app:jpanelSecond"); 
+		StaticFunctionMapV_IDUQ_C.annotationMap.put("仅仅初始ETL", "tableData_old:text:u:_A:pos"); 
+		StaticFunctionMapV_IDUQ_C.annotationMap.put("展示ETL", "void"); 
+		StaticFunctionMapV_IDUQ_C.annotationMap.put("ETL文档读取", "void"); 
+		StaticFunctionMapV_IDUQ_C.annotationMap.put("ETL文档执行", "void"); 
+		StaticFunctionMapV_IDUQ_C.annotationMap.put("ETL文档保存", "void"); 
+		StaticFunctionMapV_IDUQ_C.annotationMap.put("getOrigianlTextByLock", "inputString:lockString"); 
+		StaticFunctionMapV_IDUQ_C.annotationMap.put("Load", "first:nodeView:file:thislist"); 
 	}
 
 	public MakeContainerSJFX 初始ETL(App app, Container jpanelSecond);

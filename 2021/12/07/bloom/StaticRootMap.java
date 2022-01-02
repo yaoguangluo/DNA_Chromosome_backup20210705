@@ -12,7 +12,7 @@ public class StaticRootMap{
 
 	public static Map<String, StaticClassMap>  staticRootMap;
 
-	public void initMap() throws Exception {
+	public static void initMap() throws Exception {
 		staticRootMap= new HashMap<>();
 
 		StaticClassMap map_A_VECS= new StaticClassMap("A_VECS");
@@ -87,85 +87,85 @@ public class StaticRootMap{
 		String[] strings= shellCommands;
 		Map<String, Object> output= shellOutput;
 		//开始设计传参。
-		StaticRootMap staticRootMap= new StaticRootMap();
-		staticRootMap.initMap();
+//		StaticRootMap staticRootMap= new StaticRootMap();
+//		staticRootMap.initMap();
 		for(String string:strings) {
-			Iterator<String> iterator= staticRootMap.staticRootMap.keySet().iterator();
+			Iterator<String> iterator= StaticRootMap.staticRootMap.keySet().iterator();
 			while(iterator.hasNext()) {
 				String callMapKey= iterator.next();
 				//case 染色体接口
 				if(string.contains(callMapKey)) {
 					if(callMapKey.equalsIgnoreCase("U_VECS")) {
-						doU_VECS_Case(staticRootMap.staticRootMap, string, output);
+						doU_VECS_Case(StaticRootMap.staticRootMap, string, output);
 					}
 					if(callMapKey.equalsIgnoreCase("U_AOPM")) {
-						doU_AOPM_Case(staticRootMap.staticRootMap, string, output);//稍后分出去
+						doU_AOPM_Case(StaticRootMap.staticRootMap, string, output);//稍后分出去
 					}
 					if(callMapKey.equalsIgnoreCase("A_VECS")) {
-						doA_VECS_Case(staticRootMap.staticRootMap, string, output);
+						doA_VECS_Case(StaticRootMap.staticRootMap, string, output);
 					}
 					if(callMapKey.equalsIgnoreCase("A_IDUQ")) {
-						doA_IDUQ_Case(staticRootMap.staticRootMap, string, output);
+						doA_IDUQ_Case(StaticRootMap.staticRootMap, string, output);
 					}
 					if(callMapKey.equalsIgnoreCase("O_VECS")) {
-						doO_VECS_Case(staticRootMap.staticRootMap, string, output);
+						doO_VECS_Case(StaticRootMap.staticRootMap, string, output);
 					}
 					if(callMapKey.equalsIgnoreCase("O_IDUQ")) {
-						doO_IDUQ_Case(staticRootMap.staticRootMap, string, output);
+						doO_IDUQ_Case(StaticRootMap.staticRootMap, string, output);
 					}
 					if(callMapKey.equalsIgnoreCase("P_VECS")) {
-						doP_VECS_Case(staticRootMap.staticRootMap, string, output);
+						doP_VECS_Case(StaticRootMap.staticRootMap, string, output);
 					}
 					if(callMapKey.equalsIgnoreCase("P_IDUQ")) {
-						doP_IDUQ_Case(staticRootMap.staticRootMap, string, output);
+						doP_IDUQ_Case(StaticRootMap.staticRootMap, string, output);
 					}
 					if(callMapKey.equalsIgnoreCase("M_VECS")) {
-						doM_VECS_Case(staticRootMap.staticRootMap, string, output);
+						doM_VECS_Case(StaticRootMap.staticRootMap, string, output);
 					}
 					if(callMapKey.equalsIgnoreCase("M_IDUQ")) {
-						doM_IDUQ_Case(staticRootMap.staticRootMap, string, output);
+						doM_IDUQ_Case(StaticRootMap.staticRootMap, string, output);
 					}
 					if(callMapKey.equalsIgnoreCase("V_AOPM")) {
-						doV_AOPM_Case(staticRootMap.staticRootMap, string, output);
+						doV_AOPM_Case(StaticRootMap.staticRootMap, string, output);
 					}
 					if(callMapKey.equalsIgnoreCase("V_IDUQ")) {
-						doV_IDUQ_Case(staticRootMap.staticRootMap, string, output);
+						doV_IDUQ_Case(StaticRootMap.staticRootMap, string, output);
 					}
 					if(callMapKey.equalsIgnoreCase("E_AOPM")) {
-						doE_AOPM_Case(staticRootMap.staticRootMap, string, output);
+						doE_AOPM_Case(StaticRootMap.staticRootMap, string, output);
 					}
 					if(callMapKey.equalsIgnoreCase("E_IDUQ")) {
-						doE_IDUQ_Case(staticRootMap.staticRootMap, string, output);
+						doE_IDUQ_Case(StaticRootMap.staticRootMap, string, output);
 					}
 					if(callMapKey.equalsIgnoreCase("C_AOPM")) {
-						doC_AOPM_Case(staticRootMap.staticRootMap, string, output);
+						doC_AOPM_Case(StaticRootMap.staticRootMap, string, output);
 					}
 					if(callMapKey.equalsIgnoreCase("C_IDUQ")) {
-						doC_IDUQ_Case(staticRootMap.staticRootMap, string, output);
+						doC_IDUQ_Case(StaticRootMap.staticRootMap, string, output);
 					}
 					if(callMapKey.equalsIgnoreCase("S_AOPM")) {
-						doS_AOPM_Case(staticRootMap.staticRootMap, string, output);
+						doS_AOPM_Case(StaticRootMap.staticRootMap, string, output);
 					}
 					if(callMapKey.equalsIgnoreCase("S_IDUQ")) {
-						doS_IDUQ_Case(staticRootMap.staticRootMap, string, output);
+						doS_IDUQ_Case(StaticRootMap.staticRootMap, string, output);
 					}
 					if(callMapKey.equalsIgnoreCase("I_AOPM")) {
-						doI_AOPM_Case(staticRootMap.staticRootMap, string, output);
+						doI_AOPM_Case(StaticRootMap.staticRootMap, string, output);
 					}
 					if(callMapKey.equalsIgnoreCase("I_VECS")) {
-						doI_VECS_Case(staticRootMap.staticRootMap, string, output);
+						doI_VECS_Case(StaticRootMap.staticRootMap, string, output);
 					}
 					if(callMapKey.equalsIgnoreCase("D_AOPM")) {
-						doD_AOPM_Case(staticRootMap.staticRootMap, string, output);
+						doD_AOPM_Case(StaticRootMap.staticRootMap, string, output);
 					}
 					if(callMapKey.equalsIgnoreCase("D_VECS")) {
-						doD_VECS_Case(staticRootMap.staticRootMap, string, output);
+						doD_VECS_Case(StaticRootMap.staticRootMap, string, output);
 					}
 					if(callMapKey.equalsIgnoreCase("Q_AOPM")) {
-						doQ_AOPM_Case(staticRootMap.staticRootMap, string, output);
+						doQ_AOPM_Case(StaticRootMap.staticRootMap, string, output);
 					}
 					if(callMapKey.equalsIgnoreCase("Q_VECS")) {
-						doQ_VECS_Case(staticRootMap.staticRootMap, string, output);
+						doQ_VECS_Case(StaticRootMap.staticRootMap, string, output);
 					}
 				}
 			}
@@ -176,8 +176,8 @@ public class StaticRootMap{
 	public static void main(String[] argv) throws Exception {	
 		//写法 1
 		//StaticRootMap staticRootMap= new StaticRootMap();
-		//staticRootMap.initMap();
-		//StaticClassMap staticClassMap= staticRootMap.staticRootMap.get("U_VECS");
+		StaticRootMap.initMap();
+		//StaticClassMap staticClassMap= StaticRootMap.staticRootMap.get("U_VECS");
 		//StaticFunctionMapU_VECS_E staticFunctionMapU_VECS_C
 		//= (StaticFunctionMapU_VECS_E) staticClassMap.staticClassMap.get("U_VECS");
 		//staticFunctionMapU_VECS_C.main(null);

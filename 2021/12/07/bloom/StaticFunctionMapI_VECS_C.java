@@ -3,6 +3,7 @@ package SEM.bloom;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -10,6 +11,7 @@ import ME.APM.VSQ.App;
 
 //著作权人 + 作者 = 罗瑶光
 public interface StaticFunctionMapI_VECS_C {
+	public static Map<String, String> annotationMap= new HashMap<>();
 	@SuppressWarnings("unchecked")
 	public static void callFunction(String callFunctionKey
 			, StaticFunctionMapI_VECS_E staticFunctionMapI_VECS_C, Map<String, Object> output) throws IOException {
@@ -153,21 +155,21 @@ public interface StaticFunctionMapI_VECS_C {
 	public static void load(StaticFunctionMapI_VECS_E staticFunctionMapI_VECS_E) {
 		// TODO Auto-generated method stub
 		//稍后封装
-		staticFunctionMapI_VECS_E.annotationMap.put("main", "main");
-		staticFunctionMapI_VECS_E.annotationMap.put("doTestWithImageAPP", "u");
-		staticFunctionMapI_VECS_E.annotationMap.put("doFourJianPDErosion", "腐蚀浓度:像素阀值:像素比精度:像素差精度:pcaScale:upcaScale:icaScale:ecaScale:bufferedImage");
-		staticFunctionMapI_VECS_E.annotationMap.put("doFourSuanPDErosion", "腐蚀浓度:像素阀值:像素比精度:像素差精度:pcaScale:upcaScale:icaScale:ecaScale:bufferedImage");
-		staticFunctionMapI_VECS_E.annotationMap.put("doEightSuanPDErosion", "腐蚀浓度:像素阀值:像素比精度:像素差精度:pcaScale:upcaScale:icaScale:ecaScale:bufferedImage");
-		staticFunctionMapI_VECS_E.annotationMap.put("doEightJianPDErosion", "腐蚀浓度:像素阀值:像素比精度:像素差精度:pcaScale:upcaScale:icaScale:ecaScale:bufferedImage");
-		staticFunctionMapI_VECS_E.annotationMap.put("doFirstPDErosionWithTop", "fourJian:fourSuan:eightJian:eightSuan:scoreMatrix:top:bufferedImage");
-		staticFunctionMapI_VECS_E.annotationMap.put("doSecondPDErosionWithTop", "fourJian:fourSuan:eightJian:eightSuan:scoreMatrix:top:times:bufferedImage");
-		staticFunctionMapI_VECS_E.annotationMap.put("doThirdPDErosionWithTop", "fourJian:fourSuan:eightJian:eightSuan:scoreMatrix:top:times:output:bufferedImage");
-		staticFunctionMapI_VECS_E.annotationMap.put("initDeciphring", "string,type");
-		staticFunctionMapI_VECS_E.annotationMap.put("doTestWithFilePath", "testImagePath");
-		staticFunctionMapI_VECS_E.annotationMap.put("doTestWithImage", "testImagePath");
-		staticFunctionMapI_VECS_E.annotationMap.put("doTestWithBufferedImage", "testImagePath");
-		staticFunctionMapI_VECS_E.annotationMap.put("staticMain", "string");
-		staticFunctionMapI_VECS_E.annotationMap.put("doPDERangePDI16", "input:酸碱scale");
+		StaticFunctionMapI_VECS_C.annotationMap.put("main", "main");
+		StaticFunctionMapI_VECS_C.annotationMap.put("doTestWithImageAPP", "u");
+		StaticFunctionMapI_VECS_C.annotationMap.put("doFourJianPDErosion", "腐蚀浓度:像素阀值:像素比精度:像素差精度:pcaScale:upcaScale:icaScale:ecaScale:bufferedImage");
+		StaticFunctionMapI_VECS_C.annotationMap.put("doFourSuanPDErosion", "腐蚀浓度:像素阀值:像素比精度:像素差精度:pcaScale:upcaScale:icaScale:ecaScale:bufferedImage");
+		StaticFunctionMapI_VECS_C.annotationMap.put("doEightSuanPDErosion", "腐蚀浓度:像素阀值:像素比精度:像素差精度:pcaScale:upcaScale:icaScale:ecaScale:bufferedImage");
+		StaticFunctionMapI_VECS_C.annotationMap.put("doEightJianPDErosion", "腐蚀浓度:像素阀值:像素比精度:像素差精度:pcaScale:upcaScale:icaScale:ecaScale:bufferedImage");
+		StaticFunctionMapI_VECS_C.annotationMap.put("doFirstPDErosionWithTop", "fourJian:fourSuan:eightJian:eightSuan:scoreMatrix:top:bufferedImage");
+		StaticFunctionMapI_VECS_C.annotationMap.put("doSecondPDErosionWithTop", "fourJian:fourSuan:eightJian:eightSuan:scoreMatrix:top:times:bufferedImage");
+		StaticFunctionMapI_VECS_C.annotationMap.put("doThirdPDErosionWithTop", "fourJian:fourSuan:eightJian:eightSuan:scoreMatrix:top:times:output:bufferedImage");
+		StaticFunctionMapI_VECS_C.annotationMap.put("initDeciphring", "string,type");
+		StaticFunctionMapI_VECS_C.annotationMap.put("doTestWithFilePath", "testImagePath");
+		StaticFunctionMapI_VECS_C.annotationMap.put("doTestWithImage", "testImagePath");
+		StaticFunctionMapI_VECS_C.annotationMap.put("doTestWithBufferedImage", "testImagePath");
+		StaticFunctionMapI_VECS_C.annotationMap.put("staticMain", "string");
+		StaticFunctionMapI_VECS_C.annotationMap.put("doPDERangePDI16", "input:酸碱scale");
 	}
 	//SkinPathDoubleDetectTripFix2D_E{
 	public List<String> doTestWithImageAPP(App u) throws IOException; 

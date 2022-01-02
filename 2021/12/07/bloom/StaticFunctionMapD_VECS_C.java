@@ -1,8 +1,10 @@
 package SEM.bloom;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class StaticFunctionMapD_VECS_C {
+	public static Map<String, String> annotationMap= new HashMap<>();
 	public static void load(StaticFunctionMapD_VECS_E staticFunctionMapD_VECS_E) {
 		// TODO Auto-generated method stub
 		//ÉÔºó·â×°

@@ -59,7 +59,8 @@ public class StaticFunctionMapM_VECS_E implements StaticFunctionMapM_VECS_C {
 	//database
 	//static
 	//U_JoinRows_E {
-	public Object updateRowsByAttributesOfJoinCondition(Map<String, Object> object, boolean mod) throws IOException{
+	public Object updateRowsByAttributesOfJoinCondition(Map<String, Object> object, boolean mod) 
+			throws IOException{
 		return U_JoinRows_E.updateRowsByAttributesOfJoinCondition(object, mod);
 	}
 	public Object updateRowsByAttributesOfJoinAggregation(Map<String, Object> object, boolean mod){
@@ -87,11 +88,13 @@ public class StaticFunctionMapM_VECS_E implements StaticFunctionMapM_VECS_C {
 	}
 
 	//IU_Rows_E {
-	public Map<String, Object> insertRowByTablePathAndIndex(String tablePath, String pageIndex, JSONObject culumnOfNewRow)
+	public Map<String, Object> insertRowByTablePathAndIndex(String tablePath, String pageIndex
+			, JSONObject culumnOfNewRow)
 			throws FileNotFoundException, IOException{
 		return IU_Rows_E. insertRowByTablePathAndIndex(tablePath, pageIndex, culumnOfNewRow);
 	}
-	public Map<String, Object> insertRowByBaseName(String baseName, String tableName, JSONObject jsobj, boolean mod) 
+	public Map<String, Object> insertRowByBaseName(String baseName, String tableName, JSONObject jsobj
+			, boolean mod) 
 			throws Exception{
 		return IU_Rows_E. insertRowByBaseName(baseName, tableName, jsobj, mod);
 	}
@@ -399,8 +402,8 @@ public class StaticFunctionMapM_VECS_E implements StaticFunctionMapM_VECS_C {
 
 
 	//MVQ.textfield;
-	public CfxTextPane CfxTextField(String string, final int x, final int y, java.awt.Color c){
-		return new CfxTextPane(string, y, y, c);
+	public MVQ.textfield.CfxTextField CfxTextField(String string, final int x, final int y, java.awt.Color c){
+		return new MVQ.textfield.CfxTextField(string, y, y, c);
 	}
 
 	//MVQ.textpane;

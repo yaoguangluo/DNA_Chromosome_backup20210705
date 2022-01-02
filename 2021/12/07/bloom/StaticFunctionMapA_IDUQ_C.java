@@ -1,6 +1,7 @@
 package SEM.bloom;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Map;
 
 import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.ASU.MPE.procedure.pde.FullDNATokenPDI_XCDX;
@@ -9,6 +10,7 @@ import SVQ.stable.StableCommon;
 //将dna加密的 main test 进行封装成函数。准备优化下。
 //著作权人+ 作者= 罗瑶光
 public class StaticFunctionMapA_IDUQ_C {
+	public static Map<String, String> annotationMap= new HashMap<>();
 	public static void callFunction(String callFunctionKey
 			, StaticFunctionMapA_IDUQ_E staticFunctionMapA_IDUQ_E, Map<String, Object> output) throws IOException {
 		String[] 传参因子= (String[]) output.get("传参因子");
@@ -70,13 +72,13 @@ public class StaticFunctionMapA_IDUQ_C {
 
 	public static void load(StaticFunctionMapA_IDUQ_E staticFunctionMapA_IDUQ_E) {
 		//稍后封装
-		staticFunctionMapA_IDUQ_E.annotationMap.put("getPDW", "string");
-		staticFunctionMapA_IDUQ_E.annotationMap.put("getLock", "void");
-		staticFunctionMapA_IDUQ_E.annotationMap.put("getCode", "lock:pdw");
-		staticFunctionMapA_IDUQ_E.annotationMap.put("doPDE", "pDE_RNA_FullFormular");
-		staticFunctionMapA_IDUQ_E.annotationMap.put("doPrefixPDE", "pDE_RNA_FullFormular:pDE_RNA_FullFormular1");
-		staticFunctionMapA_IDUQ_E.annotationMap.put("doPostfixPDE", "pDE_RNA_FullFormular:pDE_RNA_FullFormular1");
-		staticFunctionMapA_IDUQ_E.annotationMap.put("doSurffixPDE", "pDE_RNA_FullFormular:pDE_RNA_FullFormular1"); //之后这些123 我都会重新命名。
+		StaticFunctionMapA_IDUQ_C.annotationMap.put("getPDW", "string");
+		StaticFunctionMapA_IDUQ_C.annotationMap.put("getLock", "void");
+		StaticFunctionMapA_IDUQ_C.annotationMap.put("getCode", "lock:pdw");
+		StaticFunctionMapA_IDUQ_C.annotationMap.put("doPDE", "pDE_RNA_FullFormular");
+		StaticFunctionMapA_IDUQ_C.annotationMap.put("doPrefixPDE", "pDE_RNA_FullFormular:pDE_RNA_FullFormular1");
+		StaticFunctionMapA_IDUQ_C.annotationMap.put("doPostfixPDE", "pDE_RNA_FullFormular:pDE_RNA_FullFormular1");
+		StaticFunctionMapA_IDUQ_C.annotationMap.put("doSurffixPDE", "pDE_RNA_FullFormular:pDE_RNA_FullFormular1"); //之后这些123 我都会重新命名。
 	}
 
 	//肽语

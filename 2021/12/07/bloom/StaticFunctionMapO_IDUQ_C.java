@@ -2,6 +2,7 @@ package SEM.bloom;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.sound.sampled.UnsupportedAudioFileException;
@@ -18,6 +19,7 @@ import OSI.OPE.PSQ.OEU.SOI.SMQ.neroCell.BootNeroDoc;
 //Refer的源码来自 《DNA 元基催化与肽计算 第三修订版本 V039010912》
 //证书编号：国作登字-2021-L-00268255 (中华人民共和国 国家版权登记中心)
 public interface StaticFunctionMapO_IDUQ_C {
+	public static Map<String, String> annotationMap= new HashMap<>();
 	public static void callFunction(String callFunctionKey
 			, StaticFunctionMapO_IDUQ_E staticFunctionMapO_IDUQ_C, Map<String, Object> output) throws IOException
 	, UnsupportedAudioFileException, InterruptedException, CloneNotSupportedException {
@@ -90,13 +92,13 @@ public interface StaticFunctionMapO_IDUQ_C {
 	public static void load(StaticFunctionMapO_IDUQ_E staticFunctionMapO_IDUQ_E) {
 		// TODO Auto-generated method stub
 		//稍后封装
-		staticFunctionMapO_IDUQ_E.annotationMap.put("U_", "fileCurrentpath:first");
-		staticFunctionMapO_IDUQ_E.annotationMap.put("getRandomDNAkey", "sessionValidation:password");
-		staticFunctionMapO_IDUQ_E.annotationMap.put("Save", "first");
-		staticFunctionMapO_IDUQ_E.annotationMap.put("bootCell", "linkNode:rightBotJTextPane:canvas");
-		staticFunctionMapO_IDUQ_E.annotationMap.put("BootNeroDoc", "first:fileCurrentpath:nodeView:rightBotJTextPane:canvas");
-		staticFunctionMapO_IDUQ_E.annotationMap.put("vpcsRegister", "first:fileCurrentpath:nodeView:rightBotJTextPane:canvas");
-		staticFunctionMapO_IDUQ_E.annotationMap.put("register", "bootNeroDoc");
+		StaticFunctionMapO_IDUQ_C.annotationMap.put("U_", "fileCurrentpath:first");
+		StaticFunctionMapO_IDUQ_C.annotationMap.put("getRandomDNAkey", "sessionValidation:password");
+		StaticFunctionMapO_IDUQ_C.annotationMap.put("Save", "first");
+		StaticFunctionMapO_IDUQ_C.annotationMap.put("bootCell", "linkNode:rightBotJTextPane:canvas");
+		StaticFunctionMapO_IDUQ_C.annotationMap.put("BootNeroDoc", "first:fileCurrentpath:nodeView:rightBotJTextPane:canvas");
+		StaticFunctionMapO_IDUQ_C.annotationMap.put("vpcsRegister", "first:fileCurrentpath:nodeView:rightBotJTextPane:canvas");
+		StaticFunctionMapO_IDUQ_C.annotationMap.put("register", "bootNeroDoc");
 	}
 	//SaveAnd_U_File{
 	public void U_(String fileCurrentpath, LinkNode first);

@@ -1,6 +1,7 @@
 package SEM.bloom;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedDeque;
@@ -10,6 +11,7 @@ import OSI.OPE.SI.SD.SU.SQ.ASU.OSU.PSU.MSU.AVQ.ASQ.dna.P.RST;
 //著作权人+作者=罗瑶光
 //终于开始快要派上用场了。我的初衷。
 public interface StaticFunctionMapP_IDUQ_C {
+	public static Map<String, String> annotationMap= new HashMap<>();
 	@SuppressWarnings("unchecked")
 	public static void callFunction(String callFunctionKey, StaticFunctionMapP_IDUQ_E staticFunctionMapP_IDUQ_C
 			, Map<String, Object> output) throws IOException {
@@ -97,18 +99,18 @@ public interface StaticFunctionMapP_IDUQ_C {
 		// TODO Auto-generated method stub
 		//稍后封装
 
-		staticFunctionMapP_IDUQ_E.annotationMap.put("copy", "dna");
-		staticFunctionMapP_IDUQ_E.annotationMap.put("copyMap", "functionLineDeque");
-		staticFunctionMapP_IDUQ_E.annotationMap.put("mask", "originDeque:newDeque:maskOutput");
-		staticFunctionMapP_IDUQ_E.annotationMap.put("copy", "maskLineDeque");
+		StaticFunctionMapP_IDUQ_C.annotationMap.put("copy", "dna");
+		StaticFunctionMapP_IDUQ_C.annotationMap.put("copyMap", "functionLineDeque");
+		StaticFunctionMapP_IDUQ_C.annotationMap.put("mask", "originDeque:newDeque:maskOutput");
+		StaticFunctionMapP_IDUQ_C.annotationMap.put("copy", "maskLineDeque");
 
-		staticFunctionMapP_IDUQ_E.annotationMap.put("mutationCopy", "dna");	
-		staticFunctionMapP_IDUQ_E.annotationMap.put("dating", "father:mother");	
-		staticFunctionMapP_IDUQ_E.annotationMap.put("inheritance", "father:mother");	
-		staticFunctionMapP_IDUQ_E.annotationMap.put("born", "void");	
-		staticFunctionMapP_IDUQ_E.annotationMap.put("mutation", "father:mother");	
-		staticFunctionMapP_IDUQ_E.annotationMap.put("separater", "original");	
-		staticFunctionMapP_IDUQ_E.annotationMap.put("swap", "original");	
+		StaticFunctionMapP_IDUQ_C.annotationMap.put("mutationCopy", "dna");	
+		StaticFunctionMapP_IDUQ_C.annotationMap.put("dating", "father:mother");	
+		StaticFunctionMapP_IDUQ_C.annotationMap.put("inheritance", "father:mother");	
+		StaticFunctionMapP_IDUQ_C.annotationMap.put("born", "void");	
+		StaticFunctionMapP_IDUQ_C.annotationMap.put("mutation", "father:mother");	
+		StaticFunctionMapP_IDUQ_C.annotationMap.put("separater", "original");	
+		StaticFunctionMapP_IDUQ_C.annotationMap.put("swap", "original");	
 	}
 
 	// CopyLaw{

@@ -1,6 +1,7 @@
 package SEM.bloom;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Map;
 
 import OSI.SSI.ASU.OSU.PSU.MSU.ouler.Q_OulerRing;
@@ -12,6 +13,7 @@ import OSI.SSI.ASU.OSU.PSU.MSU.pds.PDE_PDS_DL16;
 
 //著作权人+ 作者= 罗瑶光
 public interface StaticFunctionMapM_IDUQ_C {
+	public static Map<String, String> annotationMap= new HashMap<>();
 	public static void callFunction(String callFunctionKey
 			, StaticFunctionMapM_IDUQ_E staticFunctionMapM_IDUQ_C
 			, Map<String, Object> output) throws IOException {
@@ -63,12 +65,12 @@ public interface StaticFunctionMapM_IDUQ_C {
 	public static void load(StaticFunctionMapM_IDUQ_E staticFunctionMapM_IDUQ_E) {
 		// TODO Auto-generated method stub
 		//稍后封装
-		staticFunctionMapM_IDUQ_E.annotationMap.put("getQ_OulerRing", "void");
-		staticFunctionMapM_IDUQ_E.annotationMap.put("getQ_OulerRing16", "void");
-		staticFunctionMapM_IDUQ_E.annotationMap.put("getDecadeToPDS", "void");
-		staticFunctionMapM_IDUQ_E.annotationMap.put("getDecadeToPDS16", "void");
-		staticFunctionMapM_IDUQ_E.annotationMap.put("getPDE_PDS_DL", "void");
-		staticFunctionMapM_IDUQ_E.annotationMap.put("getPDE_PDS_DL16", "void");
+		StaticFunctionMapM_IDUQ_C.annotationMap.put("getQ_OulerRing", "void");
+		StaticFunctionMapM_IDUQ_C.annotationMap.put("getQ_OulerRing16", "void");
+		StaticFunctionMapM_IDUQ_C.annotationMap.put("getDecadeToPDS", "void");
+		StaticFunctionMapM_IDUQ_C.annotationMap.put("getDecadeToPDS16", "void");
+		StaticFunctionMapM_IDUQ_C.annotationMap.put("getPDE_PDS_DL", "void");
+		StaticFunctionMapM_IDUQ_C.annotationMap.put("getPDE_PDS_DL16", "void");
 
 	}
 	public Q_OulerRing getQ_OulerRing();
