@@ -76,9 +76,9 @@ public class StaticFunctionMapA_IDUQ_C {
 		StaticFunctionMapA_IDUQ_C.annotationMap.put("getLock", "void");
 		StaticFunctionMapA_IDUQ_C.annotationMap.put("getCode", "lock:pdw");
 		StaticFunctionMapA_IDUQ_C.annotationMap.put("doPDE", "pDE_RNA_FullFormular");
-		StaticFunctionMapA_IDUQ_C.annotationMap.put("doPrefixPDE", "pDE_RNA_FullFormular:pDE_RNA_FullFormular1");
-		StaticFunctionMapA_IDUQ_C.annotationMap.put("doPostfixPDE", "pDE_RNA_FullFormular:pDE_RNA_FullFormular1");
-		StaticFunctionMapA_IDUQ_C.annotationMap.put("doSurffixPDE", "pDE_RNA_FullFormular:pDE_RNA_FullFormular1"); //之后这些123 我都会重新命名。
+		StaticFunctionMapA_IDUQ_C.annotationMap.put("doPrefixPDE", "pDE_RNA_FullFormular");
+		StaticFunctionMapA_IDUQ_C.annotationMap.put("doPostfixPDE", "pDE_RNA_FullFormular:pDE_RNA_FullFormularNew");
+		StaticFunctionMapA_IDUQ_C.annotationMap.put("doSurffixPDE", "pDE_RNA_FullFormular:pDE_RNA_FullFormularNew"); //之后这些123 我都会重新命名。
 	}
 
 	//肽语
@@ -166,7 +166,7 @@ public class StaticFunctionMapA_IDUQ_C {
 
 	//后序计算  确定pDE_RNA_FullFormular 和 pDE_RNA_FullFormular1 变量中要有 肽语 肽锁 散列 概率钥匙 等相关输入值。
 	public static FullDNATokenPDI_XCDX doPostfixPDE(FullDNATokenPDI_XCDX pDE_RNA_FullFormular
-			, FullDNATokenPDI_XCDX pDE_RNA_FullFormular1) {
+			, FullDNATokenPDI_XCDX pDE_RNA_FullFormularNew) {
 		System.out.println("=======================================================================");
 		System.out.println("开始后序验证：");
 		FullDNATokenPDI_XCDX pDE_RNA_FullFormular2= new FullDNATokenPDI_XCDX();
@@ -174,20 +174,20 @@ public class StaticFunctionMapA_IDUQ_C {
 		pDE_RNA_FullFormular2.pdeisKey= pDE_RNA_FullFormular.pdedsKey.toString();
 		pDE_RNA_FullFormular2.pdedeKey= pDE_RNA_FullFormular.pdeieKey.toString();
 		pDE_RNA_FullFormular2.pdedsKey= pDE_RNA_FullFormular.pdeisKey.toString();
-		System.out.println("准备计算元基DNA序列："+ pDE_RNA_FullFormular1.pde);
-		pDE_RNA_FullFormular2.doSessionKeyUnPress(pDE_RNA_FullFormular1.pde, pDE_RNA_FullFormular2, true);
+		System.out.println("准备计算元基DNA序列："+ pDE_RNA_FullFormularNew.pde);
+		pDE_RNA_FullFormular2.doSessionKeyUnPress(pDE_RNA_FullFormularNew.pde, pDE_RNA_FullFormular2, true);
 		System.out.println();
-		System.out.println("得到原续降元元基DNA序列："+ pDE_RNA_FullFormular1.pds);
+		System.out.println("得到原续降元元基DNA序列："+ pDE_RNA_FullFormularNew.pds);
 		System.out.println("得到后续降元元基DNA序列："+ pDE_RNA_FullFormular2.pds);
 		System.out.println("验证正确？");
-		System.out.println(pDE_RNA_FullFormular1.pds.equals(pDE_RNA_FullFormular2.pds)? "正确": "失败");	
+		System.out.println(pDE_RNA_FullFormularNew.pds.equals(pDE_RNA_FullFormular2.pds)? "正确": "失败");	
 
 		return pDE_RNA_FullFormular2;
 	}
 
 	//整序计算 确定pDE_RNA_FullFormular， pDE_RNA_FullFormular1 变量中要有 肽语 肽锁 散列 概率钥匙 等相关输入值。
 	public static FullDNATokenPDI_XCDX doSurffixPDE(FullDNATokenPDI_XCDX pDE_RNA_FullFormular
-			, FullDNATokenPDI_XCDX pDE_RNA_FullFormular1) {
+			, FullDNATokenPDI_XCDX pDE_RNA_FullFormularNew) {
 		System.out.println("=========================================================================");
 		System.out.println("开始整序验证：");
 		FullDNATokenPDI_XCDX pDE_RNA_FullFormular3= new FullDNATokenPDI_XCDX();
@@ -197,16 +197,16 @@ public class StaticFunctionMapA_IDUQ_C {
 		pDE_RNA_FullFormular3.pdedeKey= pDE_RNA_FullFormular.pdeieKey.toString();
 		pDE_RNA_FullFormular3.pdedsKey= pDE_RNA_FullFormular.pdeisKey.toString();	
 
-		System.out.println("准备计算元基DNA序列："+ pDE_RNA_FullFormular1.pde);//pde加成
-		pDE_RNA_FullFormular3.doFullSessionKeyUnPress(pDE_RNA_FullFormular1.pde, pDE_RNA_FullFormular3, true);
+		System.out.println("准备计算元基DNA序列："+ pDE_RNA_FullFormularNew.pde);//pde加成
+		pDE_RNA_FullFormular3.doFullSessionKeyUnPress(pDE_RNA_FullFormularNew.pde, pDE_RNA_FullFormular3, true);
 		System.out.println();
-		System.out.println("得到原续降元元基DNA序列："+ pDE_RNA_FullFormular1.pds);
+		System.out.println("得到原续降元元基DNA序列："+ pDE_RNA_FullFormularNew.pds);
 		System.out.println("得到后续降元元基DNA序列："+ pDE_RNA_FullFormular3.pds);
 		System.out.println("验证正确？");
-		System.out.println(pDE_RNA_FullFormular1.pds.equals(pDE_RNA_FullFormular3.pds)? "正确": "失败");	
-		System.out.println("准备整序计算元基DNA序列："+ pDE_RNA_FullFormular1.pde);
+		System.out.println(pDE_RNA_FullFormularNew.pds.equals(pDE_RNA_FullFormular3.pds)? "正确": "失败");	
+		System.out.println("准备整序计算元基DNA序列："+ pDE_RNA_FullFormularNew.pde);
 		System.out.println("准备整序计算元基DNA序列："+ pDE_RNA_FullFormular3.pde);
-		System.out.println(pDE_RNA_FullFormular1.pde.equals(pDE_RNA_FullFormular3.pde)? "正确": "失败");		
+		System.out.println(pDE_RNA_FullFormularNew.pde.equals(pDE_RNA_FullFormular3.pde)? "正确": "失败");		
 		return pDE_RNA_FullFormular3;
 	}
 }

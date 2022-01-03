@@ -32,10 +32,10 @@ public class StaticFunctionMapV_IDUQ_E implements StaticFunctionMapV_IDUQ_C {
 	}
 
 	@Override
-	public GUISample 仅仅初始ETL(Object[][] tableData_old, JTextPane text, App u
+	public GUISample 仅仅初始ETL(Object[][] tableData_old, JTextPane text, App app
 			, CogsBinaryForest_AE _A, Map<String, String> pos) {
 		GUISample gUISample= new GUISample();
-		gUISample.IV_(tableData_old,text, u, _A, pos);
+		gUISample.IV_(tableData_old,text, app, _A, pos);
 		gUISample.start();	
 		gUISample.validate();
 		return gUISample;

@@ -31,12 +31,13 @@ public class StaticFunctionMapI_AOPM_E implements StaticFunctionMapI_AOPM_C {
 			, Map<String, String> pos)  {
 		return new  CoAuthor(dic_li,  _A,  pos) ;
 	}
-	public CoAuthorForWord getCoAuthorForWord(App u, CogsBinaryForest_AE _A
+	public CoAuthorForWord getCoAuthorForWord(App app, CogsBinaryForest_AE _A
 			, Map<String, String> pos) throws HeadlessException, InterruptedException {
-		return new CoAuthorForWord(u,_A, pos);
+		return new CoAuthorForWord(app, _A, pos);
 	}
-	public CoDNAAuthorForWord getCoDNAAuthorForWord(App u, A _A, Map<String, String> pos) throws HeadlessException, InterruptedException {
-		return new CoDNAAuthorForWord(u,_A, pos);
+	public CoDNAAuthorForWord getCoDNAAuthorForWord(App app, A _A, Map<String, String> pos)
+			throws HeadlessException, InterruptedException {
+		return new CoDNAAuthorForWord(app, _A, pos);
 	}
 	public Histogram getHistogram() {
 		return new Histogram();

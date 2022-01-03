@@ -20,7 +20,7 @@ import OEI.ME.analysis.E.CogsBinaryForest_AE;
 public class StaticFunctionMapQ_VECS_E implements StaticFunctionMapQ_VECS_C {
 	public Map<String, String> annotationMap= new HashMap<>();
 	public void searchFromTable(String key, DefaultTableModel newTableModel, Object[][] tableData_old
-			, ArrayList<String> copy_xj, Map<String, String> dic_xj, App u) throws IOException {
+			, ArrayList<String> copy_xj, Map<String, String> dic_xj, App app) throws IOException {
 		if(null== key|| key.equals("")) {//把null key check提前，搜索加快
 			newTableModel.getDataVector().clear();
 			for(int i= 0; i< tableData_old.length; i++) {
@@ -128,13 +128,13 @@ public class StaticFunctionMapQ_VECS_E implements StaticFunctionMapQ_VECS_C {
 						tempb+= code;
 					}
 				}
-				score_code[copyCount] = (int) (tempa/Math.pow(u.lookrot+ 1, 4) + tempb*Math.pow(u.lookrot, 2));
+				score_code[copyCount] = (int) (tempa/Math.pow(app.lookrot+ 1, 4) + tempb*Math.pow(app.lookrot, 2));
 			}
 			if(key.replace(" ", "").length()> 1&& key.replace(" ", "").length()< 5) {
 				if(temps.contains(key)) {
 					tempb+= code<< 7;
 				}
-				score_code[copyCount] = (int) (tempa/Math.pow(u.lookrot+ 1, 4) + tempb*Math.pow(u.lookrot, 2));
+				score_code[copyCount] = (int) (tempa/Math.pow(app.lookrot+ 1, 4) + tempb*Math.pow(app.lookrot, 2));
 			}
 			copyCount++;
 		}
@@ -147,9 +147,9 @@ public class StaticFunctionMapQ_VECS_E implements StaticFunctionMapQ_VECS_C {
 				if(score_code[i] < 1){
 					continue Here;
 				}
-				if(u.shuming_filter_box.isSelected()) {
+				if(app.shuming_filter_box.isSelected()) {
 					String wei= score[i];
-					String temp= u.name_filter.getText();
+					String temp= app.name_filter.getText();
 					for(int j=0;j<temp.length();j++) {
 						if(wei.contains(""+ temp.charAt(j))) {
 							continue Here;

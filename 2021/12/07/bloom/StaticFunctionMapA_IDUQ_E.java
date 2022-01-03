@@ -18,8 +18,10 @@ public class StaticFunctionMapA_IDUQ_E {
 		pDE_RNA_FullFormular.lock= lock.toString();
 		pDE_RNA_FullFormular.code= code.toString();
 		pDE_RNA_FullFormular= StaticFunctionMapA_IDUQ_C.doPDE(pDE_RNA_FullFormular);
-		FullDNATokenPDI_XCDX pDE_RNA_FullFormular1= StaticFunctionMapA_IDUQ_C.doPrefixPDE(pDE_RNA_FullFormular);
-		FullDNATokenPDI_XCDX pDE_RNA_FullFormular2= StaticFunctionMapA_IDUQ_C.doPostfixPDE(pDE_RNA_FullFormular, pDE_RNA_FullFormular1);
-		FullDNATokenPDI_XCDX pDE_RNA_FullFormular3= StaticFunctionMapA_IDUQ_C.doSurffixPDE(pDE_RNA_FullFormular, pDE_RNA_FullFormular1);
+		FullDNATokenPDI_XCDX pDE_RNA_FullFormularNew= StaticFunctionMapA_IDUQ_C.doPrefixPDE(pDE_RNA_FullFormular);
+		FullDNATokenPDI_XCDX pDE_RNA_FullFormular2= StaticFunctionMapA_IDUQ_C.doPostfixPDE(pDE_RNA_FullFormular
+				, pDE_RNA_FullFormularNew);
+		FullDNATokenPDI_XCDX pDE_RNA_FullFormular3= StaticFunctionMapA_IDUQ_C.doSurffixPDE(pDE_RNA_FullFormular
+				, pDE_RNA_FullFormularNew);
 	}
 }

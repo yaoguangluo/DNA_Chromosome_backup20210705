@@ -294,7 +294,7 @@ public interface StaticFunctionMapE_IDUQ_C {
 		StaticFunctionMapE_IDUQ_C.annotationMap.put("getDynamicLine_U", "void");
 		StaticFunctionMapE_IDUQ_C.annotationMap.put("getU_RelatedLine", "void");
 		StaticFunctionMapE_IDUQ_C.annotationMap.put("getLinkOSGI", "void");
-		StaticFunctionMapE_IDUQ_C.annotationMap.put("getNodeOSGI", "void");
+		StaticFunctionMapE_IDUQ_C.annotationMap.put("getNodeOSGI", "void");//之后变量名通通都会进行元基肽化
 		StaticFunctionMapE_IDUQ_C.annotationMap.put("_OSU_AVQ_ASQ_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI", "void");
 		StaticFunctionMapE_IDUQ_C.annotationMap.put("_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ", "void");
 		StaticFunctionMapE_IDUQ_C.annotationMap.put("_OSU_AVQ_ASQ_OPE_OPC_ECI", "void");
@@ -304,7 +304,7 @@ public interface StaticFunctionMapE_IDUQ_C {
 		StaticFunctionMapE_IDUQ_C.annotationMap.put("getUnicornTreeCellRenderer", "void");
 		StaticFunctionMapE_IDUQ_C.annotationMap.put("getUnicornTreeUI", "void");
 		StaticFunctionMapE_IDUQ_C.annotationMap.put("getCacuString", "void");
-		StaticFunctionMapE_IDUQ_C.annotationMap.put("getNodeShow", "gUISample:tableData_old:text:popupMenu:u:_A:pos");
+		StaticFunctionMapE_IDUQ_C.annotationMap.put("getNodeShow", "gUISample:tableData_old:text:popupMenu:app:_A:pos");
 		StaticFunctionMapE_IDUQ_C.annotationMap.put("getCheckRangeVPS", "void");
 		StaticFunctionMapE_IDUQ_C.annotationMap.put("getChooseQ_VPS", "void");
 		StaticFunctionMapE_IDUQ_C.annotationMap.put("getDrawArrowVPS", "void");
@@ -316,7 +316,7 @@ public interface StaticFunctionMapE_IDUQ_C {
 		StaticFunctionMapE_IDUQ_C.annotationMap.put("getSort", "void");
 		StaticFunctionMapE_IDUQ_C.annotationMap.put("getU_RelatedLineVPS", "void");
 		StaticFunctionMapE_IDUQ_C.annotationMap.put("getOSGI_chansfer", "node:first");
-		StaticFunctionMapE_IDUQ_C.annotationMap.put("_OSI_OSU_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI_register", "tableData_old:text:u:_A:pos");
+		StaticFunctionMapE_IDUQ_C.annotationMap.put("_OSI_OSU_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI_register", "tableData_old:text:app:_A:pos");
 	}
 	//etl engine
 	public NodeInfo getNodeInfo();
@@ -343,7 +343,7 @@ public interface StaticFunctionMapE_IDUQ_C {
 	public UnicornTreeCellRenderer getUnicornTreeCellRenderer();
 	public UnicornTreeUI getUnicornTreeUI();
 	public CacuString getCacuString();
-	public NodeShow getNodeShow(GUISample gUISample, Object[][] tableData_old, JTextPane text, PopupMenu popupMenu, App u
+	public NodeShow getNodeShow(GUISample gUISample, Object[][] tableData_old, JTextPane text, PopupMenu popupMenu, App app
 			, A _A, Map<String, String> pos) throws IOException;
 	public CheckRangeVPS getCheckRangeVPS();
 	public ChooseQ_VPS getChooseQ_VPS();
@@ -358,5 +358,5 @@ public interface StaticFunctionMapE_IDUQ_C {
 
 	public OSGI_chansfer getOSGI_chansfer(LinkNode node, LinkNode first);
 	public OSI_OSU_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI_register _OSI_OSU_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI_register(
-			Object[][] tableData_old, JTextPane text, App u, A _A, Map<String, String> pos);
+			Object[][] tableData_old, JTextPane text, App app, A _A, Map<String, String> pos);
 }

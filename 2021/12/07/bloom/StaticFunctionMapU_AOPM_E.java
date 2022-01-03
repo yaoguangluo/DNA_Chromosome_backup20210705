@@ -138,7 +138,8 @@ public class StaticFunctionMapU_AOPM_E implements StaticFunctionMapU_AOPM_C{
 	public String decode(String str){
 		return StringUtil.decode(str);
 	};
-	public String EncoderByMd5(String salt, String pwd, int enctimes) throws NoSuchAlgorithmException, UnsupportedEncodingException{
+	public String EncoderByMd5(String salt, String pwd, int enctimes) throws NoSuchAlgorithmException
+	, UnsupportedEncodingException{
 		return StringUtil.EncoderByMd5(salt, pwd, enctimes);
 	};
 	public String EncoderByMd5(String salt, String pwd) throws NoSuchAlgorithmException, UnsupportedEncodingException{
@@ -375,8 +376,10 @@ public class StaticFunctionMapU_AOPM_E implements StaticFunctionMapU_AOPM_C{
 	//md5 官方 注释下，以后用 dna MD5的作为纪念。 奇怪 还让我eclipse卡死一下刚。
 	//	public String encode(String input) throws Exception{};
 	//	public String decode(String str) throws UnsupportedEncodingException{};
-	//	public String EncoderByMd5(String salt, String pwd, int enctimes) throws NoSuchAlgorithmException, UnsupportedEncodingException{};
-	//	public String EncoderByMd5(String salt, String pwd) throws NoSuchAlgorithmException, UnsupportedEncodingException{};
+	//	public String EncoderByMd5(String salt, String pwd, int enctimes) throws NoSuchAlgorithmException
+	//, UnsupportedEncodingException{};
+	//	public String EncoderByMd5(String salt, String pwd) throws NoSuchAlgorithmException
+	//, UnsupportedEncodingException{};
 
 	//WAVtoLYG{ 以前设计视频的加密很少用。
 	public void WAVtoLYG(String WAVf, String LYGf) throws IOException, UnsupportedAudioFileException{
@@ -400,11 +403,13 @@ public class StaticFunctionMapU_AOPM_E implements StaticFunctionMapU_AOPM_C{
 	//	};
 
 	//DETA_ANN_HMM {
-	public String[][] summing_P(String[][] inputNLP) throws IOException, InstantiationException, IllegalAccessException{
+	public String[][] summing_P(String[][] inputNLP) throws IOException, InstantiationException
+	, IllegalAccessException{
 		return new DETA_ANN_HMM().summing_P(inputNLP);
 	};
 	//DETA_DNN {
-	public String[][] summing_P(String[][] ann, String[][] rnn) throws IOException, InstantiationException, IllegalAccessException{
+	public String[][] summing_P(String[][] ann, String[][] rnn) throws IOException, InstantiationException
+	, IllegalAccessException{
 		return new DETA_DNN().summing_P(ann, rnn);
 	};
 
@@ -566,11 +571,11 @@ public class StaticFunctionMapU_AOPM_E implements StaticFunctionMapU_AOPM_C{
 	};
 
 	//Filter{
-	public int[][] P_Heart(int[][] rp1, int distance, int scale){
-		return new Filter().P_Heart(rp1, distance, scale);
+	public int[][] P_Heart(int[][] zuoBiao, int distance, int scale){
+		return new Filter().P_Heart(zuoBiao, distance, scale);
 	};
-	public int[][] P_Model(int[][] rp1, int[][] yanjing){
-		return new Filter().P_Model(rp1, yanjing);
+	public int[][] P_Model(int[][] zuoBiao, int[][] yanjing){
+		return new Filter().P_Model(zuoBiao, yanjing);
 	}//粗糙版本以后优化。
 }
 

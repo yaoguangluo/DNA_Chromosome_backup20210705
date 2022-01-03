@@ -156,7 +156,7 @@ public interface StaticFunctionMapI_VECS_C {
 		// TODO Auto-generated method stub
 		//稍后封装
 		StaticFunctionMapI_VECS_C.annotationMap.put("main", "main");
-		StaticFunctionMapI_VECS_C.annotationMap.put("doTestWithImageAPP", "u");
+		StaticFunctionMapI_VECS_C.annotationMap.put("doTestWithImageAPP", "app");
 		StaticFunctionMapI_VECS_C.annotationMap.put("doFourJianPDErosion", "腐蚀浓度:像素阀值:像素比精度:像素差精度:pcaScale:upcaScale:icaScale:ecaScale:bufferedImage");
 		StaticFunctionMapI_VECS_C.annotationMap.put("doFourSuanPDErosion", "腐蚀浓度:像素阀值:像素比精度:像素差精度:pcaScale:upcaScale:icaScale:ecaScale:bufferedImage");
 		StaticFunctionMapI_VECS_C.annotationMap.put("doEightSuanPDErosion", "腐蚀浓度:像素阀值:像素比精度:像素差精度:pcaScale:upcaScale:icaScale:ecaScale:bufferedImage");
@@ -172,7 +172,7 @@ public interface StaticFunctionMapI_VECS_C {
 		StaticFunctionMapI_VECS_C.annotationMap.put("doPDERangePDI16", "input:酸碱scale");
 	}
 	//SkinPathDoubleDetectTripFix2D_E{
-	public List<String> doTestWithImageAPP(App u) throws IOException; 
+	public List<String> doTestWithImageAPP(App app) throws IOException; 
 	public Double[] doFourJianPDErosion(int 腐蚀浓度,int 像素阀值,int 像素比精度, int 像素差精度,
 			int pcaScale, int upcaScale, int icaScale, int ecaScale, BufferedImage bufferedImage) throws IOException;
 	public Double[] doFourSuanPDErosion(int 腐蚀浓度,int 像素阀值,int 像素比精度, int 像素差精度,

@@ -121,8 +121,8 @@ public interface StaticFunctionMapI_AOPM_C {
 		StaticFunctionMapI_AOPM_C.annotationMap.put("getBigWord", "void");
 		StaticFunctionMapI_AOPM_C.annotationMap.put("getClassify", "void");
 		StaticFunctionMapI_AOPM_C.annotationMap.put("getCoAuthor", "dic_li:_A:pos");
-		StaticFunctionMapI_AOPM_C.annotationMap.put("getCoAuthorForWord", "u:_A:pos");//稍后优化传参变量名的 传参因子格式。
-		StaticFunctionMapI_AOPM_C.annotationMap.put("getCoDNAAuthorForWord", "u:_A:pos");
+		StaticFunctionMapI_AOPM_C.annotationMap.put("getCoAuthorForWord", "app:_A:pos");//稍后优化传参变量名的 传参因子格式。
+		StaticFunctionMapI_AOPM_C.annotationMap.put("getCoDNAAuthorForWord", "app:_A:pos");
 		StaticFunctionMapI_AOPM_C.annotationMap.put("getHistogram", "void");
 		StaticFunctionMapI_AOPM_C.annotationMap.put("getLineMed", "void");
 		StaticFunctionMapI_AOPM_C.annotationMap.put("getJpv", "void");
@@ -135,9 +135,9 @@ public interface StaticFunctionMapI_AOPM_C {
 	public Classify getClassify() ;
 	public CoAuthor getCoAuthor(Map<String, Object> dic_li, CogsBinaryForest_AE _A
 			, Map<String, String> pos);
-	public CoAuthorForWord getCoAuthorForWord(App u, CogsBinaryForest_AE _A
+	public CoAuthorForWord getCoAuthorForWord(App app, CogsBinaryForest_AE _A
 			, Map<String, String> pos) throws HeadlessException, InterruptedException ;
-	public CoDNAAuthorForWord getCoDNAAuthorForWord(App u, A _A, Map<String, String> pos) throws HeadlessException
+	public CoDNAAuthorForWord getCoDNAAuthorForWord(App app, A _A, Map<String, String> pos) throws HeadlessException
 	, InterruptedException ;
 	public Histogram getHistogram() ;
 	public LineMed getLineMed() ;

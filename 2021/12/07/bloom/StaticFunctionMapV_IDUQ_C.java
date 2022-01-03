@@ -92,7 +92,7 @@ public interface StaticFunctionMapV_IDUQ_C {
 	public static void load(StaticFunctionMapV_IDUQ_E staticFunctionMapV_IDUQ_E) {
 		//稍后封装
 		StaticFunctionMapV_IDUQ_C.annotationMap.put("初始ETL", "app:jpanelSecond"); 
-		StaticFunctionMapV_IDUQ_C.annotationMap.put("仅仅初始ETL", "tableData_old:text:u:_A:pos"); 
+		StaticFunctionMapV_IDUQ_C.annotationMap.put("仅仅初始ETL", "tableData_old:text:app:_A:pos"); 
 		StaticFunctionMapV_IDUQ_C.annotationMap.put("展示ETL", "void"); 
 		StaticFunctionMapV_IDUQ_C.annotationMap.put("ETL文档读取", "void"); 
 		StaticFunctionMapV_IDUQ_C.annotationMap.put("ETL文档执行", "void"); 
@@ -102,7 +102,7 @@ public interface StaticFunctionMapV_IDUQ_C {
 	}
 
 	public MakeContainerSJFX 初始ETL(App app, Container jpanelSecond);
-	public GUISample 仅仅初始ETL(Object[][] tableData_old, JTextPane text, App u, CogsBinaryForest_AE _A, Map<String, String> pos);
+	public GUISample 仅仅初始ETL(Object[][] tableData_old, JTextPane text, App app, CogsBinaryForest_AE _A, Map<String, String> pos);
 	public void 展示ETL() throws IOException;
 	public void ETL文档读取();
 	public void ETL文档执行();

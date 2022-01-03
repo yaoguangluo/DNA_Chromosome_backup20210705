@@ -977,8 +977,8 @@ public interface StaticFunctionMapU_AOPM_C {
 		StaticFunctionMapU_AOPM_C.annotationMap.put("compress", "data");
 		StaticFunctionMapU_AOPM_C.annotationMap.put("uncompress", "data");
 		
-		StaticFunctionMapU_AOPM_C.annotationMap.put("P_Heart", "rp1:distance:scale");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("P_Model", "rp1:yanjing");
+		StaticFunctionMapU_AOPM_C.annotationMap.put("P_Heart", "zuoBiao:distance:scale");
+		StaticFunctionMapU_AOPM_C.annotationMap.put("P_Model", "zuoBiao:yanjing");
 	}
 	//Cache_M 入选jdk， 略
 	//ObjectClassification
@@ -1234,6 +1234,6 @@ public interface StaticFunctionMapU_AOPM_C {
 	public byte[] uncompress(byte[] data) throws IOException;
 
 	//Filter{
-	public int[][] P_Heart(int[][] rp1, int distance, int scale);
-	public int[][] P_Model(int[][] rp1, int[][] yanjing);//粗糙版本以后优化。
+	public int[][] P_Heart(int[][] zuoBiao, int distance, int scale);
+	public int[][] P_Model(int[][] zuoBiao, int[][] yanjing);//粗糙版本以后优化。
 }

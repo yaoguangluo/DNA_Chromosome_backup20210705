@@ -157,9 +157,9 @@ public class StaticFunctionMapE_IDUQ_E implements StaticFunctionMapE_IDUQ_C{
 
 	@Override
 	public NodeShow getNodeShow(GUISample gUISample, Object[][] tableData_old, JTextPane text
-			, PopupMenu popupMenu, App u, A _A, Map<String, String> pos) throws IOException {
+			, PopupMenu popupMenu, App app, A _A, Map<String, String> pos) throws IOException {
 		// TODO Auto-generated method stub
-		return new NodeShow(gUISample, tableData_old, text, popupMenu, u, _A, pos);
+		return new NodeShow(gUISample, tableData_old, text, popupMenu, app, _A, pos);
 	}
 
 	@Override
@@ -229,10 +229,10 @@ public class StaticFunctionMapE_IDUQ_E implements StaticFunctionMapE_IDUQ_C{
 	}
 
 	@Override
-	public OSI_OSU_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI_register _OSI_OSU_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI_register(Object[][] tableData_old
-			, JTextPane text, App u, A _A, Map<String, String> pos) {
+	public OSI_OSU_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI_register _OSI_OSU_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI_register
+	(Object[][] tableData_old, JTextPane text, App app, A _A, Map<String, String> pos) {
 		// TODO Auto-generated method stub
-		return new OSI_OSU_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI_register(tableData_old, text, u, _A, pos);
+		return new OSI_OSU_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI_register(tableData_old, text, app, _A, pos);
 	}
 
 }

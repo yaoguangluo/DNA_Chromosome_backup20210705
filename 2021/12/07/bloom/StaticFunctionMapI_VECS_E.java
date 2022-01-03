@@ -18,30 +18,35 @@ public class StaticFunctionMapI_VECS_E implements StaticFunctionMapI_VECS_C{
 	public Map<String, String> annotationMap= new HashMap<>();
 	//SkinPathDoubleDetectTripFix2D_E{
 	@Override
-	public List<String> doTestWithImageAPP(App u) throws IOException {
+	public List<String> doTestWithImageAPP(App app) throws IOException {
 		// TODO Auto-generated method stub
-		return SkinPathDoubleDetectTripFix2D_E.doTestWithImageAPP(u);
+		return SkinPathDoubleDetectTripFix2D_E.doTestWithImageAPP(app);
 	}; 
 	public Double[] doFourJianPDErosion(int 腐蚀浓度,int 像素阀值,int 像素比精度, int 像素差精度,
-			int pcaScale, int upcaScale, int icaScale, int ecaScale, BufferedImage bufferedImage) throws IOException{
+			int pcaScale, int upcaScale, int icaScale, int ecaScale
+			, BufferedImage bufferedImage) throws IOException{
 		return new SkinPathDoubleDetectTripFix2D_E(). doFourJianPDErosion(腐蚀浓度, 像素阀值, 像素比精度, 像素差精度,
 				pcaScale,  upcaScale, icaScale, ecaScale, bufferedImage);
 	};
 	public Double[] doFourSuanPDErosion(int 腐蚀浓度,int 像素阀值,int 像素比精度, int 像素差精度,
-			int pcaScale, int upcaScale, int icaScale, int ecaScale, BufferedImage bufferedImage) throws IOException{
+			int pcaScale, int upcaScale, int icaScale, int ecaScale
+			, BufferedImage bufferedImage) throws IOException{
 		return new SkinPathDoubleDetectTripFix2D_E().doFourSuanPDErosion(腐蚀浓度, 像素阀值, 像素比精度, 像素差精度,
 				pcaScale, upcaScale, icaScale, ecaScale, bufferedImage); 
 
 	};
 	public Double[] doEightSuanPDErosion(int 腐蚀浓度,int 像素阀值,int 像素比精度, int 像素差精度,
-			int pcaScale, int upcaScale, int icaScale, int ecaScale, BufferedImage bufferedImage) throws IOException{
+			int pcaScale, int upcaScale, int icaScale, int ecaScale
+			, BufferedImage bufferedImage) throws IOException{
 		return new SkinPathDoubleDetectTripFix2D_E(). doEightSuanPDErosion(腐蚀浓度, 像素阀值, 像素比精度, 像素差精度,
 				pcaScale, upcaScale, icaScale, ecaScale, bufferedImage);
 
 	};
 	public Double[] doEightJianPDErosion(int 腐蚀浓度,int 像素阀值,int 像素比精度, int 像素差精度,
-			int pcaScale, int upcaScale, int icaScale, int ecaScale, BufferedImage bufferedImage) throws IOException{
-		return new SkinPathDoubleDetectTripFix2D_E().doEightJianPDErosion(腐蚀浓度, 像素阀值, 像素比精度, 像素差精度, pcaScale, upcaScale, icaScale, ecaScale, bufferedImage); 
+			int pcaScale, int upcaScale, int icaScale, int ecaScale
+			, BufferedImage bufferedImage) throws IOException{
+		return new SkinPathDoubleDetectTripFix2D_E().doEightJianPDErosion(腐蚀浓度
+				, 像素阀值, 像素比精度, 像素差精度, pcaScale, upcaScale, icaScale, ecaScale, bufferedImage); 
 
 	};
 	public void doFirstPDErosionWithTop(double fourJian, double fourSuan, double eightJian, double eightSuan
@@ -49,14 +54,18 @@ public class StaticFunctionMapI_VECS_E implements StaticFunctionMapI_VECS_C{
 		new SkinPathDoubleDetectTripFix2D_E(). doFirstPDErosionWithTop(fourJian, fourSuan, eightJian, eightSuan
 				, scoreMatrix, top, bufferedImage);
 	};
-	public void doSecondPDErosionWithTop(double fourJian, double fourSuan, double eightJian, double eightSuan, int[][] scoreMatrix
+	public void doSecondPDErosionWithTop(double fourJian, double fourSuan
+			, double eightJian, double eightSuan, int[][] scoreMatrix
 			, int top, int times, BufferedImage bufferedImage)throws IOException{
-		new SkinPathDoubleDetectTripFix2D_E().doSecondPDErosionWithTop(fourJian, fourSuan, eightJian, eightSuan, scoreMatrix
+		new SkinPathDoubleDetectTripFix2D_E().doSecondPDErosionWithTop(fourJian
+				, fourSuan, eightJian, eightSuan, scoreMatrix
 				, top, times, bufferedImage);
 	};
-	public void doThirdPDErosionWithTop(double fourJian, double fourSuan, double eightJian, double eightSuan, int[][] scoreMatrix
+	public void doThirdPDErosionWithTop(double fourJian, double fourSuan
+			, double eightJian, double eightSuan, int[][] scoreMatrix
 			, int top, int times, List<String> output, BufferedImage bufferedImage)throws IOException{
-		new SkinPathDoubleDetectTripFix2D_E().doThirdPDErosionWithTop(fourJian, fourSuan, eightJian, eightSuan, scoreMatrix
+		new SkinPathDoubleDetectTripFix2D_E().doThirdPDErosionWithTop(fourJian
+				, fourSuan, eightJian, eightSuan, scoreMatrix
 				, top, times, output, bufferedImage);
 	};
 	public void initDeciphring(String string, int type) throws NumberFormatException, IOException{
@@ -112,10 +121,10 @@ public class StaticFunctionMapI_VECS_E implements StaticFunctionMapI_VECS_C{
 		//可以写mask
 		//筛选
 		//第二次筛选,没有出现3次的一律过滤;
-		skinPathDoubleDetectTrip.doSecondPDErosionWithTop(1 , 1, 1, 1, score, 50, 4);	//叠加筛选 前50 次数50%进行。
+		skinPathDoubleDetectTrip.doSecondPDErosionWithTop(1 , 1, 1, 1, score, 50, 4);//叠加筛选 前50 次数50%进行。
 		//可以写mask
 		//细准焦 碱筛选 精度5
-		skinPathDoubleDetectTrip.doThirdPDErosionWithTop(1, 1, 1, 1, score, 500, 4);    //前500的 叠加筛选次数50%进行	
+		skinPathDoubleDetectTrip.doThirdPDErosionWithTop(1, 1, 1, 1, score, 500, 4);//前500的 叠加筛选次数50%进行	
 	}
 
 	//16进制 AOPM VECS IDUQ TXHF 肽腐蚀非卷积视觉计算
