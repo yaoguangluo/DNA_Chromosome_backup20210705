@@ -667,10 +667,10 @@ public interface StaticFunctionMapU_AOPM_C {
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "median1d");
-		if(callFunctionKey.equalsIgnoreCase("fengTong1")){ 
+		if(callFunctionKey.equalsIgnoreCase("fengTong1D")){ 
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapU_AOPM_C.fengTong1((double[])inputValues.get(传参因子[因子++]));
+				map= staticFunctionMapU_AOPM_C.fengTong1D((double[])inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "fengTong1");
@@ -790,22 +790,22 @@ public interface StaticFunctionMapU_AOPM_C {
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
 		}//, "liangHuaXiHuaHalfSide");
-		if(callFunctionKey.equalsIgnoreCase("shehold1")){       
+		if(callFunctionKey.equalsIgnoreCase("shehold1D")){       
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapU_AOPM_C.shehold1((double[])inputValues.get(传参因子[因子++])
+				map= staticFunctionMapU_AOPM_C.shehold1D((double[])inputValues.get(传参因子[因子++])
 						,(double)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
-		}//, "shehold1");
-		if(callFunctionKey.equalsIgnoreCase("caiJian1")){         
+		}//, "shehold1D");
+		if(callFunctionKey.equalsIgnoreCase("caiJian1D")){         
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
-				map= staticFunctionMapU_AOPM_C.caiJian1((double[])inputValues.get(传参因子[因子++])
+				map= staticFunctionMapU_AOPM_C.caiJian1D((double[])inputValues.get(传参因子[因子++])
 						,(double)inputValues.get(传参因子[因子++]),(double)inputValues.get(传参因子[因子++]));
 			}
 			StaticFunctionMap.postValues(output, (boolean) inputValues.get("find"), map, callFunctionKey);
-		}//, "caiJian1");
+		}//, "caiJian1D");
 		if(callFunctionKey.equalsIgnoreCase("unZipWithPath")){        
 			Map<String, Object> inputValues= StaticFunctionMap.preValues(output, 传参因子);
 			if((boolean) inputValues.get("find")) {
@@ -950,8 +950,8 @@ public interface StaticFunctionMapU_AOPM_C {
 	 
 		StaticFunctionMapU_AOPM_C.annotationMap.put("min_v", "input:rank");
 		StaticFunctionMapU_AOPM_C.annotationMap.put("min_i", "input:rank");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("median1d", "input:scale");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("fengTong1", "input");
+		StaticFunctionMapU_AOPM_C.annotationMap.put("median1D", "input:scale");
+		StaticFunctionMapU_AOPM_C.annotationMap.put("fengTong1D", "input");
 		StaticFunctionMapU_AOPM_C.annotationMap.put("fengPaixX", "input");
 		StaticFunctionMapU_AOPM_C.annotationMap.put("fengPaiyY", "input");
 		StaticFunctionMapU_AOPM_C.annotationMap.put("fengPaiXx", "input");
@@ -969,8 +969,8 @@ public interface StaticFunctionMapU_AOPM_C {
 		StaticFunctionMapU_AOPM_C.annotationMap.put("liangHuaDengChaMines", "input:scale");//稍后去掉拼音接口，只有中文和英文
 		StaticFunctionMapU_AOPM_C.annotationMap.put("liangHuaEqualDelete", "input");
 		StaticFunctionMapU_AOPM_C.annotationMap.put("liangHuaXiHuaHalfSide", "input");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("shehold1", "input:scale");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("caiJian1", "input:left:right");
+		StaticFunctionMapU_AOPM_C.annotationMap.put("shehold1D", "input:scale");
+		StaticFunctionMapU_AOPM_C.annotationMap.put("caiJian1D", "input:left:right");
 		StaticFunctionMapU_AOPM_C.annotationMap.put("unZipWithPath", "zipFullPath:zipCategory");
 		StaticFunctionMapU_AOPM_C.annotationMap.put("bootBackupByUsingGzip", "zipPath");
 		StaticFunctionMapU_AOPM_C.annotationMap.put("fileToZip", "sourceFilePath:zipFilePath:fileName");
@@ -1191,7 +1191,7 @@ public interface StaticFunctionMapU_AOPM_C {
 	public double[] median1d(double[] input, double scale ) ;
 
 	//PeakStatistic{
-	public double[][] fengTong1(double[] input);
+	public double[][] fengTong1D(double[] input);
 	public double[][] fengPaixX(double[][] input) ;
 	public double[][] fengPaiyY(double[][] input);
 	public double[][] fengPaiXx(double[][] input);
@@ -1213,9 +1213,9 @@ public interface StaticFunctionMapU_AOPM_C {
 	public double[] liangHuaEqualDelete(double[] input) ;
 	public double[] liangHuaXiHuaHalfSide(double[] input) ;
 	//Shehold{
-	public double[] shehold1(double[] input, double scale) ;
+	public double[] shehold1D(double[] input, double scale) ;
 	//Tailor{
-	public double[] caiJian1(double[] input, double left,double right) ;
+	public double[] caiJian1D(double[] input, double left,double right) ;
 
 	//UnZip {
 	public void unZipWithPath(String zipFullPath, String zipCategory);

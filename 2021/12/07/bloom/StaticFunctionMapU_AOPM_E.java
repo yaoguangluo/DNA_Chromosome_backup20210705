@@ -480,7 +480,7 @@ public class StaticFunctionMapU_AOPM_E implements StaticFunctionMapU_AOPM_C{
 	};
 
 	//PeakStatistic{
-	public double[][] fengTong1(double[] input){
+	public double[][] fengTong1D(double[] input){
 		return new PeakStatistic().fengTong1(input);
 	};
 	public double[][] fengPaixX(double[][] input){
@@ -534,11 +534,11 @@ public class StaticFunctionMapU_AOPM_E implements StaticFunctionMapU_AOPM_C{
 	};
 
 	//Shehold{
-	public double[] shehold1(double[] input, double scale){
+	public double[] shehold1D(double[] input, double scale){
 		return new Shehold().shehold1(input, scale);
 	};
 	//Tailor{
-	public double[] caiJian1(double[] input, double left,double right){
+	public double[] caiJian1D(double[] input, double left,double right){
 		return new Tailor().caiJian1(input, left, right);//函数名称123 结尾稍后优化下。 罗瑶光
 	};
 
